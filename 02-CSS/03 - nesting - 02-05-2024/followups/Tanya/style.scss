@@ -1,0 +1,148 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #cc0000;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav {
+    background-color: #cc0000;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff4d4d;
+}
+
+.main-article {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    
+    margin: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer; 
+    width: 50%;
+}
+
+.main-article img {
+    width: 100%;
+    height: auto; 
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.main-article h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #cc0000;
+}
+
+.main-article p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.main-article .source {
+    font-size: 14px;
+    color: #999;
+}
+
+.secondary-articles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.secondary-article {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer; 
+}
+
+ .secondary-article img {
+    width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.secondary-article h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #cc0000;
+    transition: color 0.3s ease; 
+}
+
+.secondary-article h2:hover {
+    color: #ff4d4d; 
+}
+
+.secondary-article p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.secondary-article .source {
+    font-size: 12px;
+    color: #999;
+}
+
+footer {
+    background-color: #cc0000;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main-article:hover,
+.secondary-article:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
