@@ -1,16 +1,21 @@
 $header-color: #7B74FF;
 body {
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
 header {
     background-color: $header-color;
     color: white;
-    h1 {
+    margin-top: 0;
+    & h1 {
         text-align: left;
+        margin: 20px 0 0 20px;
     }
 }
 
 .container {
-
+    text-align: left;
+    margin-left: 50px;
 }
