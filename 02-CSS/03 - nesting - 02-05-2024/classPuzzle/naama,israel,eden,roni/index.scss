@@ -1,0 +1,15 @@
+.wrapper {
+    width: 450px;
+    margin: auto;
+    text-align: center;
+    border: 2px solid black;
+    .purple {
+        background-color: mediumslateblue;
+        color: white;
+        padding: 50px;
+    }
+    .white {
+        text-align: left;
+        padding: 100px;
+    }
+}
