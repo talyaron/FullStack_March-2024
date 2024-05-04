@@ -1,0 +1,40 @@
+$our_ind: 20px;
+
+body {
+    font-family: sans-serif;
+    margin-top: 0;
+}
+
+.wrapper {
+    width: 600px;
+    margin: auto;
+}
+
+.header {
+    background-color: rgb(111, 80, 227);
+    color: white;
+    padding: $our_ind;
+    padding-bottom: 250px;
+    text-align: center;
+
+    p {
+        opacity: 0.7;
+        font-weight: 100;
+    }
+
+    a {
+        color: inherit;
+    }
+}
+
+.main {
+    border: 1px grey solid;
+    margin-top: 5px;
+    padding: $our_ind;
+
+    .link {
+        font-size: 0.9em;
+        color: darkgrey;
+        margin-bottom: $our_ind;
+    }
+}
