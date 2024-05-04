@@ -1,5 +1,8 @@
+body {
+    background-image: url("./imgs/wallpaper.jpg");
+}
 .wrapper {
-
+    
     .menu {
         text-align: right;
         font-size: 30px;
@@ -12,11 +15,92 @@
 
     .header {
         text-align: center;
-        font-weight: bold;
         margin-bottom: 50px;
-    
+        .btn-group .button {
+            background-color: white;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-group .button:hover {
+            background-color: whitesmoke;
+        }
     }
+
+    h1 {
+        font-family: "Cookie", cursive;
+        font-weight: 800;
+        font-size:xx-large;
+        font-style: normal;
+    }
+
+    p {
+        text-align: justify;
+        max-width: 55%;
+        line-height: 20px;
+        font-weight: bold;
+        font-family: "Space Mono", monospace;
+        font-weight: 700;
+        font-style: italic;
+        margin-bottom: 70px;
+    }
+
+    .facts {
+        text-align: left;
+        margin-bottom: 20px;
+        h2 {
+            font-family: "Cookie", cursive;
+            font-weight: 800;
+            font-size:xx-large;
+            font-style: normal;
+        }
+        p {
+        margin-bottom: 15px;
+        padding: 4px 12px;    
+        margin-top: 0%;
+        background-color: rgba(223, 217, 217, 0.815);
+        border-left: 6px solid #929795;
+        display: table;
+        }
+    }
+
+    .row {
+        margin-top: 100px;
+        display: flex;
+        h4 {
+            font-family: "Cookie", cursive;
+            font-weight: 800;
+            font-size:xx-large;
+            font-style: normal;
+        }
+    }
+      
+    .column {
+        flex: 20%;
+        padding: 5px;
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        padding: 2px 16px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+        margin-bottom: 50px;
+        img {
+            width: 300px;
+            height: 300px; 
+            border-radius: 5px 5px 0 0;
+        }
+    }
+ 
     .footer {
-        background-color: rgb(168, 241, 217);
+        background-color: whitesmoke;
+        text-align: center;
     }
 }
