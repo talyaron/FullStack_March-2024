@@ -1,0 +1,16 @@
+.wrapper {
+  background-color: #534444;
+  width: 600px;
+}
+
+.wrapper img {
+  width: 100%;
+}
+
+.wrapper p {
+  color: pink;
+}
+
+p {
+  color: darkcyan;
+}
