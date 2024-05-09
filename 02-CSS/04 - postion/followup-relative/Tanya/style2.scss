@@ -1,0 +1,40 @@
+body {
+    align-items: center;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    margin: auto;
+
+}
+
+.box {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 8px;
+    margin: 5px;
+    position: relative;
+}
+
+.one,
+.two,
+.three,
+.four {
+    width: 150px;
+}
+.one {
+    background-color: blue;
+}
+.two {
+    background-color: red;
+}
+.three {
+    background-color: green;
+}
+.four {
+    background-color: yellow;
+}
