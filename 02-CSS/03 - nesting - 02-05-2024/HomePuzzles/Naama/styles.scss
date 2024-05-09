@@ -1,0 +1,27 @@
+body{
+    background-color: #F5EFE6;
+}
+.main {
+    background-color: #1A4D2E;
+    width: 50%;
+    margin: auto;
+    color: #E8DFCA;
+    text-align: center;
+    padding: 10px;
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .smallQNA {
+        padding: 1px;
+        width: 90%;
+        background-color: #4F6F52;
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    a{
+        text-decoration: none;
+        color: #E8DFCA;
+    }
+}
