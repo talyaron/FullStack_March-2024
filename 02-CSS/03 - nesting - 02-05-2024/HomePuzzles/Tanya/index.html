@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanya's Blog</title>
+    <script src="https://kit.fontawesome.com/0dc66bd6c2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./dist/style.css">
+</head>
+<body>
+    <header>
+        <h1>Tanya's Blog</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="" class="active1">Home</a></li>
+            <li><a href="" class="notAllowed">Cooking </br> <small>under construction <i class="fa-solid fa-person-digging"></i></small></a></li>
+            <li><a href="" class="active2">Travel</a></li>
+            <li><a href="" class="notAllowed">Books</br> <small>under construction <i class="fa-solid fa-person-digging"></i></small></a></li>
+            <img src="./pics/tanya.jpg" id="tanya" alt="me">
+            <div id="popup">Don't touch!</div>
+        </ul>
+    </nav>
+    <article>
+        <div class="article1">
+            <div class="wrapper">
+                <img src="./pics/langley1.jpg" alt="pic1">
+                <p>Hi all, my name is Tanya Holczer.</br>
+                    I am 37 years old (almost 38, and still in denial about it), married with 3 children. </br>This is Langley, British Columbia. My home for the past 8 months.
+                </br>I've been playing World of Warcraft since 2009.</br>
+                I enjoy reading books very much (I own over 3,000 books), riding horses, and my new passion - skiing.
+                </p>
+            </div>
+            <div class="wrapper">
+                <img src="./pics/willoughby.jpg" alt="pic2">
+                <p>This is my neighborhood, Willoughby. We've decided to move here so that my almost-10-year-old daughter, Alice, could swim in the Langley Olympians, the best swim team in western Canada.</p>
+            </div>
+        </div>
+        <div class="article2">
+            <div class="wrapper">
+                <img src="./pics/snow.jpg" alt="snow">
+                <p>These are my kids: </br>Alice, 10, a gifted swimmer (now competing for the Regional team); </br>Connor, 7, just started studying martial arts; </br>Lyra, 1.5, favorite pastime is eating. </br>
+                The picture was taken during the first snow of the year. Unfortunately, we don't get enough of these in the region.</br>
+                We moved here because we love cold weather, snow, and rain, and despise heat. </br>It's very challenging because I'm studying at college for a PBD in programming and IT full-time, and Alice and Connor have each 5 practices a week (Alice even has swim practice at 5:45 AM on Thursdays!&#128562;), and Lyra is a little rascal.</p>
+            </div>
+            <div class="wrapper">
+                <img src="./pics/kids.jpg" alt="kids">
+                <p>This picture was taken in Israel. </br>These are our two dogs - Skye, a Border Collie, and Marshall, a Boxer. They are 4 years old.</br>We took them with us to Canada. Because no airline would fly Boxers (or any snub-nosed dogs) to Canada, we had to fly to LA and make a road trip by car to Vancouver. It took us approximately 1600km and 5 days to complete, and it was a challenge to load an SUV with all our luggage, two dogs, three kids, and two adults. Still can't believe we moved here with only six suitcases..</p>
+            </div>
+        </div>
+    </article>
+    <section>
+        <fieldset>
+            <legend><h4>Leave a comment:</h4></legend>
+            <form id="commentForm">
+                <label for="commenterName">Name: </label>
+                <input type="text" id="commenterName" name="commenterName" required>
+                </br></br>
+                <label for="comment">Comment: </label>
+                <textarea name="comment" id="comment" cols="20" rows="5" required></textarea>
+                </br></br>
+                <input type="submit" value="Submit">
+                </br>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend><h4>Comments:</h4></legend>
+            <div class="comments"> 
+            </div>
+        </fieldset>
+    </section>
+    
+    <footer>
+        <h3>&copy;Tanya Holczer</h3>
+    </footer>
+    <script src="./app.js"></script>
+</body>
+</html>

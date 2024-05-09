@@ -1,0 +1,275 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: monospace;
+    font-size: 18px;
+    background-color: #281f21;
+    color: white;
+}
+
+h1 {
+    margin: 10px 0;
+    font-weight: 700;
+    font-size: calc(2em + 2vw);
+}
+
+.wrapper {
+    margin: auto;
+    max-width: 1024px;
+}
+
+.header {
+    text-align: center;
+}
+
+.mine {
+    display: inline-flex;
+
+    img {
+        width: 35vw;
+        height: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: block;
+        .my-photo {
+            overflow: hidden;
+            height: 50vw;
+        }
+
+        img {
+            position: relative;
+            top: -50%;
+            width: 80vw;
+        }
+    }
+
+    @media screen and (max-width: 420px) {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.my-photo {
+    text-align: center;
+    margin: 0 10px;
+    animation: exit reverse 1ms 1;
+    animation-delay: 5s;
+    animation-fill-mode: backwards;
+}
+
+.about-me {
+    margin: 0 10px;
+
+    p{
+    opacity: 0;
+    transition: 1s;
+    animation: text 2s 1;
+    animation-fill-mode: forwards;
+    }
+}
+
+.footer {
+    margin: 15px 0;
+    height: 42px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+
+    a {
+        margin: 5px;
+        padding: 0;
+
+        img {
+            width: 40px;
+            border-radius: 50%;
+        }
+    }
+
+    a:hover {
+        opacity: 0.6;
+    }
+}
+
+.hello {
+    width: 24ch;
+    font-size: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    animation: cursor 0.75s step-end 2s, printed_text 2s steps(24);
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+    animation-fill-mode: backwards;
+}
+
+.text {
+    height: 26ch;
+    font-size: 18px;
+    overflow: hidden;
+    animation: printed_text2 10s steps(13);
+    animation-delay: 9s;
+    animation-fill-mode: backwards;
+    animation-timing-function: linear;
+}
+
+.smile {
+    p {
+        font-size: 72px;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        animation: exit reverse 1ms 1;
+        animation-delay: 20s;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes cursor {
+    0%, 100% {
+      border-color: transparent;
+    }
+
+    50% {
+      border-color: white;
+    }
+}
+
+@keyframes printed_text {
+    from {
+      width: 0;
+    }
+}
+
+@keyframes printed_text2 {
+    from {
+      height: 15px;
+    }
+}
+
+@keyframes text {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+// bar-smile
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    background-color: #281f21;
+    width: 95vw;
+    height: 95vh;
+    position: absolute;
+    text-align: center;
+    vertical-align: center;
+    animation: exit 1ms 1;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+}
+
+.loader-1 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: center;
+    // margin: -25px auto 0;
+    border-radius: 50%;
+    background: #ffffff;
+    background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 50%);
+    animation: loader-1 1.5s 2.75 linear;
+    animation-fill-mode: forwards;
+}
+
+.loader-1:before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    border-radius: 100% 0 0 0;
+}
+
+.loader-1:after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #281f21;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.eyes {
+    width: 26px;
+    height: 8px;
+    position: absolute;
+    top: 49%;
+    display: flex;
+    justify-content: space-between;
+    // border: 1px red solid;
+}
+
+.right-eye {
+    width: 8px;
+    height: 8px;
+    animation: loader-2 10ms 1;
+    animation-delay: 1.2s;
+    animation-fill-mode: backwards;
+    background-color: #fff;
+}
+
+.left-eye {
+    width: 8px;
+    height: 8px;
+    animation: loader-2 10ms 1;
+    animation-delay: 2.625s;
+    animation-fill-mode: backwards;
+    background-color: #ffffff;
+}
+
+@keyframes loader-1 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-2 {
+    0% {
+        opacity: 0; }
+
+    100% {
+        opacity: 1;}
+    }
+
+@keyframes exit {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

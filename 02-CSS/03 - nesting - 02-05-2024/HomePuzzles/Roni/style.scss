@@ -1,0 +1,32 @@
+
+.wrapper {
+width:800px;
+text-align: center;
+margin:auto;
+background-color: rgb(230, 231, 232);
+padding: 50px;
+border: 2px black solid;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.hyperlinks {
+    img {
+        width: 50px;
+    }
+    background-color: white;
+}
+.profesional {
+    padding: 10px;
+    margin: 10px;
+    border: solid rgb(242, 242, 242) 3px;
+    img {
+        width: 350px;
+    }
+}
+.personal {
+    img {
+        width: 350px;
+    }
+    border: solid rgb(242, 242, 242) 3px;
+    padding: 10px;
+    margin: 10px;
+}

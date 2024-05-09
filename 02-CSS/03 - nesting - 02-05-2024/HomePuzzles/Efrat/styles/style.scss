@@ -1,0 +1,65 @@
+
+
+  .bellefair-regular {
+    font-family: "Bellefair", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+body{
+    margin: 0;
+    font-family: "Bellefair";
+    font-size: 18px;
+}
+
+
+
+
+.warpper{
+    overflow: hidden;
+    border: 2px solid #3399;
+    margin: 70px 100px 0px 100px;
+    width:70%;
+   .left-div{
+    float:left;
+    img{
+        padding: 5px;;
+        width:400px;height: 400px;
+        }
+   }
+   .right-div{
+    float:left;
+    margin-left: 60px;
+   }
+   .link-div{
+    margin-top: 200px;
+}
+
+}
+h2{
+    .block-desc{
+        color: grey;
+        font-size: small;
+    }
+}
+
+
+.block-desc{
+    padding-top: 3px;
+    display: block;
+}
+
+.bottom-div{
+
+    h3{
+        font-size: small;
+    }
+    margin-top: 80px;
+    div{
+        float: left;
+    }
+    .bottom-div-right{
+        margin-left: 150px;
+    }
+}
+
