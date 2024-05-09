@@ -1,0 +1,40 @@
+body {
+background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%);
+font-family: "Poetsen One", sans-serif;
+max-width: 1920px;
+min-width: 360px;
+}
+
+.wrapper {
+margin-left: auto;
+text-align: center;
+}
+
+img{
+width: 30%;
+height: 30%;
+border-radius: 5%;
+}
+
+h1{
+text-align: center;
+}
+
+.poetsen-one-regular {
+font-family: "Poetsen One", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+  
+.loui img{  
+max-height: 350px;
+}
+
+.loui{
+    margin-top: 30px;
+}
+
+.desc{
+margin-top: 0px;
+}
