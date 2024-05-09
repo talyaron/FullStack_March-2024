@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+
+    div {
+        width: 200px;
+        height: 100px;
+        text-align: center;
+
+    }
+
+    .one {
+        background-color: teal;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .two {
+        background-color: tomato;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      .three {
+        background-color: rgb(240, 240, 103);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      .four {
+        background-color: rgb(92, 92, 231);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+}
