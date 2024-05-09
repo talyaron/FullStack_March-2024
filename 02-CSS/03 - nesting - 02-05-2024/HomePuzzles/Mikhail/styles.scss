@@ -1,0 +1,142 @@
+
+body{
+    width: 100%;
+    height: 100%;
+    
+    
+}
+header{
+    display:flex;
+    width: 100%;
+    background-color: #210237;
+    position:fixed;
+
+
+    .headtext{
+        width: 80%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        h1{
+            width: 100%;
+            height: 100%;
+            font-size: 50px;
+            padding-left: 150px;
+            color: #FF0505;
+        }
+        
+    }
+    .headbar{
+        text-align: right;
+        width: 20%;
+        margin: 0;
+        padding-right: 20px;
+        padding-top: 20px;
+        button{
+            height: 50px;
+            width: 50px;
+            border-radius: 30%;
+            background-color: silver;
+            color: white;
+        }
+        button:hover{
+            background-color: antiquewhite;
+            color: black;
+        }
+    }
+}
+
+main{
+    background-color: #371251;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    margin: 0;
+
+    .question{
+        color:white;
+        font-size: 40px;
+        width: 100%;
+        padding-top: 50px;
+
+    }
+    .wrapper{
+        background-color: #29123D;
+        
+        .top{
+            display: flex;
+            width: 80%;
+            border: 1px solid white;
+            margin:auto;
+            p{
+                color:white;
+                text-align: right;
+                width:80%;
+            }
+            }
+            .middle{      
+            display: flex;
+            width: 80%;
+            border: 1px solid white;
+            margin:20px auto;
+            p{
+                color:white;
+                text-align: left;
+                width:80%;
+            }
+            img{
+                width: 20%;
+            }
+            }
+            .bottom{
+                 display: flex;
+                 width: 80%;
+                 border: 1px solid white;
+                 margin:auto;
+                 p{
+                    color:white;
+                    text-align: right;
+                    width:80%;
+                }
+                img{
+                    width: 20%;
+                }
+
+            }
+
+
+        }
+    
+        
+    }
+    .top:hover{
+        background-color: #FF0505;
+    }
+    .middle:hover{
+        background-color: #FF0505;
+    }
+    .bottom:hover{
+        background-color: #FF0505;
+    }
+    .form{
+        background-color: #29123D;
+        width: 100%;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 50px;
+        form{   
+            width: 100%;
+            .inputs{
+                padding-bottom: 20px;
+                padding-top: 20px;         
+              }
+        }
+        button{
+            background-color: red;
+            color:white;
+        }
+        button:hover{
+            background-color: rgb(184, 14, 14);
+        }
+        
+    }
