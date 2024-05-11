@@ -22,9 +22,10 @@ header {
     font-size: 14px;
     padding: 12px 28px;
     border: none;
+    cursor: pointer;
 }
 .btn-group {
-    margin-left: 340px;
+    margin-left: 120px;
 }
 
 .button {
@@ -39,11 +40,34 @@ header {
 
 .search {
     text-align: right;
-    margin-right:350px;
+    margin-right: 150px;
+    margin-top: 10px;
 }
 
 .scd-header {
     border: 1px solid black;
     display: flex;
     justify-content: space-around;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    img{
+        margin-right: 19%;
+    }
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 3%;
+    left: 15%;
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+    p{
+        font-size: 20px;
+        font-weight: lighter;
+    }
 }
