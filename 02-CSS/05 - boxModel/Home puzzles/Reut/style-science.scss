@@ -1,0 +1,141 @@
+header {
+    position: sticky;
+    top: 0;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    padding: 20px;
+    background-color: white;
+    
+    .logo {
+        font-size: 30px;
+        margin-left: 200px;
+        a {
+        color: black;
+        text-decoration: none;
+        }
+    }
+
+    .btn-group .button {
+        background-color: white;
+        font-size: 14px;
+        padding: 12px 28px;
+        border: none;
+        cursor: pointer;
+    }
+    .btn-group {
+        margin-left: 40px;
+    }
+    
+    .button {
+        font-weight: bold;
+    }
+    
+    .button:hover{
+        color: rgb(184, 32, 32);
+    }
+
+    .subscribe {
+
+        .button{
+        background-color: white;
+        font-size: 14px;
+        padding: 12px 28px;
+        border-radius: 12px;
+        cursor: pointer;
+        }
+
+        .button:hover{
+            background-color: rgb(180, 69, 69);
+            color: black;
+            transition: background 0.9s ease-in-out;
+        }
+    }
+    
+    .icons {
+        margin-right: 200px;
+        padding: 12px 28px;
+        word-spacing: 15px;
+    }
+  
+}
+
+.bot-header {
+    font-weight: bolder;
+    background-color: rgb(241, 237, 230);
+    padding: 100px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.content {
+    margin-top: 4%;
+    margin-left: 13%;
+
+   .text {
+    float: right;
+    margin-right: 45%;
+    margin-top: 100px;
+    width: 30%;
+   }
+   
+   h2{
+    font-weight: lighter;
+    font-size: 14px;
+   }
+
+   p {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    width: 500px;
+    font-weight: bold;
+   }
+
+   img {
+    margin-top: 2%;
+    border-radius: 18px;
+   }
+}
+
+.newsletter {
+    margin-top: 40%;
+
+    form {
+    border: 3px solid #f1f1f1;
+    font-family: Arial;
+    border-radius: 8px;
+    }
+  
+    .container {
+    padding: 20px;
+    background-color: #f1f1f1;
+    }
+  
+    input[type=text], input[type=submit] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    }
+  
+    input[type=checkbox] {
+    margin-top: 16px;
+    }
+  
+    input[type=submit] {
+    background-color: #b86d6d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    }
+  
+    input[type=submit]:hover {
+    opacity: 0.8;
+    transition: background 0.9s ease-in-out;
+    }
+}
