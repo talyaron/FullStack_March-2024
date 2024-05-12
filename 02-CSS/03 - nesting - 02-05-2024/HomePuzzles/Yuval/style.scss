@@ -1,0 +1,53 @@
+.wrapper {
+    position: relative;
+    border: none;
+    margin-top: 0px;
+    
+    background-color: rgb(130, 243, 55);
+    h1{
+        text-align: center;
+        margin-top: 10px;
+    }
+    .linkedin_button{
+        position: sticky;
+        left: 0px;
+        top: 0px;
+        background-color: rgb(60, 84, 224);
+        color: rgb(255, 255, 255);
+        font-size: large;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        border: none;
+        height: 40px;
+        
+        
+    }
+    .github_button{
+        position: sticky;
+        left: 10px;
+        top: 0px;
+        background-color: rgb(60, 84, 224);
+        color: rgb(255, 255, 255);
+        font-size: large;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        border: none;
+        height: 40px;
+    }   
+    button:hover{
+        background-color: rgb(71, 119, 209);
+    } 
+    .navigation_bar{
+        position: sticky;
+        right:0px; 
+        
+        top: 0px;
+        font-size: larger;
+        background-color: rgb(241, 245, 19);
+        
+
+
+    }
+    a:hover{
+        background-color: black;
+        color: beige;
+    }
+}
