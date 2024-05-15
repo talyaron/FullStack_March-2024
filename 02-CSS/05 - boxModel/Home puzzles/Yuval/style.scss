@@ -1,12 +1,5 @@
-div {
-    background-color: antiquewhite;
-    border: 2px solid black;
-    padding: 20px;
-    
-}
 .wrapper {
     margin: auto;
-
     .box-sticky {
         position: sticky;
         top: 0px;
@@ -16,6 +9,11 @@ div {
         .in-sticky{
             border: none;
             background-color: red;
+        }
+        .relative-sticky{
+            width: 10%;
+            position: fixed;
+            
         }
     }
     .box-fixed{
@@ -33,11 +31,9 @@ div {
     }
     .box-relative{
         height: 60px;
-        
         .in-relative{
             width: 15%;
             float: right;
-            
         }
     }
     
