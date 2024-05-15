@@ -1,3 +1,7 @@
+div {
+    border: 1px black solid;
+    padding: 20px;
+}
 .wrapper {
     margin: auto;
     .box-sticky {
@@ -6,15 +10,29 @@
         background-color: red;
         border: 1px blue dotted;
         padding: 2px;
+
         .in-sticky{
             border: none;
             background-color: red;
         }
         .relative-sticky{
-            width: 10%;
-            position: fixed;
-            
+            width: 5%;
+            position: relative;
+            float: inline-end;
+            bottom: 20px;
+            border: none;
+            color: white;
         }
+    }
+    .flash{
+        .flash-box{
+        position: relative;
+        }
+        .flash-news1{
+            position:absolute;
+        }
+        }
+
     }
     .box-fixed{
         position: fixed;
