@@ -4,6 +4,8 @@ div {
 }
 .wrapper {
     margin: auto;
+    width: 1000px;
+    
     .page-logo{
         border: none;
         text-align: center;
@@ -19,8 +21,11 @@ div {
         .in-sticky{
             border: none;
             background-color: red;
+            font-weight: bold;
+            font-size: larger;
             :hover{
-                background-color: black;
+                color: gray;
+                
             }
         }
         .relative-sticky{
@@ -87,8 +92,13 @@ div {
         .AD-artcl{
             width: 70%;
         }
-        .artcl1{
-            background-color: aqua;
+        .artcl1 {
+            position: relative;
+            img{
+                object-fit: contain;
+                width: 30%;
+        
+            }
 
         }
         .artcl2{
@@ -99,6 +109,64 @@ div {
         }
         .artcl4{
             background-color: brown;
+        }
+    }
+    .two-box{
+        height: 200px;;
+        text-align: center;
+        .right-box{
+            position: relative;
+            width: 45%;
+            float: inline-end;
+            margin: 0px;
+            .calcalist{
+                position: absolute;
+                right: 40px;
+                border: none;
+                
+                border-radius: 90%;
+                width: 50px;
+                background-color: pink;
+                bottom: 20px;
+                height: 1px;
+                
+            }
+            .in-right{
+                
+                float: inline-end;
+                width: 20%;
+                
+                
+            }
+            
+        }
+        .left-box{
+            position: relative;
+            width: 45%;
+            float: inline-end;
+            
+            .in-left{
+                
+                float: inline-end;
+                width: 20%;
+                
+            }
+        }
+    }
+    .img-box{
+        background-color: rgba(0, 0, 0, 0.689);
+        .img-box-logo{
+            text-align: center;
+            border: none;
+            padding: 0px;
+            img{
+                width: 15%;
+            }
+        }
+        img{
+            width: 30%;
+            object-fit: contain;
+            padding: 15px;
         }
     }
 
