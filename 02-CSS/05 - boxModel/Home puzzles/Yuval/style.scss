@@ -4,16 +4,24 @@ div {
 }
 .wrapper {
     margin: auto;
+    .page-logo{
+        border: none;
+        text-align: center;
+    }
     .box-sticky {
         position: sticky;
         top: 0px;
         background-color: red;
         border: 1px blue dotted;
         padding: 2px;
+        z-index: 1;
 
         .in-sticky{
             border: none;
             background-color: red;
+            :hover{
+                background-color: black;
+            }
         }
         .relative-sticky{
             width: 5%;
@@ -22,16 +30,20 @@ div {
             bottom: 20px;
             border: none;
             color: white;
-        }
+            
+            
     }
+    
+}
     .flash{
-        .flash-box{
         position: relative;
+        
+        .flash-news{
+            position: relative;
+            bottom: 100px;
+            display: inline;
         }
-        .flash-news1{
-            position:absolute;
-        }
-        }
+        
 
     }
     .box-fixed{
@@ -54,5 +66,40 @@ div {
             float: right;
         }
     }
-    
+    .first-artcl{
+        position: relative;
+        img{
+            float: inline-end;
+        }
+        .txt1{
+            width: 40%;
+            position: relative;
+            right: 10px;
+            border: none;
+        }
+        
+    }
+    .ad-section{
+        position: relative;
+        img{
+            float: inline-end;
+        }
+        .AD-artcl{
+            width: 70%;
+        }
+        .artcl1{
+            background-color: aqua;
+
+        }
+        .artcl2{
+            background-color: black;
+        }
+        .artcl3{
+            background-color: beige;
+        }
+        .artcl4{
+            background-color: brown;
+        }
+    }
+
 }
