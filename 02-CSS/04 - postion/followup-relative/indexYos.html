@@ -1,69 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-
-  <style>
-    body {
-      width: 1000px;
-      height: 500px;
-    }
-    .one {
-      background-color: aqua;
-      position: relative;
-      top: 8px;
-      left: 80px;
-    }
-    .two {
-      background-color: wheat;
-      position: relative;
-      bottom: 8px;
-    }
-    .three {
-      background-color: brown;
-    }
-    .four {
-      background-color: black;
-      color: white;
-    }
-    .five {
-      background-color: blue;
-      color: aliceblue;
-    }
-
-
-    .wrapper{
-       position: relative;
-       background-color: blanchedalmond;
-
-    }
-    .wra1{
-        position: absolute;
-        top: 40px;
-        left: 30px;
-
-    }
-  </style>
-
-  <body>
-    <!-- position relative -->
-    <!-- <div>
-      <div class="one">one</div>
-      <div class="two">two</div>
-      <div class="three">three</div>
-      <div class="four">four</div>
-      <div class="five">five</div>
-      <div class="six">six</div>
-    </div> -->
-    <!-- position absolute -->
-    <div class="wrapper">
-        <div class="wra1">23</div>
-        <div class="">23</div>
-        <div class="">23</div>
-        <div class="">23</div>
+<div style="width: 100%">
+  <h2>ES Table</h2>
+  <div
+    style="
+      display: inline-flex;
+      width: 45%;
+      padding-right: 20px;
+      padding-bottom: 20px;
+    "
+  >
+    <div style="padding-right: 20px">
+      <style>
+        table {
+          border-collapse: collapse;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        th,
+        td {
+          border: 1px solid #dddddd;
+          text-align: left;
+          text-align: left;
+        }
+        th {
+          width: 70px;
+          background-color: lightskyblue;
+        }
+      </style>
+      <table>
+        <tr>
+          <th style="text-align: center; width:150px;">Source</th>
+          <th style="text-align: center; width: max-content;">Leads</th>
+          <th style="text-align: center; width: max-content">Ftds</th>
+          <th style="text-align: center; width: max-content">Cost</th>
+          <th style="text-align: center; width: max-content">CPL</th>
+        </tr>
+        <tr>
+          <td>Google Search</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Google Display</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Google UAC</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Facebook</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Bing</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Orgainc</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>AFF</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>SUM</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </table>
+      <br />
     </div>
-  </body>
-</html>
+  </div>
+</div>

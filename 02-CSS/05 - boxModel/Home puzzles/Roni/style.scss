@@ -1,0 +1,42 @@
+div {
+    border: 1px black solid;
+    padding: 20px;
+    
+}
+.wrapper {
+    margin: auto;
+
+    .box-sticky {
+        position: sticky;
+        top: 0px;
+        background-color: red;
+        border: 1px blue dotted;
+        padding: 2px;
+        .in-sticky{
+            border: none;
+            background-color: red;
+        }
+    }
+    .box-fixed{
+        position: fixed;
+        background-color: lightblue;
+        border-radius:50%;
+        right: 2px;
+        bottom: 2px;
+        .in-fixed{
+            border: none;
+            background-color: lightblue;
+            margin: 2px;
+            padding: 0px;
+        }
+    }
+    .box-relative{
+        height: 60px;
+        
+        .in-relative{
+            width: 15%;
+            float: right;
+        }
+    }
+    
+}
