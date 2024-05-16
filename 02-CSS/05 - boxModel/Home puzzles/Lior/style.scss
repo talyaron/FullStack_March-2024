@@ -1,0 +1,78 @@
+div {
+    border: 1px black solid;
+    padding: 20px;
+    }
+
+.wrapper{
+   margin: auto;
+   border: none;
+
+   .box-sticky{
+     position: sticky;
+     top: 0px;
+     background-color: rgb(87, 93, 140);
+     border: 2px rgb(171, 171, 232) solid;
+     padding: 2px;
+     img {
+        height: 50px;
+        padding: 5px 10px;  
+     }
+     .icons{
+        float: left;
+        padding:2px;
+        border: none;
+     }
+   }
+
+   .box-fixed{
+    width: 50px;
+     position: fixed;
+     background-color: rgb(87, 93, 140);
+     border-radius:50%;
+     left: 31px;
+     bottom: 2px;
+     .in-fixed{
+        border: none;
+        background-color:rgb(87, 93, 140);
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 2px;
+        padding: 0px;
+        text-align: center;
+     }
+    }
+
+    .box-relative{
+        height: 80px;
+        position: relative;
+        
+        .absolute-one{
+            width: 20px;
+            background-color: rgb(37, 112, 158);
+            position: absolute;
+            right: 200px;
+        }
+        .absolute-two{
+            width: 20px;
+            background-color: rgb(101, 119, 194);
+            position: absolute;
+            right: 100px;
+            top:50px;
+        }
+        .absolute-three{
+            width: 20px;
+            background-color: rgb(37, 82, 165);
+            position: absolute;
+            right: 300px;
+            top:50px;
+        }
+        .absolute-four{
+            width: 20px;
+            background-color: rgb(116, 150, 175);
+            position: absolute;
+            right: 400px;
+            
+        }
+    }
+
+   }
