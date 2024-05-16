@@ -1,5 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 #icon {
@@ -8,6 +9,14 @@ body {
     margin-left: auto;
     height: 50px;
 
+}
+
+.Accessibility_icon{
+    height: 60px;
+    position:fixed;
+    left: 40px;
+    bottom: 200px;
+    
 }
 
 .menu {
@@ -53,6 +62,7 @@ body {
             background-color: red;
             height: 180px;
             width: px;
+            margin-bottom: 10px;
 
             .content_item1 {
                 padding: 0px 15px 15px;
