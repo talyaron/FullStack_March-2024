@@ -1,0 +1,40 @@
+body {
+    background-color: #000;
+    margin: 0;
+    height: 100vh;
+}
+.news {
+    // width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #fff;
+    align-items: center;
+
+    img {
+        width: 100%;
+    }
+
+    .news-preview {
+        width: 300px;
+        margin: 10px;
+        background-color: #2c2a2a;
+        transition: 0.2s;
+
+        h2, p {
+            padding-inline: 10px;
+            text-align: right;
+        }
+
+        h2 {
+            color: #a338b6;
+        }
+
+
+    }
+
+    .news-preview:hover {
+        width: 370px;
+        margin: 0;
+    }
+}
