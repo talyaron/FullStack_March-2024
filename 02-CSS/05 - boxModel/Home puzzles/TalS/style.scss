@@ -1,0 +1,92 @@
+$artimg : 5px;
+img{
+    border-radius: 5%;
+}
+.main{
+    max-width: 60%;
+    margin-left: 25%;
+    border: 3px black solid;
+}
+h3, p{
+    margin-left: 15px;
+}
+.hl,.local,.world,.ds{
+    margin-top: 0px;
+    font-size: 1.3rem;
+}
+h1{
+    background-color: rgb(11, 11, 222);
+    color: white;
+    margin: 0px;
+    text-align: center;
+    font-size: 4rem;
+}
+h2{
+    background-color: rgb(231, 6, 6);
+    border: 10px solid rgb(231, 6, 6);
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 2rem;
+    margin-top: 5px;
+}
+.art1, .art2{
+    display: flex;
+    flex-direction: row;
+}
+.art1 img{
+    margin-left: $artimg;
+    margin-top: $artimg;
+    height: 300px;
+    width: 450px;
+}
+.art2 img{
+    margin-left: $artimg;
+    margin-top: $artimg;
+    height: 150px;
+    width: 275px;
+}
+.txt1{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+.lobster-regular, h1 {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.footer{
+    background-color: rgb(98, 96, 96);
+}
+.navbar{ 
+ul{
+    list-style-type:none;
+    background-color:rgb(98, 96, 96);
+    margin: auto;
+    overflow: hidden;
+    padding-left: 0px;
+    font-size: 1.5rem;
+}
+a{
+    color: white ;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+a:hover{
+    background-color: rgb(36, 36, 36);
+}
+li{
+    float: left;
+}
+}
+.sidebar-right{
+    display: block;
+    position: relative;
+    right: 100;
+}
+
+  
