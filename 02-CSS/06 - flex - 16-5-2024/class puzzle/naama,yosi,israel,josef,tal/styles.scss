@@ -2,9 +2,12 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding: 10px;
+    
     .images{
         background-color: lightblue;
-        width: 100px;
+        width: 200px;
+        
         img{
             width: 100%;
         }
