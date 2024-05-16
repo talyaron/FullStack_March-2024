@@ -45,9 +45,10 @@ div {
         position: relative;
         
         .flash-news{
-            position: relative;
+            position: absolute;
             bottom: 100px;
-            display: inline;
+            display: block;
+            width: 30%;
             
         }
         
