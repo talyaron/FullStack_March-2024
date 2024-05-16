@@ -1,0 +1,32 @@
+nav {
+    background-color: red;
+    position: sticky;
+    top: 0px;
+}
+.hot {
+    width: 50%;
+    
+    h3 {
+        background-color: blue;
+    }
+    .hotter{
+        display: flex;
+        .mini {
+            //tanya
+            /*position: absolute;
+            top: 0;
+            left: 0;
+            background-color: red; 
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;*/
+            //idk
+            width: 30%;
+            img{
+                width: 100%;
+            }
+            margin: 5px;
+            //flex: 1;
+        }
+    }
+}
