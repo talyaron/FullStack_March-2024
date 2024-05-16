@@ -1,0 +1,184 @@
+div {
+    border: 1px black solid;
+    padding: 20px;
+}
+.wrapper {
+    margin: auto;
+    width: 1000px;
+    
+    .page-logo{
+        border: none;
+        text-align: center;
+    }
+    .box-sticky {
+        position: sticky;
+        top: 0px;
+        background-color: red;
+        border: 1px blue dotted;
+        padding: 2px;
+        z-index: 1;
+
+        .in-sticky{
+            border: none;
+            color: white;
+            background-color: red;
+            font-weight: bold;
+            font-size: larger;
+            :hover{
+                color: gray;
+                
+            }
+        }
+        .relative-sticky{
+            width: 5%;
+            position: relative;
+            float: inline-end;
+            bottom: 20px;
+            border: none;
+            color: white;
+            
+            
+    }
+    
+}
+    .flash{
+        position: relative;
+        
+        .flash-news{
+            position: absolute;
+            bottom: 100px;
+            display: block;
+            width: 30%;
+            
+        }
+        
+
+    }
+    .box-fixed{
+        position: fixed;
+        background-color: lightblue;
+        border-radius:50%;
+        right: 2px;
+        bottom: 2px;
+        .in-fixed{
+            border: none;
+            background-color: lightblue;
+            margin: 2px;
+            padding: 0px;
+        }
+    }
+    .box-relative{
+        height: 60px;
+        .in-relative{
+            width: 15%;
+            float: right;
+        }
+    }
+    .first-artcl{
+        position: relative;
+        img{
+            float: inline-end;
+            height: 300px;
+        }
+        .txt1{
+            width: 40%;
+            position: relative;
+            right: 10px;
+            border: none;
+        }
+        
+    }
+    .ad-section{
+        position: relative;
+        img{
+            float: inline-end;
+            height: 250;
+        }
+        .AD-artcl{
+            width: 70%;
+            border: none;
+        }
+        .artcl1 {
+            position: relative;
+            img{
+                object-fit: contain;
+                width: 30%;
+        
+            }}
+        .artcl2 {
+            position: relative;
+            img{
+                object-fit: contain;
+                width: 30%;
+            
+            }
+        }
+        .artcl3{
+            background-color: beige;
+        }
+        .artcl4{
+            background-color: brown;
+        }
+    }
+    .two-box{
+        height: 200px;;
+        text-align: center;
+        .right-box{
+            position: relative;
+            width: 45%;
+            float: inline-end;
+            margin: 0px;
+            .calcalist{
+                position: absolute;
+                right: 40px;
+                border: none;
+                
+                border-radius: 90%;
+                width: 50px;
+                background-color: rgb(254, 22, 22);
+                color: white;
+                font-weight: bold;
+                bottom: 20px;
+                height: 1px;
+                
+            }
+            .in-right{
+                
+                float: inline-end;
+                width: 20%;
+                
+                
+            }
+            
+        }
+        .left-box{
+            position: relative;
+            width: 45%;
+            float: inline-end;
+            
+            .in-left{
+                
+                float: inline-end;
+                width: 20%;
+                
+            }
+        }
+    }
+    .img-box{
+        background-color: rgba(0, 0, 0, 0.689);
+        .img-box-logo{
+            text-align: center;
+            border: none;
+            padding: 0px;
+            img{
+                width: 15%;
+            }
+        }
+        img{
+            width: 30%;
+            object-fit: contain;
+            padding: 15px;
+        }
+    }
+
+}

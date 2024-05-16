@@ -1,0 +1,274 @@
+// html {
+//     box-sizing: border-box;
+// }
+
+body {
+    margin: auto;
+    font: 15px/22px Arial,Helvetica,sans-serif;
+    max-width: 1200px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+h1, h2, h3 {
+    font-family: "Suez One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+
+    .logo {
+        height: 70px;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+}
+
+.mobile-menu {
+    display: none;
+
+    i {
+        font-size: 4em;
+        color: black;
+    }
+}
+
+.button-box {
+    padding: 5px;
+    display: flex;
+
+    img:hover {
+        transform: scale(1.05);
+    }
+
+    img:active {
+        opacity: 0.7;
+    }
+
+    a {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.menu-img {
+    width: 140px;
+    height: 70px;
+}
+
+.left, .right {
+    display: flex;
+    align-items: center;
+}
+
+.left {
+    flex-wrap: wrap;
+}
+
+.mine {
+    display: flex;
+    margin-bottom: 10px;
+
+    .sidebar {
+        padding-right: 10px;
+
+        a {
+            color: black;
+        }
+
+        a:hover {
+            color: #d10202;
+        }
+    }
+
+    ul {
+        padding-inline: 0;
+
+    }
+    li {
+        width: 100%;
+        list-style-type: none;
+        font-family: "Suez One", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        border-bottom: 1px solid darkgray;
+    }
+
+    .social-network {
+        color: #fff;
+        font-size: 1.8em;
+        font-family: "Suez One", serif;
+        font-weight: 400;
+        text-align: center;
+        width: 100%;
+        height: 150px;
+        background-color: #d10202;
+
+        .social-network-icons {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        a {
+            font-size: 2em;
+            color: #fff;
+        }
+    }
+}
+
+
+
+.preview-top-news {
+    display: flex;
+    align-items: end;
+    background-image: url('../images/sport-photo.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    cursor: pointer;
+    color: #fff;
+}
+
+.preview-top-news:hover {
+    color: lightgray;
+
+}
+
+.title-preview-top-news {
+    width: 100%;
+    align-items: end;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    h1 {
+    font-size: 180%;
+    margin: 20px 0;
+    }
+}
+
+.news > h1 {
+    background-color: rgb(75, 12, 12);
+    padding: 10px 20px;
+    margin: 0;
+    color: white;
+}
+
+.news {
+
+    .news-preview {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.body-news {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: solid 1px gray;
+
+    .news-photo-preview {
+        a{
+            display: block;
+            height: 100%;
+            background-image: url("../images/news-photo.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            i {
+                font-size: 2em;
+                position: relative;
+                top: 2%;
+                right: 5%;
+                text-shadow: 0 0 0.3em black;
+            }
+
+        }
+
+        a:hover {
+            i {
+                text-shadow: none;
+                opacity: 0.8;
+            }
+        }
+    }
+
+    // .news-photo-preview:hover {
+    //     opacity: 0.9;
+    // }
+
+    .comment-button {
+        background-image: url("../images/comment-button.svg");
+        background-repeat: no-repeat;
+        width: 43px;
+        height: 30px;
+        text-align: center;
+        color: #d10202;
+        font-weight: 600;
+    }
+}
+
+.text-news {
+    padding: 0 20px;
+
+    a:hover {
+        font-weight: 700;
+    }
+
+    p {
+        display: block;
+        max-height: 250px;
+    }
+}
+
+.news-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .time {
+        font-size: 85%;
+        color: gray;
+    }
+}
+
+footer {
+    background-color: rgb(75, 12, 12);
+    color: white;
+    padding: 0 20px;
+    font-size: 80%;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media screen and (max-width: 992px) {
+    .full-screen {
+        display: none;
+    }
+
+    .preview-top-news {
+        height: 600px;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
