@@ -1,5 +1,6 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 #icon {
@@ -10,68 +11,143 @@ body{
 
 }
 
+.Accessibility_icon{
+    height: 60px;
+    position:fixed;
+    left: 40px;
+    bottom: 200px;
+    
+}
+
 .menu {
     display: flex;
-    height:40px ;
+    height: 40px;
     background-color: red;
     align-items: center;
     justify-content: space-around;
 
-    a{
+    a {
         color: white;
         font-size: large;
         text-decoration: none;
-        
+
     }
-    
-    
-    
+
+
+
 }
 
-.wrapper2{
+.wrapper2 {
     display: flex;
     margin-top: 30px;
 
-    
 
-    
 
-    .items{
-        
-        border: 2px solid;        
+
+
+    .items {
+
         width: 76%;
-        height: 1000px;
 
-        a{
+        a {
             color: white;
-        font-size: large;
-        text-decoration: none;
+            font-size: large;
+            text-decoration: none;
         }
 
-        
-        
-        .item{
+
+
+        .item {
             display: flex;
             background-color: red;
+            height: 180px;
+            width: px;
+            margin-bottom: 10px;
 
-            .content_item1{
+            .content_item1 {
                 padding: 0px 15px 15px;
                 color: white;
-                
 
+
+            }
+
+            .img_item1{
+                height: 180px;
+                width: 320px;
+                object-fit: cover
             }
         }
 
+    }
+
+    .favorititems {
+        width: 24%;
+        margin-right: 5px;
+
+        .favorititems_title{
+            height: 35px;
+            background-color: blue;
+            font-size: large;
+            color: white;
+            text-align: center;
+            padding-top: 10px;
+            margin-bottom: 10px;
+            
+
+        }
+        
+
+        .good_item_wrapper{
+            border-bottom: 1px solid rgb(128, 128, 128);
+            padding-bottom: 5px;
+
+            .good_items{
+                display: flex;
+    
+                img{
+                    width: 150px;
+                    height: 100px;
+                }
+    
+                h4{
+                    padding-right: 10px;
+                }
+    
+                
+            }
+    
+            h6{
+                padding-right: 10px;
+                margin: 10px 0px 10px 10px;
+            }
+    
+            a{
+                padding-right: 10px;
+                color: black;
+                text-decoration: none;
+                
+    
+            }
+
         }
 
-        .favorititems{
-            border: 2px solid;
-            width: 24%;
-            height: 1000px;
-        }   
 
-    
+        
+    }
+
+
 }
 
 
+.Details{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(0, 255, 255);
+    margin-top: 30px;
+    border-top: 2px solid;
+    padding-right: 20px;
 
+    a{
+        text-decoration: none;
+    }
+}
