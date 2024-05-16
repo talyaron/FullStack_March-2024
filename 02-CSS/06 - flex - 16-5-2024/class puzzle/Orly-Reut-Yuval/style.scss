@@ -1,0 +1,25 @@
+.container{
+    background-color: black;
+    display: flex;
+    gap:5px;
+    align-items: center;
+
+    flex-wrap:nowrap;
+    justify-content: space-between;
+
+    
+    .box{
+        background-color: gray;
+        text-align: right;
+        p{
+            color: palevioletred;
+        }
+        h2{
+            color: white;
+        }
+        img{
+            width: 100%;
+            
+        }
+    }
+}
