@@ -20,6 +20,7 @@ div {
 
         .in-sticky{
             border: none;
+            color: white;
             background-color: red;
             font-weight: bold;
             font-size: larger;
@@ -47,6 +48,7 @@ div {
             position: relative;
             bottom: 100px;
             display: inline;
+            
         }
         
 
@@ -75,6 +77,7 @@ div {
         position: relative;
         img{
             float: inline-end;
+            height: 300px;
         }
         .txt1{
             width: 40%;
@@ -88,9 +91,11 @@ div {
         position: relative;
         img{
             float: inline-end;
+            height: 250;
         }
         .AD-artcl{
             width: 70%;
+            border: none;
         }
         .artcl1 {
             position: relative;
@@ -98,11 +103,14 @@ div {
                 object-fit: contain;
                 width: 30%;
         
+            }}
+        .artcl2 {
+            position: relative;
+            img{
+                object-fit: contain;
+                width: 30%;
+            
             }
-
-        }
-        .artcl2{
-            background-color: black;
         }
         .artcl3{
             background-color: beige;
@@ -126,7 +134,9 @@ div {
                 
                 border-radius: 90%;
                 width: 50px;
-                background-color: pink;
+                background-color: rgb(254, 22, 22);
+                color: white;
+                font-weight: bold;
                 bottom: 20px;
                 height: 1px;
                 
