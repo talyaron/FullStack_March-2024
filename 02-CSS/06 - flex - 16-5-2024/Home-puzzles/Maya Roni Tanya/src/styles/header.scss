@@ -10,7 +10,7 @@ body {
 }
 header {
     height: 190px;
-    background-color: lightgrey;
+    background-color: #e8e8e8;
 
     nav {
       height: 65px;
@@ -23,6 +23,7 @@ header {
       padding-right: 0;
       flex-wrap: nowrap;
       align-items: center;
+      z-index: 1000;
       img {
         margin-right: 0.3125rem;
         width: 8.75rem;
