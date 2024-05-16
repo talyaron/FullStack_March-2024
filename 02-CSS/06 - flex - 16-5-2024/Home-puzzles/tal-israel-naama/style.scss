@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(255, 247, 235);
+    .header{
+        background-color: aqua;
+        display: flex;
+        justify-content: space-between;
+        .lefthead{
+            width: 33%;
+            background-color: rebeccapurple;
+            
+        }
+        .middlehead{
+            width: 33%;
+            background-color: brown;
+            img{
+                width: 100%;
+            }
+        }
+        .righthead{
+            width: 33%;
+            background-color: chartreuse;
+            img{
+                mix-blend-mode: multiply;
+            }
+            .redline{
+                color: red;
+                border-width: 2px;
+                margin: 0;
+            }
+        }
+    }
+    
+}
