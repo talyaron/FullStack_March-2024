@@ -1,0 +1,114 @@
+
+:root {
+  --color-dark-1: #000000;
+  --color-dark-2: #b8c2ce;
+  --color-light-1: #ffffff;
+  --color-light-2: #ebeef3;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.6rem;
+  background-color: whitesmoke;
+}
+
+.logo {
+  font-family: Brush Script MT;
+  margin: auto;
+  font-size: 5.2rem;
+  color: blue;
+  position: fixed;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 114rem;
+  margin: auto;
+  padding: 0rem 1.5rem;
+
+}
+
+/* Navbar */
+.nav {
+  width: 100%;
+  height: 8rem;
+  background-color: rgb(151, 95, 151);
+  position: fixed;
+}
+
+.nav_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_list {
+  display: flex;
+}
+
+.nav_item {
+  margin: 0rem 0.5rem;
+}
+
+.nav_link {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  color:var(--color-dark-1)
+}
+
+.btn {
+  padding: 1rem 2rem;
+}
+
+.nav_btn {
+  border-radius: 0.5rem;
+  background-color: var(--color-dark-2);
+  color: var(--color-dark-1)
+
+}
+
+.header_container {
+  width: 100%;
+  display: grid;
+  grid-gap: 6rem;
+  grid-template-columns: repeat(auto-fit,minmax(52rem, 1fr))
+
+}
+.header_left {
+  align-self: left;
+  font-weight: bold;
+  border-width: 10px;
+  padding-inline: 30px;
+  width: 75rem;
+ 
+}
+
+.header_btn {
+  background-color: var(--color-dark-2)
+}
+
+.header_right {
+  justify-self: right;
+  width: 25rem;
+  height: 20rem;
+  position: absolute;
+  font-size: 20px;
+  top: 150px;
+
+}
+
