@@ -1,0 +1,34 @@
+.center {
+  display: block;
+  margin: auto;
+  border: 2px solid rgb(0, 1, 10);
+}
+
+body {
+//   background-color: rgba(211, 194, 190, 0.959);
+    background-color: black;
+  color: rgb(3, 4, 15);
+  background-image: url("https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/science/global-international-connections.jpg");
+
+  background-size: cover;
+  
+}
+
+li {
+  text-decoration: underline;
+  text-decoration-color: rgb(161, 0, 0);
+  font-size: larger;
+}
+
+p {
+  text-align: center;
+}
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: rgb(144, 194, 235);
+  padding: 50px;
+  font-size: 20px;
+}
