@@ -1,21 +1,70 @@
 div {
     border: 1px black solid;
     padding: 20px;
-    
+}
+body {
+    background-color: rgb(247, 244, 240);
 }
 .wrapper {
+    border: none;
     margin: auto;
-
+    width:800px;
+    background-color: rgb(242, 249, 249);
+    
+    .page-logo{
+        border: none;
+        text-align: center;
+        padding: 0px;
+        img{
+            width: 15%;
+        }
+    }
     .box-sticky {
         position: sticky;
         top: 0px;
-        background-color: red;
-        border: 1px blue dotted;
+        background-color: rgb(215, 232, 243);
         padding: 2px;
+        z-index: 1;
+
         .in-sticky{
             border: none;
-            background-color: red;
+            background-color: rgb(204, 231, 232);
+            font-weight: bold;
+            font-size: larger;
+            :hover{
+                color: gray;
+                
+            }
         }
+        .relative-sticky{
+            width: 5%;
+            position: relative;
+            float: inline-end;
+            bottom: 20px;
+            border: none;
+            color: white;
+            
+            
+    }
+    
+}
+    .flash{
+        position: relative;
+        background-color: rgb(206, 232, 242);
+        }
+        .flash-news{
+            position: relative;
+            display: inline;
+            border: none;
+            padding: 7px;
+            img {
+                padding:6px;
+                width: 160px;
+                height: 90px;
+            }
+        }
+        
+
     }
     .box-fixed{
         position: fixed;
@@ -23,20 +72,165 @@ div {
         border-radius:50%;
         right: 2px;
         bottom: 2px;
+        z-index: 1;
         .in-fixed{
             border: none;
             background-color: lightblue;
             margin: 2px;
             padding: 0px;
-        }
+        }}
+    .fixed2 {
+        position: fixed;
+        background-color: rgb(208, 234, 224);
+        border-radius:10%;
+        border: none;
+        left: 10%;
+        top: 30%;
+        z-index: 1; 
+        padding: 5px;
     }
+    
     .box-relative{
         height: 60px;
-        
         .in-relative{
             width: 15%;
             float: right;
         }
     }
+    .first-artcl{
+        position: relative;
+        img{
+            float: inline-end;
+            width: 40%;
+        }
+        .txt1{
+            width: 40%;
+            position: relative;
+            right: 10px;
+            border: none;
+        }
+        
+    }
+    .ad-section{
+        position: relative;
+        img{
+            float: inline-end;
+            width: 35%; 
+        }
+    }
+        .AD-artcl{
+            width: 60%;
+            border: none;
+        }
+        .artcl1 {
+            border: none;
+            background-color: rgb(212, 230, 238);
+            position: relative;
+            img{
+                object-fit: contain;
+                width: 30%;
+            }
+        }
+        .artcl2{
+            background-color: rgb(233, 237, 247);
+            position: relative;
+            border: none;
+            img{
+                object-fit: contain;
+                width: 30%;
+            }
+        }
+        .artcl3{
+            background-color: rgb(233, 249, 237);
+            position: relative;
+            border: none;
+            img{
+                object-fit: contain;
+                width: 30%;
+            }
+        }
+        .artcl4{
+            background-color: rgb(242, 245, 236);
+            position: relative;
+            border: none;
+            img{
+                object-fit: contain;
+                width: 30%;
+            }
+        }
     
-}
+    .two-box{
+        height: 200px;
+        text-align: center;
+        .right-box{
+            img {
+                width: 10%;
+            }
+            position: relative;
+            width: 43%;
+            border: none;
+            float: inline-end;
+            background-color: rgb(255, 255, 255);
+            .calcalist1{
+                transform: rotate(20deg);
+                padding:5px;
+                position: absolute;
+                border: none;
+                border-radius: 95%;
+                width: 17%;
+                background-color: rgb(192, 237, 255);
+                bottom: 5px;
+                height: fit-content; 
+                left: 5px;
+                img{
+                    width:50%;
+                }  
+            }
+            .in-right{
+                float: inline-end;
+                width: 20%;
+            }
+        }
+        .left-box{
+            position: relative;
+            width: 43%;
+            float: inline-start;
+            border: none;
+            background-color: rgb(255, 255, 255);
+            .calcalist2{
+                padding:1px;
+                position: absolute;
+                border: none;
+                border-radius:50%;
+                width: 17%;
+                background-color: rgb(201, 236, 227);
+                bottom: 65%;
+                left: 70%;
+                height: fit-content; 
+                img{
+                    width:50%;
+                }  
+            }
+            .in-left{
+                float: inline-start;
+                width: 20%; 
+            }
+        }
+    }
+    .img-box{
+        background-color: rgba(211, 222, 218, 0.689);
+        .img-box-logo{
+            text-align: center;
+            border: none;
+            padding: 0px;
+            img{
+                width: 15%;
+                border-radius: 90%;
+            }
+        }
+        img{
+            width: 30%;
+            object-fit: contain;
+            padding: 10px;
+        }
+    }
