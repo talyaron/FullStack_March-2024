@@ -1,0 +1,64 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    text-align: center;
+
+    a {
+        color: inherit;
+    }
+
+
+}
+
+header {
+    width: 100%;
+    background-color: #036;
+    border-top: 4px red solid;
+
+
+    .logo {
+        display: block;
+        background-image: url("https://static.foxnews.com/static/orion/styles/img/fox-news/s/logos/fox-news-logo.svg");
+        background-size: cover;
+        height: 100px;
+        width: 98px;
+        border: 3px #fff solid;
+        margin-top: 10px;
+        position: absolute;
+        right: 81%;
+    }
+
+    .nav {
+        max-width: 70%;
+        color: #fff;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        left: 20%;
+    }
+
+    ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style-type: none;
+        // margin-inline: 15px;
+        padding: 10px 15px;
+        transition: 0.2s;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li:hover {
+        background-color: rgb(97, 131, 166);
+        border-radius: 5px;
+    }
+}
