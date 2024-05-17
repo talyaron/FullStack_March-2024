@@ -1,9 +1,14 @@
-footer {
+$color-purple: #DA8EEA;
+$color-black: black;
+$color-white: white;
 
+
+/*      Footer        */
+footer {
     width: 100vw;
     height: 500px;
-    background-color: black;
-    color: white;
+    background-color: $color-black;
+    color: $color-white;
     padding-left: 60px;
 
     .top {
@@ -15,19 +20,20 @@ footer {
         }
 
         .fontsBar {
-            color: #da8eea;
+            color: $color-purple;
             margin-left: 100px;
             font-size: 20px;
+
             .fa-brands {
                 padding-left: 15px;
+
                 &:hover {
                     cursor: pointer;
                 }
             }
-            
         }
     }
-
+/*      Table        */
     table {
         margin-top: 20px;
 
@@ -38,7 +44,7 @@ footer {
                 width: 270px;
 
                 a {
-                    color: white;
+                    color: $color-white;
                     font-size: 15px;
                     line-height: 1.5;
                     text-decoration: none;
@@ -76,7 +82,7 @@ footer {
                 a {
                     font-size: 12px;
                     text-decoration: none;
-                    color: white;
+                    color: $color-white;
 
                     &:hover {
                         text-decoration: underline;
@@ -86,14 +92,14 @@ footer {
         }
     }
 
-    input[type = button] {
+    input[type=button] {
         width: 140px;
         height: 45px;
         margin-top: 20px;
-        border-color: white;
+        border-color: $color-white;
         border-radius: 10px;
-        color: white;
-        background-color: black;
+        color: $color-white;
+        background-color: $color-black;
         cursor: pointer;
     }
 }
