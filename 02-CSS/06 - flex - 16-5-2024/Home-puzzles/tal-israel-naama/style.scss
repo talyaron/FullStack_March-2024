@@ -1,33 +1,91 @@
-body{
+body {
     background-color: rgb(255, 247, 235);
-    .header{
-        background-color: aqua;
+
+    .header {
+
         display: flex;
         justify-content: space-between;
-        .lefthead{
+
+        .lefthead {
             width: 33%;
-            background-color: rebeccapurple;
             
+            .time{
+                 margin-top: 50px;
+                margin-right: 280px;
+                margin-bottom: 15px;
+                font-size: large;
+                font-family: Arial, Helvetica, sans-serif;
+                color: blue;
+                
+                
+            }
+            .lefthead_bottom{
+                
+                float: left;
+            }
+
         }
-        .middlehead{
+
+        .middlehead {
             width: 33%;
-            background-color: brown;
-            img{
+            // background-color: brown;
+
+            img {
                 width: 100%;
             }
         }
-        .righthead{
+
+        .righthead {
             width: 33%;
-            background-color: chartreuse;
-            img{
+            // background-color: chartreuse;
+
+            .righthead_top {
+                display: flex;
+                box-sizing: border-box;
+                padding: 15px 25px 0px;
+
+                a {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 18px;
+                    text-decoration: none;
+                    
+
+                }
+
+                p{
+                    font-family: Arial, Helvetica, sans-serif;
+                    margin: 0;
+                    font-size: large;
+                }
+
+                img {
                 mix-blend-mode: multiply;
+                margin-right: 160px;
+
+                vertical-align: bottom;
+
             }
-            .redline{
-                color: red;
-                border-width: 2px;
-                margin: 0;
+
+
             }
+
+            
+            
+
+            
         }
+
+
+        .redline {
+            color: red;
+            background-color: red;
+            border: 0;
+            height: 2px;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        
+        
     }
-    
 }
