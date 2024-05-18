@@ -49,10 +49,32 @@
     display: flex;
     .articleLeft {
         width: 825px;
+        padding-left: 20px;
         display: flex;
         flex-direction: column;
         margin-top: 0;
+        img {
+            width: 775px;
+        }
     }
+    .articleRight {
+        display: flex;
+        flex-direction: column;
+        .box1 {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            border-bottom: 1px solid #222;
+            width: 390px;
+            img {
+                width: 135px;
+                height: 135px;
+                padding: 10px;
+            }
+           
+        }
+    }
+
 }
 
 
