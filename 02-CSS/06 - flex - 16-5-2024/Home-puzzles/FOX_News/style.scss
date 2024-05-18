@@ -1,3 +1,16 @@
+// The project uses an adaptive grid flexboxgrid2
+// https://github.com/imevro/flexboxgrid2?tab=readme-ov-file
+
+// Breakpoints
+// xs: 0..575px
+// sm: 576..767px
+// md: 768..991px
+// lg: 992..1199px
+// xl: 1200px+
+// .container padding: 8px
+// .container width: $breakpoint - 16px
+// .col-* padding: 8px
+
 $lightgray: rgb(189, 184, 184);
 
 body {
@@ -98,7 +111,6 @@ header {
         }
 
         a:hover {
-            // background-color: transparent;
             opacity: 0.7;
         }
 
