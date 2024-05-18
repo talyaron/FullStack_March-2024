@@ -1,43 +1,66 @@
+$lightgray: rgb(189, 184, 184);
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
-    text-align: center;
+    font-size: 16px;
+    color: #036;
+    // text-align: center;
 
     a {
         color: inherit;
+        text-decoration: none;
     }
 
-
+    h2 {
+        font-size: 1.2em;
+    }
 }
 
 header {
     width: 100%;
-    background-color: #036;
     border-top: 4px red solid;
 
+    h1 {
+        margin: 0;
+        padding: 0;
+        height: 0;
+    }
 
     .logo {
         display: block;
         background-image: url("https://static.foxnews.com/static/orion/styles/img/fox-news/s/logos/fox-news-logo.svg");
-        background-size: cover;
-        height: 100px;
-        width: 98px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 80px;
+        width: 60px;
         border: 3px #fff solid;
-        margin-top: 10px;
-        position: absolute;
-        right: 81%;
+        top: 5px;
+        position: relative;
+        left: 16px;
+    }
+
+    .upper-wrapper {
+        background-color: #036;
+        height: 50px;
+        display: flex;
+    }
+
+    .nav-row {
+        display: table;
     }
 
     .nav {
-        max-width: 70%;
+        max-width: 1042px;
         color: #fff;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: relative;
-        left: 20%;
+        left: 108px;
     }
 
     ul {
@@ -48,17 +71,193 @@ header {
 
     li {
         list-style-type: none;
-        // margin-inline: 15px;
-        padding: 10px 15px;
-        transition: 0.2s;
     }
 
     a {
-        text-decoration: none;
+        padding: 5px 15px;
+        transition: 0.2s;
+        border-radius: 5px;
+        white-space: nowrap;
+        font-weight: 600;
     }
 
-    li:hover {
+    a:hover {
         background-color: rgb(97, 131, 166);
+    }
+
+    .meta {
+        display: flex;
+
+        .log-in {
+            background-color: rgb(97, 131, 166);
+            margin-inline: 10px;
+        }
+
+        .watch-tv {
+            background-color: red;
+        }
+
+        a:hover {
+            // background-color: transparent;
+            opacity: 0.7;
+        }
+
+        #search {
+            padding-inline: 0;
+        }
+    }
+
+    .trending {
+        height: 55px;
+        width: 100%;
+        border-bottom: 1px $lightgray solid;
+    }
+}
+
+main {
+    display: flex;
+    padding-top: 22px;
+
+    .top-news {
+        border-right: 1px $lightgray solid;
+        display: flex;
+        flex-wrap: wrap;
+
+        img {
+            width: 100%;
+        }
+        .first-news {
+            display: flex;
+
+            h2 {
+                margin-left: 8px;
+                font-size: calc(1.1em + 1vw);
+
+            }
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+    img {
         border-radius: 5px;
+    }
+
+    .news-homepage {
+        border-bottom: 1px $lightgray solid;
+        padding-top: 8px;
+        padding-bottom: 22px;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    .sidebar {
+
+        .sidebar-table{
+            position: sticky;
+            top: 0;
+            border: 1px $lightgray solid;
+            border-radius: 5px;
+            box-shadow: 0 0 5px $lightgray;
+
+            .line {
+                padding: 10px 20px;
+                display: flex;
+                border-bottom: 1px $lightgray solid;
+                align-items: center;
+            }
+
+            .icon {
+                width: 42px;
+                height: 42px;
+                background-image: url("../images/logo1.png");
+                background-size: cover;
+                margin-right: 20px;
+            }
+
+            .title-icon {
+                h6, p {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                h6 {
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                }
+                p {
+                    font-size: 0.7em;
+                    color: darkgray;
+                }
+            }
+
+            #active {
+                border-left: 4px red solid;
+                border-top-left-radius: 4px;
+                padding-left: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+
+    #nav {
+        max-width: 834px;
+    }
+
+    #first-news {
+        display: block;
+    }
+
+    #first-photo {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .sidebar, #link-world, #link-option{
+        display: none;
+    }
+
+    #nav {
+        max-width: 602px;
+    }
+
+    #top-news {
+        border-color: transparent;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #link-us, #link-politics{
+        display: none;
+    }
+
+    #nav {
+        width: 410px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #link-media, #link-more{
+        display: none;
+    }
+
+    #upper-wrap-wrapper, #nav-row{
+        width: 100%;
+    }
+    #nav {
+        display: flex;
+        justify-content: end;
+        width: auto;
+        position: static;
+        padding-right: 8px;
     }
 }
