@@ -3,7 +3,13 @@ body {
     display: block;
     font-family: Arial;
     font-size: 10px;
-
+    margin: 0;
+    padding: 0;
+    
+    // .page{
+    //     margin: 0 12%;
+    // } 
+    // need to discuss. *daily on sunday
     .header {
 
         display: flex;
@@ -92,5 +98,28 @@ body {
 
         
         
+    }
+}
+
+.main-headline{
+    background-color: #35479b;
+    width: 666px;
+    min-height: 336px;
+    color: white;
+    
+    margin-right: 10px;
+    border-radius: 5%;
+
+    h2{
+        margin: 0;
+        padding: 0;
+        margin-right: 10px;
+        font-size: 33px;
+    }
+    p{
+        margin: 0;
+        padding: 0;
+        margin-right: 10px;
+        font-size: 20px;
     }
 }
