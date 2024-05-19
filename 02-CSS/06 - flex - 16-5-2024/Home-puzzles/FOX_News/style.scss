@@ -11,14 +11,18 @@
 // .container width: $breakpoint - 16px
 // .col-* padding: 8px
 
-$lightgray: rgb(189, 184, 184);
+
+
+// ----------------------------------------------------------
+// body and header code
+
+$lightgray: rgb(189, 184, 184); // line color
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family:  Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     font-size: 16px;
     color: #036;
-    // text-align: center;
 
     a {
         color: inherit;
@@ -53,6 +57,24 @@ header {
         position: relative;
         left: 16px;
     }
+
+    #clock-wrapper {
+        position: relative;
+        left: 19px;
+        bottom: 14px;
+        width: 90px;
+        height: 16px;
+        background-color: red;
+        text-align: center;
+        font-size: 0.25em;
+        font-weight: bold;
+        color: #fff;
+        font-family: 'Titillium Web', sans-serif;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+
+
 
     .upper-wrapper {
         background-color: #036;
@@ -117,6 +139,10 @@ header {
         #search {
             padding-inline: 0;
         }
+
+        #search:hover {
+            background-color: transparent;
+        }
     }
 
     .trending {
@@ -125,6 +151,9 @@ header {
         border-bottom: 1px $lightgray solid;
     }
 }
+
+// -------------------------------------------------------
+// content code
 
 main {
     display: flex;
@@ -213,6 +242,9 @@ main {
         }
     }
 }
+
+//-----------------------------------------------
+// working with Breakpoints
 
 @media screen and (max-width: 1199px) {
 
