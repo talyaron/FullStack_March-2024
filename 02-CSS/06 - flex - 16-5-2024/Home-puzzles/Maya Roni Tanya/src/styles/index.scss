@@ -6,11 +6,11 @@ $color-purple: #DA8EEA;
 $color-black: black;
 $color-white: white;
 
-
 /*      Article        */
 article {
     margin-left: 40px;
     margin-bottom: 100px;
+    
     h2 {
         display: block;
         margin-bottom: 0;
@@ -40,61 +40,27 @@ article {
         margin-top: 260px;
         width: 95%;
     }
-    h1.gratsh1 {
-        font-family: $font-family-secondary;
-        font-weight: bold;
-        font-size: 100px;
-        margin-left: 40x;
-        letter-spacing: 10px;
-        width: 100vw;
-    }
+    
     .grats {
         padding-top: 30px;
-        position: relative;
-        display: flex;
-        width: 775px;
-         .left{
-            z-index: -1;
-            margin-top: -30px;
-            flex-direction: column;
-         img {
-            position: relative;
-            margin-top: -20px;
-            width: 775px;
+        
+        h1 {
+            font-family: $font-family-secondary;
+            font-weight: bold;
+            font-size: 100px;
         }
         
-         p {
-           font-size: 20px; 
+        img {
+            position: relative;
+            margin-top: -20px;
+            z-index: -1;
+            width: 785px;
+        }
+        
+        p {
+           font-size: 30px; 
            text-decoration: underline;
            text-decoration-color: $color-purple;
-        }
-
-        h2 {
-            font-size: 60px;
-            font-family: $font-family-main;
-            letter-spacing: 3px;
-        }
-    }
-        .right {
-            display: flex;
-            flex-direction: column;
-            z-index: -1;
-            margin-left: 10px;
-            margin-top: -58px;
-            & .box1 {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                align-content: center;
-                border-bottom: 1px solid #222;
-                width: 390px;
-                img {
-                    width: 135px;
-                    height: 135px;
-                    padding: 10px;
-                }
-               
-            }
         }
     }
     
