@@ -5,25 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/style.css">
     <title>Fox News - Breaking News Updates | Latest News Headlines | Photos & News Videos</title>
+    <!-- add to site - boxicons link --><link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- add to site - flex box grid link --><link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.css">
+    <!-- add to site - favicon link --><link rel="icon" type="image/png" href="//static.foxnews.com/static/orion/styles/img/fox-news/favicons/favicon-32x32.png" sizes="32x32">
+    <!-- add to site - js script for the clock --><script type="text/javascript" src="./scripts/clock.js"></script>
 </head>
 <body>
-    <!-- beginning of the site header code -->
+    <!-- start of the site header code -->
     <header>
-        <a class="logo" href="#"></a>
-        <div class="nav">
-            <ul>
-                <li><a href="#">U.S</a></li>
-                <li><a href="#">Politics</a></li>
-                <li><a href="#">World</a></li>
-                <li><a href="#">Opinion</a></li>
-                <li><a href="./media/media.html">Media</a></li>
-                <li><a href="#">More ⋮</a></li>
-            </ul>
-            <div class="meta">
-
+        <h1 class="container">
+            <a class="logo" href="#"></a>
+            <div id="clock-wrapper">
+                <div id="clock"></div>
+            </div>
+        </h1>
+        <div class="upper-wrapper">
+            <div class="container" id="upper-wrap-wrapper">
+                <div class="nav-row container" id="nav-row">
+                    <div class="nav" id="nav">
+                        <ul>
+                            <li><a id="link-us" href="#">U.S</a></li>
+                            <li><a id="link-media" href="">Media</a></li>
+                            <li><a id="link-politics" href="#">Politics</a></li>
+                            <li><a id="link-world" href="./world/world.html">World</a></li>
+                            <li><a id="link-option" href="#">Opinion</a></li>
+                            <li><a id="link-more" href="#">More ⋮</a></li>
+                        </ul>
+                        <div></div>
+                        <div class="meta">
+                            <a id="search" href="#"><i class='bx bx-search'></i></a>
+                            <a class="log-in" href="#">Log in</a>
+                            <a class="watch-tv" href="#">Watch TV</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="trending">
+
+        </div>
     </header>
+
     <!-- end of site header code -->
+
+    <main class="container">
+        <div class="top-news col-lg-9" id="top-news">
+            <div class=" first-news news-homepage col-lg-12" id="first-news">
+                <a id="first-photo" href="#"><img src="./images/photo-top-news.webp" alt=""></a>
+                <h2><a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, nobis!</a></h2>
+            </div>
+            <div class="news-homepage col-sm-12 col-md-6 col-xl-4">
+                <a href="#">
+                    <img src="./images/photo1.webp" alt="">
+                </a>
+                <h2><a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, nobis!</a></h2>
+            </div>
+            <div class="news-homepage col-sm-12 col-md-6 col-xl-4">
+                <a href="#">
+                    <img src="./images/photo2.webp" alt="">
+                </a>
+                <h2><a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, nobis!</a></h2>
+            </div>
+            <div class="news-homepage col-sm-12 col-md-6 col-xl-4">
+                <a href="#">
+                    <img src="./images/photo3.webp" alt="">
+                </a>
+                <h2><a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, nobis!</a></h2>
+            </div>
+            <div class="news-homepage col-sm-12 col-md-6 col-xl-4">
+                <a href="#">
+                    <img src="./images/photo4.webp" alt="">
+                </a>
+                <h2><a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, nobis!</a></h2>
+            </div>
+            <div class="news-homepage col-sm-12 col-md-6 col-xl-4">
+                <a href="#">
+                    <img src="./images/photo5.webp" alt="">
+                </a>
+                <h2><a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, nobis!</a></h2>
+            </div>
+            <div class="news-homepage col-sm-12 col-md-6 col-xl-4">
+                <a href="#">
+                    <img src="./images/photo6.webp" alt="">
+                </a>
+                <h2><a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, nobis!</a></h2>
+            </div>
+        </div>
+        <div class="sidebar col-lg-3" id="sidebar">
+            <div class="sidebar-table">
+                <a href="#">
+                    <div class="line" id="active">
+                        <div class="icon">
+                        </div>
+                        <div class="title-icon">
+                            <h6>Fox News Live</h6>
+                            <p>Free to watch</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="line">
+                        <div class="icon">
+                        </div>
+                        <div class="title-icon">
+                            <h6>Fox News Live</h6>
+                            <p>Free to watch</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="line">
+                        <div class="icon">
+                        </div>
+                        <div class="title-icon">
+                            <h6>Fox News Live</h6>
+                            <p>Free to watch</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="line">
+                        <div class="icon">
+                        </div>
+                        <div class="title-icon">
+                            <h6>Fox News Live</h6>
+                            <p>Free to watch</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- start of site footer code -->
+
+    <footer>
+        <div class="footer-inner container">
+            <div class="footer-icon-list">
+                <ul>
+                    <li><a id="facebook" href="#"><i class='bx bxl-facebook'></i></a></li>
+                    <li><a id="instagram" href="#"><i class='bx bxl-instagram' ></i></a></li>
+                    <li><a id="youtube" href="#"><i class='bx bxl-youtube' ></i></a></li>
+                    <li><a id="linkedin" href="#"><i class='bx bxl-linkedin-square' ></i></a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- end of site footer code -->
+
 </body>
 </html>
