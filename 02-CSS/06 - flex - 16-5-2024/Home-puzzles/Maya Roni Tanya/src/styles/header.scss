@@ -18,8 +18,9 @@ body {
 
 /*      Header        */
 header {
-  height: 65px;
+  height: 190px;
   background-color: #e8e8e8;
+
   nav {
     height: 65px;
     position: relative;
@@ -115,9 +116,4 @@ header {
       align-items: center;
     }
   }
-}
-
-.filler {
-  height: 125px;
-  background-color: #e8e8e8;;
 }
