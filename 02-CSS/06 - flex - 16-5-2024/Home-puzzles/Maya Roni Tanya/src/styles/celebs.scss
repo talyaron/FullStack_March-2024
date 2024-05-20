@@ -165,7 +165,7 @@ img {
     color: white;
 h1 {
     font-size: 500%;
-    margin-bottom: 1px;
+    margin-bottom: -60px;
     margin-right: 500px;
 }   
 .box3 {
@@ -213,6 +213,15 @@ img {
 }
 
 }
+.container5{
+    padding: 5%;
+    h2 {
+        font-size: xx-large;
+    }
+    img {
+        margin-left: 3.5%;
+    }
+}
 .Ad-break2 {
     text-align: center;
     background-color: black;
@@ -220,4 +229,33 @@ img {
     img {
         width: 30%;
     }
+}
+.container6{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content:center;
+    background-color: black;
+    color: white;
+h1 {
+    font-size: 500%;
+    margin-bottom: -60px;
+    margin-right: 500px;
+}   
+.box6 {
+display: flex;
+flex-direction: column;
+justify-content:center;
+    h4{
+       text-align: center;
+       word-wrap: break-word;
+       font-size: 70%;
+}
+
+img {
+            width: 250px;
+            height: auto;
+            padding: 10px;
+        }
+}
 }
