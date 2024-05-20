@@ -1,0 +1,13 @@
+.wrapper{
+    display: grid;
+    
+    grid-template-columns: 300px 100px;
+    grid-template-rows: 200px 100px;
+    gap: 100px;
+    .someclas{
+        background-color: rgb(122, 161, 60);
+        border-color: black;
+    border: 50px;
+
+    }
+}
