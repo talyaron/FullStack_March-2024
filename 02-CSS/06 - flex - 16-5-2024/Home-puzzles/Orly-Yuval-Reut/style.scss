@@ -80,7 +80,22 @@
             flex-direction: row;
             justify-content: center;
             padding-top: 80px;
-            padding-bottom: 500px;
+            padding-bottom: 200px;
+            gap: 80px;
+            box{
+                width: 500px;
+                
+                img{
+                    width: 500px;
+                }
+            }
+        }
+        .must-read-section{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-top: 80px;
+            
             gap: 80px;
             box{
                 width: 500px;
