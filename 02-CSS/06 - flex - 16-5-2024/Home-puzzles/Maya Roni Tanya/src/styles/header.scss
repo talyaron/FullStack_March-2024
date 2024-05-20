@@ -1,0 +1,119 @@
+$font-family-main: 'RundDisplay', 'RundDisplay-fallback', 'RundDisplay-weightbold-roboto', 'RundDisplay-weightbold-local', Helvetica, Arial, Sans-serif;
+$color-purple: #DA8EEA;
+$color-black: black;
+$color-white: white;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-main;
+  font-weight: bold;
+  line-height: 1.15;
+  overflow-x: hidden;
+}
+
+/*      Header        */
+header {
+  height: 190px;
+  background-color: #e8e8e8;
+
+  nav {
+    height: 65px;
+    position: relative;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background-color: $color-black;
+    margin: 0 auto;
+    padding: 0;
+    flex-wrap: nowrap;
+    align-items: center;
+    z-index: 1000;
+
+    img {
+      margin-right: 0.3125rem;
+      width: 8.75rem;
+    }
+
+    .fa-solid {
+      color: $color-purple;
+      text-decoration: none;
+      font-size: 30px;
+      padding: 0.5rem 0.625rem;
+      margin-left: 2.5rem;
+      align-items: center;
+      justify-content: center;
+      line-height: 0.7;
+      margin-bottom: 0rem;
+      flex-direction: row;
+    }
+
+    /*      Nav list        */
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline-start: 40px;
+
+      li {
+        a {
+          text-decoration: none;
+          letter-spacing: 0.15rem;
+          color: $color-white;
+          display: flex;
+          align-items: center;
+          height: 100%;
+          justify-content: center;
+          line-height: 0.7;
+          padding: 0 1.25rem;
+          margin-bottom: 0rem;
+          flex-direction: row;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    /*      Subscribe button        */
+    #subscribe {
+      padding: 0.76rem 1.3125rem;
+      font-size: 0.75rem;
+      background-color: $color-purple;
+      border: 0.0625rem solid transparent;
+      border-radius: 50rem;
+      color: $color-black;
+      text-decoration: none;
+      align-items: center;
+      height: 2.25rem;
+      width: 8.375rem;
+      justify-content: center;
+      letter-spacing: 0.03rem;
+      line-height: 1;
+      margin: 1rem auto;
+      margin-right: 0rem;
+      text-align: center;
+
+      &:hover {
+        background-color: $color-white;
+      }
+    }
+
+/*      Search        */
+    .fa-magnifying-glass {
+      top: 3.9rem;
+      font-size: 15px;
+      margin-right: 5rem;
+      padding: 0.9375rem;
+      margin-left: 0.625rem;
+      width: 1rem;
+      align-items: center;
+    }
+  }
+}
