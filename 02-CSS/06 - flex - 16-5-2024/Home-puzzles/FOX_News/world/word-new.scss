@@ -54,9 +54,7 @@ body{background-color:   #eff2f5;}
 .info{
    font-weight: 700;
    padding: 8px;
-  
-   
-    border-bottom: 1px rgb(189, 184, 184) solid
+   border-bottom: 1px rgb(189, 184, 184) solid;
 }
 .main-pic{
     position: relative;
@@ -66,6 +64,7 @@ body{background-color:   #eff2f5;}
     }
 }
 .main-content{
+    
     h2{
         color: #222;
     font-size: 44px;
@@ -75,7 +74,13 @@ body{background-color:   #eff2f5;}
         font-size: 25px;
     }
 }
-
+.sub-content{
+    position: relative;
+    .kicker{
+        height: 15px;      
+        font-size: 20px;
+    }
+}
 @media only screen and (min-width: 1200px) {
     .wrapper {
       width: 1184px;
