@@ -1,5 +1,5 @@
-h1{
-  font-family:'Times New Roman', Times, serif;
+h1 {
+  font-family: 'Times New Roman', Times, serif;
   text-align: center;
   margin: auto;
   position: sticky;
@@ -7,6 +7,7 @@ h1{
   background-color: white;
   box-sizing: border-box;
 }
+
 body {
   padding-inline: 20px;
 }
@@ -24,33 +25,28 @@ ul {
   border: 5px;
   border-color: black;
   text-align: center;
- 
+}
 
-
-.nav_item {
+.wrapper1 .nav_item {
   width: 100%;
   height: 100%;
   align-items: center;
 }
 
-.nav_list {
+.wrapper1 .nav_list {
   display: flex;
   justify-content: space-evenly;
 }
 
-.nav_link {
+.wrapper1 .nav_link {
   font-size: 20px;
-  color:var(--color-dark-1)
- 
+  color: var(--color-dark-1);
 }
 
-.nav_btn {
+.wrapper1 .nav_btn {
   background-color: var(--color-dark-2);
-  color: var(--color-dark-1)
-
+  color: var(--color-dark-1);
 }
-}
-
 
 .header_right {
   align-self: right;
@@ -58,21 +54,23 @@ ul {
   margin-right: 10%;
   margin-left: 60%;
   margin-top: 0px;
-  img {
-      width: 50%;
-      height: 50%;
-  }
-  }
+}
+
+.header_right img {
+  width: 50%;
+  height: 50%;
+}
 
 .header_left {
   align-self: left;
   font-weight: bold;
   margin-left: 10%;
   margin-right: 60%;
-  img {
-      width: 50%;
-      height: 50%;
-  }
+}
+
+.header_left img {
+  width: 50%;
+  height: 50%;
 }
 
 .header_center {
@@ -80,23 +78,23 @@ ul {
   font-weight: bold;
   margin-left: 40%;
   margin-right: 40%;
-  img {
-      width: 80%;
-      height: 80%;
-  }
+}
+
+.header_center img {
+  width: 80%;
+  height: 80%;
 }
 
 #container {
   background-color: white;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   flex-wrap: wrap;
   height: 100vh;
-
 }
 
-#container div{
-align-items: center;
-margin: 10px;
-width:100%
+#container div {
+  align-items: center;
+  margin: 10px;
+  width: 100%;
 }
