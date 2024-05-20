@@ -1,0 +1,109 @@
+.wrapper{
+    background-color: rgb(255, 255, 255);
+    
+    .learn-more{
+        
+        
+        display:flex;
+        justify-content: center;
+        object-position: center;
+        align-items: center;
+        gap: 50px;
+        flex-direction: row;
+        
+
+        }
+        button{
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font-size:x-large;
+            height: 60px;
+
+        }
+        .middle-part{
+            display: flex;
+            flex-direction: row;
+            padding-top: 70px;
+
+            .middle-left{
+                padding-left: 90px;
+                display: flex;
+                flex-direction: column;
+                font-size: 2cap;
+
+                box{
+                    width: 500px;
+                    
+                    img{
+                        width: 500px;
+                    }
+                }
+
+            }
+            .middle-middle{
+                
+                padding-left: 50px;
+                padding-right: 50px;
+                display: flex;
+                flex-direction: column;
+                font-size: 3.5cap;
+                box{
+                    img{
+                        width: 900px;
+                    }
+                    p{
+                        font-size: 1cap;
+                    }
+                }
+            }
+            .middle-right{
+                padding-right: 90px;
+                display: flex;
+                flex-direction: column;
+                width: 800px;
+                
+                box{
+                    display: flex;
+                    flex-direction: row;
+                    
+                    img{
+    
+                        width: 120px;
+                        padding-left: 10px;
+                    }
+                }
+
+            }
+        }
+        .met-gala{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-top: 80px;
+            padding-bottom: 200px;
+            gap: 80px;
+            box{
+                width: 500px;
+                
+                img{
+                    width: 500px;
+                }
+            }
+        }
+        .must-read-section{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-top: 80px;
+            
+            gap: 80px;
+            box{
+                width: 500px;
+                
+                img{
+                    width: 500px;
+                }
+            }
+        }
+    
+    }

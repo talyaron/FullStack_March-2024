@@ -103,7 +103,11 @@ header {
         background-color: $color-white;
       }
     }
-
+.signin {
+  text-decoration: none;
+  color: $color-white;
+  font-size: 13px;
+}
 /*      Search        */
     .fa-magnifying-glass {
       top: 3.9rem;
