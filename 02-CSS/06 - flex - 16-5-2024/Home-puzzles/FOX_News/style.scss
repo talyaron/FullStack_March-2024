@@ -16,6 +16,15 @@
 // ----------------------------------------------------------
 // body and header code
 
+@import './media/media.scss';
+
+:root{
+    --primary-color: #036;
+    --secondary-color: red;
+    --lightgray: rgb(189, 184, 184);
+
+}
+
 $lightgray: rgb(189, 184, 184); // line color
 
 body {
