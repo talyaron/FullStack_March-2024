@@ -1,0 +1,25 @@
+.header {
+    background-color: white;
+    text-align: center;
+    color: lightgray;
+    font-size: 24px;
+    h1 {
+        font-size: 60px;
+        margin-bottom: 5px;
+        color: black;
+    }
+    .icons{
+        display: flex;
+        color: #444444;
+        .bars{
+            margin-left: 8%;
+        }
+        .insta-face{
+            margin-left: 80%;
+            margin-right: 1%;
+       
+        }
+    }
+      
+        
+}
