@@ -1,24 +1,25 @@
 *{
     margin: 0;
-    padding: 0;
+    padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    
 }
 
 footer{
     background: black;
     padding-top: 50px;
-    position: absolute;
+    position: relative;
     right: 0;
     left: 0;
     bottom: 0;
+    color: white;
 }
 .container{
     width: 1140px;
     margin: auto;
     display: flex;
 }
-.wrapper{
+.wrapper0{
     width: 33.3%;
 }
 .wrapper1{
