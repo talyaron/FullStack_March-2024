@@ -59,6 +59,11 @@
         img {
             width: 775px;
         }
+        p {
+            :hover {
+                color: grey;
+            }
+        }
     }
     .articleRight {
         display: flex;
@@ -115,18 +120,22 @@ img {
 }
 .container2{
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-wrap:wrap;
     background-color: black;
     justify-content:center;
     color: white;
     h1 {
-        font-size: 400%;
+        font-size: 500%;
+        margin-right: 200px;
+        margin-bottom: -90px;
+        margin-left: -125px;
+
     }
 .box2{
 display: flex;
-flex-direction: column;
+flex-direction:column;
 justify-content:center;
+margin: 5%;
 
 
 h4{
@@ -150,12 +159,14 @@ img {
 .container3{
     display: flex;
     flex-wrap: wrap;
-    gap: 10%;
+    gap: 50px;
     justify-content:center;
     background-color: black;
     color: white;
 h1 {
-    font-size: 400%;
+    font-size: 500%;
+    margin-bottom: 1px;
+    margin-right: 500px;
 }   
 .box3 {
 display: flex;
@@ -163,11 +174,12 @@ flex-direction: column;
 justify-content:center;
     h4{
        text-align: center;
-       word-wrap:break-word;
+       word-wrap: break-word;
+       font-size: 70%;
 }
 
 img {
-            width: 200px;
+            width: 250px;
             height: auto;
             padding: 10px;
         }
@@ -182,11 +194,13 @@ img {
     color: white;
     h1 {
         font-size: 700%;
+        margin-right: 600px;
     }
 .box4{
 display: flex;
 flex-direction: column;
 justify-content:center;
+margin: 5%;
 h4{
 text-align: left;
 word-wrap:break-word;
