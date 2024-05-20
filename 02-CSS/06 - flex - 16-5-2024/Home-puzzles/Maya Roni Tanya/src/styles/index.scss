@@ -249,6 +249,9 @@ section {
       cursor: pointer;
       padding: 0.76rem 1.3125rem 0.8rem;
       margin-left: 10px;
+      &:hover {
+        background-color: $color-white;
+      }
     }
   }
 
