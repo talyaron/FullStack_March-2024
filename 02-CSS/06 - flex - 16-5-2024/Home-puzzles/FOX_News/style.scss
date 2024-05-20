@@ -179,6 +179,10 @@ main {
                 font-size: calc(1.1em + 1vw);
 
             }
+
+            #first-photo {
+                position: relative;
+            }
         }
         a:hover {
             text-decoration: underline;
