@@ -75,5 +75,19 @@
 
             }
         }
+        .met-gala{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-top: 80px;
+            gap: 80px;
+            box{
+                width: 500px;
+                
+                img{
+                    width: 500px;
+                }
+            }
+        }
     
     }
