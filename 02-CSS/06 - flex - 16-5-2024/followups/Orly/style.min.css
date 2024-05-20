@@ -1,0 +1,1 @@
+.container{background-color:blue;display:flex;justify-content:right;flex-wrap:wrap;height:200vh;align-items:center}.container .box{background-color:green;flex:1;margin:10px}.container .flex2{flex:3;background-color:yellow}
