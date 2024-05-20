@@ -1,98 +1,98 @@
 #styleLink {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
 }
 
 .main-img-container {
-  position: relative;
-  margin-top: 0;
-  height: 100px;
-  h2{
-    position: absolute;
-    color: white;
-  }
+position: relative;
+margin-top: 0;
+height: 100px;
+h2{
+  position: absolute;
+  color: white;
+}
 }
 .main-img-container img {
-  width: 100%;
+width: 100%;
 }
 
 .main {
-  text-align: left;
-  padding: 20px;
+text-align: left;
+padding: 20px;
 }
 
 .main h1 {
-  margin: 0;
+margin: 0;
 }
 
 .main img {
-  display: block;
-  margin-top: 10px;
-  width: 100%;
-  max-width: 400px;
+display: block;
+margin-top: 10px;
+width: 100%;
+max-width: 400px;
 }
 
 .container1, .container2, .container3 {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  color: black;
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+color: black;
 }
 
 .container1 h1, .container2 h1, .container3 h1 {
-  margin: 0 0 10px 0;
-  
+margin: 0 0 10px 0;
+
 }
 
 .container1 h1:hover, .container2 h1:hover, .container3 h1:hover {
-  color:  grey;
+color:  grey;
 }
 
 .container1 .article, .container2 .article2, .container3 .article3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  width: 300px;
-  margin: 10px;
-  padding: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+box-sizing: border-box;
+width: 300px;
+margin: 10px;
+padding: 10px;
 }
 .container2 h2, .container3 h2 {
-  align-self: center; 
-  text-align: center;
-  color: black;
-  margin-bottom: 5%;
-   font-weight: 200;
-  line-height: 1;
-  letter-spacing: -0.0075rem;
+align-self: center; 
+text-align: center;
+color: black;
+margin-bottom: 5%;
+ font-weight: 200;
+line-height: 1;
+letter-spacing: -0.0075rem;
 }
 
 
 .article img, .article2 img, .article3 img {
-  width: 100%;    
-  height: auto;
-  display: flex;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  padding-top: 10px;
+width: 100%;    
+height: auto;
+display: flex;
+border-radius: 8px;
+margin-bottom: 10px;
+padding-top: 10px;
 }
 
 .article p, .article2 p, .article3 p {
-  margin: 10px 0 0 0;
-  text-align: center;
+margin: 10px 0 0 0;
+text-align: center;
 }
 
 .ad-disclaimer {
-  text-align: center;
-  padding: 5%;
+text-align: center;
+padding: 5%;
 }
 
 .ad-disclaimer img {
-  width: 70%;
-  align-items: center;
+width: 70%;
+align-items: center;
 }
