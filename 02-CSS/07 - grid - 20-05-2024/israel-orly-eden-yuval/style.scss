@@ -1,31 +1,74 @@
 .wrapper{
-    
+    font-family:Arial, Helvetica, sans-serif;
     .header{
 
     }
     .main-page{
         display: grid;
-        grid-template-columns: 360px 200px 200px 200px 360px ;
+        background-color:rgb(226, 144, 43);
+        
+        grid-template-columns: 360px 100px 200px 200px 200px 360px ;
         grid-template-rows: 75px 255px 255px;
-        border:1px solid black;
         padding-left: 3rem;
-        gap:50px;
-        .left-page{
-            padding-left: 3rem;
-            grid-row: 1;
-            grid-column:1 ;
+        
+        .field{
             border:1px solid black;
-            background-color: aquamarine;
-            
 
         }
-        .center-page{
-            padding-left: 3rem;
+        .field-top-left{
+            grid-row: 1;
+            color: white;
+        }
+        .field-left{
+            grid-row: 2/4;
+            color: black;
+            background-color: rgb(60, 60, 91);
+            h1{
+                font-size: 3.5rem;
+                
+            }
+            p{
+                font-size: 1.6rem;
+            }
+            img{
+                width: 100%;
+            }
+            
+        }
+        .center-global{
+            background-color: rgb(255, 255, 255);
+        }
+        .center-mental-health{
+            
             grid-row: 2;
-            grid-column:1 ;
-            border:1px solid black;
-            background-color: rgb(190, 37, 70);
-            gap:50px;
+            grid-column: 3;
+            background-color: aqua
+
+        }
+        .center-from-home{
+            grid-row: ;
+            grid-column: ;
+
+        }
+        .center-around-clock{
+            grid-row: ;
+            grid-column: ;
+
+        }
+        .center-lab-tests{
+            grid-row: ;
+            grid-column: ;
+
+        }
+        .center-recovery-mobility{
+            grid-row: ;
+            grid-column: ;
+
+        }
+        .center-medical-cannabis{
+            grid-row: ;
+            grid-column: ;
+
         }
     }
 }
