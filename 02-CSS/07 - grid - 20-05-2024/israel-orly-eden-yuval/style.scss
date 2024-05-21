@@ -1,3 +1,30 @@
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+.div{
+    border: 1px;
+}
+.wrapper{
+    background-color: rgb(224, 42, 42);
+    
+    .header{
+        position: sticky;
+        background-color: white;
+        border-bottom: rgb(45, 177, 221);
+    }
+    .main-page{
+        display: grid;
+        background-color: aquamarine;
+        border:solid 5px;
+        gap:10px;
+        border-color: black;
+        grid-template-columns: 20vw 10vw 10vw 10vw 20vw;
+        grid-template-rows: 10vh 40vh 40vh ;
+    }
+    .item1{
+        
+=======
+>>>>>>> Stashed changes
 .wrapper{
     
     .header{
@@ -27,5 +54,9 @@
             background-color: rgb(190, 37, 70);
             gap:50px;
         }
+<<<<<<< Updated upstream
+=======
+>>>>>>> b788759b10059468330cdaf0a61dfc0e121ecac9
+>>>>>>> Stashed changes
     }
 }
