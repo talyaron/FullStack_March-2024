@@ -1,0 +1,84 @@
+:root {
+  background-color: #000;
+}
+
+body {
+  color: #c0c0c0;
+  font-family: "DINCond", sans-serif;
+}
+
+.header-logo {
+  text-align: center;
+  margin: 20px 0 10px 0;
+}
+.header-logo img {
+  width: 160px;
+  height: 160px;
+}
+
+.header-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+
+.header-menu {
+  font-size: 0.7rem;
+  margin-top: 3px;
+}
+.header-menu a {
+  color: #c0c0c0;
+  text-decoration: none;
+  padding: 0px 3px;
+}
+
+nav {
+  height: 40px;
+  background-color: #707070;
+  margin-top: 30px;
+  position: relative;
+}
+nav ul {
+  list-style-type: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+nav ul li {
+  padding: 10px;
+  border-right: 2px solid #000;
+  text-transform: uppercase;
+}
+nav ul li:hover {
+  background-color: #a0a0a0;
+}
+nav ul li a {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-stretch: condensed;
+}
+nav .nav-left li {
+  float: left;
+}
+nav .nav-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+nav .nav-right li {
+  float: left;
+}
+nav .nav-right .no-border {
+  border: none;
+}
+
+@media only screen and (max-width: 1920px) {
+  body {
+    width: 80%;
+    margin: auto;
+  }
+}/*# sourceMappingURL=navbar.css.map */
