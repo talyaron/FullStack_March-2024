@@ -1,42 +1,24 @@
-$header-color: #122536;
-$navbar-color: #dce9ed;
+
 
 * {
     direction: rtl;
     margin: 0;
     padding: 0;
+    a {
+        text-decoration: none;
+    }
 }
 
 body {
     height: 200vh;
 }
-
-/* Header */
-header {
-    height: 65px;
-    width: 100vw;
-    background-color: $header-color;
-}
-/* nav bar */
-nav {
-    background-color: $navbar-color;
-    align-items: center;
-    position: sticky;
-    top: 0; 
-    z-index: 100; 
-    ul {
-        display: flex;
-        justify-content: space-around; 
-        align-items: center;
-        height: 50px;
-
-        li {
-            padding: 10px;
-            list-style: none;
-
-            a {
-                text-decoration: none;
-            }
-        }
+.commercial {
+    position: relative;
+    margin: 10px auto;
+    display: flex; 
+    justify-content: center; 
+    
+    img {
+        margin: auto; 
     }
 }
