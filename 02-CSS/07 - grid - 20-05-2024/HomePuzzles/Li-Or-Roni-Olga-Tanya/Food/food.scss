@@ -1,0 +1,47 @@
+.articles-bar1 {
+    display: flex;
+    border: 1px solid black;
+    padding: 2%;
+    gap: 3%;
+
+
+    .box1 {
+        width: 33%;
+        h5 {
+            font-size: 120%;
+        }
+        h6 {
+            font-size:100%;
+            color: grey
+        }
+        p {
+            font-size: 80%;
+            color: darkgray;
+        }
+    }
+}
+.articles-bar2 {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    padding: 2%;
+    gap: 3%;
+
+
+    .box2 {
+        width: 30%;
+        h5 {
+            font-size: 120%;
+            word-wrap: break-word;
+        }
+        h6 {
+            font-size:100%;
+            word-wrap: break-word;
+            color: grey
+        }
+        p {
+            font-size: 80%;
+            color: darkgray;
+        }
+    }
+}

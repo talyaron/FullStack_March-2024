@@ -3,11 +3,15 @@
 $uor-gap: 30px;
 
 body {
-    font-family: sans-serif;
-
+    font-family: "Karantina", system-ui, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px;
 }
 
 .crime-main {
+    padding-inline: 5px;
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: auto;
@@ -15,6 +19,13 @@ body {
     max-width: 900px;
     margin: auto;
     margin-top: $uor-gap;
+
+    h1 {
+        font-weight: 300;
+    }
+    h2, h3 {
+        font-weight: 400;
+    }
 
     a {
         color: inherit;
@@ -27,11 +38,71 @@ body {
 }
 
 .crime-site-menu {
-    grid-row: 1;
-    grid-column: 1/7;
-    background-color: tomato;
-    width: 100%;
-    height: 8rem;
+    grid-column: 1;
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    h2 {
+        color:#1DA1F2
+    }
+
+    &_second-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgb(200, 200, 200);
+        border-bottom: 1px solid rgb(200, 200, 200);
+
+        &_social-list {
+            display: grid;
+            grid-template-columns: repeat(5, auto);
+            column-gap: 10px;
+            align-items: center;
+
+            i {
+                font-size: 0.8em;
+                padding: 5px;
+                width: 25px;
+                text-align: center;
+            }
+
+            i:hover {
+                background-color: #1DA1F2;
+            }
+        }
+    }
+
+    &_list {
+        margin-top: 3px;
+        margin-bottom: 3px;
+        font-size: 1.1em;
+        display: flex;
+        justify-content: space-between;
+        ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(9, auto);
+            column-gap: 5px;
+            align-items: center;
+            width: auto;
+            text-align: center;
+
+            li {
+                // margin-inline: 3px;
+                padding: 5px 8px;
+            }
+
+            li:hover {
+                background-color: #1DA1F2;
+            }
+        }
+    }
+
+    .line {
+        border-bottom: 5px solid rgb(200, 200, 200);
+    }
 }
 
 .crime-news-card {
@@ -55,7 +126,7 @@ body {
             color: #fff;
             font-size: 1.3rem;
             width: 100%;
-            height: 45px;
+            height: 40px;
             opacity: 0.8;
             cursor: pointer;
             z-index: 1;
@@ -66,6 +137,8 @@ body {
                 height: 100%;
                 justify-content: center;
                 align-items: center;
+                border-right: 1px black solid;
+                border-left: 1px solid darkgray;
             }
 
             #crime-mail {
@@ -105,17 +178,16 @@ body {
     }
 
     &_text-preview {
+        line-height: 1.5em;
+        padding-left: 5px;
         h3 {
             color: rgb(125, 125, 125);
         }
 
         .date {
             color: gray;
-            font-size: 0.8em;
-        }
-
-        .titles:hover {
-            text-decoration: underline;
+            font-size: 1rem;
+            font-family: Arial, Helvetica, sans-serif;
         }
     }
 
@@ -123,8 +195,12 @@ body {
         transform: scale(1.05);
     }
 
-    &_text-preview:hover ~ &_news-photo img {
+    &_text-preview:hover ~ &_news-photo {
         transform: scale(1.1);
+    }
+
+    &_text-preview:hover h2, &_text-preview:hover h3 {
+        text-decoration: underline;
     }
 
 }
@@ -137,6 +213,10 @@ body {
 
     .crime-news-card_text-preview {
         width: 40%;
+    }
+
+    img {
+        width: 100%;
     }
 }
 
@@ -153,4 +233,10 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: $uor-gap;
     grid-column: 1;
+}
+
+.section-news {
+    grid-column: 1;
+    // height: 60px;
+    border-bottom: 1px solid rgb(200, 200, 200);
 }
