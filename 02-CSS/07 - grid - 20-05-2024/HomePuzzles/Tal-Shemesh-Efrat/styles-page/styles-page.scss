@@ -1,0 +1,129 @@
+.wrapper {
+    font-weight: 500;
+    position: relative;
+ //   border: 1px solid green;
+}
+
+
+
+.left-side {
+    margin-top: 30px;
+
+    h2 {
+        padding-bottom: 7px;
+        border-bottom: 2px solid #c0c0c0;
+    }
+
+    .styles-grid {
+        background-color: #333333;
+
+        width: 700px;
+        border: 10px solid #333333;
+
+
+
+        .all-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 165px);
+
+
+            gap: 10px;
+
+            .image-grid {
+                position: relative;
+
+                &:hover .kicker {
+                    display: block;
+                }
+
+                .kicker {
+                    display: none;
+                    color: #333333;
+                    position: absolute;
+                    bottom: 0px;
+                    right: 0;
+                    left: 0;
+                    height: 2rem;
+                    background-color: #c0c0c0;
+                    font-size: 0.8rem;
+
+
+                }
+
+                img {
+                    width: 226px;
+                    height: 165px;
+                    object-fit: cover;
+                }
+
+
+
+
+            }
+        }
+    }
+
+
+}
+
+.right-side {
+    color: #333333;
+    margin-top: 36px;
+    border-top: 2px solid #c0c0c0;
+    font-size: 1.4rem;
+    width: 35%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    .side-wrapper {
+        margin-top: 24px;
+        .side-bar {
+            margin-bottom: 10px;
+            padding: 15px 10px 15px 15px;
+            
+        }
+        .c-1{background-color: #d82980;}
+        .c-2{background-color: #b74bc2; margin-top: 10px;}
+        .c-3{background-color: #4dc188;}
+        .c-4{background-color: #99c555;}
+        .c-5{background-color: #c6ba31;}
+        .c-6{background-color: #e97e5e;}
+        .c-7{background-color: #469db1;}
+        .c-8{background-color: #5d65cf;}
+
+        .side-info{
+            font-size: 0.9rem;
+            
+            span{
+               line-height: 200%;
+                background-color: #d82980;
+                padding: 5px;
+            }
+            
+            
+        }
+    }
+    
+   
+}
+
+
+
+@media only screen and (max-width: 1920px) {
+    .left-side {
+        width: 100vh;
+    }
+
+}
+
+
+@media only screen and (max-width: 1080px) {
+    .nav-right {
+        display: none;
+    }
+
+    .left-side {
+        background-color: rgb(255, 0, 195);
+    }
+}
