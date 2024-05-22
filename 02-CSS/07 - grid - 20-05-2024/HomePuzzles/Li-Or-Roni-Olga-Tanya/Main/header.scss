@@ -2,10 +2,16 @@
 $header-color: #122536;
 $navbar-color: #dce9ed;
 $header-hover: #2895ae;
-$font-main: Arial, Helvetica, sans-serif;
+$font-main: system-ui;
+
 
 /* Header */
 header {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-family: system-ui;
     height: 65px;
     display: flex;
     width: 100vw;
