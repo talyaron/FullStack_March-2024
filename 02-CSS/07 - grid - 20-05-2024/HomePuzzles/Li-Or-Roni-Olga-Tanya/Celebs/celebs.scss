@@ -1,0 +1,98 @@
+body {
+    font-family: "Karantina", system-ui, sans-serif;
+    font-weight: 300;
+    font-style:normal;
+    font-size: 20px;
+}
+.wrapper {
+  
+    .page-name{
+        
+     h1 {
+        font-weight: lighter;
+        font-size: 4.5rem;
+     }
+     
+     .right-page-name {
+        
+        h2 {
+            font-weight: lighter;
+            color: rgb(68, 196, 228);
+            font-size: 2.5rem;
+        }
+     }
+
+     .left-page-name {
+         
+        .left-page-name_social-list {
+            float: left;
+        }
+     }
+     .categories {
+        font-size: 2rem;
+     }
+    }
+    .main-article {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+       
+        h1 {
+            width: 200px;
+            margin-left: 30px;
+        }
+
+        p{
+            width: 200px;
+        }
+
+        img {
+            width: 550px;
+            height: 350px;
+        }
+    }
+    .second-article {
+        display: flex;
+        justify-content:space-around;
+
+        img {
+            width: 450px;
+            height: 300px;
+        }  
+        
+        p {
+            color: gray;
+            font-size: 1.7rem;
+        }
+    }
+    .articale-section {
+      
+        .in-articale-section {
+            display: grid;
+            grid-template-columns: 350px 350px 350px ;
+            grid-template-rows:280px 280px ;
+            grid : 10px 
+
+        }
+
+        p {
+            color: gray;
+            font-size: 1.7rem;
+        }
+
+    }
+    .more-articles {
+
+        .in-more-articles {
+            display: grid;
+            grid-template-columns: 350px 350px 350px ;
+            grid-template-rows:280px  ;
+            grid : 10px 
+        }
+
+        p {
+            color: gray;
+            font-size: 1.7rem;
+        }
+    }
+}
