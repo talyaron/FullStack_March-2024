@@ -10,6 +10,7 @@ body {
 }
 
 .crime-main {
+    padding-inline: 5px;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -39,11 +40,68 @@ body {
 .crime-site-menu {
     grid-column: 1;
 
+    a:hover {
+        text-decoration: none;
+    }
+
+    h2 {
+        color:#1DA1F2
+    }
+
     &_second-title {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         border-top: 1px solid rgb(200, 200, 200);
         border-bottom: 1px solid rgb(200, 200, 200);
+
+        &_social-list {
+            display: grid;
+            grid-template-columns: repeat(5, auto);
+            column-gap: 10px;
+            align-items: center;
+
+            i {
+                font-size: 0.8em;
+                padding: 5px;
+                width: 25px;
+                text-align: center;
+            }
+
+            i:hover {
+                background-color: #1DA1F2;
+            }
+        }
+    }
+
+    &_list {
+        margin-top: 3px;
+        margin-bottom: 3px;
+        font-size: 1.1em;
+        display: flex;
+        justify-content: space-between;
+        ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(9, auto);
+            column-gap: 5px;
+            align-items: center;
+            width: auto;
+            text-align: center;
+
+            li {
+                // margin-inline: 3px;
+                padding: 5px 8px;
+            }
+
+            li:hover {
+                background-color: #1DA1F2;
+            }
+        }
+    }
+
+    .line {
+        border-bottom: 5px solid rgb(200, 200, 200);
     }
 }
 
@@ -128,7 +186,7 @@ body {
 
         .date {
             color: gray;
-            font-size: 0.5rem;
+            font-size: 1rem;
             font-family: Arial, Helvetica, sans-serif;
         }
     }
@@ -155,6 +213,10 @@ body {
 
     .crime-news-card_text-preview {
         width: 40%;
+    }
+
+    img {
+        width: 100%;
     }
 }
 
