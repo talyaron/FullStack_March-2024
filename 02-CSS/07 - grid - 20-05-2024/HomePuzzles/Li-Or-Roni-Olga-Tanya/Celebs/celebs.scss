@@ -5,7 +5,8 @@ body {
     font-size: 20px;
 }
 .wrapper {
-  
+    display: grid;
+    justify-content: center;
     .page-name{
         
      h1 {
