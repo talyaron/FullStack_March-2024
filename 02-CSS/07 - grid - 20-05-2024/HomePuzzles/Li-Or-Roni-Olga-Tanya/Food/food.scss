@@ -1,4 +1,3 @@
-
 .food-main {
     padding-inline: 5px;
     box-sizing: border-box;
@@ -99,7 +98,7 @@
 
 
     .box1 {
-        width: 33%;
+        width: 31%;
         h5 {
             font-size: 120%;
         }
@@ -114,27 +113,59 @@
     }
 }
 .articles-bar2 {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     border: 1px solid black;
-    padding: 2%;
-    gap: 3%;
+    gap: 1%;
+    .header-bar2 {
+        border-bottom: 2px grey solid;
+        gap: none;
+        display: grid;
+        grid-row: 1;
+    }
 
+    .row-box2 {
+        display: flex;
+        border: 1px solid black;
+        gap: 1%;
+        padding: 10px;
+    
+    
+        .box2 {
+            width: 31%;
+            border: 1px solid lightgray;
+            width:40%;
+            h5 {
+                font-size: 120%;
+            }
+            h6 {
+                font-size:100%;
+                color: grey
+            }
+            p {
+                font-size: 80%;
+                color: darkgray;
+            }
+        }
+    }
+}
+.All-recipes{
+    display: grid;
+    grid-template-columns: repeat(6,2fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap:1%;
 
-    .box2 {
-        width: 30%;
-        h5 {
-            font-size: 120%;
-            word-wrap: break-word;
-        }
-        h6 {
-            font-size:100%;
-            word-wrap: break-word;
-            color: grey
-        }
-        p {
-            font-size: 80%;
-            color: darkgray;
-        }
+    .recipes-header{
+        background-color: rgb(137, 175, 231);
+        align-items: center;
+        justify-content: center;
+        font-size: 200%;
+        display: grid;
+        grid-row: 1;
+        grid-column: 1 / 7 ;
+    }
+    .recipe{
+        border: 2px solid rgb(94, 115, 102);
+        padding: 5%;
+        align-items: center;
     }
 }
