@@ -1,3 +1,98 @@
+.food-main {
+    padding-inline: 5px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    row-gap: 30px;
+    max-width: 900px;
+    margin: auto;
+    margin-top:1%;
+
+    h1 {
+        font-weight: 300;
+    }
+    h2, h3 {
+        font-weight: 400;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    a:hover {
+        text-decoration: underline;
+
+    }
+}
+.food-menu {
+    grid-column: 1;
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    h2 {
+        color:#1DA1F2
+    }
+
+    &_second-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgb(200, 200, 200);
+        border-bottom: 1px solid rgb(200, 200, 200);
+
+       
+    }
+    &_social-list {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        gap: 10px ;
+        align-items: center;
+
+        i {
+            font-size: 0.8em;
+            padding: 5px;
+            width: 25px;
+            text-align: center;
+        }
+
+        i:hover {
+            background-color: #1DA1F2;
+        }
+    }
+
+    &_list {
+        margin-top: 3px;
+        margin-bottom: 3px;
+        font-size: 1.1em;
+        display: flex;
+        justify-content: space-between;
+        ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(9, auto);
+            column-gap: 5px;
+            align-items: center;
+            width: auto;
+            text-align: center;
+
+            li {
+                // margin-inline: 3px;
+                padding: 1px 8px;
+            }
+
+            li:hover {
+                background-color: #1DA1F2;
+            }
+        }
+    }
+
+    .line {
+        border-bottom: 10px solid rgb(200, 200, 200);
+    }
+}
 .articles-bar1 {
     display: flex;
     border: 1px solid black;
@@ -43,5 +138,25 @@
             font-size: 80%;
             color: darkgray;
         }
+    }
+}
+.All-recipes{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: 7% ,200px, 200px, 200px;
+    gap:10px;
+
+    .recipes-header{
+        background-color: rgb(137, 175, 231);
+        align-items: center;
+        justify-content: center;
+        font-size: 200%;
+        display: grid;
+        grid-row: 1;
+        grid-column: 1 / 6 ;
+    }
+    .recipe{
+        border: 2px solid rgb(94, 115, 102);
+        padding: 5%;
     }
 }
