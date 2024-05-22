@@ -29,11 +29,8 @@ body {
 }
 
 .crime-site-menu {
-    grid-row: 1;
-    grid-column: 1/7;
-    background-color: tomato;
-    width: 100%;
-    height: 8rem;
+    grid-column: 1;
+    background-color: #25D366;
 }
 
 .crime-news-card {
@@ -104,9 +101,9 @@ body {
         display: grid;
     }
 
-    // &_news-photo:hover ~ &_text-preview h3, &_news-photo:hover ~ &_text-preview h2 {
-    //     text-decoration: underline;
-    // }
+    &_news-photo:hover ~ &_text-preview h3, &_news-photo:hover ~ &_text-preview h2 {
+        text-decoration: underline;
+    }
 
     &_text-preview {
         line-height: 1.5em;
@@ -122,26 +119,18 @@ body {
         }
     }
 
-    // &_news-photo:hover img {
-    //     transform: scale(1.05);
-    // }
+    &_news-photo:hover img {
+        transform: scale(1.05);
+    }
 
-    // &_text-preview:hover ~ &_news-photo {
-    //     transform: scale(1.1);
-    // }
+    &_text-preview:hover ~ &_news-photo {
+        transform: scale(1.1);
+    }
 
-    // &_text-preview:hover h2, &_text-preview:hover h3 {
-    //     text-decoration: underline;
-    // }
+    &_text-preview:hover h2, &_text-preview:hover h3 {
+        text-decoration: underline;
+    }
 
-}
-
-.crime-news-card:hover &_text-preview h2{
-    text-decoration: underline;
-}
-
-.crime-news-card:hover + &_news-photo img {
-    transform: scale(1.05);
 }
 
 .crime-top-news {
