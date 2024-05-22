@@ -3,11 +3,13 @@
 $uor-gap: 30px;
 
 body {
-    font-family: sans-serif;
-
+    font-family: "Karantina", system-ui, sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .crime-main {
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: auto;
@@ -55,7 +57,7 @@ body {
             color: #fff;
             font-size: 1.3rem;
             width: 100%;
-            height: 45px;
+            height: 40px;
             opacity: 0.8;
             cursor: pointer;
             z-index: 1;
@@ -66,6 +68,8 @@ body {
                 height: 100%;
                 justify-content: center;
                 align-items: center;
+                border-right: 1px black solid;
+                border-left: 1px solid darkgray;
             }
 
             #crime-mail {
@@ -100,11 +104,13 @@ body {
         display: grid;
     }
 
-    &_news-photo:hover ~ &_text-preview h3, &_news-photo:hover ~ &_text-preview h2 {
-        text-decoration: underline;
-    }
+    // &_news-photo:hover ~ &_text-preview h3, &_news-photo:hover ~ &_text-preview h2 {
+    //     text-decoration: underline;
+    // }
 
     &_text-preview {
+        line-height: 1.5em;
+        padding-left: 5px;
         h3 {
             color: rgb(125, 125, 125);
         }
@@ -112,21 +118,30 @@ body {
         .date {
             color: gray;
             font-size: 0.8em;
-        }
-
-        .titles:hover {
-            text-decoration: underline;
+            font-family: Arial, Helvetica, sans-serif;
         }
     }
 
-    &_news-photo:hover img {
-        transform: scale(1.05);
-    }
+    // &_news-photo:hover img {
+    //     transform: scale(1.05);
+    // }
 
-    &_text-preview:hover ~ &_news-photo img {
-        transform: scale(1.1);
-    }
+    // &_text-preview:hover ~ &_news-photo {
+    //     transform: scale(1.1);
+    // }
 
+    // &_text-preview:hover h2, &_text-preview:hover h3 {
+    //     text-decoration: underline;
+    // }
+
+}
+
+.crime-news-card:hover &_text-preview h2{
+    text-decoration: underline;
+}
+
+.crime-news-card:hover + &_news-photo img {
+    transform: scale(1.05);
 }
 
 .crime-top-news {
@@ -153,4 +168,10 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: $uor-gap;
     grid-column: 1;
+}
+
+.section-news {
+    grid-column: 1;
+    // height: 60px;
+    border-bottom: 1px solid rgb(200, 200, 200);
 }
