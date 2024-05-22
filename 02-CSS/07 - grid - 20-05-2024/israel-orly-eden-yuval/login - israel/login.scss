@@ -1,4 +1,4 @@
-body{
+body {
     background-image: url(https://e-services.clalit.co.il/OnlineWeb/Images/NewDesignImages/background.jpg);
     background-size: cover;
 }
@@ -10,26 +10,28 @@ div {
 
 .header {
     height: 5rem;
-    border: 1px solid;
+    border-bottom: 1px solid  rgb(237,241,249);
+    border-radius: 0;
     margin-bottom: 1rem;
     display: flex;
+    background-color: white;
 
     .header-img {
         height: 9rem;
         width: 9rem;
         margin: 1.2rem 1.5rem 0 3rem;
-        
+
     }
 
     .support {
         margin: 1.5rem;
-        border: 0.1rem solid rgb(1,103,126);
+        border: 0.1rem solid rgb(1, 103, 126);
         border-radius: 1rem;
         height: 2rem;
         width: 12rem;
-        color: rgb(23,161,186);
+        color: rgb(23, 161, 186);
         font-size: 1rem;
-        
+
     }
 
     .link-site {
@@ -37,18 +39,20 @@ div {
         margin: 2rem 67rem 0 0;
         font-size: large;
         font-family: Arial, Helvetica, sans-serif;
-        color: rgb(23,161,186);
+        color: rgb(23, 161, 186);
     }
 }
 
 .wrapper {
     display: grid;
     grid-template-areas:
+        " log-in log-in no_password no_password no_password no_password no_password no_password"
         "log-in log-in c c d d blank blank"
+        "log-in log-in good_to_know good_to_know good_to_know good_to_know good_to_know good_to_know"
         "log-in log-in approvals approvals approvals with-you with-you with-you"
         "log-in log-in securing securing securing securing securing securing";
-    grid-template-columns: 5rem 200px 200px;
-    grid-template-rows: 10rem 15rem 5rem;
+    grid-template-columns: 6rem 200px 200px;
+    grid-template-rows: 3rem 10rem 3rem 17rem 5rem;
     height: 100%;
     width: 100%;
     padding: 1rem;
@@ -57,33 +61,79 @@ div {
 
     .log-in {
         grid-area: log-in;
-        // grid-row: 1 /3;
-        // grid-column: 1 / 3;
-        background-color: aqua;
+        background-color: rgb(25, 84, 114);
+        padding: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+
+        .login_with {
+            display: flex;
+            border: 1px solid;
+            border-radius: 40px;
+            margin-bottom: 2rem;
+
+            .with_password {
+                border: 1px solid;
+                padding: 10px;
+                border-radius: 40px;
+                background-color: rgb(52, 136, 179);
+                text-align: center;
+            }
+
+            .with_sms {
+                padding: 10px;
+                text-align: center;
+            }
+        }
+
+        form {
+
+            input {
+                height: 30px;
+                width: 16rem;
+                border-radius: 5px;
+                margin-top: 3px;
+            }
+        }
 
 
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+
+    }
+
+    .no_password {
+        grid-area: no_password;
+        color: #123985;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     .password {
         grid-area: c;
         background-color: #f7eded;
         display: flex;
-        color: #123985 ;
+        color: #123985;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 1.5rem;
         font-weight: 600;
         width: 26rem;
 
-        p{
-            
-            margin: 3rem 2.5rem 2.5rem 0 ;
+        p {
+
+            margin: 3rem 2.5rem 2.5rem 0;
 
         }
-        .icon_go{
-            
-            margin-top: 3rem ;
+
+        .icon_go {
+
+            margin-top: 3rem;
             margin-left: 1rem;
-            
+
             text-align: left;
             background-color: white;
             background-image: url(https://e-services.clalit.co.il/OnlineWeb/Images/NewDesignImages/roundLink.svg);
@@ -98,22 +148,23 @@ div {
         grid-area: d;
         background-color: #f7eded;
         display: flex;
-        color: #123985 ;
+        color: #123985;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 1.5rem;
         font-weight: 600;
         width: 26rem;
 
-        p{
-            
-            margin: 3rem 2.5rem 2.5rem 3rem ;
+        p {
+
+            margin: 3rem 2.5rem 2.5rem 3rem;
 
         }
-        .icon_go{
-            
-            margin-top: 3rem ;
+
+        .icon_go {
+
+            margin-top: 3rem;
             margin-left: 1rem;
-            
+
             text-align: left;
             background-color: white;
             background-image: url(https://e-services.clalit.co.il/OnlineWeb/Images/NewDesignImages/roundLink.svg);
@@ -128,21 +179,28 @@ div {
         grid-area: blank;
     }
 
+    .good_to_know {
+        grid-area: good_to_know;
+        color: #123985;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
     .approvals {
         grid-area: approvals;
         display: flex;
         // grid-column: 1/3;
         background-color: #f7eded;
-        img{
+
+        img {
             border-radius: 1rem;
             margin: 0.5rem;
         }
 
-        div{
+        div {
             margin-right: 2rem;
             font-size: large;
             font-family: Arial, Helvetica, sans-serif;
-            color: #123985 ;
+            color: #123985;
         }
     }
 
@@ -152,19 +210,19 @@ div {
         display: flex;
         background-color: #f7eded;
 
-        img{
+        img {
             border-radius: 1rem;
             margin: 0.5rem;
             height: 14rem;
-            width:12rem ;
+            width: 12rem;
 
         }
 
-        div{
+        div {
             margin-right: 2rem;
             font-size: large;
             font-family: Arial, Helvetica, sans-serif;
-            color: #123985 ;
+            color: #123985;
         }
     }
 
