@@ -3,7 +3,11 @@
     width: 100%;
     
     .header{
-
+        position: sticky;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
     }
     .main-page{
         display: grid;
@@ -123,6 +127,12 @@
         grid-column: 6/7;
         grid-row: 1/4;
         background-color: white;
+        text-align: center;
+        .personal-info{
+            padding-right: 1rem;
+            color: blue;
+            text-align: right; 
+        }        
         
     }
 }

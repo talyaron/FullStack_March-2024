@@ -8,8 +8,9 @@
 </head>
 <body>
     <div class="wrapper">
-    <div class="header">
-
+    <div class="header" dir="rtl">
+        <h1>משפחת כללית</h1>
+        <h1>יצירת קשר</h1>
     </div>
     <div class="main-page">
         <div class="field field-top-left">
@@ -55,11 +56,22 @@
             <div class="circle"></div>
             <p>אישור לקנביס רפואי</p>
         </div>
-        <div class="field enter-to-my-zone">
+        <div class="field enter-to-my-zone" dir="rtl">
             <h1>כניסה לתיק הרפואי שלך</h1>
-            <p>מספר תעודת זהות</p>
-            <p></p>
-            <p></p>
+            <div class="personal-info">
+                <form action="">
+                    <label for="id">מספר תעודת זהות</label><br>
+                    <input type="text" id="id" > <br><br>
+                    <label for="code">קוד משתמש</label><br>
+                    <input type="text" id="code" > <br><br>
+                    <label for="password">סיסמה</label><br>
+                    <input type="text" id="password" > 
+                </form>
+            </div>
+            <a href="#login"><button class="login_button">כניסה</button></a>
+            <p>אין לך סיסמה? שכחת גם קוד וגם סיסמה?</p>
+            <hr width="100%">
+            <a href="#login-sms"><button class="login_with 1time-code-button">כניסה עם קוד חד-פעמי</button></a>
         </div>
         <div class="field"></div>
         <div class="field"></div>
