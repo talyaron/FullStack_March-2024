@@ -1,4 +1,110 @@
-body{
+body {
     background-color: #000000;
     color: white;
 }
+
+
+.second-head {
+    display: flex;
+    align-items: end;
+    margin-top: 15px;
+    gap: 10px;
+
+    h2 {
+        margin: 0;
+        align-items: end;
+    }
+
+    p {
+        align-items: center;
+        background-color: #00BBEA;
+        color: #000000;
+        margin: 0;
+        padding: 5px;
+
+    }
+}
+
+
+.main-content {
+
+    .side-bar {
+        text-align: right;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    }
+
+    .sub-menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sub-menu-button {
+        background-color: #707070;
+        width: fit-content;
+        block-size: fit-content;
+        display: flex;
+        align-items: center;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+
+    p {
+        margin: 0 5px;
+        color: #000000;
+        font-size: 20px;
+    }
+
+    .black-box {
+        width: 20px;
+        height: 20px;
+        background-color: #000000;
+    }
+}
+
+
+
+.img-table {
+    display: grid;
+    grid-template-columns: repeat(3, 260px) 260px;
+    grid-template-rows: repeat(12, 210px);
+    box-sizing: content-box;
+    
+
+    .artist-img {
+        box-sizing: border-box;
+    }
+
+    img {
+        width: 248px;
+        height: 181px;
+        object-fit: cover;
+    }
+}
+
+p {
+    color: white;
+    background-color: grey;
+}
+
+// .img-grid{
+//     grid-area: main;
+// }
+// .side-bar{
+//     grid-area: sidebar;
+// }
+// .container{
+//     grid-template-columns: repeat(3,1fr);
+//     // grid-template-rows: max-content;
+//     margin: 0 auto;
+//     grid-template-areas: 
+//     "main sidebar"
+// }
