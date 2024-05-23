@@ -59,9 +59,10 @@
         grid-template-columns: 22.5rem 6rem 14rem 14rem 14rem 22.5rem ;
         grid-template-rows: 7rem 19rem 19rem;
         align-content: center;
+        gap: 10px;
         
         .field{
-            border:1px solid black;
+            // border:1px solid black;
 
         }
         .field-top-left{
