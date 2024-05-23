@@ -1,3 +1,15 @@
+// Define the mixin
+@mixin walla-logo {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+
+
+
+
 body,
 html {
     margin: 0;
@@ -8,9 +20,19 @@ html {
     //on mobile
     @media (max-width: 768px) {
         font-size: 10px;
+
+        .container {
+            width: 100px;
+            height: 80px;
+        }
     }
 
 }
+
+$header-columns:10vw 10vw 10vw 25vw 20vw 25vw;
+$list-item-row:10px 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px;
+$background-color-list-item:rgb(49, 48, 48);
+
 
 .center-header {
 
@@ -23,7 +45,7 @@ html {
     .header {
         display: grid;
         grid-template-rows: 10vh;
-        grid-template-columns: 10vw 10vw 10vw 25vw 20vw 25vw;
+        grid-template-columns: $header-columns;
         width: 80vw;
         margin: 0;
         padding: 0;
@@ -68,7 +90,6 @@ html {
                 .text {
                     display: flex;
                     flex-direction: column;
-                    font-family: Arial, Helvetica, sans-serif;
                     font-size: 0.8rem;
 
                     p {
@@ -126,8 +147,8 @@ html {
 
         display: grid;
         grid-template-columns: 100vw;
-        grid-template-rows: 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px 10px;
-        background-color: rgb(49, 48, 48);
+        grid-template-rows: $list-item-row;
+        background-color: $background-color-list-item;
         width: 100vw;
         height: 40px;
 
@@ -156,10 +177,7 @@ html {
             }
 
             .walla-logo {
-                font-size: 1.8rem;
-                font-weight: bolder;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                font-style: italic;
+                @include walla-logo;
             }
         }
     }
@@ -221,6 +239,7 @@ html {
 
     }
 }
+
 .underline {
     width: 600px;
     padding-top: 0;

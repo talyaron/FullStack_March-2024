@@ -1,5 +1,15 @@
 $template-row-new-article : 110px 110px 110px 110px 110px 110px 110px 110px 110px 110px;
 
+// Define the mixin
+@mixin walla-logo
+{
+    font-size: 1.2rem;
+    font-weight: bolder;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+}
+
+
 
 .advertising {
     padding-top: 10px;
@@ -210,7 +220,8 @@ $template-row-new-article : 110px 110px 110px 110px 110px 110px 110px 110px 110p
     .walla-new-logo {
         color: blue;
         float: right;
-        font-style: italic;
+        @include walla-logo;
+
 
         h1 {
             padding: 0px;
