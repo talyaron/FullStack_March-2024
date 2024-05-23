@@ -1,24 +1,35 @@
 @import url(.../Main/dist/header.css);
 
-$uor-gap: 30px;
+$uor-gap: 25px;
 
-body {
+
+// @media screen and (max-width: 480) {
+//     .crime-top-news {
+//         display: block;
+//         background-color: tomato;
+//     }
+// }
+
+.crime-main {
     font-family: "Karantina", system-ui, sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 20px;
-}
-
-.crime-main {
     padding-inline: 5px;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: auto;
-    row-gap: 30px;
-    max-width: 900px;
+    row-gap: 40px;
+    // width: 80vw;
+    max-width: 960px;
     margin: auto;
     margin-top: $uor-gap;
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
     h1 {
         font-weight: 300;
@@ -44,9 +55,6 @@ body {
         text-decoration: none;
     }
 
-    h2 {
-        color:#1DA1F2
-    }
 
     &_second-title {
         display: flex;
@@ -54,6 +62,18 @@ body {
         align-items: center;
         border-top: 1px solid rgb(200, 200, 200);
         border-bottom: 1px solid rgb(200, 200, 200);
+
+        h2 {
+            font-weight: 300;
+        }
+
+        &_steps {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-column: 1;
+            column-gap: 8px;
+            align-items: center;
+        }
 
         &_social-list {
             display: grid;
@@ -104,6 +124,15 @@ body {
         border-bottom: 5px solid rgb(200, 200, 200);
     }
 }
+
+#crime_active-menu-item {
+    background-color: #1DA1F2;
+}
+
+#crime_active-item {
+    color: #1DA1F2;
+}
+
 
 .crime-news-card {
 
@@ -180,6 +209,7 @@ body {
     &_text-preview {
         line-height: 1.5em;
         padding-left: 5px;
+        direction: rtl;
         h3 {
             color: rgb(125, 125, 125);
         }
@@ -208,6 +238,7 @@ body {
 .crime-top-news {
     direction: ltr;
     display: flex;
+    justify-content: space-between;
     grid-column: 1;
     font-size: calc(0.6em + 1vw);
 
@@ -218,6 +249,11 @@ body {
     img {
         width: 100%;
     }
+
+    // @media screen and (max-width: 480) {
+    //     display: block;
+    //     background-color: tomato;
+    // }
 }
 
 .two-news {
@@ -237,6 +273,5 @@ body {
 
 .section-news {
     grid-column: 1;
-    // height: 60px;
     border-bottom: 1px solid rgb(200, 200, 200);
 }
