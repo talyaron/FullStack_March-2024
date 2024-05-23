@@ -44,11 +44,62 @@
     }
 }
 
-.card{
-    border:1px solid #000;
-    padding:1rem;
+.card {
+    border: 1px solid #000;
+    padding: 1rem;
     background-color: rgb(240, 240, 240);
     max-width: 50ch;
     border-radius: 5px;
     margin: .4rem;
+}
+
+.main-sites {
+
+    //Block
+    &__item {
+        //Element
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        border: 1px solid #000;
+        border-radius: 5px;
+        margin: .4rem;
+    }
+}
+
+.nav {
+    &__item {
+        display: inline-block;
+        padding: 1rem;
+        border: 1px solid #000;
+        border-radius: 5px;
+        margin: .4rem;
+    }
+}
+
+.main-items { //block
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
+    max-width: 75ch;
+
+    &__article { //element
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        border: 1px solid #000;
+        border-radius: 5px;
+        margin: .4rem;
+
+        img {
+            width: 30%;
+        }
+
+        &>div {
+            padding: 1rem;
+        }
+    }
 }

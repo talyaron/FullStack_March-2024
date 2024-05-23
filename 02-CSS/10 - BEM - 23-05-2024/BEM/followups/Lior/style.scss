@@ -1,0 +1,27 @@
+.card{
+    border:1px solid #000;
+    padding:1rem;
+    background-color: rgb(240, 240, 240);
+    max-width: 50ch;
+    border-radius: 5px;
+    margin: .4rem;
+
+    // modfier
+
+&--success {
+    background-color: rgb(112, 191, 112);
+    
+}
+
+&--warning {
+    background-color: red;
+    
+}
+
+&--yellow {
+    background-color: rgb(222, 228, 27);
+    
+}
+
+}
+
