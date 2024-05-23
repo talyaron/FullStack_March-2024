@@ -11,7 +11,7 @@ body .grid-container {
 }
 
 body .grid-item {
-  border: 1px solid black;
+  border: 1px whitesmoke;
   background-color: white;
 }
 
@@ -28,6 +28,10 @@ body h1 .logo {
   background-color: white;
   font-size: 3.2rem;
   margin-right: 600px;
+}
+
+body h1 .logo1 {
+  margin-left: 0;
 }
 
 body h1 .nav_container {
