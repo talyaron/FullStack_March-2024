@@ -16,13 +16,13 @@
 <body>
     <!-- Header + navbar -->
     <header>
-        <div class="rightHeader">
+        <div class="rightHeader">   
             <div class="logo-big">
-                <a href="./index.html">
+                <a href="../Main/index.html">				
                     <img src="https://img.mako.co.il/2024/05/15/Logofirst.gif" width="137" height="50" alt="Logo">
                 </a>
             </div>
-        </div>
+        </div> 
         <div class="leftHeader">
             <div class="fb"><a href="#"><i class="fa-brands fa-facebook"></i></a></div>
             <div class="mail"><a href="#"><i class="fa-solid fa-envelope-open-text"></i></a></div>
@@ -33,23 +33,14 @@
         <ul>
             <li class="logo"><img src="https://img.mako.co.il/2024/05/15/LogoSticky.gif" width="112" height="40" alt="Sticky Logo"></li>
             <li><a href="#" class="nope">חדשות</a></li>
-            <li> | </li>
             <li><a href="../Crime/crime.html">פלילים</a></li>
-            <li> | </li>
             <li><a href="../Celebs/celebs.html">סלבס</a></li>
-            <li> | </li>
             <li><a href="../Food/food.html">אוכל</a></li>
-            <li> | </li>
             <li><a href="#" class="nope">מגזין</a></li>
-            <li> | </li>
             <li><a href="#" class="nope">הסברה</a></li>
-            <li> | </li>
             <li><a href="#" class="nope">12+</a></li>
-            <li> | </li>
             <li><a href="#" class="nope">תכניות קשת</a></li>
-            <li> | </li>
             <li><a href="#" class="nope">שיתופי פעולה</a></li>
-            <li> | </li>
             <li><a href="#" class="nope">עוד</a></li>
         </ul>
     </nav>
@@ -57,10 +48,14 @@
     <main class="crime-main">
         <div class="crime-site-menu">
             <div class="crime-site-menu_title">
-                <h1><a href="">פלילים+</a></h1>
+                <h1><a href="./crime.html">פלילים+</a></h1>
             </div>
             <div class="crime-site-menu_second-title">
-                <h2><a href="#">פלילים+</a></h2>
+                <div class="crime-site-menu_second-title_steps">
+                    <h2><a href="./crime.html">פלילים+</a></h2>
+                    <h3>&rsaquo;</h3>
+                    <h2 id="crime_active-item"><a href="#">עבר פלילי</a></h2>
+                </div>
                 <div class="crime-site-menu_second-title_social-list">
                     <p>עקבנו אחרינו</p> |
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a> |
@@ -73,7 +68,7 @@
                     <li><a href="#" style="cursor: not-allowed;">חדשות</a></li>|
                     <li><a href="#" style="cursor: not-allowed;">מגזין</a></li>|
                     <li><a href="#" style="cursor: not-allowed;">הפשיעה בדרות הארץ</a></li>|
-                    <li style=" background-color: #1DA1F2;"><a href="#">עבר פלילי</a></li>
+                    <li id="crime_active-menu-item"><a href="#">עבר פלילי</a></li>
                 </ul>
                 <div></div>
             </div>

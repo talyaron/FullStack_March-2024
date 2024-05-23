@@ -3,9 +3,12 @@
     grid-template-columns: 500px 500px 500px;
     grid-template-rows: 200px 200px 200px;
     justify-content: center;
+    gap: 10px;
+
     .item{
         border: 1px solid black;
         background-color: aqua;
+
     }
     .combine-header{
         display: flex;
@@ -14,6 +17,7 @@
         background-color: yellow;
         justify-content: center;
         align-items: center;
+
     }
 
     .combine-first-column{
@@ -24,6 +28,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
     }
     .combine-second-column{
         display: flex;
@@ -33,9 +38,10 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
     }
 
-    .combine-second-column{
+    .combine-third-column{
         display: flex;
         grid-row: 2/4;
         grid-column: 3;

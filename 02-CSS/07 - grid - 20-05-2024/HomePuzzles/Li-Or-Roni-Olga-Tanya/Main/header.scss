@@ -2,10 +2,16 @@
 $header-color: #122536;
 $navbar-color: #dce9ed;
 $header-hover: #2895ae;
-$font-main: Arial, Helvetica, sans-serif;
+$font-main: system-ui;
+
 
 /* Header */
 header {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-family: system-ui;
     height: 65px;
     display: flex;
     width: 100vw;
@@ -60,6 +66,7 @@ nav {
     justify-content: center;
     position: sticky;
     top: 0;
+    height: 40px;
     z-index: 100;
 
     ul {
@@ -68,18 +75,22 @@ nav {
         align-items: center;
         margin-block-start: 1em;
         padding-inline-start: 40px;
-        height: 50px;
         list-style: none;
         width: 100%;
 
         li {
             padding: 0 10px;
+            margin: 0;
             font-family: $font-main;
-            font-size: 20px;
+            font-size: 15px;
             color: #122536;
             text-align: center;
-            box-sizing: border-box;
-
+            border-left: 1px solid black;
+            height: 20px;
+            &:hover {
+                background-color: #122536;
+                color: white;
+            }
             &.logo {
                 display: none;
             }
