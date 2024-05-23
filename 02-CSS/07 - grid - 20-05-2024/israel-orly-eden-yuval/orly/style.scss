@@ -19,8 +19,6 @@ body{
   .img{
     margin: 25px;
   }
-h1 {
-margin-top: 0px;
 
 .logo {
   color: green;
@@ -31,9 +29,12 @@ margin-top: 0px;
 }
 
 .logo1{
-  margin-left: 0;
+  margin-right: 900px;
 }
-  
+  .nav{
+    display: flex;
+    flex-direction: row;
+  }
   .nav_container {
     display: flex;
     position: relative;
