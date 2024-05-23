@@ -31,7 +31,11 @@ body h1 .logo {
 }
 
 body h1 .logo1 {
-  margin-left: 0;
+  margin-right: 900px;
+}
+
+body h1 .nav {
+  display: flex;
 }
 
 body h1 .nav_container {
