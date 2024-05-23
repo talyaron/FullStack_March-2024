@@ -1,0 +1,50 @@
+.card {
+    width: 240px;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    margin:10px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 15px;
+
+
+    .image {
+        width: 100%;
+        height: 50%;
+
+        img {
+
+            width: 100%;
+            height: 50%;
+        }
+    }
+
+    .title {
+        font-size: larger;
+        font-weight: bolder;
+        padding-bottom: 10px;
+    }
+
+    .text {
+        font-size: 1.2rem;
+        width: fit-content;
+    }
+
+
+    &--warning {
+        background-color: yellow;
+    }
+
+    &--success {
+        background-color: green;
+    }
+    &--
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+}
