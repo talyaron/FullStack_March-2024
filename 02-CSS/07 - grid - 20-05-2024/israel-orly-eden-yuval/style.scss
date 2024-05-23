@@ -1,31 +1,250 @@
 .wrapper{
+    font-family:Arial, Helvetica, sans-serif;
+    width: 100%;
     
     .header{
+        position: sticky;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        .buttons{
+            position: absolute;
+            gap: 6.5rem;
+            display: flex;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50% ,-50%);
+            
+        }
+        .header-logo{
+            
+            img{
+                width: 40% ;
+                padding-right: 100px;
+            }
+        }
+        .clalit-button{
+            button{
+            font-size: 1.8rem;
+            background-color: #008000;
+            border-radius: 40px;
+            color: white;
+            width: 140%;
+            height: 3.4rem;
+            }
+        }
+        .contact-button{
+            button{
+                font-size: 1.8rem;
+                background-color: #096F9F;
+                border-radius: 40px;
+                color: white;
+                width: 140%;
+                height: 3.4rem;
+                
+                }
+                
+            }
 
     }
     .main-page{
         display: grid;
-        grid-template-columns: 360px 200px 200px 200px 360px ;
-        grid-template-rows: 75px 255px 255px;
-        border:1px solid black;
-        padding-left: 3rem;
-        gap:50px;
-        .left-page{
-            padding-left: 3rem;
-            grid-row: 1;
-            grid-column:1 ;
+        background-image: linear-gradient(
+        to right,
+        rgb(11 48 66 / 90%),
+        rgb(254 222 161 / 70%));    
+        place-content: center;
+        
+        grid-template-columns: 22.5rem 6rem 14rem 14rem 14rem 22.5rem ;
+        grid-template-rows: 7rem 19rem 19rem;
+        align-content: center;
+        
+        .field{
             border:1px solid black;
-            background-color: aquamarine;
+
+        }
+        .field-top-left{
+            grid-row: 1;
+            padding-top: 4%;
+            padding-right: 1rem;
+            color: white;
+            h1{
+                font-size: 2.3rem;
+            }
+        }
+        .field-top-center{
+            display: flex;
+            color: white;
+            flex-direction: row;
+            gap: 2rem;
+            grid-row: 1;
+            grid-column: 3/6;
+            padding-top: 1.7%;
+            
+            
+            .inside-24-7{
+                display: flex;
+                
+                flex-direction: column;
+                line-height:0rem;
+                h1{
+                    font-size: 2.3rem;
+                }
+                p{
+                    font-size: 1.4rem;
+                    
+                }
+                
+            }
+        }
+        .field-left{
+            grid-row: 2/4;
+            color: black;
+            background-color: white;
+            
+            h1{
+                font-size: 3.2rem;
+                line-height: 3rem;
+                padding-right: 3%;
+                font-weight: lighter;
+                
+            }
+            p{
+                font-size: 1.6rem;
+                padding-right: 3%;
+                font-weight: lighter;
+            }
+            img{
+                width: 100%;
+            }
+            
+        }
+        .center-global{
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            text-align: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 21%;
+            
+            p{
+                font-size: 2rem;
+                color: black;
+                text-decoration: none;
+                font-weight: lighter;
+            }
+            .circle{
+                
+                background-color: #1BA1A4;
+                height: 120px;
+                width: 120px;
+                border-radius: 50%;
+                
+                img{
+                    padding-top: 1.4rem;
+                    width: 4rem;
+                    object-position: center;
+                    
+
+                }
+                
+                
+                
+            }
+        }
+        .center-mental-health{
+            
+            grid-row: 2;
+            grid-column: 3;
             
 
         }
-        .center-page{
-            padding-left: 3rem;
+        .center-from-home{
             grid-row: 2;
-            grid-column:1 ;
-            border:1px solid black;
-            background-color: rgb(190, 37, 70);
-            gap:50px;
+            grid-column: 4;
+
         }
+        .center-around-clock{
+            grid-row: 2;
+            grid-column: 5;
+
+        }
+        .center-lab-tests{
+            grid-row: 3;
+            grid-column: 3;
+
+        }
+        .center-recovery-mobility{
+            grid-row: 3;
+            grid-column: 4;
+
+        }
+        .center-medical-cannabis{
+            grid-row: 3;
+            grid-column: 5;
+
+        }
+    }
+    .enter-to-my-zone{
+        display: flex;
+        flex-direction: column;
+        grid-column: 6/7;
+        grid-row: 1/4;
+        background-color: white;
+        text-align: center;
+        gap: 40px;
+        font-weight: lighter;
+        .personal-info{
+            padding-right: 1rem;
+            color: #096F9F;
+            text-align: right; 
+        }
+        .clalit-button{
+            button{
+            font-size: 1.8rem;
+            background-color: #008000;
+            border-radius: 25px;
+            color: white;
+            width: 80%;
+            height: 3rem;
+            }
+        }
+        .contact-button{
+            button{
+                font-size: 1.8rem;
+                background-color: #096F9F;
+                border-radius: 25px;
+                color: white;
+                width: 80%;
+                height: 3rem;
+                
+                }
+                
+            }
+            
+            .nopassword{
+                font-size: 1.4rem;
+                color: black;
+                text-decoration: none;
+            }
+            label{
+                font-size: 1.6rem;
+            }
+            input{
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                width: 80%;
+                object-position: center;
+                
+            }
+            input:hover{
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.94);
+            }
+        
+
+        
+            
     }
 }
