@@ -36,7 +36,6 @@ body h1 .logo1 {
 
 body h1 .nav {
   display: flex;
-  flex-direction: row;
 }
 
 body h1 .nav_container {
