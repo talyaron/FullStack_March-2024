@@ -1,0 +1,29 @@
+.card{
+    border:1px solid #000;
+    padding:1rem;
+    background-color: rgb(240, 240, 240);
+    max-width: 55ch;
+    border-radius: 5px;
+    margin: .4rem;
+
+    &--big{
+        padding: 2rem;
+        font-size: 2rem;
+    }
+    &--small{
+        padding: 0.5;
+        font-size: 0.5rem;
+    }
+
+    &--round{
+        border-radius: 50%;
+    }
+
+    &--img{
+        img{
+            width: fit-content;
+            padding: 5px ;
+            
+        }
+    }
+}
