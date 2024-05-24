@@ -11,28 +11,27 @@ body {
     align-items: center;
 }
 
-
-/*  Main   */
+/* Main */
 
 .banner {
     position: relative;
-    margin: 5rem auto 0 auto;
+    margin: 5rem auto 0;
     display: flex;
     width: 100%;
     justify-content: center; 
-    align-items: center; 
+    align-items: center;
+
     p {
         font-size: 1rem;
         padding: 0 2rem;
         color: #000;
-        border-right: black 1px solid;
+        border-right: 1px solid black;
     }
+
     img {
         margin-left: 20px; 
     }
 }
-
-
 
 .container {
     display: grid;
@@ -41,7 +40,7 @@ body {
     margin: 0 auto;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
-    gap: 0px 0px;
+    gap: 0;
     grid-auto-flow: row;
     grid-template-areas:
         "main-image"
@@ -51,88 +50,100 @@ body {
         "secondary-image"
         "secondary-image";
     justify-items: center; 
-    align-items: center; 
+    align-items: center;
+
     img {
         width: 95%;
     }
-    
 }
 
-.main-image { grid-area: main-image; }
-.category { grid-area: category; }
+.main-image {
+    grid-area: main-image;
+}
+
+.category {
+    grid-area: category;
+}
+
 .secondary-image { 
     grid-area: secondary-image;
     width: 100%;
-     }
- 
-/* re-usable components*/
+}
 
-    /* category cards*/
+/* Re-usable components */
 
-    .category {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between; 
-        width: 95%;
-        a {
-            text-decoration: none;
-        }
-        &__item {
-            display: flex;
-    
-            &__card {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-    
-                img {
-                    border-radius: 50%;
-                    width: 7.5rem;
-                    height: auto;
-                }
-                h5 {
-                    font-size: 0.8rem;
-                    color: #000;
-                }
-            }
-        }
+/* Category cards */
+
+.category {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    width: 95%;
+
+    a {
+        text-decoration: none;
     }
 
-    .grid {
-        display: grid; 
-        position: relative;
-        margin: 0 auto;
-        grid-template-columns: 1fr 1fr 1fr; 
-        grid-template-rows: 1.5fr 1.5fr; 
-        grid-gap: 1rem; 
-        .catalog {
-            position: relative;
-            text-align: left;
+    &__item {
+        display: flex;
+
+        &__card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
             img {
-                width: 100%;
+                border-radius: 50%;
+                width: 7.5rem;
                 height: auto;
             }
-            &__text {
-                position: absolute;
-                left: 0.5rem;
-                bottom: 0.5rem;
-                color: white ;
-                .p--over--image {
-                    margin: 0;
-                    padding: 0;
-                    font-weight: bold;
-                    &__underlined {
-                        text-decoration: underline;
-                        font-weight: normal;
-                    }
-                }
-                
+
+            h5 {
+                font-size: 0.8rem;
+                color: #000;
             }
         }
     }
+}
+
+.grid {
+    display: grid; 
+    position: relative;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1.5fr 1.5fr; 
+    grid-gap: 1rem;
+
+    .catalog {
+        position: relative;
+        text-align: left;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        &__text {
+            position: absolute;
+            left: 0.5rem;
+            bottom: 0.5rem;
+            color: white;
+
+            .p--over--image {
+                margin: 0;
+                padding: 0;
+                font-weight: bold;
+
+                &__underlined {
+                    text-decoration: underline;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}
 
 hr {
     color: #EFEFEF;
 }
-

@@ -5,16 +5,16 @@ footer {
     a.black {
         font-size: 1.5rem;
         padding: 0 0.5rem;
-        text-decoration: none; 
+        text-decoration: none;
         color: black;
-        
     }
-    
+
     .footer-menu {
         background-color: #F7F7F7;
-        margin: 1rem 0 0 0;
+        margin: 1rem 0 0;
         padding: 0;
         width: 100%;
+
         &__grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -23,86 +23,95 @@ footer {
                 "my-account language"
                 "navigator navigator"
                 "mobile-site mobile-site";
-            
+
             .my-account {
                 grid-area: my-account;
                 display: flex;
                 align-items: center;
-                justify-content:left;
-                border: #7b7e7b 1px solid;
+                justify-content: left;
+                border: 1px solid #7b7e7b;
+
                 .account-icon {
                     font-size: 2rem;
                     margin: 0.5rem 2rem;
                 }
+
                 .my-account-text-content {
                     display: flex;
                     flex-direction: column;
-                    align-items: start;
+                    align-items: flex-start;
+
                     &:hover {
                         text-decoration: underline;
                         cursor: pointer;
                     }
-                    h4, p{
+
+                    h4, p {
                         padding: 0;
                         margin: 0;
                     }
                 }
             }
-            
+
             .language {
                 grid-area: language;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                border: #7b7e7b 1px solid;
+                border: 1px solid #7b7e7b;
+
                 .left-language {
                     display: flex;
                     align-items: center;
                     justify-content: center;
+
                     .fa-globe {
                         margin: 1rem;
                     }
+
                     h3 {
                         #small-language {
                             font-weight: normal;
                         }
                     }
                 }
+
                 .right-language {
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     padding-right: 1rem;
+
                     #green {
                         color: olive;
                     }
                 }
             }
-            
+
             .navigator {
                 grid-area: navigator;
             }
-            
+
             .footer_table {
                 width: 90%;
                 overflow: auto;
                 margin: auto;
-                
+
                 table {
                     width: 100%;
                     border-collapse: collapse;
                     border-spacing: 1px;
                     text-align: left;
-                    
-                    th {
+
+                    th, td {
                         padding: 5px;
                     }
-                    
+
                     td {
-                        padding: 5px;
                         a {
                             text-decoration: none;
                             color: black;
+
                             &:hover {
                                 text-decoration: underline;
                             }
@@ -110,11 +119,12 @@ footer {
                     }
                 }
             }
-            
+
             .mobile-site {
                 grid-area: mobile-site;
                 margin-top: 0.3rem;
                 padding: 0.5rem;
+
                 a.mobile {
                     color: olive;
                 }
