@@ -11,13 +11,11 @@
     
     .footer-menu {
         background-color: #F7F7F7;
-        
+        margin-bottom: 0;
         &__grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 0.5fr 2fr 1fr;
-            gap: 0px 0px;
-            grid-auto-flow: row;
+            grid-template-rows: 0.5fr 1fr 0.5fr;
             grid-template-areas:
                 "my-account language"
                 "navigator navigator"
@@ -44,7 +42,6 @@
                 margin: auto;
                 
                 table {
-                    height: 100%;
                     width: 100%;
                     border-collapse: collapse;
                     border-spacing: 1px;
@@ -69,7 +66,8 @@
             
             .mobile-site {
                 grid-area: mobile-site;
-                
+                margin-top: 0.3rem;
+                padding: 0.5rem;
                 a.mobile {
                     color: olive;
                 }
