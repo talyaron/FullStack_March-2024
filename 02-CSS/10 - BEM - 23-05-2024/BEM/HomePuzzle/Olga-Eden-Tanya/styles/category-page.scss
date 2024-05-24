@@ -1,0 +1,139 @@
+@import '../style.scss';
+
+$padding15: 15px;
+
+main {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1280px;
+    text-align: left;
+    padding-top: $padding15;
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+}
+
+.category-link {color: green;}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding-bottom: $padding15;
+}
+
+.category__left-menu {
+    margin-right: $padding15*2;
+    flex: 1;
+    min-width: 220px;
+
+    ul {
+        margin-top: $padding15;
+    }
+
+    li {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-top: 1px gray solid;
+
+
+        a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__checkbox {
+        padding-top: $padding15;
+        direction: rtl;
+        border-top: 1px solid gray;
+
+        label {
+            display: block;
+        }
+    }
+}
+
+.category__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: $padding15;
+    // max-width: 900px;
+}
+
+.category {
+    &__top-list {
+        background-color: #f1f1f1;
+        padding: $padding15;
+        grid-column: 1;
+
+        &__first-line {
+            display: flex;
+            white-space: nowrap;
+            padding-bottom: $padding15;
+            p {
+                display: block;
+                overflow: hidden;
+                max-width: 880px;
+            }
+        }
+    }
+
+    &-category {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        column-gap: 5px;
+        text-align: center;
+        // flex-direction: row;
+        // justify-content: space-between;
+        // width: 95%;
+
+
+        &__item {
+        //     display: flex;
+
+            &__card {
+
+                // display: flex;
+                // flex-direction: column;
+                // align-items: center;
+                // justify-content: center;
+
+                img {
+                    border-radius: 50%;
+                    width: 100%;
+                }
+                h5 {
+                    font-size: 0.8rem;
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    &__main-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: $padding15;
+
+        div {
+
+            height: 300px;
+            background-color: aqua;
+        }
+    }
+}
