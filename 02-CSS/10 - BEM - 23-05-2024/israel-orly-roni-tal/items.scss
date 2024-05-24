@@ -1,0 +1,29 @@
+.items{
+    height: 20rem;
+    width: 20rem;
+    font-family: 'Times New Roman', Times, serif;
+    img{
+        height: 10rem;
+        width: 100%;
+
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+    h2{
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    .items-tags{
+        display: flex;
+        gap: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+
+        .items-news{
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+}
