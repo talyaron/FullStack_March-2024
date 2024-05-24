@@ -1,5 +1,5 @@
 @import '../style.scss';
-@import './elements.scss'
+@import './elements.scss';
 
 $padding15: 15px;
 
@@ -94,7 +94,7 @@ main {
         }
     }
 
-    &-category {
+    &__category {
         display: grid;
         grid-template-columns: repeat(10, 1fr);
         column-gap: $padding15*2;
