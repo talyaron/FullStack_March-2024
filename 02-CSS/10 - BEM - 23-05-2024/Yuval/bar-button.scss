@@ -1,11 +1,16 @@
 .btn{
     display: flex;
     flex-direction: row;
-    
+    border: 1px solid #000;
+    background-color: #fff;
+    gap: 2rem;
+    width: 70rem;
     p{
-    font-size: 2rem;
+    font-size: 6rem;
     }
-    img{
-        object-fit: contain;
+    .icon-img{
+        width: 30%;
+        position: relative;
+        
     }
 }
