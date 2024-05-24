@@ -1,6 +1,7 @@
 /********************** Footer  ************************/
+footer {
+    width: 98vw;
 
-  
     a.black {
         font-size: 1.5rem;
         padding: 0 0.5rem;
@@ -11,11 +12,13 @@
     
     .footer-menu {
         background-color: #F7F7F7;
-        margin-bottom: 0;
+        margin: 1rem 0 0 0;
+        padding: 0;
+        width: 100%;
         &__grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 0.5fr 1fr 0.5fr;
+            grid-template-rows: 0.3fr 1fr 0.5fr;
             grid-template-areas:
                 "my-account language"
                 "navigator navigator"
@@ -24,12 +27,56 @@
             .my-account {
                 grid-area: my-account;
                 display: flex;
+                align-items: center;
+                justify-content:left;
+                border: #7b7e7b 1px solid;
+                .account-icon {
+                    font-size: 2rem;
+                    margin: 0.5rem 2rem;
+                }
+                .my-account-text-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                    h4, p{
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
             }
             
             .language {
                 grid-area: language;
                 display: flex;
                 flex-direction: row;
+                justify-content: space-between;
+                border: #7b7e7b 1px solid;
+                .left-language {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .fa-globe {
+                        margin: 1rem;
+                    }
+                    h3 {
+                        #small-language {
+                            font-weight: normal;
+                        }
+                    }
+                }
+                .right-language {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-right: 1rem;
+                    #green {
+                        color: olive;
+                    }
+                }
             }
             
             .navigator {
@@ -74,4 +121,4 @@
             }
         }
     }
-
+}
