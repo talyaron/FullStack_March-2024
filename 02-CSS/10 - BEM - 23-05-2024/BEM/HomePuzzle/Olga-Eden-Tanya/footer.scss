@@ -1,64 +1,72 @@
+/********************** Footer  ************************/
 
-    /********************** Footer  ************************/
-    footer {
-        .icons-bar {
-            font-size: 1.5rem;
-            padding: 0 0.5rem;
+  
+    a.black {
+        font-size: 1.5rem;
+        padding: 0 0.5rem;
+        text-decoration: none; 
+        color: black;
+        
+    }
     
-        }
-        .footer-menu {
-            background-color: #F7F7F7;
-            &__grid {  
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 0.5fr 2fr 1fr;
-                gap: 0px 0px;
-                grid-auto-flow: row;
-                grid-template-areas:
-                  "my-account language"
-                  "navigator navigator"
-                  "mobile-site mobile-site";
-              }
-              
-              .my-account { 
-                grid-area: my-account; 
+    .footer-menu {
+        background-color: #F7F7F7;
+        
+        &__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 0.5fr 2fr 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "my-account language"
+                "navigator navigator"
+                "mobile-site mobile-site";
+            
+            .my-account {
+                grid-area: my-account;
+                display: flex;
             }
-              .language { 
-                grid-area: language; 
-            }  
-              .navigator { 
-                grid-area: navigator; 
-                .footer_table {
-                    width: 90%;
-                    overflow: auto;
-                    margin: auto;
-                }
+            
+            .language {
+                grid-area: language;
+                display: flex;
+                flex-direction: row;
+            }
+            
+            .navigator {
+                grid-area: navigator;
+            }
+            
+            .footer_table {
+                width: 90%;
+                overflow: auto;
+                margin: auto;
                 
-                .footer_table table {
+                table {
                     height: 100%;
                     width: 100%;
                     border-collapse: collapse;
                     border-spacing: 1px;
                     text-align: left;
-                }
-                
-                .footer_table caption {
-                    caption-side: top;
-                    text-align: left;
-                }
-                
-                .footer_table th {
-                    padding: 5px;
-                }
-                
-                .footer_table td {
-                    padding: 5px;
+                    
+                    th {
+                        padding: 5px;
+                    }
+                    
+                    td {
+                        padding: 5px;
+                    }
                 }
             }
-              .mobile-site { 
-                grid-area: mobile-site; 
+            
+            .mobile-site {
+                grid-area: mobile-site;
+                
+                a.mobile {
+                    color: olive;
+                }
             }
-    
-              
         }
     }
+
