@@ -1,7 +1,14 @@
-.btn{
-    color: red;
-    .btn-icon{
-       width: 24px; 
-       height: 24px;
+.left-bar {
+    display: flex;
+    flex-direction: column;
+    .btn {
+        color: red;
+        display: flex;
+        flex-direction: row;
+        .btn-icon {
+            width: 24px;
+            height: 24px;
+        }
+
     }
 }
