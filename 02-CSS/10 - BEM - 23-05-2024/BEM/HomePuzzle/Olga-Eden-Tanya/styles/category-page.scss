@@ -1,4 +1,5 @@
 @import '../style.scss';
+@import './elements.scss'
 
 $padding15: 15px;
 
@@ -68,14 +69,14 @@ main {
     }
 }
 
-.category__container {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: $padding15;
-    // max-width: 900px;
-}
 
 .category {
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: $padding15;
+    }
+
     &__top-list {
         background-color: #f1f1f1;
         padding: $padding15;
@@ -96,7 +97,7 @@ main {
     &-category {
         display: grid;
         grid-template-columns: repeat(10, 1fr);
-        column-gap: 5px;
+        column-gap: $padding15*2;
         text-align: center;
         // flex-direction: row;
         // justify-content: space-between;
@@ -108,14 +109,10 @@ main {
 
             &__card {
 
-                // display: flex;
-                // flex-direction: column;
-                // align-items: center;
-                // justify-content: center;
-
                 img {
                     border-radius: 50%;
                     width: 100%;
+                    border: 1px grey solid;
                 }
                 h5 {
                     font-size: 0.8rem;
