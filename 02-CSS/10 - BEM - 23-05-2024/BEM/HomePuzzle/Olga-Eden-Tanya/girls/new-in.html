@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="../styles/dist/section-page.css">
     <link rel="stylesheet" href="../styles/dist/category-page.css">
     <link rel="stylesheet" href="../styles/dist/footer.css">
+    <link rel="stylesheet" href="../styles/dist/elements.css">
     <script src="https://kit.fontawesome.com/0dc66bd6c2.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!----------------- Header -------------------->
     <header>
         <div class="top-header">
             <div class="header-links-top-left">
@@ -36,7 +38,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="./new-in.html" class="active">GIRLS</a></li>
+                <li><a href="./new-in.html">GIRLS</a></li>
                 <li><a href="">BOYS</a></li>
                 <li><a href="">BABY</a></li>
                 <li><a href="">WOMEN</a></li>
@@ -51,45 +53,54 @@
     <!----------------------- Main -------------------------->
 <main>
     <div class="category__left-menu">
-        <div class="title">
-            <p class="category__container__title-text">1517 Products</p>
+        <div class="title" id="title-left-menu">
+            <h3 class="category__container__title-text">1517 Products</h3>
             <a href="#" class="category-link">Clear all</a>
         </div>
         <div class="category__left-menu__checkbox">
-            <label>One
+            <label>New In <span class="color-grey">(860)</span>
                 <input type="checkbox" checked="checked">
                 <span class="checkmark"></span>
             </label>
 
-            <label>Two
+            <label>In stock <span class="color-grey">(386)</span>
                 <input type="checkbox">
                 <span class="checkmark"></span>
             </label>
         </div>
         <ul>
             <li><a href="#"><span>Category</span><span>ᨆ</span></a></li>
-            <li><a href="#">Item</a></li>
-            <li><a href="#">Item</a></li>
-            <li><a href="#">Item</a></li>
-            <li><a href="#">Item</a></li>
+            <li><a href="#"><span>Size</span><span>ᨆ</span></a></li>
+            <li><a href="#"><span>Brand</span><span>ᨆ</span></a></li>
+            <li><a href="#"><span>Color</span><span>ᨆ</span></a></li>
+            <li><a href="#"><span>Use</span><span>ᨆ</span></a></li>
+            <li><a href="#"><span>Pattern</span><span>ᨆ</span></a></li>
+            <li><a href="#"><span>Style</span><span>ᨆ</span></a></li>
         </ul>
     </div>
     <div class="category__container">
         <div class="title">
-            <p class="category__container__title-text">Girls New In</p>
+            <div class="category__container__title-text">
+                <h3>Girls New In <span class="color-grey">(860)</span></h3>
+            </div>
+
             <form class="category__container__title-sort">
                 <label for="fruits">Sort</label>
                 <select id="fruits" name="fruits">
-                    <option value="apple">Яблоко</option>
-                    <option value="banana">Банан</option>
-                    <option value="orange">Апельсин</option>
+                    <option value="Most Relevant">Most Relevant</option>
+                    <option value="Most Popular">Most Popular</option>
+                    <option value="Alphabetical">Alphabetical</option>
+                    <option value="Price: Low - High">Price: Low - High</option>
+                    <option value="Price: High - Low">Price: High - Low</option>
                 </select>
             </form>
         </div>
 
         <div class="category__top-list">
             <div class="category__top-list__first-line">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, asperiores! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, asperiores!</p>
+                <div>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, asperiores! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, asperiores!</p>
+                </div>
                 <p>...</p>
                 <a class="category-link" href="#">+ Read more</a>
             </div>
@@ -98,7 +109,7 @@
                 <a href="#">
                     <div class="category-category__item">
                         <div class="category-category__item__card">
-                            <img src="https://www.nextdirect.com/nxtcms/resource/image/6081658/portrait_ratio1x1/305/305/1db2fafed2aa33f74124a9d7cbd86a00/247BCF8426B4225D33C33BA8A0A6ECAC/girls-dresses-2-.jpg" alt="">
+                            <img src="https://xcdn.next.co.uk/COMMON/Items/Default/Default/VisualBanners/INT/898286.jpg" alt="">
                             <h5>Tops & T-Shirts</h5>
                         </div>
                     </div>
@@ -106,7 +117,7 @@
                 <a href="#">
                     <div class="category-category__item">
                         <div class="category-category__item__card">
-                            <img src="https://www.nextdirect.com/nxtcms/resource/image/6081664/portrait_ratio1x1/240/240/8918f8a508560e72c6cb5aa44f41f48d/E375085A27F52438021C7AB6D5ED20CF/boys-printed-tshirts.jpg" alt="">
+                            <img src="https://xcdn.next.co.uk/COMMON/Items/Default/Default/VisualBanners/INT/340321.jpg" alt="">
                             <h5>Sets & Outfits</h5>
                         </div>
                     </div>
@@ -114,7 +125,7 @@
                 <a href="#">
                     <div class="category-category__item">
                         <div class="category-category__item__card">
-                            <img src="https://www.nextdirect.com/nxtcms/resource/blob/6074910/d0f9b42480d0e4428c7ef34e44b3c5d8/home-new-in-new-data.jpg" alt="">
+                            <img src="https://xcdn.next.co.uk/COMMON/Items/Default/Default/VisualBanners/INT/c99869.jpg" alt="">
                             <h5>Dresses</h5>
                         </div>
                     </div>
@@ -122,7 +133,7 @@
                 <a href="#">
                     <div class="category-category__item">
                         <div class="category-category__item__card">
-                            <img src="https://www.nextdirect.com/nxtcms/resource/image/6060238/portrait_ratio1x1/240/240/8b5ce48524c02dc4afdf731b61a5a59a/04B424BDFC1633FE2A8EE612D3D67DAE/kids-short-sets.jpg" alt="">
+                            <img src="https://xcdn.next.co.uk/COMMON/Items/Default/Default/VisualBanners/INT/946114.jpg" alt="">
                             <h5>Shorts & Skirts</h5>
                         </div>
                     </div>
@@ -132,6 +143,14 @@
                         <div class="category-category__item__card">
                             <img src="https://xcdn.next.co.uk/COMMON/Items/Default/Default/VisualBanners/INT/992111.jpg" alt="">
                             <h5>Joggers & Leggings</h5>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="category-category__item">
+                        <div class="category-category__item__card">
+                            <img src="https://xcdn.next.co.uk/COMMON/Items/Default/Default/VisualBanners/INT/d53117.jpg" alt="">
+                            <h5>Trousers & Jeans</h5>
                         </div>
                     </div>
                 </a>
@@ -159,21 +178,382 @@
                         </div>
                     </div>
                 </a>
+                <a href="">
+                    <div class="category-category__item">
+                        <div class="category-category__item__card">
+                            <img src="https://xcdn.next.co.uk/COMMON/Items/Default/Default/VisualBanners/INT/Next.jpg" alt="">
+                            <h5>Next</h5>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
 
         <div class="category__main-grid">
-            <div>1</div>
-            <div>2</div>
-            <div>d</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
+            <div class="category__main-grid__card-product">
+                <a class="category__main-grid__card-product__general-link" href="#">
+                    <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/SearchAlt/224x336/D38474.jpg" alt="">
+                    <div class="category__main-grid__card-product__general-link__new-in">NEW IN</div>
+                    <input type="checkbox" id="wrapTrigger" />
+                    <div class="category__main-grid__card-product__general-link__heard">
+                        <label for="wrapTrigger" class="button">
+                            <img src="../src/images/heart.png" alt="">
+                        </label>
+                    </div>
+                    <div class="category__main-grid__card-product__general-link__title-product">
+                        <h4>Lime Green Peppa Pig T-Shirt and Cycle Shorts Set (3mths-7yrs)</h4><h4>...</h4>
+                    </div>
+                    <h5>CA$33 - CA$45</h5>
+
+                    <div class="category__main-grid__card-product__general-link__stars">
+                        <img src="../src/images/stars.png" alt="stars">
+                        <div class="category__main-grid__card-product__general-link__stars-background" style="width: 80%;">
+                        </div>
+                    </div>
+
+                </a>
+
+                <div class="category__main-grid__card-product__colors">
+
+                </div>
+            </div>
+
+            <div class="category__main-grid__card-product">
+                <a class="category__main-grid__card-product__general-link" href="#">
+                    <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/SearchAlt/224x336/113434.jpg" alt="">
+                    <div class="category__main-grid__card-product__general-link__new-in">NEW IN</div>
+                    <input type="checkbox" id="wrapTrigger" />
+                    <div class="category__main-grid__card-product__general-link__heard">
+                        <label for="wrapTrigger" class="button">
+                            <img src="../src/images/heart.png" alt="">
+                        </label>
+                    </div>
+                    <div class="category__main-grid__card-product__general-link__title-product">
+                        <h4>Relaxed Cotton Dress (3mths-8yrs)</h4><h4>...</h4>
+                    </div>
+                    <h5>CA$42 - CA$59</h5>
+
+                    <div class="category__main-grid__card-product__general-link__stars">
+                        <img src="../src/images/stars.png" alt="stars">
+                        <div class="category__main-grid__card-product__general-link__stars-background" style="width: 90%;">
+                        </div>
+                    </div>
+
+                </a>
+
+                <div class="category__main-grid__card-product__colors">
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/113434.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/N02821.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/378016.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/N02822.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/230611.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/113826.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="category__main-grid__card-product">
+                <a class="category__main-grid__card-product__general-link" href="#">
+                    <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/SearchAlt/224x336/Q64151.jpg" alt="">
+                    <div class="category__main-grid__card-product__general-link__new-in">NEW IN</div>
+                    <input type="checkbox" id="wrapTrigger" />
+                    <div class="category__main-grid__card-product__general-link__heard">
+                        <label for="wrapTrigger" class="button">
+                            <img src="../src/images/heart.png" alt="">
+                        </label>
+                    </div>
+                    <div class="category__main-grid__card-product__general-link__title-product">
+                        <h4>T-Shirt And Shorts Set (3mths-7yrs)</h4><h4>...</h4>
+                    </div>
+                    <h5>CA$28 - CA$39</h5>
+
+                    <div class="category__main-grid__card-product__general-link__stars">
+                        <img src="../src/images/stars.png" alt="stars">
+                        <div class="category__main-grid__card-product__general-link__stars-background" style="width: 0;">
+                        </div>
+                    </div>
+
+                </a>
+
+                <div class="category__main-grid__card-product__colors">
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/Q64151.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/Q64152.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="category__main-grid__card-product">
+                <a class="category__main-grid__card-product__general-link" href="#">
+                    <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/SearchAlt/224x336/429494.jpg" alt="">
+                    <div class="category__main-grid__card-product__general-link__new-in">NEW IN</div>
+                    <input type="checkbox" id="wrapTrigger" />
+                    <div class="category__main-grid__card-product__general-link__heard">
+                        <label for="wrapTrigger" class="button">
+                            <img src="../src/images/heart.png" alt="">
+                        </label>
+                    </div>
+                    <div class="category__main-grid__card-product__general-link__title-product">
+                        <h4>Pink/Tan Brown Button Front Jersey Dress (3mths-7yrs)</h4><h4>...</h4>
+                    </div>
+                    <h5>CA$20 - CA$25</h5>
+
+                    <div class="category__main-grid__card-product__general-link__stars">
+                        <img src="../src/images/stars.png" alt="stars">
+                        <div class="category__main-grid__card-product__general-link__stars-background" style="width: 100%;">
+                        </div>
+                    </div>
+
+                </a>
+
+                <div class="category__main-grid__card-product__colors">
+
+                </div>
+            </div>
+
+            <div class="category__main-grid__card-product">
+                <a class="category__main-grid__card-product__general-link" href="#">
+                    <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/SearchAlt/224x336/113826.jpg" alt="">
+                    <div class="category__main-grid__card-product__general-link__new-in">NEW IN</div>
+                    <input type="checkbox" id="wrapTrigger" />
+                    <div class="category__main-grid__card-product__general-link__heard">
+                        <label for="wrapTrigger" class="button">
+                            <img src="../src/images/heart.png" alt="">
+                        </label>
+                    </div>
+                    <div class="category__main-grid__card-product__general-link__title-product">
+                        <h4>Relaxed Cotton Dress (3mths-8yrs)</h4><h4>...</h4>
+                    </div>
+                    <h5>CA$43 - CA$45</h5>
+
+                    <div class="category__main-grid__card-product__general-link__stars">
+                        <img src="../src/images/stars.png" alt="stars">
+                        <div class="category__main-grid__card-product__general-link__stars-background" style="width: 0;">
+                        </div>
+                    </div>
+
+                </a>
+
+                <div class="category__main-grid__card-product__colors">
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/113826.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/113450.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/378016.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/113434.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="category__main-grid__card-product">
+                <a class="category__main-grid__card-product__general-link" href="#">
+                    <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/SearchAlt/224x336/M24592.jpg" alt="">
+                    <div class="category__main-grid__card-product__general-link__new-in">NEW IN</div>
+                    <input type="checkbox" id="wrapTrigger" />
+                    <div class="category__main-grid__card-product__general-link__heard">
+                        <label for="wrapTrigger" class="button">
+                            <img src="../src/images/heart.png" alt="">
+                        </label>
+                    </div>
+                    <div class="category__main-grid__card-product__general-link__title-product">
+                        <h4>Oversized T-Shirt and Cycle Shorts Set (3-16yrs)</h4><h4>...</h4>
+                    </div>
+                    <h5>CA$39 - CA$55</h5>
+
+                    <div class="category__main-grid__card-product__general-link__stars">
+                        <img src="../src/images/stars.png" alt="stars">
+                        <div class="category__main-grid__card-product__general-link__stars-background" style="width: 60%;">
+                        </div>
+                    </div>
+
+                </a>
+
+                <div class="category__main-grid__card-product__colors">
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/M24592.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemSwatch/21x21/331085.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="category__main-grid__card-product">
+                <a class="category__main-grid__card-product__general-link" href="#">
+                    <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/SearchAlt/224x336/113450.jpg" alt="">
+                    <div class="category__main-grid__card-product__general-link__new-in">NEW IN</div>
+                    <input type="checkbox" id="wrapTrigger" />
+                    <div class="category__main-grid__card-product__general-link__heard">
+                        <label for="wrapTrigger" class="button">
+                            <img src="../src/images/heart.png" alt="">
+                        </label>
+                    </div>
+                    <div class="category__main-grid__card-product__general-link__title-product">
+                        <h4>Relaxed Cotton Dress (3mths-8yrs)</h4><h4>...</h4>
+                    </div>
+                    <h5>CA$33 - CA$45</h5>
+
+                    <div class="category__main-grid__card-product__general-link__stars">
+                        <img src="../src/images/stars.png" alt="stars">
+                        <div class="category__main-grid__card-product__general-link__stars-background" style="width: 0;">
+                        </div>
+                    </div>
+
+                </a>
+
+                <div class="category__main-grid__card-product__colors">
+
+                </div>
+            </div>
+
+            <div class="category__main-grid__card-product">
+                <a class="category__main-grid__card-product__general-link" href="#">
+                    <img src="https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/SearchAlt/224x336/N17901.jpg" alt="">
+                    <div class="category__main-grid__card-product__general-link__new-in">NEW IN</div>
+                    <input type="checkbox" id="wrapTrigger" />
+                    <div class="category__main-grid__card-product__general-link__heard">
+                        <label for="wrapTrigger" class="button">
+                            <img src="../src/images/heart.png" alt="">
+                        </label>
+                    </div>
+                    <div class="category__main-grid__card-product__general-link__title-product">
+                        <h4>Pink Minnie Mouse Frill Swimsuit (3mths-10yrs)</h4><h4>...</h4>
+                    </div>
+                    <h5>CA$45 - CA$50</h5>
+
+                    <div class="category__main-grid__card-product__general-link__stars">
+                        <img src="../src/images/stars.png" alt="stars">
+                        <div class="category__main-grid__card-product__general-link__stars-background" style="width: 0;">
+                        </div>
+                    </div>
+
+                </a>
+
+                <div class="category__main-grid__card-product__colors">
+
+                </div>
+            </div>
+
         </div>
 
 </main>
+
+<!--------------------------- Footer ----------------------------->
+<footer>
+    <hr>
+    <p>Our Social Networks</p>
+    <a href="#" class="black">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-pinterest"></i>
+            <i class="fa-brands fa-square-youtube"></i>
+    </a>
+    <div class="footer-menu">
+        <div class="footer-menu__grid">
+            <div class="my-account">
+                <i class="fa-regular fa-user account-icon"></i>
+                <div class="my-account-text-content">
+                    <h4>My Account</h4>
+                    <p>Sign-in to your account</p>
+                </div>
+            </div>
+            <div class="language">
+                <div class="left-language">
+                    <i class="fa-solid fa-globe"></i>
+                    <h3>Select Language <small id="small-language">English</small></h3>
+                </div>
+                <div class="right-language">
+                    <h4>En | <span id="green">Fr</span</h4>
+                </div>
+            </div>
+            <div class="navigator">
+                <div class="footer_table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Help</th>
+                                <th>Privacy & Legal</th>
+                                <th>Departments</th>
+                                <th>Other Services</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#">Returns Information</a></td>
+                                <td><a href="#">Privacy and Cookie Policy</a></td>
+                                <td><a href="#">Womens</a></td>
+                                <td><a href="#">Media & Press</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Shipping Information</a></td>
+                                <td><a href="#">Terms & Conditions</a></td>
+                                <td><a href="#">Mens</a></td>
+                                <td><a href="#">The Company</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Contact Us</a></td>
+                                <td></td>
+                                <td><a href="#">Boys</a></td>
+                                <td><a href="#">Careers@Next</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Product Recall</a></td>
+                                <td></td>
+                                <td><a href="#">Girls</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td><a href="#">Home</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td><a href="#">Baby</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td><a href="#">Brands</a></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+            <div class="mobile-site">
+                <a href="#" class="mobile">View mobile site</a>
+                <p>&copy;2024 Next Retail Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
 
