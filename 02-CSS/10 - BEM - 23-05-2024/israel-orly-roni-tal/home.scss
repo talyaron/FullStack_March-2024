@@ -1,3 +1,57 @@
-body{
-    margin: 0% 5% 0% 5%;
+body {
+    margin: 0px auto;
+
+}
+
+.wrapper{
+    max-width: 1280px;
+    margin: 0px auto;
+}
+.header,.nav-bar {
+    text-align: center;
+}
+
+.home-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    height: max-content;
+    max-width: fit-content;
+    margin: 2rem 0px 2rem 0px;
+}
+
+.items {
+    height: fit-content;
+    h2{
+        margin: 0px;
+    }
+}
+
+.left-articles {
+    max-width: fit-content;
+    margin: 0px auto;
+}
+
+.items--main {
+    margin: 0px;
+    max-width: fit-content;
+}
+
+.right-articles {
+    max-width: fit-content;
+
+    h2, p {
+        margin: 0px;
+    }
+}
+
+.border hr{
+    border-top: 2px solid black;
+}
+ 
+
+
+.only-bbc {
+    display: flex;
+    justify-content: center;
 }
