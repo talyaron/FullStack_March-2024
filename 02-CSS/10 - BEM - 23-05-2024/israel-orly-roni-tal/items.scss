@@ -21,6 +21,15 @@
         }
     }
 
+    img{
+        height: 10rem;
+        width: 100%;
+
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+//Tal's style items//
     &--main{
         width: 80ch;
         img{
@@ -28,13 +37,19 @@
         }
         
     }
-
-    img{
-        height: 10rem;
-        width: 100%;
-
-        &:hover{
-            opacity: 0.5;
+//Roni's style items//
+    &--head-article {
+        width: 160ch;
+        img{
+            width: 100%;
+            height: 40rem;
+        }
+    }
+    &--due{
+        width: 140ch;
+        img{
+            width: 100%;
+            height: 25rem;
         }
     }
 }
