@@ -10,7 +10,7 @@
             opacity: 0.5;
         }
     }
-    h2{
+    h2{ 
         &:hover{
             text-decoration: underline;
         }
@@ -24,6 +24,13 @@
         .items-news{
             font-weight: bold;
             text-transform: uppercase;
+        }
+    }
+
+    &--main{
+        
+        img{
+            height: 25rem;
         }
     }
 }
