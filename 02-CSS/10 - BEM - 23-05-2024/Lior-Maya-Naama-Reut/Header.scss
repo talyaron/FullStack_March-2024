@@ -34,9 +34,8 @@
     text-decoration: underline;
 }
 
-.icon-container {
-    display: flex;
-    gap: 10px; 
+.suitcase-icon, .heart-icon {
+    align-items: left;
 }
 
 .user-login {
@@ -49,6 +48,8 @@
 }
 .heart-icon, .suitcase-icon {
     align-items: left;
+    display: flex;
+    flex-direction: row;
 }
 
 .user-login p {
@@ -83,11 +84,12 @@
     color: black; 
     font-size: 1.4rem;
     justify-content:space-between;
+    background-color: transparent;
     font-family: "Roboto", "narkisblock", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 }
 
 .nav-menu a:hover {
     text-decoration: underline;
-    -webkit-tap-highlight-color: transparent;
+    
 }
