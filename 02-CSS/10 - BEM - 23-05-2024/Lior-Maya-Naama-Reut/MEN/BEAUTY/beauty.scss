@@ -19,7 +19,7 @@ body {
 .category-images {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Adjust gap between category images */
+    gap: 20px; 
 }
 
 .best-categories img {
@@ -41,13 +41,37 @@ body {
     max-width: 50%; 
     margin: 5px; 
 }
-.best-brands .brand-grid img {
-    display: inline-block;
-    width: 150px;
-    height: 100px;
-    border: 0 solid lightgrey;
-    box-sizing: border-box;
+.best-brands {
+    text-align: left;
+    margin: 0 auto;
+    padding: 20px;
+
 }
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+    flex-direction: row;
+    align-items: stretch;
+    position: relative;
+    justify-content: center;
+    margin: 0 0 16px;
+    max-width: 1200px;
+    
+}
+
+.brand-grid img {
+    width: 100%;
+    height: auto;
+    border: 0 solid lightgrey; 
+    border-radius: 1%;
+    box-sizing: border-box;
+    padding: 5px;
+    
+}
+
 
 .shop-all-button {
     text-align: center;

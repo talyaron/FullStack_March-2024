@@ -1,15 +1,23 @@
 .upper-header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
     direction: rtl;
     background-color: black;
     height: 3.8rem;
-    margin-bottom: 0; 
-    display: flex;
-    
+    display: flex; 
     align-items: center; 
     justify-content: center;  
-    width: 100%;
     border: 0 solid #000;
+}
+
+.logo-container{
+    height: 4rem; 
+    width: 100%;
+    background-image: url('https://dealcoupon.co.il/storage/medialibrary/1268/conversions/Terminal_X_logo-logo.png');
+    background-position: center center;
+    background-size: auto 100%; 
+
 }
 
 .upper-header h3 {
@@ -32,10 +40,15 @@
 }
 
 .user-login {
+    margin-top: 5%;
     margin-left: auto;
+    cursor: pointer;
+    p:hover{
+        text-decoration: underline;
+    }
 }
 .heart-icon, .suitcase-icon {
-position: relative;
+    align-items: left;
 }
 
 .user-login p {
@@ -46,7 +59,11 @@ position: relative;
 .nav-menu {
     display: flex;
     justify-content: center; 
-    margin-top: 10px;
+    margin-top: 2%;
+    flex: 1;
+    border-bottom: 1px solid #eee;
+    color: var(--menubar_color);
+     
 }
 
 .nav-menu ul {
@@ -62,10 +79,12 @@ position: relative;
 
 .nav-menu a {
     text-decoration: none;
+    display: block;
     color: black; 
-    font-size: 1rem;
+    font-size: 1.4rem;
+    justify-content:space-between;
     font-family: "Roboto", "narkisblock", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400;
+
 }
 
 .nav-menu a:hover {
