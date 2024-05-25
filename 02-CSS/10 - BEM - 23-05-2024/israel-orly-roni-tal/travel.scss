@@ -1,8 +1,37 @@
 div{
-    margin-top: 40ch;
-    gap: 10%;
+    margin-top:30ch;
+}
+.page-body{
+    padding-left: 10ch;
+    padding-right: 10ch;
+}
+.ads {
+    text-align: center;
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;
+    background-color: rgb(249, 248, 248);
+    padding: 2.5ch;
+    margin-bottom: -25ch;
+    img{
+        width: 120ch;
+    }
+}
+.page-header{
+    border-bottom: black 2px solid;
+    margin-bottom: -12rem;
 }
 .items-due{
     display: flex;
     gap: 10ch;
 }
+.news{
+    border-top: 1.5px solid black;
+    display: flex;
+.news-bar{
+    display:flex;
+    gap: 1ch;
+    margin: 2%;
+    margin-bottom: -10ch;
+    flex-wrap: wrap;
+    
+}}

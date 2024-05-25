@@ -45,7 +45,7 @@
     }
 //Roni's style items//
     &--head-article {
-        width: 160ch;
+        width: 158ch;
         img{
             width: 100%;
             height: 40rem;
@@ -58,4 +58,8 @@
             height: 25rem;
         }
     }
+    &--news-bar{
+        height: 20ch;
+        }
+        
 }
