@@ -24,6 +24,7 @@
     margin: 0;
     padding: 10px;
     color: white;
+    font-weight: lighter;
     cursor: pointer;
     box-sizing: border-box;
     font-style: normal;
@@ -34,22 +35,22 @@
     text-decoration: underline;
 }
 
-.suitcase-icon, .heart-icon {
-    align-items: left;
+.lower-header {
+    margin-top: -1.1%;
+    text-align: center;
+    padding: 3%;
+
+.icons{
+   display: inline-block;
+   margin-right: 49%;
 }
 
 .user-login {
-    margin-top: 5%;
-    margin-left: auto;
+    display: inline-block;
     cursor: pointer;
     p:hover{
         text-decoration: underline;
     }
-}
-.heart-icon, .suitcase-icon {
-    align-items: left;
-    display: flex;
-    flex-direction: row;
 }
 
 .user-login p {
@@ -57,10 +58,16 @@
     margin-right: 15px;
     direction: rtl;
 }
+}
+
+.logo {
+    margin-top: -3%;
+}
+
 .nav-menu {
     display: flex;
     justify-content: center; 
-    margin-top: 2%;
+    margin-top: 1%;
     flex: 1;
     border-bottom: 1px solid #eee;
     color: var(--menubar_color);
@@ -86,10 +93,8 @@
     justify-content:space-between;
     background-color: transparent;
     font-family: "Roboto", "narkisblock", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
 }
 
 .nav-menu a:hover {
-    text-decoration: underline;
-    
+    text-decoration: underline;   
 }
