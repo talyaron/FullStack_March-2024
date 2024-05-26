@@ -1,5 +1,5 @@
-div{
-    margin-top:30ch;
+body{
+    margin: 0px auto;
 }
 .page-body{
     padding-left: 10ch;
@@ -26,12 +26,10 @@ div{
 }
 .news{
     border-top: 1.5px solid black;
-    display: flex;
-.news-bar{
     display:flex;
+.news-bar{
+    display: flex;
     gap: 1ch;
-    margin: 2%;
-    margin-bottom: -10ch;
     flex-wrap: wrap;
     
 }}
