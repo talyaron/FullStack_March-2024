@@ -2,6 +2,7 @@
 .top-menu-wrapper {
     border: none;
     position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,9 +48,7 @@
         border: none;
         border-radius: 0 25px 25px 0;
       }
-    .top-right{
-        
-    }
+    
        
       .material-icons {
           color: rgb(100, 100, 100);
@@ -57,6 +56,9 @@
           cursor: pointer;
           border: none;
           border-radius: 50%;
+          
+
+          }
           
           &--mic {
             margin-left: 2rem;
