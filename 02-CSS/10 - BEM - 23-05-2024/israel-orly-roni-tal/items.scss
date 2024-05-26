@@ -46,9 +46,13 @@
 //Roni's style items//
     &--head-article {
         width: 158ch;
+        height: fit-content;
+        position: relative;
+        padding-top: 20px;
         img{
             width: 100%;
-            height: 40rem;
+            height: auto;
+            
         }
     }
     &--due{
@@ -59,8 +63,7 @@
         }
     }
     &--news-bar{
-        width: 25ch;
-        display: flex;
+        width: 30ch;
         }
         
 }

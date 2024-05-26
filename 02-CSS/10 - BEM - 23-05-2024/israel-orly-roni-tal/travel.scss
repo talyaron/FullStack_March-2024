@@ -11,25 +11,29 @@ body{
     border-bottom: black solid 1px;
     background-color: rgb(249, 248, 248);
     padding: 2.5ch;
-    margin-bottom: -25ch;
+    
     img{
         width: 120ch;
     }
 }
 .page-header{
     border-bottom: black 2px solid;
-    margin-bottom: -12rem;
+
+}
+.head{
+        display: flex;
 }
 .items-due{
     display: flex;
+    margin-bottom: 20%;
     gap: 10ch;
 }
 .news{
     border-top: 1.5px solid black;
     display:flex;
+    flex-direction: column;
 .news-bar{
+    justify-content: space-between;
     display: flex;
-    gap: 1ch;
-    flex-wrap: wrap;
     
 }}
