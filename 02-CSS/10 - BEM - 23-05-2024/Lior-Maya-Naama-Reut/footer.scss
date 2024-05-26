@@ -1,8 +1,6 @@
-body {
-  background-color: black;
-  color: white;
-    
-  .footer {
+.footer {
+    background-color: black;
+    color: white;
     margin-top: 2%;
     display: flex;
     margin-left: 20%;
@@ -89,4 +87,10 @@ body {
   .payments {
     margin-left: 64%;
   }
-}
+  p {
+    direction: rtl;
+  }
+  h2 {
+    font-family: "Manrope", sans-serif;
+    direction: rtl;
+  }
