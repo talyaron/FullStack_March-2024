@@ -17,19 +17,24 @@ body {
     gap: 10px;
     height: max-content;
     max-width: fit-content;
-    margin: 2rem 0px 2rem 0px;
+    margin: 1rem 0px 2rem 0px;
 }
 
 .items {
     height: fit-content;
+    img{
+        // aspect-ratio: 16 / 9;
+        object-fit: cover;
+    };
     h2{
-        margin: 0px;
+        padding-top: 0.3rem;
     }
 }
 
 .left-articles {
     max-width: fit-content;
     margin: 0px auto;
+    padding: 0.5rem;
 }
 
 .items--main {
@@ -38,7 +43,7 @@ body {
 
     ul{
         padding: 0px;
-        margin: 1rem ;
+        margin: 0.8rem ;
     }
     li{
         margin: 1rem,;
@@ -67,5 +72,23 @@ body {
  
 .only-bbc {
     display: flex;
+    gap: 1rem;
     justify-content: center;
+    margin: 1.5rem 0px 2.5rem 0px;
 }
+
+h2{
+    margin: 0px;
+    font-size: 1.2rem;
+}
+    .ads {
+        text-align: center;
+        border-top: black solid 1px;
+        border-bottom: black solid 1px;
+        background-color: rgb(249, 248, 248);
+        padding: 2.5ch;
+        margin-bottom: -25ch;
+        img{
+            width: 120ch;
+        }
+    }
