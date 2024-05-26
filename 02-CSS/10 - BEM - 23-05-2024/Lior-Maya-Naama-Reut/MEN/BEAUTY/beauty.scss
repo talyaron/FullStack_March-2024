@@ -1,5 +1,5 @@
 @import url("Header.css");
-@import url(footer.css);
+@import url("footer.css");
 
 body {
     font-family: Arial, sans-serif;
@@ -32,6 +32,7 @@ body {
 .hot-sale, .on-trend, .best-brands {
     text-align: left;
     margin-bottom: 20px;
+    margin-left: 50px;
 }
 
 .hot-sale img, .best-brands img {
@@ -46,7 +47,7 @@ body {
 }
 .best-brands {
     text-align: left;
-    margin: 0 auto;
+    margin: 50px auto;
     padding: 20px;
 
 }
@@ -68,11 +69,10 @@ body {
 .brand-grid img {
     width: 100%;
     height: auto;
-    border: 0 solid lightgrey; 
-    border-radius: 1%;
+    border: 0 solid #f5f5f5; 
+    border-radius: 2px;
     box-sizing: border-box;
     padding: 5px;
-    
 }
 
 
