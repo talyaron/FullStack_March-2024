@@ -7,16 +7,33 @@
     <title>BBC home</title>
     <link rel="stylesheet" href="./dist/home.css">
     <link rel="stylesheet" href="./dist/items.css">
+    <link rel="stylesheet" href="./dist/header.css">
 </head>
 
 <body>
 
     <!-- header -->
-    <div class="header">header</div>
-    <hr>
+    <div class="header">
+        <header class="BBC-header">
+            <img src="BBC Logo.jpg">
+            <form class="form-inline">
+                <button class="btn" type="btn1">Register</button>
+                <button class="btn" type="btn2">Sign in</button>
+    </div>
     <!-- nav-bar -->
-    <div class="nav-bar">nav-bar</div>
-    <hr>
+    <div class="navigation-bar-header">
+        <button class="button">Home</button>
+        <button class="button">News</button>
+        <button class="button">Sport</button>
+        <button class="button">Business</button>
+        <button class="button">Innovation</button>
+        <button class="button">Culture</button>
+        <button class="button">Travel</button>
+        <button class="button">Earth</button>
+        <button class="button">Video</button>
+        <button class="button">Live</button>
+    </div>
+
     <!-- main articles -->
     <div class="wrapper">
         <div class="home-main">
@@ -53,18 +70,20 @@
             </div>
             <div class="middle-articles">
                 <div class="items--main">
-                    <img src="https://ichef.bbci.co.uk/news/1536/cpsprodpb/d16d/live/e6fa41f0-19aa-11ef-a13a-0b8c563da930.jpg.webp"
+                    <img src="https://ichef.bbci.co.uk/news/1536/cpsprodpb/72D0/production/_133229392_briefings_promo_lansdale.png.webp"
                         alt="">
-                    <h1>Iorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, deleniti!</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ratione explicabo velit esse
-                        illo
-                        veniam iste voluptate voluptatem ipsum distinctio?</p>
+                    <h1>Israel-Gaza briefings: How plans for ‘the day after’ could help end war in Gaza</h1>
+                    <p>This subject will be on the table when EU and Middle Eastern foreign ministers meet.</p>
                     <div class="items--tags">
                         <div class="items--time">x hrs ago</div>
                         <div class="items--spacer">|</div>
                         <div class="items--news">news</div>
                         <div class="items--origin">origin</div>
                     </div>
+                    <ul>
+                        <li><a href="#">The impact of recognising a Palestinian state</a></li>
+                        <li><a href="#">What the ICC arrest warrants mean for Israel and Hamas</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="right-articles">
@@ -125,7 +144,7 @@
         <!-- only from the bbc -->
         <div class="border">
             <hr>
-        </div> 
+        </div>
         <div>
             <h2>Only from the BBC</h2>
         </div>
@@ -157,7 +176,11 @@
                 </div>
             </div>
         </div>
+        <!-- footer -->
+        
     </div>
+
+
 
 </body>
 
