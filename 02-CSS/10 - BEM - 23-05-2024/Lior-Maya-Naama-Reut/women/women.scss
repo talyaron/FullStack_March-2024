@@ -1,3 +1,4 @@
+
 .sale-banner{
     background-color: black;
     color: white;
@@ -143,6 +144,9 @@
     align-items: center; 
     justify-content: center;  
     width: 100%;
-    margin: 1rem;
+    
+    img{
+        margin: 1rem;
+    }
 
 }
