@@ -24,25 +24,17 @@ body{
     }
 }
 
-.logo-container{
-    height: 4rem; 
-    width: 100%;
-    background-image: url('https://dealcoupon.co.il/storage/medialibrary/1268/conversions/Terminal_X_logo-logo.png');
-    background-position: center center;
-    background-size: auto 100%; 
-
-}
-
 .lower-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 
     .icons{
         display: flex;
-        width: 30%;
-        row-gap: 3rem;
+        column-gap: 2rem;
     }
 
     .user-login {
@@ -58,6 +50,15 @@ body{
     }
 
     
+}
+
+.logo-container{
+    height: 4rem; 
+    width: 100%;
+    background-image: url('https://dealcoupon.co.il/storage/medialibrary/1268/conversions/Terminal_X_logo-logo.png');
+    background-position: center center;
+    background-size: auto 100%; 
+
 }
 
 .logo {
