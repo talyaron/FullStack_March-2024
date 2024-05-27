@@ -98,6 +98,130 @@
 .nav-menu a:hover {
   text-decoration: underline;   
 }
+
+.sale-banner{
+  background-color: black;
+  color: white;
+  text-align: center;
+  
+  .sale-type{
+      font-size: 2.5rem;
+  }
+
+  .sale-dates{
+      font-size: 0.8  rem;
+  }
+}
+
+.banners{
+  display: grid;
+  align-items: center; 
+  justify-content: center;  
+  width: 100%;
+ 
+  .items{
+      margin: 0.8rem;
+
+      img{
+          height: 37rem;
+          width: 85rem;
+      }
+  }
+}
+
+.titles{
+  margin-left:35rem;
+  text-align: left;
+  font-weight:bold;
+  font-size: 1.4rem;
+  margin-top: -1.2rem;;
+  
+}
+
+.categories{
+  display: flex;
+  align-items: center; 
+  justify-content: center;  
+  width: 100%;
+  margin-bottom:2.5rem;
+
+  .items{
+      margin-left: 1.7rem;
+
+      img{
+          height: 25rem;
+          width: 20.5rem;
+      }
+  }
+}
+.trending{
+  margin-left: 34rem;
+  .brands-top{
+    display:inline-block
+  }  
+  .brands-mid , .brands-bot {
+    display: inline;
+  } 
+}
+
+.sales{
+  display: flex;
+  align-items: center; 
+  justify-content: center;  
+  width: 100%;
+  margin: -1.2rem;
+
+  .in-sales{
+      margin: 1rem;
+
+      img{
+          height: 10rem;
+          width: 27rem;
+      }
+  }
+}
+
+.btn{
+  margin-left: 47%;
+  background-color: black;
+  color:white;
+  width:fit-content;
+  
+  p{
+      padding: 1rem;
+  }
+
+  & :hover{
+      background-color: yellow;
+      color: black;
+      cursor: pointer;
+  }
+}
+.best-brands {
+  width: 50%;
+  margin-left: 26%;
+.in-best-brands{
+  display: inline-block; 
+  background-color: rgb(235, 235, 235);
+  padding: 5rem;
+  padding-right: 8%;
+  margin-bottom: 2%;
+  margin-right: 2%;
+}
+img{
+  width: 100px;
+  height: 50px;
+}
+}
+
+.tx-brands{
+  text-align: center;  
+  width: 100%;
+  img{
+    margin: 1rem;
+  }
+
+}
 .wrapper {
   background-color: black;
   color: white;
