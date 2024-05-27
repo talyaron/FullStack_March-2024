@@ -5,9 +5,9 @@ body {
 .animation-example {
     background-color: yellow;
     // border: 1px solid black;
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
     position: absolute;
     bottom: 0;
     animation-iteration-count: infinite;
@@ -30,10 +30,14 @@ body {
             bottom: 30%;
             left: 15%;
         }
+        30% {
+            bottom: 40%;
+            left: 20%;
+        }
 
         40% {
             bottom: 60%;
-            left: 25%;
+            left: 30%;
 
         }
 
@@ -48,7 +52,7 @@ body {
         }
         90% {
             bottom: 30%;
-            left: 75%;
+            left: 80%;
         }
         100% {
             bottom: 0%;
