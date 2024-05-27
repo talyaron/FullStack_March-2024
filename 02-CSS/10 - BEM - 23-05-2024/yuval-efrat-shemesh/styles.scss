@@ -1,4 +1,4 @@
-@import "./buttons.scss";
+//  @import "./buttons.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 * {
@@ -8,16 +8,4 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-}
-.wrapper{
-    display: grid;
-    .top-menu-wrapper { grid-area: header; }
-    .menu { grid-area: menu; }
-    .main-page { grid-area: main; }
-    // .item4 { grid-area: right; }
-    // .item5 { grid-area: footer; }
-    grid-template-areas:
-    'header header header header header header'
-    'menu main main main main main'
-    'menu main';
 }
