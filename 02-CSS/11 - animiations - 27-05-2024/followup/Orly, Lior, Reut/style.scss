@@ -1,0 +1,47 @@
+.cube {
+    position: absolute;
+    animation-name: run;
+    animation-duration: 2.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    img {
+        width: 50rem;
+        height: 80rem;
+    }
+}
+@keyframes run {
+    0% {
+        left: 0;
+        bottom: 0;
+    }
+    100% {
+        left: 100vh;
+    }
+
+}
+.ball {
+    background-color: lightskyblue;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    left: 70vw;
+    top: 17vh;
+    animation-name: spin;
+    animation-duration: 1.5s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    @keyframes spin {
+        0% { 
+        transform: rotate(0deg)  
+        translateY(100px) rotate(0deg);
+        } 
+    
+        100% { 
+        transform: rotate(360deg) 
+        translateY(100px) rotate(-360deg);
+        }
+    }
+}
