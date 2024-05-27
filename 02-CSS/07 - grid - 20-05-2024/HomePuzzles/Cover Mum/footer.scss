@@ -1,0 +1,78 @@
+.container {
+    margin-left: 15%;
+  }
+  
+  h2 {
+    font-size: 26px;
+  }
+  
+  .container2 {
+    margin-left: 15%;
+    padding: 20px;
+    width: 38%;
+    margin-left: 23%;
+    margin-top: -3.6%;
+  }
+
+  input[type=text], input[type=submit] {
+    width: 10%;
+    padding: 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    background-color:black;
+
+    color: white;
+    border: none;
+  }
+  
+  input[type=submit]:hover {
+    opacity: 0.8;
+  }
+.social-footer {
+    margin-left: 15%;
+    h3 {
+        font-size: 26px;
+    }
+}
+.contact-form {
+    width: 40%;
+    margin-left: 53%;
+    margin-top: -11%;
+    h4 {
+        font-size: 30px;
+        margin-left: 2%;
+    }
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: lightgray;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+   background-color: rgb(145, 199, 199);
+  }
+  
+  .container-right {
+    border-radius: 5px;
+    padding: 20px;
+  }
+}

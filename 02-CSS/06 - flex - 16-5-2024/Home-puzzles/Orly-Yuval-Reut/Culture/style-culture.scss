@@ -1,4 +1,31 @@
 body{
+  .vogue-header{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    text-align: center;
+    h1 {
+        font-size: 80px;
+        margin-bottom: 0%;
+        margin-top: 0%;
+    }
+    .button {
+        border: 0;
+        background-color: white;
+        font-size: 14px;
+        font-family: helvetica, sans-serif;;
+        font-weight: bold;
+        padding: 20px;
+        cursor: pointer;
+    }
+    .button:hover {
+        border-bottom: 3px solid black;
+    }
+    .navigation-bar-header {
+        border-bottom:1px solid gray;
+        border-top: 1px solid gray;
+    }
+}
   
   h1{
   font-family:'Times New Roman', Times, serif;
@@ -55,53 +82,67 @@ display: flex;
 flex-direction: row;
 gap:50px;
 padding-left: 90px;
-
-
-
-.header_right {
-  
-  font-weight: bold;
-  width:200px;
-
-  box{
-    width: 500px;
-  img {
-      
-  }
-}
-  }
-
-.header_left {
-  align-self: left;
-  font-weight: bold;
-  box{
-    width: 500px;
-  img {
-      width: 500px;
-  }
-}
 }
 
-.header_center {
 
-  font-weight: bold;
-  box{
-    
-}
-}
-
-#container {
-  background-color: white;
+.main {
+  margin-top: 7%;
+  text-align: center;
   display: flex;
-  justify-content:center;
-  flex-wrap: wrap;
-  height: 100vh;
-
+  h1 {
+      font-size: 24px;
+  }
+  h2 {
+      font-size: 18px;
+  }
+  p{
+      font-size: 16px;
+  }
+  .left{
+      margin-left: 15%;
+      img {
+          width: 75%;
+      }
+  }
+  .mid {
+  
+      img {
+        width: 100%;
+        height: 90%;
+      }
+  }
+  .right{
+      margin-right: 15%;
+      img {
+          width: 70%;
+      }
+  }
 }
 
-#container div{
-align-items: center;
-margin: 10px;
-width:100%
+.wrapper3{
+  margin-top: 6%;
+  text-align: center;
+  h2 {
+      border-bottom: 1px solid gray;
+      border-top: 1px solid gray;
+      font-weight: lighter;
+      padding: 16px;
+      font-size: 22px;
+      margin-left: 20%;
+      margin-right: 20%;
+  }
+  .row {
+  display: flex;
+  margin-left: 20%;
+  margin-right: 20%;
+  }  
+  .column {
+      flex: 33.33%;
+      padding: 5px;
+  }
+  img {
+      width: 90%;
+  }
 }
+
 }
