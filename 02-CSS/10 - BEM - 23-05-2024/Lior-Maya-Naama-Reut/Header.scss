@@ -34,32 +34,34 @@ body{
 }
 
 .lower-header {
-    margin-top: -1.1%;
-    text-align: center;
-    padding: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
 
-.icons{
-   display: inline-block;
-   margin-right: 49%;
-}
-
-.user-login {
-    display: inline-block;
-    cursor: pointer;
-    p:hover{
-        text-decoration: underline;
+    .icons{
+        display: flex;
+        width: 30%;
+        row-gap: 3rem;
     }
-}
 
-.user-login p {
-    font-size: 140%;
-    margin-right: 15px;
-    direction: rtl;
-}
+    .user-login {
+        cursor: pointer;
+        p {
+            direction: rtl;
+
+            &:hover{
+                text-decoration: underline;
+                color: gray
+            }
+        }
+    }
+
+    
 }
 
 .logo {
-    margin-top: -3%;
+    //margin-top: -3%;
 }
 
 .nav-menu {
