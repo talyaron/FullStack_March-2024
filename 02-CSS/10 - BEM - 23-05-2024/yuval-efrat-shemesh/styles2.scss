@@ -1,0 +1,98 @@
+@import "./buttons.scss", "./card.scss";
+
+.main-content-wrapper {
+width: 1416px;
+height: fit-content;
+border: 1px solid blue;
+position: absolute;
+left: 200px;
+top: 80px;
+padding: 10px;
+
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-weight: 500;
+
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #606060;
+    margin: 10px 0 10px 0;
+}
+
+p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #606060;
+    margin: 10px 0 10px 0;
+}
+
+.main-card-flex {
+
+margin: 0 16px 0 16px;
+width: fit-content;
+border: 1px solid lightblue; 
+
+// <!-- <move to card.scss> -->
+
+.card-wrapper {
+ 
+    width:fit-content;
+
+
+.details-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 30px;
+}
+  .thumbnail{
+     width: 338px;
+     }
+    .img-card-thumbnail {
+        display: block;
+        width: 338px;
+        height: 190px;
+        object-fit: cover;
+    }
+    .details {
+ 
+    }
+
+    .three-dot-menu-icon {
+    display: block;
+        width: 24px;
+        height: 24px;
+        object-fit: cover;
+    }
+  
+    .creator-thumbnail {
+        display: block;
+        width: 36px;
+        height: 36px;
+        object-fit: cover;
+        border-radius: 50%;
+
+        }
+
+}
+
+
+
+
+}
+
+
+
+
+@media only screen and (max-width: 1320px) {
+   
+}
+
+
+@media only screen and (max-width: 785px) {
+
+}
