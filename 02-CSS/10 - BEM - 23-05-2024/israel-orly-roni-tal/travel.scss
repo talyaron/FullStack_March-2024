@@ -20,8 +20,19 @@ body{
     border-bottom: black 2px solid;
 
 }
-.head{
-        display: flex;
+.head-article {
+    position: relative;
+    text-align: left;
+    .text-article{
+        padding: 2ch;
+        position: absolute;
+        bottom: 4px;
+        background-color: white;
+        width: 65ch;
+        h2{
+            font-size:300%;
+        }
+    }
 }
 .items-due{
     display: flex;
@@ -32,10 +43,10 @@ body{
     border-top: 1.5px solid black;
     display:flex;
     flex-direction: column;
+    margin-bottom: -20ch;
 .news-bar{
     justify-content: space-between;
     display: flex;
-    
 }}
 .adventures{
     border-top: 1.5px solid black;
@@ -44,5 +55,4 @@ body{
 .adventures-bar{
     justify-content: space-between;
     display: flex;
-    
 }}
