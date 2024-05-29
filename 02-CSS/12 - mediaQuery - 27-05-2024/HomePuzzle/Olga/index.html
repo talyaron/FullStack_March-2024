@@ -3,22 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funny Holyday</title>
+    <title>Hidden Haven Holidays</title>
     <link rel="stylesheet" href="./dist/style.css">
 </head>
 <body>
+    <div class="sky"></div>
     <header>
+        <!-- <div class="sky"></div> -->
         <div class="stage">
             <div class="sun"></div>
-        </div>
-        <nav>
 
-        </nav>
+            <div class="island">
+                <img id="palm1" src="./images/palm.png" alt="palm">
+                <!-- <img id="palm2" src="./images/palm.png" alt="palm"> -->
+            </div>
+
+            <!-- <div class="ship">
+                <img src="./images/ship.png" alt="">
+            </div> -->
+
+            <!--Waves Container-->
+            <div class="sea">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(64,79,127,0.7)" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(64,79,127)" />
+                    </g>
+                </svg>
+            </div>
+            <!--Waves end-->
+
+            <nav>
+                <button class="btn-hover color">MAKE AN ORDER</button>
+            </nav>
+            
+        </div>
+        
+
+
     </header>
 
     <main>
         <div class="wrapper">
+            <article>
+                <p>
+                    Experience the ultimate escape with Hidden Haven Holidays' all-inclusive desert island retreat! Picture yourself surrounded by crystal-clear waters and pristine sandy beaches, where the only sounds are gentle waves and rustling palm trees. Our luxurious beachfront bungalows and gourmet dining, prepared by top chefs, ensure your comfort and delight. Enjoy snorkeling in vibrant coral reefs, paddleboarding, and guided nature walks. Unwind with spa treatments and sunset yoga or relax in a hammock with a cocktail. Our attentive staff provides seamless, personalized service. Book now for an unparalleled blend of adventure and tranquility on your private island paradise!
+                </p>
+            </article>
+            <section>
+                <article>
+                    <img src="./images/cards/card1.png" alt="">
 
+                </article>
+
+                <article>
+                    <img src="./images/cards/card2.png" alt="">
+                </article>
+                
+                <!-- <article>
+                    <img src="./images/cards/card3.png" alt="">
+                </article>
+                
+                <article>
+                    <img src="./images/cards/card4.png" alt="">
+                </article>
+                
+                <article>
+                    <img src="./images/cards/card5.png" alt="">
+                </article> -->
+
+            </section>
+            <section>
+                <form action="">
+                    <h1>Call</h1>
+                    <input type="text" name="fio" placeholder="Имя" required>
+                    <input type="tel" name="tel" placeholder="Телефон" required>
+                    <div id="form_result"></div>
+                    <input id="submit" type="submit" value="Заказать звонок">
+                </form>
+            </section>
         </div>
     </main>
 
