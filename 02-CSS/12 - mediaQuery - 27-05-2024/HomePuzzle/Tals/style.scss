@@ -1,3 +1,368 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+* {
+    box-sizing: border-box;
+
+}
+
+/* Default styles for all screen sizes */
+body {
+    margin: 0;
+    padding: 0;
+    color: #0f2145;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    background-color: #fcfdfd;
+
+}
+
+/* Styles for screens larger than 600px */
+@media (min-width: 600px) {
+    body {
+        font-size: 1.1rem;
+    }
+}
+
+/* Styles for screens larger than 900px */
+@media (min-width: 900px) {
+    body {
+        font-size: 1.2rem;
+        ;
+    }
+}
+
+/* Styles for screens larger than 1200px */
+@media (min-width: 1200px) {
+    body {
+        font-size: 1.3rem;
+    }
+}
+
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 5rem;
+    border-bottom: 1px grey solid;
+}
+
+.left-nav,
+.middle-nav,
+.right-nav {
+    padding: 1rem;
+    align-items: center;
+}
+
+.left-nav {
+    align-items: center;
+    padding: 0;
+    margin-left: 2rem;
+
+    .logo {
+        height: 3rem;
+        margin-top: 0.5rem;
+    }
+
+    .trophy {
+        height: 2.8rem;
+    }
+
+}
+
+.middle-nav {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        align-items: center;
+        margin: 0px;
+
+        li {
+            margin: 0.7rem;
+        }
+    }
+
+
+}
+
+.right-nav {
+    display: flex;
+
+    .menu {
+        height: 2rem;
+    }
+
+    .adidas {
+        height: 3rem;
+        padding-right: 1rem;
+    }
+
+    .emirates {
+        height: 2.5rem;
+        padding-right: 2rem;
+    }
+
+    .btn {
+        font-family: Roboto, sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        color: #3e31fa;
+        background-color: #ffffff;
+        padding: 10px 13px;
+        border: solid #3e31fa 2px;
+        box-shadow: none;
+        border-radius: 13px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        cursor: pointer;
+        text-transform: lowercase;
+    }
+
+
+}
+
+.main-article {
+    border-radius: 3rem;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    width: 90vw;
     
+
+    img {
+        height: 30rem;
+
+        &:hover {
+            cursor: pointer;
+            transition: opacity calc(var(--rm-animation-delay-ms) * 2) ease-in-out, transform calc(var(--rm-animation-delay-ms) * 8) ease-in-out;
+        }
+    }
+
+    p {
+        display: flex;
+        align-items: center;
+        color: #0f2145;
+        max-width: 30ch;
+        font-weight: bold;
+        font-size: 1.7rem;
+        padding: 0rem 2rem;
+        background-color: #f3f5f8;
+        margin: 0rem;
+
+        &:hover {
+            cursor: pointer;
+            transition: color calc(var(--rm-animation-delay-ms) * 5.33) ease-in-out;
+            transition: 700ms;
+            color: #3e31fa;
+        }
+    }
+}
+
+.ad {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #e1e5ea;
+    padding: 5%;
+}
+
+.secondary-articles {
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 90vw;
+    margin: auto;
+
+}
+
+.article {
+    max-width: 20rem;
+    margin: 1.5rem;
+    display: block;
+
+    h4 {
+        font-size: 1.2rem;
+        margin: 0.4rem;
+        line-height: 1.1rem;
+        padding-top: 0.3rem;
+    }
+
+    img {
+        border-radius: 1.5rem;
+    }
+
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.NE-header {
+    width: 87vw;
+    margin: auto;
+
+    .filter {
+        display: flex;
+        flex-direction: row;
+        height: fit-content;
+        gap: 0.5rem;
+        margin: 1rem;
+        color: #3e31fa;
+
+        p {
+            margin: 0px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    }
+}
+
+.next-events {
+    width: 87vw;
+    margin: auto;
+    display: flex;
+    gap: 2rem;
+}
+
+.event {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+
+    img {
+        height: 12rem;
+        min-width: 24rem;
+        border-radius: 1rem;
+    }
+
+    .card {
+        background-color: white;
+        border: white 1px solid;
+        border-radius: 1rem;
+        margin-top: -2rem;
+
+        .filters {
+            ul {
+                display: flex;
+                flex-direction: row;
+                font-size: 0.7rem;
+                color: #43526e;
+                font-weight: 500;
+                margin: 0px;
+                margin-top: 1rem;
+
+
+                li {
+                    margin-right: 1rem;
+                }
+            }
+        }
+
+        .info {
+            margin: 1rem;
+            margin-left: 2rem;
+            height: 12rem;
+
+            h5,
+            h6,
+            p {
+                margin: 0px;
+            }
+
+            h5 {
+                margin-bottom: 0.7rem;
+                font-size: 1.2rem;
+            }
+
+            #CL {
+                margin-bottom: 2rem;
+            }
+
+            h6 {
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+                height: 1.5rem;
+            }
+        }
+    }
+}
+
+.news,
+.other-news {
+    width: 90vw;
+    margin: auto;
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+
+    .article-big {
+        display: flex;
+        flex-direction: column;
+        width: 30rem;
+
+        img {
+            border-radius: 1rem;
+            // object-fit: fill;
+        }
+
+        h3 {
+            margin-top: 1rem;
+        }
+    }
+}
+
+.footer {
+    width: 90vw;
+    margin: auto;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+
+    .football,
+    .basketball,
+    .club,
+    .list {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+        h6,
+        p {
+            margin: 0px;
+            padding: 0.5rem;
+        }
+
+        h6 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: #5e6a83;
+        }
+
+    }
+}
+
+.main-article, .article, .article-big{
+    &:hover {
+        cursor: pointer;
+        transition: color calc(var(--rm-animation-delay-ms) * 5.33) ease-in-out;
+        transition: 700ms;
+        color: #3e31fa;
+    }
 }
