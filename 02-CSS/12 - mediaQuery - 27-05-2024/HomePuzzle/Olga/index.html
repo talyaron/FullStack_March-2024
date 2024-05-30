@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hidden Haven Holidays</title>
-    <link rel="stylesheet" href="./dist/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Pacifico&display=swap" rel="stylesheet">    <link rel="stylesheet" href="./dist/style.css">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <script src="./script.js"></script>
 </head>
 <body>
     <!-- <div class="sky"></div> -->
     <header>
-        <div class="sky"></div>
+        <div class="sky"><h1>An unforgettable vacation on a desert island</h1></div>
         <div class="stage">
             <div class="sun"></div>
 
@@ -40,13 +43,15 @@
 
     <main>
         <nav>
-            <button class="btn-hover color">MAKE AN ORDER</button>
+            <a href="#part1">
+                <button class="btn-hover color">MAKE AN ORDER</button>
+            </a>
         </nav>
         <div class="wrapper">
             <img id="desktop" src="./images/desktop.png" alt="desktop">
-            <article id="letter">
+            <div id="letter">
                 <img src="./images/letter.png" alt="letter from H.H.H.">
-            </article>
+            </div>
 
             <article id="card1">
                 <img src="./images/cards/card1.png" alt="">
@@ -67,21 +72,19 @@
             <article id="card5">
                 <img src="./images/cards/card5.png" alt="">
             </article>
-
-            <section>
-                <form action="">
-                    <h1>Call</h1>
-                    <input type="text" name="fio" placeholder="Имя" required>
-                    <input type="tel" name="tel" placeholder="Телефон" required>
-                    <div id="form_result"></div>
-                    <input id="submit" type="submit" value="Заказать звонок">
-                </form>
-            </section>
+        </div>
+        <div id="part1" class="section">
+                <h1>I want to go to the island!</h1>
+                <input type="text" name="fio" placeholder="Name" required>
+                <input type="tel" name="tel" placeholder="Phone number" required>
+            <div>
+                <button class="btn-hover color">MAKE AN ORDER</button>
+            </div>
         </div>
     </main>
 
     <footer>
-
+        <img src="./images/bottom.png" alt="">
     </footer>
 
 </body>
