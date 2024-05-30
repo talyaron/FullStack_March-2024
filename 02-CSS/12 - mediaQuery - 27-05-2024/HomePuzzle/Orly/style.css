@@ -1,0 +1,128 @@
+body {
+  text-align: center;
+}
+
+body h1 {
+  position: sticky;
+  padding-top: 12px;
+  font-family: Gabriola;
+  font-size: 40px;
+  height: 65px;
+  background-color: #fadcdc;
+  text-align: center;
+  color: #9c5151;
+}
+
+body .button {
+  border: 0;
+  background-color: white;
+  font-size: 14px;
+  font-family: helvetica, sans-serif;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+}
+
+body .button:hover {
+  border-bottom: 3px solid black;
+}
+
+body h2 {
+  font-size: 35px;
+  color: brown;
+}
+
+body h3 {
+  color: brown;
+  font-size: 25px;
+}
+
+body hr {
+  width: 70%;
+  border-color: #8b3939;
+}
+
+body .img {
+  width: 90%;
+}
+
+body .img:hover {
+  cursor: pointer;
+}
+
+body .container {
+  display: grid;
+  grid-template-columns: repeat(4, 400px);
+  gap: 10px;
+  margin-left: 18%;
+  /* Breaking points */
+}
+
+@media screen and (max-width: 1200px) {
+  body .container {
+    grid-template-columns: repeat(4, 400px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body .container {
+    grid-template-columns: repeat(3, 400px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  body .container {
+    grid-template-columns: repeat(2, 400px);
+  }
+}
+
+body .container__product {
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+body .container__product .image:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+body h4 {
+  margin: 10px 0;
+}
+
+body p {
+  margin: 10px 0;
+}
+
+@media (max-width: 1200px) {
+  body .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  body .container__product {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  body .container__product {
+    width: 100%;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+body .cube {
+  animation: slide-in 1000ms;
+  animation-timing-function: linear;
+  animation-duration: 2.5s;
+}
