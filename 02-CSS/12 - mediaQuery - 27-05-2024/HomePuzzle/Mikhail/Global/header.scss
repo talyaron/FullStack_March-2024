@@ -45,8 +45,9 @@ header{
         width: 30px;
         margin-left: 2rem;
         &:hover{
-
+            cursor: pointer;
         }
+   
     }
     .material-icons{
         background-color: #18181c;
@@ -63,8 +64,9 @@ header{
         width: 55px;
         margin-left: 2rem;
         &:hover{
-
+            cursor: pointer;
         }
+  
     }
     .button--support{
         background-color: #18181c;
@@ -89,4 +91,13 @@ header{
         }
     }
   }
+  @media screen and (max-width: 1200px) {
+   .button--distribute{
+    display: none;
+   }
+   .button--support{
+    display: none;
+   }
+    
+}
 }
