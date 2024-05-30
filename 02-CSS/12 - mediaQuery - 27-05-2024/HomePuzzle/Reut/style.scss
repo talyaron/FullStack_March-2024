@@ -1,4 +1,5 @@
 body {
+    font-family: "Rubik", sans-serif;
     color: white;
     background-color: black;
 }
@@ -6,10 +7,10 @@ body {
     border-radius: 20px;
     background-color: rgba(18,18,18,255);
     width: 15%;
-    font-size: 1.2rem;
+    font-size: 18px;
     padding: 1%;
     .icon-home {
-        margin-bottom: 4%;
+        margin-bottom: 5%;
     }
 }
 .nav-bot {
@@ -22,8 +23,11 @@ body {
         display: inline-block;
         .icons {
             margin-top: -30%;
-            margin-left: 245%;
+            margin-left: 290%;
             display: flex;
+        }
+        h2 {
+            font-size: 18px;
         }
     }
     .buttons {
@@ -32,6 +36,7 @@ body {
         margin-bottom: 7%;
         
         .button {
+            cursor: pointer;
             background-color: rgb(60,60,60);
             border: none;
             padding: 1.5%;
@@ -44,7 +49,7 @@ body {
         }
     }
     .recents {
-        margin-left: 80%;
+        margin-left: 75%;
         margin-top: -3%;
     }
 }
@@ -61,32 +66,37 @@ body {
     h4 {
         white-space: nowrap;
         margin-top: 2%;
+        font-family: "Rubik", sans-serif;
     }
 }
 p {
+    font-family: "Rubik", sans-serif;
     margin-left: 13%;
     font-size: 1rem;
     margin-top: -5.5%;
 }
+
 .main {
     border-radius: 20px;
     background-color: rgba(18,18,18,255);
     margin-left: 17.5%;
-    margin-top: -45.9%;
+    margin-top: -46.4%;
     padding-top: 3.4%;
     img {
         margin-left: 2%;
-        margin-bottom: 2.6%;
+        margin-bottom: 2.75%;
     }
     .upper {
+        padding-top: 0.6%;
         margin-top: -3%;
         margin-bottom: 0%;
         display: flex;
         margin-left: 3%;
     }
     .right-side {
-        margin-left: 77%;
+        margin-left: 76%;
         .buttons{
+            cursor: pointer;
             border: none;
             border-radius: 50px;
             font-size: 16px;
@@ -98,6 +108,7 @@ p {
             border-radius: 90px;
         }
         &--black {
+            cursor: pointer;
             background-color: black;
             color: white;
             border: none;
@@ -117,6 +128,7 @@ p {
         margin-left: 2.2%;
         margin-bottom: 2%;
         .button {
+        cursor: pointer;
         color: white;
         background-color: rgb(78, 78, 78);
         border: none;
@@ -124,19 +136,35 @@ p {
         font-size: 16px;
         padding: 0.5rem;
         }
+        .button:hover {
+            background-color: gray;
+        }
     }
 }
 .bot-bar {
+    position: absolute;
+    animation-name: disappear;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    @keyframes disappear {
+        from {
+            top: 1180px;
+        }
+        to {
+          top: 1300px;
+        }
+    }
     display: flex;
-    .left {
-        margin-top: 1%;
+    .right {
+        margin-top: 2.5%;
     }
    .mid {
-        margin-left: 20%;
-        margin-top: 1%;
+        margin-left: 36%;
+        margin-top: 1.9%;
     }
-    .right {
-        margin-left: 22.5%;
-        margin-top: 2%;
+    .left {
+        margin-left: 36%;
+        margin-top: 4.5%;
     }
 }

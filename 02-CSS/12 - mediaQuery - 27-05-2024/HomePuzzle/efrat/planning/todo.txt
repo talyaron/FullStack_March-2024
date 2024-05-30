@@ -1,0 +1,10 @@
+site: https://www.awwwards.com/
+
+1. Structure (files,naming, BEM) 
+2. animation - done (how to stop flickering)
+3. navbar - done
+4. css import -
+5. Media - 
+
+
+
