@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Haven Holidays</title>
+    <link rel="stylesheet" href="./dist/style.css">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- <div class="sky"></div> -->
+    <header>
+        <div class="sky"></div>
+        <div class="stage">
+            <div class="sun"></div>
+
+            <div class="island">
+                <img src="./images/palm.png" alt="palm">
+            </div>
+
+            <!--Waves Container-->
+            <div class="sea">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(64,79,127,0.7)" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(64,79,127)" />
+                    </g>
+                </svg>
+            </div>
+            <!--Waves end-->
+        </div>
+    </header>
+
+
+
+    <main>
+        <nav>
+            <button class="btn-hover color">MAKE AN ORDER</button>
+        </nav>
+        <div class="wrapper">
+            <img id="desktop" src="./images/desktop.png" alt="desktop">
+            <article id="letter">
+                <img src="./images/letter.png" alt="letter from H.H.H.">
+            </article>
+
+            <article id="card1">
+                <img src="./images/cards/card1.png" alt="">
+            </article>
+
+            <article id="card2">
+                <img src="./images/cards/card2.png" alt="">
+            </article>
+
+            <article id="card3">
+                <img src="./images/cards/card3.png" alt="">
+            </article>
+
+            <article id="card4">
+                <img src="./images/cards/card4.png" alt="">
+            </article>
+
+            <article id="card5">
+                <img src="./images/cards/card5.png" alt="">
+            </article>
+
+            <section>
+                <form action="">
+                    <h1>Call</h1>
+                    <input type="text" name="fio" placeholder="Имя" required>
+                    <input type="tel" name="tel" placeholder="Телефон" required>
+                    <div id="form_result"></div>
+                    <input id="submit" type="submit" value="Заказать звонок">
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>
+</html>
