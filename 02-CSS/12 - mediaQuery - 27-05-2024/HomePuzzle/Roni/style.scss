@@ -1,9 +1,8 @@
 .main{
   display: flex;
   margin-top: 1rem;
-  max-width: 1000px;
+  max-width: 90%;
   .sidebar{
-    margin-left:-38rem;
     position:sticky;
     top: 80px;
     flex: 0.3;
@@ -72,9 +71,10 @@
         }
     }
     .feed{
-        flex: 0.6;
-        margin-left: 7%;
+        flex: 0.8;
+        margin-left: 2rem;
     .feed__start{
+        border: 1px solid lightgray;
         background-color:white;
         padding: 10px;
         border-radius: 10px;}
@@ -103,6 +103,10 @@
         .feed__inputOptions{
             display: flex;
             justify-content:space-evenly;
+            :hover{
+                background-color: whitesmoke;
+                border-radius: 10px; 
+             }
             .inputOptions{
             align-items: center;
             justify-content:space-between;
@@ -110,11 +114,88 @@
             gap: 0.5rem;
             color: rgb(68, 66, 66);
             padding: 10px;
-            :hover{
-               background-color: whitesmoke;
-               border-radius: 10px; 
-            }
-        
         }}
     }
+    .posts{
+        border: 1px solid lightgray;
+        background-color: white;
+        padding: 15px;
+        margin-top: 1.5rem;
+        border-radius: 10px;
+        .post-header{
+            display: flex;
+            margin-bottom: 10px;
+            img{
+                width: 10%;
+                border-radius:100%;}
+            .post__info{
+                margin-left: 10px;
+                p{
+                    font-size: 12px;
+                    color: grey;
+                }
+                h2{
+                    font-size:15px ;
+                }
+            }
+        }
+        .post-body{
+            margin-bottom: 30px;
+        }
+        .post__options{
+            display: flex;
+            justify-content:space-evenly;
+            border-top: 1px solid lightgray;
+            padding-top: 1rem;
+            :hover{
+                background-color: whitesmoke;
+                border-radius: 10px; 
+             }
+            .postIcons{
+            align-items: center;
+            justify-content:space-between;
+            display: flex;
+            gap: 0.5rem;
+            color: rgb(68, 66, 66);
+            padding: 10px;
+            font-size: 80%;
+        }}
+    }
+    .recommendations{
+       position: sticky;
+       top: 80px;
+       flex: 0.4;
+       background-color: white;
+       border-radius: 10px;
+       border: 1px solid lightgray;
+       height: fit-content;
+       padding: 10px;
+       margin-left: 2rem;
+       .recommendations__header{
+        display: flex;
+        justify-content: space-between;
+       }
+       .add__options{
+        margin-top: 1.2rem;
+        gap: 1rem;
+        .post-header{
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 10px;
+            img{
+                width: 3.5rem;
+                border-radius:100%;}
+       }
+       .follow{
+        margin-top: -0.5rem;
+        margin-left: 4rem;
+        padding: 0.5rem;
+        padding-left: 1rem;
+        width: 5.2rem;
+        border-radius: 2rem;
+        border: 0.2rem solid darkgray;
+        font-size: 13px;
+       }
+    }
+}
 }
