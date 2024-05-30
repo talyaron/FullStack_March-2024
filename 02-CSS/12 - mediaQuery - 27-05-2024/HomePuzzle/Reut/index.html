@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify</title>
     <link rel="stylesheet" href="./dist/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cookie&family=Dancing+Script:wght@400..700&family=Eczar:wght@400..800&family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Yellowtail&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8f8d5c3a55.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="nav-top">
     <div class="icon-home">
-    <i class="fa-solid fa-house"></i> &nbsp; &nbsp;HOME
+    <i class="fa-solid fa-house"></i> &nbsp; &nbsp;Home
     </div>
-    <i class="fa-solid fa-magnifying-glass"></i>&nbsp; &nbsp; SEARCH
+    <i class="fa-solid fa-magnifying-glass"></i>&nbsp; &nbsp; Search
     </div>
 
     <div class="nav-bot">
@@ -96,10 +99,40 @@
     </div>
 
     <div class="main">
-        <img src="./imgs/main-top.png" alt="Playlists">
+        <div class="upper">
+        <div class="icons">
+        <i class="fa-solid fa-chevron-left fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="fa-solid fa-chevron-right fa-lg"></i>
+        </div>
+        <div class="right-side">
+        <div class="buttons">
+        <button class="buttons buttons--white">Explore Premium</button>&nbsp;
+        <button class="button buttons--black">Install App</button>&nbsp;
+        <i class="fa-regular fa-bell fa-lg"></i>&nbsp;
+        <button class="buttons buttons--blue">R</button>
+        </div>
+        </div>
+        </div>
+        <div class="bot-buttons">
+        <button class="button">All</button>
+        <button class="button">Music</button>
+        <button class="button">Podcasts</button>
+        </div>
+        <img src="./imgs/main-top-new.png" alt="Playlists">
         <img src="./imgs/main-mid.png" alt="new episodes">
         <img src="./imgs/bot new.png" alt="new songs for you">
 
+    </div>
+    <div class="bot-bar">
+        <div class="right">
+        <img src="./imgs/bot bar .png" alt="podcast episode">
+        </div>
+        <div class="mid">
+        <img src="./imgs/bot mid.png" alt="music player">
+        </div>
+        <div class="left">
+        <img src="./imgs/bot-right.png" alt="volume">
+        </div>
     </div>
 </body>
 </html>
