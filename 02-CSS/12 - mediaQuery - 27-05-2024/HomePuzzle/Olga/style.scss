@@ -12,14 +12,21 @@ body {
 }
 
 header {
-  position: sticky;
-  top: -5vh;
+  overflow: hidden;
 }
 
 nav {
-  position: absolute;
-  top: 50%;
+//   position: absolute;
+  top: 0;
   left: 50%;
+  position: sticky;
+  width: 100%;
+  height: auto;
+  background-color: $sea-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
 
 .sky {
@@ -27,7 +34,7 @@ nav {
   animation: sky 40s infinite linear;
   height: 30vh;
   width: 100%;
-  
+
 }
 
 .stage {
@@ -39,11 +46,10 @@ nav {
     background: steelblue;
     box-shadow: 0 -400px 300px -300px orangered inset;
     animation: sky-change 40s infinite linear;
-    overflow: hidden;
+    // overflow: hidden;
     }
 
 .sun {
-    position: absolute;
     left: 0;
     bottom: -30%;
     width: 10em;
@@ -57,15 +63,8 @@ nav {
     animation-name: sun-move, sun-color;
 }
 
-.sun, .ship, .island {
+.sun, .island {
   position: absolute;
-}
-
-.ship {
-  img {
-    position: absolute;
-    height: 12em;
-  }
 }
 
 .island {
@@ -75,22 +74,14 @@ nav {
   img {
     position:absolute;
     bottom:0;
-  }
-
-  #palm1 {
-    height: 15em;
-  }
-
-  #palm2 {
-    height: 13em;
-    transform: scaleX(-1);
-    left: 55px;
+    height: 15vw;
+    min-height: 150px;
   }
 }
 
 .sea {
   position: relative;
-  top: 78%;
+  bottom: -30vh;
 }
 
 .waves {
@@ -115,23 +106,44 @@ nav {
   animation-duration: 13s;
 }
 .parallax>use:nth-child(4) {
-  animation-delay: -5s;
+  animation-delay: -7s;
   animation-duration: 20s;
 }
-  
-.wrapper {
-  margin-top: 150px;
-  max-width: 1000px;
-  margin: auto;
-  background-image: url("../images/desktop.png");
-  background-size: cover;
 
-  img {
-    border-radius: 20px;
-    max-width: 800px;
-  }
+.wrapper {
+  margin-top: 300px;
+  max-width: 80%;
+  margin: auto;
+  position: relative;
+    article {
+        position: absolute;
+        border: 10px palegreen solid;
+        img {
+            border-radius: 20px;
+            max-width: 800px;
+            // position: absolute;
+            box-shadow: 0 0 10px $sea-color;
+          }
+    }
+
+    #letter {
+        top: 10%;
+        left: 30%;
+        rotate: 352deg;
+    }
+
+    #card1 {
+        top: 20%;
+        rotate: 30deg;
+        left: 50%;
+    }
+
 }
 
+#desktop {
+    width: 100%;
+    // position: relative;
+}
 
 @keyframes move-forever {
   0% {
