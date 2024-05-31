@@ -7,38 +7,51 @@
     --sticky-nav-height: 5.25rem;
     --login-bar-height: 0rem;
     --sticky-header-height: 4.25rem;
+    --primary-color: white;
+    --secondary-color: black;
+    --highlight-color: #1a48c4;
+    --border-color: #2f323f;
+    --shadow-color: rgba(0, 0, 0, 0.16);
 }
 
-/* billboard header */
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     height: 200vh;
-}
-header {
-    z-index: 1000; 
-    letter-spacing: 3px;
-    transition: 0.5s;
-    color: white;
-    background-color: black;
     font-family: var(--font-family-primary-fancy);
-    font-weight: 600;
-    a {
-        text-decoration: none;
-        color: white;
-    }
 }
 
+header {
+    z-index: 1000;
+    letter-spacing: 3px;
+    transition: 0.5s;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+h2 {
+    letter-spacing: -2px;
+}
+
+/* Header Logo */
 .header__logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 2rem;
     padding: 0.5rem 2rem;
-    border-bottom: 1px #2f323f solid;
+    border-bottom: 1px solid var(--border-color);
 
     &__middle {
         text-align: center;
@@ -50,36 +63,38 @@ header {
         gap: 10px;
     }
 }
-h2 {
-    letter-spacing: -2px;
-}
-.login {
-    color: white;
-    background-color: black;
-    border: white 1px solid;
+
+/* Buttons */
+.login, .subscribe {
     font-size: 1rem;
     font-weight: 600;
     padding: 0.5rem;
-    margin: 0 1rem;
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+
     &:hover {
-        border-color: rgb(118 186 223);
-        color: rgb(118 186 223);
+        cursor: pointer;
     }
+}
+
+.login:hover {
+    border-color: var(--highlight-color);
+    color: var(--highlight-color);
 }
 
 .subscribe {
-    color: white;
-    background-color: #1a48c4;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.5rem;
+    background-color: var(--highlight-color);
     border: none;
+
     &:hover {
-        background-color: white;
-        color: #1a48c4;
+        background-color: var(--primary-color);
+        color: var(--highlight-color);
     }
 }
 
+/* Navbar */
 .header__nav {
     position: sticky;
     top: 0;
@@ -89,14 +104,14 @@ h2 {
     align-items: center;
     font-size: 0.75rem;
     padding: 0.5rem 2rem;
-    background-color: black;
+    background-color: var(--secondary-color);
     transition: all 0.5s ease;
 
     &__left {
         .fa-magnifying-glass {
             font-size: 1.5rem;
             &:hover {
-                color: #1a48c4;
+                color: var(--highlight-color);
             }
         }
     }
@@ -111,11 +126,8 @@ h2 {
                 padding: 0.5rem 3rem;
 
                 a {
-                    text-decoration: none;
-                    color: white;
-
                     &:hover {
-                        color: #1a48c4;
+                        color: var(--highlight-color);
                     }
                 }
             }
@@ -125,7 +137,7 @@ h2 {
     .brand {
         transition: opacity 0.5s ease;
     }
-    
+
     .brand1 {
         display: inline;
     }
@@ -137,13 +149,13 @@ h2 {
             letter-spacing: 1px;
         }
     }
-    
+
     &.scrolled .brand1 {
-        opacity: 0;
+        display: none;
     }
 
     &.scrolled .brand2 {
-        opacity: 1;
+        display: inline;
     }
 }
 
@@ -151,5 +163,51 @@ h2 {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: black; 
+    background-color: var(--secondary-color);
+}
+
+/* Secondary Header */
+.header__secondary {
+    background-color: var(--primary-color);
+    height: 2.8125rem;
+    box-shadow: 0px 3px 6px var(--shadow-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 0;
+
+    ul {
+        display: flex;
+        justify-content:space-between;
+        padding: 0 2rem;
+        width: 100%;
+        li {
+            list-style: none;
+            text-align: center;
+            padding-left: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+
+            a {
+                color: #63677a;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: var(--highlight-color);
+                }
+            }
+
+            #spanish {
+                color: var(--primary-color);
+                background-color: var(--highlight-color);
+                padding: 0.3rem;
+                transition: background-color 0.3s ease, color 0.3s ease;
+
+                &:hover {
+                    color: var(--highlight-color);
+                    background-color: var(--primary-color);
+                }
+            }
+        }
+    }
 }
