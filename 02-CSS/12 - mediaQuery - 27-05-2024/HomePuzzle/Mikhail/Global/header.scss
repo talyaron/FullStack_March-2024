@@ -1,0 +1,103 @@
+header{
+    height: 4rem;
+    display: flex;
+    direction: rtl;
+    background-color: #18181c;
+
+    .header-right{
+        height: 4rem;
+        width: 50vw;
+
+
+
+        .material-icons{
+            background-color: rgb(138, 137, 137);
+            margin-right: 2rem;
+            border-radius: 20px;
+            &:hover{
+                background-color: rgb(174, 174, 174);
+                cursor: pointer;
+            }
+        }
+
+    .button--download{
+        background-color: #26bbff;
+        margin-right: 1rem;
+        
+        &:hover{
+            color: rgb(36, 36, 36);
+            background-color: #31aafa;
+
+        }
+    }
+   
+  }
+  .header-left{
+    width: 50vw;
+    height: 4rem;
+    direction: ltr;
+    display: flex ;
+    .logo{
+        border-right: solid grey 1px;
+        width: 7rem;
+   
+    .header-logo{
+        width: 30px;
+        margin-left: 2rem;
+        &:hover{
+            cursor: pointer;
+        }
+   
+    }
+    .material-icons{
+        background-color: #18181c;
+        margin-left: 0.5rem;
+        border-radius: 20px;
+        color: rgb(182, 181, 181);
+        &:hover{
+            color: white;
+
+        }
+    }
+}
+    .header-store{
+        width: 55px;
+        margin-left: 2rem;
+        &:hover{
+            cursor: pointer;
+        }
+  
+    }
+    .button--support{
+        background-color: #18181c;
+        border: 0;
+        color: rgb(182, 181, 181);
+        margin-left: 1rem;
+        &:hover{
+            background-color: rgb(138, 137, 137);
+            color: white;
+
+        }
+
+    }
+    .button--distribute{
+        background-color: #18181c;
+        border: 0;
+        color: rgb(182, 181, 181);
+        &:hover{
+            background-color: rgb(138, 137, 137);
+            color: white;
+
+        }
+    }
+  }
+  @media screen and (max-width: 1200px) {
+   .button--distribute{
+    display: none;
+   }
+   .button--support{
+    display: none;
+   }
+    
+}
+}

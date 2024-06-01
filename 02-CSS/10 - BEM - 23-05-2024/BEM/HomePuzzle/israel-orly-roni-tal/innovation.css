@@ -1,0 +1,45 @@
+h2 {
+  margin-left: 20%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 40px;
+}
+
+.main {
+  justify-content: center;
+  display: grid;
+}
+
+.main .header_container:hover {
+  text-decoration: underline;
+}
+
+.main .header_container:hover .img:hover {
+  opacity: 0.5;
+}
+
+.main .row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.main .column {
+  flex: 1;
+  margin: 5px;
+}
+
+.main .header_container {
+  width: 100%;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(52rem, 1fr));
+}
+
+.main .header_right {
+  justify-self: right;
+  width: 50%;
+  height: 20rem;
+  font-size: 15px;
+  margin-top: -600px;
+  margin-right: -35px;
+}

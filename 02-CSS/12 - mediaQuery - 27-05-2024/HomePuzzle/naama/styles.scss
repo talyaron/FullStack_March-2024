@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vw;
+    .nav{
+        position: fixed;
+        background-color: #363636b9;
+        color: white;
+        #nav-item {
+            position: relative;
+            display: inline-block;
+            p{
+                cursor: pointer;
+            }
+            
+            .drop-content{
+                display: none;
+                position: absolute;
+                width: 100vw;
+                height: 30vw;
+                background-color: #292929;
+            }
+            .show {
+                display:flex;
+                .sidebar{
+                    flex:1;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: left;
+                    margin: 2rem;
+                    .side-button{
+                        padding: 0.8rem;
+                    }
+                    #selected{
+                        border: 1px solid white;
+                        background-color: #414040;
+                        box-shadow: -8px 8px 0px -4px #c0c0c096 inset;
+                    }
+                }
+                .content{
+                    flex: 3;
+                }
+            }
+        }
+    }
+}
