@@ -10,6 +10,7 @@
     --primary-color: white;
     --secondary-color: black;
     --highlight-color: #1a48c4;
+    --login-hover: rgb(118, 186, 223);
     --border-color: #2f323f;
     --shadow-color: rgba(0, 0, 0, 0.16);
 }
@@ -65,7 +66,7 @@ h2 {
 }
 
 /* Buttons */
-.login, .subscribe {
+.login, .subscribe, .login2 {
     font-size: 1rem;
     font-weight: 600;
     padding: 0.5rem;
@@ -78,10 +79,15 @@ h2 {
         cursor: pointer;
     }
 }
-
+.login2 {
+    border: none;
+    &:hover {
+        color: var(--login-hover);
+    }
+}
 .login:hover {
-    border-color: var(--highlight-color);
-    color: var(--highlight-color);
+    border-color: var(--login-hover);
+    color: var(--login-hover);
 }
 
 .subscribe {
