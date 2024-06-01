@@ -5,22 +5,32 @@ $column-gap: 20px;
   --background-color-brand-primary: rgb(26, 72, 196);
   --background-color-grey-lightest: rgb(237, 235, 235);
   --background-color-white: rgb(255, 255, 255);
+  --primary-color: rgb(0, 0, 0,) !important;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+header {
+  color: white !important;
 }
+
+
 
 body {
   font-family: Helvetica, sans-serif;
-  font-weight: 600;
   box-sizing: border-box;
   background-color: var(--background-color-grey-lightest);
 }
 
+.home-wrapper {
+  font-weight: 600;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
 h2 {
   font-weight: 800;
+  letter-spacing: 0 !important;
 }
 
 a {
@@ -41,6 +51,12 @@ a {
 img {
   width: 100%;
 }
+
+img:hover {
+  cursor: pointer;
+}
+}
+
 
 .main {
   display: grid;
@@ -203,7 +219,7 @@ img {
 
 .home-line {
   color: var(--background-color-white);
-  background-color: black;
+  background-color: #101119;
   padding-bottom: 80px;
 }
 
