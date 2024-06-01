@@ -4,11 +4,16 @@ body {
 .wrapper {
   padding: 1%;
   background-color: white;
-  width: 15vw;
+  width: 13vw;
   text-align: center;
   margin-left: 40%;
   margin-top: 6%;
   font-family: "Open Sans", sans-serif;
+  border-radius: 5px;
+
+  img {
+    margin-left: -5%;
+  }
 
   h5 {
     margin-top: 0%;
@@ -40,7 +45,7 @@ body {
   }
   
   .checkbox {
-    margin-right: 62%;
+    margin-right: 59%;
     font-size: 14px;
   }
 
