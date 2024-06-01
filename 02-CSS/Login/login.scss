@@ -2,12 +2,20 @@ body {
   background-color: gray;
 }
 .wrapper {
-    padding: 1%;
-    background-color: white;
-    width: 15vw;
-    text-align: center;
-    margin-left: 40%;
-    margin-top: 6%;
+  padding: 1%;
+  background-color: white;
+  width: 15vw;
+  text-align: center;
+  margin-left: 40%;
+  margin-top: 6%;
+  font-family: "Open Sans", sans-serif;
+
+  h5 {
+    margin-top: 0%;
+    margin-bottom: -1%;
+    font-weight: 600;
+    font-size: 14px;
+  }
     
   .login__field {
     padding: 10px 0px;	
@@ -33,6 +41,21 @@ body {
   
   .checkbox {
     margin-right: 62%;
+    font-size: 14px;
+  }
+
+  h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: -5%;
+    margin-bottom: -1%;
+  }
+
+  h3 {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: -2%;
+    margin-bottom: 0%;
   }
    
   button {
@@ -49,6 +72,11 @@ body {
   
   .container {
     padding: 16px;
+  }
+
+  p {
+    margin-top: -1%;
+    font-size: 12px;
   }
 
   a {
