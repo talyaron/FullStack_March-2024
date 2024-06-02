@@ -32,5 +32,10 @@
         font-size: 3rem;
         grid-row: 5;
         grid-column: 1 / 5;
+        .newsletter__icons{
+            img{
+                border-radius:50%;
+            }
+        }
     }
 }
