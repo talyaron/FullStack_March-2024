@@ -41,7 +41,7 @@ body{
 }
 
 .wrapper{
-    width:auto;
+    width:100%;
     justify-content: center;
     margin: 0 auto;
     display: flex;
@@ -120,25 +120,32 @@ body{
     }
     .underline{
        text-decoration: underline;
-       cursor: pointer;
-       
+       cursor: pointer; 
     }
 
-    .info{
+    .info {
         background-color: rgb(3, 3, 22);
         height: 20rem;
         display: flex;
-        text-align: center;
-        
-        .info-left{
-            float: left;
-            color: white;  
-        }
-        .info-right{
-            float: left;
-            color: white;
-        }
+        align-items: center; 
+        justify-content: center;
+        width: 100%; 
     }
+    
+    .info-left{
+        width: 14rem;
+        color: white;
+        margin-right: 5rem;
+        font-size: 1.5rem;
+    }
+
+    .info-right{
+        width: 40rem;
+        color: white;
+        width: 43rem;
+        margin-left: 3rem;
+    }
+    
 
     .articles{
        display: grid; 
