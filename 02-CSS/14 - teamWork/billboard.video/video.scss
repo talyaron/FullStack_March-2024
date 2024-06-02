@@ -1,6 +1,6 @@
 body {
-    background-color: rgb(16, 17, 25);
     color: white;
+    background-color: rgb(16, 17, 25);
 }
 
 .main-bloc {
@@ -9,16 +9,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     .wrapper {
         padding-bottom: 1rem;
         border-bottom: 1px white solid;
-        
 
 
 
 
-       
+
+
 
         .video-main-title {
             display: flex;
@@ -40,7 +40,7 @@ body {
             }
         }
 
-        img{
+        img {
             width: 70vw;
         }
 
@@ -53,25 +53,40 @@ body {
 
 
     }
-    .most-recent-wrapper{
-        display: flex
 
-       
-        
-    }
-
-    .most-recent{
-
-        width: 20px;
-        height: 20px;
+    #most {
+        margin-top: 2rem;
 
     }
 
+    .most-recent-wrapper {
+        display: flex;
+        gap: 10rem;
+        margin-top: 2rem;
 
-    
+        .most-recent {
+            width: 13rem;
+            height: 3rem;
+
+            img {
+                width: 17rem;
+                height: 10rem;
+            }
+        }
+
+
+
+    }
+
+
+
+
+
 
 }
 
 
 
-@import "../components/header.scss";
+
+
+    @import "../components/header.scss";
