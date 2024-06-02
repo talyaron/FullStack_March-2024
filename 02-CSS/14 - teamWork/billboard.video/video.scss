@@ -8,18 +8,17 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center</h3></h3>;
-
+    align-items: center;
+    
     .wrapper {
         padding-bottom: 1rem;
-        border-bottom:  1px white solid;
+        border-bottom: 1px white solid;
+        
 
 
 
 
-        // h1 {
-        //     color: white;
-        // }
+       
 
         .video-main-title {
             display: flex;
@@ -28,7 +27,7 @@ body {
             padding-bottom: 1rem;
             margin-top: 1rem;
             margin-bottom: 2rem;
-            
+
 
 
             a {
@@ -41,19 +40,35 @@ body {
             }
         }
 
+        img{
+            width: 70vw;
+        }
+
         .footer-caption {
             font-weight: 900;
-            // font-size: 3ch;
             margin-top: 2rem;
             color: white
-            
-            
-            
         }
 
 
 
     }
+    .most-recent-wrapper{
+        display: flex
+
+       
+        
+    }
+
+    .most-recent{
+
+        width: 20px;
+        height: 20px;
+
+    }
+
+
+    
 
 }
 
