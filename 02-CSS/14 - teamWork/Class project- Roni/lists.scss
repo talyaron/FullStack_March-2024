@@ -1,0 +1,56 @@
+.page{
+    display: grid;
+    border: 2px solid rgb(1, 1, 1);
+    grid-template-columns: 20rem 20rem 20rem 20rem;
+    grid-template-rows: 10rem 23rem 18rem 15rem 7rem;
+    gap:1rem;
+    background-color: rgb(17, 16, 16);
+    color: white;
+    width:fit-content;
+    height: fit-content;
+    padding:3rem;
+    
+    .header{
+        display: grid;
+        grid-row: 1;
+        grid-column: 1 / 5;
+        border-bottom: 0.05rem lightblue solid;
+        align-items: left;
+        justify-content: left;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        .header__search{
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            height: 22px;
+            color: grey;
+            background-color: rgb(238, 244, 246);
+            input {
+                outline: none;
+                border: none;
+                background: none;
+                width: 280px;
+            }
+        }
+    }
+    .subscribe{
+        img{
+            width: 50%;
+        }
+    }
+    .newsletter {
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        grid-row: 5;
+        grid-column: 1 / 5;
+        .newsletter__icons{
+            img{
+                width: 3%;
+                border-radius: 50%;
+            }
+        }
+    }
+}
