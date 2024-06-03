@@ -24,6 +24,11 @@ body {
     .left_articles {
         display: flex;
         flex-direction: column;
+        padding: 1rem;
+        img {
+            width: 6rem;
+            padding: 0 1rem 1rem 0;
+        }
         &_inside {
             display: flex;
             flex-direction: row;
@@ -31,17 +36,52 @@ body {
             justify-content: center;
             border-bottom: 1px solid black;
             border-width: 80%;
-            width: 15vw;
+            width: 20rem;
+            padding: 1rem 0 0 0;
             &_number {
                 color: #1a48c4;
-
+                width: 3rem;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Neue Haas Grotesk Display Pro', sans-serif; ;
+                font-size: 2rem;
+                font-weight: 800;
+                padding: 1rem;
             }
             &_textContent {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
+                padding-bottom: 1rem;
             }
         }
 
     }
+    .right_articles {
+        display: flex;
+        flex-direction: column;
+        &_inside {
+            display: flex;
+            flex-direction: row;
+            &_contents {
+                display: flex;
+                flex-direction: column;
+                .largeImg {
+                    
+                }
+            }
+        }
+    }
+
+
+
+    <div class="right_articles">
+    <h3>You May Also Like</h3>
+    <div class="right_articles_inside">
+        <div class="right_articles_inside_contents">
+            <img src="" alt="">
+            <img src="" alt="">
+            <h5></h5>
+            <p></p>
 }
+
