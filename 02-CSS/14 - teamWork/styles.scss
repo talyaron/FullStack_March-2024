@@ -73,8 +73,39 @@ img:hover {
     }
 
     &_right {
-      background-image: url("https://www.billboard.com/wp-content/uploads/2024/05/cover-camila-cabello-billboard-2024-bb8-erica-hernandez-3-1260.jpg?crop=142px%2C0px%2C922px%2C738px&resize=705%2C564");
-      background-size: cover;
+      // background-image: url("https://www.billboard.com/wp-content/uploads/2024/05/Billboard_40_Under_40_featured.jpg?w=705&h=564&crop=1");
+      // background-size: cover;
+      // padding: $column-gap;
+      position: relative;
+
+      img {
+        height: 100%;
+      }
+
+      .text-top-story {
+        position: absolute;
+        bottom: 0;
+        margin: $column-gap;
+
+        h2 {
+          // display: inline;
+          background-color: var(--background-color-white);
+          padding-inline: $column-gap/2;
+        }
+      }
+
+      .text-top-story:hover {
+        filter: none;
+      }
+
+      .top-story {
+        border-bottom: 8px #101119 solid;
+        background-color: var(--background-color-brand-primary);
+        padding: 5px $column-gap/2;
+        margin-bottom: $column-gap/2;
+        color: var(--background-color-white);
+
+      }
     }
   }
 
