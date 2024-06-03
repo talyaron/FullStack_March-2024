@@ -60,21 +60,35 @@ body {
     .right_articles {
         display: flex;
         flex-direction: column;
+        border-left: 1px solid black;
+        
+        h3 {
+            padding: 1rem;
+        }
         &_inside {
             display: flex;
             flex-direction: row;
+            width: 35rem;
             &_contents {
                 display: flex;
                 flex-direction: column;
+                padding: 1rem;
+                position: relative;
                 .largeImg {
-                    height: 3rem;
-                    width: 4rem;
+                    width: 10rem;
+                    height: auto;
+                    border-top: 2px solid grey;
+                    padding-top: 1rem;
                 }
                 .thumb {
-
+                    width: 6rem;
+                    padding: 0 1rem 1rem 0;
                 }
                 p {
                     color: grey;
+                    padding-top: 2rem;
+                    position: absolute;
+                    bottom: 0;
                 }
             }
         }
