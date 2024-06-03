@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); 
 });
 
 document.getElementById('menuButton').addEventListener('click', function() {
