@@ -102,9 +102,12 @@
         margin-top: 5%;
         width: 75%;
         position:relative;
+        display: flex;
+        justify-content: space-between;
         .local-global{
             width: 45%;
-            
+            height: 370px;
+            position:relative;
             .koteret{
                 background-color: #006eff;
                 padding: 5px;
@@ -118,15 +121,18 @@
             .tochen{
                 display: flex;
                 background-color: white;
+                flex-direction: column;
                 .list{
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    height: 6rem;
                     .number{
                         flex:1;
                         font-size: 24px;
                         font-weight: 800;
                         text-align: center;
+                        border-right: 1px solid lightgray;
                     }
                     .text{
                         flex: 2;
@@ -140,7 +146,20 @@
                         }
                     }
                 }
-                
+                .lowerline{
+                    border-bottom: 1px solid lightgray;
+                }
+            }
+            .mini-footer{
+                position:absolute;
+                bottom: 0;
+                text-align: center;
+                width: 100%;
+                color: white;
+                font-weight: 700;
+                font-size: 20px;
+                background-color: black;
+                padding: 10px;
             }
         }
     }
