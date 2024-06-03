@@ -1,0 +1,166 @@
+.billboard-charts{
+    background-image: url("./images/Charts-background.png");
+    height: 100vw;
+    width: 100%;
+    background-color: #a3a3a3;
+    h1{
+        font-size: 90px;
+        font-weight: 900;
+        text-align: center;
+    }
+    .hot100{
+        background-color: white;
+        width: 75%;
+        margin: auto;
+        height: 430px;
+        position: relative;
+        .koteret{
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            h2{
+                text-align: center;
+                font-weight: 800;
+                font-size: 36px;
+                color: #006eff;
+            }
+            .blue{
+                width: 25%;
+                background-color: #006eff;
+                border: none;
+                height: 15px;
+            }
+        }
+
+        .playlist3{
+            display: flex;
+            justify-content: space-around;
+            margin: 10px;
+            .playlist{
+                display: grid;
+                width: 30%;
+                border: 2px solid lightgray;
+                box-shadow: 5px 5px 5px #a3a3a3;
+                .photo-container{
+                    grid-column: 1/4;
+                    background-color: white;
+                    padding: 15px;
+                    img{
+                        float: left;
+                    }
+                    
+                    .text{
+                        h2{
+                            font-size: 28px;
+                            font-weight: 800;
+                        }
+                        .fa-solid{
+                            display: none;
+                            color:gray;
+                        }
+                        h3{
+                            font-size: 16px;
+                        }
+                        position: relative;
+                        left: 10px;
+                    }
+                    
+                }
+                .places{
+                    text-align: center;
+                    padding: 1rem;
+                    background-color: lightgrey;
+                    p{
+                        color: #006eff;
+                        font-size: small;
+                    }
+                    h3{
+                        font-size: 24px;
+                        font-weight: 800;
+                    }
+                }
+            }
+        }
+
+        .mini-footer{
+            position:absolute;
+            bottom: 0;
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+            background-color: black;
+            padding: 10px;
+        }
+    }
+    .billboards200{
+        margin: auto;
+        margin-top: 5%;
+        width: 75%;
+        position:relative;
+        display: flex;
+        justify-content: space-between;
+        .local-global{
+            width: 45%;
+            height: 370px;
+            position:relative;
+            .koteret{
+                background-color: #006eff;
+                padding: 5px;
+                h2{
+                    text-align: center;
+                    font-size: 40;
+                    font-weight: 800;
+                    color: white;
+                }
+            }
+            .tochen{
+                display: flex;
+                background-color: white;
+                flex-direction: column;
+                .list{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 6rem;
+                    .number{
+                        flex:1;
+                        font-size: 24px;
+                        font-weight: 800;
+                        text-align: center;
+                        border-right: 1px solid lightgray;
+                    }
+                    .text{
+                        flex: 2;
+                        position: relative;
+                        left: 10px;
+                    }
+                    .image{
+                        flex:1;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+                .lowerline{
+                    border-bottom: 1px solid lightgray;
+                }
+            }
+            .mini-footer{
+                position:absolute;
+                bottom: 0;
+                text-align: center;
+                width: 100%;
+                color: white;
+                font-weight: 700;
+                font-size: 20px;
+                background-color: black;
+                padding: 10px;
+            }
+        }
+    }
+}
