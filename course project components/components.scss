@@ -56,17 +56,23 @@ body, html {
         text-decoration: none;
         font-family: "Neue Haas Grotesk Display Pro", sans-serif;
         font-size: 1.28rem;
-        line-height: 1.5rem;
+        line-height: 1.7rem;
         letter-spacing: 0.02rem;
         font-weight: 520;
         &:hover{
             color: rgb(26, 72, 196);
         }
         // padding-top: 1em;
+        &--lts{
+            padding: 1.3em;
+            font-size: 1.2rem;
+        }
     }
 }
 
 .btn-wrapper{
+    display: block;
+    background-color: black;
     .btn{
         text-decoration: none;
         display: flex;
@@ -104,18 +110,58 @@ body, html {
         }
         &--menu-header-btn{
             display: block;
-            padding: 0.5em 0.8em;
+            padding: 0.4em 0.5em;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             font-size: 1.35rem;
-            font-weight: 600;
-            color: white;
-            background-color: rgb(26, 72, 196);
+            font-weight: 500;
+            color: rgb(237,235,235);
+            background-color: none;
             border: none;
             &:hover{
                 color: rgb(26, 72, 196);
-                background-color: rgb(255, 255, 255);
+                
             }
+    }
+    &--bottom-menu-header-btn{
+        display: block;
+            padding: 0.4em 0.5em;
+            letter-spacing: 0.1em;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #4C5167;
+            background-color: none;
+            border: none;
+            &:hover{
+                color: rgb(26, 72, 196);
+            }
+    }
+
+
+}
+}
+.latest-news-wrapper{
+    display: block;
+    background-color: white;
+    width: 25rem;
+    .latest-news-item{
+        display: flex;
+        flex-direction: column;
+        
+        
+        &__time-ago-mark{
+            display: block;
+            font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+            padding: 0.1em 1.5em;
+            padding-bottom: 2em;
+            letter-spacing: 0.03em;
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgb(26, 72, 196);
+            background-color: none;
+            border: none;
+            
+        }
     }
 }
 
