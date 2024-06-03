@@ -11,7 +11,7 @@ In this project, you will create a responsive web page that resembles the design
 
 ## Requirements
 
-1. Use HTML and SCSS (Sass) to build the web page.
+1. Use HTML and SCSS  to build the web page.
 2. The web page should be responsive and match the design shown in the `newspaper.png` file across all screen sizes.
 3. Pay attention to details such as layout, typography, spacing, and colors to achieve an accurate representation of the design.
 
