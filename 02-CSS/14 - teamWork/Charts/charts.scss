@@ -1,8 +1,8 @@
 .billboard-charts{
-    background-image: url("./images/Charts-background.png");
-    height: 100vw;
-    width: 100%;
-    background-color: #a3a3a3;
+    background-image: url("https://www.billboard.com/wp-content/themes/vip/pmc-billboard-2021/assets/src/images/Charts-background-landing-artist.png");
+    //height: 100vw;
+    width: 100vw;
+    //background-color: #a3a3a3;
     h1{
         font-size: 90px;
         font-weight: 900;
@@ -12,7 +12,6 @@
         background-color: white;
         width: 75%;
         margin: auto;
-        height: 430px;
         position: relative;
         .koteret{
             padding-top: 2rem;
@@ -58,7 +57,7 @@
                             font-weight: 800;
                         }
                         .fa-solid{
-                            display: none;
+                            display: inline;
                             color:gray;
                         }
                         h3{
@@ -86,8 +85,8 @@
         }
 
         .mini-footer{
-            position:absolute;
-            bottom: 0;
+            //position:absolute;
+            //bottom: 0;
             text-align: center;
             width: 100%;
             color: white;
@@ -95,6 +94,7 @@
             font-size: 20px;
             background-color: black;
             padding: 10px;
+            margin-top: 30px;
         }
     }
     .billboards200{
@@ -126,7 +126,7 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    height: 6rem;
+                    //height: 6rem;
                     .number{
                         flex:1;
                         font-size: 24px;
@@ -151,8 +151,8 @@
                 }
             }
             .mini-footer{
-                position:absolute;
-                bottom: 0;
+                //position:absolute;
+                //bottom: 0;
                 text-align: center;
                 width: 100%;
                 color: white;
@@ -160,6 +160,64 @@
                 font-size: 20px;
                 background-color: black;
                 padding: 10px;
+            }
+        }
+    }
+    .artist100{
+        background-color: white;
+        width: 75%;
+        margin: auto;
+        margin-top: 8%;
+        border-top: 15px solid #006eff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .text{
+            flex: 2;
+            text-align: center;
+            padding: 20px;
+            h2{
+                color: #006eff;
+                font-size: 36px;
+            }
+            button{
+                color: white;
+                background-color: black;
+                border: none;
+                font-size: 18px;
+                font-weight: 700;
+                padding: 10px;
+                i{
+                    color: red;
+                }
+            }
+        }
+        .artist-img{
+            text-align: center;
+            border-right: 1px solid lightgray;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            .image-number{
+                position: relative;
+                img{
+                    border-radius: 50%;
+                    border: 3px solid white;
+                    box-shadow: 3px 3px 5px lightgray;
+                }
+                .number{
+                    position: absolute;
+                    bottom: 0px;
+                    background-color: white;
+                    left: 35%;
+                    padding: 3px 10px;
+                    font-weight: 800;
+                }
+            }
+            a{
+                text-decoration: none;
+                color: #006eff;
             }
         }
     }
