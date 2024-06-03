@@ -164,6 +164,19 @@ body, html {
         }
     }
 }
+.hot-100-wrapper{
+    display: block;
+    background-color: white;
+.hot-100-card{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    
+    &__img{
+        background-color: aqua;
+    }
+}
+}
 
 @media only screen and (max-width: 78.7499rem) and (min-width: 48rem) {
     .card-width-50p\@desktop-and-tablet {
