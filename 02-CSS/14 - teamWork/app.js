@@ -23,5 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); 
+});
+
+document.getElementById('menuButton').addEventListener('click', function() {
+    document.getElementById('slidingMenu').classList.add('open');
+});
+
+document.getElementById('closeMenuButton').addEventListener('click', function() {
+    document.getElementById('slidingMenu').classList.remove('open');
 });
