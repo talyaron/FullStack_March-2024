@@ -16,3 +16,32 @@ body {
     .grid_header { grid-area: 1 / 1 / 2 / 2; }
     .side_menu { grid-area: 1 / 2 / 3 / 3; }
     .articles_container { grid-area: 2 / 1 / 4 / 2; }
+
+
+.lower_articles {
+    width: 100%;
+    display: flex;
+    .left_articles {
+        display: flex;
+        flex-direction: column;
+        &_inside {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid black;
+            border-width: 80%;
+            width: 15vw;
+            &_number {
+                color: #1a48c4;
+
+            }
+            &_textContent {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+    }
+}
