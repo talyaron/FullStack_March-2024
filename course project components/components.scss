@@ -38,11 +38,11 @@ body, html {
         display: inline-block;
         font-family:"acumin-pro-condensed", Arial, sans-serif;
         text-transform: uppercase;
-        font-weight: 550;
+        font-weight: 600;
         font-size: 1.18rem;
         line-height: 1.1875rem;
         letter-spacing: 0.1rem;
-        border-bottom: 0.2rem solid rgb(26, 72, 196);
+        border-bottom: 4px solid rgb(26, 72, 196);
         padding-bottom: 0.29em;
         margin-bottom: var(--spacing-050, 0.75rem);
         cursor: pointer;
@@ -163,6 +163,25 @@ body, html {
             
         }
     }
+}
+.hot100-wrapper{
+    display: block;
+    background-color: black;
+    margin: 2em;
+    .hot100-card{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        &__img{
+            background-color: aqua;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+    }
+
 }
 
 @media only screen and (max-width: 78.7499rem) and (min-width: 48rem) {
