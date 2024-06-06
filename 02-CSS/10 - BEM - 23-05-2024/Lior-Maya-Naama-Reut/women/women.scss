@@ -1,0 +1,163 @@
+//globals
+
+@import "../Header.scss";
+@import "../footer.scss";
+
+.sale-banner{
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    height: 5rem;
+      
+    .sale-type{
+        font-size: 3rem; 
+    }
+
+    .sale-dates{
+        font-size: 0.8rem;
+        margin-top: -2.7rem;
+    }
+}
+
+.banners{
+    display: grid;
+    align-items: center; 
+    justify-content: center;  
+    width: 100%;
+   
+    .items{
+        margin: 0.8rem;
+
+        img{
+            height: 37rem;
+            width: 85rem;
+        }
+    }
+}
+
+.titles{
+    margin-left:4.5rem;
+    text-align: left;
+    font-weight:bold;
+    font-size: 1.4rem;
+    margin-top: -1.2rem;; 
+}
+
+.categories{
+    display: flex;
+    align-items: center; 
+    justify-content: center;  
+    width: 100%;
+    margin-bottom:2.5rem;
+
+    .items{
+        margin-left: 1.7rem;
+
+        img{
+            height: 25rem;
+            width: 20.5rem;
+        }
+    }
+}
+
+.trending{
+    display: grid;
+    align-items: center; 
+    justify-content: center; 
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr) ;
+    gap: 1rem;
+    margin-bottom:2.5rem;
+   
+    .brands{
+        margin-left: 2rem;    
+        
+        img{
+            height: 25rem;
+            width: 30.5rem;
+            margin-left: 2rem;
+        }
+    }
+}
+
+.sales{
+    display: flex;
+    align-items: center; 
+    justify-content: center;  
+    width: 100%;
+    margin: -1.2rem;
+
+    .in-sales{
+        margin: 1rem;
+
+        img{
+            height: 10rem;
+            width: 27rem;
+        }
+    }
+}
+
+.collaborations{
+    display: flex;
+    align-items: center; 
+    justify-content: center;  
+    width: 100%;
+    margin-top: -1rem;
+
+    .in-collaborations{
+        margin: 1rem;
+
+        img{
+            height: 10rem;
+            width: 20rem;
+        }
+    }
+}
+.btn{
+    background-color: black;
+    color:white;
+    width:fit-content;
+    margin-bottom: 1.5rem;
+    margin-left: 45%;
+
+    p{
+        padding: 1rem;
+    }
+
+    & :hover{
+        background-color: yellow;
+        color: black;
+        cursor: pointer;
+    }
+}
+
+.best-brands{
+    display: grid;
+    align-items: center; 
+    justify-content: center; 
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr) ;
+    gap: 10px;
+
+    .in-best-brands{
+        margin-left: 1.7rem; 
+
+        img{
+            background-color: rgb(235, 235, 235);
+            padding: 2rem;   
+        }
+    }
+}
+.tx-brands{
+    display: grid;
+    align-items: center; 
+    justify-content: center;  
+    width: 100%;
+    
+    img{
+        margin: 1rem;
+        width: 85rem;
+    }
+}
