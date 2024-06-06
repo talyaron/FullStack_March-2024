@@ -1,0 +1,82 @@
+.header-block {
+
+    font-family: 'Archivo Narrow';
+
+
+    &__txt-btn {
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.01rem;
+        font-size: 18px;
+        border-left: 1px solid black;
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+
+        :hover {
+            color: #5E605E;
+            cursor: pointer;
+
+        }
+
+        &--no-left-border {
+            border-left: none;
+        }
+        &--trending{
+            font-weight: 400;
+        letter-spacing: 0.01rem;
+        font-size: 23px;
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+        border-left: 1px solid black;
+        &--t-title{
+            font-weight: bold;
+        letter-spacing: 0.01rem;
+        font-size: 23px;
+        color: rgb(158,21,17);
+        text-transform: uppercase;
+        }
+        &--no-left-border {
+            border-left: none;
+            font-weight: 400;
+            letter-spacing: 0.01rem;
+            font-size: 23px;
+            padding-right: 0.8em;
+        }
+        
+    }
+
+        a {
+            text-decoration: none;
+            color: black;
+            // position: relative;
+        }
+
+
+
+        &__img {
+            width: 28px;
+        }
+
+
+        :active{
+            border: 3px solid rgb(0,93,199);
+            border-radius: 10px;
+        }
+
+
+    }
+}
+.article-card{
+    display: flex;
+    flex-wrap: wrap;
+    &__miller-font{
+        font-family: 'Georgia', 'Times New Roman', Times, serif;
+    }
+    &__Narrow-font{
+        font-family: 'Archivo Narrow';
+        &--red-title{
+            color: rgb(158,21,17);
+        }
+    }
+    
+}
