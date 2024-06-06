@@ -1,9 +1,9 @@
 //Variables are a way to store data in memory
 
 // Variable declaration
-let x = 10;
+let x:number = 10;
 
-x=45;
+let someName:string = "a string";
 
 
 
@@ -13,7 +13,7 @@ x= 200;
 
 console.log(x); // 200
 
-let y = x;
+let y:number = x;
 
 console.log(y); 
 
@@ -26,3 +26,7 @@ console.log(firstName);
 
 console.log(firstName + " " + y);
 console.log(x +  y);
+
+let z = x*y;
+
+console.log(z);
