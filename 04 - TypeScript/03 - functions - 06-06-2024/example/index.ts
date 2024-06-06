@@ -18,7 +18,7 @@ console.log(c);
 
 //function nameOfFunction( parameters ){
 //    //code block
-//      take the paremeters and return the value
+//      take the parameters and return the value
 // return value;
 //}
 function add(a: number, b: number): number {
