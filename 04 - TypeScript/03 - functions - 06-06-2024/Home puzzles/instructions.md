@@ -1,6 +1,6 @@
-Create a function introduce that takes a name and an optional age parameter (default value: "unknown").
+Create a function introduce that takes a name and an optional age parameter as arguments.
 The function should return a string like: "Hi, I'm [name], and I'm [age] years old."
-Call the function with and without the age parameter.
+If the age parameter is not provided, the function should return a string like: "Hi, I'm [name]." and give an error message in the console that says "Age not provided."
 
 
 Create a function combineWords that takes two strings as parameters and returns a new string with the two words combined with a space in between.
