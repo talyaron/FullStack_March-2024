@@ -12,7 +12,6 @@ function nameAndAge(firstName: string, age: number): string {
 
 // Test 
 console.log(nameAndAge("Sean", 25));  
-console.log(nameAndAge("Sean", undefined)); 
 
 
 function connectWords(firstWord: string, secondWord: string): any{
