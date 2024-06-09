@@ -2,6 +2,7 @@
     "compile-hero.disable-compile-files-on-did-save-code": false,
     "liveServer.settings.port": 5502,
     "cSpell.words": [
+        "age",
         "baking",
         "Delivrability",
         "Ivardisplay",
@@ -10,5 +11,8 @@
         "predesigning",
         "Reut",
         "Yossi"
+    ],
+    "cSpell.ignoreWords": [
+        "return"
     ]
 }
