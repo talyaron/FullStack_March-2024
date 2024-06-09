@@ -6,6 +6,7 @@ body {
     background-color: #F1E5D1;
     background-size: cover;
     background-position: center;
+    transition: background-image 1s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
