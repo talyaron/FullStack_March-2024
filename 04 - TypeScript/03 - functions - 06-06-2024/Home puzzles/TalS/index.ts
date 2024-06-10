@@ -27,19 +27,18 @@ function Introduce( name:string, age:number):any{
     }
 }
 console.log(Introduce("Tal", 32));
-console.log(Introduce("Tal"));
+// console.log(Introduce("Tal"));
 
 
 // third function
 
-function capitalize( str:string):string {
-try {
-    return str.charAt(0).toUpperCase() +str.slice(1)
-} catch (error) {
-    console.error(error);
-}
-}
+// // function capitalize( str:string):string {
+// try {
+//     return str.charAt(0).toUpperCase() +str.slice(1)
+// } catch (error) {
+//     console.error(error);
+// }
+// }
 
-console.log(capitalize("real madrid"));
-
+// console.log(capitalize("real madrid"));
 
