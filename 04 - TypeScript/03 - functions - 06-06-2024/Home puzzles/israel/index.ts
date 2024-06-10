@@ -1,4 +1,4 @@
-function introduce(name: string, age?: number): string | number {
+function introduce(name: string, age?: number): string  {
 
     try {
 
