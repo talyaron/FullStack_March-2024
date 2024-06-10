@@ -1,16 +1,16 @@
       
     function introduce (name: string, age: number): string{
         try {
-            //assertion
+           
             if (age === undefined){
     
                 throw new Error('Age not provided.');
             }
-            return "Hello I am, "+ Name + " and I am  "+ age +" years old"
+            return  "Hello I am, "+ name + " and I am  "+ age +" years old"
         }
         catch (error) {
             console.error(error);
-            return ("Hello I am, "+ Name)
+            return "Hello I am, "+ name
         }
     }
     console.log  ("Jane", 12);
