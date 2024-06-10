@@ -15,25 +15,23 @@ body {
 }
 
 .container {
-    background: #DBB5B5;
+    background: #ffffff10;
+    backdrop-filter: blur(12px);
     padding: 2rem;
     margin: 2rem;
     height: 20rem;
     width: 15rem;
     border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
     h2 {
-        color: #f4f4f4;
+        color: #63677a;
     }
-
     .formInput {
         margin-bottom: 1rem;
-
         fieldset {
             border: 1px solid white;
             padding: 0.5rem;
             margin: 0;
-
             legend {
                 margin-bottom: 0.5rem;
                 font-size: 1rem;
@@ -41,7 +39,6 @@ body {
                 background-color: gray;
                 color: white;
             }
-
             input, textarea {
                 width: 100%;
                 padding: 0.5rem;
