@@ -1,4 +1,4 @@
-function calculateBusTicketPrice(age: number, ticketPrice: number): number | undefined {
+function calculateBusTicketPrice(age: number, ticketPrice: number): any {
     try {
         if (age <= 18) {
             return "The price is " + ticketPrice / 2;
@@ -39,17 +39,17 @@ console.log(sumOfOddNumbers(6));
 function fizzBuzz(num: number): number | string | undefined {
     try {
         for (let i = 1; i <= num; i++) {
-            if (!(i % 3 === 0 && i % 5 === 0 || i % 3 === 0 || i % 5 === 0))
-                console.log(i); 
-
-            if (i % 3 === 0 && i % 5 === 0 ) {
-                console.log ('FizzBuzz')
+            if (i % 3 === 0 && i % 5 === 0) {
+                console.log('FizzBuzz')
             }
             else if (i % 3 === 0) {
-                console.log ('Fizz');
+                console.log('Fizz');
             }
             else if (i % 5 === 0) {
-                console.log ('Buzz');
+                console.log('Buzz');
+            }
+            else {
+                console.log(i);
             }
         }
     } catch (error) {
@@ -59,4 +59,27 @@ function fizzBuzz(num: number): number | string | undefined {
 }
 
 console.log(fizzBuzz(16))
+console.log(fizzBuzz(20))
+
+
+function isPrime(num: number): any {
+    if (num <= 1) {
+        console.log('False')
+    }
+
+    else if (num === 2) {
+        console.log('True');
+
+    }
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            console.log('False');
+        }
+    
+    else {
+        console.log('True');
+    }
+}}
+
+console.log(isPrime(7))
 

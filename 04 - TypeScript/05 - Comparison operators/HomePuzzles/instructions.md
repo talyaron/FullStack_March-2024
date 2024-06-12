@@ -14,7 +14,7 @@ Write a TypeScript function named sumOfOddNumbers that takes a positive integer 
 Example:
 
 If n = 5, the function should return 9 (1 + 3 + 5 = 9).
-If n = 8,
+If n = 8, 
 
 
 # FizzBuzz Function:
