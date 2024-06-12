@@ -1,0 +1,26 @@
+.fashion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -10px;
+  padding: 0;
+  list-style: none;
+}
+.fashion li {
+  width: calc(33.333% - 20px);
+  margin: 0 10px 20px;
+}
+.fashion li img {
+  width: 100%;
+  height: auto;
+}
+.fashion li h3 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+.fashion li p {
+  margin: 0;
+  font-size: 1em;
+  color: #999;
+}/*# sourceMappingURL=fashion.css.map */

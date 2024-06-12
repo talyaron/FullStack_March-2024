@@ -1,0 +1,412 @@
+.kicker {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px 16px 5px 16px;
+  background-color: #036;
+  color: #fff;
+  opacity: 0.8;
+  display: grid;
+  align-items: center;
+  font-weight: 700;
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+}
+
+.big-wrapper {
+  background-color: var(--primary-color);
+  position: relative;
+}
+.big-wrapper .side-bar {
+  background-color: white;
+  border: lightgray 1px solid;
+}
+.big-wrapper .side-bar .side-article {
+  background-color: white;
+  border: lightgray 1px solid;
+  margin-bottom: 12px;
+  padding: 16px;
+}
+.big-wrapper .maincon {
+  background-color: white;
+  border: lightgray 1px solid;
+  padding: 16px;
+}
+.big-wrapper .maincon .quad-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 6.5px;
+}
+.big-wrapper .maincon .article {
+  background-color: white;
+  border: lightgray 1px solid;
+  margin-bottom: 16px;
+  padding: 0px;
+}
+.big-wrapper .maincon .article .mainimage {
+  margin: 0px;
+  position: relative;
+}
+.big-wrapper .maincon .article .mainimage .kicker {
+  height: 40px;
+  font-size: 30px;
+}
+.big-wrapper .maincon .article .info {
+  background-color: white;
+  font-size: 120%;
+  font-weight: 700;
+  padding: 16px;
+}
+.big-wrapper .maincon .miniarticle .info {
+  font-size: 80%;
+  font-weight: 700;
+  padding: 5px;
+}
+
+.h2bar {
+  background-color: white;
+  border: lightgray 1px solid;
+}
+.h2bar h2 {
+  padding: 16px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .bigwrapper,
+  .h2bar {
+    width: 1300px;
+    max-width: 100%;
+    margin: 0px auto 0 auto;
+  }
+  .sidebar {
+    width: 300px;
+    margin-bottom: 12px;
+    padding: 16px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .maincon {
+    width: 920.4px;
+  }
+  .miniarticle {
+    width: 454.4px;
+  }
+}
+:root {
+  --primary-color: #036;
+  --secondary-color: red;
+  --lightgray: rgb(189, 184, 184);
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-size: 16px;
+  color: #036;
+}
+body a {
+  color: inherit;
+  text-decoration: none;
+}
+body h2 {
+  font-size: 1.2em;
+}
+body ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+body li {
+  list-style-type: none;
+  position: relative;
+}
+
+header {
+  width: 100%;
+  border-top: 4px red solid;
+}
+header h1 {
+  margin: 0;
+  padding: 0;
+  height: 0;
+  font-size: 2em;
+}
+header .logo {
+  display: block;
+  background-image: url("https://static.foxnews.com/static/orion/styles/img/fox-news/s/logos/fox-news-logo.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80px;
+  width: 60px;
+  border: 3px #fff solid;
+  top: 5px;
+  position: relative;
+  left: 16px;
+}
+header #clock-wrapper {
+  position: relative;
+  left: 19px;
+  bottom: 14px;
+  width: 90px;
+  height: 16px;
+  background-color: red;
+  font-size: 0.5em;
+  font-weight: bold;
+  color: #fff;
+  font-family: "Titillium Web", sans-serif;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .upper-wrapper {
+  background-color: #036;
+  height: 50px;
+  display: flex;
+}
+header .nav-row {
+  display: table;
+}
+header .nav {
+  max-width: 1042px;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  left: 108px;
+}
+header #link-more:hover {
+  background-color: transparent;
+}
+header .menu {
+  position: relative;
+}
+header .hidden-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #036;
+  width: 100px;
+  padding-top: 15px;
+}
+header .hidden-menu a {
+  display: block;
+  border-radius: 0;
+}
+header .hidden-menu #hidden-link-us, header .hidden-menu #hidden-link-politics, header .hidden-menu #hidden-link-option, header .hidden-menu #hidden-link-media {
+  display: none;
+}
+header .link-more:hover .hidden-menu {
+  display: block;
+}
+header a {
+  padding: 5px 15px;
+  transition: 0.2s;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+header a:hover {
+  background-color: rgb(97, 131, 166);
+}
+header .meta {
+  display: flex;
+}
+header .meta .log-in {
+  background-color: rgb(97, 131, 166);
+  margin-inline: 10px;
+}
+header .meta .watch-tv {
+  background-color: red;
+}
+header .meta a:hover {
+  opacity: 0.7;
+}
+header .meta #search {
+  padding-inline: 0;
+}
+header .meta #search:hover {
+  background-color: transparent;
+}
+header .trending {
+  height: 55px;
+  width: 100%;
+  border-bottom: 1px rgb(189, 184, 184) solid;
+}
+
+main {
+  display: flex;
+  padding-top: 22px;
+}
+main .top-news {
+  border-right: 1px rgb(189, 184, 184) solid;
+  display: flex;
+  flex-wrap: wrap;
+}
+main .top-news img {
+  width: 100%;
+}
+main .top-news .first-news {
+  display: flex;
+}
+main .top-news .first-news h2 {
+  margin-left: 8px;
+  font-size: calc(1.1em + 1vw);
+}
+main .top-news a:hover {
+  text-decoration: underline;
+}
+main img {
+  border-radius: 5px;
+}
+main .news-homepage {
+  border-bottom: 1px rgb(189, 184, 184) solid;
+  padding-top: 8px;
+  padding-bottom: 22px;
+}
+main .news-homepage h2 {
+  margin: 0;
+}
+main .sidebar .sidebar-table {
+  position: sticky;
+  top: 0;
+  border: 1px rgb(189, 184, 184) solid;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgb(189, 184, 184);
+}
+main .sidebar .sidebar-table .line {
+  padding: 10px 20px;
+  display: flex;
+  border-bottom: 1px rgb(189, 184, 184) solid;
+  align-items: center;
+}
+main .sidebar .sidebar-table .icon {
+  width: 42px;
+  height: 42px;
+  background-image: url("../images/logo1.png");
+  background-size: cover;
+  margin-right: 20px;
+}
+main .sidebar .sidebar-table .title-icon h6, main .sidebar .sidebar-table .title-icon p {
+  margin: 0;
+  padding: 0;
+}
+main .sidebar .sidebar-table .title-icon h6 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+main .sidebar .sidebar-table .title-icon p {
+  font-size: 0.7em;
+  color: darkgray;
+}
+main .sidebar .sidebar-table #active {
+  border-left: 4px red solid;
+  border-top-left-radius: 4px;
+  padding-left: 16px;
+}
+
+footer {
+  background-color: #036;
+  color: #fff;
+}
+
+.footer-icon-list {
+  display: flex;
+  justify-content: center;
+}
+.footer-icon-list a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 3px;
+  width: 32px;
+  height: 32px;
+  font-size: 1.5em;
+  background-color: rgb(6, 31, 56);
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.footer-icon-list #facebook:hover {
+  background-color: #1877F2;
+}
+.footer-icon-list #instagram:hover {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.footer-icon-list #youtube:hover {
+  background-color: red;
+}
+.footer-icon-list #linkedin:hover {
+  background-color: #0762C8;
+}
+
+@media screen and (max-width: 1199px) {
+  #nav {
+    max-width: 834px;
+  }
+  #first-news {
+    display: block;
+  }
+  #first-photo {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .sidebar, #link-politics, #link-option {
+    display: none;
+  }
+  .link-more:hover .hidden-menu #hidden-link-politics, .link-more:hover .hidden-menu #hidden-link-option {
+    display: block;
+  }
+  #nav {
+    max-width: 602px;
+  }
+  #top-news {
+    border-color: transparent;
+  }
+  #top-news img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  #link-us, #link-media {
+    display: none;
+  }
+  .link-more:hover .hidden-menu #hidden-link-us, .link-more:hover .hidden-menu #hidden-link-media {
+    display: block;
+  }
+  #nav {
+    width: 410px;
+  }
+}
+@media screen and (max-width: 575px) {
+  #link-world, #link-more {
+    display: none;
+  }
+  #upper-wrap-wrapper, #nav-row {
+    width: 100%;
+  }
+  #nav {
+    display: flex;
+    justify-content: end;
+    width: auto;
+    position: static;
+    padding-right: 8px;
+  }
+}/*# sourceMappingURL=style.css.map */

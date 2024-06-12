@@ -1,0 +1,65 @@
+body {
+  margin: 0px auto;
+}
+
+.page-body {
+  padding-left: 10ch;
+  padding-right: 10ch;
+}
+
+.ads {
+  text-align: center;
+  border-top: black solid 1px;
+  border-bottom: black solid 1px;
+  background-color: rgb(249, 248, 248);
+  padding: 2.5ch;
+}
+.ads img {
+  width: 120ch;
+}
+
+.page-header {
+  border-bottom: black 2px solid;
+}
+
+.head-article {
+  position: relative;
+  text-align: left;
+}
+.head-article .text-article {
+  padding: 2ch;
+  position: absolute;
+  bottom: 4px;
+  background-color: white;
+  width: 65ch;
+}
+.head-article .text-article h2 {
+  font-size: 300%;
+}
+
+.items-due {
+  display: flex;
+  margin-bottom: 20%;
+  gap: 10ch;
+}
+
+.news {
+  border-top: 1.5px solid black;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -20ch;
+}
+.news .news-bar {
+  justify-content: space-between;
+  display: flex;
+}
+
+.adventures {
+  border-top: 1.5px solid black;
+  display: flex;
+  flex-direction: column;
+}
+.adventures .adventures-bar {
+  justify-content: space-between;
+  display: flex;
+}/*# sourceMappingURL=travel.css.map */

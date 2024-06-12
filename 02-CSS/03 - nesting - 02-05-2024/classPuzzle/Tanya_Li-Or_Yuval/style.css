@@ -1,0 +1,32 @@
+@import url("https://fonts.cdnfonts.com/css/minecraft-4");
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #DCEAEF;
+}
+
+header {
+  background-color: #7B74FF;
+  color: white;
+  padding-top: 10px;
+}
+header h1 {
+  font-family: "Minecraft", sans-serif;
+  text-align: center;
+  margin: 0 0 0 20px;
+}
+
+.container {
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.article {
+  border: 2px solid #D9E5EA;
+  background-color: white;
+}
+.article h2, .article p {
+  margin-left: 50px;
+}/*# sourceMappingURL=style.css.map */

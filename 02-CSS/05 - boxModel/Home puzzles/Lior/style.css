@@ -1,0 +1,72 @@
+div {
+  border: 1px black solid;
+  padding: 20px;
+}
+
+.wrapper {
+  margin: auto;
+  border: none;
+}
+.wrapper .box-sticky {
+  position: sticky;
+  top: 0px;
+  background-color: rgb(87, 93, 140);
+  border: 2px rgb(171, 171, 232) solid;
+  padding: 2px;
+}
+.wrapper .box-sticky img {
+  height: 50px;
+  padding: 5px 10px;
+}
+.wrapper .box-sticky .icons {
+  float: left;
+  padding: 2px;
+  border: none;
+}
+.wrapper .box-fixed {
+  width: 50px;
+  position: fixed;
+  background-color: rgb(87, 93, 140);
+  border-radius: 50%;
+  left: 31px;
+  bottom: 2px;
+}
+.wrapper .box-fixed .in-fixed {
+  border: none;
+  background-color: rgb(87, 93, 140);
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 2px;
+  padding: 0px;
+  text-align: center;
+}
+.wrapper .box-relative {
+  height: 80px;
+  position: relative;
+}
+.wrapper .box-relative .absolute-one {
+  width: 20px;
+  background-color: rgb(37, 112, 158);
+  position: absolute;
+  right: 200px;
+}
+.wrapper .box-relative .absolute-two {
+  width: 20px;
+  background-color: rgb(101, 119, 194);
+  position: absolute;
+  right: 100px;
+  top: 50px;
+}
+.wrapper .box-relative .absolute-three {
+  width: 20px;
+  background-color: rgb(37, 82, 165);
+  position: absolute;
+  right: 300px;
+  top: 50px;
+}
+.wrapper .box-relative .absolute-four {
+  width: 20px;
+  background-color: rgb(116, 150, 175);
+  position: absolute;
+  right: 400px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,22 @@
+.wrapper {
+  position: relative;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+.wrapper .vogue-header {
+  background-color: white;
+  position: sticky;
+  top: 0px;
+  text-align: center;
+  font-size: 10cap;
+  padding-top: 0px;
+  padding-bottom: 50px;
+}
+.wrapper .vogue-header hr {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+.wrapper .vogue-header .navigation-bar-header .navigation-bar {
+  color: black;
+  font-size: 2rcap;
+}/*# sourceMappingURL=style-header.css.map */

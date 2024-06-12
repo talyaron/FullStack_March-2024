@@ -1,0 +1,329 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.upper-header {
+  width: 100%;
+  direction: rtl;
+  background-color: black;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upper-header .discount {
+  padding: 1rem;
+  margin: 0;
+  color: white;
+  font-weight: lighter;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.upper-header .discount:hover {
+  text-decoration: underline;
+}
+
+.logo-container {
+  height: 4rem;
+  width: 100%;
+  background-image: url("https://dealcoupon.co.il/storage/medialibrary/1268/conversions/Terminal_X_logo-logo.png");
+  background-position: center center;
+  background-size: auto 100%;
+}
+
+.lower-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+}
+.lower-header .icons {
+  display: flex;
+  width: 30%;
+  row-gap: 3rem;
+}
+.lower-header .user-login {
+  cursor: pointer;
+}
+.lower-header .user-login p {
+  direction: rtl;
+}
+.lower-header .user-login p:hover {
+  text-decoration: underline;
+  color: gray;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+  flex: 1;
+  border-bottom: 1px solid #eee;
+  color: var(--menubar_color);
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  margin: 0 10px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  display: block;
+  color: black;
+  font-size: 1.4rem;
+  justify-content: space-between;
+  background-color: transparent;
+  font-family: "Roboto", "narkisblock", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.nav-menu a:hover {
+  -webkit-text-decoration: underline yellow;
+          text-decoration: underline yellow;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  margin-top: 2%;
+  display: flex;
+  margin-left: 20%;
+}
+.footer h1 {
+  margin-top: 30%;
+}
+.footer .icons {
+  display: flex;
+  color: black;
+  margin-left: -10%;
+  width: 68%;
+}
+.footer .icons .icon {
+  padding: 4%;
+  background-color: yellow;
+  border: 7px solid black;
+}
+.footer .my-terminal {
+  margin-left: 5%;
+}
+.footer .newsletter {
+  margin-left: 5%;
+}
+.footer .newsletter h1 {
+  font-size: 36px;
+}
+.footer .newsletter h3 {
+  margin-left: 6%;
+}
+.footer .newsletter .container {
+  margin-left: 25%;
+  width: 50%;
+  padding: 20px;
+}
+.footer .newsletter input[type=text], .footer .newsletter input[type=submit] {
+  width: 100%;
+  text-align: right;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(78, 76, 76);
+  box-sizing: border-box;
+  background-color: rgb(78, 76, 76);
+  color: white;
+}
+.footer .newsletter input[type=checkbox] {
+  margin-top: 16px;
+}
+.footer .newsletter input[type=submit] {
+  width: 40%;
+  margin-left: -40%;
+  margin-top: -80%;
+  background-color: white;
+  color: black;
+  border: none;
+}
+.footer .newsletter input[type=submit]:hover {
+  opacity: 0.8;
+  background-color: yellow;
+}
+.footer .terminal-x {
+  margin-left: 5%;
+}
+.footer .help {
+  margin-left: 6%;
+}
+
+h3 {
+  margin-top: 4%;
+  margin-left: 18%;
+}
+
+.download {
+  margin-left: 40%;
+  margin-top: -4%;
+}
+
+.payments {
+  margin-left: 64%;
+}
+
+p {
+  direction: rtl;
+}
+
+h2 {
+  font-family: "Manrope", sans-serif;
+  direction: rtl;
+}
+
+.sale-banner {
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  height: 5rem;
+}
+.sale-banner .sale-type {
+  font-size: 3rem;
+}
+.sale-banner .sale-dates {
+  font-size: 0.8rem;
+  margin-top: -2.7rem;
+}
+
+.banners {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.banners .items {
+  margin: 0.8rem;
+}
+.banners .items img {
+  height: 37rem;
+  width: 85rem;
+}
+
+.titles {
+  margin-left: 4.5rem;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-top: -1.2rem;
+}
+
+.categories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+.categories .items {
+  margin-left: 1.7rem;
+}
+.categories .items img {
+  height: 25rem;
+  width: 20.5rem;
+}
+
+.trending {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.trending .brands {
+  margin-left: 2rem;
+}
+.trending .brands img {
+  height: 25rem;
+  width: 30.5rem;
+  margin-left: 2rem;
+}
+
+.sales {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: -1.2rem;
+}
+.sales .in-sales {
+  margin: 1rem;
+}
+.sales .in-sales img {
+  height: 10rem;
+  width: 27rem;
+}
+
+.collaborations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: -1rem;
+}
+.collaborations .in-collaborations {
+  margin: 1rem;
+}
+.collaborations .in-collaborations img {
+  height: 10rem;
+  width: 20rem;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 1.5rem;
+  margin-left: 45%;
+}
+.btn p {
+  padding: 1rem;
+}
+.btn :hover {
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
+}
+
+.best-brands {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+.best-brands .in-best-brands {
+  margin-left: 1.7rem;
+}
+.best-brands .in-best-brands img {
+  background-color: rgb(235, 235, 235);
+  padding: 2rem;
+}
+
+.tx-brands {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.tx-brands img {
+  margin: 1rem;
+  width: 85rem;
+}/*# sourceMappingURL=women.css.map */

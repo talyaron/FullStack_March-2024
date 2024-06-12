@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+  background-color: antiquewhite;
+}
+body .text {
+  position: absolute;
+  top: 300px;
+  left: 550px;
+  background-image: url(https://cliply.co/wp-content/uploads/2021/09/CLIPLY_372109170_FREE_FIREWORKS_400.gif);
+  padding-bottom: 200px;
+  padding-top: 50px;
+}/*# sourceMappingURL=sstyles.css.map */

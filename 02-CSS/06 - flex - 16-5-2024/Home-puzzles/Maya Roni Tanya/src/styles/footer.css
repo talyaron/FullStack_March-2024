@@ -1,0 +1,83 @@
+/*      Footer        */
+footer {
+  width: 100vw;
+  height: 500px;
+  background-color: black;
+  color: white;
+  padding-left: 60px;
+  /*      Table        */
+}
+footer .top {
+  display: flex;
+  padding-top: 15px;
+}
+footer .top img {
+  width: 8.75rem;
+}
+footer .top .fontsBar {
+  color: #DA8EEA;
+  margin-left: 100px;
+  font-size: 20px;
+}
+footer .top .fontsBar .fa-brands {
+  padding-left: 15px;
+}
+footer .top .fontsBar .fa-brands:hover {
+  cursor: pointer;
+}
+footer table {
+  margin-top: 20px;
+}
+footer table tr {
+  height: 30px;
+}
+footer table tr td {
+  width: 270px;
+}
+footer table tr td a {
+  color: white;
+  font-size: 15px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+footer table tr td a:hover {
+  text-decoration: underline;
+}
+footer #hearst {
+  width: 200px;
+  margin-top: 20px;
+}
+footer p {
+  font-size: 14px;
+}
+footer .bottomLinks {
+  margin-top: 20px;
+  margin-left: 0;
+}
+footer .bottomLinks ul {
+  display: flex;
+  align-items: start;
+  padding-left: 0;
+}
+footer .bottomLinks ul li {
+  list-style: none;
+  margin-right: 20px;
+}
+footer .bottomLinks ul li a {
+  font-size: 12px;
+  text-decoration: none;
+  color: white;
+}
+footer .bottomLinks ul li a:hover {
+  text-decoration: underline;
+}
+footer input[type=button] {
+  width: 140px;
+  height: 45px;
+  margin-top: 20px;
+  border-color: white;
+  border-radius: 10px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}/*# sourceMappingURL=footer.css.map */

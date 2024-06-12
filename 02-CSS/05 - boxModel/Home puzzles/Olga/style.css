@@ -1,0 +1,233 @@
+body {
+  margin: auto;
+  font: 15px/22px Arial, Helvetica, sans-serif;
+  max-width: 1200px;
+  height: 100vh;
+}
+body a {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: "Suez One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+}
+header .logo {
+  height: 70px;
+}
+header .logo img {
+  height: 100%;
+  width: auto;
+}
+
+.mobile-menu {
+  display: none;
+}
+.mobile-menu i {
+  font-size: 4em;
+  color: black;
+}
+
+.button-box {
+  padding: 5px;
+  display: flex;
+}
+.button-box img:hover {
+  transform: scale(1.05);
+}
+.button-box img:active {
+  opacity: 0.7;
+}
+.button-box a {
+  padding: 0;
+  margin: 0;
+}
+
+.menu-img {
+  width: 140px;
+  height: 70px;
+}
+
+.left, .right {
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  flex-wrap: wrap;
+}
+
+.mine {
+  display: flex;
+  margin-bottom: 10px;
+}
+.mine .sidebar {
+  padding-right: 10px;
+}
+.mine .sidebar a {
+  color: black;
+}
+.mine .sidebar a:hover {
+  color: #d10202;
+}
+.mine ul {
+  padding-inline: 0;
+}
+.mine li {
+  width: 100%;
+  list-style-type: none;
+  font-family: "Suez One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  border-bottom: 1px solid darkgray;
+}
+.mine .social-network {
+  color: #fff;
+  font-size: 1.8em;
+  font-family: "Suez One", serif;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  height: 150px;
+  background-color: #d10202;
+}
+.mine .social-network .social-network-icons {
+  display: flex;
+  justify-content: space-around;
+}
+.mine .social-network a {
+  font-size: 2em;
+  color: #fff;
+}
+
+.preview-top-news {
+  display: flex;
+  align-items: end;
+  background-image: url("../images/sport-photo.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: auto;
+  cursor: pointer;
+  color: #fff;
+}
+
+.preview-top-news:hover {
+  color: lightgray;
+}
+
+.title-preview-top-news {
+  width: 100%;
+  align-items: end;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.title-preview-top-news h1 {
+  font-size: 180%;
+  margin: 20px 0;
+}
+
+.news > h1 {
+  background-color: rgb(75, 12, 12);
+  padding: 10px 20px;
+  margin: 0;
+  color: white;
+}
+
+.news .news-preview {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.body-news {
+  display: flex;
+  padding: 10px 0;
+  border-bottom: solid 1px gray;
+}
+.body-news .news-photo-preview a {
+  display: block;
+  height: 100%;
+  background-image: url("../images/news-photo.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.body-news .news-photo-preview a i {
+  font-size: 2em;
+  position: relative;
+  top: 2%;
+  right: 5%;
+  text-shadow: 0 0 0.3em black;
+}
+.body-news .news-photo-preview a:hover i {
+  text-shadow: none;
+  opacity: 0.8;
+}
+.body-news .comment-button {
+  background-image: url("../images/comment-button.svg");
+  background-repeat: no-repeat;
+  width: 43px;
+  height: 30px;
+  text-align: center;
+  color: #d10202;
+  font-weight: 600;
+}
+
+.text-news {
+  padding: 0 20px;
+}
+.text-news a:hover {
+  font-weight: 700;
+}
+.text-news p {
+  display: block;
+  max-height: 250px;
+}
+
+.news-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.news-details .time {
+  font-size: 85%;
+  color: gray;
+}
+
+footer {
+  background-color: rgb(75, 12, 12);
+  color: white;
+  padding: 0 20px;
+  font-size: 80%;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media screen and (max-width: 992px) {
+  .full-screen {
+    display: none;
+  }
+  .preview-top-news {
+    height: 600px;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}/*# sourceMappingURL=style.css.map */

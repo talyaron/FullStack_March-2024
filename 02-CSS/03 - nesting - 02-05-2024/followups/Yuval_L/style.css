@@ -1,0 +1,15 @@
+.wrapper {
+  text-align: center;
+  border: solid 5px black;
+  width: 80%;
+  margin: auto;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: large;
+}
+
+.more_about {
+  background-color: bisque;
+}
+.more_aboutul {
+  list-style-type: none;
+}/*# sourceMappingURL=style.css.map */

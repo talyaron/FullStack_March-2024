@@ -1,0 +1,15 @@
+.wrapper {
+  text-align: center;
+  margin: auto;
+  width: 70%;
+  background-color: green;
+}
+.wrapper img {
+  width: 100%;
+}
+.wrapper p {
+  color: white;
+}
+.wrapper h1 {
+  color: red;
+}/*# sourceMappingURL=index.css.map */

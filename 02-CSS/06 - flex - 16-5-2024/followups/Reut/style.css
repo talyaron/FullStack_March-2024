@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: aquamarine;
+}
+.container .box {
+  border: 1px solid black;
+  padding: 20px;
+  width: 5%;
+}/*# sourceMappingURL=style.css.map */

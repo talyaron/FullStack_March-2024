@@ -1,0 +1,30 @@
+.wrapper .media-section .card-item {
+  border: 1px solid burlywood;
+  background-color: brown;
+  width: 31rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  border-radius: 25px;
+}
+.wrapper .media-section .card-item .card-item-txt {
+  padding-left: 20%;
+  padding-right: 5%;
+}
+.wrapper .media-section .card-item .card-item-txt h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-top: 2rem;
+}
+.wrapper .media-section .card-item .card-item-txt p {
+  font-size: 1.8rem;
+}
+.wrapper .media-section .card-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+}
+.wrapper .media-section .card-item .card-icon {
+  position: relative;
+  border-radius: 50%;
+}/*# sourceMappingURL=card.css.map */

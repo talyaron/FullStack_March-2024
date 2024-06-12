@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(232, 245, 159);
+}
+
+.wrapper {
+  margin: auto;
+  width: 600px;
+}
+.wrapper p {
+  font-size: 1.2em;
+}
+.wrapper img {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

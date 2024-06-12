@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.upper-header {
+  width: 100%;
+  direction: rtl;
+  background-color: black;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upper-header .discount {
+  padding: 1rem;
+  margin: 0;
+  color: white;
+  font-weight: lighter;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.upper-header .discount:hover {
+  text-decoration: underline;
+}
+
+.logo-container {
+  height: 4rem;
+  width: 100%;
+  background-image: url("https://dealcoupon.co.il/storage/medialibrary/1268/conversions/Terminal_X_logo-logo.png");
+  background-position: center center;
+  background-size: auto 100%;
+}
+
+.lower-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+}
+.lower-header .icons {
+  display: flex;
+  width: 30%;
+  row-gap: 3rem;
+}
+.lower-header .user-login {
+  cursor: pointer;
+}
+.lower-header .user-login p {
+  direction: rtl;
+}
+.lower-header .user-login p:hover {
+  text-decoration: underline;
+  color: gray;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+  flex: 1;
+  border-bottom: 1px solid #eee;
+  color: var(--menubar_color);
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  margin: 0 10px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  display: block;
+  color: black;
+  font-size: 1.4rem;
+  justify-content: space-between;
+  background-color: transparent;
+  font-family: "Roboto", "narkisblock", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.nav-menu a:hover {
+  -webkit-text-decoration: underline yellow;
+          text-decoration: underline yellow;
+}/*# sourceMappingURL=Header 2.css.map */
