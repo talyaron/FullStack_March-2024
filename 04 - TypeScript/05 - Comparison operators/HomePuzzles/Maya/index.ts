@@ -63,7 +63,7 @@ console.log(fizzBuzz(14))
 
 // Prime Number Checker:
 
-function isPrime(num:number): boolean | undefined{
+function isPrime(num:number): boolean {
     if (num <= 1) {
         return false;
     }
@@ -78,6 +78,7 @@ function isPrime(num:number): boolean | undefined{
 }
 
 console.log(isPrime(7));
+console.log(isPrime(10));
 
 
 
