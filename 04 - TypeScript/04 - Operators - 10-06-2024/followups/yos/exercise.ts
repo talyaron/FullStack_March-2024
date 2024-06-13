@@ -35,3 +35,5 @@ function isToddler(age:number):boolean|undefined{
 }
 
 console.log(isToddler(3));
+
+
