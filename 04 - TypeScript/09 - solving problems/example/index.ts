@@ -35,3 +35,39 @@ function highestNumber(n1: number, n2: number, n3?: number, n4?: number): number
         return undefined
     }
 }
+
+
+
+function sortArray(arr: number[]): number[] {
+    try {
+        let sortedArr: number[] = [];
+        while (arr.length > 0) {
+            let min = arr[0];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] < min) {
+                    min = arr[i];
+                }
+            }
+            sortedArr.push(min);
+            arr.splice(arr.indexOf(min), 1);
+        }
+        return sortedArr;
+    } catch (error) {
+        console.error(error);
+        return []
+    }
+}
+
+//a function gets 4 numbers, and return a string of the four numbers in order from the smallest to the largest, without using arrays sort method
+
+function sortFourNumbers(n1: number, n2: number, n3: number, n4: number): string {
+    try {
+        let sortedArr = sortArray([n1, n2, n3, n4]);
+        return sortedArr.join(" -> ");
+    } catch (error) {
+        console.error(error);
+        return ""
+    }
+}
+
+console.log(sortFourNumbers(3,6,8,2)); // 2 -> 3 -> 6 -> 8
