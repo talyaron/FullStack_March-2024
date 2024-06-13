@@ -86,3 +86,9 @@ function isPrime(num: number) : boolean {
 // Tests 
 
 console.log(isPrime(7));
+
+function calculateFactorial(num: number) : number {
+    for(let i = 1; i => num; i++) {
+        
+    }
+}
