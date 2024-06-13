@@ -86,16 +86,3 @@ function calculateBusTicketPrice(age: number, ticketPrice: number): number|undef
     }
   }
   
-  // Example usage
-  const ticketPrice = 10;
-  console.log("Ticket price for 15 year old:", calculateBusTicketPrice(15, ticketPrice)); // 5 (discounted)
-  console.log("Ticket price for 30 year old:", calculateBusTicketPrice(30, ticketPrice)); // 10 (full price)
-  console.log("Ticket price for 70 year old:", calculateBusTicketPrice(70, ticketPrice)); // 7.5 (senior discount)
-  
-  console.log("Sum of odd numbers up to 5:", sumOfOddNumbers(5)); // 9
-  
-  fizzBuzz(15);
-  
-  console.log("Is 13 prime:", isPrime(13)); // true
-  console.log("Is 25 prime:", isPrime(25)); // false
-  
