@@ -44,16 +44,16 @@ function fizzBuzz(num: number): number | undefined {
     try {
         for (let i = 1; i <= num; i++) {
 
-            if (i % 3=== 0 && i%5>0) {
+            if (i % 3 === 0 && i % 5 > 0) {
                 console.log(i + "fizz");
 
-            }else if (i % 5=== 0 && i%3>0) {
+            } else if (i % 5 === 0 && i % 3 > 0) {
                 console.log(i + "buzz");
 
-            } else if (i % 3=== 0 && i % 5===0) {
+            } else if (i % 3 === 0 && i % 5 === 0) {
                 console.log(i + "fizzBuzz");
 
-            }else {
+            } else {
                 console.log(i);
 
             }
@@ -66,6 +66,21 @@ function fizzBuzz(num: number): number | undefined {
 }
 
 console.log(fizzBuzz(150));
+
+
+
+function isPrime(num: number): boolean {
+    try {
+        for (let i = num - 1; i > 0; i--) {
+            if (num % i === 0) {
+                return false
+            
+
+        }
+    } catch (error) {
+
+    }
+}
 
 
 

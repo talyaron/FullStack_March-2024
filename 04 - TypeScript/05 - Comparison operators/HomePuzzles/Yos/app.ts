@@ -96,3 +96,8 @@ function isPrime(num: number): boolean {
 
 }
 console.log(isPrime(7));
+
+
+
+
+const b = Math.random() * 4;
