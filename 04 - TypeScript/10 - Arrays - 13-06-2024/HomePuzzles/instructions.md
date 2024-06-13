@@ -28,3 +28,4 @@ Examples:
 Input:  arr[] = [2, 2,2, 8, 5, 6, 8, 8, 8]
 Output: arr[] = [8, 2, 5,  6] // 8 came 4 times 2 came 2 times 5 came 1 time 6 came 1 time
 
+Hint: write another function that counts instances of a number in an array, and use it.
