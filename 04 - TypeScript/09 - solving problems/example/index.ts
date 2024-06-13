@@ -62,7 +62,7 @@ function sortArray(arr: number[]): number[] {
 
 function sortFourNumbers(n1: number, n2: number, n3: number, n4: number): string {
     try {
-        let sortedArr = sortArray([n1, n2, n3, n4]);
+        let sortedArr = [n1, n2, n3, n4].sort((a, b) => a - b);
         return sortedArr.join(" -> ");
     } catch (error) {
         console.error(error);
