@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: wheat;
+}
+.wrapper{
+    position: relative;
+    width: 300px;
+    height: 120px;
+    padding: 10px;
+    margin: 100px;
+    background-color: rgb(251, 137, 137);
+    div{
+        border: 1px solid black;
+        padding: 20px;
+    }
+    a{
+        text-align: center;
+        color: white;
+    }
+    .red{
+        position: absolute;
+        background-color: red;
+        width: 109px;
+        }
+        .blue{
+        width: 109px;
+        left: 50%;
+        position: absolute;
+        background-color: blue;
+        }
+        .yellow{
+            color: black;
+            width: 109px;
+            top: 68px;
+            position: absolute;
+            background-color: yellow;
+            }
+        .orenge{
+        color: black;
+        left: 50%;
+        width: 109px;
+        position: absolute;
+        top: 68px;
+        background-color:orange;
+    }
+    }
