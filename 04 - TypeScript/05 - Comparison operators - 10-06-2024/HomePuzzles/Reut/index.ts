@@ -63,6 +63,11 @@ console.log(fizzBuzz(20))
 
 
 function isPrime(num: number): any {
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return('False');
+        }
+    }
     if (num <= 1) {
         console.log('False')
     }
@@ -71,15 +76,11 @@ function isPrime(num: number): any {
         console.log('True');
 
     }
-    for (let i = 2; i < num; i++) {
-        if (num % i === 0) {
-            console.log('False');
-        }
     
     else {
         console.log('True');
     }
-}}
+}
 
 console.log(isPrime(7))
 
