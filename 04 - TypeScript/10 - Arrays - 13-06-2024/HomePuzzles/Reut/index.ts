@@ -73,14 +73,14 @@ console.log(unique(['mango', 'mango', 'mango', 'mango', 'mango']));
 
 // Print the elements of an array in the decreasing frequency if 2 numbers have the same frequency then print the one which came first
 
-function frequencyCounter(arr: number): { [key: number]: number[] } | undefined {
-    const count: { [key: number]: number } = {};
+function frequencyCounter(arr: number): number[] {
+    const count = {}
     for (let i = 0; i < arr.length; i++) {
-        const num = arr[i];
-        if (count[num]) {
-            count[num] ++;
+        let elm = arr[i];
+        if (count[elm]) {
+            count[elm] += 1;
         } else {
-            count[num] = 1;
+            count[elm] = 1;
         }
     }
 }
