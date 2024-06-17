@@ -86,3 +86,22 @@ function calculateBusTicketPrice(age: number, ticketPrice: number): number|undef
     }
   }
   
+function sorting(num1:number,num2:number,num3:number,num4:number){
+    let array:number[] = [num1,num2,num3,num4];
+    let sol:number[]=[];
+    for(let i = 0; i<4; i++){
+        for(let j=0;j<4;j++){
+            if(array[j]<array[i]){
+                if( i=0){
+                    sol[i]=array[j];
+                    break;    
+                }
+                if(array[j]>sol[i-1]){
+                sol[i]=array[j]
+                }
+            }
+        }
+    }
+}
+let str1:number[]=[1,2,3]
+console.log(str1[-1])
