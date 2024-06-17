@@ -42,3 +42,24 @@ function filterWordsByLetter(arr:string[], letter:string):string[]{
 const words2 = ["hello", "world", "JavaScript", "coding"];
 const filteredWords2 = filterWordsByLetter(words2, "o");
 console.log(filteredWords2);
+
+/* Filtering Strings from Mixed Data*/
+
+function filterStrings(data:any[]):number[] {
+    try {
+        if(!Array.isArray(data)){
+            throw new Error("input is not an array");
+        }
+       const onlyNums = data.filter(elm => typeof elm === "number");
+       onlyNums.sort((a, b) => a - b);
+       return onlyNums;
+    }
+    catch(error) {
+        console.error(error);
+        return [];
+    
+}
+}
+const mixedData = [1, "hello", 3.14, "world", true];
+const onlyNums = filterStrings(mixedData);
+console.log(onlyNums);
