@@ -72,12 +72,22 @@ console.log(filterEven());
 //Filtering Unique Numbers
 function unique(arr: SomeType[]): SomeType[]{
 try{
-    let uniqueArr
-    return Array.from(uniqueArr); 
+    let seen = new Set();
+    let uniqueArr = [];
+    arr.forEach (element => {
+        if (!seen.has(element)) {
+            uniqueArr.push(element);
+            seen.add(element);
+        };
+    })
+    return uniqueArr;
+}
+catch (error){
+    return console.error(error);
 }
 }
-console.log(unique([5,10,23,21,44]))
-console.log(unique([2,4,6,8]))
+console.log(unique([5,10,10,"r",44,"r"]))
+console.log(unique([2,2,2,8]))
 console.log(unique());    
 
 //Frequency Counter
