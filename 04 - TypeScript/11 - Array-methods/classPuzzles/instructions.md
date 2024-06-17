@@ -8,7 +8,7 @@ Example:
 
 const words = ["apple", "banana", "cherry", "date"];
 const filteredWords = filterStringsByLength(words, 5);
-console.log(filteredWords); // Output: ["banana", "cherry"];
+console.log(filteredWords); // Output: ["apple", "banana", "cherry"];
 
 # Puzzle 2: Filtering Words by Letter
 
