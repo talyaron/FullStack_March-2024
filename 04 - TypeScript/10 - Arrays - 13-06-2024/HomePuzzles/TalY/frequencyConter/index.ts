@@ -19,7 +19,8 @@ function frequencyCounter(array: number[]): number[] | undefined {
 
         console.log(counted)
 
-        //1-1, 2-1, 3-3
+        //go over counted
+        
 
         //return array of ordered numbers
         return []
