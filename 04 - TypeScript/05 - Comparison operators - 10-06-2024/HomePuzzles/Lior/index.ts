@@ -88,7 +88,22 @@ function isPrime(num: number) : boolean {
 console.log(isPrime(7));
 
 function calculateFactorial(num: number) : number {
-    for(let i = 1; i => num; i++) {
-        
+    let count = 1
+    for(let i = 1; i <= num; i++) {
+        count *=i  
     }
+    return count
 }
+
+console.log(calculateFactorial(5));
+
+function checkEvenOrOdd(num: number) : string  {
+    if(num % 2 === 0 ){
+    return num + " is even";
+    }
+    else{
+        return num + " is odd";
+    }
+} 
+
+console.log(checkEvenOrOdd(7));
