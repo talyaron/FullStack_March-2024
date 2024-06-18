@@ -25,14 +25,47 @@ const arr2: number[] = [2, 4, 3, 1];
 try {
   const initialValue = 0;
   const reduceSum: number = arr2.reduce(
-    (accumulator, currentValue) => accumulator + currentValue + initialValue);
-  
+    (accumulator, currentValue) => accumulator + currentValue + initialValue
+  );
+
   console.log(reduceSum);
-  
 } catch (error) {
   console.error(error);
 }
 
 // sorting strings
 
+const arr3: string[] = [
+  "fede",
+  "kroos",
+  "modric",
+  "carvajal",
+  "alaba",
+  "vini",
+  "bellingham",
+];
+arr3.sort();
+console.log(arr3);
 
+// Checking if all elements satisfy a condition
+
+const allPositive = (threshold) => threshold > 0;
+
+const arr4: number[] = [1, 24, -23, 2, 5];
+
+console.log(arr4.every(allPositive));
+
+// finding an element
+
+const arr5: number[] = [6, 8, 11, 3, 5, 2];
+
+const findFirstOddNumber = arr5.find((element) => element % 2 !== 0);
+console.log(findFirstOddNumber);
+
+// combining arrays
+
+const arr6:number | string [] = ['a', 2, 'c', 4]
+const arr7:number | string [] = ['b', 1, 'd', 3]
+
+const merged = [ ... arr6, ...arr7]
+console.log(merged);
