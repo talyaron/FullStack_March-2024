@@ -45,7 +45,7 @@ interface Car {
 }
 
 const michealCar: Car = {
-    brand: "Renult",
+    brand: "Renault",
     model: "Clio",
     color: "White",
     year: 2018
