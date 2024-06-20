@@ -5,7 +5,7 @@
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-const string= ['Mango', 'banana', 'apple', 'cherry', 'strawberry', 'guava']
+const Strings = ['mango', 'banana', 'apple', 'cherry', 'strawberry', 'guava']
 
 function filterEvenNumbers(numbers) {
 
@@ -45,7 +45,6 @@ console.log(reduceSum(numbers))
 //Create a function called sortStrings that takes an array of strings as input and returns a new array with the strings sorted in alphabetical order.
 //Use the sort method to accomplish this.
 
-const Strings = ['mango', 'banana', 'apple', 'cherry', 'strawberry', 'guava']
 
 function sortStrings(array){
 
