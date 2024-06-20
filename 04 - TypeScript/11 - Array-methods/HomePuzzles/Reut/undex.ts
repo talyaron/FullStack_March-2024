@@ -41,7 +41,7 @@ console.log(allPositive(negativeNumber));
 
 
 //# Finding an element:
-function findFirstOddNumber(arr: number[]): number[] | undefined {
+function findFirstOddNumber(arr: number[]): number|undefined{
     return arr.find(elm => elm % 2 !== 0);
 }
 console.log(findFirstOddNumber(number));

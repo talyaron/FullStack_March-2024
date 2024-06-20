@@ -1,6 +1,8 @@
+//primitive types
 const firstName = "david"
 const yearOfBirth = 1998;
 
+//object types
 const david = {
     // key:value
     yearOfBirth: -1040,
@@ -73,3 +75,37 @@ function getCarsAge(car: Car): number | undefined {
 console.log(getCarsAge(israelCar));
 console.log(getCarsAge(michealCar))
 
+//addressing element in an object
+
+//brand
+console.log(michealCar.brand);
+console.log(michealCar["brand"]);
+
+function getCarProp(car: Car, prop: string): string | number | undefined{
+    try {
+
+        if (!car.hasOwnProperty(prop)) {
+            throw new Error("Property does not exist in the object");
+        }
+        return car[prop];
+    } catch (error) {
+        console.error(error);
+        return undefined;
+    }
+}
+
+console.log(getCarProp(michealCar, "year of production"));
+
+const a = {
+    b: {
+        c: {
+            d: "d"
+        },
+        d:[1,2,3]
+    }
+}
+
+console.log(a.b.d[2]);
+
+const element = document.getElementById("element1");
+console.dir(element);
