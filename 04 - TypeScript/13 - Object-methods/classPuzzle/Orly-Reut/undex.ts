@@ -56,15 +56,19 @@ console.log (David.calculateAverage());
 
 const students: Students [] = [David, Yosef, Avi, Shlomi, Orly];
 
-function classAverage(): number | undefined {
+function classAverage(arr: Students []): number | undefined {
     try {
         let sum = 0;
-        const grades= this.grades 
-        for (let a of grades)
-            sum += a;
-        return sum/grades.length;
+         
+        for (let student of arr){
+            const studentAverage = student.calculateAverage()
+            if (studentAverage != undefined){
+                sum += studentAverage;
+            }
+        }
+        return sum/arr.length;
     } catch (error) {
         return undefined;
     }
 }
-console.log (David.Yosef.Avi.Shlomi.Orly.classAverage);
+console.log (David.calculateAverage(),Yosef.calculateAverage(),Avi.calculateAverage(),Shlomi.calculateAverage(),Orly.calculateAverage(),classAverage(students));
