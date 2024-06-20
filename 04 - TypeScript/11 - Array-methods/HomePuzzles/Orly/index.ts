@@ -89,7 +89,7 @@ console.log(findFirstOddNumber([2,4,6,8]));
 //Create a function called combineArrays that takes two arrays as input and returns a new array that combines the elements of both arrays.
 //Use the spread operator (...) to accomplish this.
 
-function combineArrays(array) {
+function combineArrays(array1, array2) {
 
     return [...array1, ...array2];
 }
