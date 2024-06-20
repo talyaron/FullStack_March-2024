@@ -48,6 +48,7 @@ console.log(sum);
 function sortStrings(elm: string[]): string[] | undefined {
   try {
     let sortedArray = elm.slice();
+    console.log(elm, elm.slice())
     sortedArray.sort();
 
     return sortedArray;
