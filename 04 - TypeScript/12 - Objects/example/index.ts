@@ -109,3 +109,7 @@ console.log(a.b.d[2]);
 
 const element = document.getElementById("element1");
 console.dir(element);
+
+//destructuring
+const {brand, model, color} = michealCar;
+console.log(brand, model, color);
