@@ -49,13 +49,39 @@ interface Book {
     author: string;
     yearPublished: number;
     getDescription:()=> any|undefined;
+    getBooks:()=> string|undefined;
 }
     
 const Twilight: Book = {
-        title: "Twilight",
-        author: "Stephenie Meyer",
-        yearPublished: 2005,
-        getDescription:getBookDescription
+    title: "Twilight",
+    author: "Stephenie Meyer",
+    yearPublished: 2005,
+    getDescription:getBookDescription
+    getBooks:getBooksByAuthor
+};
+
+const NewMoon: Book = {
+    title: "New Moon",
+    author: "Stephenie Meyer",
+    yearPublished: 2005,
+    getDescription:getBookDescription
+    getBooks:getBooksByAuthor
+};
+
+const Eclipse: Book = {
+    title: "Eclipse",
+    author: "Stephenie Meyer",
+    yearPublished: 2005,
+    getDescription:getBookDescription
+    getBooks:getBooksByAuthor
+};
+
+const BreakingDawn: Book = {
+    title: "Breaking Dawn",
+    author: "Stephenie Meyer",
+    yearPublished: 2005,
+    getDescription:getBookDescription
+    getBooks:getBooksByAuthor
 };
 
 const TheGreatGatsby: Book = {
@@ -63,12 +89,14 @@ const TheGreatGatsby: Book = {
     author: "F. Scott Fitzgerald",
     yearPublished: 1925,
     getDescription:getBookDescription
+    getBooks:getBooksByAuthor
 };
 
 const TLOTR: Book = {
     title: "The Lord of the Rings",
     author: "J. R. R. Tolkien",
     getDescription:getBookDescription
+    getBooks:getBooksByAuthor
 };
 
 function getBookDescription(arr: Book[]): any|undefined{
@@ -84,3 +112,21 @@ function getBookDescription(arr: Book[]): any|undefined{
 console.log(Twilight.getDescription());
 console.log(TheGreatGatsby.getDescription());
 console.log(TLOTR.getDescription());
+
+//# Exercise 3: Array Filtering with Objects
+const books:Book[] = [Twilight,NewMoon, Eclipse,BreakingDawn,TheGreatGatsby,TLOTR]
+function getBooksByAuthor(books: Book[], author:string): string[]|undefined{
+    try {
+        const booksByAuthor = books.filter(book => book.author === author).map(book => book.title);
+        return booksByAuthor;
+    } catch (error) {
+        console.error(error);
+        return undefined;  
+    }
+}
+console.log(getBooksByAuthor(books, "Stephenie Meyer"));
+console.log(getBooksByAuthor(books, "J. R. R. Tolkien"));
+console.log(getBooksByAuthor());
+
+//# Exercise 4 (Enhanced): Advanced Array Filtering and Sorting with Objects
+
