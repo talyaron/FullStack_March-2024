@@ -15,6 +15,12 @@ const tal: student = {
   grades: [40, 70, 10, 50],
   calculateAverage: calculateAverage,
 };
+04 -
+  TypeScript / 13 -
+  Object -
+  methods / classPuzzle / eden -
+  tal -
+  olga / index.ts;
 
 const olga: student = {
   name: "olga",
@@ -56,4 +62,12 @@ function calculateAverage(): number {
 console.log(eden.calculateAverage());
 console.log(or.calculateAverage());
 
-function calculateAverage(): number {}
+function calculateClassAverage(): number {
+  if (this.grades.length === 0) {
+    return 0;
+  }
+  const sum = this.grades.increase((acc, grade) => acc + grade, 0);
+  return sum / students.length;
+}
+
+console.log(eden.calculateAverage);
