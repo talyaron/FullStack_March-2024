@@ -115,9 +115,16 @@ console.log(TLOTR.getDescription());
 
 //# Exercise 3: Array Filtering with Objects
 const books:Book[] = [Twilight,NewMoon, Eclipse,BreakingDawn,TheGreatGatsby,TLOTR]
+
+
+
 function getBooksByAuthor(books: Book[], author:string): string[]|undefined{
     try {
-        const booksByAuthor = books.filter(book => book.author === author).map(book => book.title);
+        //assertions
+        if(!author) throw new Error("Author is required");
+        if(!arr) throw new Error("Array is required");
+
+        const booksByAuthor = books.filter((book:Book) => book.author === author).map(book => book.title);
         return booksByAuthor;
     } catch (error) {
         console.error(error);
