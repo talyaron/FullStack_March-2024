@@ -9,7 +9,7 @@ console.dir(ps);
 if (ps) {
     ps.forEach(p => {
         p.style.color = "lightBlue";
-        p.style.fontWeight= "bold"
+        p.style.fontWeight = "bold";
     });
 }
 
@@ -25,7 +25,6 @@ const smaller = document.querySelectorAll('.small') as NodeListOf<HTMLParagraphE
 console.dir(smaller);
 if (smaller) {
     smaller.forEach(small => {
-        small.style.fontSize= "0.5rem";
-    }
-    )
+        small.style.fontSize = "0.5rem";
+    });
 }
