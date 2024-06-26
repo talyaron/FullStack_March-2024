@@ -126,7 +126,8 @@ function getBooksByAuthor(books: Book[], author:string): string[]|undefined{
 
         const booksByAuthor = books.filter((book:Book) => book.author === author).map(book => book.title);
         return booksByAuthor;
-    } catch (error) {
+    }
+     catch (error) {
         console.error(error);
         return undefined;  
     }
