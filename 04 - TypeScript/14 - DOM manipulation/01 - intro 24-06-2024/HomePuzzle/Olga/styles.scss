@@ -3,10 +3,14 @@
   padding: 0;
 }
 
-body {
-  box-sizing: border-box;
+html {
   width: 100vw;
   height: 100vh;
+}
+
+body {
+  box-sizing: border-box;
+
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -14,30 +18,41 @@ body {
   align-items: center;
   background-color: #d1f1fe;
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url(../images/world02.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .welcome {
-    padding: 20px;
-    width: 80vw;
-    text-align: center;
+  padding: 20px;
+  width: 80vw;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  background-color: #d1f1fe;
+  border-radius: 10px;
 }
 
-.map {
-  width: 100vw;
+#myCanvas {
   position: relative;
   flex: 1;
+  border: 1px red solid
 
-  &::before {
-    position: absolute;
-    content: " ";
-    width: inherit;
-    height: 100%;
-    background-image: url(../images/world.jpg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    filter: opacity(60%);
-  }
+  // overflow: visible;
+  // filter: opacity(60%);
+
+  // &::before {
+  //   position: absolute;
+  //   content: " ";
+  //   width: inherit;
+  //   height: 100%;
+  //   background-image: url(../images/world.jpg);
+  //   background-position: center;
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  //   filter: opacity(60%);
+  // }
 }
 
 .robotsAria {
@@ -46,7 +61,9 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   min-width: 50%;
-  height: 50%;
+  height: 80%;
+  image-rendering: pixelated;
+  border: solid red 1px;
 }
 
 .robot {
