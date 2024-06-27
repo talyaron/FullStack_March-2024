@@ -1,3 +1,4 @@
+//model - schema
 interface Creature {
     title: string;
     yearCreated: number;
@@ -8,6 +9,7 @@ interface Creature {
     y: number;
 }
 
+//model - data
 const creatures: Creature[] = [
     {
         title: 'Griffin',
@@ -15,8 +17,8 @@ const creatures: Creature[] = [
         description: 'Half Lion Half eagle',
         origin: 'Greek Mythology',
         image: 'griffin.jpg',
-        x: 300,
-        y: 530,
+        x: 30,
+        y: 53,
     },
     {
         title: 'Chimera',
@@ -24,8 +26,8 @@ const creatures: Creature[] = [
         description: 'Body of a lion, the head of a goat, tail that ends in a snakes head',
         origin: 'Greek Mythology',
         image: 'chimera.jpg',
-        x: 650,
-        y: 420,
+        x: 65,
+        y: 42,
     },
     {
         title: 'Phoenix',
@@ -33,8 +35,8 @@ const creatures: Creature[] = [
         description: 'Magnificent bird engulfed in flames',
         origin: 'Greek Mythology',
         image: 'phoenix.jpg',
-        x: 1550,
-        y: 300,
+        x: 15,
+        y: 30,
     },
     {
         title: 'Kirin',
@@ -42,12 +44,15 @@ const creatures: Creature[] = [
         description: 'Creature with the body of a deer, the tail of an ox, hooves, and sometimes scales or a mane of fire',
         origin: 'Chinese Mythology',
         image: 'kirin.jpg',
-        x: 1200,
-        y: 550,
+        x: 80,
+        y: 55,
     }
 ];
 
+//controller
 function writeCreaturesToDOM(creatures: Creature[]): void {
+
+    //view
     const creaturesContainer = document.querySelector(".creatures-container");
     if (!creaturesContainer) {
         console.error("Creatures container not found");
@@ -60,9 +65,10 @@ function writeCreaturesToDOM(creatures: Creature[]): void {
         creatureElement.title = `${creature.title} (${creature.origin}) (${creature.description})`; 
 
         creatureElement.style.backgroundImage = `url(${creature.image})`;
-        creatureElement.style.left = `${creature.x}px`;
-        creatureElement.style.top = `${creature.y}px`;
+        creatureElement.style.left = `${creature.x}%`;
+        creatureElement.style.top = `${creature.y}%`;
 
+        //add creature to the container
         creaturesContainer.appendChild(creatureElement);
     });
 }
