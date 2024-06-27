@@ -1,9 +1,11 @@
+// model - schema
 interface Creatures {
 name:string;
 img:string;
 race: string;
 }
 
+//model - data
 const frodo:Creatures = {
     name:"frodo",
     img:"https://upload.wikimedia.org/wikipedia/he/thumb/0/03/Vlcsnap-8625278.png/377px-Vlcsnap-8625278.png",
@@ -22,7 +24,7 @@ const aragorn:Creatures = {
     race: "men"
 }
 
-
+//model - data
 const creatures  = [
     frodo,
     gandalf,
@@ -31,8 +33,10 @@ const creatures  = [
 
 console.log(creatures);
 
+//view
 const background = document.querySelector('.background') as HTMLDivElement;
 
+//controller
 creatures.forEach(Creatures => {
     let html = '';
     html += `<img class="creatur" src="${Creatures.img}" alt="">
