@@ -29,7 +29,7 @@ interface Book {
 
 function getBookDescription(): string | undefined {
     try {
-        return `Title by Author ${this.yearPublished}`;
+        return `Title by Author ${this.author}`;
     } catch (error) {
         console.error(error);
         return undefined;
@@ -61,7 +61,7 @@ const modernFiction: Book = {
 
 };
 const nonFictionBook: Book = {
-    title: "Sapiens: A Brief History of Humankind",
+    title: "Humankind",
     author: "Yuval Noah Harari",
     yearPublished: 2011,
     description: getBookDescription,
@@ -69,7 +69,7 @@ const nonFictionBook: Book = {
 
 };
 const fantasyBook: Book = {
-    title: "Harry Potter and the Sorcerer's Stone",
+    title: "Sorcerer's Stone",
     author: "J.K. Rowling",
     yearPublished: 1997,
     description: getBookDescription,
@@ -104,7 +104,7 @@ const books = new Array(classicNovel, sciFiBook, modernFiction, nonFictionBook,
     fantasyBook, fantasyBook2, nonFictionBookNew, fantasyBook3)
 
 
-const booksDiv = document.querySelector('#books'); //why cant with getElementById('#books')
+const booksDiv = document.querySelector('#books'); //same as getElementById('books')
 console.dir(booksDiv)
 
 function getFullBookDiv(book:Book): string{
@@ -114,7 +114,7 @@ function getFullBookDiv(book:Book): string{
             <div class='book__img'><img src=${book.img} alt='some image'></img></div>
             <div class='book__info'>
                 <h1>${book.title}</h1>
-                <p>${book.description()} by ${book.author}</p>
+                <p>${book.description()} from ${book.yearPublished}</p>
             </div>
         </div>`
         

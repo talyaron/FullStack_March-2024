@@ -1,0 +1,18 @@
+//עיצוב תמונה הרקע
+.background{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 90%;
+    background-image:url('../images/71d-5WfN9yL._AC_UF1000\,1000_QL80_.jpg');
+    background-size: cover;
+    border: 1px solid;
+
+    .creatur{
+        border-radius: 50%;
+        width: 5rem;
+        height: 5rem;
+    }
+}
