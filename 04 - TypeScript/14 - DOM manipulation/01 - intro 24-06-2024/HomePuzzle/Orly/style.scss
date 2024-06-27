@@ -1,0 +1,45 @@
+body{
+    height: 100%;
+    text-align: center;
+    margin-top: 5%;
+    background-color: bisque;
+    
+
+.map-container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin:auto;
+
+.map-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  
+}
+}
+
+.creature{
+    position: absolute;
+    width: 200px; 
+    height: 150px; 
+    background-size: cover;
+
+   
+}
+
+.creature:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    white-space: wrap;
+    font-size: 12px;
+}
+
+
+}
