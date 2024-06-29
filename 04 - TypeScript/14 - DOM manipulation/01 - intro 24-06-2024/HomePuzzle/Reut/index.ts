@@ -34,7 +34,7 @@ const leo: Cat = {
 }
 
 const cats: Cat[]= [jackie, emma, emily, leo];
-const mapDiv = document.querySelector('#map') as HTMLDivElement;
+const mapDiv = document.querySelector("#map") as HTMLDivElement;
 
 function addCats (arr:Cat[], element: HTMLDivElement): HTMLDivElement | undefined {
     try {
@@ -52,4 +52,4 @@ function addCats (arr:Cat[], element: HTMLDivElement): HTMLDivElement | undefine
     }
 }
 
-addCats (cats, mapDiv);
+addCats(cats, mapDiv);
