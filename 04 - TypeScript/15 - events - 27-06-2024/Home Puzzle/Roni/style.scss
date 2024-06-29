@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #map {
+    position: relative;
+    border: 0.1rem solid #000;
+    width: 80rem; 
+    background: url('./images/fantasyWorld.jpg') no-repeat center center;
+    background-size: cover;
+    height: 40rem;
+  }
+  
+  .dinosaur {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .dinosaur:hover {
+    transform: scale(1.2);
+  }
