@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+}
+
+.container {
+
+    .img-bg {
+
+        height: 100vh;
+        background-size: cover;
+        background-image: url(../images/world-map-continents-oceans.webp);
+
+    }
+
+    #continents {
+        margin: 0;
+        display: flex;
+        position: relative;
+        .continent {
+            position: relative;
+
+          //  display: flex;
+            z-index: 100;
+            width: 50px;
+
+            img {
+                width: 50px;
+                height: 50px;
+
+            }
+
+        }
+    }
+}
