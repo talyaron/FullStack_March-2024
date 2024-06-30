@@ -5,7 +5,10 @@ interface Robot {
   image: string;
   posX: number;
   posY: number;
+  startGame?: (robot: Robot) => HTMLDivElement | undefined;
 }
+
+// create robots
 
 const robot1: Robot = {
   id: 1,
@@ -37,89 +40,103 @@ const robot3: Robot = {
   posY: 0,
 };
 
-const robots: Robot[] = [robot1, robot2, robot3];
+const robot4: Robot = {
+  id: 2,
+  name: "JazzBot",
+  description:
+    "AlmostGenius is a robot with an insatiable thirst for knowledge and an encyclopedia in its head. It knows almost everything but sometimes makes small mistakes, which adds a touch of humor. The perfect companion for curious minds ready for fascinating conversations.",
+  image: "./images/robot04.png",
+  posX: 0,
+  posY: 0,
+};
 
-const canvas = document.getElementById("myCanvas") as HTMLCanvasElement;
-const ctx = canvas.getContext("2d");
+const robot5: Robot = {
+  id: 3,
+  name: "ChatChatterbox",
+  description:
+    "BlunderMaster is a helper robot with a unique talent for finding funny and absurd solutions to everyday tasks. Its clumsy attempts to assist often lead to hilarious mishaps, turning routine into comedy.",
+  image: "./images/robot05.png",
+  posX: 0,
+  posY: 0,
+};
 
-function takePosition(arr: Robot[]) {
+const robots: Robot[] = [robot1, robot2, robot3, robot4, robot5];
+
+const robotsAria = document.querySelector(".robotsAria") as HTMLDivElement;
+
+// add robots to the DOM
+
+function addRobot(
+  arr: Robot[],
+  element: HTMLDivElement
+): HTMLDivElement | undefined {
   try {
+    let html: string = ``;
     arr.forEach((robot) => {
-      robot.posX = canvas.width * Math.random();
-      robot.posY = canvas.height * Math.random();
+      robot.posX = Math.random() * 100;
+      robot.posY = Math.random() * 100;
+      html += `<div class="robot" style="background-image:url(${robot.image}); top: ${robot.posY}%; left: ${robot.posX}%" data-title="${robot.description}" title = "${robot.name}">
+          </div>`;
     });
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-function drewRobot(robot: Robot) {
-  try {
-    const image = new Image();
-      image.onload = function () {
-        ctx.drawImage(image, robot.posX, robot.posY);
-      };
-      ctx.fillText(robot.name, robot.posX, robot.posY - 10);
-      ctx.font = "14px Arial";
-      image.src = robot.image;
-  } catch (error) {
-    console.error(error)
-  }
-}
-
-takePosition(robots);
-
-function addRobot(robots: Robot[]): HTMLDivElement | undefined {
-  try {
-    robots.forEach((robot) => {
-      drewRobot(robot);
-    });
+    element.innerHTML = html;
   } catch (error) {
     console.error(error);
     return undefined;
   }
 }
 
-function getRandomArbitrary(min, max) {
-  let x: number = 1
-  return Math.random() * (max - min) + min;
+addRobot(robots, robotsAria);
+
+function getRandomArbitrary(arr: number[]) {
+  let x: number = 1;
+  return Math.random() * (arr[0] - arr[1]) + arr[1];
 }
 
-function robotGait(): HTMLDivElement | undefined {
-  try {
-    let dx = 1 + getRandomArbitrary(-2, 2);
-    let dy = 1 + getRandomArbitrary(-2, 2);
-    
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    robots.forEach((robot) => {
-      drewRobot(robot);
-    });
-
-    function chengePosition(robots: Robot[]) {
-      robots.forEach((robot) => {
-        robot.posX += dx;
-        robot.posY += dy;
-
-        if (robot.posX < 50 || robot.posX > canvas.width - 50) {
-          dx = -dx;
-        }
-        if (robot.posY < 50 || robot.posY > canvas.height - 50) {
-          dy = -dy;
-        }
-
-        console.log(robot.posX, robot.posY, dx, dy);
-      });
-    }
-    chengePosition(robots)
-  } catch (error) {
-    console.error(error);
-    return undefined;
+function choiceDirection() {
+  const arrMinus = [-speed, 0];
+    const arrPlus = [0, speed];
+  if (Math.random() > 0.5) {
+    return getRandomArbitrary(arrMinus);
+  } else {
+    return getRandomArbitrary(arrPlus);
   }
 }
+
+let level = 5;
+let speed = level * 0.5;
+let counter = 0;
+
+const HTMLRobotsArr = document.querySelectorAll(".robot");
 
 function startGame() {
-  setInterval(robotGait, 100);
+  for (let i = 0; i < HTMLRobotsArr.length; i++) {
+
+    let dx = choiceDirection();
+    let dy = choiceDirection();
+
+    function robotGait() {
+      try {
+        const robot = HTMLRobotsArr[i] as HTMLDivElement;
+
+        function chengePosition(robot) {
+          if (parseInt(robot.style["top"]) > 100 || parseInt(robot.style["left"]) < 0 || parseInt(robot.style["top"]) < 0 || parseInt(robot.style["left"]) > 100) {
+            dx = choiceDirection();
+            dy = choiceDirection();
+          }
+        }
+        chengePosition(robot);
+
+        robot.style.top = `${parseInt(robot.style["top"]) + dy}%`;
+        robot.style.left = `${parseInt(robot.style["left"]) + dx}%`;
+
+        console.log(dx, dy);
+      } catch (error) {
+        console.error(error);
+        return undefined;
+      }
+    }
+    setInterval(robotGait, 100);
+  }
 }
 
-// addRobot(robots);
 startGame();
