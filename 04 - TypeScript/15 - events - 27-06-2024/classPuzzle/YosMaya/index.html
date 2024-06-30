@@ -8,14 +8,18 @@
 
 </head>
 
-<body onclick="handleClicked(event)" style="width: 100vw; height:100vh;">
+<body id="#body" onclick="handleClicked(event)" style="width: 100vw; height:100vh;position: relative;">
+    <div style="display: flex;justify-content: center;align-items: center;color: aqua;">
+        <h1>Add Red Box Every Click</h1>
+    </div>
     <div>
-        <div>
-            <button onclick="handleClicked(event)">Click Me</button>
-            <input type="text" onkeyup=handleChange(event) onchange="handleChange(event)">
-            <p id="#upper"> new pa </p>
-        </div>
-        <div id="#clicked"></div>
+        <input>
+        <button onclick="handleClicked(event)">Click Me</button>
+        <input type="text" onkeyup=handleChange(event) onchange="handleChange(event)"></input>
+        <p id="#upper"> new pa </p>
+    </div>
+    <div id="#clicked" style="width: 100vw; height:100vh;position: relative;">
+    </div>
 
     </div>
     <script src="./dist/app.js"></script>

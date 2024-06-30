@@ -37,5 +37,5 @@ const clefairy: pokimons = {
     "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/035.png",
 };
 
-const pokimons: pokimon[] = [clefairy, picachu, blastoise, bulbasaur];
+const pokimons: pokimons[] = [clefairy, picachu, blastoise, bulbasaur];
 const mapDiv = document.querySelector("#map") as HTMLDivElement;
