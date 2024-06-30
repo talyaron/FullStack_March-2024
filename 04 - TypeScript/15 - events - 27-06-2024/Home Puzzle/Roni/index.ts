@@ -34,8 +34,8 @@ function addDinosaur (arr:Dinosaur[], element: HTMLDivElement): HTMLDivElement |
     try {
         let html: string = ``;
         arr.forEach((dinosaur) => {
-            let posX = Math.random() * 90;
-            let posY = Math.random() * 90;
+            let posX = Math.random() * 85;
+            let posY = Math.random() * 85;
             html += `<div class="dinosaur" style="background-image:url(${dinosaur.photo}); top: ${posY}%; left: ${posX}%; title="${dinosaur.name}"></div>`;
         });
         element.innerHTML = html;
@@ -49,17 +49,10 @@ function addDinosaur (arr:Dinosaur[], element: HTMLDivElement): HTMLDivElement |
 addDinosaur(dinosaurs, mapDiv);
 
 //making them dissappear
-
-//function dinosaurDisappear(event) {
-  //  try {
-    //  const dinosaurs = document.querySelectorAll('.dinosaur');
-      //if (!dinosaurs || dinosaurs.length === 0) {
-        //throw new Error("No dinosaurs found on the map.");}
-  
-      //dinosaurs.forEach(dinosaur => {
-       // dinosaur.style.display = "none";});
-  
-    //} catch (error) {
-    //  console.error(error.message);
-    //}
- // }
+function dinosaurDisappear(event) {
+  try {
+  }
+catch (error) {
+    console.error(error.message);
+    }
+    }

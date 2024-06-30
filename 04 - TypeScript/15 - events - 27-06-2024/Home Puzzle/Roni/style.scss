@@ -5,21 +5,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f5f5f5;
   }
   
   #map {
     position: relative;
     border: 0.1rem solid #000;
     width: 80rem; 
-    background: url('./images/fantasyWorld.jpg') no-repeat center center;
+    background:url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/345d9724898967.5633bed73d62e.jpg) no-repeat center center;
     background-size: cover;
     height: 40rem;
   }
   
   .dinosaur {
     position: absolute;
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
     background-size: contain;
     background-repeat: no-repeat;
     cursor: pointer;
