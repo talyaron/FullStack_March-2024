@@ -4,7 +4,7 @@ window.onload = function () {
   dialog.showModal();
   };
 
-const showModal = document.querySelector("#openDialog") as HTMLButtonElement;  
+const showModal = document.querySelector("#openDialog") as HTMLButtonElement;
 showModal.onclick = function () {
   dialog.showModal();
 };
@@ -127,7 +127,7 @@ function handleBodyClick(event) {
     if (!boom) throw new Error("Boom not found");
 
     if (boom && event.target.classList.contains("robot")) {
-      
+
       boom.style.left = `${event.x}px`;
       boom.style.top = `${event.y}px`;
       boom.style.display = "block";
@@ -202,7 +202,7 @@ function startTimer() {
       if (time <= 0) {
         divGameOver.style.display = "block";
       }
-  timer.innerHTML = time > 10 ? "0:" + time : time > 0 ? "0:0" + time : "0:00";
+  timer.innerHTML = time >= 10 ? "0:" + time : time > 0 ? "0:0" + time : "0:00";
   time -= 1;
   if (score >= 5000) {
     time = 0;
@@ -245,7 +245,7 @@ function startGame() {
     }
     setInterval(robotGait, 100);
   }
-  
+
 }
 
 // const startBtn = document.querySelectorAll(".StartGame");
