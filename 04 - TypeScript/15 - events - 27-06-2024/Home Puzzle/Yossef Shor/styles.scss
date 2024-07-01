@@ -31,15 +31,15 @@ body {
     position: fixed;
     display: flex;
     flex-direction: row;
-    font-size: 3rem;
+    font-size: 1rem;
     justify-content: space-between;
     align-items: center;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
     z-index: 1;
 
     h1 {
-        padding: 30px;
+        padding: 1%;
         background-color: black;
         color: white;
     }

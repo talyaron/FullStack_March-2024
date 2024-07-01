@@ -311,6 +311,15 @@ function WriteBoomGifToDom(x: number, y: number, id: string): HTMLDivElement | u
     }
 }
 
+const levelId = document.getElementById('level');
+const scoreId = document.getElementById('scoreId');
+var score = 0
+var level = 1
+console.log(levelId?.innerHTML)
+console.log(scoreId?.innerHTML)
+
+
+
 
 function disappear(imgId: string, event) {
     try {
@@ -319,6 +328,13 @@ function disappear(imgId: string, event) {
         console.log(event)
         if (element) {
             element.remove();
+            score += 1;
+            scoreId?.innerHTML = `Score:${score}`;
+            if (score % 10 == 0) level += 1;
+            levelId?.innerHTML = `Level:${level}`;
+
+            console.log(scoreId?.innerHTML)
+
             console.log('Element has been hidden:', element);
             WriteBoomGifToDom(event.x, event.y, imgId)
 
@@ -332,12 +348,6 @@ function disappear(imgId: string, event) {
     }
 }
 
-const score = document.querySelectorAll('h1') as NodeList | null;
-const level = document.getElementById('level');
-const scoreId = document.getElementById('scoreId');
-
-console.log(level?.innerHTML)
-console.log(scoreId?.innerHTML)
 
 
 function disappearOption2(id: string) {
