@@ -1,13 +1,17 @@
 // Modal window with rules
 const dialog = document.querySelector("dialog") as HTMLDialogElement;
-// window.onload = function () {
-//   dialog.showModal();
-//   };
-document.querySelector("#openDialog").onclick = function () {
+window.onload = function () {
+  dialog.showModal();
+  };
+
+const showModal = document.querySelector("#openDialog") as HTMLButtonElement;  
+showModal.onclick = function () {
   dialog.showModal();
 };
-document.querySelector("#closeDialog").onclick = function () {
+const closeModal = document.querySelector("#closeDialog") as HTMLButtonElement;
+closeModal.onclick = function () {
   dialog.close();
+  startGame();
 };
 
 interface Robot {
@@ -123,6 +127,7 @@ function handleBodyClick(event) {
     if (!boom) throw new Error("Boom not found");
 
     if (boom && event.target.classList.contains("robot")) {
+      
       boom.style.left = `${event.x}px`;
       boom.style.top = `${event.y}px`;
       boom.style.display = "block";
@@ -149,7 +154,11 @@ function handleBodyClick(event) {
         level += 1;
         divLevel.innerHTML = "Level " + level;
       }
-      console.log(level);
+
+      const divWin = document.querySelector("#win") as HTMLDivElement;
+      if (score >= 5000) {
+        divWin.style.display = "block";
+      }
     }
 
     console.dir(event.target);
@@ -157,6 +166,10 @@ function handleBodyClick(event) {
       const robot = event.target;
       robot.style.top = `${Math.random() * 100}%`;
       robot.style.left = `${Math.random() * 100}%`;
+      // let dx = choiceDirection();
+      // let dy = choiceDirection();
+      // robot.style.top = `${parseInt(robot.style["top"]) + dy}%`;
+      // robot.style.left = `${parseInt(robot.style["left"]) + dx}%`;
     }
   } catch (error) {
     console.error(error);
@@ -171,7 +184,7 @@ function getRandomArbitrary(arr: number[]) {
 function choiceDirection() {
   const arrMinus = [-speed, 0];
   const arrPlus = [0, speed];
-  if (Math.random() > 0.5) {
+  if (Math.random() < 0.5) {
     return getRandomArbitrary(arrMinus);
   } else {
     return getRandomArbitrary(arrPlus);
@@ -179,16 +192,24 @@ function choiceDirection() {
 }
 
 let level = 1;
-let speed = level * 0.5;
+let speed = level * 2.5;
 const timer = document.querySelector("#timer") as HTMLDivElement;
 let time = 59;
 const HTMLRobotsArr = document.querySelectorAll(".robot");
 
-function startGame() {
-  function startTimer() {
-    timer.innerHTML = "0:" + time;
-    time -= 1;
+function startTimer() {
+  const divGameOver = document.querySelector("#gameOver") as HTMLDivElement;
+      if (time <= 0) {
+        divGameOver.style.display = "block";
+      }
+  timer.innerHTML = time > 10 ? "0:" + time : time > 0 ? "0:0" + time : "0:00";
+  time -= 1;
+  if (score >= 5000) {
+    time = 0;
   }
+}
+
+function startGame() {
   setInterval(startTimer, 1000);
 
   for (let i = 0; i < HTMLRobotsArr.length; i++) {
@@ -215,7 +236,8 @@ function startGame() {
         robot.style.top = `${parseInt(robot.style["top"]) + dy}%`;
         robot.style.left = `${parseInt(robot.style["left"]) + dx}%`;
 
-        console.log(dx, dy);
+        // console.log(dx, dy);
+
       } catch (error) {
         console.error(error);
         return undefined;
@@ -226,5 +248,11 @@ function startGame() {
   
 }
 
-startGame();
+// const startBtn = document.querySelectorAll(".StartGame");
+
+// startBtn.forEach((btn) => {
+//   btn.addEventListener("click", startGame);
+// });
+
+// startGame();
 // while (score < 5000 || time >= 0) {startGame()};

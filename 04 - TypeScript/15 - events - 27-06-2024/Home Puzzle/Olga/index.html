@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>RoboGame</title>
     <link rel="stylesheet" href="./dist/styles.css" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
   </head>
   <body onclick="handleBodyClick(event)">
     <!-- <div class="welcome">
@@ -16,11 +17,11 @@
       <span id="level">Level 1</span>
       <span id="timer">1:00</span>
     </div>
-    
+
     <div class="map">
       <div class="robotsAria"></div>
     </div>
-    <button id="openDialog">Game Rules</button>
+    <button id="openDialog" style="display: none">Game Rules</button>
     <dialog>
       <h2>Game Rules: Robot Rebellion</h2>
       <ol>
@@ -29,11 +30,13 @@
           end of the 5th round.
         </li>
         <li>Rounds: The game consists of 5 rounds.</li>
-        <li>Gameplay:
-        <ul>
-          <li>Click on robots to make them explode and earn points.</li>
-          <li>Each round, the robots move faster.</li>
-        </ul></li>
+        <li>
+          Gameplay:
+          <ul>
+            <li>Click on robots to make them explode and earn points.</li>
+            <li>Each round, the robots move faster.</li>
+          </ul>
+        </li>
         <li>Time Limit: Each round lasts 3 minutes.</li>
         <li>
           Points Requirement: Accumulate the required points within the time
@@ -53,6 +56,18 @@
       </p>
     </dialog>
     <img id="boom" src="./images/boom2.gif" alt="boom" style="display: none" />
+    <div id="gameOver" style="display: none">
+      <div>
+        <p>GAME OVER</p>
+        <button onclick="window.location.reload()">Try Again</button>
+      </div>
+    </div>
+    <div id="win" style="display: none">
+      <div>
+        <p>YOU WIN !!!</p>
+        <button onclick="window.location.reload()">Try Again</button>
+      </div>
+    </div>
     <script src="./dist/index.js"></script>
   </body>
 </html>
