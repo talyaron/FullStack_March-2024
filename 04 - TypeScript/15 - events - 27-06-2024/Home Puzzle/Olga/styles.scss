@@ -1,0 +1,141 @@
+body {
+
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#openDialog {
+  position: absolute;
+  bottom: 0;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 20px;
+}
+
+#level, #score, #timer, #win>div, #gameOver>div {
+  font-size: 3rem;
+  font-weight: 900;
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+  padding: 0 10px;
+}
+
+dialog {
+  background: rgb(255, 255, 255);
+  max-width: 600px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+button {
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+:focus-visible {
+  outline: none;
+}
+
+dialog:-internal-dialog-in-top-layer::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.map {
+  width: 100vw;
+  position: relative;
+  flex: 1;
+
+  &::before {
+    position: absolute;
+    content: " ";
+    width: inherit;
+    height: 100%;
+    background-image: url(../images/world.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.robotsAria {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 50%;
+  height: 50%;
+}
+
+.robot {
+  width: 6rem;
+  height: 6rem;
+  background-size: cover;
+  position: absolute;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+
+  &::before {
+    content: attr(title);
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -1.2rem;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2px;
+    opacity: 80%;
+    z-index: 2;
+    color: red;
+  }
+}
+
+#boom{
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  width: 220px;
+  height: 220px;
+}
+
+#win>div, #gameOver>div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#win, #gameOver {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+}
