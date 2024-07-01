@@ -22,7 +22,9 @@ function WriteToDom(x: number, y: number): string | undefined {
         addDiv.style.top = `${y}px`;
         addDiv.style.left = `${x}px`;
         addDiv.style.position = 'absolute';
-        addDiv.style.transform = 'translate(+50%,+50%)';
+        addDiv.style.transform = 'translate(-10px, -95px)';
+        // addDiv.style.border = '2px solid black';
+
         clickEvent?.appendChild(addDiv)
 
         // clickEvent?.innerText += clickEvent;
