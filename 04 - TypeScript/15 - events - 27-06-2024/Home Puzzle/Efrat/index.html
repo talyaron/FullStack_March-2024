@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>Score : <span id="score">0</span>
+        <label>Select # of creatures:</label>
+        <select id="creatures" onchange="handelNumOfCreature()">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+
+
+    </div>
+    <div id="creature">
+        <img onclick="handelClick(event)" onmouseover="handelOver(event)" onmouseout="handelMouseout(event)"
+            src="./images/giphy.gif" alt="creature">
+    </div>
+
+
+    <script src="./dist/script.js"></script>
+</body>
+
+</html>
