@@ -6,10 +6,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="./dist/style.css">
 </head>
-<body>
-    <img onclick="handleDissappear(event)"  id="creature1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjK75tHA7aqfORzaxqOlyRtPWzDy9oFayzWMZhyqBDpfjyLMdR5iFbqxd_NHaL2ZfqfmE&usqp=CAU" alt="creature">
-    <img onclick="handleDissappear(event)"  id="creature2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJqRTH5As3UILOaqUb5PG7fn4KHI5gxyrjEDbO6SB7hl2LZ66YcplPaPn8a5RegM7gyj4&usqp=CAU" alt="cute creature">
-    <img onclick="handleDissappear(event)"  id="creature3" src="https://i.pngimg.me/thumb/f/720/comhiclipartdmjom.jpg" alt="creature">
+<body onclick="handleBodyClick(event)">
+    <button onmousemove="handleClick(event)" ></button>
+    <img id="confetti" src="./images/confetti.png" alt="confetti" style="display: none;">
+
+    <img id="map" src="./images/map.jpg"alt="Map">
+    <div id="cats">
+
     <script src="./dist/index.js"></script>
 </body>
 </html>
