@@ -80,7 +80,13 @@ function addRobot(
     let html: string = ``;
     arr.forEach((robot) => {
       addRobotPosition(robot);
-      html += `<div class="robot" id="${robot.id-1}" style="background-image:url(${robot.image}); top: ${robot.posY}%; left: ${robot.posX}%" data-title="${robot.description}" title = "${robot.name}">
+      html += `<div class="robot" id="${
+        robot.id - 1
+      }" style="background-image:url(${robot.image}); top: ${
+        robot.posY
+      }%; left: ${robot.posX}%" data-title="${robot.description}" title = "${
+        robot.name
+      }">
             </div>`;
     });
     let robotDiv = document.createElement("div");
@@ -93,10 +99,6 @@ function addRobot(
   }
 }
 
-let level = 1;
-let speedRobot = level * 2;
-
-
 function robotGait(element: HTMLDivElement): undefined {
   try {
   } catch (error) {
@@ -108,28 +110,54 @@ function robotGait(element: HTMLDivElement): undefined {
 addRobot(robots, myMap);
 
 const robotGame = document.querySelectorAll(".robot");
+let divScore = document.querySelector("#score") as HTMLDivElement;
+let score = parseInt(divScore.innerHTML);
+
+console.log(score);
 
 function handleBodyClick(event) {
   try {
     console.log("Body clicked", event.x, event.y);
     const boom = document.querySelector("#boom") as HTMLImageElement;
+    const divLevel = document.querySelector("#level") as HTMLDivElement;
     if (!boom) throw new Error("Boom not found");
 
-    // if (boom && )
-    boom.style.left = `${event.x}px`;
-    boom.style.top = `${event.y}px`;
-    boom.style.display = "block";
-    setTimeout(() => {
-      boom.style.display = "none";
-    }, 800);
+    if (boom && event.target.classList.contains("robot")) {
+      boom.style.left = `${event.x}px`;
+      boom.style.top = `${event.y}px`;
+      boom.style.display = "block";
+      setTimeout(() => {
+        boom.style.display = "none";
+      }, 1000);
+      score += level * 50;
+      console.log(score);
+      divScore.innerHTML =
+        score < 100 ? "00" + score : score < 1000 ? "0" + score : String(score);
+      if (score == 1000) {
+        level += 1;
+        divLevel.innerHTML = "Level " + level;
+      }
+      if (score == 2000) {
+        level += 1;
+        divLevel.innerHTML = "Level " + level;
+      }
+      if (score == 3050) {
+        level += 1;
+        divLevel.innerHTML = "Level " + level;
+      }
+      if (score == 4050) {
+        level += 1;
+        divLevel.innerHTML = "Level " + level;
+      }
+      console.log(level);
+    }
 
-    console.dir(event.target)
+    console.dir(event.target);
     if (event.target.classList.contains("robot")) {
       const robot = event.target;
       robot.style.top = `${Math.random() * 100}%`;
       robot.style.left = `${Math.random() * 100}%`;
     }
-
   } catch (error) {
     console.error(error);
   }
@@ -142,7 +170,7 @@ function getRandomArbitrary(arr: number[]) {
 
 function choiceDirection() {
   const arrMinus = [-speed, 0];
-    const arrPlus = [0, speed];
+  const arrPlus = [0, speed];
   if (Math.random() > 0.5) {
     return getRandomArbitrary(arrMinus);
   } else {
@@ -150,15 +178,20 @@ function choiceDirection() {
   }
 }
 
-let level = 5;
+let level = 1;
 let speed = level * 0.5;
-let counter = 0;
-
+const timer = document.querySelector("#timer") as HTMLDivElement;
+let time = 59;
 const HTMLRobotsArr = document.querySelectorAll(".robot");
 
 function startGame() {
-  for (let i = 0; i < HTMLRobotsArr.length; i++) {
+  function startTimer() {
+    timer.innerHTML = "0:" + time;
+    time -= 1;
+  }
+  setInterval(startTimer, 1000);
 
+  for (let i = 0; i < HTMLRobotsArr.length; i++) {
     let dx = choiceDirection();
     let dy = choiceDirection();
 
@@ -167,7 +200,12 @@ function startGame() {
         const robot = HTMLRobotsArr[i] as HTMLDivElement;
 
         function chengePosition(robot) {
-          if (parseInt(robot.style["top"]) > 100 || parseInt(robot.style["left"]) < 0 || parseInt(robot.style["top"]) < 0 || parseInt(robot.style["left"]) > 100) {
+          if (
+            parseInt(robot.style["top"]) > 100 ||
+            parseInt(robot.style["left"]) < 0 ||
+            parseInt(robot.style["top"]) < 0 ||
+            parseInt(robot.style["left"]) > 100
+          ) {
             dx = choiceDirection();
             dy = choiceDirection();
           }
@@ -185,6 +223,8 @@ function startGame() {
     }
     setInterval(robotGait, 100);
   }
+  
 }
 
 startGame();
+// while (score < 5000 || time >= 0) {startGame()};

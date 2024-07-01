@@ -11,18 +11,48 @@
         <h1>Welcome to Roboland</h1>
         <p>Roboland is the ultimate island of robots! Here, you can meet a variety of quirky and delightful robots, each with its own unique personality and talents. Choose your favorite to play with, whether it's the hilarious GigaJoke, the knowledgeable AlmostGenius, the clumsy BlunderMaster, the musical JazzBot, or the chatty ChatChatterbox. Adventure awaits!</p>
     </div> -->
-    <button id="openDialog">About project</button>
-    <dialog>
-
-      <h2>Welcome to the Art Timer project*</h2>
-      <p>
-        <button id="closeDialog">Let's go!</button>
-      </p>
-    </dialog>
+    <div class="menu">
+      <span id="score">0000</span>
+      <span id="level">Level 1</span>
+      <span id="timer">1:00</span>
+    </div>
+    
     <div class="map">
       <div class="robotsAria"></div>
     </div>
-    <img id="boom" src="./images/boom2.gif" alt="boom" style="display: none;">
+    <button id="openDialog">Game Rules</button>
+    <dialog>
+      <h2>Game Rules: Robot Rebellion</h2>
+      <ol>
+        <li>
+          Objective: Suppress the robot uprising by reaching 5000 points by the
+          end of the 5th round.
+        </li>
+        <li>Rounds: The game consists of 5 rounds.</li>
+        <li>Gameplay:
+        <ul>
+          <li>Click on robots to make them explode and earn points.</li>
+          <li>Each round, the robots move faster.</li>
+        </ul></li>
+        <li>Time Limit: Each round lasts 3 minutes.</li>
+        <li>
+          Points Requirement: Accumulate the required points within the time
+          limit to proceed to the next round.
+          <ul>
+            <li>
+              To complete the final level (5th round), you need to have 5000
+              points.
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <p>Good luck and stay sharp!</p>
+      <p>
+        <button id="closeDialog">Start game</button>
+      </p>
+    </dialog>
+    <img id="boom" src="./images/boom2.gif" alt="boom" style="display: none" />
     <script src="./dist/index.js"></script>
   </body>
 </html>
