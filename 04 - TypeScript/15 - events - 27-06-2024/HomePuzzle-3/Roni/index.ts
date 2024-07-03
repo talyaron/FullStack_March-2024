@@ -61,4 +61,17 @@ const Shoko: Pet = {
 }
 
 const pets:Pet[]= [Lily,Billy,Chika,Louis,Perry,Bean,George,Dylen,Shoko];
-const containerDiv = document.querySelector("#container") as HTMLDivElement;
+pets.push(Lily);
+pets.push(Billy);
+pets.push(Chika);
+pets.push(Louis);
+pets.push(Perry);
+pets.push(Bean);
+pets.push(George);
+pets.push(Dylen);
+pets.push(Shoko);
+ console.log(pets)
+
+
+
+//const containerDiv = document.querySelector("#container") as HTMLDivElement;

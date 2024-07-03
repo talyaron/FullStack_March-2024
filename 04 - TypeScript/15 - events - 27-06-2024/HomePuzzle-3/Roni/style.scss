@@ -1,5 +1,12 @@
 .card_container{
     display: grid;
-    grid-row: 3;
-    grid-column: 4;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    border: 0.1rem solid blue;
+}
+.pets{
+    display: flex;
+    width: 5rem;
+    border: 0.1rem solid rgb(255, 200, 0);
+    padding: 0.5rem;
 }
