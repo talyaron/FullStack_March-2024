@@ -31,13 +31,46 @@ function sumArray( arr: number[]): number | undefined{
 sumArray([6,4,9]);
 
 // Maximum Element
+findMax([1,5,12,50]);
 
-function findMax( arr: number[]): number | undefined{
+// Filtering Even Numbers:
+
+function filterEven(arr: number[]): number[] | undefined {
     try {
-        
-        
+        let evenNumbers: number[] = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 === 0) {
+                evenNumbers.push(arr[i]);
+            }
+        }
+        return evenNumbers;
     } catch (error) {
-        console.error(error)
-        return undefined 
+        console.error(error);
+        return undefined;
     }
 }
+
+// Example
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const evenNumbers = filterEven(numbers);
+console.log(evenNumbers);
+
+// Unique Values:
+function unique<T>(arr: T[]): T[] {
+    const uniqueSet = new Set<T>(arr);
+    return Array.from(uniqueSet);
+}
+
+// Example
+const numbers = [1,1,2,4,3,5,5];
+const uniqueNumbers = unique(numbers);
+console.log(uniqueNumbers);
+
+const strings = ['apple', 'orange', 'banana', 'apple'];
+const uniqueStrings = unique(strings);
+console.log(uniqueStrings);
+
+const any = [1, 'apple', 3, 1, 'banana', 'apple', 3, 5];
+const uniqueAny= unique(any);
+console.log(uniqueAny);
+
