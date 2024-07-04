@@ -13,8 +13,9 @@ class Player {
         this.y = y;
     }
 
-    moveToRight(x:number) {
-        this.x+= 15;  
+    moveToRight(){
+        this.x+=15;
+        console.log(this.x);
     }
 }
 
@@ -26,7 +27,7 @@ const mainDiv = document.querySelector("#field") as HTMLDivElement;
 console.dir(mainDiv);
 function playersDiv(player:Player):string | undefined{
     try {
-        return `<div class='players' style="left:${player.x};top:${player.y}"><img src='${player.image}' alt='${player.name}'></div>`;
+        return `<div class='players' style="left:${player.x}%;top:${player.y}%" onclick='${player.moveToRight()}'><img src='${player.image}' alt='${player.name}'></div>`;
     } catch (error) {
         console.error(error);
         return undefined;
@@ -51,3 +52,6 @@ function writePlayersToDOM(player:Player[],element:HTMLDivElement){
 }
 
 writePlayersToDOM(players,mainDiv);
+function updatePos(player:Player){
+    
+}
