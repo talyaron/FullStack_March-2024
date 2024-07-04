@@ -7,28 +7,38 @@
     gap: 1rem;
     padding: 3rem;
     color:rgb(70, 70, 97);
+    border-radius: 1rem;
     :hover{
-        opacity: 0.5;
+        opacity: 0.6;
+        font-size: 105%;
       }
     img{
         width: 20rem;
         height: 12rem;
+        border-radius: 1rem;
     }
 }
 body{
     text-align: center;
     margin-top: 2rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    h1{
+    h1{ 
         color:rgb(201, 201, 229) ;
         font-style: italic;
         font-size: 5rem;
     }
-button{
-   width: 10rem;
-   height: 3rem;
-   border-radius: 1rem;
-   background-color: rgb(201, 201, 229);
-   font-size:medium;
-}
+    .buttons{
+        :hover{
+            opacity: 0.75;
+            font-size: 110%;
+           }
+       button{
+        width: 10rem;
+        height: 3rem;
+        border-radius: 1rem;
+        background-color: rgb(201, 201, 229);
+        font-size:medium;
+        color:rgb(70, 70, 97);
+        }
+    }
 }
