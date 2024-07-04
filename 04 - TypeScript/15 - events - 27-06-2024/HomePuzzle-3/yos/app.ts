@@ -122,7 +122,7 @@ function getAnimalsArray(): Animals[] {
     return animalsArray;
 }
 // const animalsArray = [dragon, parrot, dog, cat, hippo, dragon1, parrot1, dog1, cat1, hippo1]
-const animalsArray = getAnimalsArray();
+let animalsArray = getAnimalsArray();
 // [dragon, parrot, dog, cat, hippo, dragon1, parrot1, dog1, cat1, hippo1]
 
 // const getAnimalsArray = (): Animals[] => {
