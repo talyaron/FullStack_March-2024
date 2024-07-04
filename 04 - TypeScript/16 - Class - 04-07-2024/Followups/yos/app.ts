@@ -21,7 +21,7 @@ class Pet {
         this.price = price;
         this.position = this.getPosition();
     }
-    random
+    
     getPosition(): Position | undefined {
         try {
             return { top: `${Math.random()*100}vh`, left: `${Math.random()*100}vh` }
