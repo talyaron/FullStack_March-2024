@@ -6,12 +6,13 @@
     border: 0.5rem solid rgb(233, 233, 242);
     gap: 1rem;
     padding: 3rem;
+    color:rgb(70, 70, 97);
+    :hover{
+        opacity: 0.5;
+      }
     img{
         width: 20rem;
         height: 12rem;
-        :hover{
-            opacity: 0.5;
-          }
     }
 }
 body{
@@ -26,7 +27,7 @@ body{
 button{
    width: 10rem;
    height: 3rem;
-   border-radius: 2rem;
+   border-radius: 1rem;
    background-color: rgb(201, 201, 229);
    font-size:medium;
 }
