@@ -30,16 +30,16 @@ body {
 #timer,
 #win > div,
 #gameOver > div {
-  font-size: 3rem;
+  font-size: calc(1rem + 2vw);
   font-weight: 900;
-  background-color: red;
+  background-color: #BD042C;
   border-radius: 10px;
-  color: white;
+  color: #D3E4AF;
   padding: 0 10px;
 }
 
 dialog {
-  background: rgb(255, 255, 255);
+  background: #efe8e2;
   max-width: 600px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
@@ -56,7 +56,7 @@ button {
   border-radius: 5px;
   font-size: 1.2rem;
   cursor: pointer;
-  background-color: rgb(255, 255, 255);
+  background-color: #D3E4AF;
   color: rgb(0, 0, 0);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease-in-out;
@@ -74,13 +74,14 @@ dialog:-internal-dialog-in-top-layer::backdrop {
   width: 100vw;
   position: relative;
   flex: 1;
+  overflow: hidden;
 
   &::before {
     position: absolute;
     content: " ";
     width: inherit;
     height: 100%;
-    background-image: url(../images/world.jpg);
+    background-image: url(../images/word.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -88,12 +89,24 @@ dialog:-internal-dialog-in-top-layer::backdrop {
 }
 
 .robotsAria {
+  width: 85%;
+  height: 85%;
   position: absolute;
-  left: 50%;
   top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 50%;
-  height: 50%;
+}
+
+@media screen and (max-width: 600px) {
+  .robotsAria {
+    width: 90%;
+    height: 90%;
+  }
+
+  .robot {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 
 .robot {
@@ -104,22 +117,22 @@ dialog:-internal-dialog-in-top-layer::backdrop {
   cursor: pointer;
   transform: translate(-50%, -50%);
 
-  &::before {
-    content: attr(title);
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: -1.2rem;
-    transform: translateX(-50%);
-    font-size: 1rem;
-    font-weight: 600;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 2px;
-    opacity: 80%;
-    z-index: 2;
-    color: red;
-  }
+  // &::before {
+  //   content: attr(title);
+  //   display: block;
+  //   position: absolute;
+  //   left: 50%;
+  //   top: -1.2rem;
+  //   transform: translateX(-50%);
+  //   font-size: 1rem;
+  //   font-weight: 600;
+  //   background-color: #fff;
+  //   border-radius: 10px;
+  //   padding: 2px;
+  //   opacity: 80%;
+  //   z-index: 2;
+  //   color: red;
+  // }
 }
 
 #boom {
@@ -127,8 +140,9 @@ dialog:-internal-dialog-in-top-layer::backdrop {
 
   transform: translate(-50%, -50%);
 
-  width: 220px;
-  height: 220px;
+  filter: sepia(0.5);
+  width: 180px;
+  height: 180px;
 }
 
 #win > div,
