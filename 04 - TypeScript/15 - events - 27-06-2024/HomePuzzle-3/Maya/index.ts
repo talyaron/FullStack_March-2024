@@ -118,4 +118,6 @@ function sortPetsByPrice(): void {
   renderPets(sortedPets, container);
 }
 
+(window as any).filterPets = filterPets;
+(window as any).sortPetsByPrice = sortPetsByPrice;
 renderPets(pets, container);
