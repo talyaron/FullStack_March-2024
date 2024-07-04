@@ -149,10 +149,35 @@ const Coral: Pet = {
     description: 'Coral is a beautiful and vibrant fish. She thrives in a well-maintained aquarium and enjoys interacting with other fish.',
     price: 12,
 }
+const Thunder: Pet = {
+    name: 'Thunder',
+    photo: "https://madbarn.ca/wp-content/uploads/2023/10/Mustang-Horse-Breed-Profile.jpg",
+    description: 'Thunder is a strong and majestic horse with a calm temperament. He enjoys long rides in the countryside and is great with beginners.',
+    type: "Horse",
+    price: 5000,
+}
+
+const Star: Pet = {
+    name: 'Star',
+    photo: "https://thumbor.bigedition.com/img/TXqBBhXnIcsiYoqg4dPz6J73C7Q=/0x63:800x483/480x251/filters:quality(80)/granite-web-prod/33/d3/33d3f717ec4c4c9289ed3785db2ed8f2.jpeg",
+    description: 'Star is a beautiful and graceful horse who loves to run. She has a gentle nature and is very affectionate towards her handlers.',
+    type: "Horse",
+    price: 4500,
+}
+
+const Blaze: Pet = {
+    name: 'Blaze',
+    photo: "https://th-thumbnailer.cdn-si-edu.com/hnoghSTJCaOHhnDLP7FbbqA7EHI=/800x600/filters:focal(3008x2005:3009x2006)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/6b/c3/6bc305cb-95dd-4e22-b45b-108c6e218200/gettyimages-1144833913.jpg",
+    description: 'Blaze is a spirited and energetic horse who loves to gallop. He is well-trained and excels in show jumping and dressage.',
+    type: "Horse",
+    price: 6000,
+}
+
+
 
 const pets: Pet[] = [
     Lily, Billy, Chika, Louis, Perry, Bean, George, Dylen, Shoko, 
-    Rocky, Whiskers, Blue, Shadow, Mittens, Bubbles, Bella, Tiger, Coral];
+    Rocky, Whiskers, Blue, Shadow, Mittens, Bubbles, Bella, Tiger, Coral,Thunder, Star, Blaze];
 //pets.push(Lily); pets.push(Billy);pets.push(Chika);pets.push(Louis);pets.push(Perry);pets.push(Bean);pets.push(George);pets.push(Dylen);pets.push(Shoko);
  //console.log(pets)
 
