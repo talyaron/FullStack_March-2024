@@ -70,17 +70,40 @@ const Shoko: Pet = {
     price: 25,
 }
 
-const pets:Pet[]= [Lily,Billy,Chika,Louis,Perry,Bean,George,Dylen,Shoko];
-pets.push(Lily);
-pets.push(Billy);
-pets.push(Chika);
-pets.push(Louis);
-pets.push(Perry);
-pets.push(Bean);
-pets.push(George);
-pets.push(Dylen);
-pets.push(Shoko);
- console.log(pets)
+const pets:Pet[]= [Lily,Billy,Chika,Louis,Perry,Bean,George,Dylen,Shoko,];
+//pets.push(Lily); pets.push(Billy);pets.push(Chika);pets.push(Louis);pets.push(Perry);pets.push(Bean);pets.push(George);pets.push(Dylen);pets.push(Shoko);
+ //console.log(pets)
 
 
 const containerDiv = document.querySelector("#container") as HTMLDivElement;
+function createPetCard(pet: Pet):string|undefined {
+    const html: string = `<div class="card">
+      <img src="${pet.photo}" alt="${pet.name}">
+      <h3>${pet.name}</h3>
+      <p>${pet.description}</p>
+      <p>Price: $${pet.price}</p>
+      </div>
+    `;
+    return html;
+  }
+
+  function displayPets(pets: Pet[]):void {
+    let html = ``;
+    pets.map(pet => html += createPetCard(pet));
+    containerDiv.innerHTML = html;
+  }
+
+  document.querySelectorAll('.buttons button[data-filter]').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const filter = (e.target as HTMLButtonElement).dataset.filter;
+      if (filter === 'Pet') {
+        displayPets(pets);
+      } else {
+        const filteredPets = pets.filter(pet => pet.type === filter);
+        displayPets(filteredPets);
+      }
+    });
+  });
+
+  // Initial display of all pets
+  displayPets(pets);
