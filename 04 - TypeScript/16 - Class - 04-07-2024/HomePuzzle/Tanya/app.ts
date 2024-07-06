@@ -19,17 +19,14 @@ class Player {
         myPlayer.className = 'players';
         myPlayer.style.left = `${this.x}%`;
         myPlayer.style.top = `${this.y}%`;
-        myPlayer.innerHTML = `
-            <div class="arrows">
+        myPlayer.innerHTML = `<div class="arrows">
                 <button class="empty"></button>
                 <button class="up">&#9650;</button>
                 <button class="empty"></button>
                 <button class="left">&#9664;</button>
                 <button class="down">&#9660;</button>
-                <button class="right">&#9654;</button>
-            </div>
-            <img src='${this.image}' alt='${this.name}'>
-        `;
+                <button class="right">&#9654;</button></div>
+                <img src='${this.image}' alt='${this.name}'>`;
         
         const upButton = myPlayer.querySelector('.up') as HTMLButtonElement;
         const downButton = myPlayer.querySelector('.down') as HTMLButtonElement;
