@@ -1,5 +1,5 @@
 //model
-class Players {
+class Player {
   id: string;
   name: string;
   yearOfBirth: number;
@@ -54,7 +54,7 @@ class Players {
   }
 }
 
-const TonikRoss = new Player("Tonik Ross", 1989, "/.image/Toni-Kroos.png");
+const tonikRoss = new Player("Tonik Ross", 1989, "./image/Toni-Kroos.png");
 
 console.log(tonikRoss);
 
@@ -64,7 +64,7 @@ console.log(tonikRoss);
 tonikRoss.moveRight();
 console.log(tonikRoss);
 
-const ronaldo = new Player("Ronaldo", 1985, "ronaldo.jpg");
+const ronaldo = new Player("Ronaldo", 1985, "./image/Ronaldo.jpg");
 console.log(ronaldo);
 console.log("Age: ", ronaldo.getAge());
 ronaldo.moveRight();
@@ -73,10 +73,10 @@ ronaldo.setPosition(20, 40);
 
 console.log(ronaldo);
 
-const player: Player[] = [TonikRoss, ronaldo];
+const players: Player[] = [tonikRoss, ronaldo];
 
 //view
-const root = document.querySelector("#root") as HTMLElement;
+const root = document.querySelector(".root") as HTMLElement;
 
 function renderPlayer(player: Player, element: HTMLElement) {
   const html = `<div class="player" style="background-image:url(${player.img}); top:${player.y}%; left:${player.x}%">

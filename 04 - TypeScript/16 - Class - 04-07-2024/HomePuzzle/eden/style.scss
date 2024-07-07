@@ -66,8 +66,8 @@
 //   padding: 10px;
 // }
 
-#root {
-  background-image: url("../soccer.jpg");
+.root {
+  background-image: url("../image/player1.png");
   width: 90vw;
   height: 57vw;
   background-size: cover;
@@ -79,7 +79,10 @@
   height: 20vw;
   background-size: cover;
   transition: all 0.5s;
-  transform: translateX(-150%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-position: center;
 
   button {
     position: absolute;
