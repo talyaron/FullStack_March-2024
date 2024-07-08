@@ -5,6 +5,7 @@ class Player {
     img: string;
     x: number;
     y: number;
+    class: string
 
     constructor(name: string, img: string, x: number, y: number) {
         this.id = Math.random().toString(16).slice(2);
@@ -12,6 +13,7 @@ class Player {
         this.img = img;
         this.x = x;
         this.y = y;
+        this.class = "player";
     }
 
     moveRight() {
@@ -25,6 +27,7 @@ class Player {
                 this.y = 0;
             }
             this.x += 5;
+            this.class = "player";
             if (this.x > 100) {
                 this.x = 100;
             }
@@ -45,6 +48,7 @@ class Player {
                 this.y = 0;
             }
             this.x -= 5;
+            this.class = "flipPlayer";
 
 
             if (this.x < 0) {
@@ -100,10 +104,10 @@ class Player {
 }
 
 
-const pedri = new Player("Pedri", "https://img.mako.co.il/2020/11/03/sportFive_1050182_C.jpg", 5, 5);
-const gavi = new Player("Gavi", "https://sport1images.maariv.co.il/image/upload/1125171", 5, 10);
-const ansuFati = new Player("Ansu Futi", "https://www.israelhayom.co.il/wp-content/uploads/2022/03/06/15669357183578_b-600x450.jpg", 5, 15);
-const daniOlmo = new Player("Dani Olmo", "https://www.sport5.co.il/Sip_Storage/FILES/8/size475x318/1202608.jpg", 5, 20);
+const pedri = new Player("Pedri", "https://i.ibb.co/HYgRKzs/2023-12-10-FCBvs-GIRONA-85-Photoroom.png", 5, 5);
+const gavi = new Player("Gavi", "https://i.ibb.co/2YkGmt0/2024-06-12-RECUPERACIOGAVI-03-Photoroom.png", 30, 10);
+const ansuFati = new Player("Ansu Futi", "https://i.ibb.co/N9n7WnF/15669357183578-b-600x450-Photoroom.png", 70, 15);
+const daniOlmo = new Player("Dani Olmo", "https://i.ibb.co/jv504PB/dani-olmo-rb-leipzig-2020-Photoroom.png", 25, 20);
 
 const players = [pedri, gavi, ansuFati, daniOlmo];
 
@@ -114,7 +118,8 @@ const root = document.querySelector(".players") as HTMLDivElement;
 
 
 function renderplayer(player: Player) {
-    const html = `<div class="player"  style = "background-image:url('${player.img}'); top:${player.y}rem; left:${player.x}rem">
+    // const html = `<div class="player"  style = "background-image:url('${player.img}'); top:${player.y}rem; left:${player.x}rem">
+    const html = `<div class=${player.class}   style= "top:${player.y}rem; left:${player.x}rem"> <img src="${player.img}" alt="player-img">
     <button class="right" onclick="handleRight('${player.id}')"><i class="fa-solid fa-arrow-right"></i></button>
     <button class="left" onclick="handleLeft('${player.id}')"><i class="fa-solid fa-arrow-left"></i></button>
     <button class="up" onclick="handleUp('${player.id}')"><i class="fa-solid fa-arrow-up"></i></button>
@@ -159,6 +164,8 @@ function handleLeft(id: string) {
 
 
         const player = players.find(player => player.id === id);
+        console.log(player);
+        
 
 
 
@@ -168,6 +175,8 @@ function handleLeft(id: string) {
         }
         player.moveLeft();
         renderPlayers(players);
+        
+
     } catch (error) {
 
     }
@@ -176,10 +185,7 @@ function handleLeft(id: string) {
 function handleUp(id: string) {
     try {
 
-
         const player = players.find(player => player.id === id);
-
-
 
 
         if (!player) {
