@@ -107,7 +107,7 @@ class Player {
 const pedri = new Player("Pedri", "https://i.ibb.co/HYgRKzs/2023-12-10-FCBvs-GIRONA-85-Photoroom.png", 5, 5);
 const gavi = new Player("Gavi", "https://i.ibb.co/2YkGmt0/2024-06-12-RECUPERACIOGAVI-03-Photoroom.png", 30, 10);
 const ansuFati = new Player("Ansu Futi", "https://i.ibb.co/N9n7WnF/15669357183578-b-600x450-Photoroom.png", 70, 15);
-const daniOlmo = new Player("Dani Olmo", "https://i.ibb.co/jv504PB/dani-olmo-rb-leipzig-2020-Photoroom.png", 25, 20);
+const daniOlmo = new Player("Dani Olmo", "https://i.ibb.co/jv504PB/dani-olmo-rb-leipzig-2020-Photoroom.png", 25, 13);
 
 const players = [pedri, gavi, ansuFati, daniOlmo];
 
