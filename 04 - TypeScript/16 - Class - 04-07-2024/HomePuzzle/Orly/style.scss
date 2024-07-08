@@ -1,0 +1,57 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #4CAF50;
+
+
+#game-container {
+    position: relative;
+    background-size: cover;
+    .image{
+        width:fit-content;
+        height:fit-content;
+    }
+
+    }
+
+
+.player {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+}
+
+.player__button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid #000;
+    width: 50px;
+}
+
+.player__button--up {
+    top: -25px;
+    left: 25px;
+}
+
+.player__button--down {
+    bottom: -25px;
+    left: 25px;
+}
+
+.player__button--left {
+    top: 15px;
+    left: -25px;
+}
+
+.player__button--right {
+    top: 15px;
+    right: -25px;
+}
+}
