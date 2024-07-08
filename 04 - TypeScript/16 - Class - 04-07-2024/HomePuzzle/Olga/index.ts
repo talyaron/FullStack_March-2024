@@ -7,6 +7,7 @@ class Player {
   y: number | undefined;
   img: string;
   team: string | undefined;
+  angle: string;
   constructor(
     name: string,
     img: string,
@@ -122,15 +123,21 @@ function getPositionAndRole(players: Player[]) {
 
     if (role.includes("blue")) {
       player.team = "blue";
+      player.img = "./images/stop-blue-player.png";
+      player.angle = "270";
     } else {
       player.team = "red";
+      player.img = "./images/stop-red-player.png";
+      player.angle = "90";
     }
+    console.log(player.img)
+
     delete team[role];
   });
 
-  players.push(new Player("Dor", "images/goalkeeper.jpeg", 40, 102, "Reserve", 'red'));
+  players.push(new Player("Dor", "images/stop-red-player.png", 40, 102, "Reserve", 'red'));
   players.push(
-    new Player("TalY", "images/goalkeeper.jpeg", 50, 102, "Trainer", 'teal')
+    new Player("TalY", "images/trainer.png", 50, 102, "Trainer", 'teal')
   );
 }
 
@@ -139,7 +146,7 @@ console.log(players);
 
 function renderPlayer(player: Player) {
   try {
-    return `<div class="${player.action}" id="${player.id}" title="${player.name}" data-title="${player.role}" style="left:${player.x}%;top:${player.y}%;background-color:${player.team};" onclick='handleClick(${player.id})'></div>`;
+    return `<div class="${player.action}" id="${player.id}" title="${player.name}" data-title="${player.role}" style="left:${player.x}%;top:${player.y}%;background-color:${player.team};" onclick='handleClick(${player.id})'><img src="${player.img}" style="transform: rotate(${player.angle}deg);"></div>`;
   } catch (error) {
     console.error(error);
   }
@@ -151,6 +158,7 @@ function renderPlayers(players: Player[], element: HTMLElement) {
     players.forEach((player) => {
       html += renderPlayer(player);
     });
+    html += `<img src="./images/Soccerball.svg.png" style="width: 1.8rem; height: auto; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">`;
     element.innerHTML = html;
   } catch (error) {
     console.error(error);
@@ -180,15 +188,19 @@ document.addEventListener("keydown", (event) => {
     switch (key) {
       case "ArrowUp":
         player.moveUp();
+        player.angle = "0";
         break;
       case "ArrowDown":
         player.moveDown();
+        player.angle = "180";
         break;
       case "ArrowLeft":
         player.moveLeft();
+        player.angle = "270";
         break;
       case "ArrowRight":
         player.moveRight();
+        player.angle = "90";
         break;
     }
     player.checkPosition();

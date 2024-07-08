@@ -89,6 +89,7 @@ function htmlCards(pet:Pet):string{
 function handelBreedFilter(event){
 
     try {
+        debugger;
         let breedSelected:string = ''; 
         const filterPets =  pets.filter(pet=> pet.breed === event.target.value);
         if (filterPets.length > 0){
