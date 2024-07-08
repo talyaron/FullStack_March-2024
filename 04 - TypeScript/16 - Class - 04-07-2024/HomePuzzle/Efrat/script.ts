@@ -71,7 +71,7 @@ function renderPlayers(player: Player): string {
   } catch (error) {}
 }
 
-function handelMoveClick(id: string, direction: string) {
+function handelMoveClick(id: string, direction: "u" | "d" | "l" | "r") {
   try {
     if (!id) throw new Error("player not found");
 
