@@ -1,4 +1,4 @@
-class footballer{
+class Player{
     name: string
     number: number
     club: string
@@ -14,8 +14,10 @@ class footballer{
     }
 }
 
-const Kroos = new footballer( "Toni Kroos","Real Madrid", 8,  "Germany", 33);
+const Kroos = new Player( "Toni Kroos","Real Madrid", 8,  "Germany", 34);
 console.log(Kroos);
 
-const Raul = new footballer("Raul","Real Madrid", 7, "Spain", 44 )
+const Raul = new Player("Raul","Real Madrid", 7, "Spain", 44 )
 console.log(Raul);
+
+
