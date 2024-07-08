@@ -19,8 +19,8 @@ body {
         height: 10vh;
         display: flex;
         // transition: all 0.5s;
-        // transition: all 0.5s;
-        transition: top 22s ease, left 5s ease;
+        // transition: top 22s ease, left 5s ease;
+        transition: top 2s ease, left 2s ease, transform 2s ease;
 
 
         .directional-button {

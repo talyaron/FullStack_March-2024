@@ -6,7 +6,7 @@ class Players {
     x: number;
     y: number;
     transform: string | null;
-
+    transition: string | null;
 
     constructor(name: string, img: string, year: number) {
         this.name = name;
@@ -16,24 +16,32 @@ class Players {
         this.y = Math.round(Math.random() * 75) + 3;
         this.id = Math.random().toString();
         this.transform = null;
+        this.transition = null;
     }
     moveRight() {
-        if(this.y >= 85) return;
+        if (this.y >= 85) return;
         this.y += 10;
         this.transform = 'transform: scaleX(-1)';
+        this.transition = 'transition: top 22s ease, left 5s ease';
     }
     moveLeft() {
-        if(this.y >= 85) return;
+        if (this.y >= 85) return;
         this.y -= 10;
         this.transform = 'transform: scaleX(1)';
+        this.transition = 'transition: top 22s ease, left 5s ease';
+
     }
     moveUp() {
-        if(this.x <= 10) return;
+        if (this.x <= 10) return;
         this.x -= 10;
+        this.transition = 'transition: top 22s ease, left 5s ease';
+
     }
     moveDown() {
-        if(this.x >= 85) return;
+        if (this.x >= 85) return;
         this.x += 10;
+        this.transition = 'transition:top 22s ease, left 5s ease';
+
     }
 
 }
@@ -53,7 +61,8 @@ function renderToDom(player: Players): string | undefined {
 
         if (!player) throw new Error("player not found");
 
-        const html = `<div id="${player.id}" class="player" style='top:${player.x}%;left:${player.y}%;'>
+        const html = `<div id="${player.id}" class="player" style='top:${player.x}%;left:${player.y}%; 
+                        ${player.transition};'>
                     <span class="up" onclick=handleClick('up',${player.id})>Up</span>
                     <span class="down" onclick=handleClick('down',${player.id})>Down</span>
                     <span class="left" onclick=handleClick('left',${player.id})>Left</span>
