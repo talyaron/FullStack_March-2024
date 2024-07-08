@@ -52,16 +52,17 @@ function renderPlayer(player: Player) {
         renderPlayers(players); // Re-render to update selection styling
     });
 
-    root.appendChild(playerElement);
+    if (selectedPlayer && player.id === selectedPlayer.id) {
+        playerElement.classList.add('selected'); // Add 'selected' class if player is selected
+    }
+
+    root.appendChild(playerElement); // Append player element to root
 }
 
 function renderPlayers(players: Player[]) {
     root.innerHTML = ''; // Clear previous content
     players.forEach(player => {
         renderPlayer(player);
-        if (selectedPlayer && player.id === selectedPlayer.id) {
-            playerElement.classList.add('selected');
-        }
     });
 }
 
@@ -122,3 +123,4 @@ document.addEventListener('keydown', (event) => {
             break;
     }
 });
+
