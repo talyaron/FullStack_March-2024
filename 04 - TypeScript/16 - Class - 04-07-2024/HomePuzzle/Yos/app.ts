@@ -12,24 +12,28 @@ class Players {
         this.name = name;
         this.img = img;
         this.year = year;
-        this.x = Math.round(Math.random() * 75);
-        this.y = Math.round(Math.random() * 75);
+        this.x = Math.round(Math.random() * 75) + 3;
+        this.y = Math.round(Math.random() * 75) + 3;
         this.id = Math.random().toString();
         this.transform = null;
     }
     moveRight() {
-        this.y += 15;
+        if(this.y >= 85) return;
+        this.y += 10;
         this.transform = 'transform: scaleX(-1)';
     }
     moveLeft() {
-        this.y -= 15;
+        if(this.y >= 85) return;
+        this.y -= 10;
         this.transform = 'transform: scaleX(1)';
     }
     moveUp() {
-        this.x -= 15;
+        if(this.x <= 10) return;
+        this.x -= 10;
     }
     moveDown() {
-        this.x += 15;
+        if(this.x >= 85) return;
+        this.x += 10;
     }
 
 }
