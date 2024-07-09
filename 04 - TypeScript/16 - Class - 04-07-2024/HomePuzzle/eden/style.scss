@@ -1,102 +1,155 @@
-// #backgroundcontainer {
-//   //   height: 75vh;
-//   //   width: 500vw;
-//   background-image: url("5814.jpg");
-//   background-size: cover;
-//   position: relative;
-// }
-
-// img {
-//   width: 95%;
-//   height: 95%;
-// }
-
-// .image-container {
-//   position: absolute; /* Set the container to relative positioning */
-//   width: 300px; /* Set the desired width */
-//   height: auto; /* Set the desired height */
-//   top: 50%;
-//   left: unset;
-//   transform: translate(-10%, -10%);
-// }
-
-// .image-over {
-//   position: absolute;
-//   width: 300px; /* Set the desired width */
-//   height: auto; /* Set the desired height */
-//   top: 50%;
-//   left: unset;
-//   right: 50%;
-//   transform: translate(-10%, -10%);
-// }
-
-// .image-haver {
-//   position: absolute;
-//   width: 300px; /* Set the desired width */
-//   height: auto; /* Set the desired height */
-//   top: 50%;
-//   left: 70%;
-//   right: 80%;
-//   transform: translate(-10%, -10%);
-// }
-
-// // button {
-// //   position: absolute;
-// //   top: 20px;
-// //   left: 20%;
-// //   background-color: #f00;
-// //   color: #fff;
-// //   border: none;
-// //   padding: 0.5vw;
-// //   border-radius: 0.5vw;
-// //   cursor: pointer;
-// //   font-size: 1.5vw;
-// //   right: 0;
-// //   width: fit-content;
+// // #backgroundcontainer {
+// //   //   height: 75vh;
+// //   //   width: 500vw;
+// //   background-image: url("5814.jpg");
+// //   background-size: cover;
+// //   position: relative;
 // // }
 
-// .controls {
+// // img {
+// //   width: 95%;
+// //   height: 95%;
+// // }
+
+// // .image-container {
+// //   position: absolute; /* Set the container to relative positioning */
+// //   width: 300px; /* Set the desired width */
+// //   height: auto; /* Set the desired height */
+// //   top: 50%;
+// //   left: unset;
+// //   transform: translate(-10%, -10%);
+// // }
+
+// // .image-over {
+// //   position: absolute;
+// //   width: 300px; /* Set the desired width */
+// //   height: auto; /* Set the desired height */
+// //   top: 50%;
+// //   left: unset;
+// //   right: 50%;
+// //   transform: translate(-10%, -10%);
+// // }
+
+// // .image-haver {
+// //   position: absolute;
+// //   width: 300px; /* Set the desired width */
+// //   height: auto; /* Set the desired height */
+// //   top: 50%;
+// //   left: 70%;
+// //   right: 80%;
+// //   transform: translate(-10%, -10%);
+// // }
+
+// // // button {
+// // //   position: absolute;
+// // //   top: 20px;
+// // //   left: 20%;
+// // //   background-color: #f00;
+// // //   color: #fff;
+// // //   border: none;
+// // //   padding: 0.5vw;
+// // //   border-radius: 0.5vw;
+// // //   cursor: pointer;
+// // //   font-size: 1.5vw;
+// // //   right: 0;
+// // //   width: fit-content;
+// // // }
+
+// // .controls {
+// //   position: absolute;
+// //   bottom: 10px;
+// //   left: 30%;
+// //   transform: translateX(-50%);
+// // }
+// // .controls button {
+// //   margin: 5px;
+// //   padding: 10px;
+// // }
+
+// .img {
+//   background-image: url("image/player1.png");
+//   background-size: cover;
 //   position: absolute;
-//   bottom: 10px;
-//   left: 30%;
-//   transform: translateX(-50%);
-// }
-// .controls button {
-//   margin: 5px;
-//   padding: 10px;
 // }
 
-.root {
-  background-image: url("image/player1.png");
+// .player {
+//   position: relative;
+//   width: 10rem;
+//   height: 10rem;
+//   background-size: cover;
+//   border: 2px solid;
+
+//   button {
+//     position: absolute;
+//     top: -40px;
+//     left: 50%;
+//     background-color: #f00;
+//     color: #fff;
+//     border: none;
+//     padding: 0.5vw;
+//     border-radius: 0.5vw;
+//     cursor: pointer;
+//     font-size: 1.5vw;
+//     right: 0;
+//     width: fit-content;
+//   }
+// }
+// .left {
+//   position: absolute;
+//   left: 0%;
+//   top: 50%;
+//   transform: translate(-0%, -50%);
+//   background-color: blue;
+//   i {
+//     color: red;
+//     size: 50px;
+//   }
+// }
+
+// .up {
+//   position: absolute;
+//   left: 50%;
+//   top: 0%;
+//   transform: translate(-50%, 0%);
+//   background-color: blue;
+//   i {
+//     color: red;
+//     size: 50px;
+//   }
+// }
+
+// .down {
+//   position: absolute;
+//   left: 50%;
+//   top: 100%;
+//   transform: translate(-50%, -100%);
+//   background-color: blue;
+//   i {
+//     color: red;
+//     size: 50px;
+//   }
+// }
+
+// .right {
+//   background-color: transparent;
+//   border: none;
+// }
+
+body {
   width: 90vw;
-  height: 57vw;
+  height: 95vh;
+  background-image: url(data:image/png;base64,https://www.marvadim.com/wp-content/uploads/2022/01/%D7%9E%D7%92%D7%A8%D7%A9-%D7%9B%D7%93%D7%95%D7%A8%D7%9B%D7%9C-%D7%97%D7%96%D7%99%D7%AA-590x354.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);
   background-size: cover;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .player {
-  position: absolute;
-  width: 17vw;
-  height: 20vw;
+  position: relative;
+  width: 10rem;
+  height: 10rem;
   background-size: cover;
-  transition: all 0.5s;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-position: center;
-
-  button {
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    background-color: #f00;
-    color: #fff;
-    border: none;
-    padding: 0.5vw;
-    border-radius: 0.5vw;
-    cursor: pointer;
-    font-size: 1.5vw;
-    right: 0;
-    width: fit-content;
-  }
+  border: 2px solid;
+  mix-blend-mode: multiply;
 }
