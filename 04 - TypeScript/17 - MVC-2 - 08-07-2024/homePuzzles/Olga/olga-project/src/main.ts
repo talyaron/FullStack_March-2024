@@ -1,24 +1,28 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import "./style.scss";
+// import './view/header.scss'
+// import typescriptLogo from './typescript.svg'
+// import viteLogo from '/vite.svg'
+// import { setupCounter } from './counter.ts'
+import { renderHeader } from "./view/Header.ts";
+import { Customer } from "./models/customerModel.ts";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const guest = new Customer("", "Guest");
+let currentCustomer: Customer = guest;
+let header = renderHeader(currentCustomer);
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
+  ${header}
+`;
+
+const dialog = document.querySelector("#dialog") as HTMLDialogElement;
+document.querySelector("#openDialog").onclick = function () {
+  dialog.showModal();
+
+};
+document.querySelector("#closeDialog").onclick = function () {
+  if (email.validity.valid && password.validity.valid) {
+    dialog.close();
+  }
+};
+
+
