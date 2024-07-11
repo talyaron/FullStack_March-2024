@@ -1,0 +1,29 @@
+nav {
+  background-color: red;
+  position: sticky;
+  top: 0px;
+}
+
+.hot {
+  width: 50%;
+}
+.hot h3 {
+  background-color: blue;
+}
+.hot .hotter {
+  display: flex;
+}
+.hot .hotter .mini {
+  /*position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red; 
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;*/
+  width: 30%;
+  margin: 5px;
+}
+.hot .hotter .mini img {
+  width: 100%;
+}/*# sourceMappingURL=styles.css.map */

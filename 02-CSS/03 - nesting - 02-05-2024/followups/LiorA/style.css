@@ -1,0 +1,10 @@
+.wrapper {
+  background-color: lightblue;
+  width: 2000px;
+}
+.wrapper img {
+  width: 100%;
+}
+.wrapper p {
+  color: red;
+}/*# sourceMappingURL=style.css.map */

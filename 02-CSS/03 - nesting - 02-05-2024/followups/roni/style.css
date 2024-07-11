@@ -1,0 +1,14 @@
+.wrapper {
+  background-color: antiquewhite;
+  width: 750px;
+}
+.wrapper img {
+  width: 100%;
+}
+.wrapper p {
+  color: darkcyan;
+}
+
+p {
+  color: palevioletred;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,36 @@
+.card {
+  border: 1px solid #000;
+  padding: 1rem;
+  background-color: rgb(240, 240, 240);
+  max-width: 30ch;
+  border-radius: 5px;
+  margin: 0.4rem;
+  text-align: center;
+}
+.card--happy {
+  background-color: yellow;
+  color: red;
+  border-color: white;
+}
+.card--big {
+  font-size: xx-large;
+  font-weight: 900;
+  border: 10px solid black;
+}
+.card--tiny {
+  border: 0.3px solid black;
+  font-size: 3px;
+}
+.card--pastel {
+  background-color: rgb(181, 241, 221);
+  color: lightpink;
+  border-radius: 100%;
+  border-color: rgb(206, 176, 201);
+}
+.card--ugly {
+  text-align: right;
+  border: 5px dotted purple;
+  background-color: brown;
+  color: gray;
+  word-spacing: 5ch;
+}/*# sourceMappingURL=style.css.map */

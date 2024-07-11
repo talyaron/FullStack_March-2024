@@ -1,0 +1,15 @@
+.wrapper {
+  width: 450px;
+  margin: auto;
+  text-align: center;
+  border: 2px solid black;
+}
+.wrapper .purple {
+  background-color: mediumslateblue;
+  color: white;
+  padding: 50px;
+}
+.wrapper .white {
+  text-align: left;
+  padding: 100px;
+}/*# sourceMappingURL=index.css.map */

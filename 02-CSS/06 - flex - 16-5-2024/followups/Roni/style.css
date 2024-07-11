@@ -1,0 +1,23 @@
+body {
+  font-family: "Gill Sans";
+  margin: 10%;
+  padding: 10%;
+}
+
+.wrapper {
+  background-color: lightsteelblue;
+  display: flex;
+  justify-content: center;
+  height: 300vh;
+  padding: 10px;
+}
+.wrapper .inner {
+  background-color: lightblue;
+  color: grey;
+  margin: 2%;
+  flex: 1;
+}
+.wrapper .innerflex {
+  background-color: rgb(42, 42, 129);
+  color: azure;
+}/*# sourceMappingURL=style.css.map */

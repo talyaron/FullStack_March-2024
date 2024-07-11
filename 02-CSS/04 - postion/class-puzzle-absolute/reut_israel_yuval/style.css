@@ -1,0 +1,48 @@
+.wrapper {
+  background-color: bisque;
+  position: relative;
+  border: 1px solid grey;
+  padding: 20px;
+  margin: 100px;
+  height: 300px;
+}
+
+.First {
+  background-color: aqua;
+  position: absolute;
+  top: 0px;
+  right: 50%;
+  left: 0px;
+  bottom: 50%;
+}
+
+.Second {
+  background-color: rgb(209, 115, 52);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 50%;
+  bottom: 50%;
+}
+
+.Third {
+  background-color: rgb(250, 0, 33);
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  left: 50%;
+  bottom: 0;
+}
+
+.Fourth {
+  background-color: rgb(25, 231, 87);
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  left: 0px;
+  bottom: 0px;
+}
+
+div {
+  padding: 20px;
+}/*# sourceMappingURL=style.css.map */

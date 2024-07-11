@@ -1,0 +1,21 @@
+.container {
+  background-color: black;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.container .box {
+  background-color: gray;
+  text-align: right;
+}
+.container .box p {
+  color: palevioletred;
+}
+.container .box h2 {
+  color: white;
+}
+.container .box img {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

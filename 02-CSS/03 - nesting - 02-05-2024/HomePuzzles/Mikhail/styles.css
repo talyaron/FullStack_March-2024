@@ -1,0 +1,132 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  background-color: #210237;
+  position: fixed;
+}
+header .headtext {
+  width: 80%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+header .headtext h1 {
+  width: 100%;
+  height: 100%;
+  font-size: 50px;
+  padding-left: 150px;
+  color: #FF0505;
+}
+header .headbar {
+  text-align: right;
+  width: 20%;
+  margin: 0;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+header .headbar button {
+  height: 50px;
+  width: 50px;
+  border-radius: 30%;
+  background-color: silver;
+  color: white;
+}
+header .headbar button:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+main {
+  background-color: #371251;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  margin: 0;
+}
+main .question {
+  color: white;
+  font-size: 40px;
+  width: 100%;
+  padding-top: 50px;
+}
+main .wrapper {
+  background-color: #29123D;
+}
+main .wrapper .top {
+  display: flex;
+  width: 80%;
+  border: 1px solid white;
+  margin: auto;
+}
+main .wrapper .top p {
+  color: white;
+  text-align: right;
+  width: 80%;
+}
+main .wrapper .middle {
+  display: flex;
+  width: 80%;
+  border: 1px solid white;
+  margin: 20px auto;
+}
+main .wrapper .middle p {
+  color: white;
+  text-align: left;
+  width: 80%;
+}
+main .wrapper .middle img {
+  width: 20%;
+}
+main .wrapper .bottom {
+  display: flex;
+  width: 80%;
+  border: 1px solid white;
+  margin: auto;
+}
+main .wrapper .bottom p {
+  color: white;
+  text-align: right;
+  width: 80%;
+}
+main .wrapper .bottom img {
+  width: 20%;
+}
+
+.top:hover {
+  background-color: #FF0505;
+}
+
+.middle:hover {
+  background-color: #FF0505;
+}
+
+.bottom:hover {
+  background-color: #FF0505;
+}
+
+.form {
+  background-color: #29123D;
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.form form {
+  width: 100%;
+}
+.form form .inputs {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.form button {
+  background-color: red;
+  color: white;
+}
+.form button:hover {
+  background-color: rgb(184, 14, 14);
+}/*# sourceMappingURL=styles.css.map */

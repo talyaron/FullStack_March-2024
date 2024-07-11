@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Form</title>
+    <link rel="stylesheet" href="./dist/style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="birthdayForm">
+            <fieldset class="formInput">
+                <legend>Name:</legend>
+                <input type="text" id="name" name="name" required>
+            </fieldset>
+            <fieldset class="formInput">
+                <legend>Birthday:</legend>
+                <input type="date" id="birthday" name="birthday" required>
+            </fieldset>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="./dist/app.js"></script>
+</body>
+</html>

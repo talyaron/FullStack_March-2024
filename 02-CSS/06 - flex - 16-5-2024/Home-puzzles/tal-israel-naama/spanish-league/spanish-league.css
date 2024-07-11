@@ -1,0 +1,115 @@
+.wrapper {
+  margin-right: 5px;
+  display: flex;
+}
+
+.right-content {
+  margin-right: 22%;
+}
+
+#cover-article {
+  position: relative;
+  display: block;
+  width: 636px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+#cover-article img {
+  width: 100%;
+  height: auto;
+}
+#cover-article .img-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  line-height: 1.6rem;
+}
+#cover-article h2 {
+  font-size: 22.4px;
+  margin: 0;
+  padding-right: 5px;
+}
+#cover-article p {
+  font-size: 17.6px;
+  margin: 0;
+  line-height: 1.2rem;
+  padding-right: 5px;
+}
+
+.article {
+  position: relative;
+  width: 626px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+.article img {
+  width: 195px;
+  border-radius: 5%;
+  float: right;
+  margin-left: 5px;
+}
+.article .headline {
+  color: #35479b;
+  font-size: 1.1rem;
+  display: inline;
+  text-align: right;
+  font-style: none;
+}
+.article .text {
+  color: #565656;
+  font-size: 1.1rem;
+  margin: 0;
+  font-style: none;
+}
+.article a {
+  text-decoration: none;
+}
+
+.vids {
+  width: 330px;
+  background-color: #eeeeee;
+  margin-top: 10px;
+}
+.vids img {
+  width: 100%;
+  height: 90%;
+}
+
+.left-content {
+  margin-right: 50px;
+  margin-left: 15%;
+}
+
+.cover-vid {
+  width: 318px;
+  height: 202px;
+}
+.cover-vid img {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.video {
+  width: 102px;
+  height: 78px;
+}
+
+.video-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 110px;
+  font-size: 11px;
+}
+.video-content p {
+  margin: 0;
+}
+
+.small-ad img {
+  padding-top: 10px;
+}/*# sourceMappingURL=spanish-league.css.map */

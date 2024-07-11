@@ -9,6 +9,9 @@ You can easily notice DRY, when you create some code, that you have to repeat in
 SRP stands for Single Responsibility Principle. It is a principle of software development aimed at reducing the complexity of software by breaking it down into smaller, more manageable components. Each component should have a single responsibility, meaning that it should only be responsible for one thing, and not two or more things.
 It follows from the DRY principle, because if you have a function that does multiple things, you will have to repeat it in multiple places, which violates the DRY principle.
 
+## Single source of truth
+Single source of truth is a principle of software development that states that there should be only one place in the code where a particular piece of information is stored. This means that you should avoid duplicating data or storing it in multiple places, as this can lead to inconsistencies and errors. By following the single source of truth principle, you can ensure that the data is always up-to-date and accurate, and that changes are reflected consistently throughout the codebase.
+
 ## KISS
 KISS stands for Keep It Simple, Stupid. It is a design principle that states that most systems work best if they are kept simple rather than made complicated. This means that you should strive for simplicity in your code, and avoid unnecessary complexity or over-engineering.
 

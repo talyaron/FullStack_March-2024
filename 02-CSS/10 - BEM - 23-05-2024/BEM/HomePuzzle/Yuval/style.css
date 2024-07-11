@@ -1,0 +1,15 @@
+.btn {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #000;
+  background-color: #fff;
+  gap: 2rem;
+  width: 70rem;
+}
+.btn p {
+  font-size: 6rem;
+}
+.btn .icon-img {
+  width: 30%;
+  position: relative;
+}/*# sourceMappingURL=style.css.map */

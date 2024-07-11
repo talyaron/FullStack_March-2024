@@ -1,24 +1,26 @@
-
-.page{
+.page {
     display: grid;
     border: 2px solid rgb(1, 1, 1);
     grid-template-columns: 14rem 14rem 14rem 14rem;
     grid-template-rows: 10rem 23rem 18rem 15rem 7rem;
-    gap:3rem;
+    gap: 3rem;
     background-color: rgb(31, 26, 36);
     color: white;
-    width:100%;
+    width: 100%;
     height: fit-content;
-    padding:3rem;
-    h3{
+    padding: 3rem;
+    padding-left: 10%;
+
+    h3 {
         font-size: 1.8rem;
         border-bottom: 0.13rem solid rgb(45, 71, 221);
     }
-    dt{
+
+    dt {
         font-size: 1.2rem;
     }
-    
-    .header{
+
+    .header {
         display: grid;
         grid-row: 1;
         grid-column: 1 / 5;
@@ -26,20 +28,23 @@
         align-items: left;
         justify-content: left;
         font-size: 3rem;
-        margin:-1rem;
+        margin: -1rem;
         display: flex;
         gap: 4rem;
-       h2 {
-        padding: 2rem 0 0 0;
-       }
-        .header__search{
+
+        h2 {
+            padding: 2rem 0 0 0;
+        }
+
+        .header__search {
             padding: 0.8rem;
-            height:fit-content;
+            height: fit-content;
             margin-top: 5.5%;
             display: flex;
             align-items: center;
             color: white;
             background-color: rgb(58, 58, 73);
+
             input {
                 outline: none;
                 border: none;
@@ -49,7 +54,7 @@
                 color: white;
             }
         }
-        
+
         button {
             background: none;
             border: none;
@@ -68,11 +73,13 @@
             }
         }
     }
-    .subscribe{
-        img{
+
+    .subscribe {
+        img {
             width: 100%;
         }
     }
+
     .newsletter {
         align-items: center;
         justify-content: center;
@@ -80,18 +87,21 @@
         grid-row: 5;
         grid-column: 1 / 5;
         border-top: 0.12rem solid rgb(153, 174, 209);
-        border-bottom: 0.12rem solid  rgb(153, 174, 209);
+        border-bottom: 0.12rem solid rgb(153, 174, 209);
         display: flex;
-        .newsletter__icons{
+
+        .newsletter__icons {
             margin-left: 1.5rem;
-            img{
+
+            img {
                 width: 8%;
                 border-radius: 50%;
             }
         }
-        .newsletter__email{
+
+        .newsletter__email {
             padding: 0.8rem;
-            height:fit-content;
+            height: fit-content;
             display: flex;
             align-items: center;
             color: white;
@@ -105,9 +115,10 @@
                 background: none;
                 width: 35rem;
                 font-size: 0.8rem;
-                color:white;
+                color: white;
             }
         }
     }
+
     
 }

@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+.imageGrid h1 {
+  grid-column: span 3;
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+.imageGrid img {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.imageGrid img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+.imageGrid img:nth-child(5), .imageGrid img:nth-child(6) {
+  grid-column: span 1;
+}
+.imageGrid img, .imageGrid h1 {
+  border: 2px solid #ccc;
+  padding: 10px;
+  border-radius: 15px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,14 @@
+.wrapper {
+  background-color: brown;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 500px;
+  align-items: center;
+}
+.wrapper .box {
+  background-color: aqua;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+}/*# sourceMappingURL=styles.css.map */

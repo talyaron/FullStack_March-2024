@@ -1,0 +1,49 @@
+.page {
+  display: flex;
+  direction: rtl;
+  height: 100%;
+}
+.page .page-left {
+  background-image: "https://static.fcdn.co.il/dyn/projects/css/desktop/icons/registerpage/register-bg.jpg";
+  text-align: center;
+}
+.page .page-right {
+  text-align: center;
+  width: 50%;
+}
+.page .page-right .header {
+  margin-top: 15%;
+}
+.page .page-right .header #smiley-label {
+  font-weight: bold;
+  font-size: 30px;
+}
+.page .page-right #color-blue {
+  color: #197dc1;
+}
+.page .page-right .form {
+  width: 300px;
+  display: table;
+  text-align: center;
+}
+.page .page-right .form .seperator {
+  margin-bottom: 20px;
+}
+.page .page-right .form .form-objects {
+  margin-top: 10rem;
+}
+.page .page-right .form .form-objects .signinput {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-color: #197dc1;
+  margin-top: 30px;
+  width: 15rem;
+  font-size: 20px;
+}
+
+.button--submit {
+  background-color: #197dc1;
+  color: white;
+  width: 100%;
+}/*# sourceMappingURL=signup.css.map */

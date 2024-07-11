@@ -77,6 +77,14 @@ body {
   font-size: 25px;
 }
 
+.sub-content {
+  position: relative;
+}
+.sub-content .kicker {
+  height: 15px;
+  font-size: 20px;
+}
+
 @media only screen and (min-width: 1200px) {
   .wrapper {
     width: 1184px;
