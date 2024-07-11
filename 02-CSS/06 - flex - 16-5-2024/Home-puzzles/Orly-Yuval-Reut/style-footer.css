@@ -1,17 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-}
-
 footer {
   background: black;
   padding-top: 50px;
-  position: absolute;
+  position: relative;
   right: 0;
   left: 0;
   bottom: 0;
+  color: white;
 }
 
 .container {
@@ -20,7 +14,7 @@ footer {
   display: flex;
 }
 
-.wrapper {
+.wrapper0 {
   width: 33.3%;
 }
 
@@ -99,4 +93,4 @@ a:hover {
   margin: 0;
   font-size: 16px;
   padding: 7px;
-}
+}/*# sourceMappingURL=style-footer.css.map */

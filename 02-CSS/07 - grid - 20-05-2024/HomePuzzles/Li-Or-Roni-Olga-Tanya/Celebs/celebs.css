@@ -1,0 +1,102 @@
+body {
+  font-family: "Karantina", system-ui, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.wrapper {
+  display: grid;
+  justify-content: center;
+}
+.wrapper .page-name h1 {
+  font-weight: lighter;
+  font-size: 4.5rem;
+}
+.wrapper .page-name .right-page-name h2 {
+  font-weight: lighter;
+  color: rgb(68, 196, 228);
+  font-size: 2.5rem;
+}
+.wrapper .page-name .left-page-name .left-page-name_social-list {
+  float: left;
+}
+.wrapper .page-name .categories {
+  font-size: 2rem;
+}
+.wrapper .main-article {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.wrapper .main-article h1 {
+  width: 200px;
+  margin-left: 30px;
+}
+.wrapper .main-article p {
+  width: 200px;
+}
+.wrapper .main-article img {
+  width: 550px;
+  height: 350px;
+}
+.wrapper .second-article {
+  display: flex;
+  justify-content: space-around;
+}
+.wrapper .second-article img {
+  width: 450px;
+  height: 300px;
+}
+.wrapper .second-article p {
+  color: gray;
+  font-size: 1.7rem;
+}
+.wrapper .articale-section {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.wrapper .articale-section .in-articale-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+.wrapper .articale-section .in-articale-section .most-viewed-articles h3, .wrapper .articale-section .in-articale-section .most-viewed-articles p,
+.wrapper .articale-section .in-articale-section .local-celebs-articles h3,
+.wrapper .articale-section .in-articale-section .local-celebs-articles p,
+.wrapper .articale-section .in-articale-section .global-celebs-articles h3,
+.wrapper .articale-section .in-articale-section .global-celebs-articles p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+}
+.wrapper .articale-section .in-articale-section .most-viewed-articles img,
+.wrapper .articale-section .in-articale-section .local-celebs-articles img,
+.wrapper .articale-section .in-articale-section .global-celebs-articles img {
+  width: 100%;
+  height: auto;
+}
+.wrapper .articale-section p {
+  color: gray;
+  font-size: 1.7rem;
+}
+.wrapper .more-articles .in-more-articles {
+  display: grid;
+  grid-template-columns: 350px 350px 350px;
+  grid-template-rows: 280px;
+  gap: 10px;
+}
+.wrapper .more-articles .in-more-articles .more-articles1 h3, .wrapper .more-articles .in-more-articles .more-articles1 p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+}
+.wrapper .more-articles .in-more-articles .more-articles1 img {
+  width: 100%;
+  height: auto;
+}
+.wrapper .more-articles p {
+  color: gray;
+  font-size: 1.7rem;
+}/*# sourceMappingURL=celebs.css.map */

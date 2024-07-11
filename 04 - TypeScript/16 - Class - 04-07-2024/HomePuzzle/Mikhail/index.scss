@@ -1,0 +1,78 @@
+.crowd{
+    background-image: url("https://www.shutterstock.com/image-photo/crowd-thousands-dressed-orange-600nw-62289571.jpg");
+    width: 95vw;
+    height: 50vh;
+    background-size: cover;
+}
+.field{
+    background-image: url("https://www.huck-net.co.uk/media/img/images/Lines_On_A_Football_Pitch.jpg");
+    width: 95vw;
+    height: 45vw;
+    background-size: cover;
+}
+
+.player{
+    position:absolute;
+    width: 15vw;
+    height: 20vw;background-size: cover;
+    transition: all 0.5s;
+    transform: translateX(-150%);
+    
+    
+    .player__button--up{
+        position: absolute;
+        top:-40px;
+        left:50%;
+        background-color: #f00;
+        color: #fff;
+        border: none;
+        padding: 0.5vw;
+        border-radius: 0.5vw;
+        cursor: pointer;
+        font-size: 1.5vw;
+        right: 0;
+        width: fit-content;
+    }
+    .player__button--down{
+        position: absolute;
+        top:200px;
+        left:50%;
+        background-color: #f00;
+        color: #fff;
+        border: none;
+        padding: 0.5vw;
+        border-radius: 0.5vw;
+        cursor: pointer;
+        font-size: 1.5vw;
+        right: 0;
+        width: fit-content;
+    }
+    .player__button--right{
+        position: absolute;
+        top:60px;
+        left:100%;
+        background-color: #f00;
+        color: #fff;
+        border: none;
+        padding: 0.5vw;
+        border-radius: 0.5vw;
+        cursor: pointer;
+        font-size: 1.5vw;
+        right: 0;
+        width: fit-content;
+    }
+    .player__button--left{
+        position: absolute;
+        top:60px;
+        left:-5%;
+        background-color: #f00;
+        color: #fff;
+        border: none;
+        padding: 0.5vw;
+        border-radius: 0.5vw;
+        cursor: pointer;
+        font-size: 1.5vw;
+        right: 0;
+        width: fit-content;
+    }
+}

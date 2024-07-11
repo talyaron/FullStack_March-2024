@@ -1,0 +1,190 @@
+
+@import url('https://fonts.cdnfonts.com/css/acumin-pro');
+@import url('https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro');
+
+                
+body, html {
+    margin: 0;
+    height: 100vh;
+    background-color: rgba(172, 172, 172, 0.993);
+}
+.card{
+    // padding: 0 16em;
+    width: 250px;
+    
+
+    &__img{
+        position: relative;
+        // padding-bottom: 100%;
+        display: block;
+        height: 140px;
+        width: 100%;
+        background: green;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(26, 72, 196);
+            opacity: 0.1;
+        }
+    }
+
+    &__content{
+        padding-top: 1em;
+        background: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    &__title{
+        display: inline-block;
+        font-family:"acumin-pro-condensed", Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 550;
+        font-size: 1.18rem;
+        line-height: 1.1875rem;
+        letter-spacing: 0.1rem;
+        border-bottom: 0.2rem solid rgb(26, 72, 196);
+        padding-bottom: 0.29em;
+        margin-bottom: var(--spacing-050, 0.75rem);
+        cursor: pointer;
+        &:hover{
+            color: rgb(26, 72, 196);
+        }
+        
+
+    }
+    &__description{
+        text-decoration: none;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-size: 1.28rem;
+        line-height: 1.7rem;
+        letter-spacing: 0.02rem;
+        font-weight: 520;
+        &:hover{
+            color: rgb(26, 72, 196);
+        }
+        // padding-top: 1em;
+        &--lts{
+            padding: 1.3em;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.btn-wrapper{
+    display: block;
+    background-color: black;
+    .btn{
+        text-decoration: none;
+        display: flex;
+        width: fit-content;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        border: 2px solid rgb(255, 255, 255);
+        cursor: pointer;
+        &--header-btn{
+            display: block;
+            padding: 0.5em 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: white;
+            &:hover{
+                color: rgb(26, 72, 196);
+                border-color: rgb(26, 72, 196);
+            }
+        }
+        &--subscribe-btn{
+            display: block;
+            padding: 0.5em 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: white;
+            background-color: rgb(26, 72, 196);
+            border: none;
+            &:hover{
+                color: rgb(26, 72, 196);
+                background-color: rgb(255, 255, 255);
+            }
+        }
+        &--menu-header-btn{
+            display: block;
+            padding: 0.4em 0.5em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: rgb(237,235,235);
+            background-color: none;
+            border: none;
+            &:hover{
+                color: rgb(26, 72, 196);
+                
+            }
+    }
+    &--bottom-menu-header-btn{
+        display: block;
+            padding: 0.4em 0.5em;
+            letter-spacing: 0.1em;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #4C5167;
+            background-color: none;
+            border: none;
+            &:hover{
+                color: rgb(26, 72, 196);
+            }
+    }
+
+
+}
+}
+.latest-news-wrapper{
+    display: block;
+    background-color: white;
+    width: 25rem;
+    .latest-news-item{
+        display: flex;
+        flex-direction: column;
+        
+        
+        &__time-ago-mark{
+            display: block;
+            font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+            padding: 0.1em 1.5em;
+            padding-bottom: 2em;
+            letter-spacing: 0.03em;
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgb(26, 72, 196);
+            background-color: none;
+            border: none;
+            
+        }
+    }
+}
+.hot-100-wrapper{
+    display: block;
+    background-color: white;
+.hot-100-card{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    
+    &__img{
+        background-color: aqua;
+    }
+}
+}
+
+@media only screen and (max-width: 78.7499rem) and (min-width: 48rem) {
+    .card-width-50p\@desktop-and-tablet {
+        width: 50%;
+    }
+}
+@media (min-width: 48rem) {
+    .card-flex-direction-column\@tablet {
+        flex-direction: column;
+    }
+}

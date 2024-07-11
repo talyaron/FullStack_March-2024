@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+    <link rel="stylesheet" href="./dist/style.css">
+</head>
+<body>
+
+                  <!-- Bus fare calculator -->
+
+    <div class="container">
+        <h2>Bus fare calculator</h2>
+        <form id="busFare">
+            <fieldset class="formInput">
+                <legend>Regular ticket price</legend>
+                <input type="number" step="0.01" id="ticket" name="ticket">
+            </fieldset>
+            <fieldset class="formInput">
+                <legend>Birthday:</legend>
+                <input type="date" id="birthday" name="birthday">
+            </fieldset>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+                        <!-- Odd numbers -->
+
+    <div class="container">
+        <h2>Sum of odd numbers</h2>
+        <form id="oddNumbers">
+            <fieldset class="formInput">
+                <legend>Enter a positive number</legend>
+                <input type="number" id="num" name="num">
+            </fieldset>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result2"></div>
+    </div>
+
+                <!-- Fizzbuzz -->
+
+    <div class="container">
+        <h2>FizzBuzz</h2>
+        <form id="fizzbuzz">
+            <fieldset class="formInput">
+                <legend>Enter a positive number</legend>
+                <input type="number" id="num_fizzbuzz" name="num_fizzbuzz">
+            </fieldset>
+            <button type="submit">Submit</button>
+        </form>
+            <div id="result3"></div>
+        </div>
+            <!-- Prime number checker -->
+<div class="container">
+    <h2>Prime number checker</h2>
+    <form id="prime">
+        <fieldset class="formInput">
+            <legend>Enter a positive number</legend>
+            <input type="number" id="num_prime" name="num_prime">
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+        <div id="result4"></div>
+    </div>
+
+    <script src="./dist/app.js"></script>
+</body>
+</html>

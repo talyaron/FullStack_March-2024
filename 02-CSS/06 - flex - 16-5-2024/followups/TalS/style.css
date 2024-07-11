@@ -1,0 +1,21 @@
+body {
+  background-color: navajowhite;
+}
+
+.content {
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+  border: black 10px solid;
+  align-items: start;
+}
+
+.flex1 {
+  border: blue 5px solid;
+  flex: 1;
+}
+
+.flex3 {
+  border: red 5px solid;
+  flex: 2;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+}
+.container div {
+  margin: 5px;
+  border: 1px solid black;
+  padding: 155px;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=style.css.map */

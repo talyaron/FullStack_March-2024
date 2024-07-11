@@ -1,0 +1,167 @@
+div {
+  border: 1px black solid;
+  padding: 20px;
+}
+
+.wrapper {
+  margin: auto;
+  width: 1000px;
+}
+.wrapper .page-logo {
+  border: none;
+  text-align: center;
+}
+.wrapper .box-sticky {
+  position: sticky;
+  top: 0px;
+  background-color: red;
+  border-color: red;
+  border: 1px blue dotted;
+  padding: 2px;
+  z-index: 1;
+}
+.wrapper .box-sticky .in-sticky {
+  border: none;
+  color: white;
+  background-color: red;
+  font-weight: bold;
+  font-size: larger;
+}
+.wrapper .box-sticky .in-sticky :hover {
+  color: gray;
+}
+.wrapper .box-sticky .relative-sticky {
+  width: 5%;
+  position: relative;
+  float: inline-end;
+  bottom: 20px;
+  border: none;
+  color: white;
+}
+.wrapper .flash {
+  position: relative;
+}
+.wrapper .flash .flash-news {
+  position: absolute;
+  bottom: 100px;
+  display: block;
+  width: 30%;
+}
+.wrapper .box-fixed {
+  position: fixed;
+  background-color: lightblue;
+  border-radius: 50%;
+  right: 2px;
+  bottom: 2px;
+}
+.wrapper .box-fixed .in-fixed {
+  border: none;
+  background-color: lightblue;
+  margin: 2px;
+  padding: 0px;
+}
+.wrapper .box-relative {
+  height: 60px;
+}
+.wrapper .box-relative .in-relative {
+  width: 15%;
+  float: right;
+}
+.wrapper .first-artcl {
+  position: relative;
+}
+.wrapper .first-artcl img {
+  float: inline-end;
+  height: 300px;
+}
+.wrapper .first-artcl .txt1 {
+  width: 40%;
+  position: relative;
+  right: 10px;
+  border: none;
+}
+.wrapper .ad-section {
+  position: relative;
+}
+.wrapper .ad-section img {
+  float: inline-end;
+  height: 250;
+}
+.wrapper .ad-section .AD-artcl {
+  width: 70%;
+  border: none;
+}
+.wrapper .ad-section .artcl1 {
+  position: relative;
+}
+.wrapper .ad-section .artcl1 img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 30%;
+}
+.wrapper .ad-section .artcl2 {
+  position: relative;
+}
+.wrapper .ad-section .artcl2 img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 30%;
+}
+.wrapper .ad-section .artcl3 {
+  background-color: beige;
+}
+.wrapper .ad-section .artcl4 {
+  background-color: brown;
+}
+.wrapper .two-box {
+  height: 200px;
+  text-align: center;
+}
+.wrapper .two-box .right-box {
+  position: relative;
+  width: 45%;
+  float: inline-end;
+  margin: 0px;
+}
+.wrapper .two-box .right-box .calcalist {
+  position: absolute;
+  right: 40px;
+  border: none;
+  border-radius: 90%;
+  width: 50px;
+  background-color: rgb(254, 22, 22);
+  color: white;
+  font-weight: bold;
+  bottom: 20px;
+  height: 1px;
+}
+.wrapper .two-box .right-box .in-right {
+  float: inline-end;
+  width: 20%;
+}
+.wrapper .two-box .left-box {
+  position: relative;
+  width: 45%;
+  float: inline-end;
+}
+.wrapper .two-box .left-box .in-left {
+  float: inline-end;
+  width: 20%;
+}
+.wrapper .img-box {
+  background-color: rgba(0, 0, 0, 0.689);
+}
+.wrapper .img-box .img-box-logo {
+  text-align: center;
+  border: none;
+  padding: 0px;
+}
+.wrapper .img-box .img-box-logo img {
+  width: 15%;
+}
+.wrapper .img-box img {
+  width: 30%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 15px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,53 @@
+body{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzybB7k9LMtD2bdJqYygAgFu40FamtVKRmfQ&s');
+    background-size: cover;
+}
+
+
+.wrapper {
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 10rem;
+    gap: 3rem;
+    padding: 3rem;
+    position: relative;
+    left: 50%;
+    transform: translate(-70%);
+}
+
+.pet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 15rem;
+    width: 10rem;
+    background-color: #cf96b4;
+    border-radius: 1rem;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    
+
+    img {
+        max-width: 100%;
+        max-height: 80%;
+        flex:1
+    }
+
+    &:hover .tooltip{
+        display: block; 
+        position: absolute; 
+        top: 100%;
+        left: 0; 
+        background-color: black; 
+        color: white;
+        padding: 10px; 
+        z-index: 1; 
+    }
+
+    .tooltip{
+        display:none;
+    }
+}

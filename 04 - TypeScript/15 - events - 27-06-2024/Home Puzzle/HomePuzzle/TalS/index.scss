@@ -1,0 +1,111 @@
+.backgroundMap {
+    background-image: url("../europeMap.jpg");
+    background-color: #cccccc;
+    height: 99vh;
+    width: 99vw;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+h1 {
+    text-align: center;
+    background-color: white;
+}
+
+.nation,
+.nation1,
+.nation2,
+.nation3,
+.nation4,
+.nation5 {
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    font-size: 0.7rem;
+    position: absolute;
+
+    img {
+        width: 7vw;
+        height: 7vh;
+    }
+
+    &__player {
+        display: flex;
+        align-items: center;
+    }
+
+    p,
+    h2,
+    h1 {
+        margin: 0px;
+    }
+}
+
+.nation {
+    top: 43%;
+    left: 45%;
+}
+
+.nation1 {
+    top: 58%;
+    left: 34%;
+}
+
+.nation2 {
+    top: 38%;
+    left: 28%;
+    z-index: 3;
+
+}
+
+.nation3 {
+    top: 76%;
+    left: 27%;
+
+}
+
+.nation4 {
+    top: 81%;
+    left: 19%;
+    z-index: 2;
+
+}
+
+.nation5 {
+    top: 40%;
+    left: 37%;
+    z-index: 2;
+
+}
+
+.nation__player {
+    display: none;
+}
+
+.nation:hover .nation__player,
+.nation1:hover .nation__player,
+.nation2:hover .nation__player,
+.nation3:hover .nation__player,
+.nation4:hover .nation__player,
+.nation5:hover .nation__player {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    background-color: white;
+    justify-content: center;
+    border: black 1px solid;
+    border-radius: 5px;
+    margin-left: 2px;
+    height: 19vh;
+    width:14vw ;
+    img {
+        height: auto;
+    }
+}

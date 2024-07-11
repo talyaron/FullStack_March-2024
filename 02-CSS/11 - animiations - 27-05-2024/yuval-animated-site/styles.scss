@@ -1,0 +1,33 @@
+.container{
+    display: grid;
+    grid-auto-columns: repeat(5,150px);
+    grid-auto-rows: minmax(100px, auto);
+    border: 1px solid rgb(0, 0, 0);
+    grid-template-areas:
+    "grid-title grid-title"
+    "grid-side-bar"
+    "grid-side-bar grid-content1" ;
+
+}
+
+    .grid-title{
+    border: 1px solid black;
+    grid-area: grid-title;
+    }
+    .grid-side-bar{
+        border: 1px solid black;
+        grid-area: grid-side-bar;
+    }
+    .grid-content1{
+        border: 1px solid black;
+        
+    }
+    .grid-content2{
+        border: 1px solid black;
+    }
+    .grid-content3{
+        border: 1px solid black;
+    }
+    .grid-content4{
+        border: 1px solid black;
+    }

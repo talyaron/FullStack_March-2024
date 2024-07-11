@@ -1,0 +1,138 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f13636;
+  color: #fff;
+  padding: 3px 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.headlines {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 50px 20px 20px;
+}
+
+.headlines .slotview, .headlines .slotview2, .headlines .slotview3 {
+  width: 300px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.headlines h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.headlines span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.headlines img {
+  width: 100%;
+  border-radius: 8px;
+  justify-content: right;
+}
+
+.health {
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-top: 40px;
+  border-top: 2px solid #ddd;
+  text-align: right;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.health h3 {
+  text-align: right;
+  margin-bottom: 20px;
+  padding-right: 5px;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+}
+
+.health .health-articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.culture .culture-articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.food .food-articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.health .article, .health .article {
+  width: 300px;
+  margin: 10px;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: right;
+}
+
+.health .article img, .health .article img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #444;
+  margin-top: 20px;
+}/*# sourceMappingURL=style.css.map */

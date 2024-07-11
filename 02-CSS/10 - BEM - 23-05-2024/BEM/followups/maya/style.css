@@ -1,0 +1,31 @@
+.card {
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #000;
+  padding: 1rem;
+  background-color: rgb(240, 240, 240);
+  max-width: 50ch;
+  border-radius: 5px;
+  margin: 0.4rem;
+}
+.card:hover {
+  background-color: lightgray;
+  color: #fff;
+}
+.card--big {
+  font-size: 20px;
+}
+
+.small-card {
+  border: 1px solid #000;
+  border-radius: 5px;
+  max-width: 200px;
+  text-align: center;
+}
+.small-card--small {
+  font-size: 10px;
+}
+.small-card:hover {
+  background-color: lightgray;
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */

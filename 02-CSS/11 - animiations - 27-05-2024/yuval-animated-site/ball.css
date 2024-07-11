@@ -1,0 +1,42 @@
+body {
+  background-color: rgb(128, 128, 128);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+.container .ball {
+  position: absolute;
+  display: flex;
+  background-color: white;
+  border-radius: 50%;
+  width: 20vw;
+  height: 20vw;
+  animation-fill-mode: backwards;
+  animation: changing-ball 20s ease-in-out forwards;
+  animation-play-state: running;
+}
+
+@keyframes changing-ball {
+  0% {
+    transform: translate(40vw, 90vh);
+  }
+  25% {
+    transform: translate(70vw, 30vh);
+  }
+  50% {
+    transform: translate(40vw, 10vh);
+  }
+  75% {
+    transform: translate(10vw, 30vh);
+  }
+  100% {
+    transform: translate(40vw, 30vh);
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}/*# sourceMappingURL=ball.css.map */

@@ -1,0 +1,21 @@
+.album {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+
+    &__cover {
+        width: 50rem;
+        background-position: center;
+        background-size: cover;
+        height: auto;
+    }
+
+    &__info{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+    }
+}

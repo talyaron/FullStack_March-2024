@@ -1,0 +1,247 @@
+div {
+  border: 1px black solid;
+  padding: 20px;
+}
+
+body {
+  background-color: rgb(247, 244, 240);
+}
+
+.wrapper {
+  border: none;
+  margin: auto;
+  width: 800px;
+  background-color: rgb(242, 249, 249);
+}
+.wrapper .page-logo {
+  border: none;
+  text-align: center;
+  padding: 0px;
+}
+.wrapper .page-logo img {
+  width: 15%;
+}
+.wrapper .box-sticky {
+  position: sticky;
+  top: 0px;
+  background-color: rgb(215, 232, 243);
+  padding: 2px;
+  z-index: 1;
+}
+.wrapper .box-sticky .in-sticky {
+  border: none;
+  background-color: rgb(204, 231, 232);
+  font-weight: bold;
+  font-size: larger;
+}
+.wrapper .box-sticky .in-sticky :hover {
+  color: gray;
+}
+.wrapper .box-sticky .relative-sticky {
+  width: 5%;
+  position: relative;
+  float: inline-end;
+  bottom: 20px;
+  border: none;
+  color: white;
+}
+.wrapper .flash {
+  position: relative;
+  background-color: rgb(206, 232, 242);
+}
+.wrapper .flash-news {
+  position: relative;
+  display: inline;
+  border: none;
+  padding: 7px;
+}
+.wrapper .flash-news img {
+  padding: 6px;
+  width: 160px;
+  height: 90px;
+}
+
+.box-fixed {
+  position: fixed;
+  background-color: lightblue;
+  border-radius: 50%;
+  right: 2px;
+  bottom: 2px;
+  z-index: 1;
+}
+.box-fixed .in-fixed {
+  border: none;
+  background-color: lightblue;
+  margin: 2px;
+  padding: 0px;
+}
+
+.fixed2 {
+  position: fixed;
+  background-color: rgb(208, 234, 224);
+  border-radius: 10%;
+  border: none;
+  left: 10%;
+  top: 30%;
+  z-index: 1;
+  padding: 5px;
+}
+
+.box-relative {
+  height: 60px;
+}
+.box-relative .in-relative {
+  width: 15%;
+  float: right;
+}
+
+.first-artcl {
+  position: relative;
+}
+.first-artcl img {
+  float: inline-end;
+  width: 40%;
+}
+.first-artcl .txt1 {
+  width: 40%;
+  position: relative;
+  right: 10px;
+  border: none;
+}
+
+.ad-section {
+  position: relative;
+}
+.ad-section img {
+  float: inline-end;
+  width: 35%;
+}
+
+.AD-artcl {
+  width: 60%;
+  border: none;
+}
+
+.artcl1 {
+  border: none;
+  background-color: rgb(212, 230, 238);
+  position: relative;
+}
+.artcl1 img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 30%;
+}
+
+.artcl2 {
+  background-color: rgb(233, 237, 247);
+  position: relative;
+  border: none;
+}
+.artcl2 img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 30%;
+}
+
+.artcl3 {
+  background-color: rgb(233, 249, 237);
+  position: relative;
+  border: none;
+}
+.artcl3 img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 30%;
+}
+
+.artcl4 {
+  background-color: rgb(242, 245, 236);
+  position: relative;
+  border: none;
+}
+.artcl4 img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 30%;
+}
+
+.two-box {
+  height: 200px;
+  text-align: center;
+}
+.two-box .right-box {
+  position: relative;
+  width: 43%;
+  border: none;
+  float: inline-end;
+  background-color: rgb(255, 255, 255);
+}
+.two-box .right-box img {
+  width: 10%;
+}
+.two-box .right-box .calcalist1 {
+  transform: rotate(20deg);
+  padding: 5px;
+  position: absolute;
+  border: none;
+  border-radius: 95%;
+  width: 17%;
+  background-color: rgb(192, 237, 255);
+  bottom: 5px;
+  height: -moz-fit-content;
+  height: fit-content;
+  left: 5px;
+}
+.two-box .right-box .calcalist1 img {
+  width: 50%;
+}
+.two-box .right-box .in-right {
+  float: inline-end;
+  width: 20%;
+}
+.two-box .left-box {
+  position: relative;
+  width: 43%;
+  float: inline-start;
+  border: none;
+  background-color: rgb(255, 255, 255);
+}
+.two-box .left-box .calcalist2 {
+  padding: 1px;
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  width: 17%;
+  background-color: rgb(201, 236, 227);
+  bottom: 65%;
+  left: 70%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.two-box .left-box .calcalist2 img {
+  width: 50%;
+}
+.two-box .left-box .in-left {
+  float: inline-start;
+  width: 20%;
+}
+
+.img-box {
+  background-color: rgba(211, 222, 218, 0.689);
+}
+.img-box .img-box-logo {
+  text-align: center;
+  border: none;
+  padding: 0px;
+}
+.img-box .img-box-logo img {
+  width: 15%;
+  border-radius: 90%;
+}
+.img-box img {
+  width: 30%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 10px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,129 @@
+body {
+  margin: 0px auto;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0px auto;
+}
+
+.header, .nav-bar {
+  text-align: center;
+  margin: 22px 0px 22px;
+}
+
+.home-main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  height: -moz-max-content;
+  height: max-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 1rem 0px 2rem 0px;
+}
+
+.items {
+  height: -moz-fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+.items img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 10rem;
+  width: 100%;
+}
+.items h2 {
+  padding-top: 0.3rem;
+}
+.items h2:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.left-articles {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0px auto;
+  padding: 0.5rem;
+}
+
+.items--main {
+  margin: 0px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  cursor: pointer;
+}
+.items--main ul {
+  padding: 0px;
+  margin: 0.8rem;
+}
+.items--main li {
+  margin: 1rem;
+}
+.items--main a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.items--main h1:hover, .items--main h2:hover, .items--main li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.items--main img {
+  height: 10rem;
+  width: 100%;
+}
+.items--main img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.right-articles {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+.right-articles h2, .right-articles p {
+  margin: 0px;
+}
+.right-articles h2:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.border hr {
+  border-top: 2px solid black;
+}
+
+.only-bbc {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0px 2.5rem 0px;
+  cursor: pointer;
+}
+
+h2 {
+  margin: 0px;
+  font-size: 1.2rem;
+}
+
+.ads {
+  text-align: center;
+  border-top: black solid 1px;
+  border-bottom: black solid 1px;
+  background-color: rgb(249, 248, 248);
+  padding: 2.5ch;
+  margin-bottom: -25ch;
+  cursor: pointer;
+}
+.ads img {
+  width: 120ch;
+}
+
+.navigation-bar-header a {
+  text-decoration: none;
+  color: black;
+}/*# sourceMappingURL=home.css.map */

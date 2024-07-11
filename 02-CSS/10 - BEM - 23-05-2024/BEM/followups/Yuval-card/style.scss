@@ -1,0 +1,17 @@
+.multi-card{
+    border:1px solid #000;
+    padding:1rem;
+    background: linear-gradient(217deg, rgba(214, 201, 201, 0.8), rgba(255,0,0,0) 70.71%);
+    max-width: 50ch;
+    border-radius: 20px;
+    margin: .4rem;
+    &--correct{
+        background: linear-gradient(217deg, rgba(48, 197, 34, 0.8), rgba(255,0,0,0) 70.71%);
+    }
+    &--wrong{
+        background: linear-gradient(217deg, rgba(255, 38, 30, 0.8), rgba(255,0,0,0) 71.71%);
+    }
+    &--try-again{
+        background: linear-gradient(217deg, rgba(68, 243, 255, 0.8), rgba(255,0,0,0) 70.71%);
+    }
+}

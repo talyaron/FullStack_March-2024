@@ -1,0 +1,140 @@
+body {
+    margin: 0px auto;
+}
+
+.wrapper{
+    max-width: 1280px;
+    margin: 0px auto;
+}
+.header,.nav-bar {
+    text-align: center;
+    margin: 22px 0px 22px ;
+}
+
+.home-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    height: max-content;
+    max-width: fit-content;
+    margin: 1rem 0px 2rem 0px;
+    
+}
+
+.items {
+    height: fit-content;
+    cursor: pointer;
+    img{
+        object-fit: cover;
+        height: 10rem;
+        width: 100%;
+
+    }
+    h2{
+        padding-top: 0.3rem;
+        &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+
+.left-articles {
+    max-width: fit-content;
+    margin: 0px auto;
+    padding: 0.5rem;
+    
+}
+
+.items--main {
+    margin: 0px;
+    max-width: fit-content;
+    cursor: pointer;
+
+
+    ul{
+        padding: 0px;
+        margin: 0.8rem ;
+    }
+    li{
+        margin: 1rem,;
+
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-size: 1.2rem;
+
+    }
+    h1, h2, li{ 
+        &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    img{
+        height: 10rem;
+        width: 100%;
+
+        &:hover{
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
+}
+
+.right-articles {
+    max-width: fit-content;
+
+    h2, p {
+        margin: 0px;
+    }
+    h2{
+        &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+.border hr{
+    border-top: 2px solid black;
+}
+ 
+.only-bbc {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1.5rem 0px 2.5rem 0px;
+    cursor: pointer;
+
+}
+
+h2{
+    margin: 0px;
+    font-size: 1.2rem;
+}
+    .ads {
+        text-align: center;
+        border-top: black solid 1px;
+        border-bottom: black solid 1px;
+        background-color: rgb(249, 248, 248);
+        padding: 2.5ch;
+        margin-bottom: -25ch;
+        cursor: pointer;
+
+        img{
+            width: 120ch;
+        }
+    }
+
+    .navigation-bar-header{
+        a{
+            text-decoration: none;
+            color: black;
+            
+        }
+    }

@@ -1,0 +1,9 @@
+.button {
+  height: 40px;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  margin: 5px;
+}
+.button:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=button.css.map */

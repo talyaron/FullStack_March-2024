@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#icon {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  height: 50px;
+}
+
+.Accessibility_icon {
+  height: 60px;
+  position: fixed;
+  left: 40px;
+  bottom: 200px;
+}
+
+.menu {
+  display: flex;
+  height: 40px;
+  background-color: red;
+  align-items: center;
+  justify-content: space-around;
+}
+.menu a {
+  color: white;
+  font-size: large;
+  text-decoration: none;
+}
+
+.wrapper2 {
+  display: flex;
+  margin-top: 30px;
+}
+.wrapper2 .items {
+  width: 76%;
+}
+.wrapper2 .items a {
+  color: white;
+  font-size: large;
+  text-decoration: none;
+}
+.wrapper2 .items .item {
+  display: flex;
+  background-color: red;
+  height: 180px;
+  width: px;
+  margin-bottom: 10px;
+}
+.wrapper2 .items .item .content_item1 {
+  padding: 0px 15px 15px;
+  color: white;
+}
+.wrapper2 .items .item .img_item1 {
+  height: 180px;
+  width: 320px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wrapper2 .favorititems {
+  width: 24%;
+  margin-right: 5px;
+}
+.wrapper2 .favorititems .favorititems_title {
+  height: 35px;
+  background-color: blue;
+  font-size: large;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+.wrapper2 .favorititems .good_item_wrapper {
+  border-bottom: 1px solid rgb(128, 128, 128);
+  padding-bottom: 5px;
+}
+.wrapper2 .favorititems .good_item_wrapper .good_items {
+  display: flex;
+}
+.wrapper2 .favorititems .good_item_wrapper .good_items img {
+  width: 150px;
+  height: 100px;
+}
+.wrapper2 .favorititems .good_item_wrapper .good_items h4 {
+  padding-right: 10px;
+}
+.wrapper2 .favorititems .good_item_wrapper h6 {
+  padding-right: 10px;
+  margin: 10px 0px 10px 10px;
+}
+.wrapper2 .favorititems .good_item_wrapper a {
+  padding-right: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.Details {
+  width: 100%;
+  height: 200px;
+  background-color: rgb(0, 255, 255);
+  margin-top: 30px;
+  border-top: 2px solid;
+  padding-right: 20px;
+}
+.Details a {
+  text-decoration: none;
+}/*# sourceMappingURL=index.css.map */

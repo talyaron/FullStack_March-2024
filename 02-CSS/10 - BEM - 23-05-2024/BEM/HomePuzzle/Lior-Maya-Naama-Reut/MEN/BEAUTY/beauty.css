@@ -1,0 +1,279 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.upper-header {
+  width: 100%;
+  direction: rtl;
+  background-color: black;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upper-header .discount {
+  padding: 1rem;
+  margin: 0;
+  color: white;
+  font-weight: lighter;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.upper-header .discount:hover {
+  text-decoration: underline;
+}
+
+.lower-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.lower-header .icons {
+  display: flex;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+.lower-header .user-login {
+  cursor: pointer;
+}
+.lower-header .user-login p {
+  direction: rtl;
+}
+.lower-header .user-login p:hover {
+  text-decoration: underline;
+  color: gray;
+}
+
+.logo-container {
+  height: 4rem;
+  width: 100%;
+  background-image: url("https://dealcoupon.co.il/storage/medialibrary/1268/conversions/Terminal_X_logo-logo.png");
+  background-position: center center;
+  background-size: auto 100%;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+  flex: 1;
+  border-bottom: 1px solid #eee;
+  color: var(--menubar_color);
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  margin: 0 10px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  display: block;
+  color: black;
+  font-size: 1.4rem;
+  justify-content: space-between;
+  background-color: transparent;
+  font-family: "Roboto", "narkisblock", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.nav-menu a:hover {
+  -webkit-text-decoration: underline yellow;
+          text-decoration: underline yellow;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  margin-top: 2%;
+  display: flex;
+  margin-left: 20%;
+}
+.footer h1 {
+  margin-top: 30%;
+}
+.footer .icons {
+  display: flex;
+  color: black;
+  margin-left: -10%;
+  width: 68%;
+}
+.footer .icons .icon {
+  padding: 4%;
+  background-color: yellow;
+  border: 7px solid black;
+}
+.footer .my-terminal {
+  margin-left: 5%;
+}
+.footer .newsletter {
+  margin-left: 5%;
+}
+.footer .newsletter h1 {
+  font-size: 36px;
+}
+.footer .newsletter h3 {
+  margin-left: 6%;
+}
+.footer .newsletter .container {
+  margin-left: 25%;
+  width: 50%;
+  padding: 20px;
+}
+.footer .newsletter input[type=text], .footer .newsletter input[type=submit] {
+  width: 100%;
+  text-align: right;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(78, 76, 76);
+  box-sizing: border-box;
+  background-color: rgb(78, 76, 76);
+  color: white;
+}
+.footer .newsletter input[type=checkbox] {
+  margin-top: 16px;
+}
+.footer .newsletter input[type=submit] {
+  width: 40%;
+  margin-left: -40%;
+  margin-top: -80%;
+  background-color: white;
+  color: black;
+  border: none;
+}
+.footer .newsletter input[type=submit]:hover {
+  opacity: 0.8;
+  background-color: yellow;
+}
+.footer .terminal-x {
+  margin-left: 5%;
+}
+.footer .help {
+  margin-left: 6%;
+}
+
+h3 {
+  margin-top: 4%;
+  margin-left: 18%;
+}
+
+.download {
+  margin-left: 40%;
+  margin-top: -4%;
+}
+
+.payments {
+  margin-left: 64%;
+}
+
+p {
+  direction: rtl;
+}
+
+h2 {
+  font-family: "Manrope", sans-serif;
+  direction: rtl;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.ad-break {
+  align-items: center;
+  justify-content: center;
+  margin-left: 2%;
+  margin-bottom: 10px;
+  padding: 5%;
+  flex-wrap: wrap;
+}
+
+.best-categories h2 {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.category-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.best-categories img {
+  max-width: 50%;
+}
+
+.hot-sale, .on-trend, .best-brands {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+.hot-sale img, .best-brands img {
+  align-items: center;
+  max-width: 30%;
+  margin: 5px;
+}
+
+.on-trend img {
+  margin-left: 2%;
+  max-width: 50%;
+  margin: 5px;
+}
+
+.best-brands {
+  text-align: left;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+  flex-direction: row;
+  align-items: stretch;
+  position: relative;
+  justify-content: center;
+  margin: 0 0 16px;
+  max-width: 1200px;
+}
+
+.brand-grid img {
+  width: 100%;
+  height: auto;
+  border: 0 solid #f5f5f5;
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.shop-all-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.shop-all-button p:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.shop-all-button p {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+}/*# sourceMappingURL=beauty.css.map */

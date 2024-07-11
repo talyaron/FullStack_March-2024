@@ -1,0 +1,84 @@
+.search-bar {
+  direction: ltr;
+  margin-top: 5vh;
+  height: 8vh;
+  align-items: center;
+  display: flex;
+}
+.search-bar .button--discover {
+  border: 0;
+  background-color: #121212;
+  color: white;
+}
+.search-bar .button--browse {
+  border: 0;
+  background-color: #121212;
+  color: rgb(182, 181, 181);
+}
+.search-bar .button--browse:hover {
+  color: white;
+}
+.search-bar .button--news {
+  border: 0;
+  background-color: #121212;
+  color: rgb(182, 181, 181);
+}
+.search-bar .button--news:hover {
+  color: white;
+}
+.search-bar .search {
+  display: flex;
+  margin-left: 14vw;
+  height: 4vh;
+}
+.search-bar .search .material-icons {
+  background-color: rgb(182, 181, 181);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-right: 0;
+}
+.search-bar .search .material-icons:hover {
+  cursor: pointer;
+}
+.search-bar .search .search-input {
+  background-color: rgb(182, 181, 181);
+  border-left: 0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.sales {
+  margin-top: 2vh;
+}
+.sales .sales-cards {
+  display: flex;
+  margin-left: 14vw;
+}
+.sales .sales-cards img {
+  width: 25vw;
+  margin-right: 2vw;
+  border-radius: 20px;
+  transition: filter 0.3s ease;
+}
+.sales .sales-cards img:hover {
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+
+@media screen and (max-width: 1200px) {
+  .button--browse, .button--news {
+    display: none;
+  }
+  .search-input {
+    display: none;
+  }
+  .button--discover {
+    margin-left: 30vw;
+  }
+  .material-icons {
+    background-color: #121212;
+    color: #121212;
+  }
+}/*# sourceMappingURL=style.css.map */
