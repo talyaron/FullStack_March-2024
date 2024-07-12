@@ -1,4 +1,7 @@
-import './style.css'
+import { items } from "./models/itemsModel";
+import { itemsDiv, writeItemsToDOM } from "./views/itemsView";
+import './dist/styles.css';
+/*import './style.css'
 import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
@@ -22,3 +25,5 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+*/
+writeItemsToDOM(items, itemsDiv);
