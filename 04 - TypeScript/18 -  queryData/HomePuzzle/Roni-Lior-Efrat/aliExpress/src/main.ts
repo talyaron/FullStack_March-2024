@@ -2,9 +2,10 @@
 // import typescriptLogo from './typescript.svg'
 // import viteLogo from '/vite.svg'
 // import { setupCounter } from './counter.ts'
-import './styles/dist/style.css'
+
 import { renderItem } from './view/itemView.ts'
 import { Item } from './model/items.ts'
+import './styles/dist/style.css'
 
 // document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 //   <div>
@@ -25,5 +26,11 @@ import { Item } from './model/items.ts'
 // `
 
 // setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
-export const items: Item =  new Item("Titanic",100,"horror",100000);
+export const items: Item[] = 
+[ 
+    new Item("Titanic",100,"horror",100000),
+    new Item("Titanic",100,"horror",100000),
+    new Item("Titanic",100,"horror",100000),
+    new Item("Titanic",100,"horror",100000)
+];
 renderItem(items);
