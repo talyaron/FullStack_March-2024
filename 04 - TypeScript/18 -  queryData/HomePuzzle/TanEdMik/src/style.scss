@@ -1,8 +1,31 @@
 .card{
     width: 240px;
-    border:1px solid black;
     border-radius: 10px;
-  }
-  .product-img{
-    width:230px;
-  }
+    &:hover{
+        cursor: pointer;
+        border:1px solid grey;
+
+    }
+    .product-img{
+      width:230px;
+      height: 230px;
+      margin-top: 30px;
+    }
+    .card-writing{
+        margin-left: 10px;
+    }
+    .buttons{
+        text-align: center;
+        button{
+            background-color: black;
+            color: white;
+            height: 30px;
+            &:hover{
+                background-color: white;
+                color: black;
+                cursor: pointer;
+            }
+        }
+    }
+    }
+  
