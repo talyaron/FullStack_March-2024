@@ -1,0 +1,46 @@
+header{
+    width: 99vw;
+    background-color: black;
+    height: 150px;
+    direction: rtl;
+    .top-line{
+        .image{
+            background-image: url("./logo.png");
+           
+         
+            
+        }
+    }
+}
+body{
+.card{
+    width: 240px;
+    border-radius: 10px;
+    &:hover{
+        cursor: pointer;
+        border:1px solid grey;
+
+    }
+    .product-img{
+      width:230px;
+      height: 230px;
+      margin-top: 30px;
+    }
+    .card-writing{
+        margin-left: 10px;
+    }
+    .buttons{
+        text-align: center;
+        button{
+            background-color: black;
+            color: white;
+            height: 30px;
+            &:hover{
+                background-color: white;
+                color: black;
+                cursor: pointer;
+            }
+        }
+    }
+    }
+}
