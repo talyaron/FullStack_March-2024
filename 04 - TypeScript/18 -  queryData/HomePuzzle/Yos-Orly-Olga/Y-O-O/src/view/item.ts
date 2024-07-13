@@ -1,4 +1,8 @@
 import { Item } from "../model/itemModel";
+import { User } from "../model/userModel";
+import { renderHeader } from "./Header";
+
+const guest: User = { name: "Guest", email: "", password: "" };
 
 export function renderItem(item: Item): string {
   try {
@@ -12,6 +16,10 @@ export function renderItem(item: Item): string {
                 <p class="card-text">${item.description}</p>
                 <p class="card-text">Prise: ${item.price}$</p>
             </div>
+            <div class="card-buttons">
+                <button class="remote" oncklick="emptyFromUseCart(event)">remove</button>
+                <button class="remote" oncklick="addToUserCart(event)">add more items</button>
+                </div>
         </div>
         `;
     return html;
@@ -23,7 +31,8 @@ export function renderItem(item: Item): string {
 
 export function renderItems(items: Item[]): string {
   try {
-    let html = "<div class='wrapper'>";
+    let html = renderHeader(guest);
+    html += "<div class='wrapper'>";
     items.forEach((item) => {
       html += renderItem(item);
     });
