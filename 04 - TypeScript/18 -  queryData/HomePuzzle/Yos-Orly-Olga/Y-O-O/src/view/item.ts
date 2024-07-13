@@ -8,17 +8,20 @@ export function renderItem(item: Item): string {
   try {
     let html = `
         <div class="card">
+        <h3 class="card-title">${item.name}</h3>
             <div class="card-image">
                 <img class="card-img-top" src="${item.img}" alt="">
             </div>
             <div class="card-body">
-                <h3 class="card-title">${item.name}</h3>
+
                 <p class="card-text">${item.description}</p>
                 <p class="card-text">Prise: ${item.price}$</p>
+                <p class="card-text">In stock: ${item.quantity}</p>
+                <p class="card-text">In cart: <span id="inCart${item.id}">0</span></p>
             </div>
             <div class="card-buttons">
-                <button class="remote" oncklick="emptyFromUseCart(event)">remove</button>
-                <button class="remote" oncklick="addToUserCart(event)">add more items</button>
+                <button class="remote" onclick="emptyFromUseCart(event)">remove</button>
+                <button class="remote" onclick="addToUserCart(event)">add more items</button>
                 </div>
         </div>
         `;

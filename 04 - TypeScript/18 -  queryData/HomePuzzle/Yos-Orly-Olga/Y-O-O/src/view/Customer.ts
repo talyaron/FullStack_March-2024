@@ -16,10 +16,10 @@ export function renderHeaderCustomerCard(customer: User): string {
         console.log(customer.name);
         let html = '';
         if (customer.name === "Guest") {
-            html = `<div class="castomerCard"><i class='bx bx-user' style='color:#ffffff' ></i>Welcome Guest<br><button id="openDialog" onclick="showModal()">Register/Login</button></div>
+            html = `<div class="customerCard"><i class='bx bx-user' style='color:#ffffff' ></i>Welcome Guest<br><button id="openDialog" onclick="showModal()">Register/Login</button></div>`
             // ${Registration()}`;
         } else {
-            html = `<div class="castomerCard"><i class='bx bx-user' style='color:#ffffff' ></i>Welcome ${renderCustomerName(customer)}</div>`;
+            html = `<div class="customerCard"><i class='bx bx-user' style='color:#ffffff' ></i>Welcome ${renderCustomerName(customer)}</div>`;
         }
         return html;
     } catch (e) {
