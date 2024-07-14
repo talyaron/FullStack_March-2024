@@ -1,0 +1,18 @@
+.wrapper {
+  background-color: aquamarine;
+  width: 400px;
+}
+.wrapper img {
+  width: 100%;
+}
+.wrapper p {
+  color: blueviolet;
+}
+
+p {
+  color: rgb(16, 99, 71);
+}
+
+img {
+  width: 400px;
+}/*# sourceMappingURL=index.css.map */

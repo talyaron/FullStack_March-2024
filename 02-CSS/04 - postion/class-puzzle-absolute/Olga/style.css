@@ -1,0 +1,41 @@
+body {
+  max-width: 1200px;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 5px;
+}
+nav p {
+  margin: 0;
+}
+
+.title-blok-news {
+  background-color: blue;
+  color: white;
+  padding: 5px;
+}
+
+.preview {
+  display: flex;
+  justify-content: space-between;
+}
+
+.one-news {
+  font-weight: 600;
+}
+.one-news img {
+  width: 200px;
+}
+.one-news .date {
+  font-size: 0.8em;
+  color: darkgray;
+  text-align: right;
+}/*# sourceMappingURL=style.css.map */

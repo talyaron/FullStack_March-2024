@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="filter">
+        <label>Select a breed: </label>
+        <select id="breeds" onChange="handelBreedFilter(event)"></select>
+        <input type="button" value="Sort" onclick="handelSort(event)">
+    </div>
+    <div class="cards">
+        <div class="card"><h4>Test</h4>
+        <img src="./images/Labrador.jpg" alt="breed">
+        </div>
+    </div>
+    <script src="./dist/script.js" defer></script>
+</body>
+</html>

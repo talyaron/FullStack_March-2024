@@ -1,0 +1,83 @@
+@import "./buttons.scss","./header.scss","./styles.scss";
+
+.main-content-wrapper {
+  
+    width: 87%;
+    margin-left: 10px;
+    height: fit-content;
+
+    position: absolute;
+    left: 200px;
+    top: 65px;
+    padding: 10px;
+
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-weight: 500;
+
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #606060;
+    margin: 10px 0 10px 0;
+}
+
+p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #606060;
+    margin: 10px 0 10px 0;
+}
+
+.main-card-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+
+
+    // <!-- <move to card.scss> -->
+
+    .card-wrapper {
+
+        width: 258px;
+
+        .details-wrapper {
+            display: flex;
+            grid-template-columns: repeat(2);
+            grid-gap: 20px;
+            padding-top: 2rem;
+  
+        }
+
+       
+        .img-card-thumbnail {
+            border-radius: 12px;
+            display: block;
+            width: 100%;
+           
+        }
+
+   
+
+        .creator-thumbnail {
+            display: block;
+            width: 36px;
+            height: 36px;
+            object-fit: cover;
+            border-radius: 50%;
+
+        }
+
+    }
+
+
+
+
+}
+
+

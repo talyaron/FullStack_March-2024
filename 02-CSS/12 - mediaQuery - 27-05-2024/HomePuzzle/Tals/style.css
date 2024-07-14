@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+/* Default styles for all screen sizes */
+body {
+  margin: 0;
+  padding: 0;
+  color: #0f2145;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  background-color: #fcfdfd;
+}
+
+/* Styles for screens larger than 600px */
+@media (min-width: 600px) {
+  body {
+    font-size: 1.1rem;
+  }
+}
+/* Styles for screens larger than 900px */
+@media (min-width: 900px) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+/* Styles for screens larger than 1200px */
+@media (min-width: 1200px) {
+  body {
+    font-size: 1.3rem;
+  }
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 5rem;
+  border-bottom: 1px grey solid;
+}
+
+.left-nav,
+.middle-nav,
+.right-nav {
+  padding: 1rem;
+  align-items: center;
+}
+
+.left-nav {
+  align-items: center;
+  padding: 0;
+  margin-left: 2rem;
+}
+.left-nav .logo {
+  height: 3rem;
+  margin-top: 0.5rem;
+}
+.left-nav .trophy {
+  height: 2.8rem;
+}
+
+.middle-nav {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.middle-nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: center;
+  margin: 0px;
+}
+.middle-nav ul li {
+  margin: 0.7rem;
+}
+
+.right-nav {
+  display: flex;
+}
+.right-nav .menu {
+  height: 2rem;
+}
+.right-nav .adidas {
+  height: 3rem;
+  padding-right: 1rem;
+}
+.right-nav .emirates {
+  height: 2.5rem;
+  padding-right: 2rem;
+}
+.right-nav .btn {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #3e31fa;
+  background-color: #ffffff;
+  padding: 10px 13px;
+  border: solid #3e31fa 2px;
+  box-shadow: none;
+  border-radius: 13px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.main-article {
+  border-radius: 3rem;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  width: 90vw;
+}
+.main-article img {
+  height: 30rem;
+}
+.main-article img:hover {
+  cursor: pointer;
+  transition: opacity calc(var(--rm-animation-delay-ms) * 2) ease-in-out, transform calc(var(--rm-animation-delay-ms) * 8) ease-in-out;
+}
+.main-article p {
+  display: flex;
+  align-items: center;
+  color: #0f2145;
+  max-width: 30ch;
+  font-weight: bold;
+  font-size: 1.7rem;
+  padding: 0rem 2rem;
+  background-color: #f3f5f8;
+  margin: 0rem;
+}
+.main-article p:hover {
+  cursor: pointer;
+  transition: color calc(var(--rm-animation-delay-ms) * 5.33) ease-in-out;
+  transition: 700ms;
+  color: #3e31fa;
+}
+
+.ad {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #e1e5ea;
+  padding: 5%;
+}
+
+.secondary-articles {
+  display: flex;
+  justify-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 90vw;
+  margin: auto;
+}
+
+.article {
+  max-width: 20rem;
+  margin: 1.5rem;
+  display: block;
+}
+.article h4 {
+  font-size: 1.2rem;
+  margin: 0.4rem;
+  line-height: 1.1rem;
+  padding-top: 0.3rem;
+}
+.article img {
+  border-radius: 1.5rem;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.NE-header {
+  width: 87vw;
+  margin: auto;
+}
+.NE-header .filter {
+  display: flex;
+  flex-direction: row;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 0.5rem;
+  margin: 1rem;
+  color: #3e31fa;
+}
+.NE-header .filter p {
+  margin: 0px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.next-events {
+  width: 87vw;
+  margin: auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  width: -moz-max-content;
+  width: max-content;
+}
+.event img {
+  height: 12rem;
+  min-width: 24rem;
+  border-radius: 1rem;
+}
+.event .card {
+  background-color: white;
+  border: white 1px solid;
+  border-radius: 1rem;
+  margin-top: -2rem;
+}
+.event .card .filters ul {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.7rem;
+  color: #43526e;
+  font-weight: 500;
+  margin: 0px;
+  margin-top: 1rem;
+}
+.event .card .filters ul li {
+  margin-right: 1rem;
+}
+.event .card .info {
+  margin: 1rem;
+  margin-left: 2rem;
+  height: 12rem;
+}
+.event .card .info h5,
+.event .card .info h6,
+.event .card .info p {
+  margin: 0px;
+}
+.event .card .info h5 {
+  margin-bottom: 0.7rem;
+  font-size: 1.2rem;
+}
+.event .card .info #CL {
+  margin-bottom: 2rem;
+}
+.event .card .info h6 {
+  margin-bottom: 0.5rem;
+}
+.event .card .info p {
+  font-size: 1rem;
+  height: 1.5rem;
+}
+
+.news,
+.other-news {
+  width: 90vw;
+  margin: auto;
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.news .article-big,
+.other-news .article-big {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+}
+.news .article-big img,
+.other-news .article-big img {
+  border-radius: 1rem;
+}
+.news .article-big h3,
+.other-news .article-big h3 {
+  margin-top: 1rem;
+}
+
+.footer {
+  width: 90vw;
+  margin: auto;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+}
+.footer .football,
+.footer .basketball,
+.footer .club,
+.footer .list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.footer .football h6,
+.footer .football p,
+.footer .basketball h6,
+.footer .basketball p,
+.footer .club h6,
+.footer .club p,
+.footer .list h6,
+.footer .list p {
+  margin: 0px;
+  padding: 0.5rem;
+}
+.footer .football h6,
+.footer .basketball h6,
+.footer .club h6,
+.footer .list h6 {
+  font-size: 1rem;
+}
+.footer .football p,
+.footer .basketball p,
+.footer .club p,
+.footer .list p {
+  font-size: 0.9rem;
+  color: #5e6a83;
+}
+
+.main-article:hover, .article:hover, .article-big:hover {
+  cursor: pointer;
+  transition: color calc(var(--rm-animation-delay-ms) * 5.33) ease-in-out;
+  transition: 700ms;
+  color: #3e31fa;
+}/*# sourceMappingURL=style.css.map */

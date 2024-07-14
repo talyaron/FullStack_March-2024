@@ -1,0 +1,90 @@
+/* Header */
+header {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  letter-spacing: 1px;
+  font-family: system-ui;
+  height: 65px;
+  display: flex;
+  width: 100vw;
+  background-color: #122536;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+header .rightHeader {
+  display: flex;
+  align-items: center;
+}
+header .rightHeader .logo-big {
+  width: 137px;
+  height: 49px;
+  margin-right: 20px;
+}
+header .leftHeader {
+  display: flex;
+  align-items: center;
+  font-size: 23px;
+  color: white;
+  margin-left: 20px;
+}
+header .leftHeader .fa-facebook,
+header .leftHeader .fa-envelope-open-text,
+header .leftHeader .fa-magnifying-glass {
+  margin-left: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+header .leftHeader .fa-facebook:hover,
+header .leftHeader .fa-envelope-open-text:hover {
+  color: #2895ae;
+}
+header .leftHeader .forecast {
+  direction: ltr;
+}
+
+/* Nav bar */
+nav {
+  background-color: #dce9ed;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  height: 40px;
+  z-index: 100;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-block-start: 1em;
+  padding-inline-start: 40px;
+  list-style: none;
+  width: 100%;
+}
+nav ul li {
+  padding: 0 10px;
+  margin: 0;
+  font-family: system-ui;
+  font-size: 15px;
+  color: #122536;
+  text-align: center;
+  border-left: 1px solid black;
+  height: 20px;
+}
+nav ul li:hover {
+  background-color: #122536;
+  color: white;
+}
+nav ul li.logo {
+  display: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+nav ul li a.nope {
+  cursor: not-allowed;
+}/*# sourceMappingURL=header.css.map */

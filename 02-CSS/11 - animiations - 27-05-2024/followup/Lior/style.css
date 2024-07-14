@@ -1,0 +1,29 @@
+.ball {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(196, 99, 159);
+  border-radius: 50px;
+  position: absolute;
+  animation-name: walk;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+@keyframes walk {
+  0% {
+    left: 0;
+    top: 0;
+    transform: rotate(0deg);
+  }
+  40% {
+    left: 200px;
+    top: 200px;
+    transform: rotate(360deg);
+  }
+  100% {
+    left: 400px;
+    top: 150px;
+    transform: rotate(720deg);
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,31 @@
+#boom, #monster{
+    height: 100px;
+    width: 100px;
+}
+
+body{
+    background-image: url("https://imagedelivery.net/9sCnq8t6WEGNay0RAQNdvQ/UUID-cl90hkwgj839359tqyu3s87yii/public");
+    height: 98vh;
+    width: 98vw;
+}
+
+#monster, #boom{
+    position: absolute;
+    transition: left 2s, top 2s;
+}
+#boom{
+    display: none;
+}
+
+#score{
+    background-color: black;
+    color: red;
+    height: 80px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    position: absolute;
+    left: 45%;
+}

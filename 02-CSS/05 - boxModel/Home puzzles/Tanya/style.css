@@ -1,0 +1,273 @@
+* {
+  direction: rtl;
+}
+
+body {
+  width: 100vw;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body header {
+  position: relative;
+}
+body header img {
+  width: 98vw;
+}
+body nav {
+  background-color: #de1a1a;
+  height: 28px;
+  width: 98vw;
+}
+body nav ul {
+  list-style-type: none;
+  margin: 5px;
+  padding: 5px 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20px;
+}
+body nav ul li {
+  width: 80px;
+  text-align: center;
+}
+body nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 0 10px;
+}
+body nav ul li a:hover {
+  font-weight: bold;
+}
+body nav ul li a.more {
+  margin-top: 5px;
+  border: 2px white solid;
+  border-radius: 20px;
+  width: 40px;
+}
+body .newsBanner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 150px;
+  width: 98vw;
+  background-color: #ebeff0;
+}
+body .newsBanner .flashes {
+  position: relative;
+  width: 120px;
+  height: 100%;
+  background-color: #f3f8f9;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1), 5px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .newsBanner .flashes .bell {
+  border: 2px red solid;
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .newsBanner .flashes .bell .fa-bell {
+  color: white;
+  animation: ring 4s 0.7s ease-in-out infinite;
+  transform-origin: 50% 4px;
+}
+body .newsBanner .flashes h3 {
+  margin: 0;
+  text-align: center;
+  margin-top: 5px;
+}
+body .newsBanner .flashes .updates {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+body .newsBanner .flashes .updates h4 {
+  border: 2px black solid;
+  border-radius: 20px;
+  width: 100px;
+  margin-right: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+body .newsBanner .arrowRight {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: white;
+  color: red;
+  text-align: center;
+}
+body .newsBanner .arrowRight h2 {
+  margin: 0px;
+}
+body .newsBanner .newsArticle {
+  width: 280px;
+  height: 125px;
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+body .newsBanner .newsArticle h4 {
+  margin: 5px;
+}
+body .newsBanner .newsArticle h4:first-child {
+  color: grey;
+}
+body .newsBanner .newsArticle .signs {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  display: flex;
+  align-items: center;
+}
+body .newsBanner .newsArticle .signs a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  line-height: 30px;
+  margin-right: 5px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+body .newsBanner .newsArticle .signs i,
+body .newsBanner .newsArticle .signs h2 {
+  font-size: 15px;
+  margin: 0;
+}
+body .newsBanner .newsArticle .signs h2 {
+  color: black;
+}
+body .newsBanner .newsArticle .signs i:hover {
+  color: blue;
+}
+
+article {
+  padding: 20px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+article h3, article h2, article h4, article h5 {
+  margin: 10px 0;
+  clear: both;
+  width: 100%;
+}
+article h3 {
+  margin-top: 0px;
+  font-size: 16px;
+  color: black;
+}
+article h2 {
+  font-size: 24px;
+}
+article h4 {
+  font-size: 18px;
+  line-height: 1.5;
+}
+article h5 {
+  font-size: 14px;
+  color: grey;
+}
+article .text-content {
+  float: right;
+  width: 45%;
+}
+article img {
+  float: left;
+  width: 50%;
+  margin-right: 20px;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0);
+  }
+  1% {
+    transform: rotate(30deg);
+  }
+  3% {
+    transform: rotate(-28deg);
+  }
+  5% {
+    transform: rotate(34deg);
+  }
+  7% {
+    transform: rotate(-32deg);
+  }
+  9% {
+    transform: rotate(30deg);
+  }
+  11% {
+    transform: rotate(-28deg);
+  }
+  13% {
+    transform: rotate(26deg);
+  }
+  15% {
+    transform: rotate(-24deg);
+  }
+  17% {
+    transform: rotate(22deg);
+  }
+  19% {
+    transform: rotate(-20deg);
+  }
+  21% {
+    transform: rotate(18deg);
+  }
+  23% {
+    transform: rotate(-16deg);
+  }
+  25% {
+    transform: rotate(14deg);
+  }
+  27% {
+    transform: rotate(-12deg);
+  }
+  29% {
+    transform: rotate(10deg);
+  }
+  31% {
+    transform: rotate(-8deg);
+  }
+  33% {
+    transform: rotate(6deg);
+  }
+  35% {
+    transform: rotate(-4deg);
+  }
+  37% {
+    transform: rotate(2deg);
+  }
+  39% {
+    transform: rotate(-1deg);
+  }
+  41% {
+    transform: rotate(1deg);
+  }
+  43% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}/*# sourceMappingURL=style.css.map */

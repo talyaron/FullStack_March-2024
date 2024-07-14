@@ -1,0 +1,277 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.main {
+  display: flex;
+  margin-top: 1rem;
+  max-width: 90%;
+}
+.main .sidebar {
+  position: sticky;
+  top: 80px;
+  flex: 0.3;
+  border-radius: 10px;
+  text-align: left;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 10rem;
+}
+.main .sidebar__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: white;
+  padding-bottom: 10px;
+}
+.main .sidebar__top img {
+  margin-bottom: -32px;
+  width: 100%;
+  height: 70px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main .sidebar__top .profilepic {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 10px;
+}
+.main .sidebar__top .profilepic img {
+  width: 35%;
+  border-radius: 100%;
+  margin-bottom: 7px;
+  margin-top: 5px;
+}
+.main .sidebar__top .profilepic h4 {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: rgb(34, 34, 34);
+}
+.main .sidebar__middle {
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid lightgray;
+  background-color: white;
+  border-radius: 10px;
+}
+.main .sidebar__middle h6 {
+  color: rgb(116, 114, 114);
+  font-weight: 100;
+  font-size: 80%;
+}
+.main .sidebar__bottom {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  background-color: white;
+}
+.main .sidebar__bottom .analytics {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.main .sidebar__bottom .analytics p {
+  font-size: 75%;
+  font-weight: 600;
+}
+.main .sidebar__bottom .analytics .number {
+  color: rgb(35, 92, 238);
+}
+.main .sidebar__bottom .sidebar__options {
+  border-top: 1px solid lightgrey;
+}
+.main .sidebar__bottom .sidebar__options .sidebarIcons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.main .sidebar__bottom .sidebar__options .sidebarIcons h3 {
+  font-size: 80%;
+}
+.main .feed {
+  flex: 0.8;
+  margin-left: 2rem;
+}
+.main .feed .feed__start {
+  border: 1px solid lightgray;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+.main .feed .feed__input {
+  display: flex;
+  color: rgb(93, 90, 90);
+  padding-left: 15px;
+}
+.main .feed .feed__input img {
+  width: 10%;
+  border-radius: 100%;
+}
+.main .feed .feed__input form {
+  display: flex;
+  width: 100%;
+}
+.main .feed .feed__input form input {
+  border: 1.3px rgb(141, 140, 140) solid;
+  padding: 3%;
+  border-radius: 25px;
+  flex: 1;
+  margin-left: 10px;
+  color: rgb(12, 11, 11);
+  font-size: 90%;
+}
+.main .feed .feed__inputOptions {
+  display: flex;
+  justify-content: space-evenly;
+}
+.main .feed .feed__inputOptions :hover {
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+.main .feed .feed__inputOptions .inputOptions {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  gap: 0.5rem;
+  color: rgb(106, 104, 104);
+  padding: 10px;
+}
+.main .feed .feed__inputOptions .inputOptions h3 {
+  font-size: 90%;
+}
+.main .sortbar {
+  margin-top: 1rem;
+  border-top: 0.08rem solid rgb(189, 187, 187);
+}
+.main .posts {
+  border: 1px solid lightgray;
+  background-color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+.main .posts .comment-bar .comment-header {
+  display: flex;
+  font-size: 0.6rem;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+.main .posts .comment-bar .comment-header img {
+  width: 8%;
+  border-radius: 100%;
+}
+.main .posts .comment-bar .comment-header .comment__space form {
+  display: flex;
+}
+.main .posts .comment-bar .comment-header .comment__space form input {
+  border: 1.3px rgb(141, 140, 140) solid;
+  padding: 3%;
+  border-radius: 25px;
+  flex: 1;
+  margin-left: 0.02rem;
+  color: rgb(12, 11, 11);
+  font-size: 0.8rem;
+  width: 30rem;
+}
+.main .posts .post-header {
+  display: flex;
+  margin-bottom: 10px;
+}
+.main .posts .post-header img {
+  width: 10%;
+  border-radius: 100%;
+}
+.main .posts .post-header .post__info {
+  margin-left: 10px;
+}
+.main .posts .post-header .post__info p {
+  font-size: 12px;
+  color: grey;
+}
+.main .posts .post-header .post__info h2 {
+  font-size: 15px;
+}
+.main .posts .post-body {
+  margin-bottom: 30px;
+}
+.main .posts .post-body img {
+  width: 40rem;
+}
+.main .posts .post__options {
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 1px solid lightgray;
+  padding-top: 0.5rem;
+}
+.main .posts .post__options :hover {
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+.main .posts .post__options .postIcons {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  gap: 0.5rem;
+  color: rgb(68, 66, 66);
+  padding: 10px;
+  font-size: 70%;
+}
+.main .recommendations {
+  position: sticky;
+  top: 5rem;
+  flex: 0.4;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  margin-left: 2rem;
+}
+.main .recommendations .recommendations__header {
+  font-size: 0.7rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+.main .recommendations .add__options {
+  margin-top: 1rem;
+}
+.main .recommendations .add__options .post-header {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.1rem;
+}
+.main .recommendations .add__options .post-header img {
+  width: 3.5rem;
+  border-radius: 100%;
+}
+.main .recommendations .add__options .post-header h2 {
+  font-size: 1rem;
+}
+.main .recommendations .add__options .post-header p {
+  color: gray;
+  font-size: 0.8rem;
+}
+.main .recommendations .add__options .follow {
+  margin-top: 0.5rem;
+  margin-left: 3.5rem;
+  padding: 0.25rem;
+  padding-left: 1rem;
+  width: 5.2rem;
+  border-radius: 2rem;
+  border: 0.12rem solid rgb(132, 130, 130);
+}
+.main .recommendations .add__options .follow h2 {
+  font-size: 1rem;
+  color: rgb(51, 51, 51);
+}/*# sourceMappingURL=style.css.map */

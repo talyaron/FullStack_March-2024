@@ -1,0 +1,62 @@
+header {
+  height: 4rem;
+  display: flex;
+  direction: rtl;
+  align-items: center;
+  border-bottom: solid rgb(237, 234, 234) 5px;
+}
+header #a-logo {
+  height: 100%;
+  padding: 0px;
+  margin-right: 17rem;
+}
+header #a-logo #logo {
+  height: 80%;
+}
+header #a-logo #logo:hover {
+  height: 90%;
+}
+header #burger {
+  height: 30px;
+  background-color: rgb(238, 233, 233);
+  padding: 5px 0 5px 0;
+}
+header #searchbar {
+  height: 40px;
+  border-radius: 20px 0 0 20px;
+}
+header #jumper {
+  height: 45%;
+  margin-right: 200px;
+  margin-left: 100px;
+}
+header #jumper:hover {
+  height: 50%;
+}
+
+.header-input {
+  border: 0;
+  border-radius: 0 20px 20px 0;
+  margin: 10px 40px 10px 0px;
+  background-color: rgb(238, 233, 233);
+  font-size: 15px;
+  min-width: 230px;
+  height: 40px;
+}
+
+.button--sign {
+  background-color: #d6e33d;
+}
+.button--sign:hover {
+  color: white;
+  background-color: #22a5ff;
+}
+
+.button--facebook {
+  background-color: #365899;
+  color: white;
+}
+.button--facebook:hover {
+  color: white;
+  background-color: #22a5ff;
+}/*# sourceMappingURL=header.css.map */

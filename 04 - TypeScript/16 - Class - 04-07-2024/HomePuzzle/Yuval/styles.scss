@@ -1,0 +1,39 @@
+#farm {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("https://static6.depositphotos.com/1054213/643/i/450/depositphotos_6432114-stock-photo-arable-land.jpg");
+    background-size: cover;
+    position: relative;
+
+    .animals {
+        position: absolute;
+        width: 10%;
+        height: 10%;
+        transition: transform 0.2s;
+
+        img {
+            width: 200px;
+            height: 200px;
+
+            object-fit: contain;
+            transform: scaleX(1);
+            border-radius: 50%;
+        }
+    }
+   
+    .animal__button {
+        display: block;
+        width: 30%;
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        cursor: pointer;
+        
+
+    
+}
+}

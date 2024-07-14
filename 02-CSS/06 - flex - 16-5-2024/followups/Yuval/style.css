@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  height: 10vh;
+}
+.container .box {
+  background-color: aqua;
+}/*# sourceMappingURL=style.css.map */

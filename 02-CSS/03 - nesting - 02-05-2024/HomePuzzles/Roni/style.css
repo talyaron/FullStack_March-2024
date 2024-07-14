@@ -1,0 +1,34 @@
+.wrapper {
+  width: 800px;
+  text-align: center;
+  margin: auto;
+  background-color: rgb(230, 231, 232);
+  padding: 50px;
+  border: 2px black solid;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hyperlinks {
+  background-color: white;
+}
+.hyperlinks img {
+  width: 50px;
+}
+
+.profesional {
+  padding: 10px;
+  margin: 10px;
+  border: solid rgb(242, 242, 242) 3px;
+}
+.profesional img {
+  width: 350px;
+}
+
+.personal {
+  border: solid rgb(242, 242, 242) 3px;
+  padding: 10px;
+  margin: 10px;
+}
+.personal img {
+  width: 350px;
+}/*# sourceMappingURL=style.css.map */

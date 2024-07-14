@@ -1,0 +1,16 @@
+body {
+    height: 100vw;
+
+    #arrow {
+        height: 206px;
+        width: 206px;
+        position: absolute;
+        display: none;
+        transform: translate(-50%, -50%);
+    }
+
+    #balloon {
+        height: 150px;
+        width: 150px;
+    }
+}
