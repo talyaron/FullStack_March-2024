@@ -15,8 +15,8 @@ export function renderHeader(user: User): string {
         <div class="topMenu">
             <img src="${logo}" alt="logo" />
             <input type="search" name="search" id="search" />
-            <div class="castomerCard">${renderHeaderCustomerCard(user)}</div>
-            <button class="cartHeader"><i class='bx bx-cart-alt cartHeader' style='color:#ffffff' ></i><span id="inCart" class="cartHeader">0</span></button>
+            <div class="customerCard">${renderHeaderCustomerCard(user)}</div>
+            <button class="cartHeader"><i class='bx bx-cart-alt cartHeader' style='color:#ffffff' ></i><span id="inCart" class="cartHeader">${user.itemsInCart?.length}</span></button>
         </div>
         <nav>
             <ul>

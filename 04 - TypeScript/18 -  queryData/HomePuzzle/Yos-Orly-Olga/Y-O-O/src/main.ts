@@ -5,12 +5,13 @@
 import { renderCart, renderItems } from './view/item.ts'
 import { items } from './model/itemModel'
 import './view/dist/item.css'
-import { User } from './model/userModel'
+import { User, calculateTotalPrice } from './model/userModel'
 import { renderHeader } from './view/Header.ts'
 import { setupCounter } from './counter.ts'
 
 
-let currentCustomer: User = { name: "Guest", email: "", password: "", itemsInCart: [], totalPrice: 0 };
+let currentCustomer: User = { name: "Guest", email: "", password: "", itemsInCart: []};
+console.log(calculateTotalPrice(currentCustomer))
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderHeader(currentCustomer) + renderItems(items)
 
@@ -30,8 +31,17 @@ document.addEventListener("click", (event) => {
         console.log(Array.from(document.querySelectorAll(".addToCart")).indexOf(event.target as HTMLElement))
         const item = items[Array.from(document.querySelectorAll(".addToCart")).indexOf(event.target as HTMLElement)];
         currentCustomer.itemsInCart?.push(item)
-        console.log(item)
-        setupCounter(document.querySelector<HTMLSpanElement>('#' + item.id)!, item)
+        // currentCustomer.itemsInCartDict[item.name] = 1
+        // console.log(currentCustomer.itemsInCartDict)
+        // setupCounter(document.querySelector<HTMLSpanElement>('#' + item.id)!, item)
+        document.querySelector<HTMLSpanElement>('#inCart')!.innerHTML = String(currentCustomer.itemsInCart?.length)
+        console.log(item.quantity, Number(document.querySelector<HTMLSpanElement>('#' + item.id)?.innerHTML))
+        if (item.quantity > Number(document.querySelector<HTMLSpanElement>('#' + item.id)?.innerHTML)) {
+            console.log('true')
+            document.querySelector<HTMLSpanElement>('#' + item.id)!.innerHTML = String(Number(document.querySelector<HTMLSpanElement>('#' + item.id)!.innerHTML) + 1)
+        }
+        // document.querySelector<HTMLSpanElement>('#' + item.id)!.innerHTML = String(Number(document.querySelector<HTMLSpanElement>('#' + item.id)!.innerHTML) + 1)
+
         // document.querySelector<HTMLSpanElement>('#' + item.id)!.innerHTML = "1"
         // document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderHeader(currentCustomer) + renderItems(items)
             // if (item) {
@@ -40,7 +50,7 @@ document.addEventListener("click", (event) => {
             //     console.dir(currentCustomer)
             //     // item.quantity = item.quantity + 1
             // }
-        
+
     }
     // document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderHeader(currentCustomer) + renderItems(items)
 })

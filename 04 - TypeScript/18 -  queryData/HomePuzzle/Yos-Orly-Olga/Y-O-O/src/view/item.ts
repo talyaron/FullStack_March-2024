@@ -1,5 +1,5 @@
 import { Item } from "../model/itemModel";
-import { User } from "../model/userModel.ts";
+import { User, calculateTotalPrice } from "../model/userModel.ts";
 // import { renderHeader } from "./Header";
 
 // const guest: User = { name: "Guest", email: "", password: "" };
@@ -60,7 +60,7 @@ export function renderCart(user: User): string {
       items.forEach((item) => {
         html += renderItem(item);
       });
-      html += `</div><p>Total price: ${user.calculateTotalPrice()}</p><button class='buy'>Buy</button>`;
+      html += `</div><h1>Total price: ${calculateTotalPrice(user)}</h1><button class='buy'>Buy</button>`;
     }
     console.log(user.itemsInCart)
     return html;
