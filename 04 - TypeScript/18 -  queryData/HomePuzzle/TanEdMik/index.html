@@ -1,14 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="product"></div>
-    <script type="module" src="/src/main.ts"></script>
-    <script src="./src/dist/products.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="./src/dist/style.css">
+</head>
+<body>
+    <button class="go-to-cart" onclick="goToCart()">Go to cart</button>
+    <div id="product-container" class="product-container"></div>
+    <script type="module" src="./src/dist/products.js"></script>
+</body>
 </html>
