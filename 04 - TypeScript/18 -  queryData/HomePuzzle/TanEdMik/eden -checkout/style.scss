@@ -1,0 +1,136 @@
+// h1 {
+//   margin-left: 85%;
+//   color: red;
+// }
+
+// p {
+//   border-style: solid;
+//   border-color: rgba(255, 255, 255, 0.973);
+//   margin-left: 85%;
+//   //   border-radius: 10%;
+//   background-clip: content-box;
+//   background-color: white;
+//   border-left: 50%;
+//   border-right: 50%;
+//   border-top: 50%;
+//   font-size: medium;
+// }
+
+// body {
+//   background-color: rgba(186, 33, 33, 0.515);
+// }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f579;
+}
+
+header {
+  background-color: #ff4747;
+  color: white;
+  padding: 1rem;
+}
+
+main {
+  padding: 1rem;
+  background-color: white;
+}
+
+h2 {
+  color: #333;
+}
+
+.order-summary,
+.shipping-details,
+.payment-details {
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.order-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.item-details h3 {
+  margin: 0;
+}
+
+.item-details p {
+  margin: 0.5rem 0;
+}
+
+.order-total p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #ff4747;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: larger;
+}
+
+button:hover {
+  background-color: #e63939;
+}
+
+footer {
+  background-color: white;
+  color: red;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.star-container {
+  position: relative;
+  display: inline-block;
+}
+
+.star {
+  position: absolute;
+  top: -1.4rem; /* Adjust to position the star above the "i" */
+  left: 1rem;
+  right: 5rem;
+  font-size: 1.5rem; /* Adjust size of the star */
+  color: gold; /* Color of the star */
+}
+
+.span {
+  right: 50rem;
+  left: 50rem;
+}
