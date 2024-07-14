@@ -31,7 +31,6 @@ header {
   background-color: #ff4747;
   color: white;
   padding: 1rem;
-  text-align: center;
 }
 
 main {
@@ -60,8 +59,8 @@ h2 {
 }
 
 .order-item img {
-  width: 0px;
-  height: 10px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
 }
 
@@ -115,4 +114,18 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.star-container {
+  position: relative;
+  display: inline-block;
+}
+
+.star {
+  position: absolute;
+  top: -1.4rem; /* Adjust to position the star above the "i" */
+  left: 1rem;
+  right: 5rem;
+  font-size: 1.5rem; /* Adjust size of the star */
+  color: gold; /* Color of the star */
 }
