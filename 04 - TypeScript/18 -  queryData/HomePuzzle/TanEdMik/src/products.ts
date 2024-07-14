@@ -7,7 +7,6 @@ class Product {
     price: number;
     inventory: number;
     quantity: number;
-
     constructor(image: string, name: string, type: string, price: number, inventory: number, quantity: number = 0) {
         this.image = image;
         this.name = name;
@@ -17,11 +16,9 @@ class Product {
         this.quantity = quantity;
         this.id = makeId();
     }
-
     updateInventory(addedQuantity: number) {
         this.inventory += addedQuantity;
     }
-
     decreaseInventory(quantity: number) {
         if (this.inventory >= quantity) {
             this.inventory -= quantity;
@@ -29,7 +26,6 @@ class Product {
             throw new Error("Sorry, product ran out of stock");
         }
     }
-
     increaseQuantity(quantity: number) {
         this.quantity += quantity;
     }
@@ -51,7 +47,6 @@ function getStoredProducts(): Product[] {
     }
     return JSON.parse(storedProducts).map((product: any) => new Product(product.image, product.name, product.type, product.price, product.inventory, product.quantity));
 }
-
 function getStoredCart(): Product[] {
     const storedCart = localStorage.getItem('cart');
     return storedCart ? JSON.parse(storedCart).map((product: any) => new Product(product.image, product.name, product.type, product.price, product.inventory, product.quantity)) : [];
@@ -69,7 +64,6 @@ function renderProduct(product: Product): string {
             <button class="remove-from-products">Remove</button>
         </div>`;
 }
-
 function renderProducts(products: Product[], element: HTMLElement | null) {
     if (!element) {
         throw new Error("No root element found.");
@@ -83,7 +77,6 @@ function renderProducts(products: Product[], element: HTMLElement | null) {
             if (productId) addToCart(Number(productId));
         });
     });
-
     element.querySelectorAll('.remove-from-products').forEach(button => {
         button.addEventListener('click', () => {
             const productId = button.closest('.product')?.getAttribute('data-id');
@@ -119,23 +112,19 @@ function addToCart(productId: number) {
 
 function removeFromProducts(productId: number) {
     const productIndex = products.findIndex(p => p.id === productId);
+    const initialProduct = productArray.find(p => p.id === productId);
     if (productIndex === -1) return;
-
     const product = products[productIndex];
     const cartItemIndex = cart.findIndex(p => p.id === productId);
     if (cartItemIndex !== -1) {
         const cartItem = cart[cartItemIndex];
-        product.updateInventory(cartItem.quantity); // Restore inventory
-        cart.splice(cartItemIndex, 1); // Remove from cart
+        product.updateInventory(cartItem.quantity); 
+        cart.splice(cartItemIndex, 1); 
     }
-    product.quantity = 0; 
-
-    // Find initial product from productArray
-    const initialProduct = productArray.find(p => p.id === productId);
+    product.quantity = 0;
     if (initialProduct) {
-        product.inventory = initialProduct.inventory; // Reset inventory to initial value
+        product.inventory = initialProduct.inventory; 
     }
-
     updateLocalStorage();
     renderProducts(products, root);
 }
