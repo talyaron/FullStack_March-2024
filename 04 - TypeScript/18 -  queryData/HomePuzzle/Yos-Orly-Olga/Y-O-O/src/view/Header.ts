@@ -5,15 +5,18 @@ import { renderHeaderCustomerCard } from "./Customer";
 // import { guest } from "../models/customerModel";
 // import { currentCustomer } from "../controllers/RegistrationController";
 import { User } from "../model/userModel";
+// import { renderCart } from "./item";
+// import { Item } from "../model/itemModel";
 
 export function renderHeader(user: User): string {
   try {
     const html = `<header>
+    <div class="menu">
         <div class="topMenu">
             <img src="${logo}" alt="logo" />
             <input type="search" name="search" id="search" />
             <div class="castomerCard">${renderHeaderCustomerCard(user)}</div>
-            <div class="cart"><i class='bx bx-cart-alt' style='color:#ffffff' ></i>4</div>
+            <button class="cartHeader"><i class='bx bx-cart-alt cartHeader' style='color:#ffffff' ></i><span id="inCart" class="cartHeader">0</span></button>
         </div>
         <nav>
             <ul>
@@ -28,6 +31,7 @@ export function renderHeader(user: User): string {
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+    </div>
     </header>
     `;
     return html;

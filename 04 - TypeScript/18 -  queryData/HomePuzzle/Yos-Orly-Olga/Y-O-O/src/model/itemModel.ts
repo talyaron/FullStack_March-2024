@@ -3,7 +3,7 @@ import phone from '../assets/phone.jpg'
 import tablet from '../assets/tablet.jpg'
 
 export class Item {
-    id: string = crypto.randomUUID()
+    id: string = 'b' + crypto.randomUUID()
     name: string
     img: string
     description: string

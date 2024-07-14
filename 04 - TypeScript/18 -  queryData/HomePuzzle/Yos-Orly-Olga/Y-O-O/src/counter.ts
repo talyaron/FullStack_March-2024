@@ -1,9 +1,13 @@
-export function setupCounter(element: HTMLButtonElement) {
-  let counter = 0
+import { Item } from "./model/itemModel";
+
+export function setupCounter(element: HTMLSpanElement, item: Item) {
+  let counter = 0;
   const setCounter = (count: number) => {
-    counter = count
-    element.innerHTML = `count is ${counter}`
-  }
-  element.addEventListener('click', () => setCounter(counter + 1))
-  setCounter(0)
+    if (item.quantity > count) {
+      counter = count;
+      element.innerHTML = `${counter}`;
+    }
+  };
+  element.addEventListener("click", () => setCounter(counter + 1));
+  setCounter(0);
 }

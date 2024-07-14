@@ -13,7 +13,6 @@ export function renderCustomerName(customer: User): string {
 
 export function renderHeaderCustomerCard(customer: User): string {
     try {
-        console.log(customer.name);
         let html = '';
         if (customer.name === "Guest") {
             html = `<div class="customerCard"><i class='bx bx-user' style='color:#ffffff' ></i>Welcome Guest<br><button id="openDialog" onclick="showModal()">Register/Login</button></div>`
