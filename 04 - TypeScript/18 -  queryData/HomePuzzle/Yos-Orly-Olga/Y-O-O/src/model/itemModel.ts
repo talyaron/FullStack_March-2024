@@ -1,7 +1,9 @@
-import laptop from '../assets/laptop.jpg'
+import laplop from '../assets/laptop.jpg'
+import phone from '../assets/phone.jpg'
+import tablet from '../assets/tablet.jpg'
 
 export class Item {
-    id: string = crypto.randomUUID()
+    id: string = 'b' + crypto.randomUUID()
     name: string
     img: string
     description: string
@@ -18,7 +20,7 @@ export class Item {
 }
 
 export const items: Item[] = [
-    new Item('Laptop', laptop, 'Laptop', 3000, 2),
-    new Item('Phone', 'https://picsum.photos/200/300', 'Phone', 2000, 1),
-    new Item('Tablet', 'https://picsum.photos/200/300', 'Tablet', 1000, 3)
+    new Item('Laptop', laplop, 'Laptop', 3000, 2),
+    new Item('Phone', phone, 'Phone', 2000, 1),
+    new Item('Tablet', tablet, 'Tablet', 1000, 3)
 ]
