@@ -10,6 +10,10 @@ class Item {
         this.id = crypto.randomUUID();
         this.inStock = inStock;
     }
+
+    notInStock(){
+        this.inStock = false;
+    }
 }
 
 class Buyer {
@@ -40,6 +44,8 @@ const buyers = [maya, michael, yos];
 
 maya.addItem(item1.id);
 maya.addItem(item2.id);
+item1.notInStock();
+michael.addItem(item1.id);
 
 console.log(buyers);
 console.log(items);

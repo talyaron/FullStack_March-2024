@@ -35,8 +35,13 @@ function renderProduct(product:Product):string|undefined{
     const html= `<div class="card one">
     <div class="product">
     <img class="product-img" src="${product.img}" alt="${product.name}">
-    <p>${product.name}</p>
-    <h3>${product.price}$</h3>
+    <p class="card-writing">${product.name}</p>
+    <h3 class="card-writing">${product.price}$</h3>
+    <p class="card-writing">in stock : ${product.inventory}</p>
+    <div class="buttons" style="margin-bottom:10px;">
+    <button>Add to cart</button>
+    <button>Remove from cart</button>
+    </div>
     </div>
     </div>`;
     return html;
