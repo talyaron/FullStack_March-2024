@@ -5,32 +5,18 @@
 
 import { renderItem } from './view/itemView.ts'
 import { Item } from './model/items.ts'
-import './styles/dist/style.css'
+import './styles/style.scss';
 
-// document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-//   <div>
-//     <a href="https://vitejs.dev" target="_blank">
-//       <img src="${viteLogo}" class="logo" alt="Vite logo" />
-//     </a>
-//     <a href="https://www.typescriptlang.org/" target="_blank">
-//       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-//     </a>
-//     <h1>Vite + TypeScript</h1>
-//     <div class="card">
-//       <button id="counter" type="button"></button>
-//     </div>
-//     <p class="read-the-docs">
-//       Click on the Vite and TypeScript logos to learn more
-//     </p>
-//   </div>
-// `
 
-// setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+
 export const items: Item[] = 
 [ 
-    new Item("Titanic",100,"horror",100000),
-    new Item("Titanic",100,"horror",100000),
-    new Item("Titanic",100,"horror",100000),
-    new Item("Titanic",100,"horror",100000)
+    new Item("Item 1",100,"horror",1),
+    new Item("Item 2",30,"horror",3),
+    new Item("Item 3",200,"horror",10),
+    new Item("Item 1",1000,"horror",5)
 ];
 renderItem(items);
+//Add events to DOM
+// const addItem = document.querySelectorAll('.add').forEach(btn=> btn.addEventListener('click',addToUserCart));
+
