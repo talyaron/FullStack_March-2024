@@ -62,7 +62,15 @@ document.addEventListener("click", (event) => {
 
 document.addEventListener("click", (event) => {
     if (event.target && (event.target as HTMLElement).classList.contains("buy")) {
+        
+        items.forEach((item) => {
+            if (item.name in currentCustomer.itemsInCartDict) {
+                item.quantity = item.quantity - currentCustomer.itemsInCartDict[item.name]
+            }
+        })
+
         currentCustomer.itemsInCartDict = {}
+
         document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderHeader(currentCustomer) + "<p>Thank you for your purchase</p><button class='back'>Back to catalog</button>"
     }
 })
