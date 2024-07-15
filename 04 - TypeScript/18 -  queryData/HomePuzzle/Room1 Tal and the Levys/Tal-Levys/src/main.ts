@@ -1,5 +1,6 @@
 import { items } from "./models/itemsModel";
 import { Cart } from "./models/cartModel";
+import { addToCart } from "./controllers/addToCart";
 import { itemsDiv, writeItemsToDOM } from "./views/itemsView";
 import './dist/styles.css';
 /*import './style.css'
@@ -29,3 +30,4 @@ setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
 */
 writeItemsToDOM(items, itemsDiv);
 writeItemsToDOM(cart, cartDiv);
+console.log(addToCart('1'));
