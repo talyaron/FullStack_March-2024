@@ -24,12 +24,13 @@ export const itemsDiv = document.querySelector('#items') as HTMLDivElement;
 //makes the card for each item
 function itemCard(item: Item): string | undefined {
     try {
+        
         return `<div class="item">
         <div class="item__image" style="background-image:url(${item.img})">
         </div>
         <div class="item__info">
         <h2>${item.name}</h2>
-        <button class="button button__add-to-cart" onclick="add${item.id}Handler()">add to cart</button>
+        <button class="button button__add-to-cart" onclick="addItemHandler(${item.id})">add to cart</button>
         </div>
         </div>`;
     } catch (error) {
@@ -56,7 +57,21 @@ export function writeItemsToDOM(items: Item[], element: HTMLDivElement) {
         console.error(error);
     }
 }
+export const cartDiv = document.querySelector('#cart') as HTMLDivElement;
+export function writeCartToDOM(cart:Item[],element:HTMLDivElement){
+    try {
+        if (!element) throw new Error("Element not found");
+        if (!cart) throw new Error("No cart found");
 
+        let html:string = ``;
+        cart.forEach(item => {
+            html += item;
+        });
 
+        element.innerHTML = html;
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 
