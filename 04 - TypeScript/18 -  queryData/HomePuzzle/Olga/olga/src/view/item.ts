@@ -36,7 +36,9 @@ export function renderItems(user: User, items: Item[]): string {
     let html = "";
     html += "<div class='wrapper'>";
     items.forEach((item) => {
-      html += renderItem(user, item);
+      if (item.quantity > 0) {
+        html += renderItem(user, item);
+      }
     });
     html += "</div>";
     return html;
@@ -51,7 +53,7 @@ export function renderCart(user: User): string {
     let html = "";
     if (user.itemsInCartDict === undefined || Object.keys(user.itemsInCartDict).length === 0) {
 
-      html += "<p>Your cart is empty</p><button class='back'>Back</button>";
+      html += "<p>Your cart is empty</p><button class='back'>Back to catalog</button>";
 
     } else {
       const keys = Object.keys(user.itemsInCartDict);

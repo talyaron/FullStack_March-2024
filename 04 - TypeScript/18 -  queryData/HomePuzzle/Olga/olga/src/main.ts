@@ -84,3 +84,21 @@ document.addEventListener("click", (event) => {
 document.addEventListener("click", (event) => {
     console.dir(event.target)
 })
+
+// const dialog = document.querySelector("#dialog") as HTMLDialogElement;
+// if (document.querySelector<HTMLButtonElement>("#openDialog")) {
+//     document.querySelector<HTMLButtonElement>("#openDialog").onclick = function () {
+//         dialog.showModal();
+// }
+
+
+// };
+// document.querySelector("#closeDialog").onclick = function () {
+//   if (email.validity.valid && password.validity.valid) {
+//     dialog.close();
+//   }
+// };
+
+// document.querySelector<HTMLButtonElement>("#close")!.onclick = function () {
+//   dialog.close();
+// }
