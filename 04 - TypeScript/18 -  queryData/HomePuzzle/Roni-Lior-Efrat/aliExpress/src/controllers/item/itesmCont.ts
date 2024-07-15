@@ -3,26 +3,27 @@ import { cart } from "../../model/cart";
 import { Item,items } from "../../model/items";
 import { renderItem } from "../../view/itemView";
 
-export function addToUserCart(this: HTMLElement) {
+export function addToUserCart(id:string) {
   try {
     //check if quantity is greater than 0
-    const itemBuy = items.filter(
-      (item) => item.id === this.parentNode.id && item.quantity > 0
-    );
-    if (itemBuy.length) {
-      //add item to cart and remove quantity from inventory
-      const cartItemsCntr: number = cart.length - 1;
-      cart[cartItemsCntr].addItemToCart(itemBuy);
-      itemBuy[0].reduceQuantity();
-      //render page
-      renderItem(items);
+    console.log("id",id);
+    // const itemBuy = items.filter(
+    //   (item) => item.id === this.parentNode.id && item.quantity > 0
+    // );
+    // if (itemBuy.length) {
+    //   //add item to cart and remove quantity from inventory
+    //   const cartItemsCntr: number = cart.length - 1;
+    //   cart[cartItemsCntr].addItemToCart(itemBuy);
+    //   itemBuy[0].reduceQuantity();
+    //   //render page
+    //   renderItem(items);
 
-      console.log(
-        `Cart : ${cart[cartItemsCntr].charge} and ${itemBuy[0].quantity}`
-      );
-    } else {
-      console.log("item not available");
-    }
+    //   console.log(
+    //     `Cart : ${cart[cartItemsCntr].charge} and ${itemBuy[0].quantity}`
+    //   );
+    // } else {
+    //   console.log("item not available");
+    // }
   } catch (error) {
     console.error(error);
   }

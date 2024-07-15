@@ -5,8 +5,8 @@
 
 import { renderItem } from './view/itemView.ts'
 import { Item } from './model/items.ts'
-import './styles/dist/style.css'
-import {addToUserCart,emptyFromUseCart} from  './controllers/item/itesmCont.ts'
+import './styles/style.scss';
+
 
 
 export const items: Item[] = 
@@ -19,4 +19,4 @@ export const items: Item[] =
 renderItem(items);
 //Add events to DOM
 // const addItem = document.querySelectorAll('.add').forEach(btn=> btn.addEventListener('click',addToUserCart));
-const removeItem = document.querySelectorAll('.remove').forEach(btn=> btn.addEventListener('click',emptyFromUseCart));
+
