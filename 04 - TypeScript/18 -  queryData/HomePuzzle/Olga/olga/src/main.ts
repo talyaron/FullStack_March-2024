@@ -1,7 +1,7 @@
 import './dist/style.css'
 import { renderCart, renderItems } from './view/item.ts'
 import { items } from './model/itemModel.ts'
-import { User, addItemToCartDict } from './model/userModel.ts'
+import { User, addItemToCartDict, calculateTotalPrice } from './model/userModel.ts'
 import { renderHeader } from './view/Header.ts'
 
 let currentCustomer: User = { name: "Guest", email: "", password: ""};
@@ -12,6 +12,10 @@ document.addEventListener("click", (event) => {
     if (event.target && (event.target as HTMLElement).classList.contains("remote")) {
         const item = items[Array.from(document.querySelectorAll(".remote")).indexOf(event.target as HTMLElement)];
         delete currentCustomer.itemsInCartDict[item.name]
+        if (document.querySelector<HTMLSpanElement>('#totalPrice')) {
+            document.querySelector<HTMLSpanElement>('#totalPrice')!.innerHTML = calculateTotalPrice(currentCustomer, items).toString()
+
+        }
         document.querySelector<HTMLSpanElement>('#' + item.id)!.innerHTML = "0"
         if (currentCustomer.itemsInCartDict !== undefined) {
             document.querySelector<HTMLSpanElement>('#inCart')!.innerHTML = String(Object.keys(currentCustomer.itemsInCartDict).length)
@@ -23,15 +27,22 @@ document.addEventListener("click", (event) => {
 
 document.addEventListener("click", (event) => {
     if (event.target && (event.target as HTMLElement).classList.contains("addToCart")) {
-        console.log(Array.from(document.querySelectorAll(".addToCart")).indexOf(event.target as HTMLElement))
+
         const item = items[Array.from(document.querySelectorAll(".addToCart")).indexOf(event.target as HTMLElement)];
+        
         addItemToCartDict(currentCustomer, item)
+
+        
+
         console.log(currentCustomer.itemsInCartDict)
         document.querySelector<HTMLSpanElement>('#inCart')!.innerHTML = String(Object.keys(currentCustomer.itemsInCartDict).length)
         console.log(item.quantity, Number(document.querySelector<HTMLSpanElement>('#' + item.id)?.innerHTML))
         if (item.quantity > Number(document.querySelector<HTMLSpanElement>('#' + item.id)?.innerHTML)) {
-            console.log('true')
             document.querySelector<HTMLSpanElement>('#' + item.id)!.innerHTML = String(Number(document.querySelector<HTMLSpanElement>('#' + item.id)!.innerHTML) + 1)
+            if (document.querySelector<HTMLSpanElement>('#totalPrice')) {
+                document.querySelector<HTMLSpanElement>('#totalPrice')!.innerHTML = calculateTotalPrice(currentCustomer, items).toString()
+    
+            }
         }
     }
 })

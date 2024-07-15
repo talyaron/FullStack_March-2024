@@ -50,9 +50,9 @@ export function renderCart(user: User): string {
   try {
     let html = "";
     if (user.itemsInCartDict === undefined || Object.keys(user.itemsInCartDict).length === 0) {
-      html += "<div class='wrapper'>";
+
       html += "<p>Your cart is empty</p><button class='back'>Back</button>";
-      html += "</div>";
+
     } else {
       const keys = Object.keys(user.itemsInCartDict);
       const itemsCart: Item[] = [];
@@ -63,7 +63,7 @@ export function renderCart(user: User): string {
       itemsCart.forEach((item) => {
         html += renderItem(user, item);
       });
-      html += `</div><h1>Total price: ${calculateTotalPrice(user, items)}</h1><button class='buy'>Buy</button>`;
+      html += `</div><h1>Total price: <span id="totalPrice">${calculateTotalPrice(user, items)}</span></h1><button class='buy'>Buy</button>`;
     }
     return html;
   } catch (error) {
