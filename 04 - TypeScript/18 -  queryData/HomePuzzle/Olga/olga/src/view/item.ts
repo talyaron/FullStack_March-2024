@@ -66,7 +66,7 @@ export function renderCart(user: User): string {
       itemsCart.forEach((item) => {
         html += renderItem(user, item);
       });
-      html += `</div><h1>Total price: <span id="totalPrice">${calculateTotalPrice(user, items)}</span></h1><button class='buy'>Buy</button>`;
+      html += `</div><h1>Total price: <span id="totalPrice">${calculateTotalPrice(user, items)}</span>$</h1><button class='buy'>Buy</button>`;
       html += "<button class='back'>Back to catalog</button><div class='wrapper'>";
     }
     return html;
