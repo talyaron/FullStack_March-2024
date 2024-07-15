@@ -128,3 +128,18 @@ function getBooksByAuthor(books: book[], author: string ): string[] | undefined 
 }
 
 console.log(getBooksByAuthor(books, "Coleen Hoover"));
+
+//# Exercise 4 (Enhanced): Advanced Array Filtering and Sorting with Objects
+
+function getBooksByAuthorSorted(books: Book [], author:string): string | undefined {
+    try {
+        return books
+        .filter((book) => book.author === author)
+        .sort ((a,b) => a.yearPublished - b.yearPublished);
+    } catch (error) {
+        console.error (error)
+        return undefined;
+    }
+}
+
+console.log (getBooksByAuthorSorted(books, "Coleen Hoover"));
