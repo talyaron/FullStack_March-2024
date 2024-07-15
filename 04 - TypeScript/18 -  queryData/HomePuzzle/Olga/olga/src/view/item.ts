@@ -59,11 +59,12 @@ export function renderCart(user: User): string {
       keys.forEach((key) => {
         itemsCart.push(items.find((item) => item.name === key)!);
       })
-      html += "<button class='back'>Back to catalog</button><div class='wrapper'>";
+      html += "<div class='wrapper'>";
       itemsCart.forEach((item) => {
         html += renderItem(user, item);
       });
       html += `</div><h1>Total price: <span id="totalPrice">${calculateTotalPrice(user, items)}</span></h1><button class='buy'>Buy</button>`;
+      html += "<button class='back'>Back to catalog</button><div class='wrapper'>";
     }
     return html;
   } catch (error) {

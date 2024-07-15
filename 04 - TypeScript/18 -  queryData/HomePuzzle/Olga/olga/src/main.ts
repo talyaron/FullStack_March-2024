@@ -28,11 +28,14 @@ document.addEventListener("click", (event) => {
 document.addEventListener("click", (event) => {
     if (event.target && (event.target as HTMLElement).classList.contains("addToCart")) {
 
-        const item = items[Array.from(document.querySelectorAll(".addToCart")).indexOf(event.target as HTMLElement)];
+        // const item = items[Array.from(document.querySelectorAll(".addToCart")).indexOf(event.target as HTMLElement)];
+        const x = Array.from(document.querySelectorAll(".addToCart")).indexOf(event.target as HTMLElement);
+        console.log('numner of array' + x)
+
+        const item = items.find((item) => item.id === document.querySelector<HTMLDivElement>('#app')!.offsetParent.children[0].children[1].children[x].children[1].children[3].children[0].id)
+        
         
         addItemToCartDict(currentCustomer, item)
-
-        
 
         console.log(currentCustomer.itemsInCartDict)
         document.querySelector<HTMLSpanElement>('#inCart')!.innerHTML = String(Object.keys(currentCustomer.itemsInCartDict).length)
@@ -64,4 +67,8 @@ document.addEventListener("click", (event) => {
     if (event.target && (event.target as HTMLElement).classList.contains("back")) {
         document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderHeader(currentCustomer) + renderItems(currentCustomer, items)
     }
+})
+
+document.addEventListener("click", (event) => {
+    console.dir(event.target)
 })
