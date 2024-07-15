@@ -1,12 +1,8 @@
 import logo from "../assets/logo.png";
 import "./dist/header.css";
 import { renderHeaderCustomerCard } from "./Customer";
-// import { Customer } from "../models/customerModel";
-// import { guest } from "../models/customerModel";
-// import { currentCustomer } from "../controllers/RegistrationController";
 import { User } from "../model/userModel";
-// import { renderCart } from "./item";
-// import { Item } from "../model/itemModel";
+
 
 export function renderHeader(user: User): string {
   try {
