@@ -1,6 +1,6 @@
 import './dist/style.css'
 import { renderCart, renderItems } from './view/item.ts'
-import { items } from './model/itemModel.ts'
+import { items, Item } from './model/itemModel.ts'
 import { User, addItemToCartDict, calculateTotalPrice } from './model/userModel.ts'
 import { renderHeader } from './view/Header.ts'
 
@@ -10,7 +10,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderHeader(current
 
 document.addEventListener("click", (event) => {
     if (event.target && (event.target as HTMLElement).classList.contains("remote")) {
-        const item = items[Array.from(document.querySelectorAll(".remote")).indexOf(event.target as HTMLElement)];
+        const x = Array.from(document.querySelectorAll(".remote")).indexOf(event.target as HTMLElement);
+        console.log('numner of array' + x)
+
+        const item: Item = items.find((item) => item.id === document.querySelector<HTMLDivElement>('#app')!.offsetParent.children[0].children[1].children[x].children[1].children[3].children[0].id)
+
         delete currentCustomer.itemsInCartDict[item.name]
         if (document.querySelector<HTMLSpanElement>('#totalPrice')) {
             document.querySelector<HTMLSpanElement>('#totalPrice')!.innerHTML = calculateTotalPrice(currentCustomer, items).toString()
@@ -32,8 +36,8 @@ document.addEventListener("click", (event) => {
         const x = Array.from(document.querySelectorAll(".addToCart")).indexOf(event.target as HTMLElement);
         console.log('numner of array' + x)
 
-        const item = items.find((item) => item.id === document.querySelector<HTMLDivElement>('#app')!.offsetParent.children[0].children[1].children[x].children[1].children[3].children[0].id)
-        
+        const item: Item = items.find((item) => item.id === document.querySelector<HTMLDivElement>('#app')!.offsetParent.children[0].children[1].children[x].children[1].children[3].children[0].id)
+  
         
         addItemToCartDict(currentCustomer, item)
 

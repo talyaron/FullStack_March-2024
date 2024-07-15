@@ -21,7 +21,7 @@ export const users: User[] = [
 
 export function calculateTotalPrice(user: User, items: Item[]): number {
   let totalPrice = 0;
-  if (user.itemsInCartDict === undefined) return 0;
+  if (user.itemsInCartDict === undefined || Object.keys(user.itemsInCartDict).length === 0) return 0;
   Object.keys(user.itemsInCartDict).forEach((key) => {
     totalPrice += user.itemsInCartDict[key] * items.find((item) => item.name === key)?.price;
   })
