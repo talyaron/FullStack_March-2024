@@ -22,7 +22,7 @@ const userCart: CartItem[] = [
 
 console.log(userCart);
 
-function getTotalPrice(userCart: CartItem[]) {
+export function getTotalPrice(userCart: CartItem[]) {
   let sum = 0;
   try {
     userCart.forEach((CartItem) => {
@@ -35,5 +35,3 @@ function getTotalPrice(userCart: CartItem[]) {
   }
 }
 console.log(getTotalPrice(userCart));
-
-
