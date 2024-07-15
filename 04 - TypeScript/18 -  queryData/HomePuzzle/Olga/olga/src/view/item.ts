@@ -41,6 +41,7 @@ export function renderItems(user: User, items: Item[]): string {
       }
     });
     html += "</div>";
+    if (html === "<div class='wrapper'></div>") html = "<h1>There are no items in catalog</h1>";
     return html;
   } catch (error) {
     console.error(error);
