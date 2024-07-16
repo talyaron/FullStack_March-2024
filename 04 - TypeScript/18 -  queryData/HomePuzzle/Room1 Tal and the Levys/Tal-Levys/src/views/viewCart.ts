@@ -1,17 +1,17 @@
-import { Cart } from "../models/cartModel";
+import { Item } from "../models/itemsModel";
 import { EmptyCart } from "../Controllers/EmptyCart";
-
+import { Customer } from "../models/customerModel";
 
 export const cartDiv = document.querySelector('#cart') as HTMLDivElement;
 
-function itemCard(cart: Cart): string | undefined {
+function itemCard(item: Item): string | undefined {
     try {
         return `
             <div class="item">
-                <div class="item__image" style="background-image:url(${cart.img})"></div>
+                <div class="item__image" style="background-image:url(${item.img})"></div>
                 <div class="item__info">
-                    <h2>${cart.name}</h2>
-                    <button class="button button__remove-from-cart" onclick="emptyCartHandler()">empty cart</button>
+                    <h2>${item.name}</h2>
+                    <button class="button button__remove-from-cart" onclick="emptyCartHandler()">Empty Cart</button>
                 </div>
             </div>
         `;
@@ -21,7 +21,7 @@ function itemCard(cart: Cart): string | undefined {
     }
 }
 
-export function writeItemsToDOM(cart: Cart[], element: HTMLDivElement) {
+export function writeItemsToDOM(cart: Item[], element: HTMLDivElement) {
     try {
         if (!element) throw new Error("Element not found");
         if (!cart) throw new Error("Cart is undefined");
@@ -39,9 +39,11 @@ export function writeItemsToDOM(cart: Cart[], element: HTMLDivElement) {
 }
 
 export function emptyCartHandler() {
+    const cart: Item[] = [];  
     const emptiedCart = EmptyCart(cart);
     if (emptiedCart !== undefined) {
         writeItemsToDOM(emptiedCart, cartDiv);
     }
 }
+
 
