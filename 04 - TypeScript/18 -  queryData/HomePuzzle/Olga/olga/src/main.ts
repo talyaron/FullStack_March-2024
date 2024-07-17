@@ -1,4 +1,4 @@
-import './dist/style.css'
+import './style.scss'
 import { renderCart, renderItems } from './view/item.ts'
 import { items, Item } from './model/itemModel.ts'
 import { User, addItemToCartDict, calculateTotalPrice } from './model/userModel.ts'
