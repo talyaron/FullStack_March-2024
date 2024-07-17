@@ -74,4 +74,6 @@ export function writeCartToDOM(cart:Item[],element:HTMLDivElement){
     }
 }
 
+// function addItemHandler ()
+
 
