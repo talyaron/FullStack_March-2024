@@ -50,7 +50,7 @@ export function removeFromCart(itemId:string, customerId:string) {
     }
 }
 //empty cart
-export function EmptyCart(customerId:string) {
+export function emptyCart(customerId:string) {
     try {
         const customer = customers.find(c => c.id === customerId);
         if(!customer) throw new Error("customer not found");

@@ -43,7 +43,7 @@ function itemCard(item: Item): string | undefined {
 
 export function writeItemsToDOM(items: Item[], element: HTMLDivElement) {
     try {
-        if (!element) throw new Error("Element not found");
+        if (!element) throw new Error("HTMLDivElement Element not found");
         if (!items) throw new Error("No items found");
 
         let html:string = ``;

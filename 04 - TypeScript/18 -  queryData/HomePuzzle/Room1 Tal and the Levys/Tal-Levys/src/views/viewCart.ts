@@ -1,6 +1,6 @@
 import { Item } from "../models/itemsModel";
-import { EmptyCart } from "../Controllers/EmptyCart";
-import { Customer } from "../models/customerModel";
+import { customers } from "../models/customerModel";
+
 
 export const cartDiv = document.querySelector('#cart') as HTMLDivElement;
 
@@ -38,8 +38,17 @@ export function writeItemsToDOM(cart: Item[], element: HTMLDivElement) {
     }
 }
 
-export function emptyCartHandler() {
-    const cart: Item[] = [];  
+export function emptyCartHandler(customerId:string) {
+    try {
+        const customer = customers.find(c => c.id === customerId);
+        if(!customer) throw new Error("customer not found");
+        const handleEmptyCart=[];
+        customer.myCart = 
+    } catch (error) { 
+        console.error('emptyCartHandler function was Failed:', error);
+        return 
+        }
+    const cart: [] = [];  
     const emptiedCart = EmptyCart(cart);
     if (emptiedCart !== undefined) {
         writeItemsToDOM(emptiedCart, cartDiv);
