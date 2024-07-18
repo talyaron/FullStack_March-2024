@@ -12,6 +12,7 @@ class Coffee {
   }
 }
 const coffees: Coffee[] = [];
+
 function handleAddCoffeeOrder(ev: any) {
   try {
     ev.preventDefault();
