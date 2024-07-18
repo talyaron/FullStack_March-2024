@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+input[type="color"] {
+    border: 0.1rem solid #688086;
+    padding: 0.01rem;
+    border-radius: 10%;
+    margin-bottom: 0.1rem;
+}
+
+input[type="checkbox"] {
+    margin: 1rem 0;
+}
+
+input[type="date"], input[type="email"] {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 10px;
+}
