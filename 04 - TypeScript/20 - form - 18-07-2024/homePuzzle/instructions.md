@@ -35,3 +35,6 @@ For this home puzzle, you'll be working with the previous project completed by y
 Implement error handling and validation for your forms to ensure data integrity.
 
 **Note:** Remember to test your code thoroughly and document any assumptions or design decisions you make along the way. Good luck with your home puzzle!
+
+Another challenge: use the FormData API to retrieve data from the form 
+```
