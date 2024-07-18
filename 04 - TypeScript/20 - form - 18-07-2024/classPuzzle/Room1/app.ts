@@ -15,6 +15,7 @@ const coffees: Coffee[] = [];
 function handleAddCoffeeOrder(ev: any) {
   try {
     ev.preventDefault();
+    console.log(ev);
     const form = ev.target;
     const name = form.name.value;
     const type = form.type.value;
