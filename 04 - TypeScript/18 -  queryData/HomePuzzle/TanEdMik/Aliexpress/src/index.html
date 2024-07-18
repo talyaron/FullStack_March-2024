@@ -3,12 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0dc66bd6c2.js" crossorigin="anonymous"></script>
     <title>Store</title>
     <link rel="stylesheet" href="./dist/style.css">
 </head>
 <body>
-    <div class="product-container" id="product-container"></div>
-    <button class="go-to-cart">Go to Cart</button>
+    <!-- NAvBar -->
+    <div class="navbar">
+        <img src="./views/img/logo.png" alt="">
+        <form class="search">
+            <div class="search-container">
+                <input id="searchProduct" type="text" aria-label="Search">
+                <button type="submit" id="search-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </form>        
+        <div id="user-selection">
+            <label for="user-select">Select User:</label>
+            <select id="user-select"></select>
+        </div>
+        
+    </div>
+   <!-- Store view -->
+    <div id="product-view">
+        <div class="product-container" id="product-container"></div>
+        <button id="go-to-cart">Go to Cart</button>
+    </div>
+    <!-- Cart view -->
+    <div id="cart-view" style="display: none;">
+        <div class="product-container" id="cart-container"></div>
+        <button id="continue-shopping">Continue Shopping</button>
+        <div>Total Price: $<span id="total-price">0</span></div>
+        <section class="confirmation">
+            <button id="confirm-order" class="confirm-button">Confirm Order</button>
+        </section>
+    </div>
+    <!-- Checkout page -->
+    <div id="thankyou-view" style="display: none;">
+        <h1>Thank You for Shopping!</h1>
+        <p>Your order has been placed successfully. We appreciate your business!</p>
+        <button id="back-to-products">Back to Products</button>
+    </div>
     <script type="module" src="/index.ts"></script>
 </body>
 </html>
