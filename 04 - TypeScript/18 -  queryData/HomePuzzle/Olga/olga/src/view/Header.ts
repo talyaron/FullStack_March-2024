@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png";
-import "./dist/header.css";
+import "./header.scss";
 import { renderHeaderCustomerCard } from "./Customer";
 // import { Customer } from "../models/customerModel";
 // import { guest } from "../models/customerModel";

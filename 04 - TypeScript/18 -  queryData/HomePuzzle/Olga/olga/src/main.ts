@@ -1,4 +1,4 @@
-import './dist/style.css'
+import './style.scss'
 import { renderCart, renderItems } from './view/item.ts'
 import { items, Item } from './model/itemModel.ts'
 import { User, addItemToCartDict, calculateTotalPrice } from './model/userModel.ts'
@@ -18,6 +18,7 @@ document.addEventListener("click", (event) => {
         delete currentCustomer.itemsInCartDict[item.name]
         if (document.querySelector<HTMLSpanElement>('#totalPrice')) {
             document.querySelector<HTMLSpanElement>('#totalPrice')!.innerHTML = calculateTotalPrice(currentCustomer, items).toString()
+            document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderHeader(currentCustomer) + renderCart(currentCustomer)
 
         }
         document.querySelector<HTMLSpanElement>('#' + item.id)!.innerHTML = "0"
@@ -37,8 +38,8 @@ document.addEventListener("click", (event) => {
         console.log('numner of array' + x)
 
         const item: Item = items.find((item) => item.id === document.querySelector<HTMLDivElement>('#app')!.offsetParent.children[0].children[1].children[x].children[1].children[3].children[0].id)
-  
-        
+
+
         addItemToCartDict(currentCustomer, item)
 
         console.log(currentCustomer.itemsInCartDict)
@@ -48,7 +49,7 @@ document.addEventListener("click", (event) => {
             document.querySelector<HTMLSpanElement>('#' + item.id)!.innerHTML = String(Number(document.querySelector<HTMLSpanElement>('#' + item.id)!.innerHTML) + 1)
             if (document.querySelector<HTMLSpanElement>('#totalPrice')) {
                 document.querySelector<HTMLSpanElement>('#totalPrice')!.innerHTML = calculateTotalPrice(currentCustomer, items).toString()
-    
+
             }
         }
     }
@@ -62,7 +63,7 @@ document.addEventListener("click", (event) => {
 
 document.addEventListener("click", (event) => {
     if (event.target && (event.target as HTMLElement).classList.contains("buy")) {
-        
+
         items.forEach((item) => {
             if (item.name in currentCustomer.itemsInCartDict) {
                 item.quantity = item.quantity - currentCustomer.itemsInCartDict[item.name]
