@@ -4,7 +4,7 @@ interface product {
     name: string;
     price: number;
     quantity: number;
-    getCost:() => number
+    getCost:(product:product) => number | undefined
 }
 
 const pen: product = {
@@ -46,10 +46,10 @@ function calculateTotalCost(product:product): number | undefined {
     }
 }
 
-console.log(pen.getCost());
-console.log(notebook.getCost());
-console.log(eraser.getCost());
-console.log(ruler.getCost());
+console.log(pen.getCost(pen));
+console.log(notebook.getCost(notebook));
+console.log(eraser.getCost(eraser));
+console.log(ruler.getCost(ruler));
 
 // Exercise 2: Object String Representation 
 
@@ -57,35 +57,34 @@ interface book {
     title: string,
     author: string,
     yearPublished: number
-    getBookDescription:() => string
-    getBooksByAuthor:() => string[]
+    getBookDescription:(book: book) => string | undefined
 }
 
 const thingsIWantedToSay: book = {
     title: "Things I Wanted To Say",
     author: "Monica Murphy",
-    yearPublished: 2010
+    yearPublished: 2010,
     getBookDescription:getBookDescription
 }
 
 const tooLate: book = {
     title: "Too Late",
     author: "Coleen Hoover",
-    yearPublished: 2017
+    yearPublished: 2017,
     getBookDescription:getBookDescription
 }
 
 const fiftyShadesDarker: book = {
     title: "Fifty Shades Darker",
     author: "E.L. James",
-    yearPublished: 2021
+    yearPublished: 2021,
     getBookDescription:getBookDescription
 }
 
 const theThingsWeCantSay: book = {
     title: "The Things We Can't Say",
     author: "Kelly Rimmer",
-    yearPublished: 2023
+    yearPublished: 2023,
     getBookDescription:getBookDescription
 }
 
@@ -105,10 +104,10 @@ function getBookDescription(book: book): string | undefined {
     }
 }
 
-console.log(thingsIWantedToSay.getBookDescription());
-console.log(tooLate.getBookDescription());
-console.log(fiftyShadesDarker.getBookDescription());
-console.log(theThingsWeCantSay.getBookDescription());
+console.log(thingsIWantedToSay.getBookDescription(thingsIWantedToSay));
+console.log(tooLate.getBookDescription(tooLate));
+console.log(fiftyShadesDarker.getBookDescription(fiftyShadesDarker));
+console.log(theThingsWeCantSay.getBookDescription(theThingsWeCantSay));
 
 // Exercise 3: Array Filtering with Objects
 
@@ -131,7 +130,7 @@ console.log(getBooksByAuthor(books, "Coleen Hoover"));
 
 //# Exercise 4 (Enhanced): Advanced Array Filtering and Sorting with Objects
 
-function getBooksByAuthorSorted(books: Book [], author:string): string | undefined {
+function getBooksByAuthorSorted(books: Book[], author:string): string | undefined {
     try {
         return books
         .filter((book) => book.author === author)
