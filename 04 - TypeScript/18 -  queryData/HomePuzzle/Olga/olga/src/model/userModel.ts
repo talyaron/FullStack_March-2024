@@ -4,12 +4,13 @@ export class User {
   name: string;
   email: string;
   password: string;
-  itemsInCartDict: { [key: string]: number } = {};
+  itemsInCartDict?: { [key: string]: number } = {};
 
   constructor(name: string, email: string, password: string) {
     this.name = name;
     this.email = email;
     this.password = password;
+    this.itemsInCartDict = {};
   }
 }
 
@@ -17,6 +18,7 @@ export const users: User[] = [
   new User("Yos", "yos@yos", "12345"),
   new User("Orly", "orly@orly", "12345"),
   new User("Olga", "olga@olga", "12345"),
+  new User("admin", "admin@admin", "12345"),
 ];
 
 export function calculateTotalPrice(user: User, items: Item[]): number {
@@ -39,7 +41,7 @@ export function addItemToCartDict(user: User, item: Item) {
     } else {
       user.itemsInCartDict = { ...user.itemsInCartDict, [item.name]: 1 };
     }
-    
+
   } catch (error) {
     console.error(error);
     return "";
@@ -78,13 +80,13 @@ export function checkLogin() {
     const email = formData.get("email");
     const password = formData.get("password");
     const customer = users.find((customer) => customer.email == email);
+    console.log(currentCustomer)
     if (customer && customer.password == password) {
       currentCustomer = customer;
-      console.log(typeof currentCustomer);
     }
     console.log(typeof currentCustomer);
     return currentCustomer;
-    
+
   }
   formElement.addEventListener("submit", () => checkForm())
   // checkForm()
