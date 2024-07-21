@@ -1,7 +1,7 @@
 body {
     color: rgb(143, 6, 6);
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKiuY4bZwGmPN-2LCl3ePodrbQoes8TPlrXg&s');
-    
+
     background-size: cover;
 }
 
@@ -23,40 +23,51 @@ body {
     display: flex;
     gap: 3rem;
     justify-content: center;
-    .espresso {
+}
+
+.productLabel {
+    background-color: rgb(224, 202, 173);
+    display: inline-block;
+
+    img {
         height: 15rem;
-        width: 15rem;
-        display: inline-block;
-        background-image: url('https://www.dailygrind.com/wp-content/uploads/2018/11/espresso-1.jpg');
-        background-size: cover;
+        width: auto;
     }
 
-    .cappuccino {
-        height: 15rem;
-        width: 15rem;
-        display: inline-block;
-        background-image: url('https://insanelygoodrecipes.com/wp-content/uploads/2023/06/Cup-of-Cappuccino-1024x1024.jpg');
-        background-size: cover;
-    }
+    .details {
+display: flex;
+justify-content: space-between;
 
-    .tea {
-        height: 15rem;
-        width: 15rem;
-        display: inline-block;
-        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSldk2gLfmtPBqUV7L5Ov9_phMJwO02cHSsiQ&s');
-        background-size: cover;
-    }
-
-    .iceTea {
-        height: 15rem;
-        width: 15rem;
-        display: inline-block;
-        background-image: url('https://natashaskitchen.com/wp-content/uploads/2021/07/Iced-Tea-3-1.jpg');
-        background-size: cover;
+        #productsName {
+            margin: 0.1rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+        #productsPrice{
+            font-size: 1rem;
+        }
     }
 }
 
-button{
+.selected {
+    border: 5px solid green;
+}
+
+#submit {
     margin-top: 5rem;
-   
+
+}
+
+#management {
+    float: right;
+    margin-top: 5rem;
+}
+
+#newProduct {
+    display: none;
+    margin: 5rem;
+    float: right;
+    padding: 1rem;
+    background-color: aquamarine;
+
 }
