@@ -10,13 +10,15 @@ export class Type{
     id:string;
     imageUrl:string;
     name:string;
-    position:Position;
+  
 
-    constructor(imageUrl:string, name:string, position:Position){
+    constructor(imageUrl:string, name:string){
         this.id = crypto.randomUUID();
         this.imageUrl = imageUrl;
         this.name = name;
-        this.position = position
+    
 
     }
 }
+
+export const pawn = new Type("https://png.pngtree.com/png-vector/20210702/ourmid/pngtree-black-chess-pawn-png-image_3539520.jpg","pawn")

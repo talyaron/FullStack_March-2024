@@ -1,4 +1,4 @@
-import { Position, Type } from "../types/typesModel";
+import { pawn, Position, Type } from "../types/typesModel";
 
 export class Piece{
     id:string;
@@ -12,4 +12,13 @@ export class Piece{
         this.color = color;
         this.type = type;
     }
+
+    // method: setNewPostion("pos-0b") ->  new position
 }
+
+export const pieces:Piece[] = [];
+
+
+
+const pawn1 = new Piece("black",new Position(3,5),pawn )
+pieces.push(pawn1)
