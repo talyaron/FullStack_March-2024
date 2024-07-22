@@ -2,21 +2,23 @@ function handleSubmitEvent(event: Event): void {
     event.preventDefault();
     try {
         const form = event.target as HTMLFormElement;
-        const name = form.name.value
+        const name = form.name.value;
         const type = form.type.value;
         const coffee = form.coffee;
+        const size = form.size;
+
+        const coffeeSize = '';
         let coffees = [];
-        coffee.forEach(item => { if (item.checked) { coffees.push(item.defaultValue) } })
-        if (coffees.length > 1) { alert('Please choose only one Coffee'); form.reset(); return; }
-        console.log('sdfs', coffees)
         const strong = form.strong.checked;
         const sugar = form.sugar;
         const featuresArray = [];
         const features = form.features;
         form.features.forEach(i => { if (i.checked) { featuresArray.push(i.defaultValue) } })
-        console.dir(form, features,);
-        console.log(name, type, strong, sugar.value);
-        console.log('sdf', featuresArray, features);
+        coffee.forEach(item => { if (item.checked) { coffees.push(item.defaultValue) } })
+        size.forEach(item => { if (item.checked) { coffeeSize = item.defaultValue } })
+        if (coffees.length > 1) { alert('Please choose only one Coffee'); form.reset(); return; }
+
+        console.log(`${coffees}, ${name},  ${type}, ${sugar.value}, ${featuresArray}, ${coffeeSize}` );
 
         form.reset();
 
