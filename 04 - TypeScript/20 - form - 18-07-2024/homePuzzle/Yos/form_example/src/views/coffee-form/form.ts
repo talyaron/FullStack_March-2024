@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+import './dist/coffeeForm.css'
+import {handleSubmitEvent}  from '../../controllers/formHandler'
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Form </title>
-    <link rel="stylesheet" href="./dist/styles.css">
-</head>
 
-<body>
-    <div class="form-wrapper">
+export function coffeeForm() {
+  // onsubmit="handleSubmitEvent(event)"
+    return `   <div class="form-wrapper">
         <div class="wrapper">
             <h1>Coffee Form</h1>
             <div class="form">
-                <form action="" onsubmit="handleSubmitEvent(event)">
+                <form action="" >
                     <div name="coffee" class="coffee-images">
                         <div class="img">
                             <img src="https://www.caffesociety.co.uk/assets/recipe-images/latte-small.jpg" alt="coffee">
@@ -85,8 +80,8 @@
                 </form>
             </div>
         </div>
-    </div>
-    <script src="./dist/app.js"></script>
-</body>
+    </div>`
+}
 
-</html>
+
+document.addEventListener('submit', handleSubmitEvent)
