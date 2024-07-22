@@ -80,17 +80,10 @@ const management = document.querySelector("#management") as HTMLButtonElement;
 const newProduct = document.querySelector("#newProduct") as HTMLButtonElement;
 
 //פתיחת טופס הוספת מוצר
-function openManagementPage(event) {
+function handleManagement(event) {
     newProduct.style.display = "block"
     management.style.display = "none"
 }
 
-//סגירת טופס הוספת מוצר
-function addNewProduct(event) {
-    console.log("jjj");
-    
-    newProduct.style.display = "none"
-    management.style.display = "block"
-}
 
 
