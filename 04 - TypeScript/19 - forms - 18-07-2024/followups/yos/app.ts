@@ -6,6 +6,9 @@ function handleChange(event: Event) {
     }
 }
 
+function handleClick2(event){
+    console.log(event)
+}
 function handleClick(event: Event) {
     try {
         console.log(event?.target.value)
