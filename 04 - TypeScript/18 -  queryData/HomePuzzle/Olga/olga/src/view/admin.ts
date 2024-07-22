@@ -21,19 +21,19 @@ export function renderRowTable(item: Item): string {
     }
 }
 
-document.addEventListener ("click", (event) => {
-    if (event.target && (event.target as HTMLElement).classList.contains("adminRemote")) {
-        const idRemove = (event.target as HTMLElement).parentElement?.parentElement?.id;
-        if (idRemove) {
-            items.splice(Number(idRemove), 1);
-            document.querySelector<HTMLDivElement>("#app")!.innerHTML = renderAdminPage();
-        }
-        }
-})
+// document.addEventListener("click", (event) => {
+//     if (event.target && (event.target as HTMLElement).classList.contains("adminRemote")) {
+//         const idRemove = (event.target as HTMLElement).parentElement?.parentElement?.id;
+//         if (idRemove) {
+//             items.splice(Number(idRemove), 1);
+//             document.querySelector<HTMLDivElement>("#app")!.innerHTML = renderAdminPage();
+//         }
+//     }
+// })
 
 export function renderTable(): string {
     try {
-        let html = `<button class="add">Add Item</button><button class="logout">Logout</button>`;
+        let html = `<button class="add" id="add-item">Add Item</button><button class="logout">Logout</button>`;
         items.forEach((item) => {
             html += renderRowTable(item);
         });
@@ -68,35 +68,37 @@ export function renderAdminPage(): string {
     }
 }
 
-document.addEventListener ("click", (event) => {
-    if (event.target && (event.target as HTMLElement).classList.contains("add")) {
+const addItem = document.querySelector<HTMLButtonElement>("#add-item");
+if (addItem) {
+    addItem.addEventListener("click", () => {
         document.querySelector<HTMLDivElement>("#app")!.innerHTML = renderNewItem();
-    }
-});
+    });
+}
 
-document.addEventListener ("click", (event) => {
-    if (event.target && (event.target as HTMLElement).classList.contains("adminEdit")) {
-        document.querySelector<HTMLDivElement>("#app")!.innerHTML = renderEditTable(items.find(item => item.id == (event.target as HTMLElement).value)!);
-    }
-});
 
-document.addEventListener ("click", (event) => {
-    if (event.target && (event.target as HTMLElement).classList.contains("edit")) {
-        const idEdit = (event.target as HTMLElement).parentElement?.parentElement?.id;
-        if (idEdit) {
-            items.forEach((item) => {
-                if (item.id == idEdit) {
-                    item.img = (document.querySelector<HTMLInputElement>("#img") as HTMLInputElement).value;
-                    item.name = (document.querySelector<HTMLInputElement>("#name") as HTMLInputElement).value;
-                    item.description = (document.querySelector<HTMLInputElement>("#description") as HTMLInputElement).value;
-                    item.price = Number((document.querySelector<HTMLInputElement>("#price") as HTMLInputElement).value);
-                    item.quantity = Number((document.querySelector<HTMLInputElement>("#quantity") as HTMLInputElement).value);
-                }
-            });
-        }
-        document.querySelector<HTMLDivElement>("#app")!.innerHTML = renderAdminPage();
-    }
-});
+// document.addEventListener("click", (event) => {
+//     if (event.target && (event.target as HTMLElement).classList.contains("adminEdit")) {
+//         document.querySelector<HTMLDivElement>("#app")!.innerHTML = renderEditTable(items.find(item => item.id == (event.target as HTMLElement).value)!);
+//     }
+// });
+
+// document.addEventListener("click", (event) => {
+//     if (event.target && (event.target as HTMLElement).classList.contains("edit")) {
+//         const idEdit = (event.target as HTMLElement).parentElement?.parentElement?.id;
+//         if (idEdit) {
+//             items.forEach((item) => {
+//                 if (item.id == idEdit) {
+//                     item.img = (document.querySelector<HTMLInputElement>("#img") as HTMLInputElement).value;
+//                     item.name = (document.querySelector<HTMLInputElement>("#name") as HTMLInputElement).value;
+//                     item.description = (document.querySelector<HTMLInputElement>("#description") as HTMLInputElement).value;
+//                     item.price = Number((document.querySelector<HTMLInputElement>("#price") as HTMLInputElement).value);
+//                     item.quantity = Number((document.querySelector<HTMLInputElement>("#quantity") as HTMLInputElement).value);
+//                 }
+//             });
+//         }
+//         document.querySelector<HTMLDivElement>("#app")!.innerHTML = renderAdminPage();
+//     }
+// });
 
 export function renderEmptyRowTable(): string {
     try {
@@ -116,19 +118,20 @@ export function renderEmptyRowTable(): string {
     }
 }
 
-document.addEventListener ("click", (event) => {
-    if (event.target && (event.target as HTMLElement).classList.contains("addToCatalog")) {
-        const newItem: Item = {
-            id: Date.now().toString(),
-            img: (document.querySelector<HTMLInputElement>("#img") as HTMLInputElement).value,
-            name: (document.querySelector<HTMLInputElement>("#name") as HTMLInputElement).value,
-            description: (document.querySelector<HTMLInputElement>("#description") as HTMLInputElement).value,
-            price: Number((document.querySelector<HTMLInputElement>("#price") as HTMLInputElement).value),
-            quantity: Number((document.querySelector<HTMLInputElement>("#quantity") as HTMLInputElement).value),
-        }
-        items.push(newItem);
-        document.querySelector<HTMLDivElement>("#app")!.innerHTML = renderAdminPage();
-}});
+// document.addEventListener("click", (event) => {
+//     if (event.target && (event.target as HTMLElement).classList.contains("addToCatalog")) {
+//         const newItem: Item = {
+//             id: Date.now().toString(),
+//             img: (document.querySelector<HTMLInputElement>("#img") as HTMLInputElement).value,
+//             name: (document.querySelector<HTMLInputElement>("#name") as HTMLInputElement).value,
+//             description: (document.querySelector<HTMLInputElement>("#description") as HTMLInputElement).value,
+//             price: Number((document.querySelector<HTMLInputElement>("#price") as HTMLInputElement).value),
+//             quantity: Number((document.querySelector<HTMLInputElement>("#quantity") as HTMLInputElement).value),
+//         }
+//         items.push(newItem);
+//         document.querySelector<HTMLDivElement>("#app")!.innerHTML = renderAdminPage();
+//     }
+// });
 
 export function renderNewItem(): string {
     try {
