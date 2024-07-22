@@ -1,6 +1,6 @@
 import { OrderedItem } from '../models/coffee-shop'
-
-
+import { coffees } from '../models/items'
+import { Item } from '../models/items'
 export const items: OrderedItem[] = []
 
 export function handleSubmitEvent(event: Event): void {
@@ -33,31 +33,23 @@ export function handleSubmitEvent(event: Event): void {
     }
 }
 
-const item1 = {src:"https://www.caffesociety.co.uk/assets/recipe-images/latte-small.jpg",
-                 alt:"coffee",value:"coffee-latte",id:"coffee-latte"}
-const item2 = {src:"https://www.caffesociety.co.uk/assets/recipe-images/latte-small.jpg",
-            alt:"coffee",value:"coffee-latte",id:"coffee-latte"}
-export const itemsa = [item1,item2]
 
 
- function showItems():string{
-    const itemss =  `<div name="coffee" class="coffee-images">
-                    <div class="img">
-                    ${itemsa[1]}  
 
-        <img src="https://www.caffesociety.co.uk/assets/recipe-images/latte-small.jpg" alt="coffee">
-        <input value="coffee-latte" type="checkbox" name="coffee" id="coffee-latte">
-    </div>
-    <div class="img">
-        <img src="https://leitesculinaria.com/wp-content/uploads/2023/03/cappuccino.jpg"
-            alt="coffee">
-        <input value="coffee-cappuccino" type="checkbox" name="coffee" id="coffee-cappuccino">
-    </div>
-    <div class="img">
-        <img src="https://blogstudio.s3.theshoppad.net/coffeeheroau/ec178d83e5f597b162cda1e60cb64194.jpg"
-            alt="coffee">
-        <input value="coffee-espresso" type="checkbox" name="coffee" id="coffee-espresso">
-    </div>
-</div>`
+
+function showItem(item: Item) {
+    return `<div class="img">
+             <img src="${item.src}"
+                alt="${item.alt}">
+                <input value="coffee-${item.alt}" type="checkbox"
+                 name="coffee" id="coffee-${item.alt}">
+            </div>`
+}
+
+export function showItems(): string {
+    const items = `<div name="coffee" class="coffee-images">
+                    ${coffees.map(item => showItem(item)).join('')}
+                    </div>`;
+    // console.log(items);
     return items
 }
