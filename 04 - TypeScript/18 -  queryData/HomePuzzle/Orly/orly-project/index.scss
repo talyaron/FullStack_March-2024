@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #f60;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 {
+    margin: 0;
+  }
+  header .search-container {
+    display: flex;
+    align-items: center;
+  }
+  header input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+  }
+  header .search-icon {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  .product, .cart-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+  }
+  .product img, .cart-item img {
+    max-width: 100%;
+    height: auto;
+  }

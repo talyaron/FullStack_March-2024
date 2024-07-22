@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AliExpress</title>
+    <link rel="stylesheet" href="./dist/style.css">
+  </head>
+  
+    <body>
+      <header>
+      <h1>AliExpress</h1>
+      <div class="search-container">
+        <input type="text" placeholder="Search...">
+        <img src="search-icon.png" alt="Search" class="search-icon" width="20" height="20">
+      </div>
+    </header>
+  
+    <h1>Products</h1>
+    <div id="product-container" class="product-container"></div>
+  
+    <h1>Cart</h1>
+    <div id="cart-container"></div>
+    
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/Model/Product.js"></script>
+    <script type="module" src="/src/Model/CartItem.js"></script>
+    <script type="module" src="/src/View/ProductView.js"></script>
+    <script type="module" src="/src/View/CartView.js"></script>
+    <script type="module" src="/src/Controller/ProductController.js"></script>
+    <script type="module" src="/src/Controller/CartController.js"></script>
+  
+  </body>
+</html>
