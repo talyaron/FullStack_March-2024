@@ -1,6 +1,7 @@
 import { OrderedItem } from '../models/coffee-shop'
 import { coffees } from '../models/items'
 import { Item } from '../models/items'
+import { showItem } from '../views/coffee-form/form';
 export const items: OrderedItem[] = []
 
 export function handleSubmitEvent(event: Event): void {
@@ -33,23 +34,9 @@ export function handleSubmitEvent(event: Event): void {
     }
 }
 
-
-
-
-
-function showItem(item: Item) {
-    return `<div class="img">
-             <img src="${item.src}"
-                alt="${item.alt}">
-                <input value="coffee-${item.alt}" type="checkbox"
-                 name="coffee" id="coffee-${item.alt}">
-            </div>`
-}
-
 export function showItems(): string {
     const items = `<div name="coffee" class="coffee-images">
                     ${coffees.map(item => showItem(item)).join('')}
                     </div>`;
-    // console.log(items);
     return items
 }

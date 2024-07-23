@@ -24,4 +24,17 @@ const espresso: Item = {
     id: "coffee-espresso"
 }
 
+// const tea: Item = {
+//     src: "https://www.foodandwine.com/thmb/6wTm7a0y87X97LK-ZMxe2787kI8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/different-types-of-tea-FT-BLOG0621-7c7fd231e66d4fea8ca9a47cad52ba79.jpg",
+//     alt: "tea",
+//     value: "tea",
+//     id: "tea"
+// }
+// const tea1: Item = {
+//     src: "https://www.foodandwine.com/thmb/6wTm7a0y87X97LK-ZMxe2787kI8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/different-types-of-tea-FT-BLOG0621-7c7fd231e66d4fea8ca9a47cad52ba79.jpg",
+//     alt: "tea",
+//     value: "tea",
+//     id: "tea"
+// }
+
 export const coffees: Item[] = [latte, cappuccino, espresso]

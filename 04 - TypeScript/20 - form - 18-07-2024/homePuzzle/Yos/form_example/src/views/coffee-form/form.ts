@@ -1,14 +1,15 @@
 import './dist/coffeeForm.css'
 import { handleSubmitEvent } from '../../controllers/formHandler'
 import { showItems } from '../../controllers/formHandler'
+import { Item } from '../../models/items'
+import { handleAddItem } from '../../controllers/addItem'
 
 export function coffeeForm() {
-  // onsubmit="handleSubmitEvent(event)"
-  return `   <div class="form-wrapper">
+    return `<div class="form-wrapper">
         <div class="wrapper">
             <h1>Coffee Form</h1>
             <div class="form">
-                <form action="" >
+                <form action="" id="form" >
                   ${showItems()}
                     <div class="name">
                         <label>Name : </label>
@@ -57,17 +58,36 @@ export function coffeeForm() {
                             <input type="radio" id="large" name="size" value="large">
                             <label for="large">Large</label>
                         </fieldset>
-
                     </div>
                     <div class="submit">
-                        <button type="submit">Submit</button>
+                        <button id="submit" type="submit">Submit</button>
                     </div>
                 </form>
+                <div class="add">
+                    <button class="add-item" id="add-item">Add Item</button>
+                </div>  
             </div>
         </div>
     </div>`
 }
 
+export function showItem(item: Item) {
+    return `<div class="img">
+           <img src="${item.src}"
+              alt="${item.alt}">
+              <input value="${item.alt}" type="checkbox"
+               name="coffee" id="${item.alt}">
+          </div>`
+}
 
-document.addEventListener('submit', handleSubmitEvent)
 
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#form');
+    const add = document.querySelector('#add-item');
+    if (form) {
+        form.addEventListener('submit', handleSubmitEvent);
+    }
+    if (add) {
+        add.addEventListener('click', handleAddItem);
+    }
+})
