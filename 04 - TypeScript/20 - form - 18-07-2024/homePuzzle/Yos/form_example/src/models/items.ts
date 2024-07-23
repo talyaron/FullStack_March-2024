@@ -3,6 +3,7 @@ export interface Item {
     alt: string;
     value: string;
     id: string;
+    price?:number;
 }
 
 const latte: Item = {

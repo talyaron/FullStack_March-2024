@@ -2,7 +2,7 @@ import './dist/coffeeForm.css'
 import { handleSubmitEvent } from '../../controllers/formHandler'
 import { showItems } from '../../controllers/formHandler'
 import { Item } from '../../models/items'
-import { handleAddItem } from '../../controllers/addItem'
+import { addItemIntoStore, handleAddItem } from '../../controllers/addItem'
 
 export function coffeeForm() {
     return `<div class="form-wrapper">
@@ -84,10 +84,26 @@ export function showItem(item: Item) {
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('#form');
     const add = document.querySelector('#add-item');
+    const addItem = document.querySelector('#add-item-button');
+    const addItemByClass = document.querySelector('.add-item-button');
+    console.log('addItemByClass', addItemByClass);
     if (form) {
         form.addEventListener('submit', handleSubmitEvent);
     }
     if (add) {
         add.addEventListener('click', handleAddItem);
     }
+    if (addItem) {
+        console.log('addItem', addItem);
+        debugger
+        addItem.addEventListener('click', addItemIntoStore);
+    }
 })
+
+const addItemByClass = document.querySelector('.add-item-button');
+console.log('addItemByClass', addItemByClass);
+if (addItemByClass) {
+    console.log('addItem', addItemByClass);
+    debugger
+    addItemByClass.addEventListener('click', addItemIntoStore);
+}

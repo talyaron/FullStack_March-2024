@@ -2,6 +2,8 @@ import { OrderedItem } from '../models/coffee-shop'
 import { coffees } from '../models/items'
 import { Item } from '../models/items'
 import { showItem } from '../views/coffee-form/form';
+
+
 export const items: OrderedItem[] = []
 
 export function handleSubmitEvent(event: Event): void {
