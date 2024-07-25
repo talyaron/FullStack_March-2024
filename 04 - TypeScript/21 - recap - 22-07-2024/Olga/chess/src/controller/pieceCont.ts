@@ -12,14 +12,18 @@ export function allowedMoves(id:string):Position[]{
         const moves:Position[] = [];
         if (!piece) throw new Error("no piece")
         const { x, y } = piece.position
-        console.log(x, y)
+        const pieceX = x;
+        const pieceY = y;
         function addMove(a: number, b: number) {
             
             if (a >= 0 && a < 8 && b >= 0 && b < 8) {
-                // if (!board[x][y] || board[x][y].color !== board[startX][startY].color) {
+                const square = document.querySelector(`#pos-${b}${a}`);
+
+                if (!square) throw new Error("no square")
+                if (!square.innerHTML || !square.children[0].classList.contains(piece!.color)) {
                     const position = new Position(a, b)
                     moves.push(position);
-                    return true;
+                    return true};
             //         if (board[x][y]) return true; // stop if there's a piece
                 } else {
                     return false; // stop if it's a piece of the same color
@@ -29,23 +33,22 @@ export function allowedMoves(id:string):Position[]{
         }
     // }
 
-        for (let x2 = x + 1; x2 < 8; x2++) {
-            if (!addMove(x2, y)) break;
+        for (let moveX = pieceX + 1; moveX < 8; moveX++) {
+            if (!addMove(moveX, pieceY)) break;
         }
         // left direction
-        for (let x2 = x - 1; x2 >= 0; x2--) {
-            if (!addMove(x2, y)) break;
+        for (let moveX = pieceX - 1; moveX >= 0; moveX--) {
+            if (!addMove(moveX, pieceY)) break;
         }
         // down direction
-        for (let y2 = y + 1; y2 < 8; y2++) {
-            if (!addMove(x, y2)) break;
+        for (let moveY = pieceY + 1; moveY < 8; moveY++) {
+            if (!addMove(pieceX, moveY)) break;
         }
         // up direction
-        for (let y2 = y - 1; y2 >= 0; y2--) {
-            if (!addMove(x, y2)) break;
+        for (let moveY = pieceY - 1; moveY >= 0; moveY--) {
+            if (!addMove(pieceX, moveY)) break;
         }
 
-        console.log(moves)
         return moves
     } catch (error) {
         console.error(error);

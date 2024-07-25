@@ -22,9 +22,9 @@ export function renderAllowedMoves(moves:Position[]){
     try {
         moves.forEach(move => {
             const moveElement:HTMLDivElement|null = document.querySelector(`#pos-${move.y}${move.x}`);
-            console.log(moveElement)
+            // console.log(moveElement)
             if(!moveElement) throw new Error("No move element")
-            moveElement.innerHTML = `<div class="move"></div>`
+            moveElement.appendChild(document.createElement("div")).className = "move";
         })
     } catch (error) {
         console.error(error)

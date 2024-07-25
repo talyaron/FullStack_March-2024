@@ -17,7 +17,10 @@ export class Piece{
         setNewPostion(id:string){
         this.position.y = Number(id.slice(4,5));
         this.position.x = Number(id.slice(5,6));
-        // this.position = new Position(x,y)
+    }
+
+    deletePiece(){
+        this.position = new Position(2,2)
     }
 }
 
