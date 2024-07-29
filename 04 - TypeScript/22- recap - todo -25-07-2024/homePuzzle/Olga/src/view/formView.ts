@@ -1,6 +1,5 @@
 import { Task, tasks } from "../model/taskModel";
 import { renderTasksList } from "./taskView";
-import { doneButtons } from "../controller/taskCont";
 
 export function renderForm(element: HTMLFormElement) {
   try {
@@ -21,14 +20,13 @@ function handleAddTask(event: Event) {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const description = form.task.value;
-    tasks.push(new Task(description));
+    const task = new Task(description);
+    tasks.push(task);
+    localStorage.setItem(task.id, JSON.stringify(task));
+    console.log(task.id);
     renderTasksList(document.querySelector<HTMLDivElement>("#list")!, tasks);
     form.reset();
 
-    doneButtons =
-      document.querySelectorAll<HTMLButtonElement>(".doneButton");
-
-    console.log(tasks);
   } catch (error) {
     console.error(error);
   }

@@ -3,30 +3,33 @@ class Task {
     id: string;
     done: boolean;
     edit: boolean;
-    constructor(description: string) {
-        this.description = description;
-        this.id = `id-${crypto.randomUUID()}`;
-        this.done = false;
-        this.edit = false;
-    }
+
+
+constructor(description: string) {
+    this.description = description;
+    this.id = `id-${crypto.randomUUID()}`;
+    this.done = false;
+    this.edit = false;
+}
 }
 
 const tasks: Task[] = [];
 
-function handleAddTask(ev:any){
-    ev.preventDefault();
+function handleAddTask(ev: any){
+    ev.preventDefault();                              //prevents the default form submission//
     try {
-        const description = ev.target.description.value;
+        const description = ev.target.description.value;      //retrieved the task description from the form input//
 
-        tasks.push(new Task(description)); //add to model
-        renderList(tasks); //render view
-        console.log(tasks);
-        ev.target.reset();
+        tasks.push(new Task(description));                //Creates a new Task object with the description and adds it to the tasks array.//
+        renderList(tasks);                          //Calls the renderList function to update the view with the new list of tasks.//
+        console.log(tasks);                      //Logs the updated tasks array to the console.//
+        ev.target.reset();                       //Resets the form input fields.//
     } catch (error) {
-        console.error(error);
+       console.error(error); 
     }
-    
 }
+
+
 
 function renderList(tasks:Task[]){
     try {
@@ -44,7 +47,7 @@ function renderList(tasks:Task[]){
             </li>`;
         });
         html += '</ol>';
-        
+
         const list = document.querySelector('#list');
         if(!list) throw new Error('List not found');
 
@@ -54,6 +57,7 @@ function renderList(tasks:Task[]){
         console.error(error);
     }
 }
+
 
 function handleDelete(id:string){
     try {
