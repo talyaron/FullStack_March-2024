@@ -1,6 +1,5 @@
 import { Task, tasks } from "../model/taskModel";
 import { renderTasksList } from "./taskView";
-import { doneButtons } from "../controller/taskCont";
 
 export function renderForm(element: HTMLFormElement) {
   try {
@@ -25,10 +24,6 @@ function handleAddTask(event: Event) {
     renderTasksList(document.querySelector<HTMLDivElement>("#list")!, tasks);
     form.reset();
 
-    doneButtons =
-      document.querySelectorAll<HTMLButtonElement>(".doneButton");
-
-    console.log(tasks);
   } catch (error) {
     console.error(error);
   }
