@@ -43,11 +43,7 @@ export function handleEditTask(id: string): void {
     try {
         const task = tasksList.find(task => task.id === id);
         const taskDiv = document.getElementById(`a${id}`) as HTMLDivElement;
-        const formData = JSON.stringify(taskDiv);
         handleEditHtmlTag(taskDiv, task!);
-        console.log('taskDiv', taskDiv);
-        console.log('edit', task);
-        console.log('json', formData)
     } catch (error) {
         console.error(error);
     }
@@ -57,16 +53,18 @@ export function handleEditTask(id: string): void {
 export function handleUpdateTask(id: string, event: any): void {
     try {
         const task = tasksList.find(task => task.id === id);
-        const taskDiv = document.getElementById(`a${id}`) as HTMLDivElement;
-        console.log('taskDiv', taskDiv);
-        console.log('name', event.name);
+        // console.log(task)
+        const taskDiv = document.querySelector(`#a${id}`) as HTMLDivElement;
+        console.dir('taskDiv', taskDiv);
+        console.log('name', event);
+        event.preventDefault();
         // console.log('task', task);
         // console.log('event', event.target);
         // task.name = event.name;
         // task.description = event.desc;
         // task.done = event.done;
         // renderListOfTasks();
-
+        return;
     } catch (error) {
         console.error(error);
     }

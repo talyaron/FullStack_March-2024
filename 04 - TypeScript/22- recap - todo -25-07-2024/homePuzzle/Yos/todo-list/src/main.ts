@@ -11,8 +11,3 @@ const form = document.querySelector<HTMLDivElement>('#form')!
 
 if (form) renderForm(form)!;
 
-const list = document.querySelector<HTMLDivElement>('#tasksList')!;
-if (list) {
-  console.log('list', list);
-  renderTasksList();
-}
