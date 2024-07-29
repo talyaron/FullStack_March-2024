@@ -12,3 +12,9 @@ export class Task {
 }
 
 export const tasks: Task[] = [];
+
+for(let i=0; i<localStorage.length; i++) {
+    let key = localStorage.key(i);
+    const task = JSON.parse(localStorage.getItem(key!)!);
+    tasks.push(task!);
+  }

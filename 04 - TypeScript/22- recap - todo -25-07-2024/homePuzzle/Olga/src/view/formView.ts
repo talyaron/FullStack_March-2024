@@ -20,7 +20,10 @@ function handleAddTask(event: Event) {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const description = form.task.value;
-    tasks.push(new Task(description));
+    const task = new Task(description);
+    tasks.push(task);
+    localStorage.setItem(task.id, JSON.stringify(task));
+    console.log(task.id);
     renderTasksList(document.querySelector<HTMLDivElement>("#list")!, tasks);
     form.reset();
 
