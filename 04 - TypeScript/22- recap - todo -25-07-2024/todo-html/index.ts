@@ -44,7 +44,7 @@ function renderList(tasks:Task[]){
             </li>`;
         });
         html += '</ol>';
-
+        
         const list = document.querySelector('#list');
         if(!list) throw new Error('List not found');
 
