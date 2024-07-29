@@ -23,6 +23,14 @@ export function renderStudent(student: Student): string | undefined {
         const studentHtml = `
             <div class="student">
                 <h2>${student.name}</h2>
+                <div class='subjects'><form  id='subject-grades' onsubmit="handleGrades(event,${student.id})"> 
+                <input class='name' name="subject" type="text" placeholder="enter subject" required>
+                <input class='name' name="grade" type="number" placeholder="enter grade" required>
+                <button class="subject" type="submit">subject and grade</button>
+            </form></div>
+            <div class="grades-list">
+            ${student.grades}
+            </div>
             </div>
         `;
         return studentHtml;
@@ -50,3 +58,5 @@ export function renderStudentForm(element: HTMLDivElement): void | undefined {
         return undefined;
     }
 }
+
+

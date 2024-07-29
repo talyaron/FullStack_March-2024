@@ -1,5 +1,5 @@
 import { Student, students } from "../models/student";
-import { renderStudents } from "../views/students";
+import { renderStudent, renderStudents } from "../views/students";
 
 
 export function addStudent(event: any) {
@@ -14,4 +14,24 @@ export function addStudent(event: any) {
     } catch (error) {
         console.error(error);
     }
+}
+
+export function handleGrades(event:any,id:string){
+    try {
+
+        let student=students.find(student=>student.id===id) as Student;
+        event.preventDefault();
+        if(!event)throw new Error("poop");
+        
+    const grade=event.target.grade.value;
+    const subject=event.target.subject.value;
+   if(student){
+    student.addGrades(subject, grade);
+   }
+   renderStudent(student);
+   
+   event.target.reset();
+} catch (error) {
+        console.error(error);
+}
 }
