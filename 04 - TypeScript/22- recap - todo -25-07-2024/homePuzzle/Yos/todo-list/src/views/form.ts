@@ -21,7 +21,7 @@ export function renderForm(divElement:HTMLElement): string | undefined{
     }
 }
 
-function handleSubmit(event:Event){
+export function handleSubmit(event:Event){
     const form = event.target as HTMLFormElement;
     if (!form) throw new Error("Form not found");
     event.preventDefault();

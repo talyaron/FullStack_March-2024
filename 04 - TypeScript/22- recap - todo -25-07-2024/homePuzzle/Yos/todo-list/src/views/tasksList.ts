@@ -1,6 +1,7 @@
 import { Task, tasksList } from "../models/task";
 import './dist/taskList.css'
-import { handleDeleteTask , handleEditTask, handleUpdateTask} from "../controllers/handleAddTask";
+import { handleDeleteTask, handleEditTask, handleUpdateTask } from "../controllers/handleAddTask";
+import { handleSubmit } from "./form";
 
 
 export function renderTasksList(listElement: HTMLDivElement): void | undefined {
@@ -19,11 +20,12 @@ export function renderTasksList(listElement: HTMLDivElement): void | undefined {
     }
 }
 
-function addClickListenerEvent():void {
+function addClickListenerEvent(): void {
     const deleteList = document.querySelectorAll<HTMLButtonElement>('.delete')
     const editList = document.querySelectorAll<HTMLButtonElement>('.edit')
-    const updateTask = document.querySelectorAll<HTMLButtonElement>('.update')
-    
+    const updateTask = document.querySelectorAll<HTMLDivElement>('.update')
+    //const formElement = document.getElementById('form') as HTMLDivElement;
+
     if (deleteList) {
         deleteList.forEach(item => item.addEventListener('click', handleDelete))
     }
@@ -49,11 +51,21 @@ function handleEdit(event: Event): void {
 
 }
 
-function handleUpdate(event:Event):void{
-    const id = event.target.id;
-    const eventData = event.target;
-    console.log('update', id);
-    handleUpdateTask(id, eventData);
+function handleUpdate(event: Event): void {
+    const id = event.target?.id;
+
+
+
+    // if (!form) throw new Error("Form not found");
+    // // event.preventDefault();
+    // const name = form.name.value!;
+    // const desc = form.description.value;
+    // console.log(name, desc);
+
+    // const id = event.target.id;
+    // const eventData = event.target;
+    // console.log('update', id);
+     handleUpdateTask(id, event);
 
 }
 
@@ -82,11 +94,12 @@ function renderTask(task: Task): string | undefined {
 export function handleEditHtmlTag(ele: HTMLDivElement, task: Task) {
     try {
 
-        let div = `<input class='name' value=${task.name}>
+        let div = `
+                    <input class='name' for='name' value=${task.name}>
                    <input class='desc' value=${task.description}> 
                    <input class='done' value=${task.done} > 
                    <button class="delete" id="${task.id}">Delete</button>
-                   <button class="update" id="${task.id}">Update</button>
+                   <button style="background-color:green; color:white;" class="update" id="${task.id}">Update</button>
                    `
         ele.innerHTML = div;
 
