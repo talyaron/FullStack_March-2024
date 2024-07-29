@@ -10,3 +10,14 @@ function handleAddStudent(ev:any){
     }
 
 }
+function handleAddGrades(ev:any){
+    ev.preventDefault();
+    try {
+     const studentGrade = ev.target.grade.value;
+     console.log()
+     //findd student using his id
+     //use the method add grade
+    } catch (error) {
+     console.error(error);   
+    }
+}
