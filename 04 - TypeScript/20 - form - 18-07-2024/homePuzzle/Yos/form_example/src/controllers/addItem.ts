@@ -30,7 +30,7 @@ export function addItemIntoStore(event: Event): void {
         console.log('add item', event);
         var addForm = document.getElementById('app') as HTMLDivElement;
         addForm.innerHTML = coffeeForm();
-        // return;s
+        // return;
         // coffeeForm
     } catch (error) {
         console.error(error);
