@@ -1,4 +1,4 @@
-import { addStudent } from "../controllers/students";
+import { addStudent, addSubject } from "../controllers/students";
 import { Student, students } from "../models/student";
 
 import './dist/students.css'
@@ -11,6 +11,15 @@ export function renderStudents(element: HTMLDivElement): void {
         });
         element.innerHTML = html;
 
+        //add event listener to the add subject buttons
+        const addSubjectButtons = document.querySelectorAll('[name="add-subject"]');
+        // const formElement = document.querySelector('#form') as HTMLFormElement;
+        if (addSubjectButtons)
+             addSubjectButtons.forEach(button => button.addEventListener('click', addSubject))
+
+
+
+
     } catch (error) {
         console.error(error);
     }
@@ -21,8 +30,11 @@ export function renderStudents(element: HTMLDivElement): void {
 export function renderStudent(student: Student): string | undefined {
     try {
         const studentHtml = `
-            <div class="student">
+            <div class="student" id="a${student.id}">
                 <h2>${student.name}</h2>
+                <p>${student.id}</p>
+                <div class="buttons buttons__add"><button name="add-subject" id="${student.id}">Add Subject</button></div>
+                <div class="buttons buttons__delete"><button name="delete-student" id="${student.id}">Delete Student</button></div>
             </div>
         `;
         return studentHtml;

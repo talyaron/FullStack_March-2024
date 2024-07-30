@@ -15,3 +15,16 @@ export function addStudent(event: any) {
         console.error(error);
     }
 }
+
+
+export function addSubject(event: any) {
+    try {
+       const id = event.target.id;
+        console.log('addSubject', event.target.id);
+        const studentElement = document.getElementById(`a${id}`) as HTMLDivElement;
+        console.log('studentElement', studentElement);
+
+    } catch (error) {
+        console.error(error);
+    }
+}
