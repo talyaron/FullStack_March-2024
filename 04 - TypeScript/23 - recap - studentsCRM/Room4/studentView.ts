@@ -1,6 +1,6 @@
 function renderStudent(student: Student) {
     try {
-        const html = `<li>${student.name}</li>`;
+        const html = `<li>${student.name}, ${student.grades}</li>`;
         return html;
     } catch (error) {
         console.error(error);   
