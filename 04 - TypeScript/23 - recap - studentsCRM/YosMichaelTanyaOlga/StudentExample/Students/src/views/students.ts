@@ -29,7 +29,7 @@ export function renderStudent(student: Student): string | undefined {
                 <button class="subject" type="submit">subject and grade</button>
             </form></div>
             <div class="grades-list">
-            ${student.grades}
+            <p>${student.grades}</p>
             </div>
             </div>
         `;

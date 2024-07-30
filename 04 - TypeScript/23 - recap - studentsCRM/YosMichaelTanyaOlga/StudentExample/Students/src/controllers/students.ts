@@ -25,6 +25,7 @@ export function handleGrades(event:any,id:string){
         
     const grade=event.target.grade.value;
     const subject=event.target.subject.value;
+
    if(student){
     student.addGrades(subject, grade);
    }
