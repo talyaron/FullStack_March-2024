@@ -1,9 +1,10 @@
-function renderStudent(student: Student) {
+function renderStudent(student) {
     try {
-        const html = `<li>${student.name}, ${student.grades}</li>`;
+        const gradesHtml = student.grades.map(grade => `${grade.subject}: ${grade.grade}`).join(', ');
+        const html = `<li>${student.name}: ${gradesHtml}</li>`;
         return html;
     } catch (error) {
-        console.error(error);   
+        console.error(error);
     }
 }
 

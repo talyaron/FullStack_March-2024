@@ -9,24 +9,21 @@ function handleAddStudent(ev: any) {
     console.error(error);
   }
 }
-function handleAddGrades(ev: any) {
+function handleAddGrades(ev) {
   ev.preventDefault();
   try {
-    // const studentGrade = ev.target.grade.value;
-    const studentId = ev.target.studentId.value; 
-    const student = students.find(stud => stud.id === studentId);
-    const gradeId = ev.target.gradeId.value; 
-    const grade: any = grades.find(grade => grade.id === gradeId);
+      const studentId = ev.target.studentId.value;
+      const student = students.find(stud => stud.id === studentId);
+      const grade = ev.target.grade.value;
+      const subject = ev.target.subject.value;
 
-    if (student) {
-      student.addGrade(grade); 
-      console.log(students);
-      renderStudentList(students, document.querySelector("#list"));
-      renderStudent(student);
-    } else {
-      console.error('Student not found');
-    }
+      if (student) {
+          student.addGrade(grade, subject);
+          renderStudentList(students, document.querySelector("#list"));
+      } else {
+          console.error('Student not found');
+      }
   } catch (error) {
-    console.error(error);
+      console.error(error);
   }
 }
