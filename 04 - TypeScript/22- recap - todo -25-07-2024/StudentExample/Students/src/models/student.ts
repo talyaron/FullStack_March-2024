@@ -1,7 +1,7 @@
 export class Student {
     id: string;
     name: string;
-    grades: Subjects[];
+    grades: Subject[];
 
 
     constructor(name: string) {
@@ -17,7 +17,7 @@ export class Student {
 }
 
 
-export interface Subjects {
+export interface Subject {
     subject: string;
     score: number;
     id: string;
