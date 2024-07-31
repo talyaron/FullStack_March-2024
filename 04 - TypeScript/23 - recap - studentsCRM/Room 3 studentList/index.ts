@@ -24,7 +24,7 @@ const grades: Grade [] = [];
 function handleAddStudent(ev: any) {
   ev.preventDefault();
   try {
-    const form = ev.target.student.value;
+    const form = ev.target.student.value; 
     students.push(new Student(form));
     renderStudents(students);
     ev.target.reset();
