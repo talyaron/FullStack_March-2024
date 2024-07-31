@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Room4-Student List</title>
     <link rel="stylesheet" href="./dist/style.css">
 </head>
+
 <body>
     <form onsubmit="handleAddStudent(event)">
-    <label for="name">Student Name</label>
-    <input type="text" name="name" placeholder="Student Name" id="nameId" required>
-    <button type="submit">Add</button>
-    </form>
-    <form onsubmit="handleAddGrades(event)">
-        <label for="grade">Student Grade</label>
-        <input type="text" name="grade" placeholder="Student Grade" id="gradeId" required>
-        <label for="subject">Subject</label>
-        <input type="text" name="subject" placeholder="Subject" id="subjectId" required>
+        <label for="name">Student Name</label>
+        <input type="text" name="name" placeholder="Student Name" id="nameId" required>
         <button type="submit">Add</button>
     </form>
     <div id="list"></div>
     <div id="grades"></div>
-   
- <script src="./dist/studentView.js"></script>
- <script src="./dist/studentController.js"></script>
- <script src="./dist/studentModle.js"></script>
+
+    <script src="./dist/studentModle.js"></script>
+    <script src="./view/dist/studentView.js"></script>
+    <script src="./dist/studentController.js"></script>
+ 
 </body>
+
 </html>
