@@ -9,21 +9,21 @@ function handleAddStudent(ev: any) {
     console.error(error);
   }
 }
-function handleAddGrades(ev) {
+function handleAddGrades(ev: any, studentId: string) {
   ev.preventDefault();
   try {
-      const studentId = ev.target.studentId.value;
-      const student = students.find(stud => stud.id === studentId);
-      const grade = ev.target.grade.value;
-      const subject = ev.target.subject.value;
 
-      if (student) {
-          student.addGrade(grade, subject);
-          renderStudentList(students, document.querySelector("#list"));
-      } else {
-          console.error('Student not found');
-      }
+    const student = students.find(stud => stud.id === studentId);
+    const grade = ev.target.grade.value;
+    const subject = ev.target.subject.value;
+
+    if (student) {
+      student.addGrade(grade, subject);
+      renderStudentList(students, document.querySelector("#list"));
+    } else {
+      throw new Error ('Student not found');
+    }
   } catch (error) {
-      console.error(error);
+    console.error(error);
   }
 }
