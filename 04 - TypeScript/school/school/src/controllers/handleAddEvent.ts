@@ -18,3 +18,7 @@ function addStudent(name:string){
 export function handleRenderStudent(event:any){
     console.dir(event.target);
 }
+
+export function viewStudentHandler(id:string){
+    alert("this is working!")
+}

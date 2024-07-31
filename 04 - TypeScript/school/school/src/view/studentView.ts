@@ -1,6 +1,7 @@
-import { handleAddEvent, handleRenderStudent } from "../controllers/handleAddEvent";
+import { handleAddEvent, handleRenderStudent, viewStudentHandler } from "../controllers/handleAddEvent";
 import { htmlTag } from "../general/general";
 import { students } from "../model/student";
+
 
 //first rendering the form
 export function renderForm(){
@@ -20,14 +21,16 @@ export function renderForm(){
 
 export function renderStudents(){
     try {
-        let html = `<div><ul>`;
+        let html = `<div><ul id='studentList'>`;
+         
         students.forEach(element => {
-            html+=`<li><a href="#" id="${element.id}">${element.name}</a></li>`;
+            html+=`<li class="linkToStudent" id='${element.id}'><a href="#" >${element.name}</a></li>`;
         });
         html+= `</ul></div>`;
         const div=htmlTag("#list");
         div.innerHTML = html;
-        div.addEventListener('',handleRenderStudent);
+        div.querySelectorAll(".linkToStudent").forEach((student)=> {student.addEventListener('click',()=>viewStudentHandler(student.id))})
+        
     } catch (error) {
         console.error(error);
     }
