@@ -39,13 +39,19 @@ function renderStudents(students: Student[]) {
     students.forEach((student) => {
       html += `<li class = "student"> 
         ${student.name}
-        <form onsubmit = "handleAddGrades(event)">
+        <form onsubmit="handleAddGrades(event)">
         <input type = "number" name ="grade" placeholder = "Grade">
         <input type = "string" name ="subject" placeholder = "Subject">
-        <button type = "submit">Add grade</button>
+        <button type = "submit" id= "addGrade">Add grade</button>
         </li>`;
+
+      const AddGradeButton = studentList.querySelector(
+        '#addGrade'
+      ) as HTMLElement;
+      AddGradeButton.addEventListener("click", handleAddGrades);
     });
     html += "</ol>";
+
     const studentList = document.querySelector(
       "#studentsList"
     ) as HTMLDivElement;
@@ -58,10 +64,12 @@ function renderStudents(students: Student[]) {
 
 function handleAddGrades(event: any) {
   event.preventDefault();
-  console.log("form");
-
   try {
-    const form = event.target.grade.value;
+    const grade = event.target.grade.value;
+    const subject = event.target.subject.value;
+    grades.push(new Grade(grade, subject));
+    console.log(grades);
+    
   } catch (error) {
     console.error(error);
   }
