@@ -140,7 +140,7 @@ function updateSubject(event: any): void {
             student.updateSubject(subjectId, subject, parseInt(grade))
         }
         console.log(subjectId)
-        showSubject(subjectId);
+        showSubject(studentId, subjectId);
         //renderStudents();
 
     } catch (error) {
