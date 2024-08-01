@@ -1,3 +1,4 @@
+import { Grade } from "../model/gradeModel";
 export class Student{
     id:string
     name:string

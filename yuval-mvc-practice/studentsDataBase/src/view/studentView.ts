@@ -1,13 +1,15 @@
 export function renderForm(){
     try {
-        const id:string = "s"+crypto.randomUUID();
+        const id:string = "studentForm"+crypto.randomUUID();
         const html:string=`<form id="${id}" >
-        <input type="text" name="studentName">
+        <input type="text" value="student name">
         <input type="submit" value="add">
         </form>`;
-        const div=htmlTag("#app");
-        div.innerHTML=html;
+        const div=htmlTag("#studentCrp");
+        // div.innerHTML=html;
         div.addEventListener('submit',handleAddEvent);
+        return html
+       
     } catch (error) {
         console.error(error);
     }
