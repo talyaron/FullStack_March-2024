@@ -14,6 +14,17 @@ export class Student {
         this.grades.push({ subject: subject, score: score, id: crypto.randomUUID()});
     }
 
+
+    updateSubject(subjectId:string, subjectName:string, score:number){
+        if(!subjectName || !score) return;
+        this.grades.forEach(subject => {if(subject.id === subjectId){
+            
+            subject.score = score;
+            subject.subject = subjectName;
+        } 
+        });
+    }
+
 }
 
 
