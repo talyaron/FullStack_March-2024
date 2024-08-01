@@ -1,5 +1,5 @@
 import { Student, students } from "../models/student";
-import { renderStudent, renderStudents } from "../views/students";
+import { renderStudent, renderStudentForm, renderStudents } from "../views/students";
 
 
 export function addStudent(event: any) {
@@ -29,7 +29,8 @@ export function handleGrades(event:any,id:string){
    if(student){
     student.addGrades(subject, grade);
    }
-   renderStudent(student);
+   const studentElement = document.querySelector('.students-list') as HTMLDivElement;
+   renderStudents(studentElement);
    
    event.target.reset();
 } catch (error) {
