@@ -1,10 +1,22 @@
-class order {
-  description: string;
+class student {
+  name: string;
+  grades: number[];
   id: string;
-  done: boolean;
-  constructor(description: string) {
-    this.description = description;
+  constructor(name: string) {
+    this.name = name;
     this.id = `id-${crypto.randomUUID()}`;
-    this.done = false;
   }
 }
+
+const students: Student[] = [];
+
+class grade {
+  grade: number;
+  subject: string;
+  constructor(grade: number, subject: string) {
+    this.grade = grade;
+    this.subject = subject;
+  }
+}
+
+const grades: Grade[] = [];

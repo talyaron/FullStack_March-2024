@@ -1,7 +1,7 @@
 function renderStudent(student) {
     try {
         let gradesHtml = '<ul>'
-        gradesHtml += student.grades.map(grade => `<li>${grade.subject}: ${grade.grade}</li>`).join(', ');
+        gradesHtml += student.grades.map(grade => `<li>${grade.subject}: ${grade.grade}</li>`).join(' ');
         gradesHtml += '</ul>';
         let html = `<li>${student.name}: ${gradesHtml}</li>`;
         html += renderStudentForm(student);
