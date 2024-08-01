@@ -16,24 +16,25 @@ export function addStudent(event: any) {
     }
 }
 
+function showSubjectsWithGrades(id: string): string {
+    let subjects = '';
 
-export function addSubjectForm(event: any, idSut?:string): void {
+    students.forEach(student => {
+        if (student.id === id) {
+            subjects += renderAllSubjects(student.grades, id);
+        }
+    });
+    // const subjects = renderAllSubjects();
+    const addSubjectInput = renderFormSubject(id);
+    return subjects + addSubjectInput;
+}
+export function addSubjectForm(event: any, idSut?: string): void {
     try {
-        const id = idSut ?? event.target.id ;
+        const id = idSut ?? event.target.id;
         console.log('addSubject', id);
         const studentElement = document.getElementById(`a${id}`) as HTMLDivElement;
-        let subjects = '';
-
-        students.forEach(student => {
-            if (student.id === id) {
-                subjects += renderAllSubjects(student.grades, id);
-            }
-
-        });
-        // const subjects = renderAllSubjects();
-        const addSubjectInput = renderFormSubject(id);
-
-        studentElement.innerHTML += subjects + addSubjectInput;
+        const subjectsDiv = showSubjectsWithGrades(id);
+        studentElement.innerHTML += subjectsDiv;
 
         listenerUpdateSubject();
 
@@ -138,9 +139,31 @@ function updateSubject(event: any): void {
         if (student) {
             student.updateSubject(subjectId, subject, parseInt(grade))
         }
-        renderStudents();
+        console.log(subjectId)
+        showSubject(studentId, subjectId);
+        //renderStudents();
 
     } catch (error) {
+        console.error(error);
+    }
+}
+
+function showSubject(studentId: string, subjectId: string): void {
+    try {
+        const subjectInfoDiv = document.querySelector(`div.subject#subject-${subjectId}`) as HTMLDivElement;
+        const subject = students.find(student => student.id === studentId);
+        const subjectObject: Subject = subject?.grades.find(sub => sub.id === subjectId) as Subject;
+        console.log('subjectObject', subjectObject);
+        if (subjectInfoDiv) {
+            console.log('subjectInfoDiv', subjectInfoDiv);
+            subjectInfoDiv.innerHTML = renderSubject(subjectObject, subjectId);
+            // const subjectsDiv = showSubjectsWithGrades(id);
+            // subjectInfoDiv.innerHTML = subjectsDiv;
+            listenerUpdateSubject();
+            // renderStudents();
+        }
+    }
+    catch (error) {
         console.error(error);
     }
 }
