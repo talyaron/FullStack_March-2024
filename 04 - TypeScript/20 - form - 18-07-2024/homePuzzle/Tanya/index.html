@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Order</title>
+    <link rel="stylesheet" href="./dist/style.css">
+    <script src="./dist/app.js" defer></script>
+</head>
+<body>
+    <div class="order-container" id="order-container">
+        <form onsubmit="handleAddCoffeeOrder(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <fieldset>
+                <legend>Coffee Type:</legend>
+                <div class="coffee-types">
+                    <div class="coffee-card">
+                        <label for="espresso">
+                            <img src="./img/Espresso.jpg" alt="Espresso">
+                            <span>Espresso</span>
+                            <input type="radio" id="espresso" name="coffeeType" value="espresso" required>
+                        </label>
+                    </div>
+                    <div class="coffee-card">
+                        <label for="latte">
+                            <img src="./img/Latte.jpg" alt="Latte">
+                            <span>Latte</span>
+                            <input type="radio" id="latte" name="coffeeType" value="latte">
+                        </label>
+                    </div>
+                    <div class="coffee-card">
+                        <label for="americano">
+                            <img src="./img/Americano.jpg" alt="Americano">
+                            <span>Americano</span>
+                            <input type="radio" id="americano" name="coffeeType" value="americano">
+                        </label>
+                    </div>
+                    <div class="coffee-card">
+                        <label for="cappuccino">
+                            <img src="./img/Cappuccino.jpg" alt="Cappuccino">
+                            <span>Cappuccino</span>
+                            <input type="radio" id="cappuccino" name="coffeeType" value="cappuccino">
+                        </label>
+                    </div>
+                    <div class="coffee-card">
+                        <label for="macchiato">
+                            <img src="./img/Macchiato.jpg" alt="Macchiato">
+                            <span>Macchiato</span>
+                            <input type="radio" id="macchiato" name="coffeeType" value="macchiato">
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Size:</legend>
+                <input type="radio" id="small" name="size" value="small" required><label for="small">Small - $3</label>
+                <input type="radio" id="medium" name="size" value="medium"><label for="medium">Medium - $5</label>
+                <input type="radio" id="large" name="size" value="large"><label for="large">Large - $7</label>
+            </fieldset>
+            <fieldset>
+                <legend>Milk Type:</legend>
+                <select name="milkType" id="milkType">
+                    <option value="noMilk">No milk</option>
+                    <option value="cow">Cow</option>
+                    <option value="lactoseFree">Lactose Free ($3)</option>
+                    <option value="soy">Soy ($3)</option>
+                    <option value="almond">Almond ($3)</option>
+                    <option value="oat">Oat ($3)</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Sugar Type:</legend>
+                <select name="sugarType" id="sugarType" onchange="handleSugarTypeChange(event)">
+                    <option value="noSugar">No Sugar</option>
+                    <option value="white">White</option>
+                    <option value="brown">Brown</option>
+                    <option value="stevia">Stevia</option>
+                </select>
+                <div id="sugarAmountContainer" style="display:none;">
+                    <label for="sugarAmount">How many spoons?</label>
+                    <select name="sugarAmount" id="sugarAmount" onchange="handleSugarAmountChange(event)">
+                        <option value="0.5">0.5</option>
+                        <option value="1">1</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2">2</option>
+                        <option value="2.5">2.5</option>
+                        <option value="3">3</option>
+                        <option value="3.5">3.5</option>
+                        <option value="4">4</option>
+                    </select>
+                    <div id="metforminContainer" style="display:none;">
+                        <p>Would you like a Metformin syringe with that?</p>
+                        <input type="radio" id="metforminYes" name="metformin" value="yes"><label for="metforminYes">Yes</label>
+                        <input type="radio" id="metforminNo" name="metformin" value="no"><label for="metforminNo">No</label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Extras:</legend>
+                <div>
+                    <input type="checkbox" id="whippedCream" name="extra" value="whippedCream">
+                    <label for="whippedCream">Whipped Cream ($1)</label>
+                </div>
+            </fieldset>
+            <div id="totalPriceContainer">
+                <strong>Total Price: $<span id="totalPrice">0.00</span></strong>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="receipt" style="display:none;">
+        <h1>Thank you for your order.</h1>
+        <div id="orderSummary"></div>
+        <button onclick="window.location.reload()">Back to Order</button>
+    </div>
+</body>
+</html>
