@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FDF7E4;
+    margin: 0;
+    padding: 0;
+}
+
+.order-container {
+    background: #BBAB8C;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        fieldset {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+            legend {
+                font-weight: bold;
+            }
+
+            .coffee-types {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .coffee-card {
+                background-color: #f1e7d6;
+                border: 1px solid #d3a87c;
+                border-radius: 5px;
+                width: 30%;
+                text-align: center;
+                padding: 10px;
+                margin-bottom: 10px;
+                &:hover {
+                    background-color: #DBB5B5;
+                }
+                label {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    cursor: pointer;
+
+                    img {
+                        height: 120px;
+                        width: 150px;
+                        border-radius: 5px;
+                        margin-bottom: 10px;
+                    }
+
+                    span {
+                        font-size: 1.1em;
+                        margin-bottom: 10px;
+                    }
+
+                    input[type="radio"] {
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            div {
+                margin: 5px 0;
+
+                label {
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                margin-left: 5px;
+            }
+        }
+
+        #totalPriceContainer {
+            margin-top: 10px;
+
+            strong {
+                font-size: 1.2em;
+            }
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #DED0B6;
+            color: white;
+            cursor: pointer;
+            font-size: 1em;
+
+            &:hover {
+                background-color: #543310;
+            }
+        }
+    }
+}
+
+#receipt {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
+    h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    #orderSummary {
+        margin-top: 20px;
+
+        p {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        font-size: 1em;
+
+        &:hover {
+            background-color: #45a049;
+        }
+    }
+}
