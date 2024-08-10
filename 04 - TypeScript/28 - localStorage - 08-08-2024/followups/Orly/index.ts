@@ -6,8 +6,8 @@ if(newName)
 
 
 
-const name = localStorage.getItem('name');
-if(name)
-    document.body.innerHTML = `<h1>Hello, ${name}</h1>`;
+const Name = localStorage.getItem('name');
+if(Name)
+    document.body.innerHTML = `<h1>Hello, ${Name}</h1>`;
 
 sessionStorage.setItem('name', 'John Wick');
