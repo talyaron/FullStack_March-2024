@@ -1,8 +1,10 @@
+import { GameController } from './controller/gameContr';
+import { GameModel } from './model/gameModel';
 import './style.scss'
-import { renderGame } from "./view/playerView";
+import { GameView } from './view/gameView';
 
-setInterval(() => {
-  renderGame();
-}, 50)
+const model = new GameModel();
+const view = new GameView();
+const controller = new GameController(model, view);
 
-// renderGame();
+controller.init();

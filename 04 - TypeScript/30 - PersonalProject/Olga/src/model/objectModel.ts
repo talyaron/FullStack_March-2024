@@ -1,11 +1,14 @@
 export class Fish {
+    id: string;
     x: number;
     y: number;
     type: Type;
     direction: "left" | "right";
+    value: number = 5;
     constructor(type: Type) {
+        this.id = `id-${crypto.randomUUID()}`;
+        this.y = this.depthCheck();
         this.x = Math.floor(Math.random() * 100);
-        this.y = Math.floor(Math.random() * 100);
         this.type = type;
         this.direction = Math.random() > 0.5 ? "right" : "left";
     }
@@ -20,6 +23,14 @@ export class Fish {
         } else if (this.x >= 90) {
             this.direction = "left";
         }
+    }
+
+    depthCheck() {
+        let depth = Math.floor(Math.random() * 100);
+        if (depth < 20) {
+            depth += 20;
+        }
+        return depth;
     }
 }
 
