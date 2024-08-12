@@ -4,7 +4,7 @@ export class Fish {
     y: number;
     type: Type;
     direction: "left" | "right";
-    value: number = 5;
+    value: number = 20;
     constructor(type: Type) {
         this.id = `id-${crypto.randomUUID()}`;
         this.y = this.depthCheck();
@@ -38,7 +38,7 @@ export class Type {
     width: number;
     height: number;
     img: string;
-    speed: number = 0.2;
+    speed: number = 0.08;
     constructor(width: number, height: number, img: string) {
         this.width = width;
         this.height = height;
@@ -49,9 +49,17 @@ export class Type {
 export const fishList: Fish[] = [];
 
 export const typeList: Type[] = [];
-typeList.push(new Type(100, 100, "./src/assets/fish.png"));
-typeList.push(new Type(100, 100, "./src/assets/fish.png"));
-typeList.push(new Type(100, 100, "./src/assets/fish.png"));
+
+function addFish() {
+    const widthScreen = window.innerWidth;
+    const numberFish = Math.floor(widthScreen / 100);
+
+    for (let i = 0; i < numberFish; i++) {
+        typeList.push(new Type(100, 100, "./src/assets/fish.png"));
+    }
+}
+
+addFish();
 
 for (let i = 0; i < typeList.length; i++) {
     fishList.push(new Fish(typeList[i]));

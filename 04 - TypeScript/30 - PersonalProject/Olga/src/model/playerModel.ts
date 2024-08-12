@@ -29,7 +29,11 @@ export class Hook {
   isMoving: boolean = false;
   direction: "forward" | "backward" = "forward";
   rotate: "left" | "right" = "left";
-  hookedObject: Fish | null = null;
+  // hookedObject: Fish | null = null;
+  soundCatch: HTMLAudioElement = new Audio("./src/assets/sounds/catch.mp3");
+  forwardSound: HTMLAudioElement = new Audio("./src/assets/sounds/forward.mp3");
+  backwardSound: HTMLAudioElement = new Audio("./src/assets/sounds/backward.mp3");
+  swingingSound: HTMLAudioElement = new Audio("./src/assets/sounds/swinging.mp3");
 
   constructor(x: number, y: number) {
     this.x = x;
@@ -43,6 +47,7 @@ export class Hook {
 
   update() {
     if (!this.isMoving) {
+      // this.swingingSound.play();
       if (this.rotate === "left" && this.angle < 0.82) {
         this.angle += this.rotationSpeed;
       } else if (this.rotate === "right" && this.angle > -0.82) {
@@ -54,9 +59,12 @@ export class Hook {
       }
     } else {
       if (this.direction === "forward") {
+        this.stopSound(this.swingingSound);
+        this.forwardSound.play();
         this.length += this.speed;
       } else if (this.direction === "backward") {
         this.length -= this.speed;
+        this.backwardSound.play();
       }
 
       // const hookX = this.x + Math.cos(this.angle) * this.length;
@@ -67,8 +75,12 @@ export class Hook {
       if (this.isOutOfBounds()) {
         this.direction = "backward";
       }
+
+      if (this.length <= 5) {
+        this.stopSound(this.backwardSound); // Останавливаем звук, когда крючок полностью вернулся
+        // this.isMoving = false; // Останавливаем движение крючка
+      }
     }
-    console.log(this.isMoving)
   }
 
   isOutOfBounds(): boolean {
@@ -79,8 +91,6 @@ export class Hook {
 
     const hookXabs = hookRect.left;
     const hookYabs = hookRect.top;
-
-    console.log(hookXabs, hookYabs);
 
     if (hookXabs < 0 || hookXabs > screenWidth - hookRect.width || hookYabs < 0 || hookYabs > screenHeight - hookRect.height) {
       return true;
@@ -101,13 +111,17 @@ export class Hook {
     this.direction = "forward";
   }
 
+  stopSound(sound: HTMLAudioElement) {
+    sound.pause();
+    sound.currentTime = 0;
+  }
+
   caughtObject(obj: Fish): boolean {
-    
-    const fish = document.querySelector(`#${obj.id}`) as HTMLElement;
-    console.log(fish);
-    // const fishRect = fish!.getBoundingClientRect();
-    // const hookElement = document.querySelector("#hook");
-    // const hookRect = hookElement!.getBoundingClientRect();
+
+    const fish = document.querySelector(`#${obj.id}`);
+    const fishRect = fish!.getBoundingClientRect();
+    const hookElement = document.querySelector("#hook");
+    const hookRect = hookElement!.getBoundingClientRect();
 
     // проверка на захват объекта
     // const hookX = this.x + Math.cos((this.angle * Math.PI) / 180) * this.length;
@@ -118,15 +132,15 @@ export class Hook {
     // const hookX = hookRect.left + hookRect.width / 2;
     // const hookY = hookRect.top + hookRect.height / 2;
 
-    // const fishX = fishRect.left;
-    // const fishY = fishRect.top;
-    // const hookX = hookRect.left;
-    // const hookY = hookRect.top;
-    // return (
-    //   hookX > fishX &&
-    //   hookX < fishX + obj.type.width &&
-    //   hookY > fishY &&
-    //   hookY < fishY + obj.type.height
-    // );
+    const fishX = fishRect.left;
+    const fishY = fishRect.top;
+    const hookX = hookRect.left;
+    const hookY = hookRect.top;
+    return (
+      hookX > fishX &&
+      hookX < fishX + obj.type.width &&
+      hookY > fishY &&
+      hookY < fishY + obj.type.height
+    );
   }
 }

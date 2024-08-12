@@ -29,7 +29,7 @@ export class GameView {
       hookElem.style.left = `0px`;
       fishingRod.style.top = `${hook.y}px`;
       hookElem.style.top = `0px`;
-      
+
     } else {
         fishingLine.style.height = `${hook.length + 50}px`;
         if (hook.angle < 0) {
@@ -39,7 +39,6 @@ export class GameView {
           hookElem.style.left = `-${hook.length * Math.sin(0)}px`;
           hookElem.style.top = `${hook.length * Math.cos(0)}px`;
         }
-        console.log(hook.angle, fishingRod.style.transform);
     }
   }
 
