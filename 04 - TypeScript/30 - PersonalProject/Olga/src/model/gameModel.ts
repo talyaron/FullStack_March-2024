@@ -1,3 +1,4 @@
+import { size } from "../view/size";
 import { Fish, fishList } from "./objectModel";
 import { Player } from "./playerModel";
 
@@ -10,7 +11,7 @@ export class GameModel {
     levelCompleted: boolean = false;
 
     constructor() {
-      this.player = new Player('user',25,92);
+      this.player = new Player('user',-(size.size/6),size.size/2);
       // this.initLevelObjects();
     }
 
@@ -32,12 +33,11 @@ export class GameModel {
       if (this.player.hook.isMoving) {
         this.objects.forEach((obj, index) => {
           if (this.player.hook.caughtObject(obj)) {
-            // const water = document.querySelector('.water') as HTMLElement;
-            // const fishListHTML = water.childNodes as NodeListOf<HTMLElement>;
             const fish = document.querySelector(`#${obj.id}`) as HTMLElement;
             const grab = document.querySelector('#grab') as HTMLElement;
             grab.appendChild(fish);
             this.player.hook.direction = 'backward';
+            console.log('length',this.player.hook.length);
             this.score += obj.value;
             fishList.splice(index, 1); // удаляем пойманный объект
           }
@@ -60,7 +60,7 @@ export class GameModel {
         this.player.hook.stopSound(this.player.hook.backwardSound);
         alert("Level completed!");
       } else {
-        // alert("The time is up! The level has not been completed.");
+        alert("The time is up! The level has not been completed.");
         console.log("The time is up! The level has not been completed.");
       }
     }

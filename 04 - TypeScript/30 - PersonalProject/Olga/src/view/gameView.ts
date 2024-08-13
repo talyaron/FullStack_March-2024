@@ -1,5 +1,6 @@
 import { fishList } from "../model/objectModel";
 import { Hook } from "../model/playerModel";
+import { size } from "./size";
 
 export class GameView {
   playerElement: HTMLElement;
@@ -23,22 +24,21 @@ export class GameView {
 
     if (!hook.isMoving) {
       hook.update();
-      fishingLine.style.height = `50px`;
+      fishingLine.style.height = `${size.size / 6}px`;
       fishingRod.style.transform = `rotate(${hook.angle}rad)`;
       fishingRod.style.left = `${hook.x}px`;
       hookElem.style.left = `0px`;
       fishingRod.style.top = `${hook.y}px`;
       hookElem.style.top = `0px`;
-
     } else {
-        fishingLine.style.height = `${hook.length + 50}px`;
-        if (hook.angle < 0) {
-          hookElem.style.left = `${hook.length * Math.sin(0)}px`;
-          hookElem.style.top = `${hook.length * Math.cos(0)}px`;
-        } else {
-          hookElem.style.left = `-${hook.length * Math.sin(0)}px`;
-          hookElem.style.top = `${hook.length * Math.cos(0)}px`;
-        }
+      fishingLine.style.height = `${hook.length + 50}px`;
+      if (hook.angle < 0) {
+        hookElem.style.left = `${hook.length * Math.sin(0)}px`;
+        hookElem.style.top = `${hook.length * Math.cos(0)}px`;
+      } else {
+        hookElem.style.left = `-${hook.length * Math.sin(0)}px`;
+        hookElem.style.top = `${hook.length * Math.cos(0)}px`;
+      }
     }
   }
 
@@ -62,4 +62,32 @@ export class GameView {
   updateTimer(timer: number) {
     this.timerElement.innerText = `Time: ${Math.floor(timer)}`;
   }
+}
+
+export function renderGame() {
+  const html = `
+  <div class="header" style="height: ${size.size*0.55}px; font-size: ${size.size/10}px;">
+    <div class="div-box">
+        <div id="score">Score: 0</div>
+        <div id="goalLevel">Goal: 100</div>
+    </div>
+    
+    <div id="player" style="width: ${size.size}px; height: ${size.size}px;">
+      <div id="fishing-rod" style="width: ${size.size/3}px; height: ${size.size/3}px;">
+        <div id="fishing-line"></div>
+        <div id="hook">
+          <div id="grab"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-box">
+        <div id="level">Level: 1</div>
+        <div id="timer">Timer: 60</div>
+    </div>
+  </div>
+  <div class="water"></div>
+  `;
+  const game = document.querySelector("#game") as HTMLElement;
+  game.innerHTML = html;
 }

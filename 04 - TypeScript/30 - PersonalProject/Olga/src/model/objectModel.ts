@@ -1,3 +1,5 @@
+import { size } from "../view/size";
+
 export class Fish {
     id: string;
     x: number;
@@ -55,7 +57,7 @@ function addFish() {
     const numberFish = Math.floor(widthScreen / 100);
 
     for (let i = 0; i < numberFish; i++) {
-        typeList.push(new Type(100, 100, "./src/assets/fish.png"));
+        typeList.push(new Type(size.size/3, size.size/3, "./src/assets/fish.png"));
     }
 }
 
