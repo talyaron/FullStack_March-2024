@@ -3,13 +3,13 @@ class GameController {
     view: GameView;
     snake: Snake;
 
+
     constructor(model: GameModel, view: GameView) {
         this.model = model;  
         this.view = view; 
 
         document.addEventListener('keydown', this.handleMovement.bind(this));
     }
-    checkCollision()
 
     startGame() {
         this.model.updateGame(); 
@@ -18,7 +18,7 @@ class GameController {
 
         document.addEventListener('keydown', this.handleMovement.bind(this));
     }
-    updateGame(){
+    updateGame (gameOver: boolean) {
          this.snake.move();
         this.checkCollision();
         return { gameOver: false };
