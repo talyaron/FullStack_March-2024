@@ -22,48 +22,45 @@ class Snake {
     this.body.push(lastSegment);
   }
 
-  setDirection(x, y) {
+  setDirection(x: number, y: number) {
     this.direction.x = x;
     this.direction.y = y;
   }
 
-  checkCollision(food) {
+  checkCollision(food: Food): boolean {
     const head = this.body[0];
     return head.x === food.position.x && head.y === food.position.y;
   }
 
-  checkSelfCollision() {
+  checkSelfCollision(): boolean {
     const head = this.body[0];
-    return this.body
-      .slice(1)
-      .some((segment) => segment.x === head.x && segment.y === head.y);
+    return this.body.slice(1).some(segment => segment.x === head.x && segment.y === head.y);
   }
 
-  checkWallCollision(width, height) {
+  checkWallCollision(width: number, height: number): boolean {
     const head = this.body[0];
     return head.x < 0 || head.x >= width || head.y < 0 || head.y >= height;
   }
 }
 
+
 class Food {
   position: { x: number; y: number };
   size: number;
-  containerSize: number | any;
-  constructor(containerSize) {
+  containerSize: { width: number; height: number };
+
+  constructor(containerSize: { width: number; height: number }) {
     this.position = { x: 5, y: 5 };
     this.size = 20;
     this.containerSize = containerSize;
   }
 
   generateNewPosition() {
-    this.position.x = Math.floor(
-      Math.random() * (this.containerSize.width / this.size)
-    );
-    this.position.y = Math.floor(
-      Math.random() * (this.containerSize.height / this.size)
-    );
+    this.position.x = Math.floor(Math.random() * (this.containerSize.width / this.size));
+    this.position.y = Math.floor(Math.random() * (this.containerSize.height / this.size));
   }
 }
+
 
 class GameModel {
   snake: Snake;
@@ -78,7 +75,7 @@ class GameModel {
     this.containerSize = containerSize;
   }
 
-  updateGame() {
+  updateGame(): { gameOver: boolean } {
     this.snake.move();
 
     if (this.snake.checkCollision(this.food)) {
@@ -96,3 +93,26 @@ class GameModel {
     return { gameOver: wallCollision || selfCollision };
   }
 }
+
+class GameController {
+  model: GameModel;
+  view: GameView;
+
+  constructor(model: GameModel, view: GameView) {
+    this.model = model;
+    this.view = view;
+  }
+  
+}
+ 
+ 
+
+  class GameView {
+    gameContainer: HTMLElement;
+    scoreElement: HTMLElement;
+  
+    constructor(gameContainer: HTMLElement, scoreElement: HTMLElement) {
+      this.gameContainer = gameContainer;
+      this.scoreElement = scoreElement;
+    }}
+    
