@@ -29,7 +29,9 @@ class Snake {
 
   checkCollision(food: Food): boolean {
     const head = this.body[0];
+    console.log(`Checking collision: Snake head at (${head.x}, ${head.y}), Food at (${food.position.x}, ${food.position.y})`);
     return head.x === food.position.x && head.y === food.position.y;
+
   }
 
   checkSelfCollision(): boolean {
@@ -42,7 +44,6 @@ class Snake {
     return head.x < 0 || head.x >= width || head.y < 0 || head.y >= height;
   }
 }
-
 
 class Food {
   position: { x: number; y: number };
@@ -58,9 +59,10 @@ class Food {
   generateNewPosition() {
     this.position.x = Math.floor(Math.random() * (this.containerSize.width / this.size));
     this.position.y = Math.floor(Math.random() * (this.containerSize.height / this.size));
+    console.log(`New food position: (${this.position.x}, ${this.position.y})`);
+
   }
 }
-
 
 class GameModel {
   snake: Snake;
@@ -94,6 +96,50 @@ class GameModel {
   }
 }
 
+class GameView {
+  gameContainer: HTMLElement;
+  scoreElement: HTMLElement;
+
+  constructor(gameContainer: HTMLElement, scoreElement: HTMLElement) {
+    this.gameContainer = gameContainer;
+    this.scoreElement = scoreElement;
+  }
+
+  renderSnake(snake: Snake) {
+    this.gameContainer.innerHTML = ""; 
+    snake.body.forEach(segment => {
+      const segmentElement = document.createElement("div");
+      segmentElement.style.left = `${segment.x * snake.size}px`;
+      segmentElement.style.top = `${segment.y * snake.size}px`;
+      segmentElement.style.width = `${snake.size}px`;
+      segmentElement.style.height = `${snake.size}px`;
+      segmentElement.classList.add("snake-segment");
+      this.gameContainer.appendChild(segmentElement);
+    });
+  }
+
+
+
+  renderFood(food: Food) {
+    let foodElement = document.querySelector(".food") as HTMLElement;
+    if (!foodElement) {
+      foodElement = document.createElement("div");
+      foodElement.classList.add("food");
+      this.gameContainer.appendChild(foodElement);
+    }
+    foodElement.style.left = `${food.position.x * food.size}px`;
+    foodElement.style.top = `${food.position.y * food.size}px`;
+  }
+
+  updateScore(score: number) {
+    this.scoreElement.textContent = score.toString();
+  }
+
+  showGameOver() {
+    alert("Game Over!");
+  }
+}
+
 class GameController {
   model: GameModel;
   view: GameView;
@@ -102,17 +148,47 @@ class GameController {
     this.model = model;
     this.view = view;
   }
-  
-}
- 
- 
 
-  class GameView {
-    gameContainer: HTMLElement;
-    scoreElement: HTMLElement;
-  
-    constructor(gameContainer: HTMLElement, scoreElement: HTMLElement) {
-      this.gameContainer = gameContainer;
-      this.scoreElement = scoreElement;
-    }}
-    
+  startGame() {
+    const gameLoop = setInterval(() => {
+      const gameState = this.model.updateGame();
+      this.view.renderSnake(this.model.snake);
+      this.view.renderFood(this.model.food);
+      this.view.updateScore(this.model.score);
+
+      if (gameState.gameOver) {
+        clearInterval(gameLoop);
+        this.view.showGameOver();
+      }
+    }, 100);
+
+    document.addEventListener('keydown', this.handleMovement.bind(this));
+  }
+
+  handleMovement(event: KeyboardEvent) {
+    switch (event.key) {
+      case 'ArrowUp':
+        if (this.model.snake.direction.y !== 1) this.model.snake.setDirection(0, -1);
+        break;
+      case 'ArrowDown':
+        if (this.model.snake.direction.y !== -1) this.model.snake.setDirection(0, 1);
+        break;
+      case 'ArrowLeft':
+        if (this.model.snake.direction.x !== 1) this.model.snake.setDirection(-1, 0);
+        break;
+      case 'ArrowRight':
+        if (this.model.snake.direction.x !== -1) this.model.snake.setDirection(1, 0);
+        break;
+    }
+  }
+}
+
+const gameContainer = document.getElementById("game-container") as HTMLElement;
+const scoreElement = document.getElementById("score") as HTMLElement;
+const containerSize = { width: 400, height: 400 };
+
+const model = new GameModel(containerSize);
+const view = new GameView(gameContainer, scoreElement);
+const controller = new GameController(model, view);
+
+controller.startGame();
