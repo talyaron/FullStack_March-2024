@@ -1,69 +1,59 @@
-class Game 
+class Game {
+  constructor() {
+    this.score = 0;
+    this.snake = new Snake(this);
+    this.updateScoreDisplay();
+    this.setupResetButton();
+  }
 
+  incrementScore() {
+    this.score += 1;
+    this.updateScoreDisplay();
+  }
 
-const scoreDisplay = document.getElementById("score") as HTMLDivElement;
-const waterGlass = document.getElementById("waterGlass") as HTMLDivElement;
-const resetButton = document.getElementById("resetButton") as HTMLButtonElement;
+  resetScore() {
+    this.score = 0;
+    this.updateScoreDisplay();
+  }
 
-let totalGlasses = 0;
+  updateScoreDisplay() {
+    const scoreDisplay = document.getElementById("score");
+    scoreDisplay.textContent = `Score: ${this.score}`;
+  }
 
-function drinkWater(): void {
-  totalGlasses += 1;
-  updateScore();
-}
-resetButton.click();
-
-function resetGame(): void {
-  totalGlasses = 0;
-  updateScore();
-}
-
-function resetGame(): void {
-  totalGlasses = 0;
-  updateScore();
-}
-
-function updateScore(): void {
-  scoreDisplay.textContent = `Glasses of Water: ${totalGlasses}`;
-}
-
-waterGlass.addEventListener("click", drinkWater);
-resetButton.addEventListener("click", resetGame);
-
-const scoreDisplay = document.getElementById("score") as HTMLDivElement;
-const glassesContainer = document.getElementById(
-  "glassesContainer"
-) as HTMLDivElement;
-const resetButton = document.getElementById("resetButton") as HTMLButtonElement;
-
-function createGlasses(numberOfGlasses: number): void {
-  for (let i = 0; i < numberOfGlasses; i++) {
-    const glass = document.createElement("div");
-    glass.classList.add("glass");
-    glass.addEventListener("click", () => drinkWater(glass));
-    glassesContainer.appendChild(glass);
+  setupResetButton() {
+    const resetButton = document.getElementById("resetButton");
+    resetButton.addEventListener("click", () => this.resetScore());
   }
 }
 
-function drinkWater(glass: HTMLDivElement): void {
-  if (!glass.classList.contains("drunk")) {
-    totalGlasses += 1;
-    glass.classList.add("drunk");
-    updateScore();
+class Snake {
+  constructor(game) {
+    this.game = game;
+    this.element = document.getElementById("snake");
+    this.gameArea = document.getElementById("gameArea");
+    this.element.addEventListener("click", () => this.handleClick());
+    this.moveSnake();
+  }
+
+  handleClick() {
+    this.game.incrementScore();
+  }
+
+  moveSnake() {
+    const maxX = this.gameArea.clientWidth - this.element.offsetWidth;
+    const maxY = this.gameArea.clientHeight - this.element.offsetHeight;
+
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    this.element.style.left = `${randomX}px`;
+    this.element.style.top = `${randomY}px`;
+
+    setTimeout(() => this.moveSnake(), 1000);
   }
 }
 
-function resetGame(): void {
-  totalGlasses = 0;
-  updateScore();
-  const glasses = document.querySelectorAll(".glass");
-  glasses.forEach((glass) => glass.classList.remove("drunk"));
-}
-
-function updateScore(): void {
-  scoreDisplay.textContent = `Glasses of Water: ${totalGlasses}`;
-}
-
-createGlasses(8);
-
-resetButton.addEventListener("click", resetGame);
+window.onload = () => {
+  new Game();
+};

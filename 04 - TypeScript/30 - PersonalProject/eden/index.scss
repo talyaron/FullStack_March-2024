@@ -1,12 +1,12 @@
 body {
-  font-family: Arial, sans-serif;
+  margin: 50px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #f63eda;
   height: 100vh;
-  margin: 0;
-  background-color: #e0f7fa;
 }
 
 #score {
@@ -14,33 +14,29 @@ body {
   margin-bottom: 20px;
 }
 
-#glassesContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+#gameArea {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  border: 2px solid #1dbce3;
 }
 
-.glass {
-  width: 10px;
-  height: 10px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Old_Fashioned_Glass.jpg/800px-Old_Fashioned_Glass.jpg");
+#snake {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: url("dist/snake.png");
   background-size: cover;
   cursor: pointer;
-  opacity: 0.5;
-}
-
-.glass.drunk {
-  opacity: 1;
 }
 
 #resetButton {
+  margin-top: 20px;
   padding: 10px 20px;
   font-size: 20px;
-  background-color: #a60fe6;
+  background-color: #f74242;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 20px;
 }
