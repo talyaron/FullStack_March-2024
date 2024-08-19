@@ -1,18 +1,26 @@
 class Game {
   constructor() {
     this.score = 0;
-    this.snake = new Snake(this);
+    this.snakes = [];
+    this.snakeCount = 3;
+    this.initializeSnakes();
     this.updateScoreDisplay();
     this.setupResetButton();
   }
 
-  incrementScore() {
-    this.score += 1;
-    this.updateScoreDisplay();
+  initializeSnakes() {
+    for (let i = 0; i < this.snakeCount; i++) {
+      this.addSnake();
+    }
   }
 
-  resetScore() {
-    this.score = 0;
+  addSnake() {
+    const snake = new Snake(this);
+    this.snakes.push(snake);
+  }
+
+  incrementScore() {
+    this.score += 1;
     this.updateScoreDisplay();
   }
 
@@ -21,23 +29,39 @@ class Game {
     scoreDisplay.textContent = `Score: ${this.score}`;
   }
 
+  resetGame() {
+    this.score = 0;
+    this.updateScoreDisplay();
+
+    const gameArea = document.getElementById("gameArea");
+    while (gameArea.firstChild) {
+      gameArea.removeChild(gameArea.firstChild);
+    }
+
+    this.snakes = [];
+    this.initializeSnakes();
+  }
+
   setupResetButton() {
     const resetButton = document.getElementById("resetButton");
-    resetButton.addEventListener("click", () => this.resetScore());
+    resetButton.addEventListener("click", () => this.resetGame());
   }
 }
 
 class Snake {
   constructor(game) {
     this.game = game;
-    this.element = document.getElementById("snake");
+    this.element = document.createElement("div");
+    this.element.classList.add("snake");
     this.gameArea = document.getElementById("gameArea");
+    this.gameArea.appendChild(this.element);
     this.element.addEventListener("click", () => this.handleClick());
     this.moveSnake();
   }
 
   handleClick() {
     this.game.incrementScore();
+    this.game.addSnake();
   }
 
   moveSnake() {
