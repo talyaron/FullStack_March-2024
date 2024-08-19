@@ -3,9 +3,11 @@ class Game {
     this.score = 0;
     this.snakes = [];
     this.snakeCount = 3;
+    this.clickSound = document.getElementById("clickSound");
     this.initializeSnakes();
     this.updateScoreDisplay();
     this.setupResetButton();
+    this.playBackgroundMusic();
   }
 
   initializeSnakes() {
@@ -46,6 +48,14 @@ class Game {
     const resetButton = document.getElementById("resetButton");
     resetButton.addEventListener("click", () => this.resetGame());
   }
+
+  playBackgroundMusic() {
+    this.backgroundMusic.play();
+  }
+
+  playClickSound() {
+    this.clickSound.play();
+  }
 }
 
 class Snake {
@@ -62,6 +72,7 @@ class Snake {
   handleClick() {
     this.game.incrementScore();
     this.game.addSnake();
+    this.game.playClickSound();
   }
 
   moveSnake() {
