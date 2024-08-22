@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="./dist/style.css">
+</head>
+<body>
+    <form onsubmit="handleAddMenu(event)">
+        <label for="name">New Menu Item</label>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name ="description" placeholder="Description" required>
+        <input type="number" name="price" placeholder="Price" required>
+        <input type="date" name ="date" placeholder="Date" required>
+        <input type ="hidden" id = "itemId">
+
+        <button type="submit">Add Item</button>
+    </form>
+    <h2>Filter by Date</h2>
+    <input type="date" id="filterDate">
+    <button onclick="filterAndSortMenu()">Filter</button>
+    
+    <h2>Restaurant Menu Items</h2>
+    <div id ="menuList"></div>
+    <div id="filteredMenuList"></div>
+
+ 
+    
+    <script src="./dist/index.js"></script>
+</body>
+</html>
