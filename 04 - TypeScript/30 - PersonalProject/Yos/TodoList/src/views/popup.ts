@@ -1,6 +1,6 @@
 import { Task } from '../models/task';
-import './styles/dist/popup-remainder.css'
-import './styles/dist/buttons.css'
+import './styles/popup-remainder.scss'
+import './styles/buttons.scss'
 
 export function popup(task: Task) {
     const popup = `

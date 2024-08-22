@@ -24,16 +24,21 @@ function getTasksFromCurrentAndGlobalUsers(id: string, command: string, task?: T
     const taskFromCurrentUser: Task | undefined = userCurrentTasks!.find(task => task.id === id);
     const taskIndex: number | undefined = tasksGlobal!.findIndex(task => task.id === id);
 
+    switchSomthing(command, tasksGlobal, taskIndex, userCurrentTasks, task, taskFromCurrentUser, taskFromGlobalUsers, comment, commentId);
+    return { allUsers, currentUser }
+}
+
+function switchSomthing(command: string, tasksGlobal: Task[], taskIndex: number, userCurrentTasks: Task[] | undefined, task: Task | undefined, taskFromCurrentUser: Task | undefined, taskFromGlobalUsers: Task | undefined, comment: string | undefined, commentId: string | undefined) {
     switch (command) {
 
         case "delete":
             tasksGlobal.splice(taskIndex, 1);
-            userCurrentTasks!.splice(taskIndex, 1)
+            userCurrentTasks!.splice(taskIndex, 1);
             break;
 
         case "addTask":
             tasksGlobal.push(task!);
-            userCurrentTasks!.push(task!)
+            userCurrentTasks!.push(task!);
             break;
 
         case "update":
@@ -70,7 +75,6 @@ function getTasksFromCurrentAndGlobalUsers(id: string, command: string, task?: T
             }
             break;
     }
-    return { allUsers, currentUser }
 }
 
 function deleteTask(id: string): void {

@@ -1,8 +1,7 @@
 import { Task } from "../models/task";
 import { handleDeleteTask, handleEditTask, handleUpdateTask } from "../controllers/handleAddTask";
-import { handleSubmit } from "./todoForm";
 
-import './styles/dist/taskList.css'
+import './styles/taskList.scss'
 import { addCommentForm, handleDeleteComment } from "../controllers/comments";
 import { renderAllComments } from "./comments";
 import { renderLogin } from "../controllers/login";
@@ -78,7 +77,7 @@ function handleUpdate(event: any): void {
     handleUpdateTask(id, title, desc, timeToBeDone, form);
 }
 
-function handleSignOutClick(event: any) {
+function handleSignOutClick() {
     const body = document.querySelector('body') as HTMLBodyElement;
     body.innerHTML = `<div class="todo-list" id="todo-list"></div>`
     const app = document.querySelector<HTMLDivElement>('#todo-list')! as HTMLDivElement;

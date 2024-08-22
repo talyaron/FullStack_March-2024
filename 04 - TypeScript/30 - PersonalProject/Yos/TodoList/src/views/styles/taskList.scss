@@ -89,7 +89,7 @@ $transition-timing: ease-in-out;
                 width: 90%;
                 //transition: all 0.4s ease;
                 //animation: name duration timing-function delay iteration-count direction fill-mode;
-                @include fadeIn(2s, 1s);
+                // @include fadeIn(2s, 1s);
 
                 .name {
                     width: 12vw;
