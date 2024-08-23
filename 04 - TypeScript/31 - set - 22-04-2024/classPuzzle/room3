@@ -1,0 +1,4 @@
+clear - Deletes everything there is
+constructor - a set constructor that initializes it
+delete - delete the value
+difference - when there are 2 sets, it shows what is not in the second
