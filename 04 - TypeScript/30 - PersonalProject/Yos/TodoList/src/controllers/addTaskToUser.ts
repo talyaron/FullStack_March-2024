@@ -24,11 +24,14 @@ function getTasksFromCurrentAndGlobalUsers(id: string, command: string, task?: T
     const taskFromCurrentUser: Task | undefined = userCurrentTasks!.find(task => task.id === id);
     const taskIndex: number | undefined = tasksGlobal!.findIndex(task => task.id === id);
 
-    switchSomthing(command, tasksGlobal, taskIndex, userCurrentTasks, task, taskFromCurrentUser, taskFromGlobalUsers, comment, commentId);
+    switchCommandOperation(command, tasksGlobal, taskIndex, userCurrentTasks, task, taskFromCurrentUser, taskFromGlobalUsers, comment, commentId);
     return { allUsers, currentUser }
 }
 
-function switchSomthing(command: string, tasksGlobal: Task[], taskIndex: number, userCurrentTasks: Task[] | undefined, task: Task | undefined, taskFromCurrentUser: Task | undefined, taskFromGlobalUsers: Task | undefined, comment: string | undefined, commentId: string | undefined) {
+
+function switchCommandOperation(command: string, tasksGlobal: Task[], taskIndex: number, userCurrentTasks: Task[] | undefined,
+    task: Task | undefined, taskFromCurrentUser: Task | undefined, taskFromGlobalUsers: Task | undefined,
+    comment: string | undefined, commentId: string | undefined) {
     switch (command) {
 
         case "delete":
@@ -49,6 +52,11 @@ function switchSomthing(command: string, tasksGlobal: Task[], taskIndex: number,
             taskFromGlobalUsers!.expectToBeDone! = new Date(task!.expectToBeDone);
             taskFromGlobalUsers!.title = task!.title;
             taskFromGlobalUsers!.desc = task!.desc;
+            break;
+
+        case "doneTask":
+            taskFromCurrentUser!.done = taskFromCurrentUser?.done === false ? true : false;
+            taskFromGlobalUsers!.done = taskFromGlobalUsers?.done === false ? true : false;
             break;
 
         case "addComment":
@@ -79,10 +87,13 @@ function switchSomthing(command: string, tasksGlobal: Task[], taskIndex: number,
 
 function deleteTask(id: string): void {
     const { allUsers, currentUser } = getTasksFromCurrentAndGlobalUsers(id, "delete");
-
     saveCurrentAndAllUsers(currentUser!, allUsers!);
 }
 
+function doneTask(id: string): void {
+    const { allUsers, currentUser } = getTasksFromCurrentAndGlobalUsers(id, "doneTask");
+    saveCurrentAndAllUsers(currentUser!, allUsers!);
+}
 function addTask(id: string, task: Task): void {
     const { allUsers, currentUser } = getTasksFromCurrentAndGlobalUsers(id, "addTask", task);
     saveCurrentAndAllUsers(currentUser!, allUsers!);
@@ -123,12 +134,16 @@ export function deleteOrUpdateTaskFromUser(id: string, deleteOrUpdate: string, t
         case "addTask":
             addTask(id, task!)
             break;
+        case "doneTask":
+            doneTask(id)
+            break;    
         case "addComment":
             addComment(id, comment!)
             break;
         case "deleteComment":
             deleteComment(id, commentId!)
             break;
+
     }
     const { currentUser, allUsers, userGlobal } = getCurrentAndAllUsers();
     return currentUser?.list
@@ -145,7 +160,7 @@ export function getTaskToEdit(id: string): Task | undefined {
 
 
 export function getCurrentUserDetails(email?: string): User | undefined {
-    const currentUser = email !== undefined ? getCurrentUser(email) : getCurrentUser();
+    const currentUser: User | null = email !== undefined ? getCurrentUser(email) : getCurrentUser();
 
     if (!currentUser) {
         console.error("No users found in localStorage.");
