@@ -4,20 +4,23 @@
 
 let x = 10;
 
-function add(a: number,b:number): number {
-   
-  return a + b;
+function add(a: number, b: number): number {
+
+    return a + b;
 }
 
-const obj ={
+const obj = {
     name: "John",
     age: 25
 }
 
 function changeName(obj: any): any {
-    obj.name = "Doe";
-    return obj;
+    //immutability
+    const _obj = { ...obj };
+    _obj.name = "Doe";
+    return _obj;
 }
+
 
 const obj2 = changeName(obj);
 
