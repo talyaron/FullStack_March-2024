@@ -158,7 +158,9 @@ function renderMyCart(userCart: Product[]) {
         <button onclick="handleAddInCart('${product.id}')">+</button>${
           product.amountInCart
         }
-          <button onclick="handleReduceFromCart('${product.id}')">-</button>  $${totalPrice.toFixed(2)}
+          <button onclick="handleReduceFromCart('${
+            product.id
+          }')">-</button>  $${totalPrice.toFixed(2)}
         <hr>
         </div>`;
       });
