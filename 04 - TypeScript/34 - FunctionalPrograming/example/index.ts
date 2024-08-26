@@ -14,6 +14,9 @@ const obj = {
     age: 25
 }
 
+obj.name="poop";
+console.log(obj);
+
 function changeName(obj: any): any {
     //immutability
     const _obj = { ...obj };

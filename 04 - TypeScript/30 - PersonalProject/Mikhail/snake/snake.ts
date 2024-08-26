@@ -6,11 +6,7 @@ class Box {
     tempx: number;
     tempy: number;
     direction: string;
-    sectionX: number;
-    sectionY: number;
-    tempSectionX: number;
-    tempSectionY: number;
-
+    
 
 
     constructor(x: number, y: number) {
@@ -118,18 +114,12 @@ class Apple {
 
 }
 
-const { head, snake, apple, root }: { head: Box; snake: Box[]; apple: Apple; root: HTMLElement; } = initializeGame();
-
-
-function initializeGame() {
-    const head = new Box(0, 0);
-    head.setDirection('right');
-    const snake: Box[] = [head];
-    renderStart();
-    const root = document.querySelector('#page') as HTMLElement;
-    const apple = new Apple();
-    return { head, snake, apple, root };
-}
+const head=new Box(0,0);
+head.setDirection('right')
+const snake: Box[]=[head];
+renderStart();
+const root = document.querySelector('#page') as HTMLElement;
+const apple=new Apple();
 
 function renderStart() {
     document.querySelector<HTMLDivElement>('#page')!.innerHTML = `
@@ -139,12 +129,19 @@ function renderStart() {
 `
 }
 function restart() {
+    intervalId = null;
+    clearInterval(undefined);
     snake.splice(1);
     head.setDirection('right');
     head.setPosition(0, 0);
+    head.setTempPosition(0,0);
+    head.setTemp(0,0);
     apple.resetCounter();
+    apple.newPosition();
     handleDirection(head.direction);
-
+    
+    renderSnake(snake);
+    
 }
 
 function renderBox(box: Box) {
@@ -290,15 +287,15 @@ function handleDirection(direction: string) {
 }
 
 
-function isEaten() {
-    if ((Math.floor(head.x / 25) + 1) === (Math.floor(apple.x / 25) + 1))
-        if ((Math.floor(head.y / 25) + 1) === (Math.floor(apple.y / 25) + 1)) {
-            apple.newPosition();
-            const audioEat = document.querySelector('#eat') as HTMLAudioElement;
-            audioEat.play();
-            addSnake();
+function isEaten(){
+    const tolerance = 25; 
 
-        }
+    if (Math.abs(head.x - apple.x) < tolerance && Math.abs(head.y - apple.y) < tolerance) {
+        apple.newPosition();
+        const audioEat = document.querySelector('#eat') as HTMLAudioElement;
+        audioEat.play();
+        addSnake();
+    }
 }
 function addSnake() {
     snake.push(new Box(head.tempX, head.tempY));
