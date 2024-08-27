@@ -8,5 +8,8 @@ export class Weapon{
     this.image = image,
     this.shootingAudio = shootingAudio
    }
-
+   shoot() {
+    const audio = new Audio(this.shootingAudio);
+    audio.play();
+}
 }

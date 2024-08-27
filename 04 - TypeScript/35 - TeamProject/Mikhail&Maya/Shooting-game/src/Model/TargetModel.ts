@@ -4,13 +4,17 @@ export class Target {
     id: string;
     direction: boolean;
     isHit: boolean;
+    gameContainer: HTMLElement;
 
-    constructor(image: string, position: { x: number; y: number }) {
+
+    constructor(image: string, position: { x: number; y: number },gameContainer: HTMLElement) {
         this.image = image;
         this.position = position;
         this.id = crypto.randomUUID();
         this.direction = true;
         this.isHit = false;
+        this.gameContainer = gameContainer;
+
     
     }
     move() {
