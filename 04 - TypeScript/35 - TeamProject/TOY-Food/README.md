@@ -55,3 +55,7 @@ We'll follow the MVC (Model-View-Controller) pattern, which will help us organiz
 
 ### Next Steps
 We'll divide the tasks as discussed and regularly check in to ensure we’re on track. With teamwork and creativity, we’ll make TOY-Food a fun and successful project!
+
+## TOY-Food Figma Design
+
+To help visualize and streamline the interface of our project, I adapted an existing design in Figma to suit our restaurant's needs. You can view it and suggest any improvements via [this link to the TOY-Food Figma Design](https://www.figma.com/design/eAXTvWm0a6iehYP1q8GJyo/Elite---Food-Restaurant-%26-Coffee-Free-Figma-Template-%28Community%29-%28Community%29?node-id=308-10309&t=MIYNu2ZGJ9yVdJFN-1).
