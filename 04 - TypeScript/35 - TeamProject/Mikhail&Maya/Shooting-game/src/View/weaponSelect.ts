@@ -4,7 +4,7 @@ export function renderWeaponSelect(root:HTMLElement){
     console.log("hello world");
     root.innerHTML=`<div class="weaponSelect">
     <div class="weaponCard">
-    <img src="./images/pistol.jpg">
+    <img src="pistol.jpg" alt="Pistol" style="width:100px;height:100px;">
     </div>
     </div>`;
      
