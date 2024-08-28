@@ -1,2 +1,2 @@
-export function renderHomeScreen(targets: Target[], weapon: Weapon) {
+export function renderHomeScreen() {
 }
