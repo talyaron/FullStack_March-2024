@@ -3,6 +3,7 @@ export function renderHeader() {
     const header = document.createElement("header");
     header.classList.add("header");
     header.innerHTML = `
+        <div class="header__nav">
             <div class="header__logo">
                 <img src="./src/assets/images/logo-text.png" alt="logo">
             </div>
@@ -15,13 +16,14 @@ export function renderHeader() {
                 <i class='bx bx-search'></i>
                 ${renderHeaderUser({ name: "User", itemsInCartDict: undefined })}
             </div>
+        </div>
     `;
     app!.appendChild(header);
 }
 
 function renderHeaderUser(user: User) {
     const html = `
-        <div class="header__user">
+
             <div class="header__user__name">
                 <i class='bx bx-user'></i> Hello, ${user.name}
             </div>
@@ -29,7 +31,7 @@ function renderHeaderUser(user: User) {
                 <i class='bx bx-cart'></i>
                 <span>${user.itemsInCartDict !== undefined ? Object.keys(user.itemsInCartDict).length : 0}</span>
             </div>
-        </div>
+
     `;
     return html;
 }

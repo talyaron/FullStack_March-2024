@@ -1,4 +1,4 @@
-@import "buttons", "inputs", "colors", "header", "footer", "search-bar";
+@import "buttons", "inputs", "colors", "header", "footer", "search-bar", "content-page";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -16,19 +16,17 @@
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  text-decoration: none;
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
+  height: 100vh;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
 }
 
 h1 {
@@ -37,9 +35,12 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // width: 100%;
+  align-items: center;
 }
 
 .card {
@@ -50,15 +51,15 @@ h1 {
   color: #888;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #213547;
-    background-color: #242424;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     color: #213547;
+//     background-color: #242424;
+//   }
+//   a:hover {
+//     color: #747bff;
+//   }
+//   button {
+//     background-color: #f9f9f9;
+//   }
+// }

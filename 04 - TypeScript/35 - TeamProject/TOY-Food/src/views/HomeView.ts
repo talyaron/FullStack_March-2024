@@ -1,7 +1,7 @@
 export function renderHomePage() {
     const app = document.querySelector("#app");
     const home = document.createElement("section");
-    home.classList.add("home");
+    home.classList.add("wrapper");
     let html = "";
 
     // all functions are the services of the home page
