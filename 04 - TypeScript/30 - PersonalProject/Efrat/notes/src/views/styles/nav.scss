@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    border-bottom: 1px solid grey;
+    height: 4em;
+    .btn {
+        padding: 0.5rem;
+    }
+    .push {
+        margin-left: auto;
+    }
+    .logo {
+        
+         img {
+            width: 30px;
+            height: 50px;
+        }
+    }
+}
