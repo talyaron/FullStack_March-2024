@@ -1,0 +1,41 @@
+.header {
+    color: $text-color;
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    font-size: 1rem;
+
+    &__logo {
+        height: 1.5rem;
+        will-change: filter;
+        transition: filter 300ms;
+        img {
+            height: 100%;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        gap: 2rem;
+        
+        a {
+            color: $text-color;
+        }
+    }
+
+    &__icons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__user {
+        display: flex;
+        gap: 1rem;
+    }
+
+    i {
+        cursor: pointer;
+    }
+}
