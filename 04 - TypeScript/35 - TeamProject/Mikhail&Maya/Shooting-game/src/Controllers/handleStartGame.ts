@@ -1,3 +1,3 @@
-export function handleStartGame(id:string){
+export function handleStartGame(weaponId:string){
     
 }
