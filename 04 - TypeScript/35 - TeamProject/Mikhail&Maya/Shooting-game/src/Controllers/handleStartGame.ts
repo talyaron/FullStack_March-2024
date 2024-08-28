@@ -1,3 +1,3 @@
-export function handleStartGame(){
+export function handleStartGame(id:string){
     
 }

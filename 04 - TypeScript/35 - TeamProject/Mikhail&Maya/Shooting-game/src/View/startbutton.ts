@@ -10,7 +10,7 @@ export function renderStart(root:HTMLElement) {
 `;
 
 
-const startButton = document.getElementById('start');
+const startButton = document.querySelector('#start');
 if (startButton) {
     startButton.addEventListener('click', () => renderWeaponSelect(root));
 }

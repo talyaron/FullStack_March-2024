@@ -18,3 +18,20 @@ body{
     width: 100px;
     border-radius: 10%;
 }
+.weaponSelect{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .weaponCard{
+     border-radius: 10%;
+     background-color:white;
+     width:250px;
+     border:black solid 2px;
+
+    }
+    .weaponCard:hover{
+        border-color:red;
+     }
+}
