@@ -1,5 +1,6 @@
 import { getElement } from "../general/general";
-import { handelNewWorkflow } from "../controller/workflowController"
+//import { handelNewWorkflow } from "../controller/workflowController"
+import { workFlowDesign } from "./workFlowDesignView";
 
 export function renderHome() {
   try {
@@ -11,7 +12,7 @@ export function renderHome() {
 
     element = getElement("#design-Workflow");
     if (!element) throw new Error("element design-Workflow not found");
-    element.addEventListener('click',handelNewWorkflow);
+    element.addEventListener('click',workFlowDesign);
     
   } catch (error) {
     console.log(error);
