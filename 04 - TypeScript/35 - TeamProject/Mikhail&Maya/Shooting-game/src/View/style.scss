@@ -29,9 +29,12 @@ body{
      background-color:white;
      width:250px;
      border:black solid 2px;
-
-    }
-    .weaponCard:hover{
+     &:hover{
         border-color:red;
      }
+     &:active{
+        filter: brightness(0.9);
+     }
+    }
+    
 }
