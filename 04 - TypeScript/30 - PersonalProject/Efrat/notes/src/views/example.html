@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/dist/registration.css">
+    <link rel="stylesheet" href="./styles/dist/nav.css">
+    <link rel="stylesheet" href="./styles/dist/registration.css">
+    <link rel="stylesheet" href="./styles/dist/notes.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="navbar">
+            <div class="btn logo" id="home"><a href="#">logo</a></div>
+            <div class="btn push" id="signup"><a href="#">Sign Up</a></div>
+            <div class="btn" id="login"><a href="#">login</a></div>
+        </div>
+        <div class="container">
+            <img src="./images/note.png" alt="notes">
+        </div>
+        <div class="registration">
+            <form id="registration">
+                <h3>Registration Form</h3>
+                <label for="firstname">First Name</label><input type="email" name="username">
+                <label for="lastname">Last Name</label><input type="email" name="username">
+                <label for="username">User Name</label><input type="email" name="username">
+                <label for="password">Password</label><input type="password" name="password" id="password">
+                <input type="button" value="Submit">
+            </form>
+        </div>
+        <div class="login">
+            <form id="login-form">
+                <h3>Login</h3>
+                <label for="username">User Name</label><input type="email" name="username">
+                <label for="password">Password</label><input type="password" name="password" id="password">
+                <input type="submit" value="Login">
+                <div id="register"></div>
+            </form>
+        </div>
+        <div class="notes"><h1>Notes</h1></div>
+        <div class="note-container">
+            <div class="note-title">Take a note</div>
+            <div class="note-text"></div>
+        </div>
+    </div>
+</body>
+</html>
