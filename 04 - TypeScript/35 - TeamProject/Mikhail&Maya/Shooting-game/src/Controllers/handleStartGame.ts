@@ -1,7 +1,8 @@
 import { Weapon } from "../Model/WeaponModel"
-export function handleStartGame(weapon:Weapon){
+import { renderHomeScreen } from "../View/homescreen"
+export function handleStartGame(weapon:Weapon,root:HTMLElement){
   
   
-   
+   renderHomeScreen(weapon,root);
     
 }
