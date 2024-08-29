@@ -3,7 +3,8 @@ import { weaponCreate } from "../Controllers/weaponCreate";
 export function renderWeaponSelect(root:HTMLElement){
     console.log("hello world");
     root.innerHTML=`
-    <div class="weaponSelect">
+    <div class="weaponSelect" style="background-image: url(/src/images/weaponSelect.png);">
+        <h1 style="color:white;margin-bottom:50px;">Choose Your Weapon</h1>
         <div class="weaponCard">
                 <img src="/src/images/weapons/pistolSelect.png" id="pistolImage" alt="Pistol" style="width:100px;height:100px;">
         </div>
