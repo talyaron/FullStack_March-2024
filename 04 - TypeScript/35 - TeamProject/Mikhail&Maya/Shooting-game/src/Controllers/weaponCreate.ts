@@ -1,12 +1,13 @@
 import { Weapon } from "../Model/WeaponModel";
-import { renderHomeScreen } from "../View/homescreen";
 import { handleStartGame } from "./handleStartGame";
 export function weaponCreate(weaponId:string){
+    let weapon: Weapon | null = null;
     switch(weaponId){
         case 'pistolImage':
-            const weapon=new Weapon('/src/images/weapons/pistolSelect.png','/src/audio/pew.m4a',weaponId);
+            weapon=new Weapon('/src/images/weapons/pistolSelect.png','/src/audio/pew.m4a',weaponId);
             break;
-        
+        default: console.error("didnt choose weapon");
       }
-    handleStartGame(weapon);
+      if(weapon)
+         handleStartGame(weapon);
 }
