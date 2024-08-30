@@ -10,7 +10,7 @@ export function renderRegisterForm(div: HTMLDivElement): undefined {
         const registerDiv = `
                         <div class='signup-wrapper'>
                             <div class="header">
-                                <h1>ToDo-List SignUp Page</h1>
+                                <h1>TOY Food SignUp Page</h1>
                                 <h5 id="loginError"></h5>
                             </div>
                             <div class="register">

@@ -1,4 +1,3 @@
-import { Category } from "./Category";
 
 export class Item {
     name: string;
@@ -8,7 +7,7 @@ export class Item {
     desc: string;
     inStock: number;
     quantity: number
-    category: Category;
+    category: string;
 
     constructor(name: string, price: number, src: string, desc: string, inStock: number, category: string, 
                 categoryId?: string, id?: string, quantity?: number) {
@@ -19,7 +18,7 @@ export class Item {
         this.desc = desc;
         this.inStock = inStock;
         this.quantity = quantity == null ? inStock : quantity;
-        this.category = new Category(category, categoryId ?? crypto.randomUUID());
+        this.category = category;
     }
 
     descFromStock(): void {
