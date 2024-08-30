@@ -1,6 +1,11 @@
+
+
 export function renderHeader() {
     const app = document.querySelector("#app");
     const header = document.createElement("header");
+    const user = JSON.parse(localStorage.getItem('CurrentUser') as string);
+    const userName = user.firstName + ' ' + user.lastName;
+    debugger
     header.classList.add("header");
     header.innerHTML = `
         <div class="header__nav">
@@ -14,7 +19,7 @@ export function renderHeader() {
             </div>
             <div class="header__icons">
                 <i class='bx bx-search'></i>
-                ${renderHeaderUser({ name: "User", itemsInCartDict: undefined })}
+                ${renderHeaderUser({ name: userName ?? 'User', itemsInCartDict: undefined })}
             </div>
         </div>
     `;
