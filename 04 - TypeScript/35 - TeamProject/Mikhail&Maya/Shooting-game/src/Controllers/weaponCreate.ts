@@ -9,6 +9,10 @@ export function weaponCreate(weaponId:string,root:HTMLElement){
             case 'akImage':
             weapon=new Weapon('/src/images/weapons/ak47Game.png','/src/audio/pew.m4a',weaponId);
             break;
+            case 'm16Image':
+            weapon=new Weapon('/src/images/weapons/m16Game.png','/src/audio/pew.m4a',weaponId);
+            break;
+            
         default: console.error("didnt choose weapon");
       }
       if(weapon)
