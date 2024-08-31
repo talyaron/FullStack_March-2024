@@ -1,12 +1,13 @@
 export function renderFooter() {
-    const app = document.querySelector("#app");
-    const footer = document.createElement("footer");
-    footer.classList.add("footer");
+    const footer = document.querySelector("#footer");
+    if (!footer) {
+        console.error('No element with id "footer" found.');
+        return;
+    }
+
     footer.innerHTML = `
-            <div class="footer__copyright">
-                <p>&copy; 2024 TOY-Food. All rights reserved</p>
-            </div>
+        <div class="footer">
+            <p>© 2024 TOY-Food. All rights reserved.</p>
+        </div>
     `;
-    console.log("It's footer");
-    app!.appendChild(footer);
 }

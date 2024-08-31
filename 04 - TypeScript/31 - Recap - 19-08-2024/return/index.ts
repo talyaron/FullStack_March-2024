@@ -10,7 +10,6 @@ function add(a: number, b: number): number {
 let result = add(1, 2); //3
 
 function renderNumberToScreen(aNumber: number) {
-
     //rendering the number to the screen
     document.getElementById("myElement").innerHTML = aNumber.toString();
 }
