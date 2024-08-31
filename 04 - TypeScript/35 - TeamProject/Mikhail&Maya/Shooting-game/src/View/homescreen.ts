@@ -12,8 +12,28 @@ export function renderHomeScreen(weapon:Weapon,root:HTMLElement) {
     </div>`
 
     const windowElement = root.querySelector('.window') as HTMLElement;
-    windowElement.addEventListener('click', () => {
-        let audioShoot = new Audio(`${weapon.shootingAudio}`); 
+    windowElement.addEventListener('click', (event: MouseEvent) => {
+        const x = event.clientX - windowElement.offsetLeft;
+        const y = event.clientY - windowElement.offsetTop;
+
+      
+        const bulletHole = document.createElement('img');
+        bulletHole.src = '/src/images/weapons/bulletHole.png'; 
+        bulletHole.style.position = 'absolute';
+        bulletHole.style.width = '30px'; 
+        bulletHole.style.height = '30px'; 
+        bulletHole.style.left = `${x - 15}px`; 
+        bulletHole.style.top = `${y - 15}px`;  
+        bulletHole.style.pointerEvents = 'none'; 
+
+        
+        windowElement.appendChild(bulletHole);
+
+        setTimeout(() => {
+            windowElement.removeChild(bulletHole);
+        }, 500);
+
+        const audioShoot = new Audio(`${weapon.shootingAudio}`);
         audioShoot.play();
     });
     
