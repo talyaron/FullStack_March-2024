@@ -5,6 +5,7 @@
     gap: 10px;
     width: 300px;
     height: 300px;
+    overflow: hidden;
 }
 
 .grid-item {
@@ -26,5 +27,5 @@
 }
 
 .viewtarget.up {
-    bottom: 0; /* Move up into view */
+    bottom: 0;
 }

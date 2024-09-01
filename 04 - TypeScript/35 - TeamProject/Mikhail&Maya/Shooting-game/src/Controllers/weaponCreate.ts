@@ -1,5 +1,7 @@
 import { Weapon } from "../Model/WeaponModel";
 import { handleStartGame } from "./handleStartGame";
+import { Target } from "../Model/TargetModel";
+
 export function weaponCreate(weaponId:string,root:HTMLElement){
     let weapon: Weapon | null = null;
     switch(weaponId){

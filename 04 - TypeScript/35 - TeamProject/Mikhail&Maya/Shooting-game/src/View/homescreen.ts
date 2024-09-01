@@ -1,6 +1,8 @@
 import { Weapon } from "../Model/WeaponModel";
+import { Target } from "../Model/TargetModel";
+import { renderTarget } from "./targetRender";
 
-export function renderHomeScreen(weapon:Weapon,root:HTMLElement) {
+export function renderHomeScreen(weapon:Weapon,root:HTMLElement, targets: Target[]) {
 
     root.innerHTML=`<div class="window">
     <div class="curtains"></div>
@@ -36,5 +38,12 @@ export function renderHomeScreen(weapon:Weapon,root:HTMLElement) {
         const audioShoot = new Audio(`${weapon.shootingAudio}`);
         audioShoot.play();
     });
+
+    const targetContainer = document.createElement('div');
+    targetContainer.classList.add('grid-container'); 
+    root.appendChild(targetContainer);
+
+    renderTarget(targets, targetContainer);
+
     
 }
