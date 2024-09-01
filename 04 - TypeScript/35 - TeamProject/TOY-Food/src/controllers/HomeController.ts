@@ -3,6 +3,7 @@ import { renderFooter } from '../views/FooterView';
 import { renderHeader } from '../views/HeaderView';
 import { renderHomePage } from '../views/HomeView';
 import { Cart } from "../models/Cart";
+import { getAllItems } from './ItemsController';
 
 const cart = new Cart();
 export const items: Item[] = [
@@ -31,8 +32,11 @@ export function initApp() {
 
 
 export function homePage(){
+  getAllItems();
   const cart = new Cart();
   renderHeader();
   renderHomePage(cart, items);
   renderFooter();
 }
+
+

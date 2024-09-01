@@ -9,6 +9,16 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    
+ .form-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100vw;
+    height: 90vh;
+ }
 
 .item-list{
     display: grid;
