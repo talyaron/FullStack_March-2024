@@ -1,11 +1,12 @@
 import { Cart } from '../models/Cart';
 import { Item, ItemCategory } from '../models/Item';
+import { renderNewDivElement } from './HeaderView';
 
 export function renderHomePage(cart: Cart, items: Item[]) {
-    const content = document.querySelector('#content');
+    let content = document.querySelector('#content');
     if (!content) {
-        console.error('Content id doenst exist');
-        return;
+        renderNewDivElement('content');
+        content = document.querySelector('#content')!;
     }
     const home = document.createElement('section');
     home.classList.add('wrapper');
@@ -34,7 +35,7 @@ export function renderHomePage(cart: Cart, items: Item[]) {
         }
     });
     html += `<div class="total-section">Total: $${cart.totalPrice.toFixed(2)}</div>`;
-    content.innerHTML = html;
+    content!.innerHTML = html;
     handleEventListeners(cart, items);
 }
 function handleEventListeners(cart: Cart, items: Item[]) {
@@ -44,7 +45,7 @@ function handleEventListeners(cart: Cart, items: Item[]) {
             const item = items.find((item) => item.id === id);
             if (item) {
                 cart.addItem(item);
-                renderHomePage(cart, items); 
+                renderHomePage(cart, items);
             }
         });
     });
@@ -62,7 +63,9 @@ function handleEventListeners(cart: Cart, items: Item[]) {
         button.addEventListener('click', (e) => {
             const id = (e.target as HTMLButtonElement).dataset.id!;
             cart.removeItem(id);
-            renderHomePage(cart, items); 
+            renderHomePage(cart, items);
         });
     });
 }
+
+

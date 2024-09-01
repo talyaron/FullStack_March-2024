@@ -1,11 +1,13 @@
+import { renderNewDivElement } from "./HeaderView";
+
 export function renderFooter() {
-    const footer = document.querySelector("#footer");
+    let footer = document.querySelector("#footer");
     if (!footer) {
-        console.error('No element with id "footer" found.');
-        return;
+        renderNewDivElement('footer');
+        footer = document.querySelector('#footer');
     }
 
-    footer.innerHTML = `
+    footer!.innerHTML = `
         <div class="footer">
             <p>© 2024 TOY-Food. All rights reserved.</p>
         </div>

@@ -1,6 +1,8 @@
 import { Item, ItemCategory } from '../models/Item';
-import { Cart } from '../models/Cart';
+import { renderFooter } from '../views/FooterView';
+import { renderHeader } from '../views/HeaderView';
 import { renderHomePage } from '../views/HomeView';
+import { Cart } from "../models/Cart";
 
 const cart = new Cart();
 export const items: Item[] = [
@@ -16,4 +18,12 @@ export const items: Item[] = [
 
 export function initApp() {
   renderHomePage(cart, items);
+}
+
+
+export function homePage(){
+  const cart = new Cart();
+  renderHeader();
+  renderHomePage(cart, items);
+  renderFooter();
 }

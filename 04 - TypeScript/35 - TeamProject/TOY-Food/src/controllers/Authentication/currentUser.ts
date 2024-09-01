@@ -1,4 +1,4 @@
-import { items, Item } from "../../models/FoodItem";
+import { Item } from "../../models/Item";
 import { User } from "../../models/User";
 
 
@@ -17,16 +17,17 @@ export function getCurrentUser(email?: string): User | null {
     const parsedUser = JSON.parse(currentUserData);
 
     // Reinstantiate as a User
-    const currentUser = new User(parsedUser.firstName, parsedUser.lastName, parsedUser.email, parsedUser.password, parsedUser.id);
+    const currentUser = new User(parsedUser.userType, parsedUser.email, parsedUser.password,
+        parsedUser.firstName, parsedUser.lastName, parsedUser.phoneNumber, parsedUser.address);
 
     // Rehydrate the task list and comments
-    currentUser.cart = parsedUser.map((cartData: any) => {
-        const item = new Item(cartData.name,cartData.price, cartData.src,cartData.desc
-            , cartData.inStock, cartData.category, cartData.categoryId, cartData.id,
-             cartData.quantity);
+    // currentUser.cart = parsedUser.map((cartData: any) => {
+    //     const item = new Item(cartData.name,cartData.price, cartData.src,cartData.desc
+    //         , cartData.inStock, cartData.category, cartData.categoryId, cartData.id,
+    //          cartData.quantity);
 
-        return item;
-    });
+    //     return item;
+    // });
 
     return currentUser;
 }
@@ -41,29 +42,30 @@ export function getAllUsers(): User[] {
 
     // Reconstruct the User and Task objects
     return parsedUsers.map((userData: any) => {
-        const user = new User(userData.firstName, userData.lastName,
-            userData.email,userData.password, userData.id);
+        const user = new User(userData.userType, userData.email, userData.password,
+            userData.firstName, userData.lastName, userData.phoneNumber, userData.address);
+    
 
-        // Rehydrate the task list and comments
-        user.cart = userData.cart.map((cartData: any) => {
-            const item = new Item(cartData.name,cartData.price, cartData.src,cartData.desc
-                , cartData.inStock, cartData.category, cartData.categoryId, cartData.id,
-                 cartData.quantity);
-            return item;
-        });
+        // // Rehydrate the task list and comments
+        // user.cart = userData.cart.map((cartData: any) => {
+        //     const item = new Item(cartData.name,cartData.price, cartData.src,cartData.desc
+        //         , cartData.inStock, cartData.category, cartData.categoryId, cartData.id,
+        //          cartData.quantity);
+        //     return item;
+        // });
 
         return user;
     });
 }
 
-export function addUser(firstName: string, lastName: string, email: string, password: string): void {
-    const usersString = localStorage.getItem('AllUsers');
-    const users: User[] = usersString ? JSON.parse(usersString) : [];
+// export function addUser(firstName: string, lastName: string, email: string, password: string): void {
+//     const usersString = localStorage.getItem('AllUsers');
+//     const users: User[] = usersString ? JSON.parse(usersString) : [];
 
-    // Create a new user and add to users array
-    const user = new User(firstName, lastName, email, password);
-    users.push(user);
+//     // Create a new user and add to users array
+//     const user = new User(firstName, lastName, email, password);
+//     users.push(user);
 
-    // Store the updated users array in localStorage
-    localStorage.setItem('AllUsers', JSON.stringify(users));
-}
+//     // Store the updated users array in localStorage
+//     localStorage.setItem('AllUsers', JSON.stringify(users));
+// }

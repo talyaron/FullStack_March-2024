@@ -2,10 +2,10 @@ import { Cart } from '../models/Cart';
 import { Item, ItemCategory } from '../models/Item';
 
 export function renderHeader() {
-    const header = document.querySelector("#header");
+    let header = document.querySelector("#header");
     if (!header) {
-        console.error('No element with id "header" found.');
-        return;
+        renderNewDivElement('header');
+        header = document.querySelector("#header")!;
     }
 
     header.innerHTML = `
@@ -31,4 +31,11 @@ export function renderHeader() {
             </div>
         </div>
     `;
+}
+
+
+export function renderNewDivElement(name: string):void {
+    const element = document.createElement('div');
+    element.id = name;
+    document.body.appendChild(element);
 }

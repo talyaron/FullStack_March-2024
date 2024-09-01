@@ -1,17 +1,21 @@
 import { checkEmailExists, insertUser } from "./indexedDb";
-import { User, users } from "../../models/User";
-import { renderFooter } from '../../views/FooterView';
-import { renderHeader } from '../../views/HeaderView';
-import { renderHomePage } from '../../views/HomeView';
+import { User, UserType } from "../../models/User";
+import { getAllUsers } from "./currentUser";
+import { homePage } from "../../controllers/HomeController";
 
 export async function handleClickSignUp(event: any): Promise<void> {
     try {
         event.preventDefault()
         const form = event.target;
+        debugger
         const firstName = form.fname.value as string;
         const lastName = form.lname.value as string;
         const email = form.email.value as string;
         const password = form.password.value as string;
+        const userType: UserType = form.userType.value as UserType;
+        const address = form.address.value as string;
+        const phoneNumber = form.phoneNumber.value as string;
+
         if (email == null || password == null || firstName == null || lastName == null
             || email === "" || password === "" || firstName === "" || lastName === ""
         ) {
@@ -20,19 +24,16 @@ export async function handleClickSignUp(event: any): Promise<void> {
             return
         }
         console.log(email, firstName, lastName, password);
-        const user = new User(firstName, lastName, email, password);
+        const user = new User(userType, email, password, firstName, lastName, phoneNumber, address);
+        const users: User[] = getAllUsers();
         users.push(user);
         localStorage.setItem('CurrentUser', JSON.stringify(user));
-        const usersList: User[] = users;
-        localStorage.setItem('AllUsers', JSON.stringify(usersList));
+        localStorage.setItem('AllUsers', JSON.stringify(users));
         event.target.reset();
-        console.log("user", user);
-        console.dir("allUsers", users)
-        console.log(email, password, user.id);
-
+ 
         //checking if the mail already exists
         const allUsersMail = await checkEmailExists(email);
-        if(allUsersMail){
+        if (allUsersMail) {
             const loginError = document.querySelector('#loginError') as HTMLFormElement;
             loginError.innerHTML = 'The email already exists.';
             return
@@ -58,7 +59,5 @@ export function moveToToyFoodPage(): void {
     if (loginForm) loginForm.remove();
     if (register) register.remove();
 
-    renderHeader();
-    renderHomePage();
-    renderFooter();
+    homePage();
 }
