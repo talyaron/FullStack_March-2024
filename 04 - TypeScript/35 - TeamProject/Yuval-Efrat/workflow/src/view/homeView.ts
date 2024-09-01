@@ -1,5 +1,5 @@
 import { getElement } from "../general/general";
-//import { handelNewWorkflow } from "../controller/workflowController"
+import { handelNewWorkflow } from "../controller/workflowController"
 import { workFlowDesign } from "./workFlowDesignView";
 
 export function renderHome() {

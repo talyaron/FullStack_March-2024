@@ -6,3 +6,11 @@ export function handelNewWorkflow(){
         console.error(error)
     }
 }
+
+export function handleWorkFlowTitle(){
+    try {
+        alert("handleWorkFlowTitle")
+    } catch (error) {
+        console.error(error)
+    }
+}
