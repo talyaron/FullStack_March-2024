@@ -1,8 +1,7 @@
 import { Target } from "../Model/TargetModel";
 
 export function renderTarget(targets: Target[], container: HTMLElement) {
-    container.innerHTML = ''; 
-
+    container.innerHTML = ''
    
     targets.forEach(target => {
         const gridItem = document.createElement('div');
@@ -10,10 +9,9 @@ export function renderTarget(targets: Target[], container: HTMLElement) {
 
         const targetElement = document.createElement('div');
         targetElement.classList.add('viewtarget');
-        targetElement.style.backgroundImage = `url(${target.image})`; // Set the image background
+        targetElement.style.backgroundImage = `url('./src/images/${target.image}')`;
 
         gridItem.appendChild(targetElement);
-
         container.appendChild(gridItem);
 
         animateTarget(targetElement);
@@ -25,3 +23,4 @@ function animateTarget(targetElement: HTMLElement) {
         targetElement.classList.toggle('up'); 
     }, Math.random() * 2000 + 1000); 
 }
+
