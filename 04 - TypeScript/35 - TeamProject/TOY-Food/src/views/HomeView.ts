@@ -1,9 +1,9 @@
 import { Cart } from '../models/Cart';
 import { Item, ItemCategory } from '../models/Item';
-import { renderNewDivElement } from './HeaderView';
+import { renderHeader, renderNewDivElement } from './HeaderView';
 
 export function renderHomePage(cart: Cart, items: Item[]) {
-    console.log('home',cart);
+    console.log('home', cart);
     let content = document.querySelector('#content');
     if (!content) {
         renderNewDivElement('content');
@@ -47,6 +47,9 @@ function handleEventListeners(cart: Cart, items: Item[]) {
             if (item) {
                 cart.addItem(item);
                 renderHomePage(cart, items);
+                renderHeader();
+
+
             }
         });
     });
@@ -57,6 +60,8 @@ function handleEventListeners(cart: Cart, items: Item[]) {
             if (item) {
                 cart.addItem(item);
                 renderHomePage(cart, items);
+                renderHeader();
+
             }
         });
     });
@@ -65,6 +70,8 @@ function handleEventListeners(cart: Cart, items: Item[]) {
             const id = (e.target as HTMLButtonElement).dataset.id!;
             cart.removeItem(id);
             renderHomePage(cart, items);
+            renderHeader();
+
         });
     });
 }

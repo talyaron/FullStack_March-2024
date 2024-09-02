@@ -30,4 +30,8 @@ export class Cart {
   updateLocalStorage(): void {
     localStorage.setItem('cart', JSON.stringify(this));
   }
+  totalItems(): number {
+    console.log(this.items.length);
+    return this.items.length ?? 0;
+  }
 }

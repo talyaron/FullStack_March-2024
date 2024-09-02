@@ -21,7 +21,7 @@ export function addItem(div: HTMLDivElement): void {
                         </div>
                         <div class="price">
                             <label>Price : </label>
-                            <input type="float" for="price" id="price" placeholder="Enter Item Price" required>
+                            <input type="number" step="0.01" min="0" for="price" id="price" placeholder="Enter Item Price" required>
                         </div>  
                         <div class="pic">      
                             <label>Picture Url : </label>
@@ -31,9 +31,9 @@ export function addItem(div: HTMLDivElement): void {
                             <label>Category : </label>
                             <select name="category" id="category">
                             ${Object.values(ItemCategory).map(category =>
-                                `<option value="${category}">${category}</option>`)
-                                    .join('')}
-                            </select>
+            `<option value="${category}">${category}</option>`)
+                .join('')}
+                                </select>
                         </div>
                         <div class="submit">
                             <button type="submit" value="Add Item" >Add Item</button>
@@ -53,14 +53,19 @@ export function addItem(div: HTMLDivElement): void {
 function handleAddItemSubmit(event: Event) {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
-    const {name, price, pic, category} = {name:form.name.value as string, 
-                                        price:form.price.value as number, 
-                                        pic:form.pic.value,
-                                        category: form.category.value};
-    if(name === null || pic === null || price === null || category === null){
+    const { name, price, pic, category } = {
+        name: form.name.value as string,
+        price: form.price.value as number,
+        pic: form.pic.value,
+        category: form.category.value
+    };
+
+    if (name === null || pic === null || price === null || category === null) {
         alert("All fields are required");
         return;
-    } 
+    }
+
+  
     const newItem = new Item(category, pic, name, Number(price) as number);
     items.push(newItem);
     addGlobalItem(newItem);
