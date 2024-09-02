@@ -1,8 +1,18 @@
+import { stageDesigner } from "../view/workFlowDesignView";
 
-export function handelNewWorkflow(){
+export function handelNewWorkflow(ev:Event){
     try {
-        alert("fhfhf")
+        ev.preventDefault();
+        alert("fhfhf");
     } catch (error) {
-        console.error(error)
+        console.error(error);
+    }
+}
+
+export function handelNewStage(){
+    try {
+        stageDesigner();
+    } catch (error) {
+        console.error(error);
     }
 }
