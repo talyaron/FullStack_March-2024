@@ -20,11 +20,11 @@
     bottom: -100%; 
     width: 100%;
     height: 100%;
-    background-image: url('./src/images/MohamadD.jpg');
     background-size: cover;
+    background-repeat: no-repeat; 
     transition: bottom 0.5s ease;
 }
 
 .viewtarget.up {
-    bottom: 0; /* Move up into view */
+    bottom: 0;
 }
