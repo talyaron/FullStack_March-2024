@@ -11,7 +11,7 @@ class Pet {
         this.petName = petName;
         this.petImage = petImage;
         this.id = crypto.randomUUID();
-    
+
     }
 }
 
@@ -90,7 +90,7 @@ function getOwnerListOfPets(ownerId: string): Pet[] {
 //get owner of pet
 function getOwnerOfPet(petId: string): User | null {
     try {
-      
+
         const petOwnerId = petsOwners.find(petOwner => petOwner.petId === petId);
         if (!petOwnerId) {
             return null;
@@ -157,7 +157,7 @@ function renderUser(user: User): string {
     return `
     <div class="user-card">
         <h2>${user.userName}</h2>
-        <button onclick="handleDeletePet('${user.id}')">Delete</button>
+        <button onclick="handleDeleteUser('${user.id}')">Delete</button>
         <img src="${user.profileImage}" alt="${user.userName}">
         cats: ${getOwnerListOfPets(user.id).map(pet => pet.petName).join(', ')}
     </div>
@@ -203,6 +203,7 @@ function main() {
 main();
 
 function handleDeletePet(id: string) {
+    deleteFromOwner(id);
     const petIndex = pets.findIndex(pet => pet.id === id);
     if (petIndex === -1) {
         return;
@@ -210,6 +211,35 @@ function handleDeletePet(id: string) {
     pets.splice(petIndex, 1);
     renderPets(pets);
 
+}
+
+function deleteFromOwner(id: string) {
+    const ownerindex = petsOwners.findIndex(pet => pet.petId === id);
+    if (ownerindex === -1) {
+        return;
+    }
+    petsOwners.splice(ownerindex, 1);
+    renderUsers(users);
+}
+
+function handleDeleteUser(id: string) {
+    deleteFromPet(id);
+    const userIndex = users.findIndex(user => user.id === id);
+    if (userIndex === -1) {
+        return;
+    }
+    users.splice(userIndex, 1);
+    renderUsers(users);
+
+}
+
+function deleteFromPet(id: string) {
+    const petindex = petsOwners.findIndex(user => user.ownerId === id);
+    if (petindex === -1) {
+        return;
+    }
+    petsOwners.splice(petindex, 1);
+    renderPets(pets);
 }
 
 function addPet(event) {
