@@ -1,7 +1,6 @@
 export enum UserType {
   Admin = "Admin",
-  Customer = "Customer",
-  forEach = "forEach"
+  Customer = "Customer"
 }
 
 export class User {

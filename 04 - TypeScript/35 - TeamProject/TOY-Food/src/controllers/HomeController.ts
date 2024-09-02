@@ -32,10 +32,10 @@ export function initApp() {
 
 
 export function homePage(){
-  getAllItems();
+  const allItems = getAllItems();
   const cart = new Cart();
   renderHeader();
-  renderHomePage(cart, items);
+  renderHomePage(cart, allItems);
   renderFooter();
 }
 

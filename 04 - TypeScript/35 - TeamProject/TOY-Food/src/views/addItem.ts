@@ -1,13 +1,12 @@
+import { items } from "../controllers/HomeController";
+import { addGlobalItem } from "../controllers/ItemsController";
 import { Item, ItemCategory } from "../models/Item";
-
+import '../styles/addItem.scss';
 
 
 export function addItem(div: HTMLDivElement): void {
     if (!div) {
         throw new Error('add item div not found');
-    }
-    const item :Item = {
-        
     }
     const newItem = `
         <div class="form-wrapper">
@@ -21,29 +20,30 @@ export function addItem(div: HTMLDivElement): void {
                     <form id="addItemForm">
                         <div class="name">      
                             <label>Name : </label>
-                            <input type="text" for="name" id="name" placeholder="Enter Item Name">
+                            <input type="text" for="name" id="name" placeholder="Enter Item Name" required>
                         </div>
 
                         <div class="price">
                             <label>Price : </label>
-                            <input type="number" for="price" id="price" placeholder="Enter Item Price">
+                            <input type="float" for="price" id="price" placeholder="Enter Item Price" required>
                         </div>  
 
                         <div class="pic">      
                             <label>Picture Url : </label>
-                            <input type="text" for="pic" id="pic" placeholder="Enter Picture Url">
+                            <input type="text" for="pic" id="pic" placeholder="Enter Picture Url" required>
                         </div>
 
                         <div class="category">
                             <label>Category : </label>
                             <select name="category" id="category">
-                            ${Object.values(ItemCategory).map(category => 
+                            ${Object.values(ItemCategory).map(category =>
                                 `<option value="${category}">${category}</option>`)
-                                .join('')}
+                                    .join('')}
                             </select>
+                        </div>
 
                         <div class="submit">
-                            <input type="submit" value="Add Item">
+                            <button type="submit" value="Add Item" >Add Item</button>
 
                         </div>
                     </form>
@@ -57,4 +57,25 @@ export function addItem(div: HTMLDivElement): void {
     `;
 
     div.innerHTML = newItem;
+    const addItemForm = document.querySelector('#addItemForm');
+    if (addItemForm) {
+        addItemForm.addEventListener('submit', handleAddItemSubmit);
+    }
 }
+function handleAddItemSubmit(event: Event) {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const {name, price, pic, category} = {name:form.name.value as string, 
+                                        price:form.price.value as number, 
+                                        pic:form.pic.value,
+                                        category: form.category.value};
+    if(name === null || pic === null || price === null || category === null){
+        alert("All fields are required");
+        return;
+    } 
+    const newItem = new Item(category, pic, name, Number(price) as number);
+    addGlobalItem(newItem);
+    items.push(newItem);
+    form.reset();
+}
+
