@@ -1,8 +1,10 @@
 import { handleStartGame } from "../Controllers/handleStartGame";
+import { weaponCreate } from "../Controllers/weaponCreate";
 export function renderWeaponSelect(root:HTMLElement){
     console.log("hello world");
     root.innerHTML=`
-    <div class="weaponSelect">
+    <div class="weaponSelect" style="background-image: url(/src/images/weaponSelect.png);">
+        <h1 style="color:white;margin-bottom:50px;">Choose Your Weapon</h1>
         <div class="weaponCard">
                 <img src="/src/images/weapons/pistolSelect.png" id="pistolImage" alt="Pistol" style="width:100px;height:100px;">
         </div>
@@ -16,7 +18,16 @@ export function renderWeaponSelect(root:HTMLElement){
      
     const weaponImages = root.querySelectorAll('.weaponCard img');
     weaponImages.forEach(img => {
-        img.addEventListener('click', () => handleStartGame(img.id));
+        img.addEventListener('click', () => weaponCreate(img.id,root));
+    });
+    const weaponCards = root.querySelectorAll('.weaponCard');
+    weaponCards.forEach(card => {
+        card.addEventListener('mouseover', () => {
+            const audioClick = document.querySelector('#click') as HTMLAudioElement;
+            if (audioClick) {
+                audioClick.play();
+            }
+        });
     });
 
 }

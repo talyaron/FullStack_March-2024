@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 #game{
@@ -9,6 +10,7 @@
     text-align: center;
     align-content: center;
     background-color: grey;
+    
 }
 
 #start{
@@ -32,6 +34,7 @@
      width:250px;
      border:black solid 2px;
      &:hover{
+
         border-color:red;
      }
      &:active{
@@ -39,4 +42,16 @@
      }
     }
     
+}
+.window{
+    width:100%;
+    height: 100%;
+    cursor: crosshair;
+    .curtains{
+        position:absolute;
+        height: 100%;
+        width: 100%;
+        background-image: url(/src/images/curtain.png);
+        background-size: cover;
+    }
 }
