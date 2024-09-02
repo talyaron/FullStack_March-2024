@@ -1,7 +1,8 @@
-import { items } from "../controllers/HomeController";
+import { items } from "../models/Item";
 import { addGlobalItem } from "../controllers/ItemsController";
 import { Item, ItemCategory } from "../models/Item";
 import '../styles/addItem.scss';
+import { homePage } from "../controllers/HomeController";
 
 
 export function addItem(div: HTMLDivElement): void {
@@ -10,29 +11,22 @@ export function addItem(div: HTMLDivElement): void {
     }
     const newItem = `
         <div class="form-wrapper">
-
             <div class="wrapper">
-
                 <h1>Add New Item</h1>   
-
                 <div class="form">
-
                     <form id="addItemForm">
                         <div class="name">      
                             <label>Name : </label>
                             <input type="text" for="name" id="name" placeholder="Enter Item Name" required>
                         </div>
-
                         <div class="price">
                             <label>Price : </label>
                             <input type="float" for="price" id="price" placeholder="Enter Item Price" required>
                         </div>  
-
                         <div class="pic">      
                             <label>Picture Url : </label>
                             <input type="text" for="pic" id="pic" placeholder="Enter Picture Url" required>
                         </div>
-
                         <div class="category">
                             <label>Category : </label>
                             <select name="category" id="category">
@@ -41,19 +35,13 @@ export function addItem(div: HTMLDivElement): void {
                                     .join('')}
                             </select>
                         </div>
-
                         <div class="submit">
                             <button type="submit" value="Add Item" >Add Item</button>
-
                         </div>
                     </form>
-
                 </div>
-
             </div>
-
         </div>
-    
     `;
 
     div.innerHTML = newItem;
@@ -74,8 +62,11 @@ function handleAddItemSubmit(event: Event) {
         return;
     } 
     const newItem = new Item(category, pic, name, Number(price) as number);
-    addGlobalItem(newItem);
     items.push(newItem);
+    addGlobalItem(newItem);
     form.reset();
+
+    //render home page
+    homePage();
 }
 

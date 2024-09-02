@@ -1,18 +1,17 @@
-import { Item } from "../models/Item";
-import { items } from "./HomeController";
+import { Item, items } from "../models/Item";
 
-export function getAllItems() : Item[] {
+export function getAllItems(): Item[] {
     let allItems = localStorage.getItem('items');
     if (allItems === null || allItems === undefined) {
-        debugger
         allItems = initializeItems();
     }
     const itemsGlobal: Item[] = JSON.parse(allItems!);
     itemsGlobal.forEach(item => {
-        if (items.filter(i => i.name !== item.name).length === 0)
+        const index = items.findIndex(i => i.name === item.name);
+        if (index < 0)
             items.push(item);
     });
-    localStorage.setItem('items', JSON.stringify(items));
+    localStorage.setItem('items', JSON.stringify(itemsGlobal));
     return itemsGlobal;
 }
 

@@ -5,18 +5,18 @@ export class Cart {
   public userId: string;
   public items: Item[];
   public totalPrice: number;
-  constructor() {
-    this.cartId = `id${crypto.randomUUID()}`;
-    this.userId = 'guest'; 
-    this.items = [];
-    this.totalPrice = 0;
+  constructor(cartId?: string, userId?:string, items?: Item[], totalPrice?: number) {
+    this.cartId =  cartId ?? `id${crypto.randomUUID()}`;
+    this.userId = userId ?? 'guest';
+    this.items =  items ?? [];
+    this.totalPrice = totalPrice ?? 0;
   }
-    addItem(item: Item): void {
+  addItem(item: Item): void {
     this.items.push(item);
     this.totalPrice += item.price;
     this.updateLocalStorage();
   }
-    removeItem(id: string): void {
+  removeItem(id: string): void {
     const itemIndex = this.items.findIndex(item => item.id === id);
     if (itemIndex > -1) {
       this.totalPrice -= this.items[itemIndex].price;
@@ -24,7 +24,7 @@ export class Cart {
       this.updateLocalStorage();
     }
   }
-    getItemCount(id: string): number {
+  getItemCount(id: string): number {
     return this.items.filter(item => item.id === id).length;
   }
   updateLocalStorage(): void {

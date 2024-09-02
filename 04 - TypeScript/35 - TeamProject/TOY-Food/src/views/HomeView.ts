@@ -3,6 +3,7 @@ import { Item, ItemCategory } from '../models/Item';
 import { renderNewDivElement } from './HeaderView';
 
 export function renderHomePage(cart: Cart, items: Item[]) {
+    console.log('home',cart);
     let content = document.querySelector('#content');
     if (!content) {
         renderNewDivElement('content');
