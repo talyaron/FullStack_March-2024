@@ -19,16 +19,6 @@ export function getCurrentUser(email?: string): User | null {
     // Reinstantiate as a User
     const currentUser = new User(parsedUser.userType, parsedUser.email, parsedUser.password,
         parsedUser.firstName, parsedUser.lastName, parsedUser.phoneNumber, parsedUser.address);
-
-    // Rehydrate the task list and comments
-    // currentUser.cart = parsedUser.map((cartData: any) => {
-    //     const item = new Item(cartData.name,cartData.price, cartData.src,cartData.desc
-    //         , cartData.inStock, cartData.category, cartData.categoryId, cartData.id,
-    //          cartData.quantity);
-
-    //     return item;
-    // });
-
     return currentUser;
 }
 
@@ -44,28 +34,7 @@ export function getAllUsers(): User[] {
     return parsedUsers.map((userData: any) => {
         const user = new User(userData.userType, userData.email, userData.password,
             userData.firstName, userData.lastName, userData.phoneNumber, userData.address);
-    
-
-        // // Rehydrate the task list and comments
-        // user.cart = userData.cart.map((cartData: any) => {
-        //     const item = new Item(cartData.name,cartData.price, cartData.src,cartData.desc
-        //         , cartData.inStock, cartData.category, cartData.categoryId, cartData.id,
-        //          cartData.quantity);
-        //     return item;
-        // });
-
         return user;
     });
 }
 
-// export function addUser(firstName: string, lastName: string, email: string, password: string): void {
-//     const usersString = localStorage.getItem('AllUsers');
-//     const users: User[] = usersString ? JSON.parse(usersString) : [];
-
-//     // Create a new user and add to users array
-//     const user = new User(firstName, lastName, email, password);
-//     users.push(user);
-
-//     // Store the updated users array in localStorage
-//     localStorage.setItem('AllUsers', JSON.stringify(users));
-// }

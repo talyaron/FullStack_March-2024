@@ -1,16 +1,15 @@
 import { Cart } from '../models/Cart';
 import { Item, ItemCategory } from '../models/Item';
 import { renderHeader, renderNewDivElement } from './HeaderView';
+import { renderCart } from './CartView';
 
 export function renderHomePage(cart: Cart, items: Item[]) {
-    console.log('home', cart);
     let content = document.querySelector('#content');
     if (!content) {
         renderNewDivElement('content');
         content = document.querySelector('#content')!;
     }
-    const home = document.createElement('section');
-    home.classList.add('wrapper');
+
     const categories = Object.values(ItemCategory);
     let html = '';
     categories.forEach(category => {
@@ -39,14 +38,15 @@ export function renderHomePage(cart: Cart, items: Item[]) {
     content!.innerHTML = html;
     handleEventListeners(cart, items);
 }
-function handleEventListeners(cart: Cart, items: Item[]) {
+
+export function handleEventListeners(cart: Cart, items: Item[], renderCartPage:boolean=false) {
     document.querySelectorAll('.add-to-order').forEach((button) => {
         button.addEventListener('click', (e) => {
             const id = (e.target as HTMLButtonElement).dataset.id!;
             const item = items.find((item) => item.id === id);
             if (item) {
                 cart.addItem(item);
-                renderHomePage(cart, items);
+                renderCartPage === true ? renderCart(cart) : renderHomePage(cart, items);
                 renderHeader();
 
 
@@ -59,7 +59,7 @@ function handleEventListeners(cart: Cart, items: Item[]) {
             const item = items.find((item) => item.id === id);
             if (item) {
                 cart.addItem(item);
-                renderHomePage(cart, items);
+                renderCartPage === true ? renderCart(cart) : renderHomePage(cart, items);
                 renderHeader();
 
             }
@@ -69,7 +69,7 @@ function handleEventListeners(cart: Cart, items: Item[]) {
         button.addEventListener('click', (e) => {
             const id = (e.target as HTMLButtonElement).dataset.id!;
             cart.removeItem(id);
-            renderHomePage(cart, items);
+            renderCartPage === true ? renderCart(cart) : renderHomePage(cart, items);
             renderHeader();
 
         });
