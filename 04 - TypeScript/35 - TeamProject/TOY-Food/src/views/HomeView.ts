@@ -8,8 +8,8 @@ export function renderHomePage(cart: Cart, items: Item[]) {
         renderNewDivElement('content');
         content = document.querySelector('#content')!;
     }
-    const home = document.createElement('section');
-    home.classList.add('wrapper');
+    // const home = document.createElement('section');
+    // home.classList.add('wrapper');
     const categories = Object.values(ItemCategory);
     let html = '';
     categories.forEach(category => {
@@ -35,8 +35,10 @@ export function renderHomePage(cart: Cart, items: Item[]) {
         }
     });
     html += `<div class="total-section">Total: $${cart.totalPrice.toFixed(2)}</div>`;
-    content!.innerHTML = html;
+    // content!.innerHTML = html;
     handleEventListeners(cart, items);
+    console.log(html);
+    return html;
 }
 function handleEventListeners(cart: Cart, items: Item[]) {
     document.querySelectorAll('.add-to-order').forEach((button) => {

@@ -3,10 +3,7 @@ import './buttons.scss'
 
 export function renderLoginPage(): string {
     let login = `<div class='login-wrapper'>
-                    <div class="header">
-                        <h1>Toy Food Login Page</h1>
-                        <h5 id="loginError"></h5>
-                    </div>
+                    <h5 id="loginError"></h5>
                     <div class="login">
                         <div class="loginForm">
                             <form id="loginForm" >

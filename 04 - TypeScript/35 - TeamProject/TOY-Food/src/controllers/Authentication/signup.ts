@@ -1,13 +1,14 @@
 import { checkEmailExists, insertUser } from "./indexedDb";
 import { User, UserType } from "../../models/User";
 import { getAllUsers } from "./currentUser";
-import { homePage } from "../../controllers/HomeController";
+// import { homePage } from "../../controllers/HomeController";
+import { homePage } from "../../models/Pages";
+import { renderPage } from "../../views/PagesView";
 
 export async function handleClickSignUp(event: any): Promise<void> {
     try {
         event.preventDefault()
         const form = event.target;
-        debugger
         const firstName = form.fname.value as string;
         const lastName = form.lname.value as string;
         const email = form.email.value as string;
@@ -59,5 +60,6 @@ export function moveToToyFoodPage(): void {
     if (loginForm) loginForm.remove();
     if (register) register.remove();
 
-    homePage();
+    // homePage();
+    renderPage(homePage);
 }

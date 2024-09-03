@@ -9,7 +9,6 @@ import { moveToToyFoodPage } from "./signup";
 export function renderLogin(app: HTMLDivElement): void {
     try {
         if (!app) throw new Error('No app found');
-
         const htmlLogin = renderLoginPage()!;
         app.innerHTML = htmlLogin;
         const loginForm = document.querySelector('#loginForm') as HTMLFormElement;

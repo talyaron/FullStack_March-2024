@@ -1,5 +1,5 @@
 .header {
-//   width: 100%;
+  width: 100%;
   color: $text-color;
   padding: 1rem 4rem;
   display: flex;
@@ -7,7 +7,7 @@
   font-size: 1rem;
 
   &__nav {
-    width: 1280px;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,6 +47,10 @@
   &__user {
     display: flex;
     gap: 1rem;
+
+    p {
+      margin: 0;
+    }
   }
 
   i {

@@ -1,4 +1,4 @@
-export class Pages {
+export class Page {
     name: string;
     theme: string = "dark" || "light";
     constructor(name: string, theme?: string) {
@@ -7,15 +7,17 @@ export class Pages {
     }
 };
 
-const homePage = new Pages("Home", "light");
-const menuPage = new Pages("Menu");
-const itemPage = new Pages("Item");
-const cartPage = new Pages("Shopping Card");
-const orderPage = new Pages("Order");
-const profilePage = new Pages("Profile");
-const consolePage = new Pages("Console");
-const notFoundPage = new Pages("Not Found");
-const singUpPage = new Pages("Sign Up");
-const singInPage = new Pages("Sign In");
+const homePage = new Page("Home", "light");
+const menuPage = new Page("Menu");
+const itemPage = new Page("Item");
+const cartPage = new Page("Shopping Card");
+const orderPage = new Page("Order");
+const profilePage = new Page("Profile");
+const consolePage = new Page("Console");
+const notFoundPage = new Page("Not Found");
+const loginPage = new Page("Login");
+const registerPage = new Page("Register");
+const adminPage = new Page("Admin Page");
+const adminItemPage = new Page("Admin Item");
 
-export { homePage, menuPage, itemPage, cartPage, orderPage, profilePage, consolePage, notFoundPage, singUpPage, singInPage };
+export { homePage, menuPage, itemPage, cartPage, orderPage, profilePage, consolePage, notFoundPage, loginPage, registerPage, adminPage, adminItemPage };
