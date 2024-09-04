@@ -11,8 +11,18 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
                 <img src="${weapon.image}" class="${weapon.name}" style="height:100%;width:100%;">
             </div>
         </div>
-        <div id="score" style="position:absolute; top:20px; right:20px; font-size:24px; color:black;">Score: 0</div>`;
+        <div id="score" style="position:absolute; top:20px; right:20px; font-size:24px; color:white;">Score: 0</div>`;
 
+    // background music
+        const gameAudio = new Audio(`/src/audio/gameAudio.mp4`);
+        gameAudio.play();
+        gameAudio.addEventListener('ended', () => {
+            gameAudio.currentTime = 0; 
+            gameAudio.play(); 
+        });
+        //``````````````````````````````````````````````````````
+
+   //shooting audio and shootin holes 
   const windowElement = root.querySelector(".window") as HTMLElement;
 
   windowElement.addEventListener("click", (event: MouseEvent) => {
@@ -36,6 +46,7 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
 
     const audioShoot = new Audio(`${weapon.shootingAudio}`);
     audioShoot.play();
+    //```````````````````````````````````````````````````````````````````````   
 
     let hitTarget = false;
 
