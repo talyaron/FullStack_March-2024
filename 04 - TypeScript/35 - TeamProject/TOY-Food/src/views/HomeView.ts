@@ -2,6 +2,10 @@ import { Cart } from '../models/Cart';
 import { Item, ItemCategory } from '../models/Item';
 import { renderHeader, renderNewDivElement } from './HeaderView';
 import { renderCart } from './CartView';
+import '../styles/delete-edit-item.scss'
+import { removeItem } from './addItem';
+import { homePage } from '../controllers/HomeController';
+import { renderEditItem } from '../controllers/editItem';
 
 export function renderHomePage(cart: Cart, items: Item[]) {
     let content = document.querySelector('#content');
@@ -9,6 +13,7 @@ export function renderHomePage(cart: Cart, items: Item[]) {
         renderNewDivElement('content');
         content = document.querySelector('#content')!;
     }
+    const user = JSON.parse(localStorage.getItem('CurrentUser') as string);
 
     const categories = Object.values(ItemCategory);
     let html = '';
@@ -20,7 +25,9 @@ export function renderHomePage(cart: Cart, items: Item[]) {
             categoryItems.forEach(item => {
                 const count = cart.getItemCount(item.id);
                 html += `<div class="item-card">
-                    <img src="${item.pic}" alt="${item.name}">
+                <img src="${item.pic}" alt="${item.name}">
+                ${user.type === 'Admin' ? `<div class="edit-delete"><span class="delete-item" data-id="${item.id}">Delete</span>
+                                            <span class="edit-item" data-id="${item.id}">Edit</span></div>` : ''}
                     <h3>${item.name}</h3>
                     <p>Price: $${item.price.toFixed(2)}</p>
                     ${count > 0 ? `<div class="item-quantity">
@@ -39,30 +46,15 @@ export function renderHomePage(cart: Cart, items: Item[]) {
     handleEventListeners(cart, items);
 }
 
-export function handleEventListeners(cart: Cart, items: Item[], renderCartPage:boolean=false) {
+export function handleEventListeners(cart: Cart, items: Item[], renderCartPage: boolean = false) {
     document.querySelectorAll('.add-to-order').forEach((button) => {
         button.addEventListener('click', (e) => {
-            const id = (e.target as HTMLButtonElement).dataset.id!;
-            const item = items.find((item) => item.id === id);
-            if (item) {
-                cart.addItem(item);
-                renderCartPage === true ? renderCart(cart) : renderHomePage(cart, items);
-                renderHeader();
-
-
-            }
+            prepareOrder(e, items, cart, renderCartPage);
         });
     });
     document.querySelectorAll('.increase').forEach((button) => {
         button.addEventListener('click', (e) => {
-            const id = (e.target as HTMLButtonElement).dataset.id!;
-            const item = items.find((item) => item.id === id);
-            if (item) {
-                cart.addItem(item);
-                renderCartPage === true ? renderCart(cart) : renderHomePage(cart, items);
-                renderHeader();
-
-            }
+            prepareOrder(e, items, cart, renderCartPage);
         });
     });
     document.querySelectorAll('.decrease').forEach((button) => {
@@ -74,6 +66,36 @@ export function handleEventListeners(cart: Cart, items: Item[], renderCartPage:b
 
         });
     });
+    const deleteItem = document.querySelectorAll('.delete-item') as NodeListOf<HTMLButtonElement>;
+    const editItem = document.querySelectorAll('.edit-item') as NodeListOf<HTMLButtonElement>;
+
+    if (deleteItem) deleteItem.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            const id = (e.target as HTMLButtonElement).dataset.id!;
+            console.log('delete', id);
+            removeItem(id);
+            cart.removeAllItemsInCart(id);
+            homePage()
+        });
+    });
+    if (editItem) editItem.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            const id = (e.target as HTMLButtonElement).dataset.id!;
+            console.log('edit', id);
+            renderEditItem(id);
+
+        });
+    });
 }
 
+
+function prepareOrder(e: Event, items: Item[], cart: Cart, renderCartPage: boolean) {
+    const id = (e.target as HTMLButtonElement).dataset.id!;
+    const item = items.find((item) => item.id === id);
+    if (item) {
+        cart.addItem(item);
+        renderCartPage === true ? renderCart(cart) : renderHomePage(cart, items);
+        renderHeader();
+    }
+}
 

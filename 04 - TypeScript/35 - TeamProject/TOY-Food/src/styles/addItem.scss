@@ -41,20 +41,17 @@
                     flex-direction: row;
                     justify-content: space-evenly;
                     align-items: center;
-
+                    color: black;
 
                     label {
                         padding-right: 10px;
                         width: 120px;
-
                     }
-
-
 
                     select {
                         display: flex;
-                        width: 160px;
-                        height: 30px;
+                        width: 150px;
+                        height: 25px;
                         background-color: white;
                         color: black;
                         border-radius: 10px;
@@ -63,20 +60,24 @@
                         option {
                             padding: 10px;
                             width: 20px;
-                            height: fit-content;
+                            height: 20px;
 
                         }
                     }
 
                     input[type=text],
-                    input[type=number] {
+                    #price {
                         margin-bottom: 10px;
                         border-radius: 10px;
-                        height: 20px;
-                        width: 50%;
+                        width: 150px;
+                        height: 25px;
                         background-color: white;
                         color: black;
                         border: 1px solid blue;
+                        &::placeholder {
+                            color: blue;
+                            padding-left: 1px;
+                        }
                     }
                 }
 

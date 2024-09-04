@@ -1,7 +1,8 @@
 import { getCart, homePage } from '../controllers/HomeController';
 import { Cart } from '../models/Cart';
 import { addItem } from './addItem';
-import { renderCartPage } from './CartView';
+import { renderCartPage } from '../controllers/CartController';
+import { handleClickHomeButton } from '../controllers/Authentication/signup';
 
 export function renderHeader() {
     let header = document.querySelector("#header");
@@ -22,10 +23,11 @@ export function renderHeader() {
                 </div>
                 <div class="header__menu">
                     <a id="home" href="#home">Home</a>
-                    <a id="addItem" href="#AddItem">Add Item</a>
+                    ${user.type === 'Admin' ? `<a id="addItem" href="#AddItem">Add Item</a>`: ''}
                     <a id="cartItems" href="#cartItems">Cart</a>
                 </div>
                 <div class="header__icons">
+                ${user.type}
                 ${renderHeaderUser(userName ?? 'User', cart as Cart)}
                     <div class="header__search_bar">
                         <input type="text" id="search-input" placeholder="Search...">
@@ -33,7 +35,8 @@ export function renderHeader() {
                         <i class='bx bx-search'></i>
                         <p class="last">Search</p>
                         </label>
-                    </div>
+                        </div>
+                        <button type="button" id="signOut-button">SignOut</button>
                 </div>
             </div>
         </div>
@@ -61,7 +64,7 @@ function addEventListener() {
     const addItem = document.querySelector("#addItem");
     const cartItems = document.querySelector("#cartItems");
     const cartIcon = document.querySelector(".header__user__cart")
-
+    const signOut = document.querySelector("#signOut-button");
     if (home) {
         home.addEventListener('click', handleHomeClick);
     }
@@ -73,6 +76,10 @@ function addEventListener() {
     }
     if(cartIcon) {  
         cartIcon.addEventListener('click', handleCartItemsClick);
+    }
+    if(signOut) {
+        signOut.addEventListener('click', handleClickHomeButton)
+
     }
 }
 

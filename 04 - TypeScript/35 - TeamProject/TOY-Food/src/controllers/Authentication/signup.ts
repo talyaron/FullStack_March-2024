@@ -3,6 +3,7 @@ import { User, UserType } from "../../models/User";
 import { getAllUsers } from "./currentUser";
 import { homePage } from "../../controllers/HomeController";
 import { renderLogin } from "./login";
+import { renderNewDivElement } from "../../views/HeaderView";
 
 export async function handleClickSignUp(event: any): Promise<void> {
     try {
@@ -63,7 +64,20 @@ export function moveToToyFoodPage(): void {
 }
 
 export function handleClickHomeButton() {
+    //remove all elements in the body to render the login page and append app div
+    const content = document.querySelector('#content') as HTMLDivElement;
+    if (content) {
+        document.body.removeChild(content);
+        document.body.removeChild(document.querySelector('#header') as HTMLDivElement);
+        document.body.removeChild(document.querySelector('#footer') as HTMLDivElement);
+    };
     const app = document.querySelector<HTMLDivElement>('#app')! as HTMLDivElement;
     if (app) renderLogin(app);
+    else {
+        renderNewDivElement('app');
+        const app = document.querySelector<HTMLDivElement>('#app')! as HTMLDivElement;
+        if (app) renderLogin(app);
+
+    }
 
 }

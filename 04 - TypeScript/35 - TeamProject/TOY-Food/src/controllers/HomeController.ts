@@ -2,16 +2,15 @@ import { renderFooter } from '../views/FooterView';
 import { renderHeader } from '../views/HeaderView';
 import { renderHomePage } from '../views/HomeView';
 import { Cart } from "../models/Cart";
-import { getAllItems } from './ItemsController';
+import { getAllItems, initializeItems } from './ItemsController';
+import { Item } from '../models/Item';
 
-// const cart: Cart = getCart() ?? new Cart();
 
 export function getCart(): Cart | undefined {
-  const  { cartId, userId, items, totalPrice } = JSON.parse(localStorage.getItem('cart') || '{}')
-  const cart: Cart = new Cart(cartId, userId, items, totalPrice );
+  const { cartId, userId, items, totalPrice } = JSON.parse(localStorage.getItem('cart') || '{}')
+  const cart: Cart = new Cart(cartId, userId, items, totalPrice);
   return cart
 }
-
 
 
 /**
@@ -19,8 +18,12 @@ export function getCart(): Cart | undefined {
  * the items in the catalog, and the footer.
  */
 export function homePage() {
-  const allItems = getAllItems();
+  let allItems: Item[] = getAllItems();
   const cart: Cart = getCart() ?? new Cart();
+  if (allItems.length === 0) {
+    console.log("Length", allItems.length);
+    allItems = JSON.parse(initializeItems());
+  }
   renderHeader();
   renderHomePage(cart, allItems);
   renderFooter();

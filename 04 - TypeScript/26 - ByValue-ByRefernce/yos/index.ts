@@ -5,6 +5,9 @@ const david = { ...student }; //deconstructing by value
 david.name = 'David';
 david.age = 20;
 
+const newStudent1 = {userName:'yossi',ageUser:12, gender:'male'}
+const {userName,ageUser,gender} = newStudent1
+
 const orly = { ...student };
 orly.name = 'Orly';
 orly.age = 30;

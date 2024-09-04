@@ -5,11 +5,6 @@ import { renderNewDivElement } from "./HeaderView";
 import { handleEventListeners } from "./HomeView";
 import '../styles/cart.scss';
 import { renderCheckoutPage } from "./checkout";
-export function renderCartPage() {
-    const cart: Cart | undefined = getCart();
-    renderCart(cart!);
-}
-
 
 export function renderCart(cart: Cart) {
     const app = document.querySelector("#app");

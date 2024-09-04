@@ -1,5 +1,5 @@
 import { items } from "../models/Item";
-import { addGlobalItem } from "../controllers/ItemsController";
+import { addGlobalItem, removeGlobalItem } from "../controllers/ItemsController";
 import { Item, ItemCategory } from "../models/Item";
 import '../styles/addItem.scss';
 import { homePage } from "../controllers/HomeController";
@@ -31,8 +31,8 @@ export function addItem(div: HTMLDivElement): void {
                             <label>Category : </label>
                             <select name="category" id="category">
                             ${Object.values(ItemCategory).map(category =>
-            `<option value="${category}">${category}</option>`)
-                .join('')}
+        `<option value="${category}">${category}</option>`)
+            .join('')}
                                 </select>
                         </div>
                         <div class="submit">
@@ -50,6 +50,20 @@ export function addItem(div: HTMLDivElement): void {
         addItemForm.addEventListener('submit', handleAddItemSubmit);
     }
 }
+
+
+export function removeItem(id: string): void {
+    if (id) {
+        const index = items.findIndex(item => item.id === id);
+        if (index > -1) {
+            items.splice(index, 1);
+        }
+        removeGlobalItem(id);
+    }
+
+}
+
+
 function handleAddItemSubmit(event: Event) {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
@@ -65,7 +79,7 @@ function handleAddItemSubmit(event: Event) {
         return;
     }
 
-  
+
     const newItem = new Item(category, pic, name, Number(price) as number);
     items.push(newItem);
     addGlobalItem(newItem);
