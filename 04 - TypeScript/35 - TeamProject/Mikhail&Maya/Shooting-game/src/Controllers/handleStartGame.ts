@@ -4,11 +4,15 @@ import { renderHomeScreen } from "../View/homescreen";
 
 export function handleStartGame(weapon: Weapon, root: HTMLElement) {
   const targets: Target[] = [
-    new Target("MohamadD.jpg", { x: 0, y: 0 }, root),
-    new Target("Nassralla.jpg", { x: 0, y: 0 }, root),
-    new Target("Sinwar-mouse.jpg", { x: 0, y: 0 }, root),
-    new Target("yismail.jpg", { x: 0, y: 0 }, root),
+    new Target("/src/images/targets/MohamadD.jpg", { x: 0, y: 0 }, root),
+    new Target("/src/images/targets/Nassralla.jpg", { x: 0, y: 0 }, root),
+    new Target("/src/images/targets/Sinwar-mouse.jpg", { x: 0, y: 0 }, root),
+    new Target("/src/images/targets/yismail.jpg", { x: 0, y: 0 }, root),
+    new Target("/src/images/targets/cat.png", { x: 0, y: 0 }, root),
+    new Target("/src/images/targets/cat2.png", { x: 0, y: 0 }, root)
   ];
+
+  
 
   renderHomeScreen(weapon, root, targets);
 

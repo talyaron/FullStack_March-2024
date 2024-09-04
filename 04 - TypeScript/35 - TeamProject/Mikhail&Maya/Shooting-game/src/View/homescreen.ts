@@ -22,7 +22,7 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
         });
         //``````````````````````````````````````````````````````
 
-   //shooting audio and shootin holes 
+   //shooting audio and shooting holes 
   const windowElement = root.querySelector(".window") as HTMLElement;
 
   windowElement.addEventListener("click", (event: MouseEvent) => {
@@ -47,8 +47,30 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
     const audioShoot = new Audio(`${weapon.shootingAudio}`);
     audioShoot.play();
     //```````````````````````````````````````````````````````````````````````   
-
-    let hitTarget = false;
+    let intervalId: number | null = null;
+    //function randomizeTargets(i:number) {
+        intervalId = setInterval(() => {
+            let i=Math.floor(Math.random() * 6);
+        root.innerHTML = ''; 
+            targets[i].setRandomPosition();
+            root.innerHTML = `
+         <div class="window">
+            <div class="curtains"></div>
+            <img class="targetImg" src="${targets[i].image}" style="height:300px;width:150px;position:absolute;top:${targets[i].position.y}px;right:${targets[i].position.x}px;">
+            <div class="weaponBox" style="width:150px;height:150px;right:0;bottom:0;position:absolute;">
+                <img src="${weapon.image}" class="${weapon.name}" style="height:100%;width:100%;">
+            </div>
+          </div>
+        <div id="score" style="position:absolute; top:20px; right:20px; font-size:24px; color:white;">Score: 0</div>`;
+            //renderTarget(weapon, root,target);
+            
+        }, 10000);
+    //}
+    
+    //setInterval(randomizeTargets(i), 5000);
+    //hitting and render targets
+   
+   /* let hitTarget = false;
 
     targets.forEach((target) => {
         const targetBounds = target.gameContainer.getBoundingClientRect(); 
@@ -71,12 +93,13 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
     if (hitTarget) {
         const audioShoot = new Audio(`${weapon.shootingAudio}`);
         audioShoot.play();
-      }
+      }*/
   });
 
-  const targetContainer = document.createElement("div");
-  targetContainer.classList.add("grid-container");
-  root.appendChild(targetContainer);
+  //const targetContainer = document.createElement("div");
+ // targetContainer.classList.add("grid-container");
+ // root.appendChild(targetContainer);
 
-  renderTarget(targets, targetContainer);
+  //renderTarget(targets, targetContainer);
+  
 }
