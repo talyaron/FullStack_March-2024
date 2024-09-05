@@ -1,7 +1,8 @@
 import { Weapon } from "../Model/WeaponModel";
 import { Target } from "../Model/TargetModel";
-import { renderTarget } from "./targetRender";
+import { downScore, renderTarget } from "./targetRender";
 import { handleTargetHit } from "../Controllers/handelTargerHit";
+import { updateScore } from "./targetRender";
 
 export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Target[]) {
   root.innerHTML = `
@@ -78,6 +79,7 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
         audioShoot.play();
       }*/
   });
+  
   const targetElement = document.createElement("img");
     targetElement.className = "targetImg";
     targetElement.style.position = "absolute";
@@ -86,21 +88,29 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
     windowElement.appendChild(targetElement);
   
     // Function to render a random target
+
+    let currentTarget: Target | null = null; // Store the current target for comparison
+
+    // Function to render a random target
     const renderRandomTarget = () => {
-      const randomIndex = Math.floor(Math.random() * targets.length);
-      targets[randomIndex].setRandomPosition();
-      targetElement.src = targets[randomIndex].image;
-      targetElement.style.left = `${targets[randomIndex].position.x}px`;
-      targetElement.style.top = `${targets[randomIndex].position.y}px`;
-     
-  
+        const randomIndex = Math.floor(Math.random() * targets.length);
+        currentTarget = targets[randomIndex];  // Store the current target
+        currentTarget.setRandomPosition();
+        targetElement.src = currentTarget.image;
+        targetElement.style.left = `${currentTarget.position.x}px`;
+        targetElement.style.top = `${currentTarget.position.y}px`;
     };
   
     renderRandomTarget();
     setInterval(() => {
       renderRandomTarget();
     }, 1000);
-
+    targetElement.addEventListener("click", () => {
+        if(currentTarget&&currentTarget.name==="cat")
+            downScore();
+        else
+        updateScore();
+    });    
   //const targetContainer = document.createElement("div");
  // targetContainer.classList.add("grid-container");
  // root.appendChild(targetContainer);

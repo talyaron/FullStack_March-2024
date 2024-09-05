@@ -1,4 +1,5 @@
 export class Target {
+  name:string;
   image: string;
   position: { x: number; y: number };
   id: string;
@@ -6,7 +7,8 @@ export class Target {
   gameContainer: HTMLElement;
   targetElement: HTMLElement;
 
-  constructor(image: string,position: { x: number; y: number },gameContainer: HTMLElement) {
+  constructor(image: string,position: { x: number; y: number },gameContainer: HTMLElement,name:string) {
+    this.name=name;
     this.image = image;
     this.position = position;
     this.id = crypto.randomUUID();

@@ -44,8 +44,19 @@ export function renderTarget(targets: Target[], container: HTMLElement) {
     animateTarget(targetElement);
   });
 }
+export function downScore(){
+  if(score ===0){
 
-function updateScore() {
+  }
+  else{
+  score -= 5;
+  }
+  const scoreElement = document.getElementById("score");
+  if (scoreElement) {
+    scoreElement.innerText = `Score: ${score}`;
+  }
+}
+export function updateScore() {
   score += 5;
   const scoreElement = document.getElementById("score");
   if (scoreElement) {
