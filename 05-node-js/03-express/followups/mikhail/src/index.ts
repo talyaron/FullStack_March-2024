@@ -1,12 +1,10 @@
-import express from 'express';
+const express = require('express')
 const app = express()
 const port = 3000
 
-app.use(express.static('public')) //serve static files from folder "public"
-// Routes
-//root route
-app.get('/hi', (req, res) => {
-  res.send('<h1>Hello From Express</h1><p>Express is a web application framework for Node.js</p>')
+app.use(express.static('public'))
+app.get('/', (req:any, res:any) => {
+  res.send('Hello World!')
 })
 
 app.listen(port, () => {
