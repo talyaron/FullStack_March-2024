@@ -1,0 +1,55 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://wallpapercave.com/wp/wp6956942.png");
+    background-size: cover;
+}
+
+#wrapper {
+ 
+    img {
+        position: absolute;
+        height: 4rem;
+        width: 4rem;
+        left: 500px;
+        
+    }
+}
+
+.wall {
+    width: 65px;
+    height: 750px;
+    background: linear-gradient(90deg, rgb(3, 194, 0) 0%, rgb(69, 158, 0) 100%);    position: absolute;
+}
+
+#topWall, #topWall2, #topWall3 {
+    top: 0;
+}
+
+#bottomWall, #bottomWall2, #bottomWall3 {
+    bottom: 0;
+}
+
+#startPage, #gamePage {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}

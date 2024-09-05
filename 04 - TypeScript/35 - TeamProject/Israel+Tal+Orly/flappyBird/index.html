@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/style.css">
+    <title>flappyBird</title>
+</head>
+
+<body>
+    <div class="background-image">
+    
+        <div id="startPage">
+        <h1>Welcome to the Game!</h1>
+        <button id="startButton">Start Game</button>
+    </div>
+</div>
+    <div id="gamePage" style="display: none;">
+    <div id="wrapper">
+        <div class="wall" id="topWall"></div>
+        <div class="wall" id="bottomWall"></div>
+        <div class="wall" id="topWall2"></div>
+        <div class="wall" id="bottomWall2"></div>
+        <div class="wall" id="topWall3"></div>
+        <div class="wall" id="bottomWall3"></div>
+        <div id="character">
+            <img src="https://i.ibb.co/4TywLGq/images-removebg-preview.png" alt="bird">
+        </div>
+    </div>
+    <div id="gameOverPage" style="display: none;">
+        <h1>Game Over!</h1>
+        <button id="restartButton">Restart Game</button>
+    </div>
+    <script src ="./dist/start.js"></script>
+    <script src="./dist/obstacles.js"></script>
+    <script src="./dist/bird.js"></script>
+    <script src="./dist/collision.js"></script>
+</body>
+
+</html>
