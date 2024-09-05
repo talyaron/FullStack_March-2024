@@ -1,10 +1,11 @@
 import { Weapon } from "../Model/WeaponModel";
 import { Target } from "../Model/TargetModel";
-import { downScore, renderTarget } from "./targetRender";
-import { handleTargetHit } from "../Controllers/handelTargerHit";
-import { updateScore } from "./targetRender";
+import { Level } from "../Model/gameModel";
+import { renderStart } from "./startbutton";
 
-export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Target[]) {
+
+export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Target[],level:Level) {
+    let gameOver = false; // Flag to check if the game is over
   root.innerHTML = `
         <div class="window">
             <div class="curtains"></div>
@@ -12,7 +13,9 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
                 <img src="${weapon.image}" class="${weapon.name}" style="height:100%;width:100%;">
             </div>
         </div>
-        <div id="score" style="position:absolute; top:20px; right:20px; font-size:24px; color:white;">Score: 0</div>`;
+        <div id="score" style="position:absolute; top:20px; right:20px; font-size:24px; color:white;">Score: ${level.playerScore}</div>
+        <div id="goal" style="position:absolute; top:20px; right:50vw; font-size:24px; color:white;">Goal:${level.goal}</div>
+         <div id="timer" style="position:absolute; top:20px; left:20px; font-size:24px; color:white;">Time: ${level.time}</div>`;
 
     // background music
         const gameAudio = new Audio(`/src/audio/gameAudio.mp4`);
@@ -27,6 +30,7 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
   const windowElement = root.querySelector(".window") as HTMLElement;
 
   windowElement.addEventListener("click", (event: MouseEvent) => {
+    if (gameOver) return;
     const x = event.clientX - windowElement.offsetLeft;
     const y = event.clientY - windowElement.offsetTop;
 
@@ -93,6 +97,7 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
 
     // Function to render a random target
     const renderRandomTarget = () => {
+        if (gameOver) return;
         const randomIndex = Math.floor(Math.random() * targets.length);
         currentTarget = targets[randomIndex];  // Store the current target
         currentTarget.setRandomPosition();
@@ -102,15 +107,55 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
     };
   
     renderRandomTarget();
-    setInterval(() => {
+    const targetInterval = setInterval(() => {
       renderRandomTarget();
     }, 1000);
+
+    const updateScoreDisplay = () => {
+        const scoreElement = root.querySelector("#score") as HTMLElement;
+        scoreElement.textContent = `Score: ${level.playerScore}`;
+    };
+
     targetElement.addEventListener("click", () => {
         if(currentTarget&&currentTarget.name==="cat")
-            downScore();
+            level.downScore();
         else
-        updateScore();
+        level.updateScore();
+        updateScoreDisplay();
     });    
+
+
+    const timerElement = root.querySelector("#timer") as HTMLElement;
+    const timerInterval = setInterval(() => {
+        level.reduceTime();
+        timerElement.textContent = `Time: ${level.time}`;
+
+        if (level.time <= 0) {
+            clearInterval(timerInterval);
+            clearInterval(targetInterval);
+            gameOver = true;
+            gameAudio.pause();
+            targetElement.style.display = "none";
+            if(level.playerScore>=level.goal){
+                alert("You Have Won");
+                level.nulifyScore();
+               renderStart(root);
+            
+
+            }
+            else
+            endGame();
+        }
+    }, 1000);
+
+   
+    const endGame = () => {
+     
+        alert("Game Over!"); 
+        level.nulifyScore();
+        renderStart(root);
+
+    };
   //const targetContainer = document.createElement("div");
  // targetContainer.classList.add("grid-container");
  // root.appendChild(targetContainer);

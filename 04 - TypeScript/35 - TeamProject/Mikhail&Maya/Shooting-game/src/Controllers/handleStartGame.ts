@@ -1,6 +1,7 @@
 import { Weapon } from "../Model/WeaponModel";
 import { Target } from "../Model/TargetModel";
 import { renderHomeScreen } from "../View/homescreen";
+import { Level } from "../Model/gameModel";
 
 export function handleStartGame(weapon: Weapon, root: HTMLElement) {
   const targets: Target[] = [
@@ -12,9 +13,9 @@ export function handleStartGame(weapon: Weapon, root: HTMLElement) {
     new Target("/src/images/targets/cat2.png", { x: 0, y: 0 }, root,"cat")
   ];
 
-  
+ const level = new Level(100,30);
 
-  renderHomeScreen(weapon, root, targets);
+  renderHomeScreen(weapon, root, targets,level);
 
   const scoreElement = document.getElementById("score");
   if (scoreElement) {
