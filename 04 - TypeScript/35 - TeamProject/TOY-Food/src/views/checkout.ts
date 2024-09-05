@@ -1,6 +1,6 @@
 
 import { Cart } from '../models/Cart';
-import '../styles/cart.scss';
+import '../styles/checkout.scss';
 
 export function renderCheckoutPage(div: HTMLDivElement, cart: Cart): void {
     const checkout = `
