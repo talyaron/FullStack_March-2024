@@ -32,7 +32,6 @@ export function renderHomePage(cart: Cart, items: Item[]) {
                       <p>${item.description}</p> 
                   </div>
                   </div>
-                  
                                         <p>Price: $${item.price.toFixed(2)}</p>
                   ${user.type === 'Admin' ? `<div class="edit-delete"><span class="delete-item" data-id="${item.id}">Delete</span>
                                               <span class="edit-item" data-id="${item.id}">Edit</span></div>` : ''}
