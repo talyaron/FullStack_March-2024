@@ -12,7 +12,7 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
 
             <div class="weaponBox" style="width:150px;height:150px;right:0;bottom:0;position:absolute;">
             </div>
-            <img src="${weapon.image}" class="weapon" style="height:100%;width:100%;">
+            <img src="${weapon.image}" class="${weapon.name}" style="height:100%;width:100%;">
         </div>
         <div id="score" style="position:absolute; top:20px; right:20px; font-size:24px; color:white;">Score: ${level.playerScore}</div>
         <div id="goal" style="position:absolute; top:20px; right:50vw; font-size:24px; color:white;">Goal:${level.goal}</div>
