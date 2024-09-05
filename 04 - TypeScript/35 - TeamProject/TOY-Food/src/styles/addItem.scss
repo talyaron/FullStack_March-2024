@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-
 }
 
 .form-wrapper {
@@ -11,86 +10,91 @@
     width: 100vw;
     height: 90vh;
     justify-content: center;
-
+    overflow-y: auto; 
     .wrapper {
         @include add-item;
-        width: 100%;
+        width: 60%; 
+        max-width: 600px; 
+        background: #f9f9f9;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        box-sizing: border-box;
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
 
         .form {
             display: flex;
             flex-direction: column;
-            width: 50%;
-            height: max-content;
-            justify-content: center;
+            width: 100%;
+            max-width: 500px; 
+            margin: 0 auto; 
 
             form {
-                padding-top: 20px;
-                width: 100%;
-                height: auto;
+                padding: 20px;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                border: 2px solid black;
+                align-items: stretch; 
+                border: 2px solid #ddd;
+                border-radius: 8px;
+                background: #fff;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                width: 100%;
 
                 .name,
                 .pic,
                 .price,
-                .category {
+                .category,
+                .description {
                     display: flex;
                     flex-direction: row;
-                    justify-content: space-evenly;
+                    width: 100%;
+                    margin-bottom: 20px; 
                     align-items: center;
-                    color: black;
 
                     label {
-                        padding-right: 10px;
-                        width: 120px;
-                    }
-
-                    select {
-                        display: flex;
                         width: 150px;
-                        height: 25px;
-                        background-color: white;
-                        color: black;
-                        border-radius: 10px;
-                        border: 1px solid blue;
-
-                        option {
-                            padding: 10px;
-                            width: 20px;
-                            height: 20px;
-
-                        }
+                        font-weight: bold;
+                        color: #333;
+                        margin-right: 15px;
                     }
 
+                    select,
                     input[type=text],
-                    #price {
-                        margin-bottom: 10px;
-                        border-radius: 10px;
-                        width: 150px;
-                        height: 25px;
-                        background-color: white;
-                        color: black;
-                        border: 1px solid blue;
+                    input[type=number] {
+                        flex: 1; 
+                        height: 40px;
+                        padding: 0 10px;
+                        margin-bottom: 5px;
+                        border-radius: 5px;
+                        border: 1px solid #ccc;
+                        font-size: 16px;
+
                         &::placeholder {
-                            color: blue;
-                            padding-left: 1px;
+                            color: #aaa;
                         }
                     }
                 }
-
                 .submit {
-                    margin-top: 20px;
                     display: flex;
-                    
+                    justify-content: center;
+                    width: 100%;
                     button {
-                        margin-bottom: 20px;
+                        padding: 10px 20px;
+                        border: none;
+                        border-radius: 5px;
                         background-color: greenyellow;
                         color: black;
-                        border-radius: 20px;
-
+                        font-size: 16px;
+                        cursor: pointer;
+                        transition: background-color 0.3s;
+                        &:hover {
+                            background-color: #d4d4d4;
+                        }
                     }
                 }
             }

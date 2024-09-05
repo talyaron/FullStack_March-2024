@@ -8,8 +8,7 @@ export function getAllItems(): Item[] {
     const itemsGlobal: Item[] = JSON.parse(allItems!);
     itemsGlobal.forEach(item => {
         const index = items.findIndex(i => i.name === item.name);
-        if (index < 0)
-            items.push(item);
+        if (index < 0) items.push(item);
     });
     localStorage.setItem('items', JSON.stringify(itemsGlobal));
     return itemsGlobal;
@@ -23,24 +22,25 @@ export function addGlobalItem(item: Item): void {
 
 export function removeGlobalItem(id: string): void {
     const itemsGlobal: Item[] = getAllItemsFromLS();
-    const item = itemsGlobal.findIndex(i => i.id === id);
-    if(item > -1) itemsGlobal.splice(item, 1);
+    const itemIndex = itemsGlobal.findIndex(i => i.id === id);
+    if (itemIndex > -1) itemsGlobal.splice(itemIndex, 1);
     localStorage.setItem('items', JSON.stringify(itemsGlobal));
 }
 
-export function updateItemInGlobal(id: string, item:Item): void {
-    if(!id) return;
+export function updateItemInGlobal(id: string, item: Item): void {
+    if (!id) return;
     const itemsGlobal: Item[] = getAllItemsFromLS();
     const findItem = itemsGlobal.find(i => i.id === id);
-    if(!findItem) return;
+    if (!findItem) return;
     findItem.category = item.category;
     findItem.name = item.name;
     findItem.pic = item.pic;
     findItem.price = item.price;
+    findItem.description = item.description; 
     localStorage.setItem('items', JSON.stringify(itemsGlobal));
 }
 
-function getAllItemsFromLS() {
+function getAllItemsFromLS(): Item[] {
     let allItems = localStorage.getItem('items');
     if (allItems === null || allItems === undefined) {
         allItems = initializeItems();

@@ -8,43 +8,50 @@ import { homePage } from '../controllers/HomeController';
 import { renderEditItem } from '../controllers/editItem';
 
 export function renderHomePage(cart: Cart, items: Item[]) {
-    let content = document.querySelector('#content');
-    if (!content) {
-        renderNewDivElement('content');
-        content = document.querySelector('#content')!;
-    }
-    const user = JSON.parse(localStorage.getItem('CurrentUser') as string);
+  let content = document.querySelector('#content');
+  if (!content) {
+      renderNewDivElement('content');
+      content = document.querySelector('#content')!;
+  }
+  const user = JSON.parse(localStorage.getItem('CurrentUser') as string);
 
-    const categories = Object.values(ItemCategory);
-    let html = '';
-    categories.forEach(category => {
-        const categoryItems = items.filter(item => item.category === category);
-        if (categoryItems.length > 0) {
-            html += `<h2>${category}</h2>`;
-            html += `<div class="item-list">`;
-            categoryItems.forEach(item => {
-                const count = cart.getItemCount(item.id);
-                html += `<div class="item-card">
-                <img src="${item.pic}" alt="${item.name}">
-                ${user.type === 'Admin' ? `<div class="edit-delete"><span class="delete-item" data-id="${item.id}">Delete</span>
-                                            <span class="edit-item" data-id="${item.id}">Edit</span></div>` : ''}
-                    <h3>${item.name}</h3>
-                    <p>Price: $${item.price.toFixed(2)}</p>
-                    ${count > 0 ? `<div class="item-quantity">
-                        <button class="decrease" data-id="${item.id}">-</button>
-                        <span>${count}</span>
-                        <button class="increase" data-id="${item.id}">+</button>
-                      </div>`: `<button class="add-to-order" data-id="${item.id}">Add to order</button>`
-                    }
-                  </div>`;
-            });
-            html += `</div>`;
-        }
-    });
-    html += `<div class="total-section">Total: $${cart.totalPrice.toFixed(2)}</div>`;
-    content!.innerHTML = html;
-    handleEventListeners(cart, items);
+  const categories = Object.values(ItemCategory);
+  let html = '';
+  categories.forEach(category => {
+      const categoryItems = items.filter(item => item.category === category);
+      if (categoryItems.length > 0) {
+          html += `<h2>${category}</h2>`;
+          html += `<div class="item-list">`;
+          categoryItems.forEach(item => {
+              const count = cart.getItemCount(item.id);
+              html += `<div class="item-card">
+              <h3>${item.name}</h3>
+              <div class="switchedView">
+                  <img src="${item.pic}" alt="${item.name}">
+                  <div class="description">
+                      <p>${item.description}</p> 
+                  </div>
+                  </div>
+                  
+                                        <p>Price: $${item.price.toFixed(2)}</p>
+                  ${user.type === 'Admin' ? `<div class="edit-delete"><span class="delete-item" data-id="${item.id}">Delete</span>
+                                              <span class="edit-item" data-id="${item.id}">Edit</span></div>` : ''}
+                  ${count > 0 ? `<div class="item-quantity">
+                      <button class="decrease" data-id="${item.id}">-</button>
+                      <span>${count}</span>
+                      <button class="increase" data-id="${item.id}">+</button>
+                    </div>`: `<button class="add-to-order" data-id="${item.id}">Add to order</button>`
+                  }
+              </div>`;
+          });
+          html += `</div>`;
+      }
+  });
+  html += `<div class="total-section">Total: $${cart.totalPrice.toFixed(2)}</div>`;
+  content!.innerHTML = html;
+  handleEventListeners(cart, items);
 }
+
 
 export function handleEventListeners(cart: Cart, items: Item[], renderCartPage: boolean = false) {
     document.querySelectorAll('.add-to-order').forEach((button) => {
@@ -98,4 +105,3 @@ function prepareOrder(e: Event, items: Item[], cart: Cart, renderCartPage: boole
         renderHeader();
     }
 }
-
