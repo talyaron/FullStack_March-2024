@@ -47,24 +47,7 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
     const audioShoot = new Audio(`${weapon.shootingAudio}`);
     audioShoot.play();
     //```````````````````````````````````````````````````````````````````````   
-    let intervalId: number | null = null;
-    //function randomizeTargets(i:number) {
-        intervalId = setInterval(() => {
-            let i=Math.floor(Math.random() * 6);
-        root.innerHTML = ''; 
-            targets[i].setRandomPosition();
-            root.innerHTML = `
-         <div class="window">
-            <div class="curtains"></div>
-            <img class="targetImg" src="${targets[i].image}" style="height:300px;width:150px;position:absolute;top:${targets[i].position.y}px;right:${targets[i].position.x}px;">
-            <div class="weaponBox" style="width:150px;height:150px;right:0;bottom:0;position:absolute;">
-                <img src="${weapon.image}" class="${weapon.name}" style="height:100%;width:100%;">
-            </div>
-          </div>
-        <div id="score" style="position:absolute; top:20px; right:20px; font-size:24px; color:white;">Score: 0</div>`;
-            //renderTarget(weapon, root,target);
-            
-        }, 10000);
+    
     //}
     
     //setInterval(randomizeTargets(i), 5000);
@@ -95,6 +78,28 @@ export function renderHomeScreen(weapon: Weapon,root: HTMLElement,targets: Targe
         audioShoot.play();
       }*/
   });
+  const targetElement = document.createElement("img");
+    targetElement.className = "targetImg";
+    targetElement.style.position = "absolute";
+    targetElement.style.height = "300px";
+    targetElement.style.width = "150px";
+    windowElement.appendChild(targetElement);
+  
+    // Function to render a random target
+    const renderRandomTarget = () => {
+      const randomIndex = Math.floor(Math.random() * targets.length);
+      targets[randomIndex].setRandomPosition();
+      targetElement.src = targets[randomIndex].image;
+      targetElement.style.left = `${targets[randomIndex].position.x}px`;
+      targetElement.style.top = `${targets[randomIndex].position.y}px`;
+     
+  
+    };
+  
+    renderRandomTarget();
+    setInterval(() => {
+      renderRandomTarget();
+    }, 1000);
 
   //const targetContainer = document.createElement("div");
  // targetContainer.classList.add("grid-container");
