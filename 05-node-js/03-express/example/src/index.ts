@@ -6,6 +6,7 @@ app.use(express.static('public')) //serve static files from folder "public"
 // Routes
 //root route
 app.get('/hi', (req, res) => {
+  
   res.send('<h1>Hello From Express</h1><p>Express is a web application framework for Node.js</p>')
 })
 
