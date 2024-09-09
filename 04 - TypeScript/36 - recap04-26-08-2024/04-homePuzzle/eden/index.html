@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./dist/index.js"></script>
+    <title>Display Input Words</title>
+
 </head>
 <body>
-    <h1>Welcome To A Word Of Imagination</h1>
-    <div id="renderscreen"></div>
-    <input type="text">
-    <button>Click Here If You Will</button>
-</body>
-</html>
+    <script src="dist/index.js"></script>
+    <h2>Type a word and click the button:</h2>
+    <input type="text" id="wordInput" placeholder="Type a word">
+    <button onclick="addWord()">Add Word</button>
+    <div id="displayArea"></div>
