@@ -3,10 +3,7 @@
 ## Objective
 Create a simple server and client application using TypeScript and Node.js, implementing basic GET and POST requests.
 
-## Requirements
-- Node.js installed on your system
-- Basic knowledge of TypeScript and Node.js
-- A code editor of your choice
+
 
 ## Exercise Description
 
@@ -16,7 +13,7 @@ Create a simple server and client application using TypeScript and Node.js, impl
 3. Implement the following endpoints:
    - GET `/api/todos`: Returns a list of todos
    - POST `/api/todos`: Adds a new todo to the list
-4. Use an in-memory array to store the todos.
+4. Use an a server in-memory array to store the todos.
 
 ### Part 2: Client
 1. Create a separate TypeScript file for the client.
