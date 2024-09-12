@@ -11,8 +11,8 @@ Create a simple server and client application using TypeScript and Node.js, impl
 1. Set up a new Node.js project with TypeScript.
 2. Create a simple Express server that listens on port 3000.
 3. Implement the following endpoints:
-   - GET `/api/todos`: Returns a list of todos
-   - POST `/api/todos`: Adds a new todo to the list
+   - GET `/api/get-todos`: Returns a list of todos
+   - POST `/api/add-todo`: Adds a new todo to the list
 4. Use an a server in-memory array to store the todos.
 
 ### Part 2: Client
