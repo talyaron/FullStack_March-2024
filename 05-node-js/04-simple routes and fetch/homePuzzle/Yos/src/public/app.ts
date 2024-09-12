@@ -11,6 +11,17 @@ if (showAll) {
 }
 
 
+async function handleDeleteUser(event: Event): void {
+    const id = event.target?.id;
+    console.log(id);
+    try {
+        const users = await deleteUser(id);
+        handleShowAllUsers();
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 function handleSubmitEvent(event: Event): void {
     try {
         event.preventDefault();
@@ -29,6 +40,23 @@ function handleSubmitEvent(event: Event): void {
     }
 }
 
+
+async function deleteUser(id: string): Promise<void> {
+    try {
+        const req = await fetch('/api/delete-user/:id', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id: id })
+        })
+
+        const res = await req.json();
+        return res;
+    } catch (error) {
+        throw new Error((error as Error).message);
+    }
+}
 
 
 async function handleAddUser(name: string, imageUrl: string) {
@@ -53,8 +81,9 @@ async function handleShowAllUsers() {
     const usersData = await getUsersData();
     console.log(usersData);
     const usersHtml = document.querySelector('#users') as HTMLDivElement;
-    let usersDiv = usersData.map((user: any) => renderUser(user.name, user.imageUrl)).join('');
+    let usersDiv = usersData.map((user: any) => renderUser(user.name, user.imageUrl, user.id)).join('');
     usersHtml.innerHTML = usersDiv;
+    addEventListenerToDeleteUserButton();
 }
 
 
@@ -72,13 +101,14 @@ async function getUsersData(): Promise<any> {
 
 
 
-function renderUser(name: string, img: string): string {
+function renderUser(name: string, img: string, id?: string): string {
     let userDiv = `
     <div class="user">
         <div class="img">
             <img src="${img}" alt="this is ${name}">
         </div>
         <label>Name:${name}</label>
+        <div class="delete"><button class="delete-user" id="${id}">Delete</button></div>
     </div>
     `
     return userDiv;
@@ -98,4 +128,12 @@ function renderError(error: string): void {
 function cleanError(): void {
     const errorDiv = document.querySelector('#error') as HTMLDivElement;
     errorDiv.innerHTML = '';
+}
+
+function addEventListenerToDeleteUserButton(): void {
+    const deleteUser = document.querySelectorAll('.delete-user');
+    console.log(deleteUser);
+    if (deleteUser) {
+        deleteUser.forEach(item => item.addEventListener('click', handleDeleteUser));
+    }
 }

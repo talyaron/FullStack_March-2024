@@ -46,20 +46,24 @@ const allUsers = addUser(); // Will return the current array of users
 // Routes
 //root route
 app.use('/', express.static(path.join(__dirname, 'public')))
+
 app.use(express.json());
 
+// get all users
 app.get('/api/todos', (req: any, res: any) => {
     try {
         res.send(allUsers);
 
-    } catch (error:any) {
+    } catch (error: any) {
         res.send({ ok: false, error: error.message })
     }
 })
 
+
+//add new user
 app.post('/api/todos', (req: any, res: any) => {
     try {
-        if(req.body.name.length <= 2 || req.body.imageUrl.length <= 2) {
+        if (req.body.name.length <= 2 || req.body.imageUrl.length <= 2) {
             res.send({ ok: false, error: "Name and imageUrl should be at least 3 characters" })
             return
         }
@@ -69,6 +73,26 @@ app.post('/api/todos', (req: any, res: any) => {
         res.send({ ok: false, error: error.message })
     }
 })
+
+// delete user
+app.delete('/api/delete-user/:id', (req: any, res: any) => {
+    try {
+        const id = req.body.id;
+        const index = allUsers.findIndex((user) => user.id === id);
+        console.log(index,id)
+        if (index !== -1) {
+            allUsers.splice(index, 1);
+            res.send(allUsers);
+        } else {
+            res.send({ ok: false, error: "User not found" })
+        }
+    } catch (error:any) {
+        res.send({ ok: false, error: error.message })
+
+    }
+});
+
+// Start the server 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 })

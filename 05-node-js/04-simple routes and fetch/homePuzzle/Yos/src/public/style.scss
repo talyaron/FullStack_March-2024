@@ -25,7 +25,7 @@ body {
             display: flex;
             flex-direction: column;
             width: 200px;
-            height: 220px;
+            height: 250px;
             label{
                 align-items: center;
                 display: flex;
@@ -35,6 +35,20 @@ body {
                 width: 200px;
                 height: 200px;
                 border-radius: 50%;
+            }
+            .delete{
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                button{
+                    background-color: red;
+                    color: white;
+                    border: 1px solid black;
+                    padding: 5px;
+                    border-radius: 10px;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
             }
         }
     }
