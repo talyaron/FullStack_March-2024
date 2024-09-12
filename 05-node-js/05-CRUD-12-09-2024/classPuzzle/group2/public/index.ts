@@ -105,6 +105,24 @@ async function handleToggleTaskToDB(task: Task) {
     }
 }
 
+async function deleteFromDB(task: Task) {
+    try {
+      
+        const response = await fetch(`/api/delete-task`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({taskId:task.id})
+        });
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+        
+    }
+}
+
 function renderTasks() {
     try {
 
@@ -117,7 +135,7 @@ function renderTasks() {
                 <h2>${task.task}</h2>
                 <p>${task.description}</p>
                 <button onclick="toggleDone('${task.id}')">${task.done ? 'Undone' : 'Done'}</button>
-                 <button onclick="handleDelete()">Delete</button>
+                 <button onclick="handleDelete('${task.id}')">Delete</button>
             </div>
         `;
 
@@ -138,4 +156,19 @@ function toggleDone(id: string) {
     } catch (error) {
         console.error(error);
     }
+}
+
+function handleDelete(id:string){
+try {
+    const taskNumber = tasks.findIndex(task => task.id === id);
+    if (taskNumber === -1) throw new Error('Task not found');
+    const [task] = tasks.splice (taskNumber,1);
+    renderTasks();
+    deleteFromDB(task);
+} catch (error) {
+    console.error(error);
+}
+
+
+
 }
