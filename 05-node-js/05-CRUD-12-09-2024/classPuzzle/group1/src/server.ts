@@ -61,7 +61,7 @@ app.get('/api/get-tasks', (req, res) => {
 //patch -> update part of the task
 app.patch('/api/toggle-task', (req, res) => {
   try {
-   
+
     const {taskId} = req.body;
     console.log(taskId);
     if(!taskId){
@@ -82,7 +82,24 @@ app.patch('/api/toggle-task', (req, res) => {
   }
 });
 
-
+app.delete(`/api/delete-task`, (req, res) => {
+  try {
+    const {taskId} = req.body;
+    if(!taskId){
+      res.status(400).send('Task id is required');
+      return;
+    }
+    const index = tasks.findIndex(task => task.id === taskId);
+    if(index === -1){
+      res.status(400).send('Task not found');
+      return;
+    }
+    tasks.splice(index, 1);
+    res.status(200).send(tasks);
+  } catch (error) {
+    console.error(error);
+  }
+})
 
 
 app.listen(port, () => {

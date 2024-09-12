@@ -87,7 +87,7 @@ async function addNewTaskToDB(task: Task) {
 
 async function handleToggleTaskToDB(task: Task) {
     try {
-      
+
         const taskId = task.id;
         if(!taskId) throw new Error('Task id is required');
         const result = await fetch(`/api/toggle-task`, {
@@ -101,7 +101,7 @@ async function handleToggleTaskToDB(task: Task) {
         console.log(data);
     } catch (error) {
         console.error(error);
-        
+
     }
 }
 
@@ -117,12 +117,41 @@ function renderTasks() {
                 <h2>${task.task}</h2>
                 <p>${task.description}</p>
                 <button onclick="toggleDone('${task.id}')">${task.done ? 'Undone' : 'Done'}</button>
-                 <button onclick="handleDelete()">Delete</button>
+                 <button onclick="handleDelete('${task.id}')">Delete</button>
             </div>
         `;
 
         });
         tasksElement.innerHTML = html;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function handleDelete(id: string) {
+    try {
+        const index = tasks.findIndex(task => task.id === id);
+        if (index === -1) throw new Error('Task not found');
+        tasks.splice(index, 1);
+        renderTasks();
+        handleDeleteFromDB(id);
+    }
+    catch (error) {
+        console.error(error);
+    }
+}
+
+async function handleDeleteFromDB(id: string) {
+    try {
+        const result = await fetch(`/api/delete-task`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ taskId: id })
+        });
+        const data = await result.json();
+        console.log(data);
     } catch (error) {
         console.error(error);
     }
