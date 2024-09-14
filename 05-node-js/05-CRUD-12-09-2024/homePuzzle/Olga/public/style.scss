@@ -1,3 +1,95 @@
 body {
     margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(229, 229, 228);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+#app {
+    display: flex;
+    margin: 0 auto;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 1400px;
+    background-color: rgb(216, 216, 213);
+}
+
+#user-card {
+    position: relative;
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: #ffffff 1px solid;
+
+    .user-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .user-info {
+        display: flex;
+    }
+
+    .add-post-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .user-description {
+        margin-left: 1rem;
+    }
+}
+
+#posts-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.post {
+    background-color: #ffffff;
+
+    .header-post {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+
+        .user-image-post {
+            width: 50px;
+        }
+    }
+
+    .content {
+        padding: 0.5rem;
+    }
+}
+
+.add-post {
+    grid-column: span 4;
+    margin: 0 auto;
 }
