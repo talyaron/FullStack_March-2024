@@ -61,6 +61,8 @@ form.addEventListener('submit', (event) => {
         //send to DB
         addNewTaskToDB(_task);
 
+        
+
     } catch (error) {
         console.error(error);
     }
