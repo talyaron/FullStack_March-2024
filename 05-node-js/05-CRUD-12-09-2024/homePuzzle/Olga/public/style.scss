@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(229, 229, 228);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+i {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+#app {
+    display: flex;
+    margin: 0 auto;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 1400px;
+    background-color: rgb(216, 216, 213);
+}
+
+#user-card {
+    position: relative;
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: #999898 1px solid;
+
+    .user-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .user-info {
+        display: flex;
+    }
+
+    .add-post-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .user-description {
+        margin-left: 1rem;
+    }
+}
+
+#posts-list {
+    width: 100%;
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.post {
+    background-color: #ffffff;
+
+    .header-post {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+
+        .user-image-post {
+            width: 50px;
+        }
+
+        .post-details {
+            margin-left: 0.5rem;
+        }
+
+        .buttons-post {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1rem;
+
+            i {
+                color:#999898;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .content {
+        padding: 0.5rem;
+    }
+
+    .grey {
+        font-size: 0.6rem;
+        color: #999898;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+        padding: 0.5rem;
+    }
+}
+
+.add-post {
+    grid-column: span 4;
+    margin: 0 auto;
+    // width: 65%;
+
+    label {
+        display: block;
+    }
+}
