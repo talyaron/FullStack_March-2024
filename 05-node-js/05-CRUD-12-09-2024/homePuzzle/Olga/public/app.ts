@@ -111,7 +111,7 @@ function renderPost(post: Post, user: User) {
                     <p class="grey">${post.place.length > 0 ? post.place : '&nbsp;'}</p>
                 </div>
                 <div class="buttons-post">
-                    <button class="edit-btn" onclick="editPost('${post.id}')"><i class='bx bx-edit-alt'></i></button>
+                    <button class="edit-btn" onclick="editPost('${post.id}')" disabled><i class='bx bx-edit-alt'></i></button>
                     <button class="delete-btn" onclick="deletePost('${post.id}')"><i class='bx bx-trash'></i></button>
                 </div>
             </div>
@@ -119,8 +119,8 @@ function renderPost(post: Post, user: User) {
                 <img src="${post.image}" alt="${post.description}" />
             </div>
             <div>
-                <button class="like-btn"><i class='bx bx-heart'></i></button>
-                <button class="comment-btn"><i class='bx bx-chat'></i></button>
+                <button class="like-btn" disabled><i class='bx bx-heart'></i></button>
+                <button class="comment-btn" disabled><i class='bx bx-chat'></i></button>
             </div>
             <div class="content">
                 <p class="grey">${post.getDateAgo()}</p>
