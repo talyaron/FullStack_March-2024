@@ -21,7 +21,7 @@ const users: User[] = [
 
 app.get('/api/users/:id', (req, res) => {
   try {
-    const { id } = req.params
+    const  {id } = req.params
     if (!id) throw new Error('No id provided')
     const user = users.find(u => u.id === parseInt(id));
     if (!user) throw new Error('No user found')

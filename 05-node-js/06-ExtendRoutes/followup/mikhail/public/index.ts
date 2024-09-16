@@ -5,10 +5,12 @@ function main(){
         
         getDanBtn.addEventListener('click', async () => {
             
-            const response = await fetch(`/api/users/1234`);
-            if(!response.ok) throw new Error('No response');
             
-            const data = await response.json();
+            
+            const getDan= await fetch(`/api/users/1234`);
+            if(!getDan.ok) throw new Error("no response");
+            
+            const data = await getDan.json();
             console.log(data);
         });
     } catch (error) {
