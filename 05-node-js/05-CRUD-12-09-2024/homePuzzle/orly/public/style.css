@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Form Styles */
+#postForm {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+#postForm input,
+#postForm textarea {
+  width: calc(100% - 20px);
+  /* Adjust for padding */
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#postForm button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#postForm button:hover {
+  background-color: #0056b3;
+}
+
+/* Post List Styles */
+#postsList {
+  list-style-type: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+#postsList li {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  padding: 15px;
+  position: relative;
+}
+
+#postsList li button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #dc3545;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#postsList li button:hover {
+  background-color: #c82333;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  #postForm input,
+  #postForm textarea {
+    width: 100%;
+  }
+  #postForm button {
+    width: 100%;
+  }
+}
