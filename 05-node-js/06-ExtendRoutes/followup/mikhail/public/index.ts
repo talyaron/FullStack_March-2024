@@ -31,7 +31,7 @@ async function handleSearchName (e: any){
         const name = e.target.name.value;
         if (!name) throw new Error('No name provided');
         console.log("name", name);
-        const response = await fetch(`/api/get-users/searchUser?name=${name}?age=30`);
+        const response = await fetch(`/api/users/search-user?name=${name}&age=30`);
         if (!response.ok) throw new Error('No response');
         const data = await response.json();
         console.log(data);
