@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./dist/index.js" defer></script>
+    <link rel="stylesheet" href="./dist/style.css">
 </head>
 <body>
-    
+    <h1>Instagram Posts</h1>
+
+    <form id="postForm">
+      <input type="text" id="author" placeholder="Your name" required>
+      <textarea id="content" placeholder="Your post" required></textarea>
+      <button type="submit">Add Post</button>
+    </form>
+  
+    <ul id="postsList"></ul>
 </body>
 </html>
