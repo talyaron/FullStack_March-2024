@@ -34,7 +34,7 @@ router.get('/get-user-by-id/:id', (req:any, res:any) => {
     }
 });
 
-router.get('/search-user', (req:any, res:any) => {
+router.get('/search', (req:any, res:any) => {
     try {
         console.log('/api/users/search-user 2')
         const { name, age } = req.query
