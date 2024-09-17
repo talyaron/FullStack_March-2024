@@ -37,12 +37,30 @@ add to package.json
 }
 ```
 
+
 run `npm run dev` to start the server
 
-## Intall express
+## Install express
 ```
 npm i express
+
+npm i --save-dev @types/express
+
 ```
 
+use this code to start the server
+```typescript
+import express from 'express'
+const app = express()
+const port = 3000;
+
+app.use(express.static('public'))
+
+
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+```
 
 
