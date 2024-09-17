@@ -79,6 +79,7 @@ function renderToDo(array: Todo[]) {
       html += `
         <li>
           <select data-id="${todo.id}" class="select-progress">
+          <option value="none" >Progress</option>
             <option value="new" >New</option>
             <option value="inProgress" >In Progress</option>
             <option value="Done" >Done</option>
@@ -101,6 +102,7 @@ function renderToDo(array: Todo[]) {
       html += `
         <li>
           <select data-id="${todo.id}" class="select-progress">
+          <option value="none" >Progress</option>
             <option value="new" >New</option>
             <option value="inProgress" >In Progress</option>
             <option value="Done" >Done</option>
@@ -123,6 +125,7 @@ function renderToDo(array: Todo[]) {
       html += `
         <li>
           <select data-id="${todo.id}" class="select-progress">
+          <option value="none" >Progress</option>
             <option value="new" >New</option>
             <option value="inProgress">In Progress</option>
             <option value="Done" >Done</option>
