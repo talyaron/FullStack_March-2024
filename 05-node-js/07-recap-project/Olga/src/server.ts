@@ -6,36 +6,10 @@ const port = 3000
 app.use(express.static('public'))
 app.use(express.json())
 
-class User {
-  name: string;
-  mail: string;
-  password: string;
-  isAdmin: boolean;
+const usersRoutes = require('./routes/petsRoutes')
+app.use('/api/pets', usersRoutes)
 
-  constructor(name: string, mail: string, password: string, isAdmin?: boolean) {
-      this.name = name
-      this.mail = mail
-      this.password = password
-      this.isAdmin = isAdmin || false
-  }
-}
 
-class Pet {
-  id: string;
-  name: string;
-  type: string;
-  story: string;
-  image: string;
-  care: string;
-  constructor(name: string, type: string, story: string, image: string, care: string) {
-      this.id = `id-${crypto.randomUUID()}`
-      this.name = name
-      this.type = type
-      this.story = story
-      this.image = image
-      this.care = care
-  }
-}
 
 app.get('/', (req: any, res: any) => {
   res.send('Hello World!')
