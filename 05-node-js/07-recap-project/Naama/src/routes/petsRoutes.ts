@@ -1,8 +1,7 @@
 import express from 'express'
+import { getallpets } from '../controllers/pets/getpetscont'
 const router = express.Router()
 
-router.get("/",(req,res)=>{
-    res.send("its working!");
-})
+router.get("/get-all-pets",getallpets)
 
 export default router
