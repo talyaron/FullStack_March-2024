@@ -1,16 +1,17 @@
 {
   "name": "my-pet-store",
   "version": "1.0.0",
-  "main": "src/dist/server.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.ts"
   },
   "keywords": [],
-  "author": "Orly Pingley",
+  "author": "Tal Shohat",
   "license": "ISC",
-  "description": "my awesome pet store",
+  "description": "new pet store",
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@types/node": "^22.5.5",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
