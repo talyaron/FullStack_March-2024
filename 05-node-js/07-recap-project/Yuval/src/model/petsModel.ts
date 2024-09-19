@@ -3,8 +3,11 @@ export class Pet{
     yearOfBirth: number;
     imageUrl?: string;
 
-    constructor( public name: string, public species: string, age: number, public price: number){
+    constructor( public name: string, public species: string, public age: number, public price: number){
+        this.name = name;
+        this.species = species;
         this.yearOfBirth = new Date().getFullYear() - age;
+        this.price = price;
         this.id = crypto.randomUUID();
     }
 }
