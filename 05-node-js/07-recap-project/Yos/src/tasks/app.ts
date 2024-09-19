@@ -35,3 +35,47 @@ function renderAllTasks(tasks: Task[]) {
 function handleGetAllTasks() {
     main();
 }
+
+
+function handleAddTask(event: any) {
+    try {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.task.value;
+        const description = form.description.value;
+        const task: UserTask = { name: name, description: description }
+        addTask(task);
+        form.reset();
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+interface UserTask {
+    name: string;
+    description: string;
+}
+
+async function addTask(task: UserTask) {
+    try {
+        console.log(task);
+        if (!task.name || !task.description) {
+            throw new Error('Name and description are required');
+        }
+        const req = await fetch('/api/tasks/add-task', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(task)
+        });
+        const res = await req.json();
+        if (res.error) {
+            throw new Error(res.error);
+        }
+        renderAllTasks(res.tasks);
+    } catch (error) {
+        console.error(error);
+    }
+}

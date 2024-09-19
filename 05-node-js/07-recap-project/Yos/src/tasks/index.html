@@ -17,8 +17,16 @@
                 <button onclick="window.location.href='/users'">Go to Users Page</button>
                 <button onclick="handleGetAllTasks()">Get All Tasks</button>
             </div>
+            <div>
+                <h4>Add new Tasks</h4>
+                <form id="add-task-form" onsubmit="handleAddTask(event)">
+                    <input type="text" name="task" id="task" placeholder="Enter Task">
+                    <input type="text" name="description" id="description" placeholder="Enter Description">
+                    <input type="submit" id="add-task" value="Add Task">
+            </div>
 
         </div>
+    
         <!-- <div id="users"></div> -->
         <div id="tasks"></div>
     </div>

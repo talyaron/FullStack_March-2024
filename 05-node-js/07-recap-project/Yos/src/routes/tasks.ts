@@ -24,4 +24,27 @@ tasksRouter.get('/all-tasks', (req: any, res: any) => {
 });
 
 
+tasksRouter.get('/task/:id', (res: any, req: any) => {
+    const { id } = req.params;
+    console.log(id)
+    const task = tasks.find(task => task.id === id)
+    if (task) {
+        res.json(task);
+    } else {
+        res.send({'error':'Task not found'});
+    }
+
+});
+
+
+tasksRouter.post('/add-task', (req:any, res:any) => {
+    const {name, description} = req.body;
+    if(!name || !description){
+        res.status(400).send({'error':'Name and description are required'});
+    }
+    const task = new Task(name, description);
+    tasks.push(task);
+    res.send({done:'Task added successfully', tasks: tasks});
+});
+
 module.exports = tasksRouter;
