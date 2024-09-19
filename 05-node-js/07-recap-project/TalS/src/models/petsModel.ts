@@ -14,3 +14,5 @@ export class Pet {
   }
 
   export const Pets:[] = []
+
+  new Pet('buddy', 'dog', 3, 500)
