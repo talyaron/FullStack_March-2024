@@ -18,6 +18,7 @@ class pet{
    }
 
 }
+console.log("hello world");
 app.use(express.static('public'));
 
 app.get('/', (req:any, res:any) => {
