@@ -24,8 +24,8 @@ class Pet {
   shortStory: string;
   image: string;
   care: string;
-  constructor(name: string, type: string, breed: string, story: string, shortStory: string, image: string, care: string) {
-      this.id = `id-${crypto.randomUUID()}`
+  constructor(id: string, name: string, type: string, breed: string, story: string, shortStory: string, image: string, care: string) {
+      this.id = id
       this.name = name
       this.type = type
       this.breed = breed
@@ -38,6 +38,7 @@ class Pet {
 
 const pets: Pet[] = [
     new Pet (
+        '1',
         'Max',
         'Dog',
         'Mixed Breed',
@@ -47,6 +48,7 @@ const pets: Pet[] = [
         'Max is a medium-energy dog that needs daily exercise. A home with a yard or regular access to a park would be ideal, as he enjoys long walks and playtime. He’s well-suited to families with children or other pets, provided proper introductions are made. Max needs a balanced diet to maintain his healthy weight and requires regular vet check-ups, vaccinations, and flea treatments. His thick coat benefits from weekly brushing. Max loves companionship, so he would thrive in a home where he won’t be left alone for long periods.'
     ),
     new Pet (
+        '2',
         'Bella',
         'Cat',
         'Domestic Shorthair',
@@ -56,6 +58,7 @@ const pets: Pet[] = [
         'Bella is a low-maintenance cat, perfect for a quiet, calm household. She enjoys having her own space and needs areas where she can observe her environment without too much disruption. Bella is best suited to indoor living, as she tends to be shy and cautious in new environments. Regular play sessions and toys that engage her hunting instincts, such as laser pointers or feather wands, help keep her mentally stimulated. Bella will require a balanced diet and fresh water, as well as regular vet visits for vaccinations and overall health checks.'
     ),
     new Pet (
+        '3',
         'Slinky',
         'Snake',
         'Ball Python',
@@ -65,6 +68,7 @@ const pets: Pet[] = [
         'Slinky needs a large, secure enclosure with proper heating and humidity levels to mimic his natural environment. He should have access to hiding spots and branches for climbing. A controlled diet of frozen-thawed mice or rats, fed once a week, is essential to his health. Slinky’s enclosure should be cleaned regularly to prevent infections, and he’ll require a shallow dish of water for drinking and soaking. He’s not a high-maintenance pet but needs consistent care to stay healthy.'
     ),
     new Pet (
+        '4',
         'Rocky',
         'Dog',
         'Labrador Retriever',
@@ -74,6 +78,7 @@ const pets: Pet[] = [
         'Rocky is a low-energy dog, making him a great companion for someone who enjoys a laid-back lifestyle. He needs one or two daily walks and occasional playtime to stay healthy. He thrives in environments where he can be around people most of the time, as he loves companionship. Rocky is comfortable around children and other pets, making him an ideal family dog. Regular vet visits, a balanced diet, and grooming sessions to manage his shedding are essential to keeping him happy and healthy.'
     ),
     new Pet (
+        '5',
         'Kiwi',
         'Parrot',
         'Green-cheeked Conure',
@@ -87,6 +92,21 @@ const pets: Pet[] = [
 router.get('/get-all-pets', (req: any, res: any) => {
   try {
     res.status(200).send(pets);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal server error');
+  }
+})
+
+router.get('/get-pet/:id', (req: any, res: any) => {
+  try {
+    const id = req.params.id;
+    const pet = pets.find((pet) => pet.id === id);
+    if (!pet) {
+      res.status(404).send('Pet not found');
+    } else {
+      res.status(200).send(pet);
+    }
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal server error');
