@@ -12,6 +12,6 @@ export function addPet(req:any, res:any) {
 
     } catch (error:any) {
         console.error(error);
-        res.status(500).send('Internal server error', error.message);
+        res.status(500).send( error.message);
     }
 }
