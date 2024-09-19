@@ -1,18 +1,20 @@
 export class Pet{
     Id: String;
+    name:string
     species: String
-    age: number;
+    yearOfBirth: number;
     price: number;
-    constructor( species:String, age:number,price:number){
-    this.Id = Math.random().toString();
+    constructor( name:string,species:String, age:number,price:number){
+      this.Id = Math.random().toString();
+      this.name = name;
       this.species = species;
-      this.age = age;
+      this.yearOfBirth = new Date().getFullYear() - age;
       this.price = price;
     }
     }
 
    export const pets:Pet[] = [
-        new Pet("Albert", 5, 100),
-        new Pet("Goldy", 3, 50),
-        new Pet("Sam", 2, 20)
+        new Pet("Albert",5, 100,"labrador"),
+        new Pet("Goldy", 10, 50,"labrador"),
+        new Pet("Sam", 2, 20,"golden retriever"),
     ]
