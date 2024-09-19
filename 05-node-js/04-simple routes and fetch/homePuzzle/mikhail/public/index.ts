@@ -4,7 +4,9 @@ class Todo {
   title: string;
   description: string;
 
-  constructor(title: string, description: string) {
+  constructor(id:string|undefined ,title: string, description: string, progress:string|undefined) {
+    if(id)this.id=id;
+    if(progress)this.progress=progress;
     this.progress = "new";
     this.id = crypto.randomUUID();
     this.title = title;
@@ -33,9 +35,35 @@ setInterval(() => {
 }, 1000);
 
 // Function to handle the form submission and todo list
+async function handleOnLoad(tasks:Todo[]){
+  try {
+    const serverTasks = await getTasksFromDB();
+   
+    serverTasks.forEach(task => {
+        const newTask = new Todo(task.id,task.title, task.description, task.progress);
+        tasks.push(newTask);
+    });
+    renderToDo(tasks);
+} catch (error) {
+    console.error(error);
+}
+}
+async function getTasksFromDB() {
+  try {
+      const response = await fetch('/api/get-tasks');
+      const data = await response.json();
+      console.log(data);
+      return data;
+  } catch (error) {
+      console.error(error);
+      return [];
+  }
+}
+
 function handleList() {
   const form = document.querySelector('#form') as HTMLFormElement;
   const tasks: Todo[] = [];
+  handleOnLoad(tasks);
 
   form.addEventListener('submit', (event) => {
     try {
@@ -44,11 +72,14 @@ function handleList() {
       // Access the form elements properly
       const task = form.elements.namedItem('task') as HTMLInputElement;
       const description = form.elements.namedItem('description') as HTMLInputElement;
+      let id=crypto.randomUUID();
+      let  progress="new";
 
       // Create a new todo object
-      const _task = new Todo(task.value, description.value);
+      const _task = new Todo(id,task.value, description.value,progress);
       
       // Push to tasks array and render the list
+      console.log(_task.id);
       tasks.push(_task);
       addToDB(_task);
       renderToDo(tasks);
@@ -80,6 +111,37 @@ async function addToDB(task:Todo){
     console.error(error);
   }
 }
+async function updateProgressDB(task:Todo){
+  try {
+    const response = await fetch("/api/update-progress", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(task) //passing the data (in JSON format)
+    });
+    if(!response.ok) throw new Error("Error adding student");
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+async function deleteFromDB(index){
+  try {
+    const response = await fetch(`/api/delete-task/${index}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    });
+    if(!response.ok) throw new Error("Error adding student");
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
 // Function to render the todo list based on progress
 function renderToDo(array: Todo[]) {
   const root = document.querySelector("#app") as HTMLDivElement;
@@ -93,12 +155,13 @@ function renderToDo(array: Todo[]) {
   // Render "new" tasks
   array.forEach((todo) => {
     if (todo.progress === "new") {
+      console.log(todo.progress);
       html += `
         <li>
           <select data-id="${todo.id}" class="select-progress">
           <option value="none" >Progress</option>
             <option value="new" >New</option>
-            <option value="inProgress" >In Progress</option>
+            <option value="inProgress" >In Progress</option> 
             <option value="Done" >Done</option>
           </select>
           <h4>${todo.title}</h4>
@@ -179,10 +242,13 @@ function renderToDo(array: Todo[]) {
         console.log(`Updated task progress to: ${newProgress} for ID: ${todoId}`);
         
         // Re-render the list with updated progress
+        updateProgressDB(todo);
         renderToDo(array);
       }
     });
   });
+
+
   const deleteButtons = document.querySelectorAll('.delete-button');
   deleteButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
@@ -196,6 +262,7 @@ function renderToDo(array: Todo[]) {
         console.log(`Deleted task with ID: ${todoId}`);
 
         // Re-render the list after deletion
+        deleteFromDB(todoId);
         renderToDo(array);
       }
     });
