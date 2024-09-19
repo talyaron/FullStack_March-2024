@@ -50,6 +50,7 @@ function handleList() {
       
       // Push to tasks array and render the list
       tasks.push(_task);
+      addToDB(_task);
       renderToDo(tasks);
 
       form.reset();
@@ -63,6 +64,22 @@ function handleList() {
   renderToDo(tasks);
 }
 
+async function addToDB(task:Todo){
+  try {
+    const response = await fetch("/api/add-task", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(task) //passing the data (in JSON format)
+    });
+    if(!response.ok) throw new Error("Error adding student");
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
 // Function to render the todo list based on progress
 function renderToDo(array: Todo[]) {
   const root = document.querySelector("#app") as HTMLDivElement;
@@ -79,12 +96,14 @@ function renderToDo(array: Todo[]) {
       html += `
         <li>
           <select data-id="${todo.id}" class="select-progress">
+          <option value="none" >Progress</option>
             <option value="new" >New</option>
             <option value="inProgress" >In Progress</option>
             <option value="Done" >Done</option>
           </select>
           <h4>${todo.title}</h4>
-          <p>${todo.description}</p>  
+          <p>${todo.description}</p>
+          <button data-id="${todo.id}" class="delete-button">Delete</button>  
         </li>`;
     }
   });
@@ -101,12 +120,14 @@ function renderToDo(array: Todo[]) {
       html += `
         <li>
           <select data-id="${todo.id}" class="select-progress">
+          <option value="none" >Progress</option>
             <option value="new" >New</option>
             <option value="inProgress" >In Progress</option>
             <option value="Done" >Done</option>
           </select>
           <h4>${todo.title}</h4>
           <p>${todo.description}</p>
+          <button data-id="${todo.id}" class="delete-button">Delete</button>
         </li>`;
     }
   });
@@ -123,12 +144,14 @@ function renderToDo(array: Todo[]) {
       html += `
         <li>
           <select data-id="${todo.id}" class="select-progress">
+          <option value="none" >Progress</option>
             <option value="new" >New</option>
             <option value="inProgress">In Progress</option>
             <option value="Done" >Done</option>
           </select>
           <h4>${todo.title}</h4>
           <p>${todo.description}</p>
+          <button data-id="${todo.id}" class="delete-button">Delete</button>
         </li>`;
     }
   });
@@ -160,7 +183,26 @@ function renderToDo(array: Todo[]) {
       }
     });
   });
+  const deleteButtons = document.querySelectorAll('.delete-button');
+  deleteButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const buttonElement = event.target as HTMLButtonElement;
+      const todoId = buttonElement.getAttribute('data-id');
+
+      // Find the index of the task by id and remove it from the array
+      const taskIndex = array.findIndex(todo => todo.id === todoId);
+      if (taskIndex !== -1) {
+        array.splice(taskIndex, 1);  // Remove the task from the array
+        console.log(`Deleted task with ID: ${todoId}`);
+
+        // Re-render the list after deletion
+        renderToDo(array);
+      }
+    });
+  });
 }
+
+
 
 // Call the handleList function to initialize
 handleList();

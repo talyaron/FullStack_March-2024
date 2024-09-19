@@ -1,17 +1,17 @@
 {
-  "name": "israel",
+  "name": "my-pet-store",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.ts"
+    "dev": "nodemon src/index.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Orly Pingley",
   "license": "ISC",
-  "description": "",
+  "description": "my awesome pet store",
   "devDependencies": {
-    "@types/node": "^22.5.4",
+    "@types/node": "^22.5.5",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "tsc": "^2.0.4",

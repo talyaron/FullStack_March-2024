@@ -44,7 +44,7 @@ router.get('/search-user', (req:any, res:any) => {
         if (!name) throw new Error('No name provided')
         const user = users.find(u => u.name === name);
         if (!user) {
-            res.status(404).send('No user found')
+            return res.send({'user':'No user found'})
         }
         res.status(200).send(user);
 
@@ -55,20 +55,20 @@ router.get('/search-user', (req:any, res:any) => {
     }
 });
 
-router.delete('delete-user/:id' , (res:any, req:any) =>{
+router.get('delete-user/' , (req:any, res:any) =>{
     try {
+        console.log(req.query)
         const {name} = req.params;
         const userIndex = users.findIndex(user => user.name === name)
-        if(userIndex < 0) throw new Error('User not found');
+        if(userIndex < 0) return res.send({'error':"User not found"});
         users.splice(userIndex,1)
-        res.status(200).send("user deleted")
-
-
+        res.status(200).send({'delete':"user deleted"})
     } catch (error) {
         console.error(error);
         router.status(400).send(error)
     }
 })
+
 
 
 module.exports = router

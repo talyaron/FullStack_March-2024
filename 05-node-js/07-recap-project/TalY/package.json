@@ -1,17 +1,18 @@
 {
-  "name": "israel",
+  "name": "my-pet-store",
   "version": "1.0.0",
+  "description": "my awesome pet store",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.ts"
+    "dev": "nodemon src/index.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tal Yaron",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
-    "@types/node": "^22.5.4",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.5",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "tsc": "^2.0.4",

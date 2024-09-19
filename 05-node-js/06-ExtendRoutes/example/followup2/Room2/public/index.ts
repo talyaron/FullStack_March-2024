@@ -1,3 +1,5 @@
+import { Console } from "console";
+
 function main() {
     try {
         const getDanBtn = document.getElementById('getDanBtn');
@@ -6,6 +8,7 @@ function main() {
         getDanBtn.addEventListener('click', async () => {
             console.log('getDanBtn clicked');
             const response = await fetch(`/api/users/get-user-by-id/1234`);
+
             if (!response.ok) throw new Error('No response');
 
             const data = await response.json();
@@ -35,6 +38,11 @@ async function handleSearchName (e: any){
         if (!response.ok) throw new Error('No response');
         const data = await response.json();
         console.log(data);
+        if (data.user) {
+            console.error('No user found');
+        } else {
+            console.log(`User found: ${data.name}`);
+        }
 
     } catch (error) {
         console.error(error);
@@ -45,11 +53,22 @@ async function handleDeleteUser(e:any){
     e.preventDefault();
     try {
         console.log('trying to delete')
-        const name = document.querySelector("#name");
-
-
-        console.log(name?.innerText)
+        const name = document.querySelector("#name") as HTMLInputElement;
+        if (!name) throw new Error('No name found');
+        //get the name from the input field
+        const nameValue = (name as HTMLInputElement).value;
+        console.log(nameValue)
         // const req = await fetch('/api/users/delete-user/')
+        const response = await fetch(`/api/users/delete-user/?name=${nameValue}`)
+        if (!response.ok) throw new Error('No response');
+        const data = await response.json();
+        console.log(data);
+        if (data.delete) {
+            console.error('User deleted successfully');
+        } else {
+            console.error(data.error);
+        }
+
     } catch (error) {
         console.error(error)
     }
