@@ -46,7 +46,8 @@ function handleAddTask(event: any) {
         const task: UserTask = { name: name, description: description }
         addTask(task);
         form.reset();
-
+        const ditElement = document.getElementById('add-task-message') as HTMLDivElement;
+        renderSuccussMessage(ditElement, "Task added successfully");
     } catch (error) {
         console.log(error);
     }
@@ -56,6 +57,14 @@ interface UserTask {
     name: string;
     description: string;
 }
+
+function renderSuccussMessage(divElement: HTMLDivElement, message: string) {
+    divElement.innerHTML = message;
+    setTimeout(() => {
+        divElement.innerHTML = "";
+    }, 3000);
+}
+
 
 async function addTask(task: UserTask) {
     try {
@@ -75,6 +84,7 @@ async function addTask(task: UserTask) {
             throw new Error(res.error);
         }
         renderAllTasks(res.tasks);
+     
     } catch (error) {
         console.error(error);
     }
