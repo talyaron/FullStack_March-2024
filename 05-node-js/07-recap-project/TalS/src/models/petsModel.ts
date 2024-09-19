@@ -13,6 +13,6 @@ export class Pet {
     }
   }
 
-  export const Pets:[] = []
-
+  export const pets:Pet[] = [
   new Pet('buddy', 'dog', 3, 500)
+]
