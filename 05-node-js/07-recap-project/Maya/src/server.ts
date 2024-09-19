@@ -1,13 +1,16 @@
+
 console.log('Hello, TypeScript!');
-const express = require('express')
+import express from 'express'
+import petsRouter from './routes/petsRoutes'
 const app = express()
 const port = 3000
 
 app.use(express.static('public'))
-// app.get('/', (req:any, res:any) => {
-//   res.send('Hello World!')
-// })
+
+app.use('/pets', petsRouter)  
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
