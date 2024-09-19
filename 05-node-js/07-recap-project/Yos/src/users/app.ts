@@ -43,9 +43,13 @@ function handleGetAllUsers() {
 }
 
 async function handleGetAllTasks() {
-    const tasks = await getDataFromServer('/api/tasks/all-tasks');
-    console.log(tasks);
-    renderTasks(tasks);
+    
+    // move to task page
+    window.location.href = '../tasks/index.html';
+
+    // const tasks = await getDataFromServer('/api/tasks/all-tasks');
+    // console.log(tasks);
+    // renderTasks(tasks);
 }
 
 function renderTasks(tasks:Task[]){

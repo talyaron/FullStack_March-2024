@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <script src="./dist/app.js" defer></script>
+    <title>Tasks</title>
+</head>
+<body onload="main()">
+
+    <div>
+        <!-- showing all Tasks -->
+        <div class="info"> 
+            <h1>Tasks List</h1>
+            <div class="get-data">
+                <button onclick="window.location.href='/users'">Go to Users Page</button>
+                <button onclick="handleGetAllTasks()">Get All Tasks</button>
+            </div>
+
+        </div>
+        <!-- <div id="users"></div> -->
+        <div id="tasks"></div>
+    </div>
+
+</body>
+
+</html>

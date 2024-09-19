@@ -7,6 +7,8 @@ const port = 3000;
 // app.use(express.static('users'));
 
 app.use('/', express.static(path.join(__dirname, 'users')))
+app.use('/users', express.static(path.join(__dirname, 'users')))
+app.use('/tasks', express.static(path.join(__dirname, 'tasks')))
 
 app.use(express.json());
 app.use('/api/users', require('./routes/users'));
