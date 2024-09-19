@@ -23,11 +23,11 @@ Create a RESTful API for a pet store that allows users to perform CRUD (Create, 
 
 Implement the following API endpoints:
 
-- `POST /pets` - Create a new pet
-- `GET /pets` - Retrieve all pets
-- `GET /pets/:id` - Retrieve a specific pet by ID
-- `PUT /pets/:id` - Update a specific pet by ID
-- `DELETE /pets/:id` - Delete a specific pet by ID
+- `POST /pets/add-pet` - Create a new pet
+- `GET /pets/get-all-pets` - Retrieve all pets
+- `GET /pets/get-pet-by-id` - Retrieve a specific pet by ID, using query parameters
+- `PUT /pets/update-price/:id` - Update a specific pet by ID
+- `DELETE /pets/delete-pet/-:id` - Delete a specific pet by ID
 
 ## Additional Requirements
 
