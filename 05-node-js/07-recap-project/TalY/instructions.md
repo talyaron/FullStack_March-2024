@@ -35,6 +35,15 @@ Implement the following API endpoints:
 2. Implement basic error handling for invalid requests or non-existent pets.
 3. Use a tool like Postman or cURL to test your API endpoints.
 
+## Create a client that can CRUD pets
+- show all pets
+- show a specific pet
+- add a pet
+- update a pet
+- delete a pet
+
+show everting on the DOM
+
 ## Bonus Challenges
 
 1. Implement data validation to ensure all required fields are provided and have the correct data types.
