@@ -1,4 +1,4 @@
-import { pets } from '../../module/petModule';//+
+import { pets } from '../../module/petModule';
 export function getAllPets(req: any, res: any) {
     try {
 res.send({pets: pets})
