@@ -17,20 +17,21 @@ class Pet {
 const apiUrl = 'http://localhost:3000/pets';
 
 async function handleAddPet(event: Event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     const name = (document.getElementById('pet-name') as HTMLInputElement).value;
     const species = (document.getElementById('pet-species') as HTMLInputElement).value;
     const age = parseInt((document.getElementById('pet-age') as HTMLInputElement).value);
     const price = parseFloat((document.getElementById('pet-price') as HTMLInputElement).value);
+    const imageUrl = (document.getElementById('pet-image') as HTMLInputElement).value;
 
-    createPet(species, age, price);
+    createPet(species, age, price, imageUrl);
 }
 
 // Create Pet (POST)
-async function createPet(species: string, age: number, price: number) {
-    const newPet = new Pet(species, age, price);
-    const response = await fetch(apiUrl, {
+async function createPet(species: string, age: number, price: number,imageUrl:string) {
+    const newPet = { species, age, price, imageUrl };
+        const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
