@@ -1,25 +1,14 @@
 import express from 'express';
+import petsRouter from "./routes/petsRoutes";
 const app = express()
 const port = 3000
 
-class pet{
-   id:string;
-   name:string;
-   species:string;
-   age:number;
-   price:number;
+app.use(express.json());
 
-   constructor(name:string,species:string,age:number,price:number){
-    this.id=crypto.randomUUID();
-    this.name=name;
-    this.species=species;
-    this.age=age;
-    this.price=price;
-   }
 
-}
-console.log("hello world");
 app.use(express.static('public'));
+
+app.use('/pets',petsRouter)
 
 app.get('/', (req:any, res:any) => {
   res.send('Hello World!')

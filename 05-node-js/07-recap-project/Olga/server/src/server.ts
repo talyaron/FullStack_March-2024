@@ -1,13 +1,11 @@
-// const express = require('express')
 import express from 'express'
+import petsRoutes from './routes/petsRoutes'
 const app = express()
 const port = 3000
 
-app.use(express.static('public'))
 app.use(express.json())
 
-const usersRoutes = require('./routes/petsRoutes')
-app.use('/api/pets', usersRoutes)
+app.use('/api/pets', petsRoutes)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
