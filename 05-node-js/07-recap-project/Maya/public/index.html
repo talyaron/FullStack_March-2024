@@ -8,8 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Pet List</h1>
-    <div id="pet-container"></div>
-    <button onclick="createPet('Dog', 5, 150)">Add New Pet</button>
-    <script src="path/to/your/script.js"></script></body>
+    <h1>The Pet Shop</h1> 
+    <form id="add-pet" onsubmit="handleAddPet(event)">
+        <input type="text" name="name" placeholder="pet name" required>
+        <input type="text" name="specie" placeholder="specie" required>
+        <input type="number" name="yearOfBirth" placeholder="age" required>
+        <input type="text" name="image" placeholder="image" required>
+        <input type="submit" value="Add">
+    </form>
+    <div id="pet-container">
+    </div>
 </html>
