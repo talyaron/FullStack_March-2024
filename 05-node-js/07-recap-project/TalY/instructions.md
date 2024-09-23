@@ -25,7 +25,7 @@ Implement the following API endpoints:
 
 - `POST /pets/add-pet` - Create a new pet
 - `GET /pets/get-all-pets` - Retrieve all pets
-- `GET /pets/get-pet-by-id` - Retrieve a specific pet by ID, using query parameters
+- `GET /pets/get-pet-by-id` - Retrieve a specific pet by ID, using query 
 - `PUT /pets/update-price/:id` - Update a specific pet by ID
 - `DELETE /pets/delete-pet/-:id` - Delete a specific pet by ID
 
@@ -34,6 +34,15 @@ Implement the following API endpoints:
 1. Use appropriate HTTP status codes for responses.
 2. Implement basic error handling for invalid requests or non-existent pets.
 3. Use a tool like Postman or cURL to test your API endpoints.
+
+## Create a client that can CRUD pets
+- show all pets
+- show a specific pet
+- add a pet
+- update a pet
+- delete a pet
+
+show everting on the DOM
 
 ## Bonus Challenges
 
