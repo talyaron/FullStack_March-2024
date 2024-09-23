@@ -1,4 +1,4 @@
-async function getAllPets()[
+async function getAllPets(){
     try {
         
 
@@ -8,4 +8,7 @@ async function getAllPets()[
     } catch (error) {
         console.error(error);
     }
-]
+}
+async function addPet(){
+    
+}
