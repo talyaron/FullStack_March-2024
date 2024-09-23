@@ -6,10 +6,10 @@ import { addPet } from '../controller/setPetsCont';
 const router = express.Router()
 
 router.get('/get-all-pets', getAllPets);
-router.post('/setPets', addPet);  
-router.get('/pets/:id', getPetByID);    
-router.put('/pets/:id', updatePet);      
-router.delete('/pets/:id', deletePet);
+router.post('/set-Pets', addPet);  
+router.get('/get-pet-by-id', getPetByID);    
+router.put('/update-pet-by-id', updatePet);      
+router.delete('/delete-pet-by-id', deletePet);
 
 export default router;
 
