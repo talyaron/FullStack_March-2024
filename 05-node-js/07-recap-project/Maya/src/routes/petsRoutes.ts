@@ -8,7 +8,7 @@ import {get} from 'http';
 
 const router = express.Router();
 
-router.get('/get-all-pets', getAllPets) 
+router.get('/get-all-pets',getAllPets) 
 router.post('/add-pet', addPet);
 router.get('/get-pet/:id',getPetById)
 router.put('/update-pet/:id', updatePetById)
