@@ -1,3 +1,5 @@
+import { generatorID } from "../controllers/counterID";
+
 export class Pet {
   id: string;
   name: string;
@@ -8,7 +10,6 @@ export class Pet {
   image: string;
   care: string;
   constructor(
-    id: string,
     name: string,
     type: string,
     breed: string,
@@ -17,7 +18,7 @@ export class Pet {
     image: string,
     care: string
   ) {
-    this.id = id;
+    this.id = generatorID();
     this.name = name;
     this.type = type;
     this.breed = breed;
@@ -26,11 +27,12 @@ export class Pet {
     this.image = image;
     this.care = care;
   }
+
 }
 
 export const pets: Pet[] = [
   new Pet(
-    "1",
+    // "1",
     "Max",
     "Dog",
     "Mixed Breed",
@@ -40,7 +42,7 @@ export const pets: Pet[] = [
     "Max is a medium-energy dog that needs daily exercise. A home with a yard or regular access to a park would be ideal, as he enjoys long walks and playtime. He’s well-suited to families with children or other pets, provided proper introductions are made. Max needs a balanced diet to maintain his healthy weight and requires regular vet check-ups, vaccinations, and flea treatments. His thick coat benefits from weekly brushing. Max loves companionship, so he would thrive in a home where he won’t be left alone for long periods."
   ),
   new Pet(
-    "2",
+    // "2",
     "Bella",
     "Cat",
     "Domestic Shorthair",
@@ -50,7 +52,7 @@ export const pets: Pet[] = [
     "Bella is a low-maintenance cat, perfect for a quiet, calm household. She enjoys having her own space and needs areas where she can observe her environment without too much disruption. Bella is best suited to indoor living, as she tends to be shy and cautious in new environments. Regular play sessions and toys that engage her hunting instincts, such as laser pointers or feather wands, help keep her mentally stimulated. Bella will require a balanced diet and fresh water, as well as regular vet visits for vaccinations and overall health checks."
   ),
   new Pet(
-    "3",
+    // "3",
     "Slinky",
     "Snake",
     "Ball Python",
@@ -60,7 +62,7 @@ export const pets: Pet[] = [
     "Slinky needs a large, secure enclosure with proper heating and humidity levels to mimic his natural environment. He should have access to hiding spots and branches for climbing. A controlled diet of frozen-thawed mice or rats, fed once a week, is essential to his health. Slinky’s enclosure should be cleaned regularly to prevent infections, and he’ll require a shallow dish of water for drinking and soaking. He’s not a high-maintenance pet but needs consistent care to stay healthy."
   ),
   new Pet(
-    "4",
+    // "4",
     "Rocky",
     "Dog",
     "Labrador Retriever",
@@ -70,7 +72,7 @@ export const pets: Pet[] = [
     "Rocky is a low-energy dog, making him a great companion for someone who enjoys a laid-back lifestyle. He needs one or two daily walks and occasional playtime to stay healthy. He thrives in environments where he can be around people most of the time, as he loves companionship. Rocky is comfortable around children and other pets, making him an ideal family dog. Regular vet visits, a balanced diet, and grooming sessions to manage his shedding are essential to keeping him happy and healthy."
   ),
   new Pet(
-    "5",
+    // "5",
     "Kiwi",
     "Parrot",
     "Green-cheeked Conure",
@@ -80,7 +82,7 @@ export const pets: Pet[] = [
     "Parrots like Kiwi are highly intelligent and need plenty of mental stimulation to stay happy. He requires daily interaction with humans, as well as toys that challenge his mind. A spacious cage with plenty of room to stretch his wings is essential, but Kiwi should also be let out of his cage regularly for exercise. A diet of fresh fruits, vegetables, and high-quality parrot pellets will keep him healthy. Kiwi will also need regular vet check-ups to monitor his health, as parrots are prone to certain diseases if not properly cared for."
   ),
   new Pet(
-    "6",
+    // "6",
     "Luna",
     "Cat",
     "Siamese",
@@ -90,7 +92,7 @@ export const pets: Pet[] = [
     "Siamese cats are highly social and intelligent. Luna will need a home that provides plenty of stimulation, including interactive toys and regular playtime. A quiet, stable environment will help her thrive, but she also enjoys human interaction and will need companionship. Regular vet check-ups, a healthy diet, and grooming sessions will keep Luna in top shape. Siamese cats can be prone to dental issues, so dental care is also important."
 ),
 new Pet(
-    "7",
+    // "7",
     "Buddy",
     "Dog",
     "Golden Retriever",
@@ -100,7 +102,7 @@ new Pet(
     "Golden Retrievers like Buddy are active and social dogs. He will need regular exercise, such as daily walks and playtime, to stay healthy and happy. A large yard would be ideal for him to run around and explore. Buddy thrives on human interaction and does well with children and other pets. Regular grooming to manage his shedding and a healthy diet will ensure he stays in great condition. It's also important to keep him mentally stimulated with toys and activities."
 ),
 new Pet(
-    "8",
+    // "8",
     "Zara",
     "Parrot",
     "African Grey Parrot",
@@ -110,7 +112,7 @@ new Pet(
     "African Grey Parrots are highly intelligent and require mental stimulation to avoid boredom. Zara needs a spacious cage with plenty of toys to challenge her mind. Regular out-of-cage time is important for exercise, and she thrives with human interaction. A varied diet of fruits, vegetables, and high-quality parrot pellets is essential to keep her healthy. African Greys also need regular vet check-ups to monitor their health, especially since they are prone to certain illnesses if not properly cared for."
 ),
 new Pet(
-    "9",
+    // "9",
     "Simba",
     "Cat",
     "Maine Coon",
@@ -120,7 +122,7 @@ new Pet(
     "Maine Coons like Simba are known for their large size and friendly nature. They enjoy being around people and are typically good with other pets and children. Regular grooming is necessary to maintain their long, thick coats, and they need a balanced diet to support their size. Simba will need a comfortable home with plenty of cozy spots to lounge in. Regular vet check-ups, especially for joint health, are important as Maine Coons can be prone to hip dysplasia."
 ),
 new Pet(
-    "10",
+    // "10",
     "Oscar",
     "Dog",
     "Beagle",
@@ -130,7 +132,7 @@ new Pet(
     "Beagles like Oscar are energetic and love to explore. He will need daily walks and playtime to stay healthy and happy. Beagles are known for their strong sense of smell, so interactive toys that challenge his nose will keep him entertained. A secure yard is essential as Beagles are prone to wandering off if they catch an interesting scent. Regular vet check-ups, a healthy diet, and grooming will help maintain his overall well-being."
 ),
 new Pet(
-    "11",
+    // "11",
     "Cleo",
     "Cat",
     "Bengal",
@@ -140,7 +142,7 @@ new Pet(
     "Bengal cats are highly energetic and need a lot of space to run and play. Cleo will need plenty of toys and climbing structures to keep her entertained. Regular playtime is essential to help her burn off energy and stay happy. A high-protein diet and regular vet visits are necessary to maintain her health. Bengals are also known for their intelligence, so Cleo will enjoy learning new tricks or solving puzzle toys."
 ),
 new Pet(
-    "12",
+    // "12",
     "Milo",
     "Dog",
     "Cocker Spaniel",
@@ -150,7 +152,7 @@ new Pet(
     "Cocker Spaniels like Milo are gentle and loving dogs. They need moderate exercise, such as daily walks, and enjoy spending time with their families. Regular grooming is essential to keep their long coats in good condition, and they need regular ear cleanings to prevent infections. A balanced diet and routine vet check-ups will help Milo stay healthy. He’s a great dog for families or individuals looking for a calm and affectionate companion."
 ),
 new Pet(
-    "13",
+    // "13",
     "Nemo",
     "Parrot",
     "Cockatiel",
@@ -160,7 +162,7 @@ new Pet(
     "Cockatiels like Nemo are social birds that need daily interaction with people. He will thrive with plenty of toys and challenges to keep his mind active. Nemo needs a spacious cage but should be allowed out of his cage regularly for exercise. A balanced diet of seeds, pellets, and fresh vegetables is essential to his health. Regular vet visits will help monitor his well-being, as Cockatiels are prone to certain respiratory issues."
 ),
 new Pet(
-    "14",
+    // "14",
     "Daisy",
     "Dog",
     "Shih Tzu",
@@ -170,7 +172,7 @@ new Pet(
     "Shih Tzus like Daisy are low-energy dogs that don’t require much exercise beyond short walks. Regular grooming is essential to keep their coats in good condition, and their eyes and ears should be checked regularly for any signs of infection. A balanced diet and routine vet check-ups will help Daisy stay healthy. She’s a great companion for someone looking for a relaxed and loving dog."
 ),
 new Pet(
-    "15",
+    // "15",
     "Oliver",
     "Cat",
     "British Shorthair",

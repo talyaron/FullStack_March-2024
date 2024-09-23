@@ -4,11 +4,13 @@ import { addPet } from '../controllers/pets/setPetsCont';
 const router = express.Router();
 
 import { Pet, pets } from '../models/petsModel';
-
+import { deletePet } from '../controllers/pets/deletePet';
 
 router.get('/get-all-pets', getAllPets);
 
 router.post('/add-pet', addPet);
+
+router.delete('/delete-pet/:id', deletePet);
 
 router.get('/get-pet/:id', (req: any, res: any) => {
   try {
