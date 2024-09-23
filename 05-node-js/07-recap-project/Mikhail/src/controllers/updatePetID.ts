@@ -6,12 +6,13 @@ export function updatePetID(req:any,res:any){
     
         const {petID} = req.params;
         const {updatePet} = req.body;
+        console.log(petID);
+            console.log(updatePet);
         
         if (!petID ) throw new Error("bad pet ID");
         if(!updatePet) throw new Error("bad update info")
             
-            console.log(petID);
-            console.log(updatePet);
+            
         const petsIndex = pets.findIndex(pet => pet.id === petID);
         if (petsIndex === -1) throw new Error("PET not found");
     
