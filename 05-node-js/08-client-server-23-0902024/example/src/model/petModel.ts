@@ -6,12 +6,13 @@ export class Pet{
     price:number;
     imageURL?:string;
  
-    constructor(name:string,species:string,age:number,price:number){
+    constructor(name:string,species:string,age:number,price:number, imageURL?:string){
      this.id=crypto.randomUUID();
      this.name=name;
      this.species=species;
      this.age=new Date().getFullYear()-age;
      this.price=price;
+     this.imageURL=imageURL;
     }
     setAge(age:number){
         this.age=age;

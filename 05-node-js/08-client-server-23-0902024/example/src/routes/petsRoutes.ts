@@ -11,6 +11,6 @@ const router = express.Router()
 router.get('/get-all-pets', getAllPets)
 router.post('/add-pet',addPet)
 router.get('/get-pet-id/:petID',getPetID)
-router.put('/update-pet-id/:petID',updatePetID)
-router.delete('/delete-pet-id/:petID',deletePetID)
+router.put('/update-pet-id/:petId',updatePetID)
+router.delete('/delete-pet-id',deletePetID)
 export default router
