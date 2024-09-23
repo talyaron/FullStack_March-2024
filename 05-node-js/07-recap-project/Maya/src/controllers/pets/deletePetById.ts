@@ -9,7 +9,7 @@ export function deletePetById(req: any, res: any) {
         }
 
         const removedPet = pets.splice(petIndex, 1)[0];
-        res.send({ pet: removedPet, message: "Pet deleted successfully", ok: true });
+        res.send({ pet: removedPet, message: "Pet deleted successfully", ok: true, pets });
     }catch (error) {
         console.error(error);
         res.status(500).send('Internal server error');

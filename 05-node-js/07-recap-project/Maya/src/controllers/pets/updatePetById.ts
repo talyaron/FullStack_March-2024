@@ -19,7 +19,7 @@ export function updatePetById(req: any, res: any) {
         if (age) pets[petIndex].yearOfBirth = new Date().getFullYear() - age;
         if (price) pets[petIndex].price = price;
 
-        res.send({ pet: pets[petIndex], message: "Pet updated successfully", ok: true });
+        res.send({ pet: pets[petIndex], message: "Pet updated successfully", ok: true, pets });
 
     } catch (error) {
         console.error(error);
