@@ -58,7 +58,7 @@ async function getAllPets() {
 }
 
 function renderPets(pets: Pet[]) {
-    const petContainer = document.getElementById('pet-container');
+    const petContainer = document.querySelector('pet-container');
     if (!petContainer) {
         console.error('No element with ID "pet-container" found.');
         return;
