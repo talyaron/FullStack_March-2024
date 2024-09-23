@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/style.css">
-    <script src="./dist/style.css"></script>
+    <script src="./dist/index.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <h1>Pet List</h1>
-    <div id="pet-container"></div>
-    <button onclick="createPet('Dog', 5, 150)">Add New Pet</button>
-    <script src="path/to/your/script.js"></script></body>
+    <h1>The Pet Shop</h1> 
+    <form id="add-pet" onsubmit="handleAddPet(event)">
+        <input type="text" id="pet-name" placeholder="Pet name" required>
+        <input type="text" id="pet-species" placeholder="Species" required>
+        <input type="number" id="pet-age" placeholder="Age" required>
+        <input type="number" id="pet-price" placeholder="Price" required>
+        <input type="text" id="pet-image" placeholder="Image URL">
+        <input type="submit" value="Add">
+    </form>
+    <div id="pet-container">
+    </div>
 </html>
