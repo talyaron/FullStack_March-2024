@@ -90,13 +90,63 @@ async function handleEditClick(event: any) {
   }
 }
 
-async function renderEditForm(id: string) {
+async function renderEditForm(id: string): Promise<void> {
   try {
     const task = await getTaskData(`/api/tasks/task?id=${id.trim()}`);
+    //render the edit form
+    const editForm = document.getElementById("tasks") as HTMLFormElement;
+    editForm.innerHTML = `
+      <h2>Edit Task</h2>
+      <div id="edit-task-message">
+      <form onsubmit="handleEditTaskClick(event)"  >
+        <div class="edit-form" >
+          <label for="task">Task</label>
+          <input type="text" name="task" value="${task.name}" />
+        </div>
+        <div class="edit-form" >
+
+        <label for="description">Description</label>
+        <input type="text" name="description" value="${task.description}" />
+        </div>
+
+        <div class="form-submit-button">
+           <input  type="submit" class="btn btn-success" value="Edit Task" id="edit-${task.id}"/>
+        </div>
+
+      </form>
+      </div>
+    `;
 
     console.log(task);
   } catch (error) {
     console.error(error);
+  }
+}
+
+async function handleEditTaskClick(event: any) {
+  try {
+    event.preventDefault();
+    const form = event.target;
+    const { name, description } = {
+      name: form.task.value,
+      description: form.description.value,
+    };
+    console.log(name, description);
+    const id = event.submitter.id.split("-")[1];
+    console.log(`api/tasks/edit-task?id=${id}&name=${name}&description=${description}`);
+    const req = await fetch(`http://localhost:3000/api/tasks/edit-task?id=${id}&name=${name}&description=${description}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+    });
+    const tasks:any = await req.json();
+    if (tasks.error) {
+      throw new Error(tasks.error);
+    }
+    console.log(tasks.done, tasks.tasks);
+    renderAllTasks(tasks.tasks);
+
+  } catch (error) {
+    console.log(error);
   }
 }
 

@@ -46,8 +46,6 @@ tasksRouter.post("/add-task", (req: any, res: any) => {
   res.send({ done: "Task added successfully", tasks: tasks });
 });
 
-
-
 tasksRouter.delete("/delete-task/", (req: any, res: any) => {
   console.log(req.body);
   const { id } = req.body;
@@ -60,7 +58,27 @@ tasksRouter.delete("/delete-task/", (req: any, res: any) => {
     return;
   }
   res.send({ error: "Task not found" });
-  return; 
+  return;
+});
+
+tasksRouter.put("/edit-task", (req: any, res: any) => {
+  try {
+    console.log(req.query);
+    const { id, name, description } = req.query;
+    const task = tasks.find((task: Task) => task.id === id);
+    if (!task) {
+      res.send({ error: "Task not found" });
+      return;
+    }
+    task.name = name;
+    task.description = description;
+
+    res.send({ done: "Task edited successfully", tasks: tasks });
+    return;
+  } catch (error) {
+    console.log(error);
+    res.send({ error: "Task not found" });
+  }
 });
 
 module.exports = tasksRouter;
