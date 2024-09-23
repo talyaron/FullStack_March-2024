@@ -24,8 +24,9 @@ tasksRouter.get("/all-tasks", (req: any, res: any) => {
   res.json(tasks);
 });
 
-tasksRouter.get("/task/:id", (res: any, req: any) => {
-  const { id } = req.params;
+tasksRouter.get("/task", (req: any, res: any) => {
+  console.log(req.query);
+  const { id } = req.query;
   console.log(id);
   const task = tasks.find((task) => task.id === id);
   if (task) {

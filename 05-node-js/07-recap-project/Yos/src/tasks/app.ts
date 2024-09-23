@@ -3,15 +3,29 @@ function main() {
   getAllTasks();
 }
 
-async function getAllTasks() {
+async function getAllTasks(): Promise<Task[] | null | undefined> {
   try {
     // get all tasks from the server
-    const req = await fetch("/api/tasks/all-tasks");
-    const tasks = await req.json();
+    const tasks = await getTaskData(`/api/tasks/all-tasks`);
+    if (tasks === null) {
+      throw new Error("No tasks found");
+    }
     console.log(tasks);
-    renderAllTasks(tasks);
+    renderAllTasks(tasks!);
   } catch (error) {
     console.log(error);
+    return null;
+  }
+}
+
+async function getTaskData(url: string): Promise<Task[] | null> {
+  try {
+    const req = await fetch(url);
+    const tasks = await req.json();
+    return tasks;
+  } catch (error) {
+    console.error(error);
+    return null;
   }
 }
 
@@ -67,27 +81,24 @@ async function deleteTask(id: string) {
 async function handleEditClick(event: any) {
   try {
     const id = event.target.id.split("-")[1];
+    console.log(id);
     // render the edit form
     renderEditForm(id);
-    console.log(id);
     // await handleEditTask(id);
   } catch (error) {
     console.log(error);
   }
 }
 
-
 async function renderEditForm(id: string) {
-    try {
-        const req = await fetch(`/api/tasks/task/${id.trim()}`);
-        const task = await req.json();
-        console.log(task);
-    } catch (error) {
-        console.error(error);
-    }
+  try {
+    const task = await getTaskData(`/api/tasks/task?id=${id.trim()}`);
 
+    console.log(task);
+  } catch (error) {
+    console.error(error);
+  }
 }
-
 
 async function handleEditTask(task: Task) {
   try {
