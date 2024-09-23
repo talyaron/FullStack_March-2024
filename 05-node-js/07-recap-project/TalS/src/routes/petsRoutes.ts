@@ -4,6 +4,6 @@ import { addPet } from "../controllers/pets/setPetsCont";
 const router = express.Router();
 
 router.get("/get-all-pets", getAllPets);
-router.get("/add-pet", addPet);
+router.post("/add-pet", addPet);
 
 export default router;
