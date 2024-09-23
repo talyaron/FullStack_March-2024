@@ -14,7 +14,7 @@ class Pet {
     }
 }
 
-const apiUrl = 'http://localhost:3000/pets';
+// const apiUrl = 'http://localhost:3000/pets';
 
 async function handleAddPet(event: Event) {
     event.preventDefault();
@@ -31,7 +31,7 @@ async function handleAddPet(event: Event) {
 // Create Pet (POST)
 async function createPet(species: string, age: number, price: number,imageUrl:string) {
     const newPet = { species, age, price, imageUrl };
-        const response = await fetch(apiUrl, {
+        const response = await fetch('/add-pet', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ async function createPet(species: string, age: number, price: number,imageUrl:st
 }
 
 async function getAllPets() {
-    const response = await fetch(apiUrl);
+    const response = await fetch('/get-all-pets');
 
     if (response.ok) {
         const data = await response.json();
@@ -83,7 +83,7 @@ function renderPets(pets: Pet[]) {
 async function updatePet(id: string, species: string, age: number, price: number) {
     const updatedPet = { species, yearOfBirth: new Date().getFullYear() - age, price };
 
-    const response = await fetch(`${apiUrl}/${id}`, {
+    const response = await fetch(`${'/update-pet/:id'}/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ async function updatePet(id: string, species: string, age: number, price: number
 
 // Delete Pet (DELETE)
 async function deletePet(id: string) {
-    const response = await fetch(`${apiUrl}/${id}`, {
+    const response = await fetch(`${'/delete-pet/:id'}/${id}`, {
         method: 'DELETE',
     });
 
