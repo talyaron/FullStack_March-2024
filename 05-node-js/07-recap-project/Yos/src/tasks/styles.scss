@@ -34,7 +34,8 @@ body {
         }
     }
 }
- #tasks {
+
+#tasks {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -46,6 +47,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
+
     .task {
         display: flex;
         align-items: center;
@@ -81,14 +83,16 @@ body {
 }
 
 
-#add-task-form{
+#add-task-form {
 
 
     display: flex;
     flex-direction: row;
     justify-content: center;
 
-    #task, #description, #add-task{
+    #task,
+    #description,
+    #add-task {
         width: 60%;
         padding: 10px;
         background-color: #fff;
@@ -99,22 +103,43 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 20px;
-        
+        height: 40px;
+
     }
-    #add-task{
+
+    #add-task {
         display: flex;
         justify-content: center;
         width: 50%;
         height: 40px;
         background-color: #007bff;
         color: #fff;
-        border: 2px solid black;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         cursor: pointer;
-        align-items: center;
-   
+        border:none;
     }
-        
+
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+
+}
+
+.form-submit-button {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    input[type=submit] {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
 }
