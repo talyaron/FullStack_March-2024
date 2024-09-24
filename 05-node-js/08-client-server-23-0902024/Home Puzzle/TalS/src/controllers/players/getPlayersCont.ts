@@ -1,4 +1,5 @@
-import { Player, players } from "../models/firstTeamModel";
+import { Player, players } from "../../models/firstTeamModel";
+
 export function getAllPlayers(req:any, res:any){
     try {
         res.send({players:players})
