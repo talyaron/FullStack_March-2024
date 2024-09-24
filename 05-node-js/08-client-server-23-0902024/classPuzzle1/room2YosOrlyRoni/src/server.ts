@@ -1,19 +1,18 @@
-import express from 'express';
+import express from "express";
 import petsRouter from "./routes/petsRoutes";
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 app.use(express.json());
 
+app.use(express.static("public"));
 
-app.use(express.static('public'));
+app.use("/api/pets", petsRouter);
 
-app.use('/api/pets',petsRouter)
-
-app.get('/', (req:any, res:any) => {
-  res.send('Hello World!')
-})
+app.get("/", (req: any, res: any) => {
+  res.send("Hello World!");
+});
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example app listening on port ${port}`);
+});
