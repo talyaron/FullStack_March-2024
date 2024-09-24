@@ -11,7 +11,8 @@ export function activateLinks() {
         handleClickToAddBtn();
         handleAddFormSubmit();
         handleClickDeleteBtn();
-        handleClickEditBtn();
+        handleClickEditBtnOnTable();
+        handleUpdateFormSubmit();
     } catch (error) {
         console.error(error);
     }
@@ -36,7 +37,7 @@ function handleClickDeleteBtn() {
                         if (petIndex === -1) {
                             throw new Error('Pet not found');
                         }
-    
+
                         pets.splice(petIndex, 1);
                         console.log(id);
                         deletePetFromDB(id);
@@ -49,7 +50,7 @@ function handleClickDeleteBtn() {
                 });
             })
         }
-        
+
     } catch (error) {
         console.error(error);
     }
@@ -63,7 +64,7 @@ async function deletePetFromDB(id: string) {
     return pet
 }
 
-function handleClickEditBtn() {
+function handleClickEditBtnOnTable() {
     try {
         const editBtns = document.querySelectorAll('.edit-btn');
         if (editBtns.length > 0) {
@@ -73,7 +74,7 @@ function handleClickEditBtn() {
                         const id = editBtn!.parentElement!.parentElement!.id as string;
                         const pet = pets.find((pet) => pet.id === id);
                         renderPage('edit', pet);
-                        updatePetOnDB(id);
+
                         if (!id) throw new Error('Pet not found');
                     } catch(error) {
                         console.error(error)
@@ -86,8 +87,21 @@ function handleClickEditBtn() {
     }
 }
 
-async function updatePetOnDB(id: string) {
+function handleUpdateFormSubmit() {
+    try {
+        const updateBtn = document.querySelector('.edit-btn') as HTMLButtonElement;
+        updateBtn?.addEventListener('click', async () => {
+            const id = updateBtn.id;
+            console.log(id, 'updatePetBtn');
+            await updatePetOnDB(id);
+            renderPage('admin');
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}
 
+async function updatePetOnDB(id: string) {
     const response = await fetch(`api/pets/update-pet/${id}`, {
         method: 'PUT',
         headers: {
@@ -187,9 +201,6 @@ function handleAddFormSubmit() {
                 const shortStory = form.shortStory.value as string;
                 const image = form.image.value as string;
                 const care = form.care.value as string;
-                // const {name, type, breed, story, shortStory, image, care} = form.values;
-
-                
                 await addPetToDB(name, type, breed, story, shortStory, image, care);
                 await getDataFromDB();
                 renderPage('admin');

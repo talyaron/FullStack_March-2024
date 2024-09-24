@@ -101,10 +101,10 @@ function renderAddOrEditPetPage(pet?: Pet) {
             <input type="text" name="name" id="name" placeholder="Enter Pet Name" required ${pet ? `value="${pet.name}"` : ""}>
             <input type="text" name="type" id="type" placeholder="Enter Pet Type" required ${pet ? `value="${pet.type}"` : ""}>
             <input type="text" name="breed" id="breed" placeholder="Enter Pet Breed" required ${pet ? `value="${pet.breed}"` : ""}>
-            <textarea name="story" id="story" rows="6" cols="50" placeholder="Enter Pet Story" required ${pet ? `value="${pet.story}"` : ""}></textarea>
-            <textarea name="shortStory" id="shortStory" rows="4" cols="50" placeholder="Enter Pet Short Story" required ${pet ? `value="${pet.shortStory}"` :  ""}></textarea>
-            <textarea name="care" id="care" rows="6" cols="50" placeholder="Enter Pet Care" required ${pet ? `value="${pet.care}"` : ""}></textarea>
-            ${pet ? `<button id="edit-pet-btn">Edit Pet</button>` : `<button id="add-pet">Add Pet</button>`}
+            <textarea name="story" id="story" rows="6" cols="50" placeholder="Enter Pet Story" required >${pet ? `${pet.story}` : ""}</textarea>
+            <textarea name="shortStory" id="shortStory" rows="4" cols="50" placeholder="Enter Pet Short Story" required >${pet ? `${pet.shortStory}` :  ""}</textarea>
+            <textarea name="care" id="care" rows="6" cols="50" placeholder="Enter Pet Care" required >${pet ? `${pet.care}` : ""}</textarea>
+            ${pet ? `<button class="edit-btn" id="${pet.id}">Edit Pet</button>` : `<button id="add-pet">Add Pet</button>`}
         </form>
     </div>
     `;
@@ -127,7 +127,7 @@ function renderWelcome() {
     `;
     return welcome
   }
-  
+
   function renderEvents() {
     const events = `
         <section id="events">
@@ -137,7 +137,7 @@ function renderWelcome() {
     `;
     return events
   }
-  
+
   function renderPet(pet: Pet) {
     const petCart = `
         <div class="pets-list__pet-cart" id="${pet.id}">
@@ -149,7 +149,7 @@ function renderWelcome() {
     `;
     return petCart
   }
-  
+
   function renderPets() {
     const randomPetsList = getRandomAnimals(pets, 6);
     const petsList = randomPetsList.map((pet) => renderPet(pet));
@@ -161,8 +161,8 @@ function renderWelcome() {
     `;
     return petsCart
   }
-  
-  
+
+
   function renderContact() {
     const contact = `
         <section id="contact">
