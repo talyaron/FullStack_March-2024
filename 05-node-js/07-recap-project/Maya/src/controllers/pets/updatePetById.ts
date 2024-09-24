@@ -8,7 +8,7 @@ export function updatePetById(req: any, res: any) {
         if (!name &&!species &&!age &&!price) {
             return res.status(400).json({ error: "No fields to update" });
         }
-        const petIndex = pets.findIndex(p => p.Id === id);
+        const petIndex = pets.findIndex(p => p.id === id);
 
         if (petIndex === -1) {
             return res.status(404).json({ error: "Pet not found" });

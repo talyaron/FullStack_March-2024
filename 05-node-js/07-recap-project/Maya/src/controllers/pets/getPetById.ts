@@ -3,7 +3,7 @@ import { Pet, pets } from "../../module/petModule";
 export function getPetById(req: any, res: any) {
 try {
     const { id } = req.params;
-    const pet = pets.find(p => p.Id === id);
+    const pet = pets.find(p => p.id === id);
     if (!pet) {
         return res.status(404).json({ error: "Pet not found" });
     }   
