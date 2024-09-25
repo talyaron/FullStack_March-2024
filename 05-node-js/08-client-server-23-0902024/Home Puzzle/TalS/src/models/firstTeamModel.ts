@@ -1,8 +1,25 @@
 export class Player{
     playerId: string;
+    
 
     constructor(  public name: string, public position: string, public number: number,public nationality: string, public imageUrl: string){
         this.playerId = crypto.randomUUID();
+    }
+    
+    setName( name: string){
+        this.name = name;
+    }
+    setPosition( position: string){
+        this.position = position;
+    }
+    setNumber( number: number){
+        this.number = number;
+    }
+    setNationality( nationality: string){
+        this.nationality = nationality;
+    }
+    setImageUrl( imageUrl: string){
+        this.imageUrl = imageUrl;
     }
 }
 
