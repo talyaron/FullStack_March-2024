@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.get("/get-all-players", getAllPlayers);
 router.post("/add-player", addPlayer);
-router.get("/players/get-playerId", getPlayersById);
-router.put("/players/update-player", updatePlayer);
+router.get("/get-playerId", getPlayersById);
+router.put("/update-player", updatePlayer);
 export default router;

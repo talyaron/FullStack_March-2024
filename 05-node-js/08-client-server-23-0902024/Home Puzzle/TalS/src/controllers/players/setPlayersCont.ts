@@ -36,7 +36,7 @@ export function updatePlayer(req: any, res: any) {
 
     const playerIndex = players.findIndex((p) => p.playerId === playerId);
     if (playerIndex === -1) {
-      return res.status(404).json({ ok: false, error: "player not found" });
+      return res.status(400).json({ ok: false, error: "player not found" });
     }
 
     const player = players[playerIndex];
