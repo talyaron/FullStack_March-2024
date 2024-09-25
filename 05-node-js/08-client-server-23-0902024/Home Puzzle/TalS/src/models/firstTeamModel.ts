@@ -1,8 +1,8 @@
 export class Player{
-    id: string;
+    playerId: string;
 
     constructor(  public name: string, public position: string, public number: number,public nationality: string, public imageUrl: string){
-        this.id = crypto.randomUUID();
+        this.playerId = crypto.randomUUID();
     }
 }
 
