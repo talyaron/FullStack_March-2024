@@ -8,7 +8,7 @@ export function updatePetById(req: any, res: any) {
         if (!name &&!species &&!age &&!price) {
             return res.status(400).json({ error: "No fields to update" });
         }
-        const petIndex = pets.findIndex(p => p.Id === id);
+        const petIndex = pets.findIndex(p => p.id === id);
 
         if (petIndex === -1) {
             return res.status(404).json({ error: "Pet not found" });
@@ -19,7 +19,7 @@ export function updatePetById(req: any, res: any) {
         if (age) pets[petIndex].yearOfBirth = new Date().getFullYear() - age;
         if (price) pets[petIndex].price = price;
 
-        res.send({ pet: pets[petIndex], message: "Pet updated successfully", ok: true });
+        res.send({ pet: pets[petIndex], message: "Pet updated successfully", ok: true, pets });
 
     } catch (error) {
         console.error(error);

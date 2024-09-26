@@ -1,116 +1,110 @@
 class Pet {
-    Id: string;
+    id: string;
+    name: string;
     species: string;
-    yearOfBirth: number;
+    age: number;
     price: number;
-    imageurl: string;
+    imageURL?: string;
 
-    constructor(species: string, age: number, price: number) {
-        this.Id = Math.random().toString();
+    constructor(id: string, name: string, species: string, age: number, price: number) {
+        this.id = crypto.randomUUID();
+        this.name = name;
         this.species = species;
-        this.yearOfBirth = new Date().getFullYear() - age;
+        this.age = new Date().getFullYear() - age;
         this.price = price;
-        this.imageurl = this.imageurl
     }
 }
 
-const apiUrl = 'http://localhost:3000/pets';
-
-async function handleAddPet(event: Event) {
-    event.preventDefault();
-
-    const name = (document.getElementById('pet-name') as HTMLInputElement).value;
-    const species = (document.getElementById('pet-species') as HTMLInputElement).value;
-    const age = parseInt((document.getElementById('pet-age') as HTMLInputElement).value);
-    const price = parseFloat((document.getElementById('pet-price') as HTMLInputElement).value);
-    const imageUrl = (document.getElementById('pet-image') as HTMLInputElement).value;
-
-    createPet(species, age, price, imageUrl);
+function renderPet(pet: Pet) {
+    const html = `
+    <img src="${pet.imageURL}" alt="${pet.name}">
+    <h2>${pet.name}</h2>
+    <p>${pet.species}</p>
+    <p>${pet.age}</p>
+    <p>${pet.price}</p>
+    <button onclick="handleDeletePet('${pet.id}')">Delete</button>
+    `;
+    return html;
 }
 
-// Create Pet (POST)
-async function createPet(species: string, age: number, price: number,imageUrl:string) {
-    const newPet = { species, age, price, imageUrl };
-        const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newPet),
-    });
+function renderPets(pets: Pet[], domElement: HTMLElement|null) {
+    try {
+        const html = pets.map(pet => renderPet(pet)).join('');
+        if (!domElement) throw new Error('No element found');
+        domElement.innerHTML = html
 
-    if (response.ok) {
-        getAllPets(); 
-    } else {
-        console.error('Error creating pet');
+    } catch (error) {
+        console.error(error);
+
+    }
+
+}
+
+async function main(){
+    try {
+        const response = await fetch('http://localhost:3000/pets/get-all-pets');
+        if(!response.ok) throw new Error('Cannot fetch pets');
+        const {pets} = await response.json();
+        if(!pets) throw new Error('Cannot fetch pets deconstructed');
+        const _pets:Pet[] = pets.map((pet: any) => new Pet(pet.id, pet.name, pet.species, pet.age, pet.price));
+        renderPets(pets, document.querySelector('#pet-container'));
+
+
+    } catch (error) {
+        console.error(error);
+        
     }
 }
 
-async function getAllPets() {
-    const response = await fetch(apiUrl);
+async function handelAddPetToDB(e:any){
+    e.preventDefault();
+    try {
+       const form = e.target;
+         const pet = {
+              name: form.name.value,
+              species: form.species.value,
+              age: form.age.valueAsNumber,
+              price: form.price.valueAsNumber,
+              imageURL: form.imageURL.value
+         }
+        
+            const response = await fetch('http://localhost:3000/pets/add-pet',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(pet)
+            });
 
-    if (response.ok) {
-        const data = await response.json();
-        renderPets(data.pets);
-    } else {
-        console.error('Error fetching pets');
+            if(!response.ok) throw new Error('Cannot add pet');
+            const {pets, error} = await response.json();
+            console.log(error);
+            if(!pets) throw new Error('Cannot add pet deconstructed');
+            console.log(pets)
+            renderPets(pets, document.querySelector('#pet-container'));
+
+    } catch (error) {
+        console.error(error);
     }
 }
 
-function renderPets(pets: Pet[]) {
-    const petContainer = document.getElementById('pet-container');
-    if (!petContainer) {
-        console.error('No element with ID "pet-container" found.');
-        return;
-    }
 
-    petContainer.innerHTML = ''; 
-
-    pets.forEach(pet => {
-        const petElement = document.createElement('div');
-        petElement.innerHTML = `
-            <h3>${pet.species}</h3>
-            <p>Year of Birth: ${pet.yearOfBirth}</p>
-            <p>Price: ${pet.price}</p>
-            <button onclick="deletePet('${pet.Id}')">Delete</button>
-            <button onclick="editPet('${pet.Id}')">Edit</button>
-        `;
-        petContainer.appendChild(petElement);
-    });
-}
-
-// Update Pet (PUT)
-async function updatePet(id: string, species: string, age: number, price: number) {
-    const updatedPet = { species, yearOfBirth: new Date().getFullYear() - age, price };
-
-    const response = await fetch(`${apiUrl}/${id}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updatedPet),
-    });
-
-    if (response.ok) {
-        getAllPets(); 
-    } else {
-        console.error('Error updating pet');
+async function handleDeletePet(id:string){
+    try {
+        if(!id) throw new Error('No id');
+        const response = await fetch(`http://localhost:3000/pets/delete-pet/${id}`,{
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({petId:id})
+        });
+        if(!response.ok) throw new Error('Cannot delete pet');  
+        const {pets, error} = await response.json();
+        if(!pets) throw new Error('Cannot delete pet deconstructed');
+        renderPets(pets, document.querySelector('#pets'));
+    } catch (error) {
+        console.error(error);
     }
 }
 
-// Delete Pet (DELETE)
-async function deletePet(id: string) {
-    const response = await fetch(`${apiUrl}/${id}`, {
-        method: 'DELETE',
-    });
-
-    if (response.ok) {
-        getAllPets();
-    } else {
-        console.error('Error deleting pet');
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    getAllPets();
-});

@@ -23,7 +23,15 @@
 
                 <button onclick="handleGetAllTasks()">Get All Tasks</button>
             </div>
-
+            <div>
+                <h4>Add new Tasks</h4>
+                <form id="add-task-form" onsubmit="handleAddUser(event)">
+                    <input type="text" name="name" id="name" placeholder="Enter Name" required>
+                    <input type="text" name="title" id="title" placeholder="Enter Title" required>
+                    <input type="number" name="age" id="age" placeholder="Enter Age" required>
+                    <input type="submit" id="add-task" value="Add User">
+                <p id="add-task-message"></p>
+            </div>
         </div>
         <div id="users"></div>
         <!-- <div id="tasks"></div> -->

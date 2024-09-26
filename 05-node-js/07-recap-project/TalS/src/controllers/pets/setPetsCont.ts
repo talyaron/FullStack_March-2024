@@ -9,8 +9,9 @@ export function addPet(req: any, res: any) {
     const newPet = new Pet(name, species, age, price);
     pets.push(newPet);
     res.status(200).send({ newPet, ok: true });
+    
   } catch (error: any) {
     console.error(error);
-    res.status(500).send("internal server error", error.messege);
+    res.status(500).send("internal server error", error.message);
   }
 }
