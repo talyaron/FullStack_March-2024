@@ -11,7 +11,7 @@ export function entranceToAdminPage() {
     });
 }
 
-export function renderPage(page: string, pet?: Pet) {
+export function renderPage(page: string, pet?: Pet, filteredPets?: Pet [], selectvalue?: string) {
     const app = document.querySelector('#app') as HTMLElement;
     if (page === "home") {
         app.innerHTML = renderHomePage();
@@ -20,6 +20,10 @@ export function renderPage(page: string, pet?: Pet) {
         switch (page) {
             case "admin":
                 app.innerHTML += renderAdminPage();
+                break;
+
+            case "allPets":
+                (filteredPets ? app.innerHTML += renderPets(false, filteredPets, selectvalue) : app.innerHTML += renderPets());
                 break;
 
             case "addPet":
@@ -43,7 +47,7 @@ export function renderPage(page: string, pet?: Pet) {
 }
 
 function renderHomePage() {
-    const html = renderHeader(true) + renderWelcome() + renderEvents() + renderPets() + renderContact() + renderFooter();
+    const html = renderHeader(true) + renderWelcome() + renderEvents() + renderPets(true) + renderContact() + renderFooter();
     return html
   }
 
@@ -81,8 +85,8 @@ function renderTablePets() {
                     <td>${pet.story}</td>
                     <td>${pet.shortStory}</td>
                     <td>${pet.care}</td>
-                    <td><button class="edit-btn">Edit card</button></td>
-                    <td><button class="delete-btn">Happily Homed 🎉</button></td>
+                    <td><button class="table-edit-btn">Edit card</button></td>
+                    <td><button class="table-delete-btn">Happily Homed 🎉</button></td>
                 </tr>
                 `;
     })
@@ -141,7 +145,7 @@ function renderWelcome() {
   function renderPet(pet: Pet) {
     const petCart = `
         <div class="pets-list__pet-cart" id="${pet.id}">
-            <img src="${pet.image}" alt="${pet.name}">
+            <div class="pets-list__pet-image"><img src="${pet.image}" alt="${pet.name}"></div>
             <h3>${pet.name}</h3>
             <p>${pet.type}/${pet.breed}</p>
             <p>${pet.shortStory}</p>
@@ -150,18 +154,38 @@ function renderWelcome() {
     return petCart
   }
 
-  function renderPets() {
+  function renderPets(home?: boolean, filteredPets?: Pet[], selectvalue?: string) {
+    let petsList = [];
     const randomPetsList = getRandomAnimals(pets, 6);
-    const petsList = randomPetsList.map((pet) => renderPet(pet));
+    (home ? petsList = randomPetsList.map((pet) => renderPet(pet)) : (filteredPets ? petsList = filteredPets.map((pet) => renderPet(pet)) :petsList = pets.map((pet) => renderPet(pet))));
     const petsCart = `
-        <h2 id="our-pets">Our Pets</h2>
-        <section class="pets-list">
-            ${petsList.join('')}
+        <section id="pets">
+            <h2 id="our-pets">Our Pets</h2>
+            ${(home ? '' : (filteredPets ? selectValue(selectvalue!) : '<div class="pets-list__filter"><select id="type-pet" name="type-pet""><option value="All">All</option><option value="Dog">Dog</option><option value="Cat">Cat</option><option value="Parrot">Bird</option><option value="Snake">Reptiles</option></select><input type="text" id="search-pet" placeholder="Search for a pet"><button id="search-btn">Search</button></div>') )}
+            <section class="pets-list">
+                ${petsList.join('')}
+                ${home ? '<button id="all-pets">All our Pets</button>' : ''}
+            </section>
         </section>
     `;
     return petsCart
   }
 
+  function selectValue(selectvalue: string) {
+    const html = `
+    <div class="pets-list__filter">
+        <select id="type-pet" name="type-pet"">
+            <option value="All" ${(selectvalue === 'All' ? 'selected' : '')}>All</option>
+            <option value="Dog" ${(selectvalue === 'Dog' ? 'selected' : '')}>Dog</option>
+            <option value="Cat" ${(selectvalue === 'Cat' ? 'selected' : '')}>Cat</option>
+            <option value="Parrot" ${(selectvalue === 'Parrot' ? 'selected' : '')}>Bird</option>
+            <option value="Snake" ${(selectvalue === 'Snake' ? 'selected' : '')}>Reptiles</option>
+        </select>
+        <input type="text" id="search-pet" placeholder="Search for a pet">
+        <button id="search-btn">Search</button>
+    </div>`;
+    return html
+}
 
   function renderContact() {
     const contact = `

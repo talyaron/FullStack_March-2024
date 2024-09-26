@@ -13,6 +13,7 @@ export function activateLinks() {
         handleClickDeleteBtn();
         handleClickEditBtnOnTable();
         handleUpdateFormSubmit();
+        handleTypeChange();
     } catch (error) {
         console.error(error);
     }
@@ -27,7 +28,7 @@ export function entranceToAdminPage() {
 
 function handleClickDeleteBtn() {
     try {
-        const deleteBtns = document.querySelectorAll('.delete-btn');
+        const deleteBtns = document.querySelectorAll('.table-delete-btn');
         if (deleteBtns.length > 0) {
             deleteBtns.forEach((deleteBtn) => {
                 deleteBtn.addEventListener('click', () => {
@@ -66,7 +67,7 @@ async function deletePetFromDB(id: string) {
 
 function handleClickEditBtnOnTable() {
     try {
-        const editBtns = document.querySelectorAll('.edit-btn');
+        const editBtns = document.querySelectorAll('.table-edit-btn');
         if (editBtns.length > 0) {
             editBtns.forEach((editBtn) => {
                 editBtn.addEventListener('click', () => {
@@ -85,40 +86,6 @@ function handleClickEditBtnOnTable() {
     } catch (error) {
         console.error(error);
     }
-}
-
-function handleUpdateFormSubmit() {
-    try {
-        const updateBtn = document.querySelector('.edit-btn') as HTMLButtonElement;
-        updateBtn?.addEventListener('click', async () => {
-            const id = updateBtn.id;
-            console.log(id, 'updatePetBtn');
-            await updatePetOnDB(id);
-            renderPage('admin');
-        });
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-async function updatePetOnDB(id: string) {
-    const response = await fetch(`api/pets/update-pet/${id}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            name: document.querySelector('#name') as HTMLInputElement,
-            type: document.querySelector('#type') as HTMLInputElement,
-            breed: document.querySelector('#breed') as HTMLInputElement,
-            story: document.querySelector('#story') as HTMLInputElement,
-            shortStory: document.querySelector('#short-story') as HTMLInputElement,
-            image: document.querySelector('#image') as HTMLInputElement,
-            care: document.querySelector('#care') as HTMLInputElement
-        }),
-    });
-    const pet: Pet = await response.json();
-    return pet
 }
 
 function handleClickToPetCart() {
@@ -162,8 +129,7 @@ function handleClickToMenu() {
         });
         const petsBtn = document.querySelector('#nav-pets');
         petsBtn?.addEventListener('click', () => {
-            renderPage('home');
-            document.querySelector("#our-pets")!.scrollIntoView();
+            renderPage('allPets');
         });
         const contactBtn = document.querySelector('#nav-contact');
         contactBtn?.addEventListener('click', () => {
@@ -230,4 +196,69 @@ async function addPetToDB(name: string, type: string, breed: string, story: stri
     });
     const pet: Pet = await response.json();
     return pet
+}
+
+function handleUpdateFormSubmit() {
+    try {
+        const updateBtn = document.querySelector('.edit-btn') as HTMLButtonElement;
+        updateBtn?.addEventListener('click', async () => {
+            const id = updateBtn.id;
+            const form = document.querySelector('#add-pet-form') as HTMLFormElement;
+            if (!form) throw new Error('Form not found');
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const name = form.name.value as string;
+                const type = form.type.value as string;
+                const breed = form.breed.value as string;
+                const story = form.story.value as string;
+                const shortStory = form.shortStory.value as string;
+                const image = form.image.value as string;
+                const care = form.care.value as string;
+            await updatePetOnDB(id, name, type, breed, story, shortStory, image, care);
+            await getDataFromDB();
+            renderPage('admin');
+            form.reset();
+            });
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function updatePetOnDB(id: string, name: string, type: string, breed: string, story: string, shortStory: string, image: string, care: string) {
+    const response = await fetch(`api/pets/edit-pet/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name,
+            type,
+            breed,
+            story,
+            shortStory,
+            image,
+            care
+        }),
+    });
+    const pet: Pet = await response.json();
+    return pet
+}
+
+function handleTypeChange() {
+    try {
+        const typeSelect = document.querySelector('#type-pet') as HTMLSelectElement;
+        typeSelect?.addEventListener('change', () => {
+            const type = typeSelect.value as string;
+            const selectvalue = typeSelect.value;
+            if (type === 'All') {
+                renderPage('allPets');
+                return;
+            }
+            const filteredPets: Pet[] = pets.filter((pet) => pet.type === type);
+            renderPage('allPets', undefined, filteredPets, selectvalue);
+        });
+    } catch (error) {
+        console.error(error);
+    }
 }
