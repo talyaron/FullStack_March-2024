@@ -15,7 +15,7 @@ mongoose.connect('mongodb+srv://mayalevy20:e0ok6g2sVajOLOhu@cluster0.emeus.mongo
 
 const Cat = mongoose.model('Cat', { name: String, date:String }); 
 
-const kitty = new Cat({ name: 'Kitty', date:'2021-09-26' }); 
+const kitty = new Cat({ name: 'Simba', date:'2021-09-26' }); 
 kitty.save().then(() => console.log('meow')).catch((err:any)=>console.log(err)); 
 
 
