@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(255, 226, 193);
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+
+    .koteret {
+        color: chocolate;
+        margin: 1rem;
+    }
+
+    .add-pet-form {
+        display: grid;
+        justify-items: center;
+        background-color: antiquewhite;
+        width: 20%;
+        padding: 1rem;
+        margin: auto;
+
+        input {
+            margin: .5rem;
+            padding: 0.5rem;
+            width: 80%;
+        }
+
+        button {
+            margin: .5rem;
+            padding: 0.5rem;
+            width: 50%;
+        }
+    }
+
+    .pets {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .pet-card {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                width: 75%;
+                height: 75%;
+                object-fit: scale-down;
+            }
+
+            h2 {
+                margin: 0.5rem;
+            }
+
+            p {
+                margin: 0.2rem;
+            }
+
+            button {
+                align-self: flex-start;
+            }
+        }
+    }
+}
