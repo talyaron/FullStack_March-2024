@@ -1,5 +1,3 @@
-import mongoose from "mongoose";
-
 export class Pet{
     id:string;
     name:string;
@@ -33,15 +31,3 @@ export class Pet{
     }
  }
  export const pets:Pet[]=[new Pet('rocky','dog',13,50)];
-
-
- export const PetSchema = new mongoose.Schema({
-    id: String,
-    name: String,
-    species: String,
-    age: Number,
-    price: Number,
-    imageURL: String
-  });
-  
-  export const PetModel = mongoose.model('Pet', PetSchema);

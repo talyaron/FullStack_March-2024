@@ -19,14 +19,12 @@ class Pet {
 //view
 function renderPet(pet: Pet) {
     const html = `
-    <div class="pet" >
     <img src="${pet.imageURL}" alt="${pet.name}">
     <h2>${pet.name}</h2>
     <p>${pet.species}</p>
     <p>${pet.age}</p>
     <p>${pet.price}</p>
     <button onclick="handleDeletePet('${pet.id}')">Delete</button>
-    </div>
     `;
     return html;
 }
