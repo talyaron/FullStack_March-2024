@@ -1,23 +1,5 @@
-// model
-class Pet {
-    id: string;
-    name: string;
-    species: string;
-    age: number;
-    price: number;
-    imageURL?: string;
-
-    constructor(id: string, name: string, species: string, age: number, price: number) {
-        this.id = id;
-        this.name = name;
-        this.species = species;
-        this.age = new Date().getFullYear() - age;
-        this.price = price;
-    }
-}
-
 //view
-function renderPet(pet: Pet) {
+function renderPet(pet: any) {
     const html = `
     <div class="pet" >
     <img src="${pet.imageURL}" alt="${pet.name}">
@@ -31,7 +13,7 @@ function renderPet(pet: Pet) {
     return html;
 }
 
-function renderPets(pets: Pet[], domElement: HTMLElement|null) {
+function renderPets(pets:any, domElement: HTMLElement|null) {
     try {
         const html = pets.map(pet => renderPet(pet)).join('');
         if (!domElement) throw new Error('No element found');
@@ -50,7 +32,6 @@ async function main(){
         if(!response.ok) throw new Error('Cannot fetch pets');
         const {pets} = await response.json();
         if(!pets) throw new Error('Cannot fetch pets deconstructed');
-        const _pets:Pet[] = pets.map((pet: any) => new Pet(pet.id, pet.name, pet.species, pet.age, pet.price));
         renderPets(pets, document.querySelector('#pets'));
 
 
@@ -100,12 +81,11 @@ async function handleDeletePet(id:string){
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({petId:id})
+            body: JSON.stringify({ id })
         });
-        if(!response.ok) throw new Error('Cannot delete pet');  
-        const {pets, error} = await response.json();
-        if(!pets) throw new Error('Cannot delete pet deconstructed');
-        renderPets(pets, document.querySelector('#pets'));
+        if(!response.ok) throw new Error('Cannot delete pet');
+
+        main();
     } catch (error) {
         console.error(error);
     }
