@@ -1,17 +1,18 @@
-import {pets }from '../../src/model/petModel'
-import { PetModel } from '../../src/model/petModel';
+import { PetModel, pets } from '../../src/model/petModel'
 
 
-export async function getAllPets(req:any,res:any){
+export async function getAllPets(req: any, res: any) {
     try {
-        
         const pets = await PetModel.find();
         console.log(pets)
         res.send({ pets });
+
     } catch (error) {
         console.error(error);
     }
 }
+
+
 export async function getAllPetsUnderAge(req: any, res: any) {
     try {
         const { age } = req.params;
@@ -24,14 +25,13 @@ export async function getAllPetsUnderAge(req: any, res: any) {
         res.status(500).send({ error: error.message });
     }
 }
-export async function getAllPetsSpecies(req: any, res: any) {
+
+export async function getAllDogs(req: any, res: any) {
     try {
-        const { species } = req.params;
-        const pets = await PetModel.find({ species});
+        const pets = await PetModel.find({ species: 'dog' });
         console.log(pets)
         res.send({ pets });
-
-    } catch (error:any) {
+    }catch(error:any) {
         console.error(error);
         res.status(500).send({ error: error.message });
     }
