@@ -1,10 +1,13 @@
 import {pets }from '../../src/model/petModel'
+import { PetModel } from '../../src/model/petModel';
 
 
-export function getAllPets(req:any,res:any){
+export async function getAllPets(req:any,res:any){
     try {
         
-        res.send({pets:pets});
+        const pets = await PetModel.find();
+        console.log(pets)
+        res.send({ pets });
     } catch (error) {
         console.error(error);
     }

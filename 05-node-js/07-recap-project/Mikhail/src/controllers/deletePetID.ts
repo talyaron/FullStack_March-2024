@@ -1,20 +1,20 @@
 import {pets }from '../../src/model/petModel'
+import { PetModel } from '../../src/model/petModel';
 
 
-export function deletePetID(req:any,res:any){
+export async function deletePetID(req:any,res:any){
     try {
     
         const {petID} = req.params;
         
     
-        if (!petID) throw new Error("bad task ID");
+        if (!petID) throw new Error("bad pet ID");
     
-        const petsIndex = pets.findIndex(pet => pet.id === petID);
-        if (petsIndex === -1) throw new Error("Task not found");
+        const deletedPet = await PetModel.findByIdAndDelete(petID);
+        if (!deletedPet) throw new Error("pet not found");  
     
-        pets.splice(petsIndex, 1);
-    
-        res.send({ ok: true })
+        const updatedPets = await PetModel.find();  // Fetch all pets after deletion
+        res.send({ ok: true, pets: updatedPets });
       } catch (error:any) {
         console.error(error)
         res.send({ ok: false, error: error.message })
