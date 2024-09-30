@@ -1,4 +1,4 @@
-import { PetModel } from '../../src/model/petModel'
+import { PetModel } from '../../model/petModel'
 
 
 export async function updatePetID(req: any, res: any) {

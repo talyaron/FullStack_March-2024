@@ -1,4 +1,4 @@
-import {PetModel }from '../../src/model/petModel'
+import {PetModel }from '../../model/petModel'
 
 
 export async function deletePetID(req:any,res:any){
