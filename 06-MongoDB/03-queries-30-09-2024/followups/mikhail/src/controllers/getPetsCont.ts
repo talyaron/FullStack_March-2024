@@ -1,17 +1,18 @@
-import {pets }from '../../src/model/petModel'
-import { PetModel } from '../../src/model/petModel';
+import { PetModel, pets } from '../../src/model/petModel'
 
 
-export async function getAllPets(req:any,res:any){
+export async function getAllPets(req: any, res: any) {
     try {
-        
         const pets = await PetModel.find();
         console.log(pets)
         res.send({ pets });
+
     } catch (error) {
         console.error(error);
     }
 }
+
+
 export async function getAllPetsUnderAge(req: any, res: any) {
     try {
         const { age } = req.params;
