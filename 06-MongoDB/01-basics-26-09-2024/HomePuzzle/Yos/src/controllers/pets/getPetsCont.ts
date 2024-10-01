@@ -1,4 +1,4 @@
-import { PetModel, fetchAllPets, Pet }from '../model/petModel'
+import { PetModel, fetchAllPets, Pet }from '../../model/pets/petModel'
 
 
 export async function getAllPets(req:any,res:any){

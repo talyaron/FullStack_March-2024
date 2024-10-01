@@ -1,7 +1,7 @@
 
 import express from 'express';
-import { getAllPets } from '../controllers/getPetsCont';
-import { getAllUsers } from '../controllers/getAllUsers';
+import { getAllPets } from '../controllers/pets/getPetsCont';
+import { getAllUsers } from '../controllers/users/getAllUsers';
 
 
 const router = express.Router()

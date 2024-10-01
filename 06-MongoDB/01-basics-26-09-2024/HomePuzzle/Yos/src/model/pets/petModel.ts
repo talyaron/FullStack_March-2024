@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import { saveSpecies } from "../species/speciesModel";
+
 
 export class Pet {
   id: string;
@@ -44,7 +46,7 @@ export const pets: Pet[] = [
   new Pet(
     crypto.randomUUID().toString(),
     "rocky",
-    "dog",
+    "Dog",
     13,
     50,
     "https://cdn.pixabay.com/photo/2018/10/01/09/21/pets-3715733_640.jpg"
@@ -52,7 +54,7 @@ export const pets: Pet[] = [
   new Pet(
     crypto.randomUUID().toString(),
     "kitty",
-    "cat",
+    "Cat",
     5,
     30,
     "https://t4.ftcdn.net/jpg/02/26/53/33/360_F_226533348_TiIz0m2dU4dBXC6yFJrNOfXfh5YcEecY.jpg"
@@ -60,7 +62,7 @@ export const pets: Pet[] = [
   new Pet(
     crypto.randomUUID().toString(),
     "bunny",
-    "rabbit",
+    "Rabbit",
     2,
     20,
     "https://t3.ftcdn.net/jpg/04/81/85/46/360_F_481854656_gHGTnBscKXpFEgVTwAT4DL4NXXNhDKU9.jpg"
@@ -68,7 +70,7 @@ export const pets: Pet[] = [
   new Pet(
     crypto.randomUUID().toString(),
     "fluffy",
-    "dog",
+    "Dog",
     4,
     40,
     "https://img.freepik.com/premium-photo/dog-cat-are-laying-rug-with-dog-pet-care-hd-quality-image-website_1286196-1697.jpg"
@@ -76,7 +78,7 @@ export const pets: Pet[] = [
   new Pet(
     crypto.randomUUID().toString(),
     "bella",
-    "cat",
+    "Cat",
     3,
     30,
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG2q03WBtyTfE9IuUPg0rCFsnN7fs2xCpyeuEDewbrruhTjnaRCFJidkaWhIb4AyS1d60&usqp=CAU"
@@ -86,13 +88,18 @@ export const pets: Pet[] = [
 export const PetSchema = new mongoose.Schema({
   id: String,
   name: String,
-  species: String,
+  species: { type: mongoose.Schema.Types.ObjectId, ref: 'Species', required: true },
   age: Number,
   price: Number,
   imageURL: String,
+  client: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  status: { type: String, enum: ['cart', 'sold'], default: 'cart' }
+
 });
 
 export const PetModel = mongoose.model("Pet", PetSchema);
+
+const species = saveSpecies();
 
 // insert data pet into mongodb
 pets.forEach((pet) => {
@@ -133,3 +140,4 @@ export const fetchAllPets = async (): Promise<Pet[]> => {
     return [];
   }
 };
+
