@@ -1,4 +1,5 @@
 import {pets }from '../../src/model/petModel'
+import {} from '../model/petModel
 
 
 export function deletePetID(req:any,res:any){

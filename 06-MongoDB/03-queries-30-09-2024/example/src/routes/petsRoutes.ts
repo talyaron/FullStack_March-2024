@@ -1,10 +1,10 @@
 
 import express from 'express';
-import { getAllPets, getAllPetsUnderAge } from '../controllers/getPetsCont';
-import {addPet} from '../controllers/setPets'
-import { getPetID } from '../controllers/getPetID';
-import { updatePetID } from '../controllers/updatePetID';
-import { deletePetID } from '../controllers/deletePetID';
+import { getAllPets, getAllPetsUnderAge } from '../controllers/pets/getPetsCont';
+import {addPet} from '../controllers/pets/setPets'
+import { getPetID } from '../controllers/pets/getPetID';
+import { updatePetID } from '../controllers/pets/updatePetID';
+import { deletePetID } from '../controllers/pets/deletePetID';
 
 const router = express.Router()
 
