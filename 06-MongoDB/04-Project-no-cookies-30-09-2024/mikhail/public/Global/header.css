@@ -1,0 +1,87 @@
+header {
+  height: 4rem;
+  display: flex;
+  direction: rtl;
+  background-color: #18181c;
+}
+header .header-right {
+  height: 4rem;
+  width: 50vw;
+}
+header .header-right .material-icons {
+  background-color: rgb(138, 137, 137);
+  margin-right: 2rem;
+  border-radius: 20px;
+}
+header .header-right .material-icons:hover {
+  background-color: rgb(174, 174, 174);
+  cursor: pointer;
+}
+header .header-right .button--download {
+  background-color: #26bbff;
+  margin-right: 1rem;
+}
+header .header-right .button--download:hover {
+  color: rgb(36, 36, 36);
+  background-color: #31aafa;
+}
+header .header-left {
+  width: 50vw;
+  height: 4rem;
+  direction: ltr;
+  display: flex;
+}
+header .header-left .logo {
+  border-right: solid grey 1px;
+  width: 7rem;
+}
+header .header-left .logo .header-logo {
+  width: 30px;
+  margin-left: 2rem;
+}
+header .header-left .logo .header-logo:hover {
+  cursor: pointer;
+}
+header .header-left .logo .material-icons {
+  background-color: #18181c;
+  margin-left: 0.5rem;
+  border-radius: 20px;
+  color: rgb(182, 181, 181);
+}
+header .header-left .logo .material-icons:hover {
+  color: white;
+}
+header .header-left .header-store {
+  width: 55px;
+  margin-left: 2rem;
+}
+header .header-left .header-store:hover {
+  cursor: pointer;
+}
+header .header-left .button--support {
+  background-color: #18181c;
+  border: 0;
+  color: rgb(182, 181, 181);
+  margin-left: 1rem;
+}
+header .header-left .button--support:hover {
+  background-color: rgb(138, 137, 137);
+  color: white;
+}
+header .header-left .button--distribute {
+  background-color: #18181c;
+  border: 0;
+  color: rgb(182, 181, 181);
+}
+header .header-left .button--distribute:hover {
+  background-color: rgb(138, 137, 137);
+  color: white;
+}
+@media screen and (max-width: 1200px) {
+  header .button--distribute {
+    display: none;
+  }
+  header .button--support {
+    display: none;
+  }
+}/*# sourceMappingURL=header.css.map */
