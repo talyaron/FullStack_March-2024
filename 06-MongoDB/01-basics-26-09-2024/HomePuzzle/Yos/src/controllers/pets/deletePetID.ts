@@ -1,4 +1,4 @@
-import { fetchAllPets, Pet, PetModel } from "../model/petModel";
+import { fetchAllPets, Pet, PetModel } from "../../model/pets/petModel";
 
 export async function deletePetID(req: any, res: any) {
   try {

@@ -1,4 +1,4 @@
-import { UserModel, fetchAllUsers, User }from '../model/userModel'
+import { UserModel, fetchAllUsers, User }from '../../model/users/userModel'
 
 
 export async function getAllUsers(req:any,res:any){

@@ -1,4 +1,4 @@
-import { PetModel } from "../model/petModel";
+import { PetModel } from "../../model/pets/petModel";
 
 export async function addPet(req: any, res: any) {
   try {
