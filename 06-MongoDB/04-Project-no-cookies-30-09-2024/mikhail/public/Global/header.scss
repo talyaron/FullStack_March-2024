@@ -30,7 +30,13 @@ header{
 
         }
     }
-   
+   .button--signin{
+    background-color: #404044;
+    color:white;
+    &:hover{
+        background-color: #a6a6a6;
+    }
+   }
   }
   .header-left{
     width: 50vw;

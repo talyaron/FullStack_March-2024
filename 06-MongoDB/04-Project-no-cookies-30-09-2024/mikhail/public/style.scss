@@ -9,17 +9,16 @@
     .button--discover{
         border:0;
         background-color: #121212;
-        color: white;
-        
-    }
-    .button--browse{
-        border:0;
-        background-color: #121212;
-        color: rgb(182, 181, 181);
+        color: rgb(182, 181, 181);;
         &:hover{
             color: white;
         }
-
+    }
+    .button--browse{
+        border:1px solid white;
+        background-color: #121212;
+        color: white;
+        border-radius: 5px;
 
     }
     .button--news{
@@ -36,14 +35,14 @@
         display: flex;
         margin-left: 14vw;
         height: 4vh;
+        
     .material-icons{
         background-color: rgb(182, 181, 181);
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
         border-right: 0;
-        &:hover{
-            cursor: pointer;
-        }
+        
+            
     }
     .search-input{
         background-color: rgb(182, 181, 181);
@@ -53,7 +52,12 @@
         border-top:0;
         border-bottom:0;
     }
-
+    
+        &:hover .search-input, &:hover .material-icons{
+            background-color: white;
+            cursor: pointer;
+        }
+    
 }
 }
 .sales{
