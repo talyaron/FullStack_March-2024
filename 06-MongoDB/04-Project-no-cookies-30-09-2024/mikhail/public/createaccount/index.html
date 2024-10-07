@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create account</title>
+    <link rel="stylesheet" href="../Global/dist/button.css">
+    <link rel="stylesheet" href="../dist/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../Global/dist/body.css">
+    <link rel="stylesheet" href="./dist/style.css">
+    
 </head>
 <body>
-    
+    <div id="app">
+        <script src="./dist/index.js"></script>
+        <div class="window">
+            <div class="logo">
+                <img id="logo" src="../Global/epic.png" alt="Epic Games logo">
+            </div>
+            <div class="date-birth">
+                <form id="date-birth-form">
+                <h4 id="create-account">Create Account</h4>
+                <p id="grey">Please enter your date of birth. This is to help you have a safe and fun experience whatever your age.</p>
+                <div class="inputs">
+                <input class="year" type="number" placeholder="Year" required  max="2024"/>
+                <input class="month" type="number" placeholder="Month" required max="12"/>
+                <input class="day" type="number" placeholder="Day" required max="31"/>
+            </div>
+                <button id="submit" type="submit" value="continue" onsubmit="handleCreateAccount(event)">CONTINUE</button>
+                </form>
+            <label id="grey">Already have an account?</label><a href="../sign-in/signin.html"><label id="signin"> Sign in</label></a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

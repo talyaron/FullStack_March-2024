@@ -29,6 +29,12 @@ body{
         #signin-form{
             display: flex;
             flex-direction: column;
+            button{
+                background-color: rgb(0, 116, 228);
+                &:hover{
+                    filter: brightness(1.2);
+                }
+            }
         }
         
         #sign-in{
