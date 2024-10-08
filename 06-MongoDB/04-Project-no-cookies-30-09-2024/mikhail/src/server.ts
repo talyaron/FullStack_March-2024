@@ -1,4 +1,6 @@
 import express from 'express';
+import clientRouter from './router/clientRoutes'
+import { ClientModel } from './model/clientmodel';
 
 const app = express()
 const port = 3000
@@ -15,7 +17,7 @@ mongoose.connect('mongodb+srv://HotNuggets:ieoBkUDlsayOqaoT@cluster0.z25jn.mongo
 
 app.use(express.static('public'));
 
-
+app.use('/client',clientRouter)
 
 
 app.get('/', (req:any, res:any) => {

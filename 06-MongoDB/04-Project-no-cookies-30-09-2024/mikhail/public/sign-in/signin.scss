@@ -1,0 +1,149 @@
+
+body{
+   #account{
+    color:white;
+    cursor: pointer;
+   }
+#app{
+    padding-bottom: 30px;
+    
+.window{
+    
+    background-color: #2b2b2b;
+    width: 360px;
+    height: 500px;
+    padding:50px 55px 60px 55px;
+    position: absolute;
+    top:25px;
+    left:35%;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    .logo{
+        text-align: center;
+    #logo{
+        width: 3vw;
+          
+        }
+    }
+    .sign-in{
+        text-align: center;
+        margin-top: 50px;
+        color:white;
+        #signin-form{
+            display: flex;
+            flex-direction: column;
+            button{
+                display: inline-flex;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    -webkit-box-pack: center;
+                    justify-content: center;
+                    position: relative;
+                    box-sizing: border-box;
+                    -webkit-tap-highlight-color: transparent;
+                    cursor: pointer;
+                    user-select: none;
+                    vertical-align: middle;
+                    appearance: none;
+                    font-family: Inter, sans-serif;
+                    font-weight: 700;
+                    font-size: 0.75rem;
+                    line-height: 1.25;
+                    text-transform: uppercase;
+                    letter-spacing: 0.04em;
+                    width: 100%;
+                    box-shadow: none;
+                    min-width: 40px;
+                    min-height: 60px;
+                    text-align: center;
+                    background-color: rgb(0, 116, 228);
+                    color: rgb(255, 255, 255);
+                    outline: 0px;
+                    border-width: 0px;
+                    border-style: initial;
+                    border-color: initial;
+                    border-image: initial;
+                    margin: 0px;
+                    text-decoration: none;
+                    border-radius: 4px;
+                    padding: 5px 20px;
+                    &:hover{
+                        filter: brightness(1.2);
+                    }
+            }
+        }
+        
+        #sign-in{
+            color:white;
+            font-weight: 700;
+            font-family: Inter, sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.39;
+            letter-spacing: -0.01em;
+        }
+        #label{
+            color:white;
+            float: left;
+        }
+      }
+      .grid-images{
+        margin-top: 50px;
+        width: 100%;
+        padding: 0;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        
+      .grid-container {
+        margin-top: 20px;
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr); 
+        grid-template-rows: repeat(2, 1fr);
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        align-self: center;
+       
+        
+        .grid-item{
+            width: 54px;
+            height: 50px;
+            padding: 5px 10px;
+            margin: auto;
+            
+           
+            img{
+                width: 100%;
+                height: 100%;
+                
+            }
+        }
+        .xbox{
+            background-color: rgb(2, 125, 0);
+        }
+        .playstation{
+            background-color: rgb(0, 55, 145);
+        }
+        .nintendo{
+            background-color: rgb(233, 0, 0);
+        }
+        .steam{
+            background-color: rgb(20, 92, 143);
+        }
+        .facebook{
+            background-color: rgb(24, 119, 242);
+        }
+        .google{
+            background-color: rgb(254, 253, 253);
+        }
+        .apple{
+            background-color: rgb(255, 255, 255);
+        }
+        .lego{
+            background-color: rgb(255, 212, 0);
+        }
+      }
+    }
+    }
+}
+}
