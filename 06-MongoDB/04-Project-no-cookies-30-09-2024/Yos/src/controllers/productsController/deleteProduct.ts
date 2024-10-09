@@ -1,0 +1,21 @@
+// delete a product
+
+import mongoose from "mongoose";
+
+import Product from "../../models/productsModel/productModel";
+
+const deleteProduct = async (req:any, res:any) =>{
+    try {
+        const {id} = req.params;
+        if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).json({message: "No product with that id"});
+
+        const deletedProduct = await Product.findByIdAndRemove(id);
+        res.status(200).json({message: "Product deleted successfully", deletedProduct});
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({error: "Cant delete product"});
+        
+    }
+
+}
