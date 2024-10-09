@@ -5,4 +5,6 @@ const departmentSchema = new mongoose.Schema({
 })
 
 
+const Department = 
 module.exports = mongoose.model("Department", departmentSchema)
+export default Department;

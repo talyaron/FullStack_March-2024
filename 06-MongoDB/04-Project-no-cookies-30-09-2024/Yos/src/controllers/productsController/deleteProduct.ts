@@ -1,7 +1,6 @@
 // delete a product
 
 import mongoose from "mongoose";
-
 import Product from "../../models/productsModel/productModel";
 
 const deleteProduct = async (req:any, res:any) =>{
@@ -9,7 +8,7 @@ const deleteProduct = async (req:any, res:any) =>{
         const {id} = req.params;
         if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).json({message: "No product with that id"});
 
-        const deletedProduct = await Product.findByIdAndRemove(id);
+        const deletedProduct = await Product.findByIdAndDelete(id);
         res.status(200).json({message: "Product deleted successfully", deletedProduct});
 
     } catch (error) {

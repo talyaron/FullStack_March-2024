@@ -1,7 +1,7 @@
 //add product to the database
 
 import { Request, Response } from "express";
-import { Product } from "../../models/productsModel/productModel";
+import  Product  from "../../models/productsModel/productModel";
 
 export const createProduct = async (req:any, res:any) => {
   try {
