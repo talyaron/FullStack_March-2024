@@ -1,4 +1,4 @@
-import { ok } from "assert";
+
 import { ClientModel } from "../model/clientmodel";
 export async function addClient(req: any, res: any) {
     try {
@@ -11,7 +11,7 @@ export async function addClient(req: any, res: any) {
         await newClient.save()
 
         const clients = await ClientModel.find();
-        res.send("ok");
+        res.send({ message: "ok" });
     } catch (error: any) {
         console.error(error);
 
