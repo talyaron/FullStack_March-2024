@@ -5,6 +5,9 @@ import productsRoutes from "./routes/productsRoutes";
 import usersRoutes from "./routes/userRoutes";
 import mongoose from "mongoose";
 import { insertData }    from "./controllers/insertDataController";
+import department from "./models/departmentModel/department";
+import departmentRoutes from "./routes/departmentRoutes";
+
 
 const app = express();
 const port = 3000;
@@ -37,8 +40,16 @@ app.use(express.json());
 // app.use("/", express.static(path.join(__dirname, "../public")));
 
 console.log(__dirname);
+
+//products routes
 app.use("/api/products", productsRoutes);
+
+//users routes
 app.use("/api/users", productsRoutes);
+
+//departments routes
+app.use("/api/departments", departmentRoutes);
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
