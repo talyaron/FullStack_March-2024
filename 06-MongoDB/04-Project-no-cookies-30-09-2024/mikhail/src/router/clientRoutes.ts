@@ -4,6 +4,6 @@ import { loginClient } from '../controller/loginClient';
 const router = express.Router()
 
 router.post('/add-client', addClient)
-router.get('/login', loginClient)
+router.post('/login', loginClient)
 
 export default router
