@@ -23,7 +23,9 @@ function renderIndex(){
 
     const email = localStorage.getItem('email');
     const displayName = localStorage.getItem('displayName');
-const html = `<header>
+    let html;
+    if(displayName){
+html = `<header>
         <div class="header-right">
    <input class="button button--download" type="button" value="Download">
    <select id="useroptions">
@@ -62,9 +64,85 @@ const html = `<header>
     </div>
 
     
+</main>`;}
+else{
+    html = `<header>
+        <div class="header-right">
+   <input class="button button--download" type="button" value="Download">
+   <a ><input class="button button--signin" id="signin" type="button" value="Sign-in" ></a>
+   <i class="large material-icons" id="language">language</i>
+</div>
+<div class="header-left">
+    <div class="logo">
+    <img class="header-logo" src="./Global/epic.png" alt="Epic Games Logo">
+    <i class="large material-icons">keyboard_arrow_down</i>
+    </div>
+    <img class="header-store" src="https://media.graphassets.com/qAiDvosPSFGqJxTVuY7h" alt="Store">
+    <input class="button button--support" type="button" value="Support">
+    <input class="button button--distribute" type="button" value="Distribute">
+</div>
+</header>
+<main>
+    <div class="search-bar">
+        <div class="search">
+        <i class="large material-icons">search</i>
+        <input class="search-input" type="text" maxlength="20" placeholder="Search store"/>
+    </div>
+        <input class="button button--discover" type="button" value="Discover">
+        <input class="button button--browse" type="button" value="Browse">
+        <input class="button button--news" type="button" value="News">
+    </div>
+    <div class="sales">
+        <div class="sales-cards">
+        <img class="left-card" src="https://cdn2.unrealengine.com/en-mega-sale-breaker-asset-1920x1080-98514c483012.jpg?h=480&quality=medium&resize=1&w=854" alt="Mega Sale">
+        <img class="middle-card" src="https://cdn2.unrealengine.com/en-mega-sale-shopearnredeem-breaker-1920x1080-8a5667cc31f7.jpg?h=480&quality=medium&resize=1&w=854" alt="Shop, Earn, Redeem">
+        <img class="right-card" src="https://cdn2.unrealengine.com/en-featured-giveaways-breaker-1920x1080-0dbde30ffb23.jpg?h=480&quality=medium&resize=1&w=854" alt="Featured Giveaways">
+        </div>
+    </div>
+
+    
 </main>`;
 
+
+}
+
         root.innerHTML = html;
+
+        const userOptions = document.querySelector('#useroptions') as HTMLSelectElement;
+    if (userOptions) {
+        userOptions.addEventListener('change', (event) => {
+            if (userOptions.value === 'logout') {
+                handleLogOut();
+            }
+        });
+        userOptions.addEventListener('change', (event) => {
+            if (userOptions.value === 'library') {
+                renderLibrary();
+            }
+        });
+    }
+    const signin = document.querySelector('#signin') as HTMLButtonElement;
+
+    if (signin) {
+        signin.addEventListener('click', renderSignInPage);
+    } else {
+        console.error("Sign-in button not found");
+    }
+    
+}
+function renderLibrary(){
+    
+}
+function handleLogOut(){
+    localStorage.removeItem('email');
+    localStorage.removeItem('displayName');
+
+
+    localStorage.clear();
+
+    renderIndex();
+
+    
 }
 function renderSignInPage(){
 let root=document.querySelector('#app') as HTMLDivElement
