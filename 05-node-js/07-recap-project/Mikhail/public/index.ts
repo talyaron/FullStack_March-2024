@@ -27,7 +27,6 @@ function renderPet(pet: Pet) {
     <p>${pet.species}</p>
     <p>${pet.age}</p>
     <p>${pet.price}</p>
-    <p>${pet.id}</p>
     </div>
     <button onclick="handleDeletePet('${pet.id}')">Delete</button>
     </div>
@@ -54,8 +53,9 @@ async function main(){
         if(!response.ok) throw new Error('Cannot fetch pets');
         const {pets} = await response.json();
         if(!pets) throw new Error('Cannot fetch pets deconstructed');
-        const _pets:Pet[] = pets.map((pet: any) => new Pet(pet.id, pet.name, pet.species, pet.age, pet.price,pet.imageURL));
+        const _pets:Pet[] = pets.map((pet: any) => new Pet(pet._id, pet.name, pet.species, pet.age, pet.price,pet.imageURL));
         renderPets(_pets, document.querySelector('#pets'));
+    
 
 
     } catch (error) {
@@ -89,6 +89,7 @@ async function handelAddPetToDB(e:any){
             console.log(error);
             if(!pets) throw new Error('Cannot add pet deconstructed');
             console.log(pets)
+            form.reset();
             renderPets(pets, document.querySelector('#pets'));
 
     } catch (error) {
@@ -98,7 +99,7 @@ async function handelAddPetToDB(e:any){
 
 async function handleDeletePet(id:string){
     try {
-        console.log(id);
+        
         if(!id) throw new Error('No id');
         const response = await fetch(`http://localhost:3000/pets/delete-pet-id/${id}`,{
             method: 'DELETE',
@@ -107,9 +108,9 @@ async function handleDeletePet(id:string){
             },
         });
         if(!response.ok) throw new Error('Cannot delete pet');  
-        const {pets, error} = await response.json();
+        const {pets} = await response.json();
         if(!pets) throw new Error('Cannot delete pet deconstructed');
-        renderPets(pets, document.querySelector('#pets'));
+        main();
     } catch (error) {
         console.error(error);
     }
