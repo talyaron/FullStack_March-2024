@@ -1,11 +1,12 @@
 // delete a product
 
 import mongoose from "mongoose";
-import Product from "../../models/productsModel/productModel";
+import Product from "../../models/productsModel/product";
 
-const deleteProduct = async (req:any, res:any) =>{
+export const deleteProduct = async (req:any, res:any) =>{
     try {
         const {id} = req.params;
+        console.log(`delete product id ${id}`);
         if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).json({message: "No product with that id"});
 
         const deletedProduct = await Product.findByIdAndDelete(id);

@@ -1,10 +1,7 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose';
 
 const departmentSchema = new mongoose.Schema({
-    name: { type: String, required: true }
-})
+  name: { type: String, required: true }
+});
 
-
-const Department = 
-module.exports = mongoose.model("Department", departmentSchema)
-export default Department;
+export default mongoose.model('Department', departmentSchema);

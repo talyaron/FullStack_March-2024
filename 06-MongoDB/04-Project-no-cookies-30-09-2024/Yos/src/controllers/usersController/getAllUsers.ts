@@ -1,7 +1,7 @@
 // get all users from mongoose
 import mongoose from "mongoose";
 
-import User from "../../models/usersModel/userModel";
+import User from "../../models/usersModel/user";
 
 export const getAllUsers = async (req:any, res:any) =>{
     try {
