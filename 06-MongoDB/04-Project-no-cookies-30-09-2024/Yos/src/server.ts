@@ -4,26 +4,34 @@ import fs from "fs";
 import productsRoutes from "./routes/productsRoutes";
 import usersRoutes from "./routes/userRoutes";
 import mongoose from "mongoose";
+import { insertData }    from "./controllers/insertDataController";
 
 const app = express();
 const port = 3000;
-
 
 //read mongodb json settings
 const secretPath = path.resolve(__dirname, "./secret/mongodb.json");
 const secret = JSON.parse(fs.readFileSync(secretPath, "utf-8"));
 
 const mongodbUri = secret.mongodb.uri;
-mongoose.connect(mongodbUri).then(()=>{
-    console.log('connected to db')
+insertData().catch((err) => console.log(err));
+
+
+//connect to mongodb
+mongoose
+  .connect(mongodbUri, {
+    serverSelectionTimeoutMS: 5000,
   })
-  .catch((err:any)=>{
-    console.log(err)
+  .then(() => {
+    console.log("Successfully connected to MongoDB Atlas!");
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB Atlas:", err);
   });
+
 
 app.use(express.json());
 
-  
 // app.use(express.static("public"));
 // app.use("/users", express.static(path.join(__dirname, "../users")));
 // app.use("/", express.static(path.join(__dirname, "../public")));
