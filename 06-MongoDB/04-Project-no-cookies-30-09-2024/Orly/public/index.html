@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/style.css">
+ 
+    <title>Clothes store</title>
+</head>
+
+    <body onload="main()">
+        <header>
+            <h1>True Beauty Store</h1>
+            <nav>
+                <ul>
+                    <li><a href="/cart">Cart</a></li>
+                    <li><a href="index2.html">Login</a></li>
+                    <li><a href="index1.html">Register</a></li> 
+                </ul>
+            </nav>
+
+            
+        </header>
+     
+        <div id="product-list">
+            <div class="product-card">
+            <img src="dress.jpg" alt="Dress">
+            <h3>Elegant Dress</h3>
+            <p>Price: $100</p>
+            <p>A beautiful and elegant dress perfect for formal occasions.</p>
+            <button onclick="AddProductToCart('userId', 'productId')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="dress1.jpg" alt="Dress">
+            <h3>Elegant Dress</h3>
+            <p>Price: $80</p>
+            <p>A beautiful and elegant dress perfect for formal occasions.</p>
+            <button onclick="AddProductToCart('userId', 'productId')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="top.jpg" alt="Tops">
+            <h3>Casual Tops</h3>
+            <p>Price: $50</p>
+            <p>A comfortable and stylish top for everyday wear.</p>
+            <button onclick="AddProductToCart('userId', 'productId')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="top1.jpg" alt="Tops">
+            <h3>Casual Tops</h3>
+            <p>Price: $40</p>
+            <p>A comfortable and stylish top for everyday wear.</p>
+            <button onclick="AddProductToCart('userId', 'productId')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="skirt.jpg" alt="Skirt">
+            <h3>Stylish Skirt</h3>
+            <p>Price: $70</p>
+            <p>Chic and modern skirt perfect for a casual day out.</p>
+            <button onclick="AddProductToCart('userId', 'productId')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="skirt1.jpg" alt="Skirt">
+            <h3>Stylish Skirt</h3>
+            <p>Price: $60</p>
+            <p>Chic and modern skirt perfect for a casual day out.</p>
+            <button onclick="AddProductToCart('userId', 'productId')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="pants.jpg" alt="Pants">
+            <h3>Comfortable Pants</h3>
+            <p>Price: $90</p>
+            <p>Soft and comfy pants for all-day comfort and style.</p>
+            <button onclick="AddProductToCart('userId', 'productId')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="pants1.jpg" alt="Pants">
+            <h3>Comfortable Pants</h3>
+            <p>Price: $60</p>
+            <p>Soft and comfy pants for all-day comfort and style.</p>
+            <button onclick="AddProductToCart('userId', 'productId')">Add to Cart</button>
+        </div>
+        </div>
+       
+        <footer>
+            <p>&copy; 2024 My Store</p>
+        </footer>
+        <script src="./dist/public/index.js"></script>
+        <script src="../dist/src/controller/Product.js"></script>
+        <script src="../dist/src/controller/UserCart.js"></script>
+        <script src="../dist/src/controller/UserLogin.js"></script>
+        <script src="../dist/src/model/ProductModel.js"></script>
+        <script src="../dist/src/model/UserModel.js"></script>
+        <script src="../dist/src/routes/ProductRoutes.js"></script>
+        <script src="../dist/src/routes/UserRoutes.js"></script>
+        <script src="../dist/src/routes/server.js"></script>
+        
+        
+    </body>
+
+</html>

@@ -18,6 +18,54 @@ class game{
         }
 
 }
+function renderIndex(){
+    let root=document.querySelector('#app') as HTMLDivElement
+
+    const email = localStorage.getItem('email');
+    const displayName = localStorage.getItem('displayName');
+const html = `<header>
+        <div class="header-right">
+   <input class="button button--download" type="button" value="Download">
+   <select id="useroptions">
+   <option>${displayName}</option>
+   <option value="library">Library</option>
+   <option value="logout">Logout</option>
+   </select>
+   <i class="large material-icons" id="language">language</i>
+</div>
+<div class="header-left">
+    <div class="logo">
+    <img class="header-logo" src="./Global/epic.png" alt="Epic Games Logo">
+    <i class="large material-icons">keyboard_arrow_down</i>
+    </div>
+    <img class="header-store" src="https://media.graphassets.com/qAiDvosPSFGqJxTVuY7h" alt="Store">
+    <input class="button button--support" type="button" value="Support">
+    <input class="button button--distribute" type="button" value="Distribute">
+</div>
+</header>
+<main>
+    <div class="search-bar">
+        <div class="search">
+        <i class="large material-icons">search</i>
+        <input class="search-input" type="text" maxlength="20" placeholder="Search store"/>
+    </div>
+        <input class="button button--discover" type="button" value="Discover">
+        <input class="button button--browse" type="button" value="Browse">
+        <input class="button button--news" type="button" value="News">
+    </div>
+    <div class="sales">
+        <div class="sales-cards">
+        <img class="left-card" src="https://cdn2.unrealengine.com/en-mega-sale-breaker-asset-1920x1080-98514c483012.jpg?h=480&quality=medium&resize=1&w=854" alt="Mega Sale">
+        <img class="middle-card" src="https://cdn2.unrealengine.com/en-mega-sale-shopearnredeem-breaker-1920x1080-8a5667cc31f7.jpg?h=480&quality=medium&resize=1&w=854" alt="Shop, Earn, Redeem">
+        <img class="right-card" src="https://cdn2.unrealengine.com/en-featured-giveaways-breaker-1920x1080-0dbde30ffb23.jpg?h=480&quality=medium&resize=1&w=854" alt="Featured Giveaways">
+        </div>
+    </div>
+
+    
+</main>`;
+
+        root.innerHTML = html;
+}
 function renderSignInPage(){
 let root=document.querySelector('#app') as HTMLDivElement
 const html = ` <div class="window">
@@ -85,7 +133,8 @@ const html = ` <div class="window">
         
         
 }
-async function handleLogIn(){
+async function handleLogIn(event:Event){
+    event.preventDefault();
     const emailInput = (document.querySelector('#email') as HTMLInputElement);
     const passwordInput = (document.querySelector('#password') as HTMLInputElement);
     const email = emailInput?.value;
@@ -99,20 +148,24 @@ async function handleLogIn(){
 
         try {
             const response = await fetch('http://localhost:3000/client/login', {
-                method: 'GET',
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(loginData)
             });
-
             if (!response.ok) {
-                throw new Error('Error creating account');
+                throw new Error('Error logging in: ' + response.statusText);
             }
 
             const result = await response.json();
-            console.log('Account created successfully', result);
-            renderCreatedSuccesss();
+            console.log('Login successful:', result);
+
+            localStorage.setItem('email', result.client.email);
+            localStorage.setItem('displayName', result.client.displayName);
+
+            console.log('Calling renderIndex after login...');
+            renderIndex();  
 
             // Redirect or perform actions after successful account creation
         } catch (error) {
