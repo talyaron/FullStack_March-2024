@@ -10,7 +10,7 @@ const port = 3000;
 
 //connection to db
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://tal:k8w0S6ztTx3zowGW@cluster0.0hzknon.mongodb.net/fs-mrc24').then(()=>{
+mongoose.connect('mongodb+srv://naamal:16546nly@cluster0.y2gab.mongodb.net/fs-march24').then(()=>{
   console.log('connected to db')
 })
 .catch((err:any)=>{
