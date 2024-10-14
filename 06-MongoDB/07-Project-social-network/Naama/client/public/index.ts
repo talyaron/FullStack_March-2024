@@ -1,1 +1,0 @@
-import { renderRegister } from "./userRegistration";

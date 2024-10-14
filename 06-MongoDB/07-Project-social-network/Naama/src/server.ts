@@ -2,6 +2,7 @@ import express from 'express';
 import booksRouter from "./routes/bookRoutes";
 import usersRouter from "./routes/userRoutes";
 const app = express()
+import cors from 'cors';
 const port = 3000;
 import mongoose from 'mongoose';
 
@@ -11,12 +12,17 @@ mongoose.connect('mongodb+srv://naamal:16546nly@cluster0.y2gab.mongodb.net/creat
 .catch((err:any)=>{
   console.log(err)
 });
+app.use(cors());
 app.use(express.json());
 app.use(express.static('./client/public'));
 
 // Routes
 app.use('/books',booksRouter);
 app.use('/users',usersRouter);
+
+app.get('/test', (req, res) => {
+    res.send({message:'Hello World!'})
+  })
 
 
 app.listen(port, () => {

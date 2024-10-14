@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/crocodama/creative-world#readme",
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.7.5",
     "express": "^4.21.1",
@@ -31,6 +32,7 @@
   },
   "dependencies": {
     "commonjs": "^0.0.1",
+    "cors": "^2.8.5",
     "mongoose": "^8.7.1"
   }
 }
