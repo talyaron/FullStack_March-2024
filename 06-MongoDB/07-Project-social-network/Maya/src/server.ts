@@ -1,5 +1,4 @@
 import express from 'express';
-import petsRouter from "./routes/petsRoutes";
 import clientsRouter from "./routes/clientsRoutes";
 const app = express();
 const port = 3000;
@@ -20,7 +19,6 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
-app.use('/pets',petsRouter)
 app.use('/clients',clientsRouter)
 
 app.get('/', (req:any, res:any) => {
