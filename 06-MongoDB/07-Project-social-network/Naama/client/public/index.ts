@@ -1,0 +1,1 @@
+import { renderRegister } from "./userRegistration";

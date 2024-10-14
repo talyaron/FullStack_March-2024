@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הרשמה</title>
+    <script type="module" src="./userRegistration.ts"></script>
+</head>
+<body>
+    <form onsubmit="handelAddUserToDB(event)">
+        <input type="text" name="userName" placeholder="שם משתמש" required>
+        <input type="email" name="email"  placeholder="אימייל" required>
+        <input type="password" name="password" placeholder="סיסמא" required>
+        <input type="text" name="pronounce"  placeholder="לשון פניה" required>
+        <input type="date" name="birthday" placeholder="1.1.2000">
+        <button type="submit">הירשם!</button>
+    </form>
+</body>
+</html>
