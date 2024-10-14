@@ -1,12 +1,12 @@
 import express from 'express';
-import clientsRouter from "./routes/clientsRoutes";
+import usersRouter from './routes/users/usersRoutes';
 const app = express();
 const port = 3000;
 
 
 //connection to db
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://mayalevy20:e0ok6g2sVajOLOhu@cluster0.emeus.mongodb.net/fs-mrc24').then(()=>{
+mongoose.connect('mongodb+srv://HotNuggets:ieoBkUDlsayOqaoT@cluster0.z25jn.mongodb.net/instagram').then(()=>{
   console.log('connected to db')
 })
 .catch((err:any)=>{
@@ -17,9 +17,11 @@ mongoose.connect('mongodb+srv://mayalevy20:e0ok6g2sVajOLOhu@cluster0.emeus.mongo
 app.use(express.json());
 
 
+
 app.use(express.static('public'));
 
-app.use('/clients',clientsRouter)
+app.use('/users',usersRouter)
+
 
 app.get('/', (req:any, res:any) => {
   res.send('Hello World!')
