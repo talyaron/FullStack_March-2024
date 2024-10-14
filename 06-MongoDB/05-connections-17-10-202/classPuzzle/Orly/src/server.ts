@@ -10,7 +10,7 @@ const port = 3000;
 
 //connection to db
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://naamal:16546nly@cluster0.y2gab.mongodb.net/fs-march24').then(()=>{
+mongoose.connect('mongodb+srv://orlyjonathan:RPGlEXtRjIGBEfH2@orly.s78ke.mongodb.net/').then(()=>{
   console.log('connected to db')
 })
 .catch((err:any)=>{
@@ -23,8 +23,8 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
-app.use('/pets',petsRouter)
-app.use('/clients',clientsRouter)
+
+
 app.use('/books',booksRouter)
 app.use('/authors',authorsRouter)
 

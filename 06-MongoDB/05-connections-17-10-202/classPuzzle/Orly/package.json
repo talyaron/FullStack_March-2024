@@ -7,9 +7,9 @@
     "dev": "nodemon src/server.ts"
   },
   "keywords": [],
-  "author": "Mikhail Shulman",
+  "author": "Orly Pingley",
   "license": "ISC",
-  "description": "pet store site",
+  "description": "Book Store",
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^22.5.5",
