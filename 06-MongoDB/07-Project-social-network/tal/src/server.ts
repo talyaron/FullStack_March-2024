@@ -1,6 +1,7 @@
 import express from 'express';
 import usersRouter from './routes/users/usersRoutes';
 const app = express();
+import cookieParser from 'cookie-parser';
 const port = 3000;
 
 
@@ -15,7 +16,7 @@ mongoose.connect('mongodb+srv://tal:k8w0S6ztTx3zowGW@cluster0.0hzknon.mongodb.ne
 
 
 app.use(express.json());
-
+app.use(cookieParser());
 
 
 app.use(express.static('public'));
