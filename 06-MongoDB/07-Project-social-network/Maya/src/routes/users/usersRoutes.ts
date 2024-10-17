@@ -1,8 +1,9 @@
-import mongoose from "mongoose";
-import { login } from "../../controllers/setUser";
+import express from "express";
+import { Request, Response } from 'express';
+import { User } from '../../model/userModel';
+import { getUser } from "../../controllers/users/getUser";
+
+router.post("/login", login).post("/register", register).get("/getUser", getUser);
 
 
-const router = express.Router()
-router.post('/login', login);
-
-export default router
+export default router;
