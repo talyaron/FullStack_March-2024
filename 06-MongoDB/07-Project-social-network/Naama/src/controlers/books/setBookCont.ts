@@ -1,7 +1,6 @@
-import { User } from "../../model/users/usersModel";
-import { Request ,Response } from 'express';
+import { Book } from "../../model/books/bookModel";
 
-export async function login(req: Request, res: Response) {
+/*export async function login(req: Request, res: Response) {
     try {
         const { email, password } = req.body;
         console.log(email, password)
@@ -21,17 +20,17 @@ export async function login(req: Request, res: Response) {
         res.status(500).send(error);
 
     }
-}
-export async function register(req:any,res:any) {
+}*/
+export async function addBook(req:any,res:any) {
     try {
-        const { userName, email,password,pronounce,birthday} = req.body
-        if (!userName ||!email ||!password||!pronounce||!birthday) throw new Error("Missing required fields")
-        const user = new User({ userName, email,password,pronounce,birthday })
-        const existingUser = await User.findOne({ email });
-        if (existingUser) {
-            return res.status(400).send({ error: 'משתמש קיים עם אימייל זה' })
+        const { title, description,genre,author,privecy} = req.body
+        if (!title ||!description ||!genre||!author||!privecy) throw new Error("אנה הכניסו את כל פרטי הספר")
+        const book = new Book({ title, description,genre,author,privecy })
+        const existingBook = await Book.findOne({ title });
+        if (existingBook) {
+            return res.status(400).send({ error: 'ספר קיים עם כותרת זהה' })
         }
-        await user.save()
+        await book.save()
         res.status(200).send({ ok: true });
     } catch (error) {
         console.log(error);

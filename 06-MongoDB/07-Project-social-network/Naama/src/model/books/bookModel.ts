@@ -11,7 +11,7 @@ export const bookSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now },
     lastUpdated: Date,
     privecy: String,
-    bookCover: String
+    bookCover: {type:String,default:'noCoverIMG.png'}
 })
 
 export const Book = mongoose.model('Book', bookSchema);

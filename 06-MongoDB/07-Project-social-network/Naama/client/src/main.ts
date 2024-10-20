@@ -1,32 +1,54 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import { handelAddUserToDB, renderRegistretion } from './pageRenders/userRegistration';
+import './dist/styles.css'
+import { handelLogin, renderLogin } from './pageRenders/userLogin';
+import { handelAddBookToDB, renderBookCreation1 } from './pageRenders/bookCreation';
+import { renderChapterCreation } from './pageRenders/chapterCreation';
+//client routing for site
+class Router {
+  private routes: { [key: string]: string } = {};
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+  constructor() {
+    window.addEventListener('popstate', () => this.route());
+    document.addEventListener('click', (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A' && target.getAttribute('data-link') !== null) {
+        e.preventDefault();
+        this.navigate(target.getAttribute('href')!);
+      }
+    });
+  }
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+  addRoute(path: string, view: string) {
+    this.routes[path] = view;
+  }
 
-async function main() {
-  const r = await fetch('http://localhost:3000/test')
-  const results = await r.json();
-  console.log(results)
+  navigate(path: string) {
+    history.pushState(null, '', path);
+    this.route();
+  }
+
+  route() {
+    const path = window.location.pathname || '/';
+    const view = this.routes[path] || '<h1>404 - Page Not Found</h1>';
+    document.getElementById('app')!.innerHTML = view;
+  }
 }
 
-main();
+const router = new Router();
+router.addRoute('/', 'home' );
+router.addRoute('/register', renderRegistretion());
+router.addRoute('/login', renderLogin());
+router.addRoute('/add-book', renderBookCreation1());
+router.addRoute('/add-chapter',renderChapterCreation());
+router.addRoute('/my-books',"");
+
+router.route();
+
+const regform = document.getElementById('registerForm') as HTMLFormElement;
+if(regform){regform.addEventListener('submit',(event: Event)=>handelAddUserToDB(event));}
+
+const logform = document.getElementById('loginForm') as HTMLFormElement;
+if(logform){logform.addEventListener('submit',(event: Event)=>handelLogin(event));}
+
+const bookform1 = document.getElementById('bookCreationForm') as HTMLFormElement;
+if(bookform1){logform.addEventListener('submit',(event: Event)=>handelAddBookToDB(event));}
