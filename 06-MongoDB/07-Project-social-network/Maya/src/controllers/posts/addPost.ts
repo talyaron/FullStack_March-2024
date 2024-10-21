@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import {Post} from '../../model/postsModel;
+import {Post} from '../../model/postsModel';
 import { User } from '../../model/userModel';
 export async function addPost(req: any, res: any) {
     try {

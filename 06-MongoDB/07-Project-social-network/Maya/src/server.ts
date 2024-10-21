@@ -1,5 +1,6 @@
 import express from 'express';
 import usersRouter from '../src/routes/users/usersRoutes'
+import postRouter from '../src/routes/users/postRoutes'
 const app = express();
 const port = 3000;
 import cookieParser from 'cookie-parser';
@@ -23,6 +24,8 @@ app.use(cookieParser());
 app.use(express.static('public'));
 
 app.use('/users',usersRouter)
+app.use('/posts', postRouter);
+
 
 app.get('/', (req:any, res:any) => {
   res.send('Hello World!')

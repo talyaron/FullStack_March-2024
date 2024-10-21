@@ -5,20 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./dist/home.js" defer></script>
+    <link rel="stylesheet" href="./dist/home.css">
 </head>
 <body>
-    <h1>Home- Instagram</h1>
-    <div id="userName"></div>
-    <div>
-        <h2>Create a New Post</h2>
-        <form id="newPostForm">
-            <input type="text" id="postContent" placeholder="What's on your mind?" required />
-            <button type="submit">Post</button>
-        </form>
-    </div>
-    <div>
-        <h2>All Posts</h2>
-        <div id="postsContainer"></div>
+    <div class="container">
+        <h1>Instagram</h1>
+        <div id="userName"></div>
+        
+        <div class="create-post">
+            <h2>Create a New Post</h2>
+            <form id="newPostForm">
+                <input type="text" id="postContent" placeholder="What's on your mind?" required>
+                <input type="text" id="image" placeholder="image url" required>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+        
+        <div class="posts-section">
+            <h2>All Posts</h2>
+            <div id="postsContainer"></div>
+        </div>
     </div>
 </body>
 </html>
