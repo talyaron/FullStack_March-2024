@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { User  }  from '../../src/model/userModel';
+import { User } from '../../model/userModel';
 export async function login(req: Request, res: Response) {
     try {
         const { email, password } = req.body;
