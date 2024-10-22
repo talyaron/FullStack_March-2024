@@ -1,6 +1,7 @@
 import express from 'express';
 import usersRouter from "./routes/userRoutes";
 const app = express();
+import cookieParser from 'cookie-parser';
 const port = 3001;
 
 
@@ -15,6 +16,7 @@ mongoose.connect('mongodb+srv://orlyjonathan:RPGlEXtRjIGBEfH2@orly.s78ke.mongodb
 
 
 app.use(express.json());
+app.use(cookieParser());
 
 
 app.use(express.static('public'));
@@ -29,3 +31,4 @@ app.get('/', (req:any, res:any) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
