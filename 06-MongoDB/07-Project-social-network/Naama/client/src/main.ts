@@ -48,7 +48,7 @@ const regform = document.getElementById('registerForm') as HTMLFormElement;
 if(regform){regform.addEventListener('submit',(event: Event)=>handelAddUserToDB(event));}
 
 const logform = document.getElementById('loginForm') as HTMLFormElement;
-if(logform){logform.addEventListener('submit',(event: Event)=>handelLogin(event));}
+if(logform){logform.addEventListener('submit',handelLogin);}
 
 const bookform1 = document.getElementById('bookCreationForm') as HTMLFormElement;
 if(bookform1){logform.addEventListener('submit',(event: Event)=>handelAddBookToDB(event));}

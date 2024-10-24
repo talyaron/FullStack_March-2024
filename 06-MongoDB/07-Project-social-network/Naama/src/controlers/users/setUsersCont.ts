@@ -1,5 +1,5 @@
 import { User } from "../../model/users/usersModel";
-import { Request ,Response } from 'express';
+import { Request, Response } from 'express';
 
 export async function login(req: Request, res: Response) {
     try {
@@ -10,8 +10,10 @@ export async function login(req: Request, res: Response) {
         console.log(user)
 
         if (user) {
-            res.cookie('userId', user._id, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 3 });
-            res.status(200).send({ ok:true });
+            res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5174');
+            res.setHeader('Access-Control-Allow-Credentials', 'true');
+            res.cookie('userId', user._id);
+            res.status(200).send({ ok: true, user });
         } else {
             res.status(401).send({ error: 'אימייל או סיסמא אינם נכונים' });
         }
@@ -22,11 +24,11 @@ export async function login(req: Request, res: Response) {
 
     }
 }
-export async function register(req:any,res:any) {
+export async function register(req: any, res: any) {
     try {
-        const { userName, email,password,pronounce,birthday} = req.body
-        if (!userName ||!email ||!password||!pronounce||!birthday) throw new Error("Missing required fields")
-        const user = new User({ userName, email,password,pronounce,birthday })
+        const { userName, email, password, pronounce, birthday } = req.body
+        if (!userName || !email || !password || !pronounce || !birthday) throw new Error("Missing required fields")
+        const user = new User({ userName, email, password, pronounce, birthday })
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).send({ error: 'משתמש קיים עם אימייל זה' })

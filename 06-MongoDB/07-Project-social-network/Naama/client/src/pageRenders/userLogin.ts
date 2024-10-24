@@ -1,5 +1,6 @@
 export async function handelLogin(e:any){
     try {
+        console.log("handelLogin")  
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
@@ -16,7 +17,8 @@ export async function handelLogin(e:any){
             const jsonResponse = await response.json();
             console.log(jsonResponse);
             if (jsonResponse.ok) {
-                window.location.href = '/';
+                // window.location.href = '/';ok
+                console.log("ok")
             } else {
                 alert(jsonResponse.error);
             }
