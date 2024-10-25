@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "ESNext", // target version of javascript
+        "target": "es6", // target version of javascript
         "module": "commonjs", // module system
         "outDir": "./dist", // output directory
         "rootDir": "./src", // root directory

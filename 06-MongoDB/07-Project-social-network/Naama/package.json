@@ -1,40 +1,27 @@
 {
-  "name": "creative-world",
+  "name": "naama",
   "version": "1.0.0",
-  "description": "a website for creative people to share their works! its a book city clone with more stuff!",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/crocodama/creative-world.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/crocodama/creative-world/issues"
-  },
-  "homepage": "https://github.com/crocodama/creative-world#readme",
   "devDependencies": {
     "@types/cookie-parser": "^1.4.7",
-    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
-    "@types/node": "^22.7.5",
-    "express": "^4.21.1",
+    "@types/node": "^22.7.9",
     "nodemon": "^3.1.7",
     "ts-node": "^10.9.2",
     "tsc": "^2.0.4",
-    "typescript": "^5.6.3",
-    "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4"
+    "typescript": "^5.6.3"
   },
   "dependencies": {
-    "commonjs": "^0.0.1",
     "cookie-parser": "^1.4.7",
-    "cors": "^2.8.5",
-    "mongoose": "^8.7.1"
+    "express": "^4.21.1",
+    "mongoose": "^8.7.2"
   }
 }
