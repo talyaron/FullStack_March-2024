@@ -1,4 +1,4 @@
-export async function handelLogin(e:any){
+async function handelLogin(e:any){
     try {
         e.preventDefault();
         const form = e.target;
@@ -16,7 +16,8 @@ export async function handelLogin(e:any){
             const jsonResponse = await response.json();
             console.log(jsonResponse);
             if (jsonResponse.ok) {
-                window.location.href = '/';
+                window.location.href = '../index.html';
+                //alert("Login successful");
             } else {
                 alert(jsonResponse.error);
             }
@@ -27,15 +28,3 @@ export async function handelLogin(e:any){
         console.error(error);
     }
 }
-
-export function renderLogin(){
-    return `<form id="loginForm">
-        <input type="email" name="email"  placeholder="אימייל" required>
-        <input type="password" name="password" placeholder="סיסמא" required>
-        <button type="submit">התחבר!</button>
-    </form>
-    <a href="register">הרשם</a>
-    `;
-}
-
-
