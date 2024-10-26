@@ -32,15 +32,7 @@ function helloUser(userName:string, element:HTMLElement|null){
     }
     
 }
-async function loadPosts() {
-    try {
-        const response = await fetch('/posts');
-        const posts = await response.json();
-        renderPosts(posts);
-    } catch (error) {
-        console.error('Error loading posts:', error);
-    }
-}
+
 function renderPosts(posts) {
     const postsContainer = document.getElementById('postsContainer');
     if (!postsContainer) {
@@ -48,13 +40,24 @@ function renderPosts(posts) {
         return;
     }
     postsContainer.innerHTML = '';
+    if (posts.length === 0) {
+        postsContainer.innerHTML = '<p>No posts to display</p>';
+        return;
+    }
     posts.forEach(post => {
         const postElement = document.createElement('div');
         postElement.classList.add('post');
         postElement.innerHTML = `
-            <p><strong>${post.user.name}:</strong> ${post.content}</p>
+        <div class="post-header">
+            <strong>${post.user?.name || 'Anonymous'}:</strong>
+        </div>
+        <div class="post-content">
+            <p>${post.content}</p>
+        </div>
+        <div class="post-footer">
             <small>${new Date(post.createdAt).toLocaleString()}</small>
-        `;
+        </div>
+    `;
         postsContainer.appendChild(postElement);
     });
 }
@@ -73,7 +76,7 @@ if (newPostForm) {
         const content = postContentElement.value;
         
         try {
-            const response = await fetch('/posts/add-post', {
+            const response = await fetch('http://localhost:3000/posts/add-post', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -84,7 +87,7 @@ if (newPostForm) {
             const result = await response.json();
             if (result.ok) {
                 postContentElement.value = ''; // Clear input field
-                loadPosts(); // Reload posts after creating a new one
+                loadPosts(); 
             } else {
                 alert('Failed to create post');
             }
@@ -96,6 +99,16 @@ if (newPostForm) {
     console.error('newPostForm element not found');
 }
 
+async function loadPosts() {
+    try {
+        const response = await fetch('http://localhost:3000/posts');
+        if (!response.ok) throw new Error('Failed to load posts');
+        const posts = await response.json();
+        renderPosts(posts);
+    } catch (error) {
+        console.error('Error loading posts:', error);
+    }
+}
 
 getUser();
 loadPosts();
