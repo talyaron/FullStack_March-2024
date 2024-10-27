@@ -11,7 +11,7 @@ const app = express();
 const port = 3000;
 
 //read mongodb json settings
-const secretPath = path.resolve(__dirname, "./secret/mongodb.json");
+const secretPath = path.resolve(__dirname, "C:/Users/ShorY/source/repos/Yoss_Full_Stack_Course_March_24/FullStack_March_2024/secret/mongodb.json");
 const secret = JSON.parse(fs.readFileSync(secretPath, "utf-8"));
 
 const mongodbUri = secret.mongodb.uri;
