@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export const UserSchema = new mongoose.Schema({
+export const followersSchema = new mongoose.Schema({
     email:{
         type:String,
         unique:true
@@ -14,4 +14,4 @@ export const UserSchema = new mongoose.Schema({
     image:String
 })
 
-export const User = mongoose.model('User',UserSchema);
+export const User = mongoose.model('User',followersSchema);

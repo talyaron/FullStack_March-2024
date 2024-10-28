@@ -1,11 +1,19 @@
 body{
     background-color: rgb(227, 227, 227);
-}
 
+.window{
+    width: 100%;
+    height: 100%;
+    .rightPanel{
+        width:50%;
+        
 
-.pet{
-    max-width: 300px;
-    img{
-        width: 100%;
+    }
+    .leftPanel{
+        width:50%;
     }
 }
+
+}
+
+
