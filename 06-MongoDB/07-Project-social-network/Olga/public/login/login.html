@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rouge+Script&display=swap" rel="stylesheet">
     <title>Instagram Login</title>
     <script src="./dist/login.js" defer></script>
     <link rel="stylesheet" href="./../dist/style.css">
 </head>
 <body>
     <div id="app">
-        <!-- <h1>Login to Instagram</h1> -->
         <form onsubmit="handleLogin(event)">
-            <h1>Login to Instagram</h1>
+            <h1>Login to <span class="rouge-script-regular">Instagram</span></h1>
             <input type="email" name="email" placeholder="email" required>
             <input type="password" name="password" placeholder="password" required>
             <button type="submit">Login</button>
         </form>
+        <a href="./../register/register.html">Register</a>
     </div>
 </body>
 </html>
