@@ -1,5 +1,4 @@
 import jwt from "jsonwebtoken";
-import router from "../routes/authRoutes";
 
 module.exports = (req: any, res: any, next: any) => {
   const token = req.header("Authorization")?.replace("Bearer ", "");
@@ -13,4 +12,5 @@ module.exports = (req: any, res: any, next: any) => {
     res.status(400).json({ error: "Invalid token" });
   }
 };
-export default router;
+
+export default module.exports;

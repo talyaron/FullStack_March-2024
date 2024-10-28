@@ -17,6 +17,6 @@ const upload = multer({ storage });
 router.post("/register", upload.single("profilePicture"), register);
 router.post("/login", login);
 
-module.exports = router;
+// module.exports = router;
 export default router;
 // export default router;
