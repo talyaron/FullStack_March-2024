@@ -56,6 +56,7 @@ async function logout(){
     });
     const jsonResponse = await response.json();
         if (jsonResponse.ok) {
+            localStorage.clear();
             window.location.href = '../index.html';
         } else {
             alert(jsonResponse.error);
