@@ -1,0 +1,66 @@
+.posts-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.post {
+    width: 90%;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #dbdbdb;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    text-align: left;
+    transition: box-shadow 0.2s;
+}
+
+.post:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.post p strong {
+    font-size: 16px;
+    color: #262626;
+}
+
+.post-content {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #444;
+    word-wrap: break-word;
+}
+
+.post small {
+    font-size: 12px;
+    color: #8e8e8e;
+}
+
+.post img {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+/* Button to add posts */
+#createPostBtn {
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #3897f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#createPostBtn:hover {
+    background-color: #287bc0;
+}

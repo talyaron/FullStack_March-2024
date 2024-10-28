@@ -1,0 +1,55 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    background: linear-gradient(135deg, rgba(255, 175, 189, 1) 0%, #ea84f8 100%);
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    padding: 40px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-family: 'Billabong', cursive;
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: #262626;
+    margin-right: 10px;
+}
+
+/* Form styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sign-up link */
+.signup-link {
+    position: inherit;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #262626;
+}
+
+.signup-link a {
+    color: #0095f6;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}

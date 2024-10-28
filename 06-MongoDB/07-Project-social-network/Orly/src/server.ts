@@ -1,7 +1,9 @@
 import express from 'express';
-import usersRouter from "./routes/userRoutes";
+import usersRouter from './routes/users/usersRoutes';
+import postsRouter from './routes/posts/postRoutes'
 const app = express();
-const port = 3001;
+import cookieParser from 'cookie-parser';
+const port = 3003;
 
 
 //connection to db
@@ -15,11 +17,14 @@ mongoose.connect('mongodb+srv://orlyjonathan:RPGlEXtRjIGBEfH2@orly.s78ke.mongodb
 
 
 app.use(express.json());
+app.use(cookieParser());
 
 
 app.use(express.static('public'));
 
-app.use('/user',usersRouter)
+app.use('/users',usersRouter)
+
+app.use('/posts', postsRouter);
 
 
 app.get('/', (req:any, res:any) => {

@@ -1,0 +1,56 @@
+@import "./styles/elements.scss";
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#home {
+  display: flex;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .main {
+    flex: 2;
+    background-color: #646cff;
+  }
+}
+
+h1 {
+  font-weight: inherit;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+

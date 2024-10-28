@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./dist/home.js" defer></script>
+    <link rel="stylesheet" href="./dist/home.css">
+    <link rel="stylesheet" href="./dist/post.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Instagram logo">
+            <h1>Instagram</h1>  
+        </div>
+        <div id="userName"></div>
+        
+        <div class="create-post">
+            <h2>Create a New Post</h2>
+            <form id="newPostForm">
+                <input type="text" id="postContent" placeholder="What's on your mind?" required>
+                <input type="text" id="image" placeholder="image url" required>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+        
+        <div class="posts-section">
+            <h2>All Posts</h2>
+            <div id="postsContainer"></div>
+        </div>
+    </div>
+</body>
+</html>

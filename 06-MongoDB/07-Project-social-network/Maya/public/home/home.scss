@@ -1,0 +1,99 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 175, 189, 1) 0%, #ea84f8 100%);
+}
+.header {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+}
+
+img {
+    width: 3vw;
+    height: auto;
+}
+
+h1 {
+    font-family: 'Billabong', cursive;
+    font-size: 40px;
+    color: #262626;
+    margin: 0; 
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* User greeting */
+#userName {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #8e8e8e;
+}
+
+/* Create post section */
+.create-post {
+    margin-bottom: 40px;
+}
+
+.create-post form {
+    display:inline;
+    justify-content: center;
+    gap: 10px;
+}
+
+.create-post input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #dbdbdb;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.create-post button {
+    padding: 10px 20px;
+    background-color: #0095f6;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.create-post button:hover {
+    background-color: #007ace;
+}
+
+/* Posts section */
+.posts-section {
+    margin-top: 40px;
+}
+
+.post {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.post p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.post small {
+    color: #8e8e8e;
+}

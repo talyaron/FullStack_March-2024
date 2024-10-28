@@ -1,0 +1,95 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 175, 189, 1) 0%, #ea84f8 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Register container */
+.register-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 12px;
+    padding: 50px 40px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Larger shadow for depth */
+    backdrop-filter: blur(10px); /* Adds a blur effect for modern design */
+    transition: transform 0.3s ease;
+}
+
+.register-container:hover {
+    transform: translateY(-5px); 
+}
+
+/* Instagram-like title */
+h1 {
+    font-family: 'Billabong', cursive;
+    font-size: 58px;
+    margin-bottom: 25px;
+    color: #262626;
+}
+
+/* Form styling */
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form input {
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.register-form input:focus {
+    border-color: #a5a5a5; /* Slight color change on focus */
+    box-shadow: 0 0 5px rgba(100, 216, 232, 0.5);
+}
+
+/* Button with gradient background */
+button {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff6a49, #fd9d64);
+    transform: scale(1.05); /* Slight growth on hover */
+}
+
+/* Log-in link */
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #262626;
+}
+
+.login-link a {
+    color: #0095f6;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
