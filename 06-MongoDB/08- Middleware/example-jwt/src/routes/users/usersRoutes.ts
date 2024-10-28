@@ -5,9 +5,9 @@ import { checkUser } from "../../controllers/middlwares/loginMid";
 
 const router = express.Router();
 
-router.use(checkUser);
-router.post("/login", login).post("/register", register).get("/getUser", getUser);
-router.get("/get-user-pets", getUserPets);
+
+router.post("/login", login).post("/register", register).get("/getUser",checkUser, getUser);
+router.get("/get-user-pets",checkUser, getUserPets);
 
 
 export default router;
