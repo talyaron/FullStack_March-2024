@@ -1,5 +1,6 @@
 import express from 'express';
 import usersRouter from './routes/users/usersRoutes';
+import PetsRouter from './routes/pets/petsRoutes';
 const app = express();
 import cookieParser from 'cookie-parser';
 const port = 3000;
@@ -21,7 +22,8 @@ app.use(cookieParser());
 
 app.use(express.static('public'));
 
-app.use('/users',usersRouter)
+app.use('/users',usersRouter);
+app.use('/pets',PetsRouter);
 
 
 app.get('/', (req:any, res:any) => {
