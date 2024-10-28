@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Instagram Clone</title>
+  <link rel="stylesheet" href="./dist/login.css">
+</head>
+<body>
+  <header>
+    <h1>Instagram Clone</h1>
+  </header>
+  <div id="auth-forms">
+    <form id="sign-in-form" onsubmit="handleSubmit(event)">
+      <h2>Sign In</h2>
+      <input type="text" name='username' id="sign-in-username" placeholder="Username">
+      <input type="text" name='email' id="sign-in-email" placeholder="Email">
+      <input type="password" name="password" id="sign-in-password" placeholder="Password">
+      <button type="submit" id="sign-in">Sign In</button>
+    </form>
+  </div>
+  <script src="./dist/login.js"></script>
+</body>
+</html>

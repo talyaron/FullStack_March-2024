@@ -14,43 +14,12 @@
     <header>
       <h1>Instagram Clone</h1>
       <div id="user-actions">
-        <button id="show-sign-in">Sign In</button>
-        <button id="show-register">Register</button>
+        <button id="show-sign-in"> <a href="./login/index.html">Sign In</a></button>
+        <button id="show-register"><a href="./register/index.html">Register</a></button>
         <button id="log-out" style="display: none;">Log Out</button>
       </div>
     </header>
-    <div id="auth-forms">
-      <div id="sign-in-form" style="display: none;">
-        <h2>Sign In</h2>
-        <input type="text" id="sign-in-username" placeholder="Username">
-        <input type="password" id="sign-in-password" placeholder="Password">
-        <button id="sign-in">Sign In</button>
-      </div>
-      <div id="register-form" style="display: none;">
-        <h2>Register</h2>
-        <input type="text" id="register-username" placeholder="Username">
-        <input type="email" id="register-email" placeholder="Email">
-        <input type="password" id="register-password" placeholder="Password">
-        <input type="text" id="register-firstname" placeholder="First Name">
-        <input type="text" id="register-lastname" placeholder="Last Name">
-        <input type="text" id="register-bio" placeholder="Bio">
-        <input type="file" id="register-profile-picture" placeholder="Profile Picture">
-        <button id="register">Register</button>
-      </div>
-    </div>
-    <div id="content" style="display: none;">
-      <div id="new-post">
-        <h2>Create New Post</h2>
-        <textarea id="post-content" placeholder="What's on your mind?"></textarea>
-        <input type="file" id="post-image">
-        <button id="create-post">Post</button>
-      </div>
-      <div id="posts">
-        <h2>All Posts</h2>
-        <button id="get-posts">Get All Posts</button>
-        <div id="post-list"></div>
-      </div>
-    </div>
+    <div class="posts"></div>
     <script src="./dist/script.js"></script> 
     </body>
   </html>

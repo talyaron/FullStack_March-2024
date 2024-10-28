@@ -7,3 +7,4 @@ const router = express.Router();
 router.post("/upload-profile-picture", authMiddleware, uploadProfilePicture);
 
 module.exports = router;
+export default router;

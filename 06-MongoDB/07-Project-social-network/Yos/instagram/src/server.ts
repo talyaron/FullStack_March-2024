@@ -2,7 +2,6 @@ import express from "express";
 import path from "path";
 import fs from "fs";
 import mongoose from "mongoose";
-import multer from 'multer';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
@@ -41,19 +40,6 @@ mongoose
   .catch((err: any) => {
     console.log(err);
   });
-
-
-  
-// Configure multer for file uploads
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, '../uploads/');
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + '-' + file.originalname);
-  }
-});
-const upload = multer({ storage });
 
 
 app.use('/api/auth', authRoutes);
