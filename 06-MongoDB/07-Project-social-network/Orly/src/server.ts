@@ -1,8 +1,9 @@
 import express from 'express';
-import usersRouter from "./routes/userRoutes";
+import usersRouter from './routes/users/usersRoutes';
+import postsRouter from './routes/posts/postRoutes'
 const app = express();
 import cookieParser from 'cookie-parser';
-const port = 3001;
+const port = 3003;
 
 
 //connection to db
@@ -21,7 +22,9 @@ app.use(cookieParser());
 
 app.use(express.static('public'));
 
-app.use('/user',usersRouter)
+app.use('/users',usersRouter)
+
+app.use('/posts', postsRouter);
 
 
 app.get('/', (req:any, res:any) => {
@@ -31,4 +34,3 @@ app.get('/', (req:any, res:any) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-

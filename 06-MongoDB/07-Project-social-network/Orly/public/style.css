@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+  color: #262626;
+}
+
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid #dbdbdb;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-content {
+  max-width: 975px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  max-width: 975px;
+  margin: 80px auto 0;
+  padding: 20px;
+}
+
+.create-post {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.create-post form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.create-post textarea {
+  resize: vertical;
+  min-height: 100px;
+  padding: 8px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+}
+
+.post {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  margin-bottom: 24px;
+}
+
+.post-header {
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-image {
+  width: 100%;
+  max-height: 750px;
+  object-fit: cover;
+}
+
+.post-actions {
+  padding: 8px 16px;
+}
+
+.like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.like-btn.liked {
+  color: #ed4956;
+}
+
+.caption {
+  padding: 12px 16px;
+}
+
+.comments {
+  padding: 12px 16px;
+  border-top: 1px solid #efefef;
+}
+
+.comment-form {
+  display: flex;
+  padding: 16px;
+  border-top: 1px solid #efefef;
+}
+
+.comment-form input {
+  flex: 1;
+  border: none;
+  padding: 8px;
+  outline: none;
+}
+
+button {
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #0081d6;
+}
+
+button:disabled {
+  background-color: #b2dffc;
+  cursor: not-allowed;
+}

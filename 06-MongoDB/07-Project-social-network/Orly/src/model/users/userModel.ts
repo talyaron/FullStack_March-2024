@@ -6,7 +6,15 @@ export const UserSchema = new mongoose.Schema({
         type:String,
         unique:true
     },
-    password:String
+    password:String,
+    profileImage: {
+        type: String,
+        default: null
+    },
+    bio: {
+        type: String,
+        default: null
+    }
 })
 
 export const User = mongoose.model('User',UserSchema);

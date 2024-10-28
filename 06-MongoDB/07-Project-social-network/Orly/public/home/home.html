@@ -7,7 +7,30 @@
     <script src="./dist/home.js" defer></script>
 </head>
 <body>
-    <h1>Home- Instagram</h1>
-    <div id="userName"></div>
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1>Instagram</h1>
+            <div id="userName"></div>
+            <a href="profile.html">Profile</a>
+            <button onclick="handleLogout()">Logout</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Create Post Section -->
+        <section class="create-post">
+            <h2>Create New Post</h2>
+            <form id="createPostForm" onsubmit="handleCreatePost(event)">
+                <input type="file" name="image" accept="image/*" required>
+                <textarea name="caption" placeholder="Write a caption..." required></textarea>
+                <button type="submit">Share Post</button>
+            </form>
+        </section>
+
+        <!-- Posts Feed -->
+        <section class="posts-feed" id="postsFeed">
+            <!-- Posts will be inserted here dynamically -->
+        </section>
+    </main>
 </body>
 </html>
