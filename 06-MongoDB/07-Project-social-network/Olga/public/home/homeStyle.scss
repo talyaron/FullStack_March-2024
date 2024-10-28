@@ -1,3 +1,5 @@
+@import "./../styles/elements.scss";
+
 body {
   margin: 0;
   min-width: 320px;
@@ -6,16 +8,34 @@ body {
   font-weight: 100;
 }
 
+#post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+
 #home {
   display: flex;
   max-width: 1280px;
   margin: 0 auto;
+  padding: 20px;
+  height: 100%;
+  gap: 10px;
 
   .left-menu {
-      position: fixed;
+    flex: 1;
+    position: sticky;
+    align-self: flex-start;
+    top: 5px;
   }
   .main {
     flex: 2;
-    background-color: #646cff;
+    // background-color: #646cff;
+  }
+
+  .right-menu {
+    flex: 1;
   }
 }

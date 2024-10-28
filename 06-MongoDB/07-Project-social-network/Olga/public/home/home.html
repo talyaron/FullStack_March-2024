@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rouge+Script&display=swap" rel="stylesheet">
     <title>Document</title>
     <script src="./dist/home.js" defer></script>
     <link rel="stylesheet" href="./dist/homeStyle.css">
@@ -10,25 +13,18 @@
 <body>
     <div id="home">
         <div class="left-menu">
-            <h1>Instagram</h1>
+            <h1><span class="rouge-script-regular">Instagram</span></h1>
             <div id="userName"></div>
         </div>
         <div class="main">
-            <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit est ab aliquam provident tempore, excepturi reprehenderit nulla veniam adipisci. Culpa, recusandae pariatur. Iste quis, deleniti dolorem expedita itaque quas.</P>
-            <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit est ab aliquam provident tempore, excepturi reprehenderit nulla veniam adipisci. Culpa, recusandae pariatur. Iste quis, deleniti dolorem expedita itaque quas.</P>
-            <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit est ab aliquam provident tempore, excepturi reprehenderit nulla veniam adipisci. Culpa, recusandae pariatur. Iste quis, deleniti dolorem expedita itaque quas.</P>
-            <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit est ab aliquam provident tempore, excepturi reprehenderit nulla veniam adipisci. Culpa, recusandae pariatur. Iste quis, deleniti dolorem expedita itaque quas.</P>
-            <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit est ab aliquam provident tempore, excepturi reprehenderit nulla veniam adipisci. Culpa, recusandae pariatur. Iste quis, deleniti dolorem expedita itaque quas.</P>
-            <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit est ab aliquam provident tempore, excepturi reprehenderit nulla veniam adipisci. Culpa, recusandae pariatur. Iste quis, deleniti dolorem expedita itaque quas.</P>
-            <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit est ab aliquam provident tempore, excepturi reprehenderit nulla veniam adipisci. Culpa, recusandae pariatur. Iste quis, deleniti dolorem expedita itaque quas.</P>
-            <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit est ab aliquam provident tempore, excepturi reprehenderit nulla veniam adipisci. Culpa, recusandae pariatur. Iste quis, deleniti dolorem expedita itaque quas.</P>
-            <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit est ab aliquam provident tempore, excepturi reprehenderit nulla veniam adipisci. Culpa, recusandae pariatur. Iste quis, deleniti dolorem expedita itaque quas.</P>
-            <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit est ab aliquam provident tempore, excepturi reprehenderit nulla veniam adipisci. Culpa, recusandae pariatur. Iste quis, deleniti dolorem expedita itaque quas.</P>
-            <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit est ab aliquam provident tempore, excepturi reprehenderit nulla veniam adipisci. Culpa, recusandae pariatur. Iste quis, deleniti dolorem expedita itaque quas.</P>
-            <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit est ab aliquam provident tempore, excepturi reprehenderit nulla veniam adipisci. Culpa, recusandae pariatur. Iste quis, deleniti dolorem expedita itaque quas.</P>
-            <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias sit est ab aliquam provident tempore, excepturi reprehenderit nulla veniam adipisci. Culpa, recusandae pariatur. Iste quis, deleniti dolorem expedita itaque quas.</P>
+            <form id="post-form" onsubmit="addPost(event)">
+                <textarea id="postContent" placeholder="What's on your mind?" rows="5" required></textarea>
+                <input type="text" id="image" placeholder="image url" required>
+                <button type="submit">New Post</button>
+            </form>
+            <div id="posts"></div>
         </div>
-        <div class="right-menu"></div>
+        <div class="right-menu">text of right menu</div>
     </div>
 </body>
 </html>
