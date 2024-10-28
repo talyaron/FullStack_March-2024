@@ -46,14 +46,13 @@ async function login(username: string, email:string, password: string): Promise<
       },
       body: JSON.stringify({ username:username, email:email, password:password }),
     });
-    const data = await response.json();
     if (response.ok) {
-      console.log(data);
       const { token } = await response.json();
+      console.log(token);
       document.cookie = `auth=${token}; path=/`;
-      window.location.href = "../post/index.html";
+      window.location.href = "../posts/index.html";
     } else {
-      alert(data.error);
+      alert("Sign-in failed");
     }
   } catch (error) {
     console.error(error);

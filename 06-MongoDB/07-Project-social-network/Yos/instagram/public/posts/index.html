@@ -14,12 +14,12 @@
     </div>
   </header>
   <div id="content">
-    <div id="new-post">
+    <form id="new-post" onsubmit="handleSubmitPost(event)">
       <h2>Create New Post</h2>
-      <textarea id="post-content" placeholder="What's on your mind?"></textarea>
-      <input type="file" id="post-image">
-      <button id="create-post">Post</button>
-    </div>
+      <textarea name="postContent" id="post-content" placeholder="What's on your mind?"></textarea>
+      <input name="postImage" type="file" id="post-image">
+      <button type="submit" id="create-post">Post</button>
+    </form>
     <div id="posts">
       <h2>All Posts</h2>
       <button id="get-posts">Get All Posts</button>

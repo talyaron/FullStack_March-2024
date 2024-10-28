@@ -18,4 +18,3 @@ router.post("/:postId/like", authMiddleware, likePost);
 router.post("/:postId/comment", authMiddleware, commentOnPost);
 
 module.exports = router;
-export default router;
