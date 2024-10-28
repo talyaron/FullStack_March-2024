@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
+// import router from "../routes/authRoutes";
 
-module.exports = (req: any, res: any, next: any) => {
+module.exports = (req: any, res: any, next: any): void => {
   const token = req.header("Authorization")?.replace("Bearer ", "");
   if (!token) return res.status(401).json({ error: "Access denied" });
 
@@ -13,4 +14,4 @@ module.exports = (req: any, res: any, next: any) => {
   }
 };
 
-export default module.exports;
+// export default authMiddleware;
