@@ -59,25 +59,27 @@ async function fetchPosts() {
 }
 
 function displayPosts(posts: [], postList: HTMLDivElement) {
-  postList.innerHTML = "";
+  postList.innerHTML = ""; // Clear existing posts
   posts.forEach((post) => {
     const postElement = document.createElement("div");
-    postElement.classList.add("post");
+    postElement.classList.add("post-item"); // Updated to match SCSS
+
     postElement.innerHTML = `
-            <h3>${post.userId.username}</h3>
-            <p>${post.content}</p>
-            ${post.image ? `<img src="${post.image}" alt="Post Image">` : ""}
-            <div class="actions">
+            <h3 class="post-header">${post.userId.username}</h3> <!-- Class added for styling -->
+            <p class="post-content">${post.content}</p> <!-- Class added for styling -->
+            ${post.image ? `<img src="${post.image}" alt="Post Image" class="post-image">` : ""} <!-- Class added for styling -->
+            <div class="post-actions"> <!-- Updated class to match SCSS -->
               <button onclick="likePost('${post._id}')">Like</button>
               <button onclick="commentOnPost('${post._id}')">Comment</button>
             </div>
             <div class="comments">
-     
+              <!-- Placeholder for comments -->
             </div>
           `;
     postList.appendChild(postElement);
   });
 }
+
          // ${post.comments
               //   .map(
               //     (comment) =>

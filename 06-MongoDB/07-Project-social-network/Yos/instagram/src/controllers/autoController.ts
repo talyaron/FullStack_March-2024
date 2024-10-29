@@ -38,6 +38,9 @@ export async function login(req: any, res: any): Promise<void> {
     console.log("Login function called");
     console.log("Request body:", req.body);
 
+    // can read the request cookie
+    console.log("Request cookie:", req.cookies);
+    
     const { username, email, password } = req.body;
     console.log("Parsed request body:", { username, email, password });
 
@@ -53,7 +56,7 @@ export async function login(req: any, res: any): Promise<void> {
     //   console.log("Invalid credentials");
     //   return res.status(400).json({ error: "Invalid credentials" });
     // }
-
+    res.cookie("userId", user._id.toString(), {httpOnly: true, maxAge: 1000 });
     const token = jwt.sign({ id: user._id }, "your_jwt_secret", {
       expiresIn: "1h",
     });
