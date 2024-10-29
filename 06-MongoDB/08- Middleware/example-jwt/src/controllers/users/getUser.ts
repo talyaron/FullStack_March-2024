@@ -4,6 +4,7 @@ import { User } from "../../model/users/userModel";
 export async function getUser(req: any, res: any) {
     try {
         const userId = req.userId;
+        
         console.log(userId);
         const user = await User.findById(userId);
         if(user){
@@ -22,7 +23,7 @@ export async function getUserPets(req: any, res: any) {
     try {
       //user id
       const userId = req.userId;
-      console.log("getUserPets", userId);
+      console.log(userId);
 
       const pets = await Pet.find({client:userId});
       console.log(pets)

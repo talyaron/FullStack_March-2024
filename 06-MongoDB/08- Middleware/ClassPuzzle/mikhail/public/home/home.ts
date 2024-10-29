@@ -67,11 +67,13 @@ getPets();
 
 //model Pets
 interface Pet{
+    id:String;
     name:string;
     age:number;
     species:string;
     price:number;
     imageURL?:string;
+    
 
 }
 
@@ -90,10 +92,36 @@ function renderPets(pets: Pet[]){
             <h3>${pet.name}</h3>
             <p>Age: ${pet.age}</p>
             <p>Breed: ${pet.species}</p>
+            <button id="delete">Delete pet</button>
             `;
             petsContainer.appendChild(petElement);
+            const button=document.querySelector("#delete") as HTMLButtonElement;
+        button.addEventListener("click",()=>{
+            handleDeletePet(pet.id);
+   });
         });
+        
     } catch (error) {
         console.error(error);
+    }
+}
+async function handleDeletePet(petId){
+    try {
+        const response = await fetch(`/posts/${petId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        const jsonResponse = await response.json();
+        if (jsonResponse.ok) {
+            console.log("Pet deleted successfully");
+            window.location.reload();
+        }
+        else{
+            console.error("Error deleting pet:", jsonResponse.message);
+        }
+    } catch (error) {
+        
     }
 }

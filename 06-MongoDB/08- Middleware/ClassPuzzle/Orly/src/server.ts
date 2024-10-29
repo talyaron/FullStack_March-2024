@@ -3,7 +3,7 @@ import usersRouter from './routes/users/usersRoutes';
 import PetsRouter from './routes/pets/petsRoutes';
 const app = express();
 import cookieParser from 'cookie-parser';
-const port = 3000;
+const port = 3004;
 
 
 //connection to db
