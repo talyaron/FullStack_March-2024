@@ -1,6 +1,6 @@
 export async function getUserIdCookie(req:any, res:any){
     try {
-        const userId =req.cookie('userId');
+        const userId = req.cookie('userId');
         if(userId){
             res.status(200).send({ ok:true,userId:userId});
         }
