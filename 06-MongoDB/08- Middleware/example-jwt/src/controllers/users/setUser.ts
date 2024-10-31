@@ -2,10 +2,12 @@ import { Request, Response } from 'express';
 import { User } from '../../model/users/userModel'
 import jwt from 'jwt-simple';
 
-export const secret = '12345';
+
 
 export async function login(req: Request, res: Response) {
     try {
+       const secret='123'
+        console.log(secret)
         const { email, password } = req.body;
         console.log(email, password)
 

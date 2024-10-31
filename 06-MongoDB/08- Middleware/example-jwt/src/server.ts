@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 const port = 3000;
 
 
+
 //connection to db
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://tal:k8w0S6ztTx3zowGW@cluster0.0hzknon.mongodb.net/fs-mrc24').then(()=>{
