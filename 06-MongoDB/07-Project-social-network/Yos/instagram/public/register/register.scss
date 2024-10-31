@@ -12,7 +12,13 @@ header {
   background-color: $primary-color;
   color: white;
   padding: 10px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  i{
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
 }
 
 #auth-forms {

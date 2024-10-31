@@ -54,42 +54,91 @@ async function fetchPosts() {
     console.log(posts);
     displayPosts(posts, postList);
   } else {
-    alert("Error fetching posts");
+    console.error(response);
   }
 }
 
-function displayPosts(posts: [], postList: HTMLDivElement) {
-  postList.innerHTML = "";
+function displayPosts(posts: any[], postList: HTMLDivElement) {
+  postList.innerHTML = ""; // Clear existing posts
   posts.forEach((post) => {
     const postElement = document.createElement("div");
-    postElement.classList.add("post");
+    postElement.classList.add("post-item"); // Updated to match SCSS
+
     postElement.innerHTML = `
-            <h3>${post.userId.username}</h3>
-            <p>${post.content}</p>
-            ${post.image ? `<img src="${post.image}" alt="Post Image">` : ""}
-            <div class="actions">
+            <h3 class="post-header">${post.userDetails.firstName} ${
+      post.userDetails.lastName
+    }</h3> <!-- Class added for styling -->
+            <p class="post-content">${
+              post.content
+            }</p> <!-- Class added for styling -->
+            ${
+              post.image
+                ? `<img src="${post.image}" alt="Post Image" class="post-image">`
+                : ""
+            } <!-- Class added for styling -->
+            <div class="post-actions"> <!-- Updated class to match SCSS -->
+              <p>${post.likesCount} Likes</p> 
               <button onclick="likePost('${post._id}')">Like</button>
               <button onclick="commentOnPost('${post._id}')">Comment</button>
             </div>
             <div class="comments">
-     
+              ${post.comments
+                .map((comment) => 
+                  `<p>${comment.userDetails.firstName} ${comment.userDetails.lastName}: ${comment.content}</p>`)
+                .join("")}  
             </div>
-          `;
+                  `;
     postList.appendChild(postElement);
   });
 }
-         // ${post.comments
-              //   .map(
-              //     (comment) =>
-              //       `<p>${comment.userId.username}: ${comment.content}</p>`
-              //   )
-              //   .join("")}
+
 function getCookie(name) {
   return document.cookie.split("; ").reduce((r, v) => {
     const parts = v.split("=");
     return parts[0] === name ? decodeURIComponent(parts[1]) : r;
   }, "");
 }
+
+function handleLogOut() {
+  document.cookie = "auth=; Max-Age=0; path=/";
+  window.location.href = "../login/index.html";
+}
+
+async function likePost(postId: any): Promise<void> {
+  const token: string = getCookie("auth");
+  fetch(`/api/posts/${postId}/like`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        fetchPosts();
+      } else {
+        alert("Error liking post");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+const commentOnPost = async (postId: any): Promise<void> => {
+  const comment = prompt("Enter your comment:");
+  if (!comment) return;
+
+  const token = getCookie("auth");
+  await fetch(`/api/posts/${postId}/comment`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ content: comment }),
+  });
+  fetchPosts();
+};
 
 // document.addEventListener("DOMContentLoaded", () => {
 //     const logOutButton = document.getElementById("log-out");

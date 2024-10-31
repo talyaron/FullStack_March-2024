@@ -4,18 +4,16 @@ import fs from "fs";
 import mongoose from "mongoose";
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
-
-
-const authRoutes = require('./routes/authRoutes');
-const postRoutes = require('./routes/postRoutes');
-const userRoutes = require('./routes/userRoutes');
-
+import authRoutes from './routes/authRoutes';
+import postRoutes from './routes/postRoutes';
+import userRoutes from './routes/userRoutes';
 
 const app = express();
 const port = 3000;
-
+console.log("Server starting...")
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded())
+app.use(express.json());
 app.use(cookieParser());
 
 app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
@@ -49,3 +47,4 @@ app.use('/api/users', userRoutes);
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
   });
+
