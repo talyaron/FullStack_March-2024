@@ -2,7 +2,7 @@ import { NextFunction } from "express";
 import jwt from 'jwt-simple';
 
 
-
+require('dotenv').config()
 
 export async function checkUser(req: any, res: any, next: NextFunction) {
     try {
