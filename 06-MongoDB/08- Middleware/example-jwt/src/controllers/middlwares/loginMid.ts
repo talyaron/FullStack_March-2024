@@ -1,9 +1,6 @@
 import { NextFunction } from "express";
 import jwt from 'jwt-simple';
-
-
-
-
+import 'dotenv/config'
 
 
 
@@ -13,7 +10,7 @@ import jwt from 'jwt-simple';
 export async function checkUser(req: any, res: any, next: NextFunction) {
     try {
 
-        const secret = "123"
+        const secret = process.env.SECRET as string;
       
         const { userId } = req.cookies;
         console.log("checkUser", userId);
