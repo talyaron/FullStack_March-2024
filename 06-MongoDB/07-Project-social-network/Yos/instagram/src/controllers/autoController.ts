@@ -1,6 +1,5 @@
 import { User } from "../models/User";
 import bcrypt from "bcryptjs";
-import { console } from "inspector";
 import jwt from "jsonwebtoken";
 
 export const register = async (req: any, res: any) => {
@@ -15,23 +14,26 @@ export const register = async (req: any, res: any) => {
       return res.status(400).send("User already exists");
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
     const user = new User({
       username,
       email,
-      password: hashedPassword,
+      password: password,
       firstName,
       lastName,
       profilePicture,
     });
 
     await user.save();
-    res.status(201).json(user);
+    res.cookie("userId", user._id.toString(), { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 });
+    const token = jwt.sign({ id: user._id }, "your_jwt_secret", {
+      expiresIn: "1h",
+    });
+    console.log("Token generated:", token);
+    res.json({ token });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
   }
 };
-
 
 export async function login(req: any, res: any): Promise<void> {
   try {
@@ -40,7 +42,7 @@ export async function login(req: any, res: any): Promise<void> {
 
     // can read the request cookie
     console.log("Request cookie:", req.cookies);
-    
+
     const { username, email, password } = req.body;
     console.log("Parsed request body:", { username, email, password });
 
@@ -50,13 +52,19 @@ export async function login(req: any, res: any): Promise<void> {
       return res.status(400).json({ error: "User not found" });
     }
     console.log("User found:", user);
+    console.log("Input password:", req.body.password);
+    console.log("Stored password:", user.password);
+    const isMatch = await bcrypt.compare(
+      req.body.password,
+      user.password.trim()
+    );
+    console.log("Password match result:", isMatch);
 
-    // const isMatch = await bcrypt.compare(req.body.password, user.password);
-    // if (!isMatch) {
-    //   console.log("Invalid credentials");
-    //   return res.status(400).json({ error: "Invalid credentials" });
-    // }
-    res.cookie("userId", user._id.toString(), {httpOnly: true, maxAge: 1000 });
+    if (!isMatch) {
+      console.log("Invalid credentials");
+      return res.status(400).json({ error: "Invalid credentials" });
+    }
+    res.cookie("userId", user._id.toString(), { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 });
     const token = jwt.sign({ id: user._id }, "your_jwt_secret", {
       expiresIn: "1h",
     });

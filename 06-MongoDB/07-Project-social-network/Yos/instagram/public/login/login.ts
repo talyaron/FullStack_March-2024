@@ -52,6 +52,7 @@ async function login(username: string, email:string, password: string): Promise<
       document.cookie = `auth=${token}; path=/`;
       window.location.href = "../posts/index.html";
     } else {
+      console.log(response);
       alert("Sign-in failed");
     }
   } catch (error) {

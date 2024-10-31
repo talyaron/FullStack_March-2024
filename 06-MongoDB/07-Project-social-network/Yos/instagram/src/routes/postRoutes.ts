@@ -12,7 +12,6 @@ import authMiddleware from "../middleware/authMiddleware"; // Use ES6 import her
 const router = express.Router();
 
 const upload = multer({ dest: "uploads/" });
-console.log(typeof authMiddleware); // Should output 'function'
 
 router.post("/", authMiddleware, upload.single("image"), createPost);
 router.get("/", authMiddleware, getPosts);

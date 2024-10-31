@@ -89,9 +89,12 @@ async function registerUser(
 
     if (response.ok) {
       console.log("Registration successful");
+      const { token } = await response.json();
+      console.log(token);
+      document.cookie = `auth=${token}; path=/`;
       window.location.href = "../posts/index.html";
     } else {
-      alert("Registration failed, please try again");
+      console.error("Registration failed, please try again");
     }
   } catch (error) {
     console.error(error);
