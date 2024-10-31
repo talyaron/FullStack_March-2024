@@ -3,7 +3,7 @@ import { User } from "../../model/users/userModel";
 
 export async function getUser(req: any, res: any) {
     try {
-        const { userId } = req.cookies;
+        const userId = req.userId;
         console.log(userId);
         const user = await User.findById(userId);
         if(user){
@@ -21,10 +21,10 @@ export async function getUser(req: any, res: any) {
 export async function getUserPets(req: any, res: any) {
     try {
       //user id
-      const user = req.user;
-      console.log(user);
+      const userId = req.userId;
+      console.log("getUserPets", userId);
 
-      const pets = await Pet.find({client:user._id});
+      const pets = await Pet.find({client:userId});
       console.log(pets)
       
       res.send({ok:true, pets});

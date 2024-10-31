@@ -7,14 +7,17 @@ import {
 } from "../controllers/postController";
 import multer from "multer";
 
-const authMiddleware = require("../middleware/authMiddleware");
+import authMiddleware from "../middleware/authMiddleware"; // Use ES6 import here
+
 const router = express.Router();
 
 const upload = multer({ dest: "uploads/" });
+console.log(typeof authMiddleware); // Should output 'function'
 
 router.post("/", authMiddleware, upload.single("image"), createPost);
 router.get("/", authMiddleware, getPosts);
 router.post("/:postId/like", authMiddleware, likePost);
 router.post("/:postId/comment", authMiddleware, commentOnPost);
 
-module.exports = router;
+// module.exports = router;
+export default router;
