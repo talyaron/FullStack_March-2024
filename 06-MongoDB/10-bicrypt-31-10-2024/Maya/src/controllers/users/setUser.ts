@@ -13,8 +13,12 @@ export async function login(req: Request, res: Response) {
 
         // Find user by email
         const user = await User.findOne({ email });
-        if (!user) {
+        if (!user || typeof user.password !== 'string') {
             return res.status(401).send({ error: 'Invalid email or password' });
+        }
+
+        if (typeof password !== 'string') {
+            return res.status(400).send({ error: 'Password must be provided' });
         }
 
         // Compare passwords
