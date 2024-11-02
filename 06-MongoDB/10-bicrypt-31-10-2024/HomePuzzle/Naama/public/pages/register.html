@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./dist/register.js" defer></script>
+    <link rel="stylesheet" href="./../dist/styles.css">
+</head>
+<body>
+    <form id="registerForm" onsubmit="handleRegister(event)">
+        <input type="text" name="name" placeholder="שם משתמש" required>
+        <input type="email" name="email" placeholder="אימייל" required>
+        <input type="password" name="password" placeholder="סיסמא" required>
+        <label for="birthday">תאריך לידה<label><input type="date" id="birthday" name="birthday">
+        <input type="radio" name="sex" id="girl"><label for="girl">בת</label>
+        <input type="radio" name="sex" id="boy"><label for="boy">בן</label>
+        <button type="submit">הירשם</button>
+        <a href="">התחבר</a>
+    </form>
+</body>
+</html>
