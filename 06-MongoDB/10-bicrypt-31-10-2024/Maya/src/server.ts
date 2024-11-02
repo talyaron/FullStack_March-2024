@@ -1,6 +1,7 @@
 import express from 'express';
 import usersRouter from './routes/users/usersRoutes';
 import PetsRouter from './routes/pets/petsRoutes';
+import adminRouter from './routes/admin/adminRoutes';
 const app = express();
 import cookieParser from 'cookie-parser';
 import 'dotenv/config'
@@ -26,6 +27,7 @@ app.use(express.static('public'));
 
 app.use('/users',usersRouter);
 app.use('/pets',PetsRouter);
+app.use('/admin',adminRouter);
 
 
 app.get('/', (req:any, res:any) => {
