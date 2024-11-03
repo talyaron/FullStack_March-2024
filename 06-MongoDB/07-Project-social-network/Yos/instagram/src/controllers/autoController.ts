@@ -11,7 +11,7 @@ export const register = async (req: any, res: any) => {
 
     const findUser = await User.findOne({ email });
     if (findUser) {
-      return res.status(400).send("User already exists");
+      return res.status(400).send({ error: "User already exists" });
     }
 
     const user = new User({
@@ -24,7 +24,10 @@ export const register = async (req: any, res: any) => {
     });
 
     await user.save();
-    res.cookie("userId", user._id.toString(), { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 });
+    res.cookie("userId", user._id.toString(), {
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24,
+    });
     const token = jwt.sign({ id: user._id }, "your_jwt_secret", {
       expiresIn: "1h",
     });
@@ -64,7 +67,10 @@ export async function login(req: any, res: any): Promise<void> {
       console.log("Invalid credentials");
       return res.status(400).json({ error: "Invalid credentials" });
     }
-    res.cookie("userId", user._id.toString(), { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 });
+    res.cookie("userId", user._id.toString(), {
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24,
+    });
     const token = jwt.sign({ id: user._id }, "your_jwt_secret", {
       expiresIn: "1h",
     });

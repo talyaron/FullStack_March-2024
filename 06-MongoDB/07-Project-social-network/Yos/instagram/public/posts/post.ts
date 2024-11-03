@@ -82,10 +82,15 @@ function displayPosts(posts: any[], postList: HTMLDivElement) {
               <button onclick="commentOnPost('${post._id}')">Comment</button>
             </div>
             <div class="comments">
-              ${post.comments
-                .map((comment) => 
-                  `<p>${comment.userDetails.firstName} ${comment.userDetails.lastName}: ${comment.content}</p>`)
-                .join("")}  
+             
+                ${post.comments
+                 .map((comment) => ` <div class='comment'>
+                                  <p>${comment.userDetails.firstName}</p>
+                                    <p>${comment.userDetails.lastName}</p>      
+                                     <p>${comment.content}</p>
+                                     <p>${comment.createdAt.substring(0,10)}</p> </div>`)
+                  .join("")}  
+               
             </div>
                   `;
     postList.appendChild(postElement);

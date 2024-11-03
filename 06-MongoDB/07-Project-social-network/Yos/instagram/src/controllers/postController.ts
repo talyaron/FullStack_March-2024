@@ -21,50 +21,76 @@ export const getPosts = async (req: any, res: any) => {
     console.log("get all posts");
     
     //bring all the posts from all user, likes and comments populated
-    // Aggregate posts with user details, likes count, and comments populated
-    const posts = await Post.aggregate([
-      {
-        $lookup: {
-          from: "users",
-          localField: "userId",
-          foreignField: "_id",
-          as: "userDetails",
-        },
-      },
-      {
-        $lookup: {
-          from: "likes",
-          localField: "_id",
-          foreignField: "postId",
-          as: "likes",
-        },
-      },
-      {
-        $lookup: {
-          from: "comments",
-          localField: "_id",
-          foreignField: "postId",
-          as: "comments",
-        },
-      },
-      {
-        $addFields: {
-          likesCount: { $size: "$likes" },
-        },
-      },
-      {
-        $project: {
-          userDetails: { $arrayElemAt: ["$userDetails", 0] },
-          content: 1,
-          image: 1,
-          likesCount: 1,
-          comments: 1,
-          createdAt: 1,
-          updatedAt: 1,
-        },
-      },
-    ]);
-
+        // Aggregate posts with user details, likes count, and comments populated
+        const posts = await Post.aggregate([
+          {
+            $lookup: {
+              from: 'users',
+              localField: 'userId',
+              foreignField: '_id',
+              as: 'userDetails'
+            }
+          },
+          {
+            $lookup: {
+              from: 'likes',
+              localField: '_id',
+              foreignField: 'postId',
+              as: 'likes'
+            }
+          },
+          {
+            $lookup: {
+              from: 'comments',
+              localField: '_id',
+              foreignField: 'postId',
+              as: 'comments'
+            }
+          },
+          {
+            $unwind: {
+              path: '$comments',
+              preserveNullAndEmptyArrays: true
+            }
+          },
+          {
+            $lookup: {
+              from: 'users',
+              localField: 'comments.userId',
+              foreignField: '_id',
+              as: 'comments.userDetails'
+            }
+          },
+          {
+            $addFields: {
+              'comments.userDetails': { $arrayElemAt: ['$comments.userDetails', 0] }
+            }
+          },
+          {
+            $group: {
+              _id: '$_id',
+              userDetails: { $first: '$userDetails' },
+              content: { $first: '$content' },
+              image: { $first: '$image' },
+              likesCount: { $first: { $size: '$likes' } },
+              comments: { $push: '$comments' },
+              createdAt: { $first: '$createdAt' },
+              updatedAt: { $first: '$updatedAt' }
+            }
+          },
+          {
+            $project: {
+              userDetails: { $arrayElemAt: ['$userDetails', 0] },
+              content: 1,
+              image: 1,
+              likesCount: 1,
+              comments: 1,
+              createdAt: 1,
+              updatedAt: 1
+            }
+          }
+        ]);
+        
     res.json(posts);
   } catch (err: any) {
     console.log(err);

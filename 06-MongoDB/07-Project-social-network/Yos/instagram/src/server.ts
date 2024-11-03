@@ -12,7 +12,7 @@ const app = express();
 const port = 3000;
 console.log("Server starting...")
 app.use(bodyParser.json());
-app.use(express.urlencoded())
+app.use(express.urlencoded( { extended: true } ));
 app.use(express.json());
 app.use(cookieParser());
 

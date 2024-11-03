@@ -79,7 +79,7 @@ async function registerUser(
     };
     console.log(data);
 
-    const response = await fetch("/api/auth/register", {
+    const response:any = await fetch("/api/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -94,7 +94,7 @@ async function registerUser(
       document.cookie = `auth=${token}; path=/`;
       window.location.href = "../posts/index.html";
     } else {
-      console.error("Registration failed, please try again");
+      console.error("User already exists, please try again");
     }
   } catch (error) {
     console.error(error);

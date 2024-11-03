@@ -1,5 +1,6 @@
 // Variables
-$font-stack: Arial, sans-serif;
+$font-stack: Arial,
+sans-serif;
 $primary-color: #3897f0;
 $background-color: #fafafa;
 $text-color: #333;
@@ -217,5 +218,26 @@ header {
         background-color: lighten($primary-color, 40%);
       }
     }
+  }
+}
+
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  .comment {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    background-color: $secondary-color;
+    border: 1px solid $border-color;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    height: 1.5;
+
   }
 }
