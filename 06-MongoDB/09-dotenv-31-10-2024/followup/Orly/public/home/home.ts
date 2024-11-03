@@ -68,8 +68,8 @@ getPets();
 //model Pets
 interface Pet{
     name:string;
-    age:number;
     species:string;
+    age:number;
     price:number;
     imageURL?:string;
 

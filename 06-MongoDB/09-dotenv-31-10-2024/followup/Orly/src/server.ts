@@ -3,13 +3,13 @@ import usersRouter from './routes/users/usersRoutes';
 import PetsRouter from './routes/pets/petsRoutes';
 const app = express();
 import cookieParser from 'cookie-parser';
-const port = 3001;
+const port = 3003;
 
 
 
 //connection to db
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://orlyjonathan:RPGlEXtRjIGBEfH2@orly.s78ke.mongodb.net/fs-mrc24').then(()=>{
+mongoose.connect('mongodb+srv://orlyjonathan:RPGlEXtRjIGBEfH2@orly.s78ke.mongodb.net/fs-mrc24/pets').then(()=>{
   console.log('connected to db')
 })
 .catch((err:any)=>{

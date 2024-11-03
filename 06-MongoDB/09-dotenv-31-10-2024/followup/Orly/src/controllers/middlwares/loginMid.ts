@@ -1,7 +1,6 @@
 import { NextFunction } from "express";
 import jwt from 'jwt-simple';
-
-require('dotenv').config();
+import 'dotenv/config'
 
 export async function checkUser(req: any, res: any, next: NextFunction) {
     try {
