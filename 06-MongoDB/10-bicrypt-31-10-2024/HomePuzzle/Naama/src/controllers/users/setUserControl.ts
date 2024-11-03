@@ -1,8 +1,9 @@
 import { Request, Response } from 'express';
-import { User } from '../../model/users/userModel'
 import jwt from 'jwt-simple';
 import bcrypt from 'bcryptjs';
 import 'dotenv/config';
+import { User } from '../../models/userModel';
+import { getRandomFreeStreet, randomId } from '../functions';
 
 
 export async function login(req: Request, res: Response) {
@@ -48,10 +49,13 @@ export async function login(req: Request, res: Response) {
     }
 }
 
-export async function register(req: Request, res: Response) {
+export async function register(req: any, res: any) {
     try {
         var salt = bcrypt.genSaltSync(10);
-        const { email, password, name } = req.body;
+        const { email, password, name, birthday, sex } = req.body;
+        var userid = randomId(5);
+
+        
 
         var hashedPassword = bcrypt.hashSync(password, salt);
         console.log(hashedPassword)
@@ -65,14 +69,23 @@ export async function register(req: Request, res: Response) {
         }
 
         await user.save()
-        //@ts-ignore
-
+        const street = getRandomFreeStreet();
+        const house = await fetch('/users/house-creation', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body:{
+                'owner': JSON.stringify(user.id),
+                'street': 'getstreet'
+            },
+        });
 
         res.status(200).send({ ok: true });
 
-    } catch (error) {
+    } catch (error:any) {
         console.error(error)
-        res.status(500).send(error);
+        res.status(500).send({ ok: false ,error: error.message});
 
     }
 }

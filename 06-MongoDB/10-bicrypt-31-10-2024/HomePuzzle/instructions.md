@@ -2,7 +2,7 @@
 
 **Base Project**: Users-Pets Application
 
-## Level 1: Basic Security Implementation
+## Level 1: Basic Security Implementation (max: 90 points)
 ### Database Security
 1. Protect Database Connection
    - Implement environment variables using `dotenv` to secure the database URL
@@ -13,7 +13,7 @@
    - Implement password verification during login
    - Ensure password comparison is done securely using bcrypt's compare function
 
-## Level 2: Admin Security Layer
+## Level 2: Admin Security Layer (max: 95 points)
 ### System Administrator Access
 1. Create Special Admin Routes
    - Implement separate registration and login endpoints for system administrators
@@ -24,7 +24,7 @@
    - Use environment variables to store admin-specific secrets
    - Ensure high-strength encryption and secret keys for admin accounts
 
-## Level 3: Advanced Security Challenge
+## Level 3: Advanced Security Challenge (max: 100 points)
 ### Admin Login Protection
 1. Implement Login Attempt Monitoring
    - Track failed login attempts for admin accounts
