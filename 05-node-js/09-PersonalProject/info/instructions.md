@@ -4,7 +4,7 @@ This document outlines the requirements and scoring criteria for three levels of
 
 ## Level 1: Multi-User Todo Application (90 points)
 
-### Basic Requirements (40 points)
+### Basic Requirements (50 points)
 
 #### User System (15 points)
 - User registration with email and password
@@ -23,9 +23,9 @@ This document outlines the requirements and scoring criteria for three levels of
 - Private todos per user
 - Input validation for all fields
 
-### Additional Features (30 points)
+### Additional Features (40 points)
 
-#### UI/UX Implementation (25 points)
+#### UI/UX Implementation (20 points)
 - Responsive design
 - Loading state indicators
 - Error handling and display
@@ -163,7 +163,7 @@ use D3.js for graph visualization
 
 ### Frontend Development
 - Vanilla TypeScript implementation
-- Type definitions and interfaces
+- Type definitions and interfaces or classes
 - Responsive design principles
 - Error handling and display
 - Loading state management
@@ -209,13 +209,13 @@ use D3.js for graph visualization
   * Performance optimizations
 
 ### Submission Requirements
-1. Source code via GitHub repository
+1. Source code via you own GitHub repository
 2. README with:
    - Setup instructions
    - Dependencies list
    - API documentation
    - Features overview
-3. Demo deployment (optional)
+3. Video demo of the project in youtube, with a link in the README
 4. Presentation/documentation of features
 
 ### Evaluation Notes
