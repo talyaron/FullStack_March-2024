@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Instagram</title>
-    <script src="./dist/register.js" defer></script>
+    <title>Instagram Login</title>
+    <script src="./dist/login.js" defer></script>
 </head>
 <body>
-    <form onsubmit="handleRegister(event)">
-        <input type="text" name="name" placeholder="Name" required>
+    <h1>Login to Instagram</h1>
+    <form onsubmit="handleLogin(event)">
         <input type="email" name="email" placeholder="email" required>
         <input type="password" name="password" placeholder="password" required>
-        <button type="submit">Register</button>
+        <button type="submit">Login</button>
     </form>
-    <a href="./../login/login.html">Login</a>
+
+    
 </body>
 </html>

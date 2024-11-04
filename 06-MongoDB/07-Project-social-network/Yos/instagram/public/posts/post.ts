@@ -85,7 +85,7 @@ function displayPosts(posts: any[], postList: HTMLDivElement) {
              
                 ${post.comments
                  .map((comment) => ` <div class='comment'>
-                                  <p>${comment.userDetails.firstName}</p>
+                                   <p>${comment.userDetails.firstName}</p>
                                     <p>${comment.userDetails.lastName}</p>      
                                      <p>${comment.content}</p>
                                      <p>${comment.createdAt.substring(0,10)}</p> </div>`)

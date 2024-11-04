@@ -1,22 +1,22 @@
-import { Request, Response } from "express";
-import { User } from "../../model/users/userModel";
-import jwt from "jwt-simple";
-const bcrypt = require("bcrypt");
+import { Request, Response } from 'express';
+import bcrypt from 'bcryptjs';
+import Admin from '../../model/admin/adminModel';
+import jwt from 'jwt-simple';
 
-export async function login(req: any, res: any) {
+export async function loginAdmin(req: any, res: any) {
   try {
     console.log(req.userId, req.role);
-    const secret = process.env.SECRET!;
+    const secret = process.env.ADMIN_SECRET!;
 
     const { email, password } = req.body;
-    const user = await User.findOne({ email });
+    const user = await Admin.findOne({ email });
 
     // take the password and compare it to the hashed password in the database
     if (!user) {
       return res.status(401).send({ error: "Invalid email or password" });
     }
 
-    const comparePassword = await bcrypt.compareSync(password, user.password);
+    const comparePassword = bcrypt.compareSync(password, user.password);
 
     if (!comparePassword) {
       return res.status(401).send({ error: "Invalid email or password" });
@@ -27,7 +27,7 @@ export async function login(req: any, res: any) {
       userId: user._id,
       email: user.email,
       name: user.name,
-      role: "user",
+      role: "Admin",
     };
 
     const payloadJWT = jwt.encode(payload, secret);
@@ -48,24 +48,23 @@ export async function login(req: any, res: any) {
   }
 }
 
-export async function register(req: any, res: any) {
+export async function registerAdmin(req: any, res: any) {
   try {
     const { email, password, name, isAdmin } = req.body;
-    const checkAdmin = false; //isAdmin === "on" ? true : false;
+    const checkAdmin = true; //isAdmin === "on" ? true : false;
     const bcryptPassword = bcrypt.hashSync(password, 10);
     
-    const existingUser = await User.findOne({ email });
+    const existingUser = await Admin.findOne({ email });
     if (existingUser) {
-      return res.status(400).send({ error: "User already exists" });
+      return res.status(400).send({ error: "Admin User already exists" });
     }
     //save username and password to database
-    const user = new User({
+    const user = new Admin({
       email: email,
       password: bcryptPassword,
       name: name,
       isAdmin: checkAdmin,
     });
-
 
     await user.save();
     res.status(200).send({ ok: true });
