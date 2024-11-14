@@ -15,12 +15,14 @@ function App() {
       </div>
       <h1>Importance and Value of trees.</h1>
       <div className="card">
-      
+        
         <p>
         Since the beginning, trees have furnished us with two of life’s essentials, food and oxygen. As we evolved, they provided additional necessities such as shelter, medicine, and tools. Today, their value continues to increase and more benefits of trees are being discovered as their role expands to satisfy the needs created by our modern lifestyles.
         </p>
       </div>
-      
+      <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
     </>
   )
 }
