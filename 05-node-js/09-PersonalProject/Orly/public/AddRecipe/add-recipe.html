@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Recipe</title>
+  <link rel="stylesheet" href="./dist/add-recipe.css">
+
+</head>
+<body>
+  <header>
+    <h2>Add New Recipe</h2>
+  </header>
+  <main>
+    <form id="recipeForm">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="ingredients">Ingredients (comma-separated):</label>
+      <input type="text" id="ingredients" name="ingredients" required>
+
+      <label for="instructions">Instructions:</label>
+      <textarea id="instructions" name="instructions" required></textarea>
+
+      <label for="cookingTime">Cooking Time (minutes):</label>
+      <input type="number" id="cookingTime" name="cookingTime" required>
+
+      <label for="servingSize">Serving Size:</label>
+      <input type="number" id="servingSize" name="servingSize" required>
+
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="category" required>
+
+      <label for="image">Image:</label>
+      <input type="file" id="image" name="image">
+
+      <button type="submit">Add Recipe</button>
+    </form>
+  </main>
+  <script src="scripts/addRecipe.js"></script>
+</body>
+</html>

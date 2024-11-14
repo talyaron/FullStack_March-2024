@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Homepage</title>
+    <script src="./dist/user-homepage.js" defer></script>
+    <link rel="stylesheet" href="./user-homepage.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to your Personal Recipe Page</h1>
+        <nav>
+            <a href="../../AddRecipe/add-recipe.html">Add Recipe</a>
+            <a href="../../Recipe/recipes.html">View All Recipes</a>
+            <a href="../../login/login.html">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-favorites">
+            <!-- Profile Summary -->
+            <div class="profile-summary">
+                <h2>Your Profile</h2>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnBKf7vHuX5Aagd7cEX29J031-m9jAbGXHsw&s" alt="User Avatar" class="avatar">
+                <p><strong>Name:</strong> Johanna Doe</p>
+                <p><strong>Recipes Created:</strong> 12</p>
+                <p><strong>Favorites:</strong> 5</p>
+            </div>
+
+            <!-- Profile Editing Form -->
+           
+            <!-- User Favorites Section -->
+            <div class="favorites">
+                <h2>Your Favorite Recipes</h2>
+                
+                <div class="recipe-card">
+                    <h3>Spaghetti Bolognese</h3>
+                    <img src="https://www.cookingwithnanaling.com/wp-content/uploads/2021/09/spaghetti-bolognese-sq.jpg" alt="Recipe Image">
+                    <a href="https://www.cookingwithnanaling.com/spaghetti-bolognese/" alt="View Recipe">View Recipe</a>
+                    <p>Cooking Time: 30 min | Serves: 4</p>
+                </div>
+                <div class="recipe-card">
+                    <h3>Classic Pancakes</h3>
+                    <img src="https://www.simplyrecipes.com/thmb/C0kjP8h7legc-9h7eJPkb1W3m-E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__05__Pancake-Mix-LEAD-07-v2-Pancake-Mix-LEAD-07.jpg-1-54bc84956549413ca7046997ecc434ea.jpg" alt="Recipe Image">
+                    <a href="https://www.simplyrecipes.com/recipes/homemade_pancake_mix/" alt="View Recipe">View Recipe</a>
+                    <p>Cooking Time: 20 min | Serves: 2</p>
+                </div>
+                <div class="recipe-card">
+                    <h3>Lamb Roast</h3>
+                    <img src="https://tatyanaseverydayfood.com/wp-content/uploads/2020/04/Roasted-Leg-of-Lamb.jpg" alt="Recipe Image">
+                    <a href="https://tatyanaseverydayfood.com/roasted-leg-of-lamb/" alt="View Recipe">View Recipe</a>
+                    <p>Cooking Time: 120 min | Serves: 4</p>
+                </div>
+                <div class="recipe-card">
+                    <h3>Bread Pudding</h3>
+                    <img src="https://www.yummytummyaarthi.com/wp-content/uploads/2023/05/caramel-bread-pudding-1.jpeg" alt="Recipe Image">
+                    <a href="https://www.yummytummyaarthi.com/caramel-bread-pudding-recipe-without-oven/" alt="View Recipe">View Recipe</a>
+                    <p>Cooking Time: 45 min | Serves: 4</p>
+                </div>
+                <div class="recipe-card">
+                    <h3>Chocolate Molten Lava Cake</h3>
+                    <img src="https://www.melskitchencafe.com/wp-content/uploads/2023/01/updated-lava-cakes7.jpg" alt="Recipe Image">
+                    <a href="https://www.melskitchencafe.com/my-favorite-chocolate-molten-lava-cakes/" alt="View Recipe">View Recipe</a>
+                    <p>Cooking Time: 33 min | Serves: 4</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions Section -->
+        <section class="quick-actions">
+            <h2>Quick Actions</h2>
+            <button onclick="window.location.href='../../AddRecipe/add-recipe.html'">Add New Recipe</button>
+            <button onclick="window.location.href='../../Recipe/recipes.html'">Search Recipes</button>
+        </section>
+    </main>
+    <form class="profile-edit-form">
+        <h2>Edit Profile</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="Current Username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="user@example.com" required>
+
+        <label for="avatar">Change Avatar:</label>
+        <input type="file" id="avatar" name="avatar" accept="image/*">
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <footer>
+        <p>&copy; 2024 Recipe Management App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
