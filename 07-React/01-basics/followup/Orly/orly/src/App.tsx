@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.scss'
 
 function App() {
@@ -9,7 +8,7 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
+        <a href="https://www.savatree.com/resource-center/tree-varieties/why-trees/" target="_blank">
           <img src={"https://static.vecteezy.com/system/resources/thumbnails/022/448/291/small_2x/save-earth-day-poster-environment-day-nature-green-ai-generative-glossy-background-images-tree-and-water-free-photo.jpg"} alt="Tree" />
         </a>
        
