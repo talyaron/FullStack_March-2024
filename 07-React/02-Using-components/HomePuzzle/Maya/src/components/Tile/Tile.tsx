@@ -1,12 +1,21 @@
 import { FC } from 'react';
-import './Tile.css';
+import './Tile.scss';
 
-interface Props {
+export interface Props {
     color: 'black' | 'white';
+    selected: boolean;
+    onClick: () => void;
+
   }
   
-  const Tile: FC<Props> = ({ color }) => {
-    return <div className={`tile ${color}`}></div>;
-  };
+  const Tile: React.FC<Props> = ({ color, selected, onClick }) => {
+    return (
+      <div
+      className={`tile ${color} ${selected ? 'selected' : ''}`}
+      onClick={onClick}
+    ></div>
+  );
+};
+
   
   export default Tile;

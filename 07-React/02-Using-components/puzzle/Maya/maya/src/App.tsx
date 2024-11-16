@@ -1,7 +1,7 @@
 
 //component
 import Tile from "./../src/components/Tile/Tile";
-import Chessboard from "./../src/components/Chassboard/Chassboard";
+import Chessboard from "./components/Chessboard/Chessboard";
 
 function App() {
  
