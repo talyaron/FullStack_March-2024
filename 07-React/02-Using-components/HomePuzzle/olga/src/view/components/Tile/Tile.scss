@@ -3,10 +3,18 @@
     height: 10vh;
 
     &.black {
-      background-color: #000;
+      background-color: rgb(136, 66, 26);
     }
 
     &.white {
-      background-color: #fff;
+      background-color: bisque;
+    }
+
+    &.selected {
+      background-color: green;
+    }
+
+    &:not(.selected):hover {
+      background-color: #808080; 
     }
   }
