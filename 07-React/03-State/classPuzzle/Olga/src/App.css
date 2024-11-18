@@ -1,0 +1,25 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.tile {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  /* border: 1px solid black; */
+}
+
+.white {
+  /* background-color: white; */
+  background-image: url("https://emojiisland.com/cdn/shop/products/Slightly_Smiling_Face_Emoji_87fdae9b-b2af-4619-a37f-e484c5e2e7a4_large.png?v=1571606036");
+  background-size: cover;
+}
+
+.black {
+  /* background-color: black; */
+  background-image: url("https://emojiisland.com/cdn/shop/products/Upside-Down_Face_Emoji_4dbbbd80-eb60-4c91-9642-83368692e361_large.png?v=1571606036");
+  background-size: cover;
+}
