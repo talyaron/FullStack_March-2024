@@ -1,0 +1,12 @@
+.tile {
+    width: 10vh;
+    height: 10vh;
+
+    &.black {
+      background-color: #000;
+    }
+
+    &.white {
+      background-color: #fff;
+    }
+  }
