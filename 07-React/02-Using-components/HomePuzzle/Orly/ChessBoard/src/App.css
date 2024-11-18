@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* Use flexbox for centering */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: 100vh;
+  /* Full viewport height */
+  background-color: #f4f4f4;
+}
+
+.App {
+  text-align: center;
+  /* Ensure centered text for the title */
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  /* Space between the title and the chessboard */
+}
+
+.chessboard {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  /* Adjust to the size of the tiles */
+  border: 2px solid #000;
+}
+
+.row {
+  display: flex;
+  /* Ensure tiles in a row are aligned horizontally */
+}
+
+.tile {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tile.white {
+  background-color: white;
+}
+
+.tile.black {
+  background-color: black;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.tile.selected {
+  border: 3px solid red;
+  box-sizing: border-box;
+}
