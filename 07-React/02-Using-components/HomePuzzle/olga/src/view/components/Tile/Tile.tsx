@@ -9,13 +9,14 @@ interface TileProps {
     color: "white" | "black";
   };
   selected: boolean;
+  validMove: boolean;
   onClick: () => void;
 }
 
-const Tile: FC<TileProps> = ({ black, selected, onClick, piece }) => {
-  const tileClass = `tile ${black ? "black" : "white"} ${
-    selected ? "selected" : ""
-  }`;
+const Tile: FC<TileProps> = ({ black, selected, onClick, piece, validMove }) => {
+  const tileClass = `tile ${black ? "black" : "white"} 
+    ${selected ? "selected" : ""}
+    ${validMove ? "valid-move" : ""}`;
 
   if (!piece) {
     return <div className={tileClass} onClick={onClick} />;

@@ -10,11 +10,15 @@
       background-color: bisque;
     }
 
-    &.selected {
+    &.selected, &.valid-move {
       background-color: green;
     }
 
     &:not(.selected):hover {
       background-color: #808080; 
     }
+
+    // &.valid-move {
+    //   background-color: green;
+    // }
   }

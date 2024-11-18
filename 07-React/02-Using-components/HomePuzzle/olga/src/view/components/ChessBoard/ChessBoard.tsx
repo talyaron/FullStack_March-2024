@@ -1,6 +1,8 @@
 import {FC, useState} from 'react';
 import Tile from './../Tile/Tile';
 import './ChessBoard.scss';
+import { getPawnMoves } from '../pieses/Pawn';
+import { Piece } from '../types';
 
 const ChessBoard: FC = () => {
   // const [selectedTile, setSelectedTile] = useState<string | null>(null);
@@ -22,14 +24,20 @@ const ChessBoard: FC = () => {
 
   const [board, setBoard] = useState(initialPieces);
   const [selectedTile, setSelectedTile] = useState<{ row: number; col: number } | null>(null);
+  const [validMoves, setValidMoves] = useState<{ row: number; col: number }[]>([]);
 
   const handleTileClick = (row: number, col: number) => {
     if (selectedTile) {
-      movePiece(selectedTile.row, selectedTile.col, row, col);
+      if (validMoves.some((move) => move.row === row && move.col === col)) {
+        movePiece(selectedTile.row, selectedTile.col, row, col);
+      }
       setSelectedTile(null);
+      setValidMoves([]);
     } else {
-      if (board[row][col]) {
+      const piece = board[row][col];
+      if (piece && piece.type === 'pawn') {
         setSelectedTile({ row, col });
+        setValidMoves(getValidMoves(row, col, piece));
       }
     }
   };
@@ -49,6 +57,18 @@ const ChessBoard: FC = () => {
     setBoard(newBoard);
   };
 
+  const getValidMoves = (row: number, col: number, piece: Piece): { row: number; col: number }[] => {
+    if (!piece) return [];
+  
+    switch (piece.type) {
+      case 'pawn':
+        return getPawnMoves(row, col, piece.color, board);
+      // Добавить другие фигуры (например, 'rook', 'knight')
+      default:
+        return [];
+    }
+  };
+
   return (
     <div className="chessboard">
       {board.map((row, rowIndex) =>
@@ -56,12 +76,14 @@ const ChessBoard: FC = () => {
           // const key = `${rowIndex}-${colIndex}`;
           const isBlack = (rowIndex + colIndex) % 2 === 1;
           const isSelected = selectedTile?.row === rowIndex && selectedTile?.col === colIndex;
+          const isValidMove = validMoves.some((move) => move.row === rowIndex && move.col === colIndex);
           return (
             <Tile
               key={`${rowIndex}-${colIndex}`}
               black={isBlack}
               piece={piece}
               selected={isSelected}
+              validMove={isValidMove}
               onClick={() => { handleTileClick(rowIndex, colIndex); console.log(`Clicked on ${rowIndex}-${colIndex}`)}}
             />
           );
