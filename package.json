@@ -3,6 +3,7 @@
     "express": "^4.21.0",
     "mongodb": "^6.9.0",
     "mongoose": "^8.6.3",
+    "sass": "^1.81.0",
     "vite": "^5.3.5"
   },
   "devDependencies": {
