@@ -6,8 +6,9 @@ import Card from "./view/components/card/Card";
 
 function App() {
  
+  //render
   return (
-    <>
+    <div>
       <Header />
       <Card title={"Michael"} />
       <Card title={"Olga"}/>
@@ -15,7 +16,8 @@ function App() {
       <Card title={"Orly"}/>
       <Card title={"Israel"}/>
   
-    </>
+    </div>
+
   );
 }
 
