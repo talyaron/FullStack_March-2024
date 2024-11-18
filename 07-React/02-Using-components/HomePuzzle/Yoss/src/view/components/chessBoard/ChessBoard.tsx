@@ -14,7 +14,7 @@ const ChessBoard = () => {
                     (i === 0 && (j === 0 || j === 7)) ? "rook" :
                         i === 7 && (j === 0 || j === 7) ? "rook-white" :
                             (i === 0 && (j === 1 || j === 6)) ? "knight" :
-                                i === 7 && (j === 1 || j === 7) ? "knight-white" :
+                                i === 7 && (j === 1 || j === 6) ? "knight-white" :
                                     (i === 0 && (j === 2 || j === 5)) ? "bishop" :
                                         i === 7 && (j === 2 || j === 5) ? "bishop-white" :
                                             (i === 0 && (j === 3)) ? "queen" :

@@ -1,0 +1,42 @@
+.tile {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+  }
+  
+  .black {
+    background-color: black;
+    color: white;
+  }
+  
+  .white {
+    background-color: white;
+    color: black;
+  }
+  
+  .glow {
+    box-shadow: 0 0 10px 5px rgb(0, 255, 13);
+  }
+  
+  .piece {
+    font-size: 30px; 
+  }
+  
+  .rook-black::before { content: '♜'; }
+  .knight-black::before { content: '♞'; }
+  .bishop-black::before { content: '♝'; }
+  .queen-black::before { content: '♛'; }
+  .king-black::before { content: '♚'; }
+  .pawn-black::before { content: '♟'; }
+  
+  .rook-white::before { content: '♖'; }
+  .knight-white::before { content: '♘'; }
+  .bishop-white::before { content: '♗'; }
+  .queen-white::before { content: '♕'; }
+  .king-white::before { content: '♔'; }
+  .pawn-white::before { content: '♙'; }
+  
