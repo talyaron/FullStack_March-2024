@@ -1,0 +1,17 @@
+.tile {
+    width: 250px; 
+    height: 250px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .white {
+    background-color: white; 
+  }
+  
+  .black {
+    background-color: black; 
+  }
+  
