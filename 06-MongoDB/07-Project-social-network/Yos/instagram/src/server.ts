@@ -7,6 +7,8 @@ import cookieParser from 'cookie-parser';
 import authRoutes from './routes/authRoutes';
 import postRoutes from './routes/postRoutes';
 import userRoutes from './routes/userRoutes';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -20,24 +22,16 @@ app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 app.use(express.static(path.join(__dirname, "../public")));
 
 //get secret file
-const secretPath = path.resolve(
-  __dirname,
-  "C:/Users/ShorY/source/repos/Yoss_Full_Stack_Course_March_24/FullStack_March_2024/secret/mongodb.json"
-);
-const secret = JSON.parse(fs.readFileSync(secretPath, "utf-8"));
-
-//get mongodb uri
-const mongodbUri = secret.mongodb.uri;
+const dbUri = process.env.MONGO_DB_CONNECTION!;
 
 //connection to db
-mongoose
-  .connect(mongodbUri)
-  .then(() => {
-    console.log("connected to db");
-  })
-  .catch((err: any) => {
-    console.log(err);
-  });
+mongoose.connect(dbUri).then(()=>{
+  console.log('connected to db')
+})
+.catch((err:any)=>{
+  console.log(err)
+});
+
 
 
 app.use('/api/auth', authRoutes);
