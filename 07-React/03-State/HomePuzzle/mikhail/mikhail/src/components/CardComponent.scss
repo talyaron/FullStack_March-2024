@@ -1,0 +1,36 @@
+.close-button {
+    background-color: red;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .close-button:hover {
+    background-color: darkred;
+  }
+  
+  .change-button {
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .change-button:hover {
+    background-color: darkgreen;
+  }
+  
