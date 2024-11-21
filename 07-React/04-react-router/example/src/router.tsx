@@ -4,6 +4,8 @@ import Page2 from "./view/page2/Page2";
 import ErrorPage from "./view/errorPage/ErrorPage";
 import ElementA from "./view/components/elementA/ElementA";
 import ElementB from "./view/components/elementB/ElementB";
+import Burgers from "./view/pages/burgers/Burgers";
+import PresentBurger from "./view/pages/burgers/presentBurger/PresentBurger";
 
 
 export const router = createBrowserRouter([
@@ -30,6 +32,21 @@ export const router = createBrowserRouter([
             path:"element-b"
         }
 
+    ]
+  },
+  {
+    path:"/burgers", // /burgers/3
+    element:<Burgers />,
+    errorElement:<ErrorPage />,
+    children:[
+        {
+            element:<div>Start</div>,
+            index:true
+        },
+        {
+            element:<PresentBurger />,
+            path:":burgerId"
+        }
     ]
   }
 ]);
