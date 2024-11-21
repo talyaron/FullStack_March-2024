@@ -1,0 +1,43 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 330px;
+    // height: 50vh;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .card-fact {
+    line-height: 1.3;
+    // flex: 1;
+    margin: 10px 0;
+    height: 6.5rem;
+    overflow-y: auto;
+  }
+  
+  .update-button {
+    background-color: #8c7851; /* светло-коричневый */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .update-button:hover {
+    background-color: #a58d6f; /* чуть светлее при наведении */
+  }
+  
