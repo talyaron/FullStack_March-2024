@@ -14,7 +14,7 @@
 h1 {
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 20px; /* Add space between the heading and the image */
+  margin-bottom: 20px; 
   text-transform: uppercase;
   letter-spacing: 2px;
 }
