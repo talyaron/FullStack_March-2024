@@ -7,6 +7,7 @@ This document outlines the requirements and scoring criteria for three levels of
 ### Basic Requirements (50 points)
 
 #### User System (15 points)
+
 - User registration with email and password
 - Login/logout functionality
 - JWT authentication implementation
@@ -14,18 +15,20 @@ This document outlines the requirements and scoring criteria for three levels of
 - User profile management
 
 #### Todo Management (35 points)
+
 - CRUD operations for todos
 - Todo properties:
-  * Title
-  * Description
-  * Due date
-  * Status (complete/incomplete)
+  - Title
+  - Description
+  - Due date
+  - Status (complete/incomplete)
 - Private todos per user
 - Input validation for all fields
 
 ### Additional Features (40 points)
 
 #### UI/UX Implementation (20 points)
+
 - Responsive design
 - Loading state indicators
 - Error handling and display
@@ -33,6 +36,7 @@ This document outlines the requirements and scoring criteria for three levels of
 - Clean and modern design
 
 ### Bonus Features (20 points)
+
 - Sorting todos by various criteria (5 points)
 - Search functionality (5 points)
 - Due date notifications (5 points)
@@ -43,6 +47,7 @@ This document outlines the requirements and scoring criteria for three levels of
 ### Basic Requirements (45 points)
 
 #### User System (15 points)
+
 - User registration and authentication
 - Profile management with avatars
 - JWT authentication
@@ -50,21 +55,23 @@ This document outlines the requirements and scoring criteria for three levels of
 - User settings
 
 #### Recipe Management (30 points)
+
 - CRUD operations for recipes
 - Recipe properties:
-  * Title
-  * Ingredients list
-  * Step-by-step instructions
-  * Cooking time
-  * Serving size
-  * Category/tags
-  * Image upload support
+  - Title
+  - Ingredients list
+  - Step-by-step instructions
+  - Cooking time
+  - Serving size
+  - Category/tags
+  - Image upload support
 - Input validation
 - Data persistence
 
 ### Search and Filtering (25 points)
 
 #### Search Functionality (15 points)
+
 - Search by recipe name
 - Search by ingredients
 - Category filtering
@@ -72,6 +79,7 @@ This document outlines the requirements and scoring criteria for three levels of
 - Advanced search options
 
 #### Category Management (10 points)
+
 - CRUD operations for categories
 - Multiple category assignments
 - Category-based navigation
@@ -80,6 +88,7 @@ This document outlines the requirements and scoring criteria for three levels of
 ### Additional Features (25 points)
 
 #### UI/UX Features (15 points)
+
 - Responsive design
 - Image upload and preview
 - Loading indicators
@@ -88,6 +97,7 @@ This document outlines the requirements and scoring criteria for three levels of
 - User feedback systems
 
 #### Recipe Sharing (10 points)
+
 - Public/private recipe toggle
 - Public recipe browsing
 - Favorite recipe saving
@@ -109,6 +119,7 @@ use D3.js for graph visualization
 - Data consistency checks
 
 #### Graph Visualization (20 points)
+
 - Interactive timeline displays
 - Multiple currency comparison
 - Proper axis labeling
@@ -119,6 +130,7 @@ use D3.js for graph visualization
 ### Currency Conversion (30 points)
 
 #### Conversion Calculator (15 points)
+
 - Convert between any currencies
 - Real-time rate updates
 - Decimal precision handling
@@ -126,6 +138,7 @@ use D3.js for graph visualization
 - Bulk conversion support
 
 #### Historical Analysis (15 points)
+
 - Rate change percentage calculation
 - High/low rate identification
 - Average rate computation
@@ -135,15 +148,17 @@ use D3.js for graph visualization
 ### Additional Features (25 points)
 
 #### Data Visualization (15 points)
+
 - Multiple graph types:
-  * Line graphs
-  * Bar charts
-  * Candlestick charts
+  - Line graphs
+  - Bar charts
+  - Candlestick charts
 - Custom date range selection
 - Data export options
 - Responsive visualization
 
 #### UI/UX Implementation (10 points)
+
 - Intuitive interface design
 - Mobile responsiveness
 - Loading state management
@@ -153,6 +168,7 @@ use D3.js for graph visualization
 ## Technical Requirements (All Projects)
 
 ### Backend Development
+
 - Node.js with Express framework
 - MongoDB database implementation
 - Error handling and logging
@@ -162,6 +178,7 @@ use D3.js for graph visualization
 - API documentation
 
 ### Frontend Development
+
 - Vanilla TypeScript implementation
 - Type definitions and interfaces or classes
 - Responsive design principles
@@ -171,6 +188,7 @@ use D3.js for graph visualization
 - Cross-browser compatibility
 
 ### Code Quality Standards
+
 - Clean code architecture
 - Comprehensive documentation
 - Type safety implementation
@@ -182,33 +200,38 @@ use D3.js for graph visualization
 ## Grading Criteria
 
 ### Point Distribution
+
 - Functionality (40%)
-  * Core features implementation
-  * Feature completeness
-  * Performance
-  * Reliability
+
+  - Core features implementation
+  - Feature completeness
+  - Performance
+  - Reliability
 
 - Code Quality (25%)
-  * Clean code principles
-  * Documentation
-  * Type safety
-  * Error handling
-  * Security implementation
+
+  - Clean code principles
+  - Documentation
+  - Type safety
+  - Error handling
+  - Security implementation
 
 - UI/UX Design (20%)
-  * User interface design
-  * User experience
-  * Responsiveness
-  * Accessibility
-  * Visual appeal
+
+  - User interface design
+  - User experience
+  - Responsiveness
+  - Accessibility
+  - Visual appeal
 
 - Additional Features (15%)
-  * Bonus features
-  * Innovation
-  * Extra functionality
-  * Performance optimizations
+  - Bonus features
+  - Innovation
+  - Extra functionality
+  - Performance optimizations
 
 ### Submission Requirements
+
 1. Source code via you own GitHub repository
 2. README with:
    - Setup instructions
@@ -219,6 +242,7 @@ use D3.js for graph visualization
 4. Presentation/documentation of features
 
 ### Evaluation Notes
+
 - All core features must be fully functional
 - Code must follow provided technical requirements
 - UI must be responsive and user-friendly

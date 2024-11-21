@@ -1,0 +1,10 @@
+.food-list {
+  text-align: center;
+}
+
+.food-list .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}

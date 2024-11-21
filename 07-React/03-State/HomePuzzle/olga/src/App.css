@@ -1,0 +1,17 @@
+#root {
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+h1, h2 {
+  margin: 0 0 1rem 0;
+  /* margin-bottom: 1rem; */
+}
