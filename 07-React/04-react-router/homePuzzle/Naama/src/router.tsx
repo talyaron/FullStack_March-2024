@@ -1,36 +1,107 @@
-import { createBrowserRouter, Link } from "react-router-dom";
-import ElementA from "./page2/sub/ElementA";
-import ElementB from "./page2/sub/ElementB";
-import Page1 from "./page1/Page1";
-import Page2 from "./page2/Page2";
+import { createBrowserRouter } from "react-router-dom";
+import Page0 from "./view/page0/Page0";
+import Choice1 from "./view/page0/Choice1";
+import Choice2 from "./view/page0/Choice2";
+import Choice0 from "./view/page0/Choice0";
+import Choice3 from "./view/page0/Choice3";
+import Choice4 from "./view/page0/Choice4";
+import Choice5 from "./view/page0/Choice5";
 
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <div>Hello world!<Link to="/page2">to page2</Link>
-        <Link to="/page1">to page1</Link></div>,
-    },
-    {
-        path: "/page1",
-        element: <Page1 />,
-    },
-    {
-        path: "/page2",
-        element: <Page2 />,
-        children:[
-            {
-                element:<div>Home thingie</div>,
-                index:true
-            },
-            {
-                element:<ElementA />,
-                path:"element-a"
-            },
-            {
-                element:<ElementB />,
-                path:"element-b"
-            }
-    
+  {
+    path: "/",
+    element: <Page0 />,
+    children: [
+      {
+        element: <Choice1 />,
+        path: "choice1",
+        children: [
+          {
+            element: <Choice4 />,
+            path: "choice4",
+            children: [
+              {
+                element: <Choice5 />,
+                path: "choice5",
+                children: [
+                  {
+                    element: <Choice0 />,
+                    path: "choice0",
+                  },
+                ],
+              },
+              {
+                element: <Choice0 />,
+                path: "choice0",
+              },
+            ],
+          },
+          {
+            element: <Choice0 />,
+            path: "choice0",
+          },
+          {
+            element: <Choice0 />,
+            path: "choice0",
+          },
         ],
-    },
-  ]);
+      },
+      {
+        element: <Choice2 />,
+        path: "choice2",
+        children: [
+          {
+            element: <Choice0 />,
+            path: "choice0",
+          },
+          {
+            element: <Choice0 />,
+            path: "choice0",
+          },
+          {
+            element: <Choice0 />,
+            path: "choice0",
+          },
+        ],
+      },
+      {
+        element: <Choice3 />,
+        path: "choice3",
+        children: [
+          {
+            element: <Choice5 />,
+            path: "choice5",
+            children: [
+                {
+                  element: <Choice0 />,
+                  path: "choice0",
+                },
+              ],
+          },
+          {
+            element: <Choice0 />,
+            path: "choice0",
+          },
+          {
+            element: <Choice0 />,
+            path: "choice0",
+          },
+        ],
+      },
+    ],
+  },
+]);
+// children: [
+//     {
+//       element: <Choice0 />,
+//       path: "choice0",
+//     },
+//     {
+//       element: <Choice0 />,
+//       path: "choice0",
+//     },
+//     {
+//       element: <Choice0 />,
+//       path: "choice0",
+//     },
+//   ],
