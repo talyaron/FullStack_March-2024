@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import Element1 from "./view/components/element1/Element1";
+import Element1 from "./view/components/element1/Home";
 import Page1 from "./view/page1/Page1";
 import Page2 from "./view/page2/Page2";
-import Element2 from "./view/components/element2/Element2";
-import Element3 from "./view/components/element3/Element3";
+import Element2 from "./view/components/element2/About";
+import Element3 from "./view/components/element3/Contact";
 
 
 
