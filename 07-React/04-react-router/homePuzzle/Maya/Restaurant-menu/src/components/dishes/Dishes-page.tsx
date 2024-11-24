@@ -52,8 +52,6 @@ function DishesPage() {
     <div
       style={{
         padding: "20px",
-        background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(192,192,236,1) 35%, rgba(0,212,255,1) 100%)", 
-        color: "#343a40",
         fontFamily: "'Poppins', sans-serif",
       }}
     >
