@@ -1,5 +1,6 @@
-create three different types of conditional rendering in react
+# Follow-up:
+Create three different types of conditional rendering in react
 
-if else on whole component
-if else on className
-if else on inline style
+- If else on whole component
+- Trinary operator on inline style
+- if else on inline style
