@@ -2,7 +2,7 @@ import React from "react";
 import "./SidePanel.scss";
 
 interface Props {
-    setCategory: (category: "breakfast" | "lunch" | "dinner") => void; // Restrict to valid categories
+    setCategory: (category: "breakfast" | "lunch" | "dinner") => void; 
   }
   
   const SidePanel: React.FC<Props> = ({ setCategory }) => {
