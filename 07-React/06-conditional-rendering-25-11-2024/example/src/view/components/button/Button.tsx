@@ -37,7 +37,7 @@ const Button: FC<Props> = ({ isBigButton }) => {
 
   return (
     <button
-      className={isBlue ? "blue big transition" : "white transition"}
+      className={isBlue ? "blue transition" : "white transition"}
       onClick={handleClick}
     >
       Button
