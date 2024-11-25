@@ -1,0 +1,47 @@
+
+.button-container {
+    padding: 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .dark-background {
+    background-color: black;
+  }
+  
+  .light-background {
+    background-color: white;
+  }
+  
+
+  .button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 1px 1px 3px black;
+  
+    &:hover {
+      box-shadow: 3px 3px 9px black;
+    }
+  }
+  
+  
+  .dark-button {
+    background-color: white; 
+    color: black; 
+  }
+  
+  .light-button {
+    background-color: black; 
+    color: white;
+  }
+  
+  
+  .big-button {
+    font-size: 1.5rem;
+  }
+  
+  .small-button {
+    font-size: 1rem;
+  }
+  
