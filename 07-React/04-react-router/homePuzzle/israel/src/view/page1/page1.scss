@@ -1,0 +1,47 @@
+body {
+    background-image: url("https://images.rest.co.il/Customers/80270772/c7f6bce2f1aa49f69f5f61413916b7f9_14.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.page-content {
+    background-color: rgba(0, 0, 255, 0.7);
+    border: 3px solid white;
+    border-radius: 50px;
+    height: 4rem;
+    width: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.page-content:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 255, 0.9);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.menu-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
