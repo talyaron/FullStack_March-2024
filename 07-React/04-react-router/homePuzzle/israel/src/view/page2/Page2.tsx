@@ -8,9 +8,9 @@ const Page2 = () => {
         <div className="page">
             
             <nav>
-                <Link to="element-pasta">Pastas</Link>
-                <Link to="element-pizzas">Pizzas</Link>
-                <Link to="element-soups">Soups</Link>
+                <Link to="element-pasta">Pasta</Link>
+                <Link to="element-pizzas">Pizza</Link>
+                <Link to="element-soups">Soup</Link>
             </nav>
             <div className="element">
         <Outlet />
