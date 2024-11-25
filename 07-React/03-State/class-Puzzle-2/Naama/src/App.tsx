@@ -3,15 +3,26 @@ import "./App.css";
 import Card from "./view/components/card/Card";
 
 interface ColorImg {
-  url:string;
-  color:string;
+  url: string;
+  color: string;
 }
 
 function App() {
   const [count, setCount] = useState(0);
   const [url, setUrl] = useState<string | undefined>("");
-  const colors = ["red", "blue", "green","red", "blue", "green","red", "blue", "green","yellow"];
-  const [array,setArray] = useState<ColorImg[]>([]);
+  const colors = [
+    "red",
+    "blue",
+    "green",
+    "red",
+    "blue",
+    "green",
+    "red",
+    "blue",
+    "green",
+    "yellow",
+  ];
+  const [array, setArray] = useState<ColorImg[]>([]);
 
   useEffect(() => {
     console.log("rendering");
@@ -19,13 +30,13 @@ function App() {
       async (response) => {
         response.json().then((data) => {
           console.log(data);
-          const _array:ColorImg[] = [];
-          for(let i=0;i<10;i++){
-          _array[i] =
-          {
-            url:data[i].url,
-            color:colors[i]
-          }};
+          const _array: ColorImg[] = [];
+          for (let i = 0; i < 10; i++) {
+            _array[i] = {
+              url: data[i].url,
+              color: colors[i],
+            };
+          }
           setArray(_array);
           //console.log(data[0].url);
         });
