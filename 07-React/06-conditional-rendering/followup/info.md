@@ -2,5 +2,5 @@
 Create three different types of conditional rendering in react
 
 - If else on whole component
-- Trinary operator on inline style
-- if else on inline style
+- Trinary operator on className
+- If else on inline style
