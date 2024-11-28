@@ -4,31 +4,33 @@ import './App.scss'
 import Input from './views/Components/inputs/Input'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [number, setNumber] = useState([])
+  const [number, setNumber] = useState(0)
   console.log(number)
 
-  const [list, setList]=useState([])
-function handleSubmit(event:any){
-  event.preventDefault();
-  console.log(event)
+  const [list, setList] = useState<number[]>([])
 
-  const form=event.target;
-  form.forEach((element: any) => {
-    console.log(element.value)
-  });
-}
+
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    const form = event.target.input;
+    form.forEach((element : any) => {
+      const { valueAsNumber } = element;
+      list.push(valueAsNumber)
+      // setList([...list, valueAsNumber])
+      console.log(list)
+    });
+  }
 
 
   return (
     <>
-    <form onSubmit={handleSubmit}>
-    <Input setNumber={setNumber} number={number}/>
-    <Input setNumber={setNumber} number={number}/>
-    <Input setNumber={setNumber} number={number}/>
-    <Input setNumber={setNumber} number={number}/>
-    <button type="submit" >pop</button>
-    </form>
+      <form onSubmit={handleSubmit}>
+        <Input setNumber={setNumber} />
+        <Input setNumber={setNumber} />
+        <Input setNumber={setNumber} />
+        <Input setNumber={setNumber} />
+        <button type="submit" >pop</button>
+      </form>
     </>
   )
 }

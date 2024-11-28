@@ -2,19 +2,18 @@ import React from 'react'
 import { FC } from 'react';
 
 interface Props{
-   number:number[]
     setNumber:(number :any)=>void
 }
 
 
-const Input:FC<Props> = ({setNumber,number}) => {
+const Input:FC<Props> = ({setNumber}) => {
     function handleChange(e :any){
         const {valueAsNumber} = e.target;
-        setNumber([...number,valueAsNumber]);
+        setNumber(valueAsNumber);
     }
     
   return (
-    <div><input type="number"  onChange={handleChange}/></div>
+    <div><input type="number" name='input'  onChange={handleChange}/></div>
   )
 }
 
