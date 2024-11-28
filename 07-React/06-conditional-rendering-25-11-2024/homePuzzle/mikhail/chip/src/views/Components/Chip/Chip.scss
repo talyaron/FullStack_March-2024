@@ -1,0 +1,21 @@
+.chip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: 16px;
+    color: white;
+    margin: 10px 0;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .chip-user {
+    margin-right: 12px;
+  }
+  
+  .chip-select {
+    background: transparent;
+    color: black;
+    cursor: pointer;
+  }
+  
