@@ -9,14 +9,14 @@ function App() {
   const [isOpen, setIsOpen] = useState(false)
 
   function handleShowPopup() {
-    setIsOpen(true)
+    setIsOpen(state=>!state)
   }
 
   return (
     <>
       <div>
         <h1>Popup</h1>
-        {isOpen && <Popup  setIsOpen={setIsOpen} />}
+        {isOpen && <Popup  openFn={handleShowPopup} />}
           <button onClick={handleShowPopup}>Click me!</button>
        
       </div>

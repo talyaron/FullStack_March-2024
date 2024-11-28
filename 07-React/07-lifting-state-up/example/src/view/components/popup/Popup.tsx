@@ -3,13 +3,13 @@ import './Popup.scss';
 
 interface Props{
 
-    setIsOpen: (isOpen: boolean) => void
+    openFn: () => void
 }
 
-export const Popup:FC<Props> = ({ setIsOpen}) => {
+export const Popup:FC<Props> = ({ openFn}) => {
   return (
     <div className='popup'>
-        <button onClick={()=>{setIsOpen(false)}}>Close</button>
+        <button onClick={openFn}>Close</button>
     </div>
   )
 }
