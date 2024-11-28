@@ -181,6 +181,8 @@ function renderSnake(snake: Box[]) {
 
 }
 
+
+
 let intervalId: number | null = null;
 document.addEventListener('keydown', (event: KeyboardEvent) => {
 
