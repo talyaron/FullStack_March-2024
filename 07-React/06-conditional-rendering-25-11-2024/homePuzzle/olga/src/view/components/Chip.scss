@@ -1,0 +1,33 @@
+.chip-button {
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: inherit;
+    transition: border-color 0.25s;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.dropdown {
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #e5e5eb;
+    cursor: pointer;
+    border-radius: 8px;
+    z-index: 10;
+    margin-top: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+    &-item {
+        padding: 0.6em 1.2em;
+        cursor: pointer;
+        text-transform: capitalize;
+    }
+}

@@ -1,8 +1,6 @@
 // Register.js  
-
 async function handleRegister(event) {
     event.preventDefault(); // Prevent the default form submission
-
     // Directly access form values using event.target
     const form = event.target;  // The form element itself
     const username = form.username.value; // Get value from username input

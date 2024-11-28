@@ -6,6 +6,7 @@ interface Recipe {
     imageURL?: string;
 }
 
+
 // Function to fetch and display all recipes
 async function getRecipes() {
     try {
