@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
 interface Props {
-  isDarkMode: boolean; // Determines whether dark mode is active
+  isDarkMode: boolean; 
 }
 
 const DarkMode: FC<Props> = ({ isDarkMode }) => {
