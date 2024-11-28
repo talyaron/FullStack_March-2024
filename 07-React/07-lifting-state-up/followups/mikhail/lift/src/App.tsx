@@ -5,8 +5,8 @@ import DarkMode from "./views/DarkMode/DarkMode";
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Toggle the dark mode state
-  const toggleDarkMode = () => {
+
+  const changeDarkMode = () => {
     setIsDarkMode((prev) => !prev);
   };
 
@@ -14,7 +14,7 @@ function App() {
     <div className={`app-container ${isDarkMode ? "dark" : "light"}`}>
       <h1>Dark Mode Button</h1>
       <DarkMode isDarkMode={isDarkMode} />
-      <button onClick={toggleDarkMode}>
+      <button onClick={changeDarkMode}>
         {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
       </button>
     </div>
