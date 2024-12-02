@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react'
 import color from '../../../data/colorData/colorData'
 import styles from './SetTheme.module.scss'
-import { title } from 'process'
 
 interface SetThemeProps {
     setTheme: (color: string) => void
@@ -27,7 +26,6 @@ const SetTheme: FC<SetThemeProps> = ({ setTheme }) => {
                             className={styles.button}
                             onClick={() => changeTheme(backgroundColor, name)}>
                             {name}
-
                         </button>
                     )
                 })}
