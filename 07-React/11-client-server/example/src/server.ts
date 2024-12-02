@@ -2,12 +2,14 @@ import express from 'express'
 import mongoose from "mongoose";
 import cookieParser from 'cookie-parser'; 
 import 'dotenv/config';
+import cors from 'cors'; //npm install cors
 
 const app = express()
 const port = 3000;
+app.use(cors()); //open to the whole world. Highly dangerous!!!
 
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('client/build'));
 app.use(cookieParser());
 
 app.get('/', (req, res) => {

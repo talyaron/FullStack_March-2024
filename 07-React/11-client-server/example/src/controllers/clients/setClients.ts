@@ -1,7 +1,7 @@
 import { ClientModel } from "../../model/clients/ClientModel";
 import jwt from 'jwt-simple';
 import bcrypt from 'bcrypt';
-const saltRounds = process.env.SALT_BCRYPT || 10;
+const saltRounds = Number(process.env.SALT_BCRYPT) || 10;
 
 
 export const secret = process.env.SECRET_JWT || "secret"
