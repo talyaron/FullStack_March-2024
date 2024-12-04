@@ -1,17 +1,16 @@
 import express from "express";
 import {
-  createRecipe,
-  getAllRecipes,
-  likeRecipe,
+  createPost,
+  getAllPosts,
   addComment,
-  searchRecipes,
-  searchRecipesIngredients,
-  deleteRecipe,
-  getRecipeData,
-  updateRecipe,
-  searchRecipesCategory,
-  searchRecipesCookingTime,
-} from "../controllers/recipeController";
+  searchPost,
+  searchPostIngredients,
+  deletePost,
+  getPostData,
+  updatePost,
+  searchPostsCategory,
+  likePost,
+} from "../controllers/postController";
 import multer from "multer";
 
 import authMiddleware from "../middleware/authMiddleware";
@@ -23,19 +22,18 @@ router.use(express.urlencoded({ extended: true }));
 
 const upload = multer({ dest: "uploads/" });
 
-router.post("/", authMiddleware, upload.single("image"), createRecipe);
-router.put("/update-recipe", recipeMiddleware, updateRecipe);
+router.post("/", authMiddleware, upload.single("image"), createPost);
+router.put("/update-recipe", recipeMiddleware, updatePost);
 router.post("/uploadRecipePicture", recipeGetRecipeId, uploadRecipePicture);
-router.get("/get-all", recipeMiddleware, getAllRecipes);
-router.get("/get-recipe-details/:Id", recipeMiddleware, getRecipeData);
-router.post("/:id/like",recipeMiddleware, likeRecipe);
+router.get("/get-all", recipeMiddleware, getAllPosts);
+router.get("/get-recipe-details/:Id", recipeMiddleware, getPostData);
+router.post("/:id/like",recipeMiddleware, likePost);
 router.post("/:id/comment",recipeMiddleware, addComment);
-router.get("/search", recipeMiddleware, searchRecipes);
-router.get("/searchIngredients", recipeMiddleware, searchRecipesIngredients);
-router.get("/searchCategory", recipeMiddleware, searchRecipesCategory);
-router.get("/searchCookingTime", recipeMiddleware, searchRecipesCookingTime);
+router.get("/search", recipeMiddleware, searchPost);
+router.get("/searchIngredients", recipeMiddleware, searchPostIngredients);
+router.get("/searchCategory", recipeMiddleware, searchPostsCategory);
 
-router.delete("/:Id/delete", recipeMiddleware, deleteRecipe);
+router.delete("/:Id/delete", recipeMiddleware, deletePost);
 
 
 // module.exports = router;
