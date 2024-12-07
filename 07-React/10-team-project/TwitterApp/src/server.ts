@@ -7,11 +7,16 @@ import cookieParser from 'cookie-parser';
 import authRoutes from './routes/authRoutes';
 import recipeRoutes from './routes/recipeRoutes';
 import userRoutes from './routes/userRoutes';
+import postRoutes from './routes/postRoutes';
 import dotenv from 'dotenv';
+import cors from 'cors';
+
+
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+app.use(cors());
 
 console.log("Server starting...")
 app.use(bodyParser.json());
@@ -42,6 +47,7 @@ mongoose.connect(dbUri).then(()=>{
 app.use('/api/auth', authRoutes);
 app.use('/api/recipe', recipeRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/posts', postRoutes)
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
