@@ -4,11 +4,11 @@ import './index.css'
 import App from './App.tsx'
 import Header from './views/components/header/Header.tsx'
 import UserDetails from './views/components/user-details/UserDetails.tsx'
+import { router } from './router.tsx';
+import { RouterProvider } from 'react-router-dom';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Header />
-    <App />
-    <UserDetails  />
-  </StrictMode>,
+  <RouterProvider router={router} />
+</StrictMode>
 )

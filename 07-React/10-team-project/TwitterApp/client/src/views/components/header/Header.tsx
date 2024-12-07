@@ -1,5 +1,6 @@
 import './Header.scss'
 
+
 const Header = () => {
   return (
     <div>
@@ -17,6 +18,6 @@ const Header = () => {
       </header>
     </div>
   )
-}
+};
 
 export default Header
