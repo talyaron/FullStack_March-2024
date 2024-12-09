@@ -33,6 +33,7 @@ app.use(express.static(clientBuildPath));
 
 //get secret file
 const dbUri = process.env.MONGO_DB_CONNECTION!;
+console.log("Mongo URI:", process.env.MONGO_DB_CONNECTION);
 
 //connection to db
 mongoose.connect(dbUri).then(()=>{

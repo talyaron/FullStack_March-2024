@@ -1,9 +1,8 @@
 import { Post } from "../../models/Post";
 import { Request, Response } from 'express';
 
-export async function getPosts(req: Request, res: Response) {
+export async function getPosts(req: any, res: any) {
     try {
-        res.status(404);
         console.log("now im here");
         const posts = await Post.find().populate('userId', 'image').sort({ createdAt: -1 });
 

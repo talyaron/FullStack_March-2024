@@ -24,16 +24,15 @@ const HomePage = () => {
     async function fetchPosts() {
       try {
         console.log("here");
-        const response = await fetch('/api/posts/getPosts', {
-          method: 'GET',
-          credentials: 'include', 
-        });
+        const response = await fetch('http://localhost:3000/api/posts/getPosts');
 
         if (!response.ok) {
           throw new Error('Failed to fetch posts');
         }
-
+        
         const data = await response.json();
+        console.log(data);
+        console.log(response);
         setPosts(data.posts); 
       } catch (err) {
         console.error(err);
