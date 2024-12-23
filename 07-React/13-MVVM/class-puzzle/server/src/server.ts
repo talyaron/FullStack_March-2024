@@ -1,4 +1,5 @@
 import express from 'express';
+import  cors from 'cors';
 import usersRouter from './routes/users/usersRoutes';
 import PetsRouter from './routes/pets/petsRoutes';
 const app = express();
@@ -19,7 +20,7 @@ mongoose.connect('mongodb+srv://tal:k8w0S6ztTx3zowGW@cluster0.0hzknon.mongodb.ne
 app.use(express.json());
 app.use(cookieParser());
 
-
+app.use(cors());
 app.use(express.static('public'));
 
 const apiRouter = express.Router();
