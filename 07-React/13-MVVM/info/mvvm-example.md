@@ -1,4 +1,4 @@
-# MVVM Pattern in React with TypeScript
+# MVVM Pattern in React with TypeScript (& React hooks)
 
 ## Model
 ```typescript
