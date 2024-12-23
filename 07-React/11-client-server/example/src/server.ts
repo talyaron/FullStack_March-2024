@@ -24,6 +24,7 @@ const database = 'fs-jun24';
 mongoose.connect(`${dbUrl}/${database}`).then(()=>{
     console.info("DB connected")
 }).catch((err)=>{
+  console.error("DB connection error", err.message)
     console.error(err)
 });
 
