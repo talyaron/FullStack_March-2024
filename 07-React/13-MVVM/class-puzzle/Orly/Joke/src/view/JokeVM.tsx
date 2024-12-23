@@ -40,7 +40,7 @@ export function useJoke(): UseJokeOutput {
             loading,
             handleGetJoke
         };
-    } catch (error) {
+    } catch (error: any) {
         return {
             joke: null,
             error: error.message,
