@@ -1,10 +1,35 @@
 import React from 'react';
-import LoginView from './loginView';
-import { LoginViewModel } from '../../components/loginViewModel';
+import { useLoginViewModel } from './loginViewModel';
+
 
 const LoginPage: React.FC = () => {
-  const viewModel = LoginViewModel();
-  return <LoginView viewModel={viewModel} />;
+
+  const { handleSubmit, error } = useLoginViewModel();
+
+  return (
+    <div>
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Email</label>
+          <input
+            type="text"
+            name='email'
+          />
+        </div>
+        <div>
+          <label>Password</label>
+          <input
+            type="password"
+            name='password'
+          />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      {error && <p>{error}</p>}
+    </div>
+  );
 };
+
 
 export default LoginPage;

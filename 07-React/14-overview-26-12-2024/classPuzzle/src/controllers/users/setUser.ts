@@ -5,10 +5,13 @@ export async function login(req: Request, res: Response) {
     try {
         const { email, password } = req.body;
 
+        console.log(email, password)
+
         const user = await User.findOne({ email, password });
 
         if (user) {
-            res.cookie('userId', user._id, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 1 });
+            console.log("user", user)
+            res.cookie('userId', user._id, { maxAge: 1000 * 60 * 60 * 24 * 1 });
             res.status(200).send({ ok:true });
         } else {
             res.status(401).send({ error: 'Invalid email or password' });
