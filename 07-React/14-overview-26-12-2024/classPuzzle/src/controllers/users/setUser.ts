@@ -4,10 +4,8 @@ import { User } from '../../model/users/userModel'
 export async function login(req: Request, res: Response) {
     try {
         const { email, password } = req.body;
-        console.log(email, password)
 
         const user = await User.findOne({ email, password });
-        console.log(user)
 
         if (user) {
             res.cookie('userId', user._id, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 1 });

@@ -1,10 +1,14 @@
-import React from "react";
-import Register from "./view/pages/Register";
+import './App.css'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './router'
+
+function App() {
+
 
 const App: React.FC = () => {
   return (
-      <Register/>
-  );
-};
+    <RouterProvider router={router} />
+  )
+}
 
 export default App;

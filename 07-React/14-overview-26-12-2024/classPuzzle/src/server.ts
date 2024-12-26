@@ -1,5 +1,6 @@
 import express from 'express';
 import  cors from 'cors';
+import 'dotenv/config';
 import usersRouter from './routes/users/usersRoutes';
 import PetsRouter from './routes/pets/petsRoutes';
 const app = express();
@@ -7,9 +8,14 @@ import cookieParser from 'cookie-parser';
 const port = 3000;
 
 
+
 //connection to db
-const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://tal:k8w0S6ztTx3zowGW@cluster0.0hzknon.mongodb.net/fs-mrc24').then(()=>{
+import mongoose from 'mongoose';
+
+const dbUrl = process.env.DB_URL
+const database = process.env.DB_NAME
+
+mongoose.connect(`${dbUrl}/${database}`).then(()=>{
   console.log('connected to db')
 })
 .catch((err:any)=>{
