@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoginViewModel } from '../components/loginViewModel';
+import { LoginViewModel } from '../../components/loginViewModel';
 
 const LoginView: React.FC<{ viewModel: LoginViewModel }> = ({ viewModel }) => {
   const { username, password, setUsername, setPassword, handleSubmit, error } = viewModel;
