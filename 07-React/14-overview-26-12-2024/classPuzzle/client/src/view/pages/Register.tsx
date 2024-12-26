@@ -13,6 +13,7 @@ const Register: React.FC = () => {
     alert("Registration Successful");
   };
 
+  
   return (
     <div className={styles.container}>
       <h2>Register</h2>
