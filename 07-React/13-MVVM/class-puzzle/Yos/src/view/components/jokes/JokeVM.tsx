@@ -5,7 +5,7 @@ interface UseJokeOutput {
     loading: boolean;
     error: any;
     handleGetJoke: () => void;
-    handleDeleteJoke: () => void;
+    handleJoke: (urlRoute: string, method: string, body: any) => void;
 }
 
 
@@ -37,14 +37,16 @@ export const useJoke = (): UseJokeOutput => {
             getJoke();
         }
 
-        function handleDeleteJoke() {
-            console.log(joke)
-            fetch('http://localhost:3000/api/jokes/delete-joke', {
-                method: 'DELETE',
+
+
+        function handleJoke(urlRoute: string, method: string, body: any) {
+            console.log(urlRoute, method, body) 
+            fetch(`http://localhost:3000/api/jokes/${urlRoute}`, {
+                method: method,
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ _id: joke._id })
+                body: JSON.stringify(body) 
             })
                 .then(response => response.json())
                 .then(data => {
@@ -55,19 +57,17 @@ export const useJoke = (): UseJokeOutput => {
                     console.log(error)
                 })
         }
-
-
         useEffect(() => {
             getJoke()
         }, [])
-        return { joke, loading, error, handleGetJoke, handleDeleteJoke }
+        return { joke, loading, error, handleGetJoke, handleJoke }
     } catch (error: any) {
         return {
             joke: { joke: '', _id: '' },
             loading: false,
             error: error.message,
             handleGetJoke: () => { },
-            handleDeleteJoke: () => { }
+            handleJoke: () => { }
         }
     }
 }
