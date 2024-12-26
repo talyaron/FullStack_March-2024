@@ -33,7 +33,7 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     color: black;
 
-    &__update{
+    &__new{
         background-color: #91f091;
     }
     &__delete{
@@ -41,6 +41,9 @@
     }
     &__add{
         background-color: #f8e115;
+    }
+    &__update{
+        background-color: #3bcbdf;
     }
 }
 .addJoke{
