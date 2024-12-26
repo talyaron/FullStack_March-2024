@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface UseJokeOutput {
     joke: { joke: string, _id: string };
@@ -33,6 +33,7 @@ export const useJoke = (): UseJokeOutput => {
                 console.log(error)
             }
         }
+
         function handleGetJoke() {
             getJoke();
         }
@@ -40,13 +41,13 @@ export const useJoke = (): UseJokeOutput => {
 
 
         function handleJoke(urlRoute: string, method: string, body: any) {
-            console.log(urlRoute, method, body) 
+            console.log(urlRoute, method, body)
             fetch(`http://localhost:3000/api/jokes/${urlRoute}`, {
                 method: method,
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(body) 
+                body: JSON.stringify(body)
             })
                 .then(response => response.json())
                 .then(data => {
