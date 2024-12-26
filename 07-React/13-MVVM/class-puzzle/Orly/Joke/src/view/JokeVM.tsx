@@ -37,6 +37,7 @@ export function useJoke(): UseJokeOutput {
             });
     }
 
+
     function addJoke(newJoke: JokeModel) {
         setLoading(true);
         setError(null);
@@ -63,6 +64,8 @@ export function useJoke(): UseJokeOutput {
                 setLoading(false);
             });
     }
+
+
 
     function deleteJoke(id: string) {
         setLoading(true);
@@ -99,7 +102,7 @@ export function useJoke(): UseJokeOutput {
         })
             .then((response) => {
                 if (!response.ok) {
-                    throw new Error("Failed to edit joke");
+                    throw new Error("Failed to update joke");
                 }
                 return response.json();
             })
@@ -120,6 +123,9 @@ export function useJoke(): UseJokeOutput {
 
     function handleGetJoke() {
         getJoke();
+        addJoke({} as JokeModel);
+        deleteJoke("");
+        editJoke("", {} as JokeModel);
     }
 
     return {
