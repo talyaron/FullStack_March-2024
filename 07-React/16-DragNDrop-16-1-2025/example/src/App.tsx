@@ -5,29 +5,35 @@ import styles from "./App.module.scss";
 function App() {
 
   const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [delta, setDelta] = useState({ x: 0, y: 0 })
+  const [grabPointDelta, setGrabPointDelta] = useState({ deltaX: 0, deltaY: 0 })
 
   function handleDragEnd(event: React.DragEvent<HTMLDivElement>) {
-    console.log("end", event.clientX, event.clientY)
-    console.log("delta", delta.x, delta.y)
-    // setDelta({ x: event.clientX - position.x, y: event.clientY - position.y })
-    setPosition({ x: event.clientX, y: event.clientY });
-    // console.log(event.clientX, event.clientY, event.screenX, event.screenY, event.pageX, event.pageY)
+    console.log("new Position: ", event.clientX - grabPointDelta.deltaX, event.clientY - grabPointDelta.deltaY)
+    setPosition({ x: event.clientX, y: event.clientY});
   }
-  const handleDragStart = (event: React.DragEvent<HTMLDivElement>) => {
-    setDelta({ x: event.clientX - position.x, y: event.clientY - position.y })
-    console.log("delta", delta.x, delta.y)
-
-    console.log("previous", position.x, position.y)
-    console.log("delta", delta.x, delta.y)
-    console.log("end", event.clientX, event.clientY)
-    console.log("current", event.clientX + position.x, event.clientY + position.y)
-
-    // console.log(event.clientX, event.clientY, event.screenX, event.screenY, event.pageX, event.pageY)
+  function handleDragStart(event: React.DragEvent<HTMLDivElement>) {
+    console.log("Previous: ", position.x, position.y)
+    console.log("dragPoint: ", event.clientX, event.clientY)
+    setGrabPointDelta({
+      deltaX: event.clientX - position.x,
+      deltaY: event.clientY - position.y,
+    });
   }
-  function handleDrag(event: React.DragEvent<HTMLDivElement>) {
-    // console.log(event)
 
+
+  function handleDragOver(event: React.DragEvent<HTMLDivElement>) {
+    event.preventDefault();
+    console.log("dragOver")
+  }
+
+  function handleDragLeave(event: React.DragEvent<HTMLDivElement>) {
+    event.preventDefault();
+    console.log("drag leave")
+  }
+
+  function handleDrop(event: React.DragEvent<HTMLDivElement>) {
+    event.preventDefault();
+    setPosition({ x: event.clientX - grabPointDelta.deltaX, y: event.clientY - grabPointDelta.deltaY });
   }
 
   return (
@@ -36,10 +42,24 @@ function App() {
         className={styles.box}
         draggable
         onDragEnd={handleDragEnd}
-        onDrag={handleDrag}
-        style={{ left: position.x, top: position.y }}
+
         onDragStart={handleDragStart}
+        style={{ left: position.x, top: position.y }}
       />
+
+      <div>
+        <h2>Drag me around</h2>
+        <p>Position: {position.x}, {position.y}</p>
+      </div>
+      <div 
+      className={styles.dropZone}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+      >
+        Drop Zone
+
+      </div>
 
     </>
   )
