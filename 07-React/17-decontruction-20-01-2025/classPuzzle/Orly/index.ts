@@ -5,6 +5,7 @@
 // 2. Destructure the first two Avengers into variables 'leader' and 'deputy'
 // 3. Get all remaining heroes using rest parameter
 
+
 const avengers = ['Iron Man', 'Captain America', 'Thor'];
 const guardians = ['Star-Lord', 'Gamora', 'Rocket'];
 
@@ -48,17 +49,17 @@ const ironMan = {
 };
 
 const extraInfo = {
-    location: 'New York',
+    location: 'New York33',
     suit: 'Mark 86',
     partner: 'War Machine'
 };
 
 const completeProfile = { ...ironMan, ...extraInfo };
 const { name, power, ...other } = ironMan;
-const { location = 'Unknown' } = extraInfo;
+// const { location = 'Unknown' } = extraInfo;
 
 console.log('Complete Profile:', completeProfile);
 console.log('Name:', name);
 console.log('Power:', power);
 console.log('Other Properties:', other);
-console.log('Location:', location);
+// console.log('Location:', location);
