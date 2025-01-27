@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 
 const MemoExample = () => {
     const [numbers, setNumbers] = useState([10, 20, 30, 40, 50]);
@@ -8,45 +8,29 @@ const MemoExample = () => {
     // Expensive calculation that should only run when numbers or multiplier change
     const calculateTotal = useMemo(() => {
         console.log('Running expensive calculation...'); // To demonstrate when it runs
-        return numbers.reduce((acc, curr) => {
+        return numbers.reduce((acc: number, curr: number) => {
             // Simulate complex calculation with artificial delay
             let result = 0;
-            for (let i = 0; i < 100000000; i++) {
+            for (let i = 0; i < 1000000; i++) {
                 result = acc + (curr * multiplier);
             }
             return result;
         }, 0);
     }, [numbers, multiplier]);
-
-    useEffect(() => {
-        console.log('Component rendered for the first time');
-    }, []);
-
-    useEffect(() => {
-        console.log("first time or numbers changed");
-    }, [numbers]);
-
-    useEffect(() => {
-        console.log("first time or multiplier changed");
-    }, [multiplier]);
-
-    useEffect(() => {
-        console.log("first time or numbers or multiplier changed");
-    }, [numbers, multiplier]);
-
     
     // calculate every time:
-    // const calculateTotal2 = (() => {
-    //     console.log('Running expensive calculation...2'); // To demonstrate when it runs
-    //     return numbers.reduce((acc, curr) => {
-    //         // Simulate complex calculation with artificial delay
-    //         let result = 0;
-    //         for (let i = 0; i < 100000000; i++) {
-    //             result = acc + (curr * multiplier);
-    //         }
-    //         return result;
-    //     }, 0);
-    // })();
+    const calculateTotal2 = (() => {
+        console.log('Running expensive calculation sdfsdf sd...2'); // To demonstrate when it runs
+        return numbers.reduce((acc, curr) => {
+            // Simulate complex calculation with artificial delay
+            let result = 0;
+            for (let i = 0; i < 100; i++) {
+                result = acc + (curr * multiplier);
+                console.log(result)
+            }
+            return result;
+        }, 0);
+    })();
 
     // This will cause re-renders but won't trigger recalculation
     const toggleDarkMode = () => {
@@ -71,7 +55,7 @@ const MemoExample = () => {
                     <h2 className="text-xl font-bold">Numbers: [{numbers.join(', ')}]</h2>
                     <p className="text-lg">Multiplier: {multiplier}</p>
                     <p className="text-lg font-semibold">
-                        Total (Memoized): {calculateTotal}
+                        Total (Memoized): {calculateTotal2}
                     </p>
                 </div>
 
