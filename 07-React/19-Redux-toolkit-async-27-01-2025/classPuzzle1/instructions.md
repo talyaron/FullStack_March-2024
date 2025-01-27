@@ -1,0 +1,1 @@
+Use your preferred API to get some data using RTK Query. Display the data on the screen.
