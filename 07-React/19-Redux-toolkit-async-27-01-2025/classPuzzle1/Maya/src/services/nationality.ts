@@ -8,8 +8,9 @@ export const nationalApi = createApi({
     endpoints: (builder) => ({
         getNationalityByName: builder.query<Nationality, string>({
             query: (name) => `?name=${name}`, // Correct query string format
+            
         }),
     }),
 });
 
-export const { useGetNationalityByNameQuery } = nationalApi; // Fixed naming
+export const { useGetNationalityByNameQuery } = nationalApi; 

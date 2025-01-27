@@ -5,13 +5,14 @@ const Nationality = () => {
     const { name = "nathaniel" } = useParams<{ name: string }>(); // Default to "nathaniel"
     const { data, error, isLoading } = useGetNationalityByNameQuery(name); // Fixed hook name
 
-    console.log(data, error, isLoading);
+    console.log('Name from URL:', name); 
+  console.log('API Response:', data, error, isLoading);
 
     return (
         <div className="App">
             <div>
-                <Link to="/nationality/John">John</Link>
-                <Link to="/nationality/nathaniel">Nathaniel</Link>
+            <Link to="/nationality/John">John</Link>
+            <Link to="/nationality/nathaniel">Nathaniel</Link>
             </div>
             {error ? (
                 <p>Oh no, there was an error!</p>

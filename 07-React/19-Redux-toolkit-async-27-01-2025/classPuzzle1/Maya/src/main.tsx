@@ -11,10 +11,10 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/nationality/:name" element={<Nationality />} />
-        </Routes>
+      <Routes>
+  <Route path="/" element={<App />} />
+  <Route path="/nationality/:name" element={<Nationality />} />
+</Routes>
       </BrowserRouter>
     </Provider>,
   </StrictMode>,
