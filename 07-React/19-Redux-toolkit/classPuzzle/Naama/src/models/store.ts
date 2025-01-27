@@ -1,13 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from './slices/counterSlice';
-import dogReducer from './slices/dogSlice';
-
+import pokemonreducer from './pokemonSlicer'
 
 export const store = configureStore({
-    reducer: {
-        counter: counterReducer,
-        dog: dogReducer
-    },
+  reducer: {
+    pokemon:pokemonreducer
+  },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
