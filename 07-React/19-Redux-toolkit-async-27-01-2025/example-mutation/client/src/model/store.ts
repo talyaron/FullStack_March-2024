@@ -2,8 +2,8 @@ import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './slices/counterSlice';
 import dogReducer from './slices/dogSlice';
 import { pokemonApi } from '../services/pokemon';
-import { productsApi } from '../services/products';
 import { setupListeners } from '@reduxjs/toolkit/query';
+import { productsApi } from '../services/productsService';
 
 
 export const store = configureStore({
@@ -16,7 +16,8 @@ export const store = configureStore({
     },
 
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(pokemonApi.middleware),
+        getDefaultMiddleware().concat(pokemonApi.middleware, productsApi.middleware),
+
 })
 
 setupListeners(store.dispatch)
