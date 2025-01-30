@@ -18,6 +18,8 @@ const Pokemon: FC<PokemonProps> = ({ name, left, bottom }) => {
     }
     return (
         <>
+            {error ? <div>{JSON.stringify(error)}</div> : null}
+            {isLoading ? <div>Loading...</div> : null}
             {data &&
                 data ?
                 <div
