@@ -69,7 +69,7 @@ SELECT
 FROM users u
 RIGHT JOIN orders o ON u.user_id = o.user_id;
 
--- With aggregation to get total orders per user
+-- With aggregation to get total orders per user --
 SELECT 
     u.username,
     u.email,
