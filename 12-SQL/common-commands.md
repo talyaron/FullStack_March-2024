@@ -5,7 +5,6 @@
 ### Creating & Selecting Databases
 ```sql
 -- Create new database
-CREATE DATABASE database_name;
 
 -- List all databases
 SHOW DATABASES;
