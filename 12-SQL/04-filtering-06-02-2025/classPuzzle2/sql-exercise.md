@@ -12,13 +12,13 @@ Your task is to design and implement a database schema for a recipe management a
 2. Each recipe should have:
    - A title and description
    - Preparation time and cooking time
-   - Difficulty level
-   - Number of servings
+   - Difficulty level (e.g., easy, medium, hard)
+   - Number of servings 
    - Creation date
    - Author (user who created it)
 
 3. Ingredients should:
-   - Have a name, unit of measurement, and category
+   - Have a name, unit of measurement
    - Be associated with recipes with specific quantities
    - Be reusable across different recipes
 
