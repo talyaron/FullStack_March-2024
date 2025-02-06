@@ -5,7 +5,7 @@
 ### Creating & Selecting Databases
 ```sql
 -- Create new database
-
+    create database store;
 -- List all databases
 SHOW DATABASES;
 
