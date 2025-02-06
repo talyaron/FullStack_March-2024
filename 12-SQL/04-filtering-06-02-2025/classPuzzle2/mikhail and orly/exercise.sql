@@ -111,3 +111,49 @@ FROM Recipe_Ingredients ri
 JOIN Recipes r ON ri.recipe_id = r.id
 JOIN Ingredients i ON ri.ingredient_id = i.id
 WHERE r.title = 'Spaghetti Carbonara';
+
+
+CREATE TABLE Tags (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) UNIQUE NOT NULL
+);
+
+CREATE TABLE Recipe_Tags (
+    recipe_id INT,
+    tag_id INT,
+    PRIMARY KEY (recipe_id, tag_id),
+    FOREIGN KEY (recipe_id) REFERENCES Recipes(id) ON DELETE CASCADE,
+    FOREIGN KEY (tag_id) REFERENCES Tags(id) ON DELETE CASCADE
+);
+
+INSERT INTO Tags (name) VALUES
+('Vegetarian'),
+('Dessert'),
+('Quick Meals'),
+('Healthy'),
+('Gluten-Free');
+
+
+-- Example: Associating 'Spaghetti Carbonara' with 'Quick Meals' and 'Healthy'
+INSERT INTO Recipe_Tags (recipe_id, tag_id)
+VALUES
+(1, (SELECT id FROM Tags WHERE name = 'Quick Meals')),
+(1, (SELECT id FROM Tags WHERE name = 'Healthy'));
+
+-- Example: Associating 'Chocolate Cake' with 'Dessert'
+INSERT INTO Recipe_Tags (recipe_id, tag_id)
+VALUES
+(2, (SELECT id FROM Tags WHERE name = 'Dessert'));
+
+
+SELECT id, title FROM Recipes WHERE title = 'Spaghetti Carbonara';
+
+SELECT id, name FROM Tags WHERE name IN ('Quick Meals', 'Healthy');
+
+SELECT r.title AS Recipe, t.name AS Tag
+FROM Recipes r
+JOIN Recipe_Tags rt ON r.id = rt.recipe_id
+JOIN Tags t ON rt.tag_id = t.id
+WHERE r.title = 'Spaghetti Carbonara';
+
+select * from recipes;
