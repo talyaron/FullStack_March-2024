@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View style={{backgroundColor:"yellow", flex:1}}>
       <Text>Open up App.tsx to start HI working on your app!</Text>
       <StatusBar style="auto" />
     </View>
