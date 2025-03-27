@@ -1,6 +1,6 @@
 import { registerRootComponent } from 'expo';
 
-import App from './View/Lists/FlatListExample';
+import App from './View/Touchables/TouchOpacity';
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
 // It also ensures that whether you load the app in Expo Go or in a native build,
