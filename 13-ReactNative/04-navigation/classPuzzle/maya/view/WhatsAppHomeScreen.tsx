@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigation, NavigationProp } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { View, Text, TextInput, FlatList, TouchableOpacity, SafeAreaView, StyleSheet, Platform, KeyboardAvoidingView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -9,12 +9,6 @@ interface ChatItem {
   lastMessage: string;
   time: string;
 }
-
-
-
-type RootStackParamList = {
-  Chat: { contactName: string };
-};
 
 const WhatsAppHomeScreen = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -53,7 +47,7 @@ const WhatsAppHomeScreen = () => {
     }
   ];
 
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+  const navigation = useNavigation();
 
   const renderChatItem = ({ item }: { item: ChatItem }) => (
     <TouchableOpacity 
