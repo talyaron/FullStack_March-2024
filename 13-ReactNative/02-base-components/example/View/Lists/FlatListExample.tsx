@@ -27,8 +27,8 @@ const FlatListExample = () => {
     ];
 
     // Render function for each item
-    const renderItem = ({ item }) => (
-        <View style={styles.item}>
+    const renderItem = ({ item }:{item:{id:string, title:string}}) => (
+        <View style={[styles.item, {backgroundColor: item.id % 2 === 0 ? '#f9f9f9' : '#f0f0f0'}]}>
             <Text style={styles.title}>{item.title}</Text>
         </View>
     );
@@ -71,8 +71,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     separator: {
-        height: 3,
-        backgroundColor: '#e0e0e0',
+        height: 1,
+        backgroundColor: 'lightgray',
         marginHorizontal: 16,
     },
     header: {

@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     padding: 20
   },
   text:{
-    color: 'white'
+    backgroundColor: 'teal'
   }, 
   input:{
     height: 40,

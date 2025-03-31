@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#0055A4', // French flag blue
     },
     whiteStripe: {
-        backgroundColor: '#FFFFFF', // White
+        backgroundColor: '#FFFFFF',
+        flex:1 // White
     },
     redStripe: {
         backgroundColor: '#EF4135', // French flag red
