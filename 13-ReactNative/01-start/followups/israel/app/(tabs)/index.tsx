@@ -20,7 +20,7 @@ export default function HomeScreen() {
 
 
         <ThemedText>
-          
+          hghghfhfgh
           <Image source={require('@/assets/images/ddd.jpeg')} />
           <Image source={require('@/assets/images/ddd.jpeg')} />
           <Image source={require('@/assets/images/ddd.jpeg')} />
