@@ -17,7 +17,7 @@ export default function Home() {
             <Button onPress={() => navigation.navigate('Folder',{
                 name:"Shmulick",
                 age: 23,
-            })} title="Go to Folder" />
+            }, { animation: 'slide_from_right', })} title="Go to Folder" />
             <StatusBar style="auto" />
         </View>
     );
