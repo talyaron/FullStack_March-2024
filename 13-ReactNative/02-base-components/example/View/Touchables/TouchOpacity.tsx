@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, TouchableHighlight } from 'react-native';
 
 const CounterButton = () => {
     const [count, setCount] = useState(0);
@@ -11,13 +11,13 @@ const CounterButton = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.counterText}>Count: {count}</Text>
-            <TouchableOpacity
+            <TouchableHighlight
                 style={styles.button}
                 onPress={incrementCounter}
-                activeOpacity={0.7} // Controls how much the opacity reduces when pressed
+                activeOpacity={0.2} // Controls how much the opacity reduces when pressed
             >
                 <Text style={styles.buttonText}>Increment</Text>
-            </TouchableOpacity>
+            </TouchableHighlight>
         </View>
     );
 };
