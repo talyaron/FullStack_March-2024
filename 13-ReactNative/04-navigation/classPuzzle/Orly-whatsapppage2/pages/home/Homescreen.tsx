@@ -8,6 +8,12 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
+import { NavigationProp } from '@react-navigation/native';
+import { RootStackParamList } from '../../App';
+
+type Props = {
+    navigation: NavigationProp<RootStackParamList, 'Home'>;
+  };
 
 const mockChats = [
   { id: '1', name: 'Ken White', message: 'Hey! How are you?', image: 'https://randomuser.me/api/portraits/men/1.jpg', unread: true, favorite: false, group: false },
@@ -22,135 +28,53 @@ const mockChats = [
   { id: '10', name: 'Vicky Martin', message: 'How are you?', image: 'https://randomuser.me/api/portraits/women/10.jpg', unread: false, favorite: true, group: false },  
 ];
 
+export default function HomeScreen({ navigation }: Props) {
+    const [selectedFilter, setSelectedFilter] = useState('All');
 
-const FILTERS = ['All', 'Unread', 'Favorites', 'Groups'];
+    const filteredChats = mockChats.filter((chat) => {
+        switch (selectedFilter) {
+          case 'Unread':
+            return chat.unread;
+          case 'Favorites':
+            return chat.favorite;
+          case 'Groups':
+            return chat.group;
+          default:
+            return true;
+        }
+      });
 
-export default function App() {
-  const [selectedFilter, setSelectedFilter] = useState('All');
-
-  const filteredChats = mockChats.filter((chat) => {
-    switch (selectedFilter) {
-      case 'Unread':
-        return chat.unread;
-      case 'Favorites':
-        return chat.favorite;
-      case 'Groups':
-        return chat.group;
-      default:
-        return true;
+      return (
+        <View style={styles.container}>
+          <Text style={styles.title}>WhatsApp</Text>
+          <TextInput style={styles.searchBar} placeholder="Search..." />
+    
+          <FlatList
+            data={filteredChats}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                style={styles.chatItem}
+                onPress={() => navigation.navigate('Chat', { name: item.name, image: item.image })}
+              >
+                <Image source={{ uri: item.image }} style={styles.chatImage} />
+                <View>
+                  <Text style={styles.chatName}>{item.name}</Text>
+                  <Text style={styles.chatMessage}>{item.message}</Text>
+                </View>
+              </TouchableOpacity>
+            )}
+          />
+        </View>
+      );
     }
-  });
-
-  return (
-    <View style={styles.container}>
-      {/* Title */}
-      <Text style={styles.title}>WhatsApp</Text>
-
-      {/* Search Bar */}
-      <TextInput style={styles.searchBar} placeholder="Search..." />
-
-      {/* Filter Tabs */}
-      <View style={styles.filterContainer}>
-        {FILTERS.map((filter) => (
-          <TouchableOpacity
-            key={filter}
-            onPress={() => setSelectedFilter(filter)}
-            style={[
-              styles.filterButton,
-              selectedFilter === filter && styles.activeFilter,
-            ]}
-          >
-            <Text
-              style={[
-                styles.filterText,
-                selectedFilter === filter && styles.activeFilterText,
-              ]}
-            >
-              {filter}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </View>
-
-      {/* Chat List */}
-      <FlatList
-        data={filteredChats}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <View style={styles.chatItem}>
-            <Image source={{ uri: item.image }} style={styles.chatImage} />
-            <View>
-              <Text style={styles.chatName}>{item.name}</Text>
-              <Text style={styles.chatMessage}>{item.message}</Text>
-            </View>
-          </View>
-        )}
-      />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    padding: 10,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginVertical: 10,
-    color: '#075E54',
-  },
-  searchBar: {
-    backgroundColor: '#f0f0f0',
-    padding: 10,
-    borderRadius: 10,
-    marginBottom: 10,
-  },
-  filterContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginBottom: 10,
-  },
-  filterButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 15,
-    borderRadius: 20,
-    backgroundColor: '#E0E0E0',
-  },
-  activeFilter: {
-    backgroundColor: '#25D366',
-  },
-  filterText: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  activeFilterText: {
-    color: '#fff',
-  },
-  chatItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-  },
-  chatImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    marginRight: 10,
-  },
-  chatName: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  chatMessage: {
-    fontSize: 14,
-    color: '#666',
-  },
-});
-
+    
+    const styles = StyleSheet.create({
+      container: { flex: 1, backgroundColor: '#fff', padding: 10 },
+      title: { fontSize: 24, fontWeight: 'bold', textAlign: 'center', marginVertical: 10, color: '#075E54' },
+      searchBar: { backgroundColor: '#f0f0f0', padding: 10, borderRadius: 10, marginBottom: 10 },
+      chatItem: { flexDirection: 'row', alignItems: 'center', padding: 10, borderBottomWidth: 1, borderBottomColor: '#ddd' },
+      chatImage: { width: 50, height: 50, borderRadius: 25, marginRight: 10 },
+      chatName: { fontSize: 16, fontWeight: 'bold' },
+      chatMessage: { fontSize: 14, color: '#666' },
+    });
