@@ -8,15 +8,17 @@ type RootStackParamList = {
   Details: undefined;
 };
 
-export default function Details() {
+export default function Folder({ route }: { route: { params: { name: string } } }) {
+    const {name} = route.params;
     const navigation = useNavigation<NavigationProp<RootStackParamList>>();
  
   return (
     <View style={styles.container}>
-      <Text>Details</Text>
+      <Text>Details: {name}</Text>
       <Button onPress={() => navigation.navigate('Home')}>Go to Home</Button>
-          <Button onPress={() => navigation.push('Details')}>
-              Go to Details... again
+          <Button onPress={() => navigation.navigate('Folder')}>Go to Folder</Button>
+          <Button onPress={() => navigation.push('Folder')}>
+              Go to Folder... again
           </Button>
       <StatusBar style="auto" />
     </View>

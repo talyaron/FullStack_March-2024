@@ -14,7 +14,7 @@ const RootStack = createNativeStackNavigator({
         title: 'Overview',
       },
     },
-    Details: Details,
+    Folder: Details,
   },
 });
 

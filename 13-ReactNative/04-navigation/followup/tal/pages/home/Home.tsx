@@ -6,6 +6,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 type RootStackParamList = {
     Home: undefined;
     Details: undefined;
+    Folder: { name: string; age: number };
 };
 
 export default function Home() {
@@ -13,7 +14,10 @@ export default function Home() {
     return (
         <View style={styles.container}>
             <Text>Open up App.tsx to start working on your app!</Text>
-            <Button onPress={() => navigation.navigate('Details')} title="Go to Details" />
+            <Button onPress={() => navigation.navigate('Folder',{
+                name:"Shmulick",
+                age: 23,
+            })} title="Go to Folder" />
             <StatusBar style="auto" />
         </View>
     );
