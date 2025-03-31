@@ -13,7 +13,7 @@ export default function Home() {
     return (
         <View style={styles.container}>
             <Text>Open up App.tsx to start working on your app!</Text>
-            <Button onPress={() => navigation.navigate('Details')} title="Go to Details" />
+            <Button onPress={() => navigation.navigate('Folder', { name: "Orly", place: "Rehovot" })} title="Go to Folder" />
             <StatusBar style="auto" />
         </View>
     );
