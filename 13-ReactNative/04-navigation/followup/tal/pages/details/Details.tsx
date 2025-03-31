@@ -15,6 +15,9 @@ export default function Details() {
     <View style={styles.container}>
       <Text>Details</Text>
       <Button onPress={() => navigation.navigate('Home')}>Go to Home</Button>
+          <Button onPress={() => navigation.push('Details')}>
+              Go to Details... again
+          </Button>
       <StatusBar style="auto" />
     </View>
   );
