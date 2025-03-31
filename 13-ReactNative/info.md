@@ -15,11 +15,11 @@ For more instructions go to [Expo Docs](https://docs.expo.dev/)
 
 ## Creating the app
 
-set new code: ```npx create-expo-app my-new-project```
+set new code: ```npx create-expo-app --template```
 
-For simple app run ```npx create-expo-app MySimpleApp```
+For simple app use Blank typescript option.
 
-make sure an emulator is running on your Android studio or Xcode
+<ake sure an emulator is running on your Android studio or Xcode
 
 Running the app: ```npm run android```
 
