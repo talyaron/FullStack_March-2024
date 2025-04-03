@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
-import { RouteProp } from '@react-navigation/native';
+import { RouteProp, useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../../App';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 
@@ -10,7 +10,8 @@ type Props = {
 
 export default function ChatScreen({ route }: Props) {
   const { name, image } = route.params;
-  
+  const navigation = useNavigation(); // Hook to navigate back
+
   // Sample chat messages
   const messages = [
     { id: '1', text: 'Lorem ipsum dolor sit amet', sender: 'me' },
@@ -22,10 +23,10 @@ export default function ChatScreen({ route }: Props) {
   ];
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container}>36
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color="white" />
         </TouchableOpacity>
         <Image source={{ uri: image }} style={styles.profileImage} />
@@ -80,4 +81,3 @@ const styles = StyleSheet.create({
   input: { flex: 1, padding: 10, marginHorizontal: 10, backgroundColor: '#f0f0f0', borderRadius: 20 },
 });
 
-export default ChatScreen;
