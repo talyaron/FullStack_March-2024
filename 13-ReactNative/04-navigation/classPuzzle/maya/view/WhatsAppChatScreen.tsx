@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet, SafeAreaView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { StackScreenProps } from '@react-navigation/stack';
-import { RootStackParamList } from '../App';
 
-// ✅ Correctly type Props using StackScreenProps
-type Props = StackScreenProps<RootStackParamList, 'Chat'>;
-
-const WhatsAppChatScreen: React.FC<Props> = ({ route, navigation }) => {
+const WhatsAppChatScreen = ({ route, navigation }) => {
   const { contactName } = route.params;
   const [messages, setMessages] = useState([
     { id: '1', text: 'Hello!', sender: 'other' },
@@ -19,13 +14,13 @@ const WhatsAppChatScreen: React.FC<Props> = ({ route, navigation }) => {
     if (newMessage.trim()) {
       setMessages([
         { id: Date.now().toString(), text: newMessage, sender: 'me' },
-        ...messages,
+        ...messages
       ]);
       setNewMessage('');
     }
   };
 
-  const renderMessage = ({ item }: { item: { id: string; text: string; sender: string } }) => (
+  const renderMessage = ({ item }) => (
     <View style={[styles.messageBubble, item.sender === 'me' ? styles.myMessage : styles.otherMessage]}>
       <Text style={styles.messageText}>{item.text}</Text>
     </View>

@@ -6,17 +6,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import WhatsAppHomeScreen from './view/WhatsAppHomeScreen';
 import WhatsAppChatScreen from './view/WhatsAppChatScreen';
 
-export type RootStackParamList = {
-  Home: undefined;
-  Chat: { contactName: string };
-};
-
-// ✅ Define Stack Navigator
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
+      <StatusBar style="light" backgroundColor="#25D366" />
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={WhatsAppHomeScreen} />
         <Stack.Screen name="Chat" component={WhatsAppChatScreen} />
