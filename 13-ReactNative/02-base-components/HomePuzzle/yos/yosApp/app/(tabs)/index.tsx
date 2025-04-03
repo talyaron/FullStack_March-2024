@@ -1,42 +1,38 @@
 import { StyleSheet, Image, FlatList, TouchableOpacity, TextInput } from 'react-native';
-import { useState } from 'react';
 import { ThemedView } from '@/components/ThemedView';
 import { ThemedText } from '@/components/ThemedText';
+import { useState } from 'react';
+import { useRouter } from 'expo-router';
+import { chats } from '@/data/chats';
 
 // Sample data for chats
-const chats = [
-  {
-    id: '1',
-    name: 'Family Group',
-    lastMessage: 'See you tomorrow!',
-    time: '10:30 AM',
-    unread: 2,
-    avatar: require('@/assets/images/Yos.jpg'),
-  },
-  {
-    id: '2',
-    name: 'Work Team',
-    lastMessage: 'Project deadline is Friday',
-    time: '9:15 AM',
-    unread: 0,
-    avatar: require('@/assets/images/Yos.jpg'),
-  },
-  {
-    id: '3',
-    name: 'Mom',
-    lastMessage: 'How are you?',
-    time: 'Yesterday',
-    unread: 1,
-    avatar: require('@/assets/images/Yos.jpg'),
-  },
-  // Add more chat items as needed
-];
 
 export default function HomeScreen() {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
+  const [showSearch, setShowSearch] = useState(false);
 
-  const renderChatItem = ({ item }) => (
-    <TouchableOpacity style={styles.chatItem}>
+  const filteredChats = chats.filter(chat =>
+    chat.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    chat.lastMessage.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const renderChatItem = ({ item }: { item: any }) => (
+    <TouchableOpacity 
+      style={styles.chatItem}
+      onPress={() => router.push({
+        pathname: '/chat/[id]',
+        params: {
+          id: item.id,
+          name: item.name,
+          avatar: item.avatar,
+          lastMessage: item.lastMessage,
+          time: item.time,
+          unread: item.unread,
+        }
+
+      })}
+    >
       <Image source={item.avatar} style={styles.avatar} />
       <ThemedView style={styles.chatInfo}>
         <ThemedView style={styles.chatHeader}>
@@ -63,25 +59,31 @@ export default function HomeScreen() {
         <ThemedText style={styles.headerTitle}>WhatsApp</ThemedText>
         <ThemedView style={styles.headerRight}>
           <TouchableOpacity style={styles.headerButton}>
-            <ThemedText style={styles.headerButtonText}>Search</ThemedText>
+            <ThemedText style={styles.headerButtonText}
+              onPress={() => setShowSearch(!showSearch)}
+            >Search</ThemedText>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.headerButton}>
+          <TouchableOpacity 
+            style={styles.headerButton}
+            onPress={() => router.push('/menu')}
+          >
             <ThemedText style={styles.headerButtonText}>Menu</ThemedText>
           </TouchableOpacity>
         </ThemedView>
       </ThemedView>
-
-      <ThemedView style={styles.searchContainer}>
-        <TextInput
-          style={styles.searchInput}
-          placeholder="Search chats..."
-          value={searchQuery}
-          onChangeText={setSearchQuery}
-        />
-      </ThemedView>
+      {showSearch && (
+        <ThemedView style={styles.searchContainer}>
+          <TextInput
+            style={styles.searchInput}
+            placeholder="Search chats..."
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+          />
+        </ThemedView>
+      )}
 
       <FlatList
-        data={chats}
+        data={filteredChats}
         renderItem={renderChatItem}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={() => <ThemedView style={styles.separator} />}
@@ -93,6 +95,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 16,
   },
   header: {
     flexDirection: 'row',
@@ -174,14 +177,14 @@ const styles = StyleSheet.create({
     height: 1,
     backgroundColor: '#e0e0e0',
   },
-  searchContainer: {
-    padding: 8,
-    backgroundColor: '#f0f0f0',
-  },
   searchInput: {
-    backgroundColor: 'white',
-    padding: 8,
-    borderRadius: 8,
-    fontSize: 16,
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#e0e0e0',
+  },
+  searchContainer: {
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#e0e0e0',
   },
 });
