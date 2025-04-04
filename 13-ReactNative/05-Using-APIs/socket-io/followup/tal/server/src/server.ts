@@ -1,6 +1,13 @@
 import express from 'express';
+import { createServer } from 'node:http';
+import { Server } from 'socket.io';
 const app = express()
 const port = 3000;
+import { pool } from './controllers/db';
+
+// connect the sockets to tha server
+const server = createServer(app);
+const io = new Server(server);
 
 //body parser
 app.use(express.json()) //parse json data
@@ -40,7 +47,7 @@ app.get('/data', (req: any, res: any) => {
 
 
 
-const  addStudentToArray = (req: any, res: any) => {
+const addStudentToArray = (req: any, res: any) => {
   try {
     console.log(req.body);
     const { name, imageUrl } = req.body;
@@ -50,13 +57,48 @@ const  addStudentToArray = (req: any, res: any) => {
     students.push(newStudent);
 
     res.send({ ok: true })
-  } catch (error:any) {
+  } catch (error: any) {
     console.error(error)
     res.send({ ok: false, error: error.message })
   }
 }
-app.post("/add-student",addStudentToArray )
+app.post("/add-student", addStudentToArray)
 
-app.listen(port, () => {
+app.get("/rooms", async (req: any, res: any) => {
+  const rooms = await pool.execute("SELECT * FROM rooms")
+  res.send({ rooms: rooms[0] })
+})
+
+//waiting for user handshake
+io.on('connection', (socket) => {
+  console.log('a user connected', socket.id);
+
+  socket.on('join room', (roomId) => {
+    console.log('user joined room', roomId, socket.id);
+    socket.join(roomId);
+  })
+
+  socket.on('leave room', (roomId) => {
+    console.log('user left room', roomId, socket.id);
+    socket.leave(roomId);
+  })
+
+  socket.on('chat message', ({ message, roomId }) => {
+    console.log('message: ' + JSON.stringify({ message, roomId }));
+    if (!roomId) {
+      io.emit('chat message', message);
+    } else {
+
+      io.to(roomId).emit('chat message', message);
+    }
+  });
+
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected', socket.id);
+  });
+});
+
+server.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
