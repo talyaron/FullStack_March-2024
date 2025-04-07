@@ -51,7 +51,7 @@ firebase init
 ```
 
 Follow the prompts:
-1. Select the Firebase services you want to use (Hosting, Firestore, Authentication, etc.)
+1. Select the Firebase services you wanyt to use (Hosting, Firestore, Authentication, etc.)
 2. Select or create a Firebase project
 3. Configure your setup options for each service
 4. When asked about the public directory, enter `dist` (Vite's default build output directory)
