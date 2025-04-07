@@ -51,7 +51,7 @@ firebase init
 ```
 
 Follow the prompts:
-1. Select the Firebase services you want to use (Hosting, Firestore, Authentication, etc.)
+1. Select the Firebase services you want to use (Hosting, Firestore, Authentication, rules, emulators, etc.)
 2. Select or create a Firebase project
 3. Configure your setup options for each service
 4. When asked about the public directory, enter `dist` (Vite's default build output directory)
@@ -217,6 +217,19 @@ npm run build
 # Deploy to Firebase
 firebase deploy
 ```
+
+## Runing Emulators
+```
+firebase emulators:start --only firestore
+```
+This command will start the Firebase emulators for the services you selected during initialization. You can access the emulators at `http://localhost:4000` (or other ports depending on your configuration).
+## Step 10: Testing Your App
+Run your app locally to test Firebase functionality:
+
+```bash
+npm run dev
+```
+
 
 ## Troubleshooting
 
