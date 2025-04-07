@@ -9,4 +9,4 @@ last_update date
 );
 
 insert into rooms (room_name, last_update) values
-("room 1", "2025-04-03");
+("room 2", "2025-04-06");
