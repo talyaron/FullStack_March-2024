@@ -10,12 +10,12 @@ function App() {
   const [messages,setMessages] = useState<string[]>([])
 
   useEffect(() => {
-   const unsub1 = listenToCounter(setCount);
-   const unsub2 = listenToMessages(setMessages);
+   const unsubscribeCounter = listenToCounter(setCount);
+   const unsubscribeMessages = listenToMessages(setMessages);
 
    return () => {
-     unsub1();
-     unsub2();
+     unsubscribeCounter();
+     unsubscribeMessages();
    };
 
   }, [])
