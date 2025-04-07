@@ -1,34 +1,15 @@
 import express from 'express';
-import { Server } from 'socket.io';
 import { createServer } from 'node:http';
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
-import path from 'path';
-
-const app = express();
-const server = createServer(app);
-const io = new Server(server);
+import { Server } from 'socket.io';
+const app = express()
 const port = 3000;
 
 //body parser
 app.use(express.json()) //parse json data
-// const __dirname = dirname(fileURLToPath(import.meta.url));
+const server = createServer(app) //create server
+const io = new Server(server) //create socket io server
 
-// app.get('/', (req, res) => {
-//   res.sendFile(join(__dirname, 'public/index.html'));
-// });
-// const __dirname = dirname(fileURLToPath(import.meta.url));
-
-// Get the absolute path to the public directory
-const publicPath = path.join(__dirname, '..', 'public');
-
-// Serve static files from the public directory
-app.use(express.static(publicPath));
-
-// Serve index.html with absolute path
-app.get('/', (req, res) => {
-  res.sendFile(path.join(publicPath, 'index.html'), { root: '/' });
-});
+console.log("Hello World")
 
 //Model
 class Student {
@@ -49,9 +30,20 @@ const students: Student[] = [
   new Student("Bob", "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg")
 ];
 
+io.on('connection', (socket) => {
+  console.log('a user connected', socket.id);
 
+  socket.on('chat message', (msg) => {
+    console.log('message: ' + msg);
+    io.emit('chat message', msg);
 
-// app.use(express.static('public')) //serve static files from folder "public"
+  });
+  socket.on('disconnect', () => {
+    console.log('user disconnected', socket.id);
+  });
+});
+
+app.use(express.static('public')) //serve static files from folder "public"
 
 // Routes
 //route
@@ -79,21 +71,6 @@ const  addStudentToArray = (req: any, res: any) => {
 }
 app.post("/add-student",addStudentToArray )
 
-io.on('connection', (socket) => {
-
-  console.log('a user connected');
-  console.log(socket.id);
-  
-  socket.on('chat message', (msg) => {
-    console.log('message: ' + msg + ' from ' + socket.id);
-    io.emit('chat message', msg);
-
-  });
-  socket.on('disconnect', () => {
-    console.log('user disconnected ', socket.id);
-  });
-});
-
 server.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Example app listening on port ${port}`)
 })
