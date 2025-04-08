@@ -1,17 +1,12 @@
 {
   "firestore": {
-    "rules": "study",
+    "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
   "storage": {
     "rules": "storage.rules"
   },
   "emulators": {
-    "apphosting": {
-      "port": 5002,
-      "rootDirectory": "./",
-      "startCommand": "npm run dev"
-    },
     "auth": {
       "port": 9099
     },
@@ -19,10 +14,10 @@
       "port": 5001
     },
     "firestore": {
-      "port": 8080
+      "port": 8081
     },
     "database": {
-      "port": 9000
+      "port": 9001
     },
     "hosting": {
       "port": 5000
@@ -34,5 +29,22 @@
       "enabled": true
     },
     "singleProjectMode": true
-  }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint",
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ]
 }
