@@ -1,5 +1,5 @@
 {
-  "name": "example",
+  "name": "olga",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,11 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "npm run deve": "firebase emulators:start --only firestore"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "firebase": "^11.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

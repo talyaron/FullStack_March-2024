@@ -1,34 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
+import { setCounterToDB } from './controllers/db/counter/setCounter'
+import { listenToCounter } from './controllers/db/counter/getCounter'
+import { addMessageToDB } from './controllers/db/messages/setmessage'
+import { listenToMessages } from './controllers/db/messages/getMessage'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [messages,setMessages] = useState<string[]>([])
+
+  useEffect(() => {
+   const unsubscribeCounter = listenToCounter(setCount);
+   const unsubscribeMessages = listenToMessages(setMessages);
+
+   return () => {
+     unsubscribeCounter();
+     unsubscribeMessages();
+   };
+
+  }, [])
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const value = e.target.valueAsNumber;
+    if (value)
+      setCounterToDB(value);
+
+  }
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log('submit');
+    const message = e.target.elements?.message?.value;
+    console.log(message);
+    
+    addMessageToDB(message);
+    e.currentTarget.reset(); // Reset the form after submission
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      {count}
+      <input type="number" onChange={handleChange} />
+
+      <form onSubmit={handleSubmit}> {/* Add onSubmit handler to the form */}
+        <input type="text" name="message" id="" />
+        <button type="submit">Send</button>
+      </form>
+      {messages.map((message, index) => (<p key={index}>{message}</p>))}
+    </div>
+
   )
 }
 

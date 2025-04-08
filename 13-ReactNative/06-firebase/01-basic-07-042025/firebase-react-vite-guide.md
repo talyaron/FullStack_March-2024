@@ -51,7 +51,7 @@ firebase init
 ```
 
 Follow the prompts:
-1. Select the Firebase services you want to use (Hosting, Firestore, Authentication, etc.)
+1. Select the Firebase services you want to use (Hosting, Firestore, Authentication, rules, emulators, etc.)
 2. Select or create a Firebase project
 3. Configure your setup options for each service
 4. When asked about the public directory, enter `dist` (Vite's default build output directory)
@@ -65,7 +65,7 @@ Create a new file called `src/firebase.js` with your Firebase configuration:
 // src/firebase.js
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore,connectFirestoreEmulator } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 // Your Firebase configuration
@@ -86,6 +86,13 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
+if (import.meta.env.DEV) {
+    // connectAuthEmulator(auth, 'http://localhost:9099');
+    connectFirestoreEmulator(db, 'localhost', 8080);
+    // connectStorageEmulator(storage, 'localhost', 9199);
+    console.log('Using Firebase emulators');
+}
+
 
 // Export the services for use in other files
 export { app, auth, db, storage };
@@ -206,6 +213,17 @@ const firebaseConfig = {
 
 > **Important:** Make sure to add `.env` to your `.gitignore` file to prevent sensitive information from being committed to your repository.
 
+## Step 9: Running Emulators
+```bash
+firebase emulators:start --only firestore
+```
+This command will start the Firebase emulators for the services you selected during initialization. You can access the emulators at `http://localhost:4000` (or other ports depending on your configuration).
+## Step 10: Testing Your App
+Run your app locally to test Firebase functionality:
+
+```bash
+npm run dev
+```
 ## Step 9: Deployment
 
 Deploy your app to Firebase Hosting:
