@@ -1,5 +1,6 @@
 import express from 'express';
 import { createServer } from 'node:http';
+const {join} = require('path');
 const app = express()
 const port = 3000;
 import { Server } from 'socket.io';
@@ -62,11 +63,20 @@ const  addStudentToArray = (req: any, res: any) => {
 }
 app.post("/add-student",addStudentToArray )
 
-//waiting for user handshake
+//waiting for user handshake//
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  console.log('a user connected', socket.id);
+
+  socket.on('chat message', (msg) => {
+    console.log('message: ' + msg);
+    io.emit('chat message', msg);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected', socket.id);
+  });
 });
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
