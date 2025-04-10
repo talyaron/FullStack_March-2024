@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import { setCounterToDB } from './controllers/db/counter/setCounter'
 import { listenToCounter } from './controllers/db/counter/getCounter'
+import React from 'react'
 
 function App() {
   const [count, setCount] = useState(0)
