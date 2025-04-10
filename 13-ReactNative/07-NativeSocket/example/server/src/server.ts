@@ -4,6 +4,10 @@ import { Server } from 'socket.io';
 const app = express()
 const port = 3000;
 import { pool } from './controllers/db';
+import cors from 'cors';
+
+
+app.use(cors()); // allow cross-origin requests
 
 // connect the sockets to tha server
 const server = createServer(app);
