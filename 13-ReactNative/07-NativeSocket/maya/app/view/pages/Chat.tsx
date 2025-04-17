@@ -15,7 +15,7 @@ import socketService from '../../controllers/socketService'; // Adjust the impor
 
 const ChatScreen = ({ route }: { route: { params: { roomId: string | null } } }) => {
     const [message, setMessage] = useState('');
-    const [messages, setMessages] = useState<{ id: string; text: string }[]>([]);
+    const [messages, setMessages] = useState<{ id: string; text: string; fromSelf: boolean;timestamp: string; sender?: string }[]>([]);
     const roomId = route?.params?.roomId || null;
 
     useEffect(() => {
@@ -30,7 +30,12 @@ const ChatScreen = ({ route }: { route: { params: { roomId: string | null } } })
                 const receivedMessage = JSON.parse(message);
                 setMessages((prevMessages) => [
                     ...prevMessages,
-                    { id: String(Date.now()), text: receivedMessage.text, fromSelf: receivedMessage.from === socketService.socket.id }
+                    { 
+                        id: String(Date.now()), 
+                        text: receivedMessage.text, 
+                        fromSelf: receivedMessage.from === socketService.socket.id, 
+                        timestamp: new Date().toISOString() 
+                    }
                 ]);
             } catch (error) {
                 console.error('Failed to parse message:', error);
@@ -71,11 +76,18 @@ const ChatScreen = ({ route }: { route: { params: { roomId: string | null } } })
                     data={messages}
                     keyExtractor={(item) => item.id} 
                     renderItem={({ item }) => (
-                        <View style={styles.messageContainer}>
+                        <View
+                            style={[
+                                styles.messageContainer,
+                                item.fromSelf ? styles.myMessage : styles.otherMessage,
+                            ]}
+                        >
                             <Text style={styles.messageText}>{item.text}</Text>
                         </View>
                     )}
                 />
+                
+            
 
                 <View style={styles.inputContainer}>
                     <TextInput
@@ -102,6 +114,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#F5F5F5',
+    },
+    senderText: {
+        fontSize: 12,
+        color: '#888',
+        marginTop: 5,
+        alignSelf: 'flex-start',
     },
     header: {
         padding: 15,
@@ -132,6 +150,14 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.18,
         shadowRadius: 1.0,
         elevation: 1,
+    },
+    myMessage: {
+        backgroundColor: '#DCF8C5',
+        alignSelf: 'flex-end',
+    },
+    otherMessage: {
+        backgroundColor: '#FFF',
+        alignSelf: 'flex-start',
     },
     messageText: {
         fontSize: 16,
