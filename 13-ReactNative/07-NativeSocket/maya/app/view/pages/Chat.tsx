@@ -69,7 +69,7 @@ const ChatScreen = ({ route }: { route: { params: { roomId: string | null } } })
                 <FlatList
                     style={styles.messageList}
                     data={messages}
-                    keyExtractor={(item) => item.id}
+                    keyExtractor={(item) => item.id} 
                     renderItem={({ item }) => (
                         <View style={styles.messageContainer}>
                             <Text style={styles.messageText}>{item.text}</Text>
